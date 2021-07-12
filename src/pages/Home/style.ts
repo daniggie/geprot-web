@@ -64,21 +64,44 @@ export const Menu = styled.div`
   align-items: center;
 
   #menu{
-    width: 60px;
+    width: 400px;
     height: 275px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    align-items: flex-end;
 
-    .atalho{
-      width: 60px;
-      height: 55px;
+    .content_atalho{
+      width: 50px;
+      height: 60px;
       display: flex;
-      padding-top: 5px;
       margin-top: 2px;
 
-      svg{
-        margin: 2px 0px 0px 10px;
+      #idparagrafo{
+        display:none;
+      }
+
+      .atalho{
+        width: 50px;
+        margin-top: 2px;
+        padding-top: 5px;
+        display:flex;
+
+        svg{
+          margin: 2px 0px 0px 5px;
+        }
+
+        &:hover {
+          width: 150px;
+        }
+      }
+
+      &:hover{
+        width:200px;
+        
+        #idparagrafo{
+          display:block;
+        }
       }
 
     }
