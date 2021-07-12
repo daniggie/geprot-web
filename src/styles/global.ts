@@ -13,7 +13,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button{
+  body, button{
     font: 16px Helvetica, sans-serif;
   }
 
@@ -24,6 +24,42 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .cor_1 {
+    color: #0075B1;
+  }
+
+  .cor_2 {
+    color: #2382BA;
+  }
+
+  .cor_3 {
+      color: #0091BD;
+  }
+
+  .cor_4 {
+      color: #28B9DA;
+  }
+
+  .cor_0 {
+      color: #828282;
+  }
+
+  .cor_1f {
+    background-color: #0075B1;
+  }
+
+  .cor_2f {
+      background-color: #2382BA;
+  }
+
+  .cor_3f {
+      background-color: #0091BD;
+  }
+
+  .cor_4f {
+      background-color: #28B9DA;
   }
 
 `

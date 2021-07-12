@@ -83,22 +83,6 @@ export const Menu = styled.div`
 
     }
 
-    .cor_1f {
-      background-color: #0075B1;
-    }
-
-    .cor_2f {
-        background-color: #2382BA;
-    }
-
-    .cor_3f {
-        background-color: #0091BD;
-    }
-
-    .cor_4f {
-        background-color: #28B9DA;
-    }
-
     #border1{
       border-radius: 5px 0px 0px 0px;
     }
@@ -115,5 +99,48 @@ export const All = styled.div`
     flex-wrap: nowrap;
     margin-top: 20px;
 
+`;
+
+export const Filtros = styled.div`
+    width: 100%;
+    height: 50px;
+    display:flex;
+    padding: 10px;
+    margin-top:20px;
+    justify-content: space-around;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+
+
+    .content_title {
+      width: 10%;
+      display:flex;
+      align-items: center;
+    }
+
+    .texto{
+      margin-left: 5px;
+    }
+
+    .content_procurar{
+      width: 25%;
+      display:flex;
+      align-items: center;
+
+      .procurar{
+        width: 100%;
+        height: 25px;
+        border: 0.1px solid #828282;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-left: 5px;
+        font-size: 15px;
+        padding: 5px;
+      }
+
+    }
 `;
 
