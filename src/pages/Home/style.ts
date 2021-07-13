@@ -51,7 +51,7 @@ export const Header = styled.div`
     }
 `;
 
-export const Body = styled.div`
+export const Content_cards = styled.div`
   width: 85%;
   display:flex;
 `;
@@ -79,28 +79,40 @@ export const Menu = styled.div`
 
       #idparagrafo{
         display:none;
+        margin-top: 10px;
+        margin-left: 10px;
+
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-size: 15px;
+        color: white;
       }
 
       .atalho{
         width: 50px;
         margin-top: 2px;
-        padding-top: 5px;
+        padding: 5px;
         display:flex;
 
         svg{
           margin: 2px 0px 0px 5px;
         }
-
-        &:hover {
-          width: 150px;
-        }
       }
 
       &:hover{
-        width:200px;
-        
+        width:185px;
+        transition-duration: 0.5s;
+
         #idparagrafo{
           display:block;
+          margin-top: 10px;
+          margin-left: 15px;
+          transition-duration: 0.5s;
+
+          font-family: Arial, Helvetica, sans-serif;
+          font-style: normal;
+          font-size: 15px;
+          color: white;
         }
       }
 
@@ -144,8 +156,35 @@ export const Filtros = styled.div`
       align-items: center;
     }
 
+    form post{
+      background: red;
+    }
+
     .texto{
       margin-left: 5px;
+    }
+
+    select {
+      width: 100px;
+      height: 25px;
+      margin-left: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-style: normal;
+      font-size: 15px;
+      color: #fff;
+
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      border: none;
+      border-radius: 5px;
+    }
+
+    .status{
+      width: 115px;
+      padding-left: 15%;
+      padding-right: 15%;
     }
 
     .content_procurar{
