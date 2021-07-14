@@ -7,12 +7,13 @@ import logo from '../../icons/logo.svg';
 import translator_select from '../../icons/translator_select.svg';
 import translator_flag from '../../icons/translator_flag.svg';
 import exit from '../../icons/exit.svg';
-import arrow from '../../icons/arrow.svg';
+import arrowRight from '../../icons/arrow-right.svg';
 import editar from '../../icons/editar.svg';
 import cadastrar from '../../icons/cadastrar.svg';
 import view from '../../icons/view.svg';
 import dashboard from '../../icons/dashboards.svg';
 import alocar from '../../icons/alocar.svg';
+import relogio from '../../icons/relogio.svg';
 
 import { Header, Menu, All, Content_cards, Filtros } from './style';
 import { icons } from 'react-icons';
@@ -81,7 +82,7 @@ const Dashboard: React.FC = () => {
 
         <div className="content_title">
             <div className="arrow">
-              <img src={arrow} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
 
             <div className="texto cor_4">
@@ -91,7 +92,7 @@ const Dashboard: React.FC = () => {
 
         <div className="content_title">
             <div className="arrow">
-              <img src={arrow} alt="" />
+              <img src={arrowRight} alt="" />
             </div>
 
             <div className="texto cor_4">
@@ -110,7 +111,7 @@ const Dashboard: React.FC = () => {
 
         <div className="content_procurar">
             <div className="arrow">
-            <img src={arrow} alt="" />
+            <img src={arrowRight} alt="" />
             </div>
 
             <div className="texto cor_4">
@@ -127,7 +128,7 @@ const Dashboard: React.FC = () => {
 
       <All>
 
-        <Content_cards>
+      <Content_cards>
 
         <div className="card_type">
 
@@ -140,7 +141,7 @@ const Dashboard: React.FC = () => {
                 <div className="linha_1">
 
                     <div className="card_secao">
-                        <div className="cor_5 fonte_12 helvetica ">
+                        <div className="cor_4 fonte_12 helvetica ">
                             000012345 - Seção ABC
                         </div>
                     </div>
@@ -193,11 +194,11 @@ const Dashboard: React.FC = () => {
                     </div>
 
                     <div className="texto_content_horas">
-                        <div className="fonte_14 helvetica">
+                        <div className="horas fonte_14 helvetica">
                             Horas:
                         </div>
                         <div className="relogio ">
-                            <img src="img/icon/relogio.svg" alt=" " />
+                            <img src={relogio} alt=" " />
                         </div>
                         <div className="cor_0 fonte_14 helvetica">
                             85h
@@ -236,7 +237,7 @@ const Dashboard: React.FC = () => {
                         </div>
 
                         <div className="relogio">
-                            <img src="img/icon/relogio.svg" alt=" " />
+                            <img src={relogio} alt=" " />
                         </div>
 
                         <div className="cor_0 fonte_14 helvetica">
@@ -244,9 +245,6 @@ const Dashboard: React.FC = () => {
                         </div>
 
                     </div>
-
-
-
 
                 </div>
 
@@ -275,7 +273,293 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          
+          <div className="card_type">
+
+            <div className="card_status_color green">
+
+            </div>
+
+            <div className="card_informacao">
+
+                <div className="linha_1">
+
+                    <div className="card_secao">
+                        <div className="cor_4 fonte_12 helvetica ">
+                            000012345 - Seção ABC
+                        </div>
+                    </div>
+
+                    <div className="card_status_txt">
+
+                        <div className="fonte_12 helvetica ">
+                            Status:
+                        </div>
+
+                        <div className="fonte_12 helvetica bold ">
+                            Atrasado
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="linha_2">
+                    <div className="card_title">
+
+                        <div className="fonte_25 helvetica bold">
+                            WEC - Projeto WEG
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="card_saldo">
+
+                        <div className="fonte_14 helvetica">
+                            Saldo previsto:
+                        </div>
+
+                        <div className="texto">
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                R$
+                            </div>
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                18.000,00
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className="texto_content_horas">
+                        <div className="horas fonte_14 helvetica">
+                            Horas:
+                        </div>
+                        <div className="relogio ">
+                            <img src={relogio} alt=" " />
+                        </div>
+                        <div className="cor_0 fonte_14 helvetica">
+                            85h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="card_saldo">
+
+                        <div className="fonte_14 helvetica">
+                            Saldo restante:
+                        </div>
+
+                        <div className="texto">
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                R$
+                            </div>
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                2.000,00
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className="texto_content_horas">
+                        <div className="fonte_14 helvetica">
+                            Apontadas:
+                        </div>
+
+                        <div className="relogio">
+                            <img src={relogio} alt=" " />
+                        </div>
+
+                        <div className="cor_0 fonte_14 helvetica">
+                            80h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="texto_content_horas">
+                        <div className="cor_0 fonte_14 helvetica">
+                            Dê: 02/02/2020
+                        </div>
+
+                        <div className="cor_0 fonte_14 helvetica">
+                            Até: 05/05/2021
+                        </div>
+
+                    </div>
+
+                    <div className="content_barra">
+
+                        <div className="green content_carregamento">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+          </div>
+
+          <div className="card_type">
+
+            <div className="card_status_color yellow">
+
+            </div>
+
+            <div className="card_informacao">
+
+                <div className="linha_1">
+
+                    <div className="card_secao">
+                        <div className="cor_4 fonte_12 helvetica ">
+                            000012345 - Seção ABC
+                        </div>
+                    </div>
+
+                    <div className="card_status_txt">
+
+                        <div className="fonte_12 helvetica ">
+                            Status:
+                        </div>
+
+                        <div className="fonte_12 helvetica bold ">
+                            Atrasado
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="linha_2">
+                    <div className="card_title">
+
+                        <div className="fonte_25 helvetica bold">
+                            WEC - Projeto WEG
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="card_saldo">
+
+                        <div className="fonte_14 helvetica">
+                            Saldo previsto:
+                        </div>
+
+                        <div className="texto">
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                R$
+                            </div>
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                18.000,00
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className="texto_content_horas">
+                        <div className="horas fonte_14 helvetica">
+                            Horas:
+                        </div>
+                        <div className="relogio ">
+                            <img src={relogio} alt=" " />
+                        </div>
+                        <div className="cor_0 fonte_14 helvetica">
+                            85h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="card_saldo">
+
+                        <div className="fonte_14 helvetica">
+                            Saldo restante:
+                        </div>
+
+                        <div className="texto">
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                R$
+                            </div>
+
+                            <div className="texto cor_0 fonte_14 helvetica">
+                                2.000,00
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    <div className="texto_content_horas">
+                        <div className="fonte_14 helvetica">
+                            Apontadas:
+                        </div>
+
+                        <div className="relogio">
+                            <img src={relogio} alt=" " />
+                        </div>
+
+                        <div className="cor_0 fonte_14 helvetica">
+                            80h
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div className="linha_3">
+                    <div className="texto_content_horas">
+                        <div className="cor_0 fonte_14 helvetica">
+                            Dê: 02/02/2020
+                        </div>
+
+                        <div className="cor_0 fonte_14 helvetica">
+                            Até: 05/05/2021
+                        </div>
+
+                    </div>
+
+                    <div className="content_barra">
+
+                        <div className="green content_carregamento">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+          </div>
+
+
         </Content_cards>
 
         <Menu>

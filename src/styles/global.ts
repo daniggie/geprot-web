@@ -62,4 +62,56 @@ export default createGlobalStyle`
       background-color: #28B9DA;
   }
 
+  .red {
+    background: #FF0000;
+  }
+
+  .yellow {
+      background: #FFB800;
+  }
+
+  .green {
+      background: #00C42B;
+  }
+
+  .fonte_12 {
+    font-size: 12px;
+  }
+
+  .fonte_13 {
+      font-size: 13px;
+  }
+
+  .fonte_14 {
+      font-size: 14px;
+  }
+
+  .fonte_15 {
+      font-size: 15px;
+  }
+
+  .fonte_25 {
+      font-size: 25px;
+  }
+
+  .helvetica {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+  }
+
+
+  /*Weight*/
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .lighter {
+    font-weight: lighter;
+  }
+
+  .normal {
+    font-weight: normal;
+  }
+
 `
