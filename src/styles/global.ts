@@ -114,4 +114,13 @@ export default createGlobalStyle`
     font-weight: normal;
   }
 
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:visited{
+    text:decoration: none;
+  }
+
 `

@@ -594,11 +594,15 @@ const Home: React.FC = () => {
             </div>
 
             <div className="content_atalho cor_4f" id="border2">
-              <div className="atalho cor_4f" id="border2">
-                <img src={dashboard} alt="" />
-              </div>
-              <p id="idparagrafo"> IR PARA DASHBOARDS </p>
-            </div>
+
+                <div className="atalho cor_4f" id="border2">
+                  <img src={dashboard} alt="" />
+                </div>
+                <p id="idparagrafo">
+                  <a href="/dashboard">IR PARA DASHBOARDS
+                  </a>
+                </p>
+           </div>
           </div>
         </Menu>
 

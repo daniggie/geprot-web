@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
+export const PegaImagem = styled.div`
+  width: 100%;
+  height: 200px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Imagem = styled.img`
-  width: 233px;
-  height: 143px;
-  margin-left: 42%;
-  margin-top: 60px;
+ width: 150px;
+ height: 100px;
 `;
 
 export const Container1 = styled.div`
@@ -89,25 +95,13 @@ export const BtnEntrar = styled.button`
   &:hover{
     background: #00579D;
   }
-  a:hover {
-    text-decoration:none;
-   }
-   a:link {
-     text-decoration:none;
-    }
-    a:visited{
-     text-decoration:none;
-     }
 `;
 
 export const Icone = styled.div`
   background-color: #00579D;
-  width:31%;
-  height:40px;
   display: flex;
   border-radius: 5px 0px 0px 5px;
-  padding-top: 10px;
-  padding-left: 5px;
+  padding: 5px;
 `;
 
 export const Titulo2 = styled.div`

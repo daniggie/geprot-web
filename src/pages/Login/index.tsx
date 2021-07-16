@@ -1,10 +1,14 @@
 import React from "react";
-import { Imagem, Container1, Barra1, Triangulo, Container2, Titulo, CxTexto, CxTexto2, BtnEntrar, Icone, Titulo2 } from './styles'
+import { Imagem, Container1, Barra1, Triangulo, Container2, Titulo, CxTexto, CxTexto2, BtnEntrar, Icone, Titulo2, PegaImagem } from './styles'
+
+import entrar from '../../icons/entrar.svg';
 
 const Login: React.FC = () => {
   return(
   <>
+    <PegaImagem>
     <Imagem src="https://upload.wikimedia.org/wikipedia/commons/d/dd/WEG_Equipamentos_El%C3%A9tricos.svg" alt="logoweg"/>
+    </PegaImagem>
     <Container1>
       <Barra1>Bem Vindo ao GeProT!     </Barra1>
       <Triangulo></Triangulo>
@@ -19,27 +23,14 @@ const Login: React.FC = () => {
       <Container2>
           <CxTexto2>Esqueceu a sua senha?</CxTexto2>
           <BtnEntrar >
-            <a href="http://localhost:3000/home">
+            <a href="/home">
                 <Titulo2>
                 <Icone>
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                    <path d="M9.39589 10.3125H0.6875C0.307999 10.3125 0 10.0045 0 9.625C0 9.2455 0.307999 8.9375 0.6875 8.9375H9.39589C9.77539 8.9375 10.0834 9.2455 10.0834 9.625C10.0834 10.0045 9.77539 10.3125 9.39589 10.3125Z" fill="white"/>
-                    <path d="M5.95839 13.75C5.78232 13.75 5.60641 13.683 5.47247 13.5484C5.20392 13.2797 5.20392 12.8443 5.47247 12.5757L8.42422 9.62416L5.47247 6.67342C5.20392 6.40469 5.20392 5.9693 5.47247 5.70074C5.74103 5.43219 6.17642 5.43219 6.44514 5.70074L9.88264 9.13824C10.1512 9.4068 10.1512 9.84219 9.88264 10.1109L6.44514 13.5484C6.31036 13.683 6.13429 13.75 5.95839 13.75V13.75Z" fill="white"/>
-                    <path d="M14.6666 22.0005C13.6555 22.0005 12.8334 21.1782 12.8334 20.1671V3.66709C12.8334 2.88342 13.3321 2.184 14.0744 1.92635L19.5818 0.0902807C20.8138 -0.287374 22 0.626551 22 1.83387V18.3339C22 19.1167 21.5013 19.8151 20.7598 20.0736L15.2505 21.9107C15.0498 21.9729 14.8638 22.0005 14.6666 22.0005V22.0005ZM20.1666 1.37548C20.107 1.37548 20.0567 1.38287 20.0026 1.39932L14.5182 3.22801C14.3385 3.29044 14.2084 3.47189 14.2084 3.66709V20.1671C14.2084 20.4798 14.5474 20.6906 14.8308 20.6016L20.3152 18.773C20.4939 18.7105 20.625 18.5291 20.625 18.3339V1.83387C20.625 1.58177 20.4197 1.37548 20.1666 1.37548V1.37548Z" fill="white"/>
-                    <path d="M8.02089 4.58339C7.64139 4.58339 7.33339 4.27539 7.33339 3.89589V2.52089C7.33339 1.13028 8.4635 0 9.85411 0H20.1666C20.5461 0 20.8541 0.307999 20.8541 0.6875C20.8541 1.067 20.5461 1.375 20.1666 1.375H9.85411C9.2225 1.375 8.70839 1.88928 8.70839 2.52089V3.89589C8.70839 4.27539 8.40039 4.58339 8.02089 4.58339V4.58339Z" fill="white"/>
-                    <path d="M13.5209 19.25H9.85411C8.4635 19.25 7.33339 18.1197 7.33339 16.7291V15.3541C7.33339 14.9746 7.64139 14.6666 8.02089 14.6666C8.40039 14.6666 8.70839 14.9746 8.70839 15.3541V16.7291C8.70839 17.3607 9.2225 17.875 9.85411 17.875H13.5209C13.9004 17.875 14.2084 18.183 14.2084 18.5625C14.2084 18.942 13.9004 19.25 13.5209 19.25Z" fill="white"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0">
-                    <rect width="22" height="22" fill="white"/>
-                    </clipPath>
-                    </defs>
-                    </svg>
+                  <img src={entrar} alt="" />
                 </Icone>
                 <p>ENTRAR</p>
                 </Titulo2>
-              </a>
+            </a>
           </BtnEntrar>
       </Container2>
     </Container1>
