@@ -41,8 +41,107 @@ h1{
 `;
 
 export const Caixa = styled.div`
-height: 350px;
-width: 90%;
+height: 360px;
+width: 87%;
 margin: 15px auto;
-border:  1px solid #dedede;
 `;
+
+export const Irmaos = styled.div`
+height: 350px;
+width: 45%;
+float:left;
+:last-child{
+  float:right;
+}
+`;
+
+export const LadoE =styled.div`
+height: 80px;
+margin-left:10px;
+width: 45%;
+float:left;
+margin-top:2px;
+
+input{
+  margin-top:10px;
+  width: 205px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: inset 2px 4px 3px rgba(0,0,0,0.25);
+  border-radius:5px;
+  border: 1px;
+  padding-left:4px;
+}
+`;
+
+export const LadoD =styled.div`
+height: 80px;
+margin-right:10px;
+width: 45%;
+float: right;
+margin-top:2px;
+
+input{
+  margin-top:10px;
+  width: 205px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: inset 2px 4px 3px rgba(0,0,0,0.25);
+  border-radius:5px;
+  border: 1px;
+  padding-left:4px;
+}
+`;
+export const Escrita =styled.p`
+font-size:18px;
+line-height: 21px;
+align-items: center;
+color:#0091bd;
+margin:2px;
+font-family: Roboto;
+font-style:normal;
+font-weight: bold;
+`;
+
+export const Segura =styled.div`
+margin-top:25px;
+height:95px;
+`;
+
+export const Linha = styled.div`
+width:95%;
+margin:25px auto;
+height:80px;
+input{
+  margin-top:10px;
+  width: 98%;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: inset 2px 4px 3px rgba(0,0,0,0.25);
+  border-radius:5px;
+  border: 1px;
+  padding-left:4px;
+}
+`;
+
+export const Botao = styled.button`
+position: relative;
+width:205px;
+height:60px;
+background: #0091BD;
+border-radius: 10px;
+border:0px;
+float:right;
+bottom: 42px;
+right: 102px;
+p{
+  font-size:25px;
+  line-height: 29px;
+  align-items: center;
+  color:#fff;
+  font-family: Roboto;
+  font-style:normal;
+  font-weight: bold;
+}
+`;
+
