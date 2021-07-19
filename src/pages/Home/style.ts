@@ -1,5 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
+
+interface FormProps {
+  hasError: boolean;
+};
+
+export const Error = styled.span`
+  display: block;
+  width: 100%;
+  height: 30px;
+  color: #fff;
+  margin-top: 8px;
+  padding: 5px;
+  background: #858585;
+  border-radius: 20px;
+  text-align: center;
+`;
 
 export const Header = styled.div`
     width: 100%;
@@ -211,7 +227,6 @@ export const Menu = styled.div`
 
       &:hover{
         width:185px;
-        transition-duration: 0.5s;
 
         #idparagrafo{
           display:block;
@@ -246,6 +261,18 @@ export const All = styled.div`
 
 `;
 
+export const Form = styled.form<FormProps>`
+
+  input {
+    ${props => props.hasError && css`
+      border-color: #c53030;
+    `}
+
+    &::placeholder {
+      color: #a8a8b3;
+    }
+  }
+`
 export const Filtros = styled.div`
     width: 100%;
     height: 50px;
@@ -264,10 +291,6 @@ export const Filtros = styled.div`
       width: 10%;
       display:flex;
       align-items: center;
-    }
-
-    form post{
-      background: red;
     }
 
     .texto{
@@ -302,12 +325,23 @@ export const Filtros = styled.div`
       display:flex;
       align-items: center;
 
-      .procurar{
-        width: 100%;
+      button{
+        width: 50px;
         height: 25px;
         border: 0.1px solid #828282;
+        border-left: 0;
+        border-radius: 0px 5px 5px 0px;
+        color: #fff;
+        border-color:  #0091BD;
+      }
+
+      .procurar{
+        width: 70%;
+        height: 25px;
+        border: 0.1px solid #828282;
+        border-right: 0px;
         box-sizing: border-box;
-        border-radius: 5px;
+        border-radius: 5px 0px 0px 5px;
         margin-left: 5px;
         font-size: 15px;
         padding: 5px;

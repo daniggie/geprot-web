@@ -1,5 +1,7 @@
-import React, { useState, FormEvent } from 'react';
-import { FiChevronRight } from 'react-icons/fi'
+import React, { useState, useEffect, FormEvent } from 'react';
+import api from '../services/api';
+import { BsSearch, BsGeoAlt } from 'react-icons/bs';
+
 
 import { string } from 'yargs';
 import Repository from '../Repository';
@@ -15,35 +17,70 @@ import dashboard from '../../icons/dashboards.svg';
 import alocar from '../../icons/alocar.svg';
 import relogio from '../../icons/relogio.svg';
 
-import { Header, Menu, All, Content_cards, Filtros } from './style';
+import { Header, Menu, All, Content_cards, Filtros, Error, Form } from './style';
 import { icons } from 'react-icons';
 
-interface Repository {
-  full_name: string;
-  description: string;
-  owner: {
-    login: string;
-    avatar_url: string;
-  }
+interface Endereco {
+  bairro: string,
+  cidade: string,
+  logradouro: string,
+  estado_info: {
+    codigo_ibge: string,
+    nome: string
+  },
+  cep: string;
+  cidade_info: {
+    area_km2: string
+  },
+  estado: string
 }
 
-
 const Home: React.FC = () => {
-  /*const [newRepo , setNewRepo] = useState('');
-  const [repositories, setRepositories] = useState<Repository[]>([]);
+const [newEndereco , setNewEndereco] = useState('');
+const [inputError, setInputError] = useState('');
+const [repositories, setRepositories] = useState<Endereco[]>(() => {
+  const storageEndereco = localStorage.getItem(
+    '@EnderecoExplorer:repositories',
+  );
 
-  async function handleAddRepository(
-    event: FormEvent<HTMLFormElement>,
-  ): Promise<void> {
-    event.preventDefault();
+  if(storageEndereco){
+    return JSON.parse(storageEndereco);
+  }
+  return [];
+});
 
-    const response = await api.get<Repository>(`repos/${newRepo}`);
+useEffect(() => {
+  localStorage.setItem(
+    '@EnderecoExplorer:repositories',
+    JSON.stringify(repositories)
+
+    );
+}, [repositories]);
+
+async function handleAddRepository(
+  event: FormEvent<HTMLFormElement>,
+): Promise<void> {
+  event.preventDefault();
+
+  if(!newEndereco){
+    setInputError("Campo de busca encontra-se vazio!");
+    return;
+  }
+
+  try{
+
+    const response = await api.get<Endereco>(`cep/${newEndereco}`);
     const repository = response.data;
 
     setRepositories([...repositories, repository]);
-    setNewRepo('');
+    setNewEndereco('');
+    setInputError('');
 
-  }*/
+  } catch(err){
+    setInputError("Endereço não encontrado/inexistente");
+  }
+
+}
 
   return (
     <>
@@ -117,306 +154,26 @@ const Home: React.FC = () => {
             <div className="texto cor_4">
                 Procurar:
             </div>
+            <Form hasError={Boolean(inputError)} onSubmit={handleAddRepository}>
+              <input value={newEndereco} onChange={e => setNewEndereco(e.target.value)} className="procurar cor_0" type="text" id="fname" name="fname" placeholder="Digite o nome do projeto..." />
+              <button type="submit" className="cor_3f"><BsSearch size={15}/></button>
+            </Form>
 
-            <div>
-                <input className="procurar cor_0" type="text" id="fname" name="fname" placeholder="Digite o nome do projeto..." />
-            </div>
         </div>
-
 
       </Filtros>
 
       <All>
 
+
+
       <Content_cards>
 
-        <div className="card_type">
+      {inputError && <Error>{inputError}</Error>}
 
-            <div className="card_status_color red">
+      {repositories.map(repository => (
 
-            </div>
-
-            <div className="card_informacao">
-
-                <div className="linha_1">
-
-                    <div className="card_secao">
-                        <div className="cor_4 fonte_12 helvetica ">
-                            000012345 - Seção ABC
-                        </div>
-                    </div>
-
-                    <div className="card_status_txt">
-
-                        <div className="fonte_12 helvetica ">
-                            Status:
-                        </div>
-
-                        <div className="fonte_12 helvetica bold ">
-                            Atrasado
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="linha_2">
-                    <div className="card_title">
-
-                        <div className="fonte_25 helvetica bold">
-                            WEC - Projeto WEG
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="card_saldo">
-
-                        <div className="fonte_14 helvetica">
-                            Saldo previsto:
-                        </div>
-
-                        <div className="texto">
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                R$
-                            </div>
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                18.000,00
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                    <div className="texto_content_horas">
-                        <div className="horas fonte_14 helvetica">
-                            Horas:
-                        </div>
-                        <div className="relogio ">
-                            <img src={relogio} alt=" " />
-                        </div>
-                        <div className="cor_0 fonte_14 helvetica">
-                            85h
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="card_saldo">
-
-                        <div className="fonte_14 helvetica">
-                            Saldo restante:
-                        </div>
-
-                        <div className="texto">
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                R$
-                            </div>
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                2.000,00
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                    <div className="texto_content_horas">
-                        <div className="fonte_14 helvetica">
-                            Apontadas:
-                        </div>
-
-                        <div className="relogio">
-                            <img src={relogio} alt=" " />
-                        </div>
-
-                        <div className="cor_0 fonte_14 helvetica">
-                            80h
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="texto_content_horas">
-                        <div className="cor_0 fonte_14 helvetica">
-                            Dê: 02/02/2020
-                        </div>
-
-                        <div className="cor_0 fonte_14 helvetica">
-                            Até: 05/05/2021
-                        </div>
-
-                    </div>
-
-                    <div className="content_barra">
-
-                        <div className="green content_carregamento">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-          </div>
-
-          <div className="card_type">
-
-            <div className="card_status_color green">
-
-            </div>
-
-            <div className="card_informacao">
-
-                <div className="linha_1">
-
-                    <div className="card_secao">
-                        <div className="cor_4 fonte_12 helvetica ">
-                            000012345 - Seção ABC
-                        </div>
-                    </div>
-
-                    <div className="card_status_txt">
-
-                        <div className="fonte_12 helvetica ">
-                            Status:
-                        </div>
-
-                        <div className="fonte_12 helvetica bold ">
-                            Atrasado
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="linha_2">
-                    <div className="card_title">
-
-                        <div className="fonte_25 helvetica bold">
-                            WEC - Projeto WEG
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="card_saldo">
-
-                        <div className="fonte_14 helvetica">
-                            Saldo previsto:
-                        </div>
-
-                        <div className="texto">
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                R$
-                            </div>
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                18.000,00
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                    <div className="texto_content_horas">
-                        <div className="horas fonte_14 helvetica">
-                            Horas:
-                        </div>
-                        <div className="relogio ">
-                            <img src={relogio} alt=" " />
-                        </div>
-                        <div className="cor_0 fonte_14 helvetica">
-                            85h
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="card_saldo">
-
-                        <div className="fonte_14 helvetica">
-                            Saldo restante:
-                        </div>
-
-                        <div className="texto">
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                R$
-                            </div>
-
-                            <div className="texto cor_0 fonte_14 helvetica">
-                                2.000,00
-                            </div>
-
-                        </div>
-
-
-
-                    </div>
-
-                    <div className="texto_content_horas">
-                        <div className="fonte_14 helvetica">
-                            Apontadas:
-                        </div>
-
-                        <div className="relogio">
-                            <img src={relogio} alt=" " />
-                        </div>
-
-                        <div className="cor_0 fonte_14 helvetica">
-                            80h
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div className="linha_3">
-                    <div className="texto_content_horas">
-                        <div className="cor_0 fonte_14 helvetica">
-                            Dê: 02/02/2020
-                        </div>
-
-                        <div className="cor_0 fonte_14 helvetica">
-                            Até: 05/05/2021
-                        </div>
-
-                    </div>
-
-                    <div className="content_barra">
-
-                        <div className="green content_carregamento">
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-          </div>
-
-          <div className="card_type">
+        <div className="card_type" key={repository.cep}>
 
             <div className="card_status_color yellow">
 
@@ -428,7 +185,7 @@ const Home: React.FC = () => {
 
                     <div className="card_secao">
                         <div className="cor_4 fonte_12 helvetica ">
-                            000012345 - Seção ABC
+                            {repository.cep} - {repository.bairro}
                         </div>
                     </div>
 
@@ -439,7 +196,7 @@ const Home: React.FC = () => {
                         </div>
 
                         <div className="fonte_12 helvetica bold ">
-                            Atrasado
+                            Teste
                         </div>
 
                     </div>
@@ -449,7 +206,7 @@ const Home: React.FC = () => {
                     <div className="card_title">
 
                         <div className="fonte_25 helvetica bold">
-                            WEC - Projeto WEG
+                            {repository.estado} - {repository.cidade}
                         </div>
 
                     </div>
@@ -470,7 +227,7 @@ const Home: React.FC = () => {
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                                18.000,00
+                                {repository.cidade_info.area_km2}
                             </div>
 
                         </div>
@@ -487,7 +244,7 @@ const Home: React.FC = () => {
                             <img src={relogio} alt=" " />
                         </div>
                         <div className="cor_0 fonte_14 helvetica">
-                            85h
+                          {repository.estado_info.codigo_ibge}
                         </div>
 
                     </div>
@@ -508,7 +265,7 @@ const Home: React.FC = () => {
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                                2.000,00
+                              {repository.cidade_info.area_km2}
                             </div>
 
                         </div>
@@ -527,7 +284,7 @@ const Home: React.FC = () => {
                         </div>
 
                         <div className="cor_0 fonte_14 helvetica">
-                            80h
+                            {repository.estado_info.codigo_ibge}
                         </div>
 
                     </div>
@@ -558,8 +315,7 @@ const Home: React.FC = () => {
 
             </div>
           </div>
-
-
+        ))}
         </Content_cards>
 
         <Menu>
