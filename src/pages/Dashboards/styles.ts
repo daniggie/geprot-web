@@ -53,9 +53,9 @@ export const Header = styled.div`
 
 export const TituloF = styled.div`
     height: 30px;
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 90px 25px 90px;
+    width: 91%;
+    margin-top: 20px;
+    padding: 10px 90px 25px 25px;
     display: flex;
     p{
       color: #0091BD;
@@ -151,10 +151,11 @@ export const All = styled.div`
 `;
 
 export const Filtros = styled.div`
-    width: 100%;
+    width: 85%;
     height: 30px;
     display:flex;
     justify-content: space-around;
+    margin-left: 17px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
@@ -163,7 +164,7 @@ export const Filtros = styled.div`
 
 
     .content_title {
-      width: 10%;
+      width: 23%;
       display:flex;
       align-items: center;
     }
@@ -173,7 +174,7 @@ export const Filtros = styled.div`
     }
 
     .texto{
-      margin-left: 5px;
+      margin-left: 0px;
     }
 
     select {
@@ -194,9 +195,9 @@ export const Filtros = styled.div`
     }
 
     .status{
-      width: 115px;
-      padding-left: 15%;
-      padding-right: 15%;
+      width: 150px;
+      padding-left: 10%;
+      padding-right: 10%;
     }
 
     .content_procurar{
@@ -216,4 +217,66 @@ export const Filtros = styled.div`
       }
 
     }
+`;
+
+export const BodyDashboards = styled.div`
+  width: 85%;
+  display:flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  padding: 0 0 0 25px;
+`;
+
+export const Container = styled.div`
+  width: 100%;
+  height: 300px;
+  margin-top: 15px;
+  display: flex;
+
+  &:last-child{
+    margin-bottom: 25px;
+  }
+`;
+
+export const LitlleCont = styled.div`
+  width: 21%;
+  background: blue;
+  margin-left: 55px;
+  border-radius: 5px;
+`;
+
+export const MediumCont = styled.div`
+  width: 25%;
+  background: blue;
+  border-radius: 5px;
+`;
+
+export const BigCont = styled.div`
+  width: 72%;
+  background: blue;
+  margin-left: 55px;
+  border-radius: 5px;
+`;
+
+export const BarTitle = styled.div`
+  width: 100%;
+  height: 50px;
+  background: red;
+  border-radius: 5px 5px 0 0;
+`;
+
+export const ContGrafic = styled.div`
+  width: 50%;
+  height: 100px;
+  background: red;
+  margin: 50px 0 0 50px;
+  border-radius: 50%
+`;
+
+export const Grafic = styled.div`
+  width: 72%;
+  background: blue;
+  margin-left: 55px;
+  border-radius: 5px;
 `;
