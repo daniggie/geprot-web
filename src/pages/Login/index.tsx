@@ -1,40 +1,71 @@
-import React from "react";
-import { Imagem, Container1, Barra1, Triangulo, Container2, Titulo, CxTexto, CxTexto2, BtnEntrar, Icone, Titulo2, PegaImagem } from './styles'
+import React, { useRef, useCallback, useContext } from "react";
+import { FiLogIn, FiMail, FiLock } from "react-icons/fi";
+import { Form } from '@unform/web';
+import { FormHandles } from "@unform/core";
+import * as Yup from "yup";
 
-import entrar from '../../icons/entrar.svg';
+import { AuthContext } from "../../context/AuthContext";
 
-const Login: React.FC = () => {
+import getValidationsErrors from "../../utils/getValidationErrors";
+
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+
+import { Container, Content } from "./styles";
+
+interface SignFormData {
+  email: string;
+  senha: string;
+}
+
+const SignIn: React.FC = () => {
+  const formRef = useRef<FormHandles>(null);
+
+  const { signIn } = useContext(AuthContext);
+
+  const handleSubmit = useCallback(async(data: SignFormData) => {
+    try{
+        formRef.current?.setErrors({});
+
+        const schema = Yup.object().shape({
+            email: Yup.string().required('E-mail obrigatório').email('Informe um e-mail válido'),
+            senha: Yup.string().required('Senha obrigatória'),
+        });
+
+        await schema.validate(data, {abortEarly: false,
+        });
+
+        signIn({
+          email: data.email,
+          senha: data.senha
+        })
+    }catch(err){
+        const errors = getValidationsErrors(err);
+        formRef.current?.setErrors(errors);
+    }
+  }, [signIn]);
+
   return(
-  <>
-    <PegaImagem>
-    <Imagem src="https://upload.wikimedia.org/wikipedia/commons/d/dd/WEG_Equipamentos_El%C3%A9tricos.svg" alt="logoweg"/>
-    </PegaImagem>
-    <Container1>
-      <Barra1>Bem Vindo ao GeProT!     </Barra1>
-      <Triangulo></Triangulo>
-      <Container2>
-          <Titulo>Nome do usuário*</Titulo>
-          <CxTexto></CxTexto>
-      </Container2>
-      <Container2>
-          <Titulo>Senha*</Titulo>
-          <CxTexto></CxTexto>
-      </Container2>
-      <Container2>
-          <CxTexto2>Esqueceu a sua senha?</CxTexto2>
-          <BtnEntrar >
-            <a href="/home">
-                <Titulo2>
-                <Icone>
-                  <img src={entrar} alt="" />
-                </Icone>
-                <p>ENTRAR</p>
-                </Titulo2>
-            </a>
-          </BtnEntrar>
-      </Container2>
-    </Container1>
-  </>
+    <Container>
+
+      <Content>
+
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <h1>Faça seu login</h1>
+
+          <Input icon={FiMail} name="email" placeholder="E-mail" />
+          <Input icon={FiLock} name="senha" type="password" placeholder="Senha" />
+
+          <Button type="submit">Entrar</Button>
+
+          <a href="teste">Esqueci minha senha</a>
+        </Form>
+
+      </Content>
+
+    </Container>
   );
-};
-export default Login;
+
+}
+
+export default SignIn;

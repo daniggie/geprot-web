@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FormEvent } from 'react';
-import api from '../services/api';
+import api from '../../services/api';
 import { BsSearch, BsGeoAlt } from 'react-icons/bs';
 
 
