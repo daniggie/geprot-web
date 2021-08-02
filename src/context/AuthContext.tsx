@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState } from "react";
-import api from "../services/api"
+import api from "../services/api";
 
 interface AuthState {
     jwt: string;
@@ -20,7 +20,7 @@ export const AuthContext = createContext<AuthContextData>(
 
 export const AuthProvider: React.FC = ({ children }) => {
     const [data, setData] = useState<AuthState>(() => {
-        const jwt = localStorage.getItem("@Logistica:token");
+        const jwt = localStorage.getItem("@ProjetoWeg:token");
 
         if (jwt) {
             return { jwt };
@@ -35,10 +35,9 @@ export const AuthProvider: React.FC = ({ children }) => {
             senha,
         });
 
-        console.log(respose.data)
         const { jwt } = respose.data;
 
-        localStorage.setItem("@Logistica:token", jwt);
+        localStorage.setItem("@ProjetoWeg:token", jwt);
         setData(jwt);
     }, []);
 
@@ -47,4 +46,4 @@ export const AuthProvider: React.FC = ({ children }) => {
           {children}
       </AuthContext.Provider>
     );
-};
+}

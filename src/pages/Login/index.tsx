@@ -18,7 +18,7 @@ interface SignFormData {
   senha: string;
 }
 
-const SignIn: React.FC = () => {
+const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useContext(AuthContext);
@@ -26,7 +26,6 @@ const SignIn: React.FC = () => {
   const handleSubmit = useCallback(async(data: SignFormData) => {
     try{
         formRef.current?.setErrors({});
-
         const schema = Yup.object().shape({
             email: Yup.string().required('E-mail obrigatório').email('Informe um e-mail válido'),
             senha: Yup.string().required('Senha obrigatória'),
@@ -68,4 +67,4 @@ const SignIn: React.FC = () => {
 
 }
 
-export default SignIn;
+export default Login;
