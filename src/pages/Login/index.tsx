@@ -12,6 +12,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 import { Container, Content } from "./styles";
+import { useHistory } from "react-router-dom";
 
 interface SignFormData {
   email: string;
@@ -22,6 +23,8 @@ const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useContext(AuthContext);
+
+  const history = useHistory();
 
   const handleSubmit = useCallback(async(data: SignFormData) => {
     try{
@@ -34,10 +37,12 @@ const Login: React.FC = () => {
         await schema.validate(data, {abortEarly: false,
         });
 
-        signIn({
+        await signIn({
           email: data.email,
           senha: data.senha
         })
+
+        history.push('/home');
     }catch(err){
         const errors = getValidationsErrors(err);
         formRef.current?.setErrors(errors);
@@ -57,7 +62,7 @@ const Login: React.FC = () => {
 
           <Button type="submit">Entrar</Button>
 
-          <a href="teste">Esqueci minha senha</a>
+          <a href="teste">Esqueci minha senhaa</a>
         </Form>
 
       </Content>
