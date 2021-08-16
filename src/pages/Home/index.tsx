@@ -20,25 +20,23 @@ import relogio from '../../icons/relogio.svg';
 import { Header, Menu, All, Content_cards, Filtros, Error, Form } from './style';
 import { icons } from 'react-icons';
 
-interface Endereco {
-  bairro: string,
-  cidade: string,
-  logradouro: string,
-  estado_info: {
-    codigo_ibge: string,
-    nome: string
-  },
-  cep: string;
-  cidade_info: {
-    area_km2: string
-  },
-  estado: string
+interface Projeto {
+  idprojeto: Number,
+  nomeprojeto: string,
+  datainicio: Date,
+  datafinalizacao: Date,
+  horasprevistas: Number,
+  horastrabalhadas: Number,
+  valorprojeto: Number,
+  valorutilizado: Number,
+  valorrestante: Number,
+  statusprojeto: String
 }
 
 const Home: React.FC = () => {
 const [newEndereco , setNewEndereco] = useState('');
 const [inputError, setInputError] = useState('');
-const [repositories, setRepositories] = useState<Endereco[]>(() => {
+const [repositories, setRepositories] = useState<Projeto[]>(() => {
   const storageEndereco = localStorage.getItem(
     '@EnderecoExplorer:repositories',
   );
@@ -69,7 +67,7 @@ async function handleAddRepository(
 
   try{
 
-    const response = await api.get<Endereco>(`cep/${newEndereco}`);
+    const response = await api.get<Projeto>(`projetos/listar`);
     const repository = response.data;
 
     setRepositories([...repositories, repository]);
@@ -173,7 +171,7 @@ async function handleAddRepository(
 
       {repositories.map(repository => (
 
-        <div className="card_type" key={repository.cep}>
+        <div className="card_type" key={repository.nomeprojeto}>
 
             <div className="card_status_color yellow">
 
@@ -185,7 +183,7 @@ async function handleAddRepository(
 
                     <div className="card_secao">
                         <div className="cor_4 fonte_12 helvetica ">
-                            {repository.cep} - {repository.bairro}
+                            {repository.horasprevistas} - {repository.horastrabalhadas}
                         </div>
                     </div>
 
@@ -206,7 +204,7 @@ async function handleAddRepository(
                     <div className="card_title">
 
                         <div className="fonte_25 helvetica bold">
-                            {repository.estado} - {repository.cidade}
+                            {repository.idprojeto} - {repository.nomeprojeto}
                         </div>
 
                     </div>
@@ -227,7 +225,7 @@ async function handleAddRepository(
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                                {repository.cidade_info.area_km2}
+                                {repository.nomeprojeto}
                             </div>
 
                         </div>
@@ -244,7 +242,7 @@ async function handleAddRepository(
                             <img src={relogio} alt=" " />
                         </div>
                         <div className="cor_0 fonte_14 helvetica">
-                          {repository.estado_info.codigo_ibge}
+                          {repository.valorutilizado}
                         </div>
 
                     </div>
@@ -265,7 +263,7 @@ async function handleAddRepository(
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                              {repository.cidade_info.area_km2}
+                              {repository.statusprojeto}
                             </div>
 
                         </div>
@@ -284,7 +282,7 @@ async function handleAddRepository(
                         </div>
 
                         <div className="cor_0 fonte_14 helvetica">
-                            {repository.estado_info.codigo_ibge}
+                            {repository.statusprojeto}
                         </div>
 
                     </div>

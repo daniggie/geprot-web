@@ -44,10 +44,11 @@ const Login: React.FC = () => {
 
         history.push('/home');
     }catch(err){
+
         const errors = getValidationsErrors(err);
         formRef.current?.setErrors(errors);
     }
-  }, [signIn]);
+  }, [signIn, history]);
 
   return(
     <Container>
