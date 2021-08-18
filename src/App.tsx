@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './hooks/auth';
 
 import GlobalStyle from './styles/global';
 import SignIn from './pages/Login';
