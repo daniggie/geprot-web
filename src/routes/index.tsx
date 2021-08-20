@@ -1,11 +1,11 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Cadastrar from '../pages/Cadastrar';
+import { Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboards';
 import Detalhes from '../pages/Detalhes';
-
+import Cadastrar from '../pages/cadastrar';
+import Route from './Route';
 
 const Routes: React.FC = () => (
   <Switch>
