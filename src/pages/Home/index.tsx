@@ -2,23 +2,12 @@ import React, { useState, useEffect, FormEvent } from 'react';
 import api from '../../services/api';
 import { BsSearch, BsGeoAlt } from 'react-icons/bs';
 
-
-import { string } from 'yargs';
-import Repository from '../Repository';
-import logo from '../../icons/logo.svg';
-import translator_select from '../../icons/translator_select.svg';
-import translator_flag from '../../icons/translator_flag.svg';
-import exit from '../../icons/exit.svg';
+import Header from '../../components/Header';
+import Menu from '../../components/Menu';
 import arrowRight from '../../icons/arrow-right.svg';
-import editar from '../../icons/editar.svg';
-import cadastrar from '../../icons/cadastrar.svg';
-import view from '../../icons/view.svg';
-import dashboard from '../../icons/dashboards.svg';
-import alocar from '../../icons/alocar.svg';
 import relogio from '../../icons/relogio.svg';
 
-import { Header, Menu, All, Content_cards, Filtros, Error, Form } from './style';
-import { icons } from 'react-icons';
+import { All, Content_cards, Filtros, Error, Form } from './style';
 
 interface Projeto {
   idprojeto: Number,
@@ -83,34 +72,6 @@ async function handleAddRepository(
   return (
     <>
       <Header>
-        <div id="informations">
-
-          <div id="logo_weg">
-            <img src={logo} alt="logo" />
-          </div>
-
-          <div>
-            <h1> Gestor </h1>
-            <p >Name Gestor Persona </p>
-          </div>
-
-        </div>
-
-        <div id="content_translator">
-
-          <div id="translator_select">
-            <img src={translator_select} alt="logo" />
-          </div>
-
-          <div id="translator_flag">
-            <img src={translator_flag} alt="" />
-          </div>
-
-          <div id="content_exit">
-            <img src={exit} alt="" />
-          </div>
-        </div>
-
       </Header>
 
       <Filtros>
@@ -317,47 +278,6 @@ async function handleAddRepository(
         </Content_cards>
 
         <Menu>
-          <div id="menu">
-
-            <div className="content_atalho cor_1f" id="border1">
-                <div className="atalho cor_1f" id="border1">
-                  <img src={view} alt="" />
-                </div>
-                <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
-            </div>
-
-            <div className="content_atalho cor_2f">
-              <div className="atalho cor_2f">
-                <img src={cadastrar} alt="" />
-              </div>
-              <p id="idparagrafo"> CADASTRAR PROJETOS </p>
-            </div>
-
-            <div className="content_atalho cor_1f">
-              <div className="atalho cor_1f">
-                <img src={editar} alt="" />
-              </div>
-              <p id="idparagrafo"> EDITAR PROJETOS </p>
-            </div>
-
-            <div className="content_atalho cor_3f">
-              <div className="atalho cor_3f">
-                <img src={alocar} alt="" />
-              </div>
-              <p id="idparagrafo"> ALOCAR CONSULTORES </p>
-            </div>
-
-            <div className="content_atalho cor_4f" id="border2">
-
-                <div className="atalho cor_4f" id="border2">
-                  <img src={dashboard} alt="" />
-                </div>
-                <p id="idparagrafo">
-                  <a href="/dashboard">IR PARA DASHBOARDS
-                  </a>
-                </p>
-           </div>
-          </div>
         </Menu>
 
       </All>
