@@ -1,15 +1,12 @@
 import React from "react";
-import { Header, TituloF, Menu, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, BarTitle, ContGrafic, Grafic } from './styles';
+import { Header, TituloF, Menu, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, BarTitle } from './styles';
 
 import logo from '../../icons/logo.svg';
-import translator_select from '../../icons/translator_select.svg';
 import translator_flag from '../../icons/translator_flag.svg';
-import exit from '../../icons/exit.svg';
-import editar from '../../icons/editar.svg';
-import cadastrar from '../../icons/cadastrar.svg';
-import view from '../../icons/view.svg';
-import dashboard from '../../icons/dashboards.svg';
-import alocar from '../../icons/alocar.svg';
+
+ import { FiPieChart, FiBarChart2, FiPlusSquare, FiEye, FiEdit, FiUserPlus, FiLogOut, FiChevronDown } from "react-icons/fi"
+
+ import { BiBarChart } from "react-icons/bi" ; 
 
 const Dashboard: React.FC = () => {
 
@@ -32,7 +29,7 @@ const Dashboard: React.FC = () => {
         <div id="content_translator">
 
           <div id="translator_select">
-            <img src={translator_select} alt="logo" />
+            <FiChevronDown size="15px"/>
           </div>
 
           <div id="translator_flag">
@@ -40,7 +37,7 @@ const Dashboard: React.FC = () => {
           </div>
 
           <div id="content_exit">
-            <img src={exit} alt="" />
+            <FiLogOut size="30px"/>
           </div>
         </div>
 
@@ -110,18 +107,43 @@ const Dashboard: React.FC = () => {
         <BodyDashboards>
           <Container>
             <MediumCont>
-              <BarTitle></BarTitle>
-              <ContGrafic>
-                <Grafic></Grafic>
-              </ContGrafic>
+              <BarTitle className="status cor_3f">
+                <p>VERBA UTILIZADA</p> 
+                <FiPlusSquare size="15px"/>
+              </BarTitle>
+              <FiPieChart size="150px" />
             </MediumCont>
-            <BigCont></BigCont>
+            <BigCont>
+              <BarTitle className="status cor_3f">
+                <p>UTILIZAÇÃO DA VERBA</p> 
+                <FiPlusSquare size="15px"/>
+              </BarTitle>
+              <FiBarChart2 size="150px" />
+            </BigCont>
           </Container>
           <Container>
-            <MediumCont></MediumCont>
-            <LitlleCont></LitlleCont>
-            <LitlleCont></LitlleCont>
-            <LitlleCont></LitlleCont>
+            <MediumCont>
+              <BarTitle className="status cor_3f">
+                <p>VERBA LIBERADA</p> 
+                <FiPlusSquare size="15px"/>
+              </BarTitle>
+              <FiPieChart size="150px" />
+            </MediumCont>
+            <LitlleCont>
+              <BarTitle className="status cor_3f">
+                <p>VERBA DISPONÍVEL</p>
+              </BarTitle>
+            </LitlleCont>
+            <LitlleCont>
+              <BarTitle className="status cor_3f">
+                <p>VERBA NÃO LIBERADA</p>
+              </BarTitle>
+            </LitlleCont>
+            <LitlleCont>
+              <BarTitle className="status cor_3f">
+                <p>VERBA APROVADA</p>
+              </BarTitle>
+            </LitlleCont>
           </Container>
         </BodyDashboards>
 
@@ -130,35 +152,35 @@ const Dashboard: React.FC = () => {
 
             <div className="content_atalho cor_1f" id="border1">
               <div className="atalho cor_1f" id="border1">
-                <img src={view} alt="" />
+                <FiEye size="32px"/>
               </div>
               <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
             </div>
 
             <div className="content_atalho cor_2f">
               <div className="atalho cor_2f">
-                <img src={cadastrar} alt="" />
+                <FiPlusSquare size="32px"/>
               </div>
               <p id="idparagrafo"> CADASTRAR PROJETOS </p>
             </div>
 
             <div className="content_atalho cor_1f">
               <div className="atalho cor_1f">
-                <img src={editar} alt="" />
+                <FiEdit size="32px"/>
               </div>
               <p id="idparagrafo"> EDITAR PROJETOS </p>
             </div>
 
             <div className="content_atalho cor_3f">
               <div className="atalho cor_3f">
-                <img src={alocar} alt="" />
+                <FiUserPlus size="32px"/>
               </div>
               <p id="idparagrafo"> ALOCAR CONSULTORES </p>
             </div>
 
             <div className="content_atalho cor_4f" id="border2">
               <div className="atalho cor_4f" id="border2">
-                <img src={dashboard} alt="" />
+                <BiBarChart size="32px"/>
               </div>
               <p id="idparagrafo"> IR PARA DASHBOARDS </p>
             </div>
