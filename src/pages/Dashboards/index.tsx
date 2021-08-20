@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
 import { Header, TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, BarTitle } from './styles';
 import Menu from '../../components/Menu';
+=======
+import { Header, TituloF, Menu, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, BarTitle } from './styles';
+
+>>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
 import logo from '../../icons/logo.svg';
 import translator_flag from '../../icons/translator_flag.svg';
 
@@ -148,6 +153,46 @@ const Dashboard: React.FC = () => {
         </BodyDashboards>
 
         <Menu>
+<<<<<<< HEAD
+=======
+          <div id="menu">
+
+            <div className="content_atalho cor_1f" id="border1">
+              <div className="atalho cor_1f" id="border1">
+                <FiEye size="32px"/>
+              </div>
+              <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
+            </div>
+
+            <div className="content_atalho cor_2f">
+              <div className="atalho cor_2f">
+                <FiPlusSquare size="32px"/>
+              </div>
+              <p id="idparagrafo"> CADASTRAR PROJETOS </p>
+            </div>
+
+            <div className="content_atalho cor_1f">
+              <div className="atalho cor_1f">
+                <FiEdit size="32px"/>
+              </div>
+              <p id="idparagrafo"> EDITAR PROJETOS </p>
+            </div>
+
+            <div className="content_atalho cor_3f">
+              <div className="atalho cor_3f">
+                <FiUserPlus size="32px"/>
+              </div>
+              <p id="idparagrafo"> ALOCAR CONSULTORES </p>
+            </div>
+
+            <div className="content_atalho cor_4f" id="border2">
+              <div className="atalho cor_4f" id="border2">
+                <BiBarChart size="32px"/>
+              </div>
+              <p id="idparagrafo"> IR PARA DASHBOARDS </p>
+            </div>
+          </div>
+>>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
         </Menu>
       </All>
     </>

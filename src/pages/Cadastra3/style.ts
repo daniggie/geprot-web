@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-<<<<<<< HEAD
-=======
 export const Barra = styled.div`
   height: 50px;
   width: 100%;
@@ -14,7 +12,13 @@ export const Barra = styled.div`
   };
 `;
 
->>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
+export const Topo = styled.div`
+width:100%;
+height:150px;
+display: block;
+`;
+
+
 export const Titulo = styled.div`
   height: 80px;
   width: 100%;
@@ -49,8 +53,17 @@ width: 87%;
 margin: 15px auto;
 `;
 
+
+export const Baixo = styled.div`
+width: 98%;
+margin: 20px auto;
+height: 80px;
+`;
+
+
+
 export const Irmaos = styled.div`
-height: 350px;
+height: 150px;
 width: 45%;
 float:left;
 :last-child{
@@ -112,9 +125,10 @@ height:95px;
 `;
 
 export const Linha = styled.div`
-width:95%;
+width:98%;
 margin:90px auto;
 height:80px;
+margin-top: 20px;
 input{
   margin-top:10px;
   width: 98%;
@@ -125,7 +139,12 @@ input{
   border: 1px;
   padding-left:4px;
 }
-&::last-child{
-  margin:10'0px auto;
-}
+`;
+
+export const TituloBaixo = styled.h2`
+    color: #0091BD;
+    font-size: 18px;
+    line-height: 21.09px;
+    padding-top: 20px;
+    padding-left: 0px;
 `;
