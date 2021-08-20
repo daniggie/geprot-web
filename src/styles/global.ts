@@ -26,6 +26,10 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .cor_000{
+    color: #fff;
+  }
+
   .cor_1 {
     color: #0075B1;
   }
@@ -73,6 +77,15 @@ export default createGlobalStyle`
   .green {
       background: #00C42B;
   }
+
+  .fonte_10 {
+    font-size: 10px;
+  }
+
+  .fonte_11 {
+    font-size: 11px;
+  }
+
 
   .fonte_12 {
     font-size: 12px;
