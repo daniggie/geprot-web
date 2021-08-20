@@ -3,7 +3,7 @@ import { Barra, Titulo, Formulario, Caixa, Irmaos, LadoE, LadoD, Escrita, Linha,
 import arrowleft from '../../icons/arrowleft.svg';
 import BotaoAvancar from '../../components/ButtonAvancar';
 
-const Cadastrar: React.FC = () => {
+const Cadastrar2: React.FC = () => {
     return (
       <>
         <Barra>
@@ -26,10 +26,7 @@ const Cadastrar: React.FC = () => {
                   <input type="text" placeholder="Digite aqui..." />
                 </LadoD>
               </Segura>
-              <Linha>
-                <Escrita>Titulo do projeto:</Escrita>
-                <input type="text" placeholder="Digite aqui..." />
-              </Linha>
+              <h1>IDENTIFICADORES</h1>
               <Linha>
                 <Escrita>Nome do solicitante:</Escrita>
                 <input type="text" placeholder="Digite aqui..." />
@@ -50,10 +47,6 @@ const Cadastrar: React.FC = () => {
                 <Escrita>Nome do responsável:</Escrita>
                 <input type="text" placeholder="Digite aqui..." />
               </Linha>
-              <Linha>
-                <Escrita>Nome no sistema:</Escrita>
-                <input type="text" placeholder="Digite aqui..." />
-              </Linha>
             </Irmaos>
           </Caixa>
           <BotaoAvancar/>
@@ -62,4 +55,4 @@ const Cadastrar: React.FC = () => {
         </>
     );
 }
-export default Cadastrar;
+export default Cadastrar2;
