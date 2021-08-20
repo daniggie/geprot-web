@@ -127,13 +127,19 @@ export default createGlobalStyle`
     font-weight: normal;
   }
 
-  a{
-    color: #fff;
+  a:link {
     text-decoration: none;
   }
-
-  a:visited{
-    text:decoration: none;
+  
+  a:visited {
+    text-decoration: none;
   }
-
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
 `

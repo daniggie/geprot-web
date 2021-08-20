@@ -98,7 +98,7 @@ height:95px;
 
 export const Linha = styled.div`
 width:95%;
-margin:25px auto;
+margin:90px auto;
 height:80px;
 input{
   margin-top:10px;
@@ -110,7 +110,7 @@ input{
   border: 1px;
   padding-left:4px;
 }
+&::last-child{
+  margin:10'0px auto;
+}
 `;
-
-
-

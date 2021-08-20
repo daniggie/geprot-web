@@ -15,28 +15,36 @@ const Menu: React.FC = () => {
                 <div className="atalho cor_1f" id="border1">
                   <img src={view} alt="" />
                 </div> 
-                <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
+                <a href="/home">
+                  <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
+                </a>
             </div>
 
             <div className="content_atalho cor_2f">
               <div className="atalho cor_2f">
                 <img src={cadastrar} alt="" />
               </div>
-              <p id="idparagrafo"> CADASTRAR PROJETOS </p>
+              <a href="/cadastrar">
+                <p id="idparagrafo"> CADASTRAR PROJETOS </p>
+              </a>
             </div>
 
             <div className="content_atalho cor_1f">
               <div className="atalho cor_1f">
                 <img src={editar} alt="" />
               </div>
-              <p id="idparagrafo"> EDITAR PROJETOS </p>
+              <a href="/">
+                <p id="idparagrafo"> EDITAR PROJETOS </p>
+              </a>
             </div>
 
             <div className="content_atalho cor_3f">
               <div className="atalho cor_3f">
                 <img src={alocar} alt="" />
               </div>
+              <a href="/">
               <p id="idparagrafo"> ALOCAR CONSULTORES </p>
+              </a>
             </div>
 
             <div className="content_atalho cor_4f" id="border2">

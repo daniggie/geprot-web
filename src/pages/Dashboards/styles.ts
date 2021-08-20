@@ -3,7 +3,7 @@ import { shade } from 'polished';
 
 export const Header = styled.div`
     width: 100%;
-    height: 70px;
+    height: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #fff;
     display:flex;
@@ -22,26 +22,29 @@ export const Header = styled.div`
       h1{
         color: #0091BD;
         font-size: 25px;
-        margin-top: 10px;
+        margin-top: 0px;
         font-weight: bold;
       }
 
       #logo_weg{
-        margin: 10px;
+        margin-top: 10px;
       }
     }
 
     #content_translator{
-      width: 100px;
-      height: 70px;
+      width: 110px;
+      height: 53px;
       display:flex;
       align-items: center;
 
-
+      #translator_select{
+        margin-top: 5px;
+      }
+      
       #translator_flag {
       width: 32px;
       height: 32px;
-      margin:10px;
+      margin: 0px 15px 0px 5px;
       }
 
       #content_exit{
@@ -53,9 +56,9 @@ export const Header = styled.div`
 
 export const TituloF = styled.div`
     height: 30px;
-    width: 91%;
+    width: 95%;
     margin-top: 20px;
-    padding: 10px 90px 25px 25px;
+    padding: 10px 113px 25px 25px;
     display: flex;
     p{
       color: #0091BD;
@@ -70,78 +73,6 @@ export const TituloF = styled.div`
     }
 `;
 
-export const Menu = styled.div`
-  width: 15%;
-  height: 500px;
-  display:flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  #menu{
-    width: 400px;
-    height: 275px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-
-    .content_atalho{
-      width: 50px;
-      height: 60px;
-      display: flex;
-      margin-top: 2px;
-
-      #idparagrafo{
-        display:none;
-        margin-top: 10px;
-        margin-left: 10px;
-
-        font-family: Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-size: 15px;
-        color: white;
-      }
-
-      .atalho{
-        width: 50px;
-        margin-top: 2px;
-        padding: 5px;
-        display:flex;
-
-        svg{
-          margin: 2px 0px 0px 5px;
-        }
-      }
-
-      &:hover{
-        width:185px;
-        transition-duration: 0.5s;
-
-        #idparagrafo{
-          display:block;
-          margin-top: 10px;
-          margin-left: 15px;
-          transition-duration: 0.5s;
-
-          font-family: Arial, Helvetica, sans-serif;
-          font-style: normal;
-          font-size: 15px;
-          color: white;
-        }
-      }
-
-    }
-
-    #border1{
-      border-radius: 5px 0px 0px 0px;
-    }
-
-    #border2{
-      border-radius: 0px 0px 0px 5px;
-    }
-
-  }
-`;
 export const All = styled.div`
     display: flex;
     align-content: space-around;
@@ -155,7 +86,7 @@ export const Filtros = styled.div`
     height: 30px;
     display:flex;
     justify-content: space-around;
-    margin-left: 17px;
+    margin-left: 25px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
@@ -164,9 +95,13 @@ export const Filtros = styled.div`
 
 
     .content_title {
-      width: 23%;
+      width: 25%;
       display:flex;
       align-items: center;
+
+      &:first-child{
+        width: 20%;
+      }
     }
 
     form post{
@@ -201,9 +136,10 @@ export const Filtros = styled.div`
     }
 
     .content_procurar{
-      width: 25%;
+      width: 20%;
       display:flex;
       align-items: center;
+      margin-right: 50px;
 
       .procurar{
         width: 100%;
@@ -230,53 +166,34 @@ export const BodyDashboards = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: 300px;
+  height: 220px;
   margin-top: 15px;
   display: flex;
-
-  &:last-child{
-    margin-bottom: 25px;
-  }
 `;
 
 export const LitlleCont = styled.div`
   width: 21%;
-  background: blue;
   margin-left: 55px;
   border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const MediumCont = styled.div`
   width: 25%;
-  background: blue;
   border-radius: 5px;
+  align-items: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const BigCont = styled.div`
-  width: 72%;
-  background: blue;
+  width: 73%;
   margin-left: 55px;
   border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const BarTitle = styled.div`
   width: 100%;
-  height: 50px;
-  background: red;
+  height: 40px;
   border-radius: 5px 5px 0 0;
-`;
-
-export const ContGrafic = styled.div`
-  width: 50%;
-  height: 100px;
-  background: red;
-  margin: 50px 0 0 50px;
-  border-radius: 50%
-`;
-
-export const Grafic = styled.div`
-  width: 72%;
-  background: blue;
-  margin-left: 55px;
-  border-radius: 5px;
 `;

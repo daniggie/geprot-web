@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Topo = styled.div`
+width:100%;
+height:150px;
+display: block;
+`;
+
+
 export const Titulo = styled.div`
   height: 80px;
   width: 100%;
@@ -34,8 +41,17 @@ width: 87%;
 margin: 15px auto;
 `;
 
+
+export const Baixo = styled.div`
+width: 98%;
+margin: 20px auto;
+height: 80px;
+`;
+
+
+
 export const Irmaos = styled.div`
-height: 350px;
+height: 150px;
 width: 45%;
 float:left;
 :last-child{
@@ -97,9 +113,10 @@ height:95px;
 `;
 
 export const Linha = styled.div`
-width:95%;
-margin:25px auto;
+width:98%;
+margin:90px auto;
 height:80px;
+margin-top: 20px;
 input{
   margin-top:10px;
   width: 98%;
@@ -112,5 +129,10 @@ input{
 }
 `;
 
-
-
+export const TituloBaixo = styled.h2`
+    color: #0091BD;
+    font-size: 18px;
+    line-height: 21.09px;
+    padding-top: 20px;
+    padding-left: 0px;
+`;
