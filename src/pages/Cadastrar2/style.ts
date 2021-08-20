@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+<<<<<<< HEAD
+=======
 export const Barra = styled.div`
   height: 50px;
   width: 100%;
@@ -12,6 +14,7 @@ export const Barra = styled.div`
   };
 `;
 
+>>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
 export const Titulo = styled.div`
   height: 80px;
   width: 100%;

@@ -16,10 +16,15 @@ p{
   line-height: 29px;
   align-items: center;
   color:#fff;
+<<<<<<< HEAD
+  display:flex;
+  justify-content: center;
+=======
   font-family: Roboto;
   display:flex;
   justify-content: center;
   font-style:normal;
   font-weight: bold;
+>>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
 }
 `;

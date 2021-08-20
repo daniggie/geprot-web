@@ -1,15 +1,16 @@
 import React from "react";
-import { Barra, All, Content, BttnPosition } from "./style";
-import arrowleft from '../../icons/arrowleft.svg';
+import { All, Content, BttnPosition } from "./style";
 import Button from "../../components/Button";
+import Barra from "../../components/Barra";
 
 const Detalhes: React.FC = () => {
     return(
         <>
+        <a href="/home">
         <Barra>
-            <img src={arrowleft}/>
         </Barra>
-
+        </a>
+        
         <All>
             <Content>
                 <div className="line fonte_20 cor_0">
@@ -113,7 +114,8 @@ const Detalhes: React.FC = () => {
         </All>
 
         <BttnPosition>
-            <Button type="submit">Aprovar Horas</Button>
+            <a href="/aprovarhoras">
+            <Button type="submit">Aprovar Horas</Button></a>
         </BttnPosition>
         
         </>
