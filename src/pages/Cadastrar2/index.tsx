@@ -1,26 +1,19 @@
 import React, { useState, FormEvent } from 'react';
-<<<<<<< HEAD
 import { Titulo, Formulario, Caixa, Irmaos, LadoE, LadoD, Escrita, Linha, Segura } from './style';
 import Barra from "../../components/Barra";
-=======
-import { Barra, Titulo, Formulario, Caixa, Irmaos, LadoE, LadoD, Escrita, Linha, Segura } from './style';
 import arrowleft from '../../icons/arrowleft.svg';
->>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
 import BotaoAvancar from '../../components/ButtonAvancar';
 
 const Cadastrar2: React.FC = () => {
     return (
       <>
-<<<<<<< HEAD
         <a href="/cadastrar">
         <Barra>
         </Barra>
       </a>
-=======
         <Barra>
             <img src={arrowleft}/>
         </Barra>
->>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
         <Titulo>
           <h1>CADASTRO DE PROJETOS</h1>
         </Titulo>
@@ -61,15 +54,12 @@ const Cadastrar2: React.FC = () => {
               </Linha>
             </Irmaos>
           </Caixa>
-<<<<<<< HEAD
           <a href="/cadastrar3">
           <BotaoAvancar>
           <p className="helvetica fonte_20 bold">Próximo</p>
           </BotaoAvancar>
           </a>
-=======
           <BotaoAvancar/>
->>>>>>> 520004df1dcfb1d8a9bcde029f372e436c3e0487
         </Formulario>
 
         </>
