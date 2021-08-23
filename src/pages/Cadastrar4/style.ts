@@ -3,6 +3,15 @@ import styled from 'styled-components';
 export const Titulo = styled.div`
   margin-top: 30px;
   margin-left: 30px;
+  display:flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+
+  b{
+    margin-left: 5px;
+  }
 `;
 
 export const Formulario = styled.form`
@@ -22,11 +31,17 @@ p{
 
 .content{
   width: 45%;
-  height: 290px;
+  height: 320px;
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+
+.table{
+  width: 100%;
+  height: 200px;
+  background: red;
+}
 
 
   .line{
@@ -59,5 +74,20 @@ p{
   width:100%;
     display:flex;
     justify-content: flex-end;
+
+  }
+
+  input{
+    width: 100%;
+    box-shadow: inset 2px 4px 3px rgba(0,0,0,0.25);
+    border-radius:5px;
+    border: 1px;
+    padding:10px;
+    margin-bottom:15px;
+  }
+
+  b{
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
 `;

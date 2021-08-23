@@ -46,6 +46,10 @@ export default createGlobalStyle`
       color: #28B9DA;
   }
 
+  .cor_5{
+    color: #00579D;
+  }
+
   .cor_0 {
       color: #828282;
   }
@@ -130,15 +134,15 @@ export default createGlobalStyle`
   a:link {
     text-decoration: none;
   }
-  
+
   a:visited {
     text-decoration: none;
   }
-  
+
   a:hover {
     text-decoration: none;
   }
-  
+
   a:active {
     text-decoration: none;
   }

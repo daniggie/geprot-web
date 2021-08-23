@@ -4,23 +4,25 @@ import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
 import { BsFillCaretRightFill } from "react-icons/bs"
 
-const Cadastrar3: React.FC = () => {
+const Cadastrar4: React.FC = () => {
     return (
       <>
-        <a href="/cadastrar2">
+        <a href="/cadastrar3">
         <Barra>
         </Barra>
       </a>
 
         <Titulo>
-          <p className="helvetica fonte_20 cor_5 bold">VERBAS</p>
+          <p className="helvetica fonte_20 cor_5 bold">CENTRO DE CUSTOS</p>
         </Titulo>
         <Titulo>
           <b className="helvetica fonte_15 cor_0">Cadastro de projetos</b>
           <BsFillCaretRightFill color="#828282"/>
           <b className="helvetica fonte_15 cor_0">Aprovações</b>
           <BsFillCaretRightFill color="#828282"/>
-          <b className="helvetica fonte_15 cor_5 normal"> <u> Verbas </u> </b>
+          <b className="helvetica fonte_15 cor_0">Verbas</b>
+          <BsFillCaretRightFill color="#828282"/>
+          <b className="helvetica fonte_15 cor_5 normal"> <u> Centro de custos </u> </b>
         </Titulo>
         <Formulario>
           <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
@@ -42,32 +44,45 @@ const Cadastrar3: React.FC = () => {
 
             </div>
 
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Nome CC:</b>
+            </div>
+
+            <div className="line">
+                <input type="text" placeholder="Digite aqui..." />
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Responsável CC:</b>
+            </div>
+
+            <div className="line">
+                <input type="text" placeholder="Digite aqui..." />
+            </div>
+
           </div>
 
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Quantidade de horas:</b>
-              <b className="helvetica fonte_15 cor_3 bold">Valor aprovado:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Nome CC:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
             </div>
 
             <div className="line">
               <div className="tamanho">
-                <input type="time" placeholder="" />
+                <input type="text" placeholder="0000000000" />
               </div>
               <div className="tamanho">
-                <input type="number" placeholder="R$ 0,00"/>
+                <input type="number" placeholder="%"/>
               </div>
 
             </div>
+
+            <div className="table">
+
+            </div>
           </div>
-
-          <p className="helvetica fonte_20 cor_5 bold">HABILIDADES</p>
-
-          <b className="helvetica fonte_15 cor_3 bold">Skills:</b>
-
-          <input type="text" placeholder="Digite aqui..." />
-
 
           <div className="position">
             <a href="/cadastrar4">
@@ -81,4 +96,4 @@ const Cadastrar3: React.FC = () => {
         </>
     );
 }
-export default Cadastrar3;
+export default Cadastrar4;
