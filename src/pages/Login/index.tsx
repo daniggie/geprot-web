@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   const handleSubmit = useCallback(async (data: SignFormData) => {
     try{
         formRef.current?.setErrors({});
-        
+
         const schema = Yup.object().shape({
             email: Yup.string().required('E-mail obrigatório').email('Informe um e-mail válido'),
             senha: Yup.string().required('Senha obrigatória'),

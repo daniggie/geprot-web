@@ -1,70 +1,20 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-export const Header = styled.div`
-    width: 100%;
-    height: 50px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    display:flex;
-    justify-content: space-between;
-    align-content: center;
-
-    #informations{
-
-      display:flex;
-
-      p {
-      color: #0091BD;
-      font-size: 15px;
-      }
-
-      h1{
-        color: #0091BD;
-        font-size: 25px;
-        margin-top: 0px;
-        font-weight: bold;
-      }
-
-      #logo_weg{
-        margin-top: 10px;
-      }
-    }
-
-    #content_translator{
-      width: 110px;
-      height: 53px;
-      display:flex;
-      align-items: center;
-
-      #translator_select{
-        margin-top: 5px;
-      }
-      
-      #translator_flag {
-      width: 32px;
-      height: 32px;
-      margin: 0px 15px 0px 5px;
-      }
-
-      #content_exit{
-        margin-left: 5px;
-      }
-
-    }
-`;
 
 export const TituloF = styled.div`
     height: 30px;
-    width: 95%;
-    margin-top: 20px;
-    padding: 10px 113px 25px 25px;
+    width: 93%;
+    margin-top: 40px;
+    padding: 10px 113px 25px 20px;
     display: flex;
+
     p{
       color: #0091BD;
       font-size: 20px;
       margin-right: 10px;
     }
+
     div{
       height: 3px;
       width: 100%;
@@ -82,11 +32,11 @@ export const All = styled.div`
 `;
 
 export const Filtros = styled.div`
-    width: 85%;
+    width: 91%;
     height: 30px;
     display:flex;
     justify-content: space-around;
-    margin-left: 25px;
+    margin-left: -9px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
@@ -134,25 +84,6 @@ export const Filtros = styled.div`
       padding-left: 10%;
       padding-right: 10%;
     }
-
-    .content_procurar{
-      width: 20%;
-      display:flex;
-      align-items: center;
-      margin-right: 50px;
-
-      .procurar{
-        width: 100%;
-        height: 25px;
-        border: 0.1px solid #828282;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin-left: 5px;
-        font-size: 15px;
-        padding: 5px;
-      }
-
-    }
 `;
 
 export const BodyDashboards = styled.div`
@@ -162,12 +93,14 @@ export const BodyDashboards = styled.div`
   align-content: flex-start;
   justify-content: space-between;
   padding: 0 0 0 25px;
+  margin-top: 50px;
+  margin-left: 10px
 `;
 
 export const Container = styled.div`
   width: 100%;
   height: 220px;
-  margin-top: 15px;
+  margin-bottom: 30px;
   display: flex;
 `;
 
@@ -176,6 +109,18 @@ export const LitlleCont = styled.div`
   margin-left: 55px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  div{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 11px;
+  }
+
 `;
 
 export const MediumCont = styled.div`
@@ -183,6 +128,17 @@ export const MediumCont = styled.div`
   border-radius: 5px;
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  div{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 11px;
+  }
 `;
 
 export const BigCont = styled.div`
@@ -190,10 +146,15 @@ export const BigCont = styled.div`
   margin-left: 55px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
 
-export const BarTitle = styled.div`
-  width: 100%;
-  height: 40px;
-  border-radius: 5px 5px 0 0;
+  div{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px 5px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 11px;
+  }
 `;

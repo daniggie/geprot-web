@@ -1,13 +1,13 @@
 import React, { useState, useEffect, FormEvent } from 'react';
-import api from '../../services/api';
-import { BsSearch, BsGeoAlt } from 'react-icons/bs';
 import Cards from '../../components/Cards';
 
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
-import arrowRight from '../../icons/arrow-right.svg';
 
 import { All, Filtros, Error, Form } from './style';
+import FilterSearch from '../../components/FilterSearch';
+import FilterStatus from '../../components/FilterStatus';
+import { FiChevronRight } from 'react-icons/fi';
 
 //interface Projeto {
 //  idprojeto: Number,
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
 
         <div className="content_title">
             <div className="arrow">
-              <img src={arrowRight} alt="" />
+              <FiChevronRight size="15px" color="#0091BD"/>
             </div>
 
             <div className="texto cor_4">
@@ -86,42 +86,9 @@ const Home: React.FC = () => {
             </div>
         </div>
 
-        <div className="content_title">
-            <div className="arrow">
-              <img src={arrowRight} alt="" />
-            </div>
+        <FilterStatus/>
 
-            <div className="texto cor_4">
-                Status:
-            </div>
-
-            <form>
-                <select className="status cor_3f" name="status">
-                    <option value="status">Todos</option>
-                    <option value="status">Andamento</option>
-                    <option value="status">Atrasado</option>
-                    <option value="status">Concluído</option>
-                </select>
-            </form>
-        </div>
-
-        <div className="content_procurar">
-            <div className="arrow">
-            <img src={arrowRight} alt="" />
-            </div>
-
-            <div className="texto cor_4">
-                Procurar:
-            </div>
-            
-            <form>
-              <input value="search"className="procurar cor_0" type="text" id="fname" name="fname" placeholder="Digite o nome do projeto..." />
-              <button type="submit" className="cor_3f"><BsSearch size={15}/></button>
-            </form>
-            
-            
-
-        </div>
+        <FilterSearch/>
 
       </Filtros>
 

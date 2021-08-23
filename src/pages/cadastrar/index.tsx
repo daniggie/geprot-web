@@ -2,7 +2,6 @@ import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario, Caixa, Irmaos, LadoE, LadoD, Escrita, Linha, Segura } from './style';
 
 import Barra from "../../components/Barra";
-import arrowleft from '../../icons/arrowleft.svg';
 import BotaoAvancar from '../../components/ButtonAvancar';
 
 const Cadastrar: React.FC = () => {
@@ -12,7 +11,7 @@ const Cadastrar: React.FC = () => {
         <Barra>
         </Barra>
       </a>
-        
+
         <Titulo>
           <h1>CADASTRO DE PROJETOS</h1>
         </Titulo>
@@ -65,7 +64,7 @@ const Cadastrar: React.FC = () => {
             <p className="helvetica fonte_20 bold">Próximo</p>
             </BotaoAvancar>
           </a>
-          
+
           <BotaoAvancar/>
         </Formulario>
 

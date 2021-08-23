@@ -20,7 +20,7 @@ const Routes: React.FC = () => (
   <Route path="/cadastrar2" exact component={Cadastrar2} />
   <Route path="/cadastrar3" exact component={Cadastrar3} />
 
-  
+
   </Switch>
 );
 
