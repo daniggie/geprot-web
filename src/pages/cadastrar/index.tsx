@@ -1,8 +1,7 @@
 import React, { useState, FormEvent } from 'react';
-import { Titulo, Formulario, Caixa, Irmaos, LadoE, LadoD, Escrita, Linha, Segura } from './style';
+import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
-import arrowleft from '../../icons/arrowleft.svg';
 import BotaoAvancar from '../../components/ButtonAvancar';
 
 const Cadastrar: React.FC = () => {
@@ -12,61 +11,90 @@ const Cadastrar: React.FC = () => {
         <Barra>
         </Barra>
       </a>
-        
+
         <Titulo>
-          <h1>CADASTRO DE PROJETOS</h1>
+          <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>
         </Titulo>
         <Formulario>
-          <h1>IDENTIFICADORES</h1>
-          <Caixa>
-            <Irmaos>
-              <Segura>
-                <LadoE>
-                  <Escrita className="helvetica fonte_20">ID Projeto:</Escrita>
-                  <input type="text" placeholder="Digite aqui..." />
-                </LadoE>
-                <LadoD>
-                  <Escrita className="helvetica fonte_20">ID PPM:</Escrita>
-                  <input type="text" placeholder="Digite aqui..." />
-                </LadoD>
-              </Segura>
-              <Linha>
-                <Escrita className="helvetica fonte_20">Titulo do projeto:</Escrita>
+          <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
+
+          <div className="content">
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">ID Projeto:</b>
+              <b className="helvetica fonte_15 cor_3 bold">ID PPM:</b>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <input type="text" placeholder="0000000000" />
+              </div>
+              <div className="tamanho">
+                <input type="text" placeholder="0000000000" />
+              </div>
+
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Titulo do projeto:</b>
+            </div>
+
+            <div className="line">
                 <input type="text" placeholder="Digite aqui..." />
-              </Linha>
-              <Linha>
-                <Escrita className="helvetica fonte_20">Nome do solicitante:</Escrita>
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Nome do solicitante</b>
+            </div>
+
+            <div className="line">
                 <input type="text" placeholder="Digite aqui..." />
-              </Linha>
-            </Irmaos>
-            <Irmaos>
-            <Segura>
-                <LadoE>
-                  <Escrita className="helvetica fonte_20">Data inicio:</Escrita>
-                  <input type="date"  />
-                </LadoE>
-                <LadoD>
-                  <Escrita className="helvetica fonte_20">Data Encerramento:</Escrita>
-                  <input type="date" />
-                </LadoD>
-              </Segura>
-              <Linha>
-                <Escrita className="helvetica fonte_20">Nome do responsável:</Escrita>
+            </div>
+
+          </div>
+
+          <div className="content">
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Data de início:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Previsão de término:</b>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <input type="date" placeholder="Digite aqui..." />
+              </div>
+              <div className="tamanho">
+                <input type="date" placeholder="Digite aqui..." />
+              </div>
+
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Nome do responsável:</b>
+            </div>
+
+            <div className="line">
                 <input type="text" placeholder="Digite aqui..." />
-              </Linha>
-              <Linha>
-                <Escrita className="helvetica fonte_20">Nome no sistema:</Escrita>
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Nome no sistema:</b>
+            </div>
+
+            <div className="line">
                 <input type="text" placeholder="Digite aqui..." />
-              </Linha>
-            </Irmaos>
-          </Caixa>
-          <a href="/cadastrar2">
-            <BotaoAvancar>
-            <p className="helvetica fonte_20 bold">Próximo</p>
-            </BotaoAvancar>
-          </a>
-          
-          <BotaoAvancar/>
+            </div>
+          </div>
+
+
+          <div className="position">
+            <a href="/cadastrar2">
+              <BotaoAvancar>
+              <p className="helvetica fonte_20 bold">Próximo</p>
+              </BotaoAvancar>
+            </a>
+          </div>
         </Formulario>
 
         </>

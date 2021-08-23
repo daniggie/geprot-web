@@ -10,7 +10,7 @@ const Detalhes: React.FC = () => {
         <Barra>
         </Barra>
         </a>
-        
+
         <All>
             <Content>
                 <div className="line fonte_20 cor_0">
@@ -111,13 +111,15 @@ const Detalhes: React.FC = () => {
                 </div>
 
             </Content>
+
+            <BttnPosition>
+              <a href="/aprovarhoras">
+              <Button type="submit"> <p> Aprovar Horas </p> </Button></a>
+            </BttnPosition>
         </All>
 
-        <BttnPosition>
-            <a href="/aprovarhoras">
-            <Button type="submit">Aprovar Horas</Button></a>
-        </BttnPosition>
-        
+
+
         </>
     )
 }

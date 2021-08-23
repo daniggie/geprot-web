@@ -14,7 +14,7 @@ const Menu: React.FC = () => {
             <div className="content_atalho cor_1f" id="border1">
                 <div className="atalho cor_1f" id="border1">
                   <img src={view} alt="" />
-                </div> 
+                </div>
                 <a href="/home">
                   <p id="idparagrafo"> VISUALIZAR PROJETOS </p>
                 </a>
@@ -33,7 +33,7 @@ const Menu: React.FC = () => {
               <div className="atalho cor_1f">
                 <img src={editar} alt="" />
               </div>
-              <a href="/">
+              <a href="/editarprojetos">
                 <p id="idparagrafo"> EDITAR PROJETOS </p>
               </a>
             </div>
@@ -42,7 +42,7 @@ const Menu: React.FC = () => {
               <div className="atalho cor_3f">
                 <img src={alocar} alt="" />
               </div>
-              <a href="/">
+              <a href="/alocarhoras">
               <p id="idparagrafo"> ALOCAR CONSULTORES </p>
               </a>
             </div>

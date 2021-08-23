@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const All = styled.div`
-    width: 95%;
-    margin: 20px;
+    margin: 10px;
     padding: 40px;
 
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +51,7 @@ export const Content = styled.div`
     }
 
     .table_header{
-        
+
         .table{
             width: calc(100%/3);
             padding: 10px;
@@ -97,8 +96,10 @@ export const Content = styled.div`
 `;
 
 export const BttnPosition = styled.div`
-    float: right;
-    width: 300px;
+
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
     margin-right: 30px;
 
 `;

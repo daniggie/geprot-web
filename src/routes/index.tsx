@@ -3,6 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 import Cadastrar from '../pages/Cadastrar';
 import Cadastrar2 from '../pages/Cadastrar2';
 import Cadastrar3 from '../pages/Cadastrar3';
+import Cadastrar4 from '../pages/Cadastrar4';
+import Cadastrar5 from '../pages/Cadastrar5';
+import Cadastrar6 from '../pages/Cadastrar6';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboards';
@@ -19,8 +22,11 @@ const Routes: React.FC = () => (
   <Route path="/cadastrar" exact component={Cadastrar} />
   <Route path="/cadastrar2" exact component={Cadastrar2} />
   <Route path="/cadastrar3" exact component={Cadastrar3} />
+  <Route path="/cadastrar4" exact component={Cadastrar4} />
+  <Route path="/cadastrar5" exact component={Cadastrar5} />
+  <Route path="/cadastrar6" exact component={Cadastrar6} />
 
-  
+
   </Switch>
 );
 
