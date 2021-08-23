@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
-
 import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
 
@@ -72,14 +71,6 @@ const Cadastrar: React.FC = () => {
 
             <div className="line">
               <b className="helvetica fonte_15 cor_3 bold">Nome do responsável:</b>
-            </div>
-
-            <div className="line">
-                <input type="text" placeholder="Digite aqui..." />
-            </div>
-
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Nome no sistema:</b>
             </div>
 
             <div className="line">

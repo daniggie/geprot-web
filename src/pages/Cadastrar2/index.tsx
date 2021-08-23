@@ -2,7 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
-import { BsFillCaretRightFill } from "react-icons/bs"
+import { BsFillCaretRightFill } from "react-icons/bs";
 
 const Cadastrar2: React.FC = () => {
     return (
