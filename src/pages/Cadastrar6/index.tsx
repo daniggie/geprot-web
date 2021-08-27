@@ -154,49 +154,116 @@ const Cadastrar6: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Centro de custo:</b>
-              <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
+              <b className="helvetica fonte_20 cor_3 bold">Aprovação</b>
             </div>
 
             <div className="line">
               <div className="tamanho">
-                <input type="text" placeholder="Digite aqui..." />
+                <b className="helvetica fonte_13 cor_3 bold">ID aprovação:</b>
+              </div>
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_0 lighter">00000001</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_3 bold">Data da aprovação:</b>
+              </div>
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_0 lighter">20/05/2021</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_3 bold">ID Comissão:</b>
+              </div>
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_0 lighter">00000001</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_3 bold">PREVISÃO</b>
+              </div>
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_0 lighter">13/05/2021 á 25/02/2022</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <b className="helvetica fonte_13 cor_0 bold">ATA_COMISSÃO_001</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_20 cor_3 bold">Centro de custos</b>
+            </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
               </div>
               <div className="tamanho2">
-                <input type="number" placeholder="%"/>
+                <b className="helvetica fonte_13 cor_3 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Nome responsável</b>
               </div>
-              <div className="box cor_3f">
-              <RiAddLine color="#fff"/>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">PERCENTUAL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00%</b>
               </div>
-
             </div>
 
-            <div className="table">
-
-              <div className="header">
-                <div className="title1 bold helvetica cor_0 fonte_15">
-                  Centro de custo
-                </div>
-                <div className="title2 bold helvetica cor_0 fonte_15">
-                    Percentual
-                </div>
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
               </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  Vendas
-                </div>
-
-                <div className="column2">
-                  100%
-                </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Nome responsável</b>
               </div>
-
-
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">PERCENTUAL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00%</b>
+              </div>
             </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Nome responsável</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">PERCENTUAL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00%</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Nome responsável</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_3 bold">PERCENTUAL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00%</b>
+              </div>
+            </div>
+
+
           </div>
 
           <div className="position">

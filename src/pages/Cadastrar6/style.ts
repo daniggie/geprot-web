@@ -134,7 +134,7 @@ p{
     justify-content: space-between;
 
     .tamanho{
-      width:45%;
+      width:50%;
     }
 
     .tamanho2{
