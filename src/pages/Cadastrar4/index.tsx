@@ -1,21 +1,19 @@
 import React from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
-import BotaoAvancar from '../../components/ButtonAvancar';
+import BotaoAvancar from '../../components/Buttons/ButtonAvancar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
-import BotaoCancel from '../../components/ButtonCancel';
+import BotaoCancel from '../../components/Buttons/ButtonCancel';
 
 
 
 const Cadastrar4: React.FC = () => {
     return (
       <>
-        <a href="/cadastrar3">
         <Barra>
         </Barra>
-      </a>
 
         <Titulo>
           <p className="helvetica fonte_20 cor_5 bold">CENTRO DE CUSTOS</p>

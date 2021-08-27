@@ -6,7 +6,10 @@ import { Container  } from "./style";
 const Barra: React.FC = () => {
     return(
         <Container>
-        <img src={arrowleft}/>
+          <a href="javascript: history.go(-1)">
+            <img src={arrowleft}/>
+          </a>
+
         </Container>
     )
 };

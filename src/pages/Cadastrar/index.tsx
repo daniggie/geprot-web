@@ -2,16 +2,14 @@ import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
-import BotaoAvancar from '../../components/ButtonAvancar';
+import BotaoAvancar from '../../components/Buttons/ButtonAvancar';
 import { BsFillCaretRightFill } from "react-icons/bs";
 
 const Cadastrar: React.FC = () => {
     return (
       <>
-      <a href="/home">
         <Barra>
         </Barra>
-      </a>
 
       <Titulo>
           <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>

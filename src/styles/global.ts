@@ -30,6 +30,10 @@ export default createGlobalStyle`
     color: #fff;
   }
 
+  .cor_black{
+    color: #000;
+  }
+
   .cor_1 {
     color: #0075B1;
   }
@@ -113,7 +117,6 @@ export default createGlobalStyle`
 
   .helvetica {
     font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
   }
 
 
@@ -144,6 +147,10 @@ export default createGlobalStyle`
   }
 
   a:active {
+    text-decoration: none;
+  }
+
+  a{
     text-decoration: none;
   }
 `

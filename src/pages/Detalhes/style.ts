@@ -36,6 +36,12 @@ export const Content = styled.div`
           display:flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
+
+          &:hover{
+            background-color: #0081BD;
+            transition: 0.4s;
+          }
 
       }
 

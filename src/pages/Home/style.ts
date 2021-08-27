@@ -19,8 +19,9 @@ export const Error = styled.span`
 export const All = styled.div`
     display: flex;
     align-content: space-around;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin-top: 20px;
+    flex-direction: row;
 
 `;
 
@@ -48,5 +49,15 @@ export const Filtros = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
+
+    .content_title{
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow{
+      margin-top: 2px;
+    }
+
 `;
 

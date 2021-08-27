@@ -26,11 +26,11 @@ const Cards: React.FC = () => {
 
                     <div className="card_status_txt">
 
-                        <div className="fonte_12 helvetica ">
+                        <div className="cor_black fonte_12 helvetica ">
                             Status:
                         </div>
 
-                        <div className="fonte_12 helvetica bold ">
+                        <div className="cor_black fonte_12 helvetica bold ">
                             Teste
                         </div>
 
@@ -40,7 +40,7 @@ const Cards: React.FC = () => {
                 <div className="linha_2">
                     <div className="card_title">
 
-                        <div className="fonte_25 helvetica bold">
+                        <div className="cor_black fonte_25 helvetica bold">
                             00001252 - Nome do projeto
                         </div>
 
@@ -51,7 +51,7 @@ const Cards: React.FC = () => {
                 <div className="linha_3">
                     <div className="card_saldo">
 
-                        <div className="fonte_14 helvetica">
+                        <div className="cor_black fonte_14 helvetica">
                             Saldo previsto:
                         </div>
 
@@ -72,7 +72,7 @@ const Cards: React.FC = () => {
                     </div>
 
                     <div className="texto_content_horas">
-                        <div className="horas fonte_14 helvetica">
+                        <div className="cor_black horas fonte_14 helvetica">
                             Horas:
                         </div>
                         <div className="relogio ">
@@ -89,7 +89,7 @@ const Cards: React.FC = () => {
                 <div className="linha_3">
                     <div className="card_saldo">
 
-                        <div className="fonte_14 helvetica">
+                        <div className="cor_black fonte_14 helvetica">
                             Saldo restante:
                         </div>
 
@@ -110,7 +110,7 @@ const Cards: React.FC = () => {
                     </div>
 
                     <div className="texto_content_horas">
-                        <div className="fonte_14 helvetica">
+                        <div className="cor_black fonte_14 helvetica">
                             Apontadas:
                         </div>
 

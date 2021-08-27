@@ -50,7 +50,8 @@ const Menu: React.FC = () => {
                   <FiTrendingUp size="35px" color="#fff"/>
                 </div>
                 <p id="idparagrafo">
-                  <a href="/dashboard">IR PARA DASHBOARDS
+                  <a href="/dashboard">
+                  <p className="cor_000">IR PARA DASHBOARDS </p>
                   </a>
                 </p>
            </div>

@@ -1,17 +1,15 @@
 import React  from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
-import BotaoAvancar from '../../components/ButtonAvancar';
+import BotaoFinalizar from '../../components/Buttons/ButtonFinalizar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { BiReceipt } from "react-icons/bi";
 
 const Cadastrar6: React.FC = () => {
     return (
       <>
-        <a href="/cadastrar5">
         <Barra>
         </Barra>
-      </a>
 
       <Titulo>
           <p className="helvetica fonte_20 cor_5 bold">Resumo</p>
@@ -299,9 +297,7 @@ const Cadastrar6: React.FC = () => {
 
           <div className="position">
             <a href="/home">
-            <BotaoAvancar>
-            <p className="helvetica fonte_20 bold">Próximo</p>
-            </BotaoAvancar>
+            <BotaoFinalizar />
             </a>
           </div>
         </Formulario>

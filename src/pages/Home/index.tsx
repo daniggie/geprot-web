@@ -94,11 +94,9 @@ const Home: React.FC = () => {
 
       <All>
 
-        <Cards>
-        </Cards>
+        <Cards/>
 
-        <Menu>
-        </Menu>
+        <Menu/>
 
       </All>
 

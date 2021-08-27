@@ -1,6 +1,6 @@
 import React from "react";
 import { All, Content, BttnPosition } from "./style";
-import Button from "../../components/Button";
+import ButtonAprovar from "../../components/Buttons/ButtonAprovar";
 import Barra from "../../components/Barra";
 
 const Detalhes: React.FC = () => {
@@ -114,7 +114,8 @@ const Detalhes: React.FC = () => {
 
             <BttnPosition>
               <a href="/aprovarhoras">
-              <Button type="submit"> <p> Aprovar Horas </p> </Button></a>
+                <ButtonAprovar />
+              </a>
             </BttnPosition>
         </All>
 

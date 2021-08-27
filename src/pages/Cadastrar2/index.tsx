@@ -1,17 +1,15 @@
 import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
-import BotaoAvancar from '../../components/ButtonAvancar';
-import BotaoCancel from '../../components/ButtonCancel';
+import BotaoAvancar from '../../components/Buttons/ButtonAvancar';
+import BotaoCancel from '../../components/Buttons/ButtonCancel';
 import { BsFillCaretRightFill } from "react-icons/bs";
 
 const Cadastrar2: React.FC = () => {
     return (
       <>
-        <a href="/cadastrar">
         <Barra>
         </Barra>
-      </a>
 
         <Titulo>
           <p className="helvetica fonte_20 cor_5 bold">APROVAÇÕES</p>
@@ -99,6 +97,7 @@ const Cadastrar2: React.FC = () => {
 
             <a href="/cadastrar3">
               <BotaoAvancar>
+              <p className="helvetica fonte_20 bold">Próximo</p>
               </BotaoAvancar>
             </a>
           </div>

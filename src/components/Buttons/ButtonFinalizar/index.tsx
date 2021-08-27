@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container } from './style';
 
-const BotaoAvancar: React.FC = () => {
+const BotaoFinalizar: React.FC = () => {
     return(
         <Container>
-             <p>Próximo</p>
+             <p>Finalizar</p>
         </Container>
     );
 };
 
-export default BotaoAvancar;
+export default BotaoFinalizar;

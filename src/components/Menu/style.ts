@@ -50,7 +50,7 @@ export const Container = styled.div`
           display:block;
           margin-top: 10px;
           margin-left: 15px;
-          transition-duration: 0.5s;
+          transition: 0.5s;
 
           font-family: Arial, Helvetica, sans-serif;
           font-style: normal;

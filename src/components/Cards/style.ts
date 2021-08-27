@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { shade } from "polished";
 
 export const Content_cards = styled.div`
   width: 85%;
@@ -7,6 +8,10 @@ export const Content_cards = styled.div`
   align-content: flex-start;
   justify-content: space-between;
   padding: 20px;
+
+  &:hover {
+    color: ${shade(0.2, "#fff")};
+  }
 
   .card_type{
     min-width: 450px;

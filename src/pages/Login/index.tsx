@@ -9,7 +9,7 @@ import { AuthContext, useAuth } from "../../hooks/auth";
 import getValidationsErrors from "../../utils/getValidationErrors";
 
 import Input from "../../components/Input";
-import Button from "../../components/Button";
+import Button from "../../components/Buttons/Button";
 
 import { Container, Content, ContInput, Strip, Triangle, Imagem, ContPass } from "./styles";
 import { useHistory } from "react-router-dom";
