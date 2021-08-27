@@ -90,7 +90,7 @@ const Cadastrar: React.FC = () => {
 
 
           <div className="position">
-            <a href="/cadastrar3">
+            <a href="/cadastrar2">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>
             </BotaoAvancar>

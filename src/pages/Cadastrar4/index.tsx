@@ -1,8 +1,12 @@
-import React, { useState, FormEvent } from 'react';
+import React from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
-import { BsFillCaretRightFill } from "react-icons/bs"
+import { BsFillCaretRightFill, BsX } from "react-icons/bs";
+import { FiX } from "react-icons/fi";
+import { RiAddLine } from "react-icons/ri";
+
+
 
 const Cadastrar4: React.FC = () => {
     return (
@@ -65,27 +69,53 @@ const Cadastrar4: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Nome CC:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Centro de custo:</b>
               <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
             </div>
 
             <div className="line">
               <div className="tamanho">
-                <input type="text" placeholder="0000000000" />
+                <input type="text" placeholder="Digite aqui..." />
               </div>
-              <div className="tamanho">
+              <div className="tamanho2">
                 <input type="number" placeholder="%"/>
+              </div>
+              <div className="box cor_3f">
+              <RiAddLine color="#fff"/>
               </div>
 
             </div>
 
             <div className="table">
 
+              <div className="header">
+                <div className="title1 bold helvetica cor_0 fonte_15">
+                  Centro de custo
+                </div>
+                <div className="title2 bold helvetica cor_0 fonte_15">
+                    Percentual
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  Vendas
+                </div>
+
+                <div className="column2">
+                  100%
+                </div>
+              </div>
+
+
             </div>
           </div>
 
           <div className="position">
-            <a href="/cadastrar4">
+            <a href="/cadastrar5">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>
             </BotaoAvancar>

@@ -37,10 +37,89 @@ p{
   flex-wrap: nowrap;
   justify-content: space-evenly;
 
+  .box{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+    &:hover{
+      background: #008EA5;
+      transition: 0.2s;
+    }
+  }
+
+
 .table{
-  width: 100%;
-  height: 200px;
-  background: red;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+  background: #fff;
+  height: 180px;
+
+  .header{
+    display:flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background: #EBEBEB;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5px;
+    border-bottom-color: #DCDCDC;
+
+    .title1{
+      width:60%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      border-right-style: solid;
+      border-right-width: 0.5px;
+      border-right-color: #DCDCDC;
+      align-items: center;
+    }
+
+    .title2{
+      width:40%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  .columns{
+    width:100%;
+    display: flex;
+    background: #fff;
+
+    .column1{
+      width: 60%;
+      height: 30px;
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+
+
+      }
+
+    .column2{
+      height: 30px;
+      width: 40%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+    }
+  }
+
 }
 
 
@@ -58,6 +137,10 @@ p{
 
     .tamanho{
       width:45%;
+    }
+
+    .tamanho2{
+      width: 25%;
     }
 
     input{
