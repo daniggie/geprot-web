@@ -4,9 +4,9 @@ import { shade } from 'polished';
 
 export const TituloF = styled.div`
     height: 30px;
-    width: 93%;
-    margin-top: 40px;
-    padding: 10px 113px 25px 20px;
+    width: 95%;
+    margin-top: 10px;
+    padding: 15px 113px 25px 20px;
     display: flex;
 
     p{
@@ -42,48 +42,6 @@ export const Filtros = styled.div`
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
-
-
-    .content_title {
-      width: 25%;
-      display:flex;
-      align-items: center;
-
-      &:first-child{
-        width: 20%;
-      }
-    }
-
-    form post{
-      background: red;
-    }
-
-    .texto{
-      margin-left: 0px;
-    }
-
-    select {
-      width: 100px;
-      height: 25px;
-      margin-left: 5px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-style: normal;
-      font-size: 15px;
-      color: #fff;
-
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-
-      border: none;
-      border-radius: 5px;
-    }
-
-    .status{
-      width: 150px;
-      padding-left: 10%;
-      padding-right: 10%;
-    }
 `;
 
 export const BodyDashboards = styled.div`
@@ -93,7 +51,7 @@ export const BodyDashboards = styled.div`
   align-content: flex-start;
   justify-content: space-between;
   padding: 0 0 0 25px;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 10px
 `;
 
@@ -119,6 +77,22 @@ export const LitlleCont = styled.div`
     flex-direction: column;
     text-align: center;
     padding-top: 11px;
+    color: #fff;
+  }
+
+  table{
+    width: 100%;
+    height: 180px;
+    color: #828282;
+    text-align: center;
+    font-size: 20px;
+
+    td{
+      &:hover{
+        background: rgb(0, 87, 157, 0.2);
+      }
+    }
+
   }
 
 `;
@@ -138,6 +112,7 @@ export const MediumCont = styled.div`
     flex-direction: column;
     text-align: center;
     padding-top: 11px;
+    color: #fff;
   }
 `;
 
@@ -156,5 +131,6 @@ export const BigCont = styled.div`
     flex-direction: column;
     text-align: center;
     padding-top: 11px;
+    color: #fff;
   }
 `;
