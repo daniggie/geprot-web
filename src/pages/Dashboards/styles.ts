@@ -70,13 +70,13 @@ export const LitlleCont = styled.div`
 
   div{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 5px 5px 0 0;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 7px;
     color: #fff;
   }
 
@@ -86,11 +86,16 @@ export const LitlleCont = styled.div`
     color: #828282;
     text-align: center;
     font-size: 20px;
+    border-radius: 5px;
 
-    td{
-      &:hover{
-        background: rgb(0, 87, 157, 0.2);
-      }
+    .impar{
+      background: rgb(220, 220, 220, 0.5);
+      border-radius: 5px;
+    }
+
+    .par{
+      background: rgb(192, 192, 192, 0.7);
+      border-radius: 5px;
     }
 
   }
@@ -105,13 +110,13 @@ export const MediumCont = styled.div`
 
   div{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 5px 5px 0 0;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 7px;
     color: #fff;
   }
 `;
@@ -124,13 +129,46 @@ export const BigCont = styled.div`
 
   div{
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 5px 5px 0 0;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding-top: 11px;
+    padding-top: 7px;
     color: #fff;
+  }
+
+  .contGrafic{
+    width: 90%;
+    height: 170px;
+    margin-left: 40px;
+    display:flex;
+    flex-direction: column;
+    padding-left: 15px;
+    margin-top: 10px;
+
+    .barGraficG{
+      width: 40px;
+      height: 183px;
+      background: #0091BD;
+      display: flex;
+    }
+
+    .barGraficM{
+      width: 40px;
+      height: 143px;
+      background: #2382BA;
+      display: flex;
+      margin-top: 40px;
+    }
+
+    .barGraficP{
+      width: 40px;
+      height: 103px;
+      background: #0075B1;
+      display: flex;
+      margin-top: 80px;
+    }
   }
 `;

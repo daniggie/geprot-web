@@ -48,7 +48,21 @@ const Dashboard: React.FC = () => {
               <div className="status cor_3f">
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
-              <FiBarChart2 size="150px" />
+              <div className="contGrafic">
+                <div className="barGraficG"></div>
+                <div className="barGraficM"></div>
+                <div className="barGraficP"></div>
+                <div className="barGraficP"></div>
+                <div className="barGraficM"></div>
+                <div className="barGraficG"></div>
+                <div className="barGraficM"></div>
+                <div className="barGraficP"></div>
+                <div className="barGraficP"></div>
+                <div className="barGraficG"></div>
+                <div className="barGraficM"></div>
+                <div className="barGraficP"></div>
+                <div className="barGraficM"></div>
+              </div>
             </BigCont>
 
           </Container>
@@ -68,13 +82,13 @@ const Dashboard: React.FC = () => {
               </div>
               <table className="funds">
                 <tr>
-                    <td>R$ 14.000,00</td>
-                </tr>
-                <tr className="par">
-                    <td>€ 2.205,34</td>
+                  <td className="impar">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                    <td>$ 2.677,68</td>
+                  <td className="par">€ 2.205,34</td>
+                </tr>
+                <tr>
+                  <td className="impar">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
@@ -85,30 +99,30 @@ const Dashboard: React.FC = () => {
               </div>
               <table className="funds">
                 <tr>
-                    <td>R$ 14.000,00</td>
+                  <td className="impar">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                    <td>€ 2.205,34</td>
+                  <td className="par">€ 2.205,34</td>
                 </tr>
                 <tr>
-                    <td>$ 2.677,68</td>
+                  <td className="impar">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
 
             <LitlleCont>
               <div className="status cor_3f">
-                <p>VERBA APROVADA</p>
+                <p>VERBA  APROVADA</p>
               </div>
               <table className="funds">
                 <tr>
-                    <td>R$ 14.000,00</td>
+                  <td className="impar">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                    <td>€ 2.205,34</td>
+                  <td className="par">€ 2.205,34</td>
                 </tr>
                 <tr>
-                    <td>$ 2.677,68</td>
+                  <td className="impar">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
