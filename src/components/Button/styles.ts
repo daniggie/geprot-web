@@ -3,27 +3,53 @@ import styled from "styled-components";
 import { shade } from 'polished'
 
 export const Container = styled.button`
-width: 205px;
-background: #0091BD;
-border-radius: 5px;
-border:0px;
-float:right;
-display:flex;
-justify-content: center;
-align-items: center;
-padding: 10px;
+  background-color: #0090C5;;
+  width:25%;
+  height:40px;
+  float: left;
+  border-radius: 5px;
+  border: none;
 
-p{
-  font-size:25px;
-  color:#fff;
-  display:flex;
-  justify-content: center;
-  font-style:normal;
-}
+  &:hover{
+    background: #00579D;
+  }
 
-transition: background-color 0.2s;
+  a:hover {
+    text-decoration:none;
+  }
 
-&:hover {
-    background: ${shade(0.2, '#0091BD')}
-}
+  a:link {
+    text-decoration:none;
+  }
+
+  a:visited{
+    text-decoration:none;
+  }
+
+  .divButton{
+    background-color: #0090C5;
+    width:100%;
+    height:40px;
+    display: flex;
+    border-radius: 5px;
+    color: white;
+    font-size: 15px;
+    &:hover{
+      background: #00579D;
+    }
+    p{
+      margin-left: 2px;
+      margin-top: 13px;
+    }
+  }
+
+  .divIcon{
+    background-color: #00579D;
+    width:31%;
+    height:40px;
+    display: flex;
+    border-radius: 5px 0px 0px 5px;
+    padding-top: 8px;
+    padding-left: 3px;
+  }
 `;
