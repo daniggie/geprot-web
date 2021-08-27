@@ -5,6 +5,7 @@ import BotaoAvancar from '../../components/ButtonAvancar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
+import BotaoCancel from '../../components/ButtonCancel';
 
 
 
@@ -115,6 +116,11 @@ const Cadastrar4: React.FC = () => {
           </div>
 
           <div className="position">
+            <a href="/home">
+              <BotaoCancel>
+              </BotaoCancel>
+            </a>
+
             <a href="/cadastrar5">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>

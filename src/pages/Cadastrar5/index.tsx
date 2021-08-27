@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
+import BotaoCancel from '../../components/ButtonCancel';
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { RiAddLine } from "react-icons/ri";
 
@@ -110,6 +111,10 @@ const Cadastrar5: React.FC = () => {
         </div>
 
           <div className="position">
+            <a href="/home">
+              <BotaoCancel>
+              </BotaoCancel>
+            </a>
             <a href="/cadastrar6">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>

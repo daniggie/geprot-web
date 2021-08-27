@@ -184,11 +184,12 @@ p{
   &:hover{
     background: #008EA5;
     transition: 0.2s;
+    cursor: pointer;
   }
 }
 .position{
   width:100%;
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 `;

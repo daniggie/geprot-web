@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../components/Barra";
 import BotaoAvancar from '../../components/ButtonAvancar';
+import BotaoCancel from '../../components/ButtonCancel';
 import { BsFillCaretRightFill } from "react-icons/bs"
 
 const Cadastrar3: React.FC = () => {
@@ -70,6 +71,11 @@ const Cadastrar3: React.FC = () => {
 
 
           <div className="position">
+          <a href="/home">
+              <BotaoCancel>
+              </BotaoCancel>
+            </a>
+
             <a href="/cadastrar4">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>

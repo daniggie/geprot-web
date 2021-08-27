@@ -30,12 +30,13 @@ p{
 }
 
 .content{
-  height: 320px;
+  width: calc(100%/3);
+  min-height: 350px;
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  margin-left: 5px;
+  margin-bottom: 5px;
 
   .box{
     width: 20px;
@@ -52,11 +53,20 @@ p{
     }
   }
 
+  .borderstyle{
+    width: 100%;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    padding: 5px;
+
+  }
+
 
 .table{
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
   background: #fff;
-  height: 180px;
+  min-height: 295px;
+  width:80%;
+  margin-left: 30px;
 
   .header{
     display:flex;
@@ -98,7 +108,7 @@ p{
       width: 60%;
       height: 30px;
       display:flex;
-      justify-content: flex-start;
+      justify-content: space-evenly;
       align-items: center;
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
@@ -126,12 +136,29 @@ p{
   .line{
     width: 100%;
     display flex;
-    min-height: 25px;
 
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+
+    .download{
+      width:100%;
+      background: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 10px 0px 10px;
+      cursor: pointer;
+
+      &:hover{
+        opacity: 0.7;
+        transition: 0.2s;
+
+      }
+    }
 
     .tamanho{
       width:50%;
