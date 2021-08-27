@@ -19,6 +19,8 @@ export const Content = styled.div`
     form {
         width: 500px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 0px 5px 5px;
+
 
         h1 {
             margin-bottom: 24px;
@@ -63,7 +65,7 @@ export const Content = styled.div`
 export const Imagem = styled.img`
   width: 233px;
   height: 143px;
-  margin: 60px 0px 50px 0px;
+  margin: 30px 0px 40px 0px;
 `;
 
 export const Strip = styled.div`
