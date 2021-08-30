@@ -15,7 +15,7 @@ export const Titulo = styled.div`
 `;
 
 export const Formulario = styled.form`
-margin: 40px 160px 0px 160px;
+margin: 40px 160px 20px 160px;
 padding: 60px;
 border:  1px solid #dedede;
 border-radius: 3px;

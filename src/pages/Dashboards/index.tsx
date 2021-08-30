@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont } from './styles';
 import Menu from '../../components/Menu';
 
-import { FiPieChart, FiBarChart2 } from "react-icons/fi"
 import Header from "../../components/Header";
 import FilterSearch from "../../components/FilterSearch";
 import FilterStatus from "../../components/FilterStatus";
 import FilterTime from "../../components/FilterTime";
 import FilterCC from "../../components/FilterCC";
+
+import { Chart } from "react-google-charts";
+
 
 const Dashboard: React.FC = () => {
 
@@ -38,19 +40,59 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_3f">
+              <div className="title status cor_3f">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
-              <FiPieChart size="150px" />
+              <Chart
+                width={"100%"}
+                height={"180px"}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+
+                data={[
+                  ['Projects', 'Percent', { role: 'style' }],
+                  ['Completed', 30, "#0091BD"],
+                  ['Not Completed', 70, "#00579D"],
+                ]}
+
+                options={{
+                  pieHole: 0.5,
+                  pieSliceTextStyle: {
+                  color: 'black',
+                  },
+                  legend: 'none'
+                }}
+              />
             </MediumCont>
 
             <BigCont>
-              <div className="status cor_3f">
+              <div className="title status cor_3f">
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
-              <div className="contGrafic">
-                <div id="top_x_div" ></div>
-              </div>
+              <Chart
+                width={"100%"}
+                height={"180px"}
+                chartType="ColumnChart"
+                loader={<div>Loading Chart</div>}
+
+                data={[
+                  ['Weeks', 'Projects', { role: 'style' }],
+                  ['Day 1', 10, "#0091BD"],
+                  ['Day 2', 20, "#0091BD"],
+                  ['Day 3', 50, "#0091BD"],
+                  ['Day 4', 17, "#0091BD"],
+                  ['Day 5',20, "#0091BD"],
+                  ['Day 6', 20, "#0091BD"],
+                  ['Day 7', 60, "#0091BD"],
+                ]}
+
+                options={{
+                  legend: 'none',
+                  columnSliceTextStyle: {
+                    color: '#828282',
+                    },
+                }}
+              />
             </BigCont>
 
           </Container>
@@ -58,10 +100,9 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_3f">
+              <div className="title status cor_3f">
                 <p>PROJETOS ATRASADOS</p>
               </div>
-              <FiPieChart size="150px"/>
             </MediumCont>
 
             <LitlleCont>

@@ -108,7 +108,7 @@ export const MediumCont = styled.div`
   align-items: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  div{
+  .title{
     width: 100%;
     height: 40px;
     border-radius: 5px 5px 0 0;
@@ -127,30 +127,16 @@ export const BigCont = styled.div`
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  div{
-    width: 100%;
-    height: 40px;
-    border-radius: 5px 5px 0 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 12px;
-    color: #fff;
-  }
-
-  .contGrafic{
-    width: 90%;
-    height: 160px;
-    margin-left: 40px;
-    display:flex;
-    flex-direction: column;
-    padding-left: 15px;
-    margin-top: 10px;
-
-    #top_x_div{
-      width: 800px; 
-      height: 600px;
+    .title{
+      width: 100%;
+      height: 40px;
+      border-radius: 5px 5px 0 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 12px;
+      color: #fff;
     }
   }
 `;
