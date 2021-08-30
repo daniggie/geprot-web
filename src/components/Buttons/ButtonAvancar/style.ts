@@ -15,7 +15,7 @@ padding: 10px;
   transition: 0.4s;
 }
 p{
-  font-size:25px;
+  font-size:20px;
   color:#fff;
   display:flex;
   justify-content: center;

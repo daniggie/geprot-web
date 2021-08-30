@@ -21,7 +21,7 @@ export const All = styled.div`
     background: #EBEBEB;
 
     .informations{
-      max-height: 300px;
+      max-height: 250px;
       overflow: auto;
     }
 
@@ -36,8 +36,8 @@ export const All = styled.div`
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
 
-      .title1{
-        width:10%;
+      .title{
+        width:20%;
         height: 50px;
         display:flex;
         justify-content: center;
@@ -51,13 +51,20 @@ export const All = styled.div`
       }
 
       .title2{
-        width: 23%;
+        width:50%;
         height: 50px;
         display:flex;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
 
         p{
+          width: 60%;
+          display:flex;
+          justify-content:  space-around;
+        }
+
+        b{
+          width: 40%;
           display:flex;
           justify-content: flex-start;
         }
@@ -76,9 +83,9 @@ export const All = styled.div`
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
 
-      .column1{
+      .column{
 
-        width:10%;
+        width:20%;
         height: 50px;
         display:flex;
         justify-content: center;
@@ -92,19 +99,16 @@ export const All = styled.div`
 
         }
 
-      .column2{
-        width: 23%;
-        height: 50px;
-        display:flex;
-        justify-content: center;
-        align-items: center;
 
-        p{
-          display:flex;
-          justify-content: flex-start;
-        }
-      }
     }
 
+  }
+
+  .position{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
   }
 `;
