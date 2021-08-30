@@ -5,7 +5,6 @@ width: 205px;
 background: #0091BD;
 border-radius: 5px;
 border:0px;
-float:right;
 display:flex;
 justify-content: center;
 align-items: center;
@@ -15,7 +14,7 @@ padding: 10px;
   transition: 0.4s;
 }
 p{
-  font-size:25px;
+  font-size:20px;
   color:#fff;
   display:flex;
   justify-content: center;

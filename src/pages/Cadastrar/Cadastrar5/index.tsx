@@ -1,8 +1,8 @@
 import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario } from './style';
-import Barra from "../../components/Barra";
-import BotaoAvancar from '../../components/Buttons/ButtonAvancar';
-import BotaoCancel from '../../components/Buttons/ButtonCancel';
+import Barra from "../../../components/Barra";
+import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
+import BotaoCancel from '../../../components/Buttons/ButtonCancel';
 import { BsFillCaretRightFill } from "react-icons/bs";
 import { RiAddLine } from "react-icons/ri";
 
