@@ -5,8 +5,8 @@ interface TableProps{
 };
 
 export const Titulo = styled.div`
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 40px;
+  margin-left: 160px;
   display:flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -19,9 +19,10 @@ export const Titulo = styled.div`
 `;
 
 export const Formulario = styled.form<TableProps>`
-margin: 20px;
+margin: 40px 160px 0px 160px;
 padding: 60px;
 border:  1px solid #dedede;
+border-radius: 3px;
 
 display:flex;
 justify-content: space-between;
@@ -34,9 +35,11 @@ p{
 }
 
 .table{
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
   background: #fff;
   height: 200px;
+  border:  1px solid #dedede;
+  border-radius: 3px;
+
   .header{
     display:flex;
     width: 100%;
@@ -164,10 +167,11 @@ p{
 
     input{
       width: 100%;
-      box-shadow: inset 2px 4px 3px rgba(0,0,0,0.25);
       border-radius:5px;
-      border: 1px;
       padding:10px;
+      border:  1px solid #dedede;
+      border-radius: 3px;
+
     }
   }
 }
@@ -178,8 +182,6 @@ p{
   border-radius: 5px;
   margin: 10px 10px 10px 10px;
   padding: 2px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-
 
   &:hover{
     background: #008EA5;
@@ -187,6 +189,7 @@ p{
     cursor: pointer;
   }
 }
+
 .position{
   width:100%;
     display:flex;

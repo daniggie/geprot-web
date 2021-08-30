@@ -49,19 +49,7 @@ const Dashboard: React.FC = () => {
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
               <div className="contGrafic">
-                <div className="barGraficG"></div>
-                <div className="barGraficM"></div>
-                <div className="barGraficP"></div>
-                <div className="barGraficP"></div>
-                <div className="barGraficM"></div>
-                <div className="barGraficG"></div>
-                <div className="barGraficM"></div>
-                <div className="barGraficP"></div>
-                <div className="barGraficP"></div>
-                <div className="barGraficG"></div>
-                <div className="barGraficM"></div>
-                <div className="barGraficP"></div>
-                <div className="barGraficM"></div>
+                <div id="top_x_div" ></div>
               </div>
             </BigCont>
 

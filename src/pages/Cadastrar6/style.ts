@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Titulo = styled.div`
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 40px;
+  margin-left: 160px;
   display:flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
@@ -15,9 +15,10 @@ export const Titulo = styled.div`
 `;
 
 export const Formulario = styled.form`
-margin: 20px;
-padding: 60px;
+margin: 40px 160px 20px 160px;
+padding: 10px;
 border:  1px solid #dedede;
+border-radius: 3px;
 
 display:flex;
 justify-content: space-between;
@@ -54,7 +55,7 @@ p{
   }
 
   .borderstyle{
-    width: 100%;
+    width: 90%;
     border: 3px solid rgba(0, 0, 0, 0.1);
     padding: 5px;
 
@@ -62,11 +63,12 @@ p{
 
 
 .table{
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
   background: #fff;
   min-height: 295px;
   width:80%;
-  margin-left: 30px;
+  margin-left: 0px;
+  border:  1px solid #dedede;
+
 
   .header{
     display:flex;
@@ -134,7 +136,7 @@ p{
 
 
   .line{
-    width: 100%;
+    width: 90%;
     display flex;
 
     flex-direction: row;
@@ -143,7 +145,7 @@ p{
     justify-content: space-between;
 
     .download{
-      width:100%;
+      width:90%;
       background: #FFFFFF;
       border: 1px solid rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
