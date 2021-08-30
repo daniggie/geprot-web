@@ -7,38 +7,49 @@ import Menu from '../../components/Menu';
 import { All, Filtros, Error, Form } from './style';
 import FilterSearch from '../../components/FilterSearch';
 import FilterStatus from '../../components/FilterStatus';
-import { FiChevronRight } from 'react-icons/fi';
 
-interface Projeto {
+interface Card {
+  projeto : {
   id: Number,
-  nomeprojeto: string,
+  nome: string,
   datainicio: Date,
   datafinalizacao: Date,
+  datacadastro: Date,
   horasprevistas: Number,
   horastrabalhadas: Number,
   valorprojeto: Number,
   valorutilizado: Number,
   valorrestante: Number,
   statusprojeto: String
+  },
+  usuario: {
+    id: number,
+    nome: String,
+    email: String,
+    secao:{
+      id:number,
+      nome:String
+    }
+  }
 }
 
 const Home: React.FC = () => {
-const [newEndereco , setNewEndereco] = useState('');
+const [newCard , setNewCard] = useState('');
 const [inputError, setInputError] = useState('');
-const [repositories, setRepositories] = useState<Projeto[]>(() => {
-  const storageEndereco = localStorage.getItem(
-    '@EnderecoExplorer:repositories',
+const [repositories, setRepositories] = useState<Card[]>(() => {
+  const storageCard = localStorage.getItem(
+    '@CardExplorer:repositories',
   );
 
- if(storageEndereco){
-    return JSON.parse(storageEndereco);
+ if(storageCard){
+    return JSON.parse(storageCard);
   }
   return [];
 });
 
 useEffect(() => {
   localStorage.setItem(
-    '@EnderecoExplorer:repositories',
+    '@CardExplorer:repositories',
     JSON.stringify(repositories)
 
    );
@@ -49,22 +60,22 @@ async function handleAddRepository(
 ): Promise<void> {
   event.preventDefault();
 
-  if(!newEndereco){
+  if(!newCard){
     setInputError("Campo de busca encontra-se vazio!");
     return;
   }
 
  try{
 
-    const response = await api.get<Projeto>(`projetos/listar`);
+    const response = await api.get<Card>(`projetos/listar`);
     const repository = response.data;
 
     setRepositories([...repositories, repository]);
-    setNewEndereco('');
+    setNewCard('');
     setInputError('');
 
   } catch(err){
-    setInputError("Endereço não encontrado/inexistente");
+    setInputError("Nenhum projeto para ser listado");
   }
 
 }
