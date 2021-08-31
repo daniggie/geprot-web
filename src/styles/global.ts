@@ -86,6 +86,10 @@ export default createGlobalStyle`
       background: #00C42B;
   }
 
+  .gray {
+      background: #828282;
+  }
+
   .fonte_10 {
     font-size: 10px;
   }
