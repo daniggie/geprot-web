@@ -31,7 +31,7 @@ export const Content_cards = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 60px 0px 60px;
 `;
 
 export const Form = styled.form<FormProps>`
