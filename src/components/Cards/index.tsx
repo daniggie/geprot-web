@@ -1,9 +1,54 @@
-import React from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import { Content_cards } from "./style";
+import api from "../../services/api";
 
 import relogio from '../../icons/relogio.svg';
 
+
+interface Card {
+  projeto : {
+    id: number;
+    nome: string;
+    datainicio: string;
+    datafinalizacao: string;
+    datacadastro: string;
+    horasprevistas: number;
+    horastrabalhadas: number;
+    valor: number;
+    valorutilizado: number;
+    valorrestante: number;
+    status: string;
+  };
+}
+
 const Cards: React.FC = () => {
+  const [ valores, setValores ] = useState<Card[]>([]);
+  useEffect(() => {
+    api.get(`projetos/listar`).then( response => {
+        setValores(response.data)
+      }
+    )
+  }, [])
+  console.log(valores.map(valor => valor.projeto.nome));
+
+  const[newCard, newSetCard] = useState('');
+  const[consulta, setConsulta] = useState<Card>();
+
+  async function handleAddRepository(event: FormEvent<HTMLFormElement>): Promise<void>{
+    event.preventDefault();
+
+    try{
+
+      const response = await api.get<Card>(`projetos/listar`);
+      const consulta = response.data;
+      console.log(consulta);
+
+    }catch(err){
+      console.log("Deu merda");
+    }
+}
+
+
     return(
         <Content_cards>
 
@@ -20,7 +65,7 @@ const Cards: React.FC = () => {
 
                     <div className="card_secao">
                         <div className="cor_4 fonte_12 helvetica ">
-                            Seção - X
+                            Seção
                         </div>
                     </div>
 
@@ -31,7 +76,7 @@ const Cards: React.FC = () => {
                         </div>
 
                         <div className="cor_black fonte_12 helvetica bold ">
-                            Teste
+                            {consulta ? consulta.projeto.status : "não chegou"}
                         </div>
 
                     </div>
@@ -41,7 +86,7 @@ const Cards: React.FC = () => {
                     <div className="card_title">
 
                         <div className="cor_black fonte_25 helvetica bold">
-                            00001252 - Nome do projeto
+                        {consulta ? consulta.projeto.id : "não chegou"} - {consulta ? consulta.projeto.nome : valores.map(valor => valor.projeto.nome)}
                         </div>
 
                     </div>
@@ -62,7 +107,7 @@ const Cards: React.FC = () => {
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                                12.000,00
+                            {consulta ? consulta.projeto.valor : "não chegou"}
                             </div>
 
                         </div>
@@ -79,7 +124,7 @@ const Cards: React.FC = () => {
                             <img src={relogio} alt=" " />
                         </div>
                         <div className="cor_0 fonte_14 helvetica">
-                          95 H
+                        {consulta ? consulta.projeto.horasprevistas : "não chegou"} H
                         </div>
 
                     </div>
@@ -100,7 +145,7 @@ const Cards: React.FC = () => {
                             </div>
 
                             <div className="texto cor_0 fonte_14 helvetica">
-                              1.500,00
+                            {consulta ? consulta.projeto.valorrestante : "não chegou"}
                             </div>
 
                         </div>
@@ -119,7 +164,7 @@ const Cards: React.FC = () => {
                         </div>
 
                         <div className="cor_0 fonte_14 helvetica">
-                            50 H
+                        {consulta ? consulta.projeto.horastrabalhadas : "não chegou"} H
                         </div>
 
                     </div>
@@ -129,11 +174,11 @@ const Cards: React.FC = () => {
                 <div className="linha_3">
                     <div className="texto_content_horas">
                         <div className="cor_0 fonte_14 helvetica">
-                            Dê: 02/02/2020
+                            Dê: {consulta ? consulta.projeto.datainicio : "não chegou"}
                         </div>
 
                         <div className="cor_0 fonte_14 helvetica">
-                            Até: 05/05/2021
+                            Até: {consulta ? consulta.projeto.datafinalizacao : "não chegou"}
                         </div>
 
                     </div>

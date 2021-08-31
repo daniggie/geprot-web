@@ -4,6 +4,7 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 
+import { FiChevronRight  } from 'react-icons/fi';
 import { All, Filtros, Error, Form } from './style';
 import FilterSearch from '../../components/FilterSearch';
 import FilterStatus from '../../components/FilterStatus';
@@ -34,50 +35,12 @@ interface Card {
 }
 
 const Home: React.FC = () => {
-const [newCard , setNewCard] = useState('');
-const [inputError, setInputError] = useState('');
-const [repositories, setRepositories] = useState<Card[]>(() => {
-  const storageCard = localStorage.getItem(
-    '@CardExplorer:repositories',
-  );
+const [consulta, setConsulta] = useState<Card[]>([]);
 
- if(storageCard){
-    return JSON.parse(storageCard);
-  }
-  return [];
-});
-
-useEffect(() => {
-  localStorage.setItem(
-    '@CardExplorer:repositories',
-    JSON.stringify(repositories)
-
-   );
-}, [repositories]);
-
-async function handleAddRepository(
-  event: FormEvent<HTMLFormElement>,
-): Promise<void> {
-  event.preventDefault();
-
-  if(!newCard){
-    setInputError("Campo de busca encontra-se vazio!");
-    return;
-  }
-
- try{
-
-    const response = await api.get<Card>(`projetos/listar`);
-    const repository = response.data;
-
-    setRepositories([...repositories, repository]);
-    setNewCard('');
-    setInputError('');
-
-  } catch(err){
-    setInputError("Nenhum projeto para ser listado");
-  }
-
+window.onload = async function handleProjetos() {
+  const response = await api.get<Card[]>(`projetos/listar`);
+  const data = response.data;
+  setConsulta(data);
 }
 
   return (
@@ -104,8 +67,9 @@ async function handleAddRepository(
       </Filtros>
 
       <All>
-
-        <Cards/>
+        {consulta.map(consultaCard => (
+          <Cards/>
+        ))}
 
         <Menu/>
 
