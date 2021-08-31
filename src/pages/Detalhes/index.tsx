@@ -2,6 +2,7 @@ import React from "react";
 import { All, Content, BttnPosition } from "./style";
 import ButtonAprovar from "../../components/Buttons/ButtonAprovar";
 import Barra from "../../components/Barra";
+import { Chart } from "react-google-charts";
 
 const Detalhes: React.FC = () => {
     return(
@@ -82,10 +83,42 @@ const Detalhes: React.FC = () => {
                 </div>
 
                 <div className="line">
-                    <div className="grafico">
+                  <Chart
+                    width={"100%"}
+                    height={"180px"}
+                    chartType="PieChart"
+                    loader={<div>Loading Chart</div>}
 
-                    </div>
-                </div>
+                    data={[
+                      ['Times', 'Percent'],
+                      ['Horas', 100]
+                    ]}
+
+                    options={{
+                      pieHole: 0.67,
+                      title: "",
+                      pieSliceBorderColor: "none",
+                      colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
+                      legend: {
+                        position: "none"
+                      },
+                      tooltip: {
+                        trigger: "none"
+                      },
+                      pieSliceText: "none",
+                      chartArea:{
+                        left:0,
+                        top:10,
+                        width:'100%',
+                        height:'90%'
+                      }
+                    }}
+                  />
+                  <div id="labelOverlay">
+                    <p className="used-size">120<span>h</span></p>
+                    <p className="total-size"> of 120h</p>
+                  </div>
+              </div>
 
                 <div className="table_header">
                     <div className="table fonte_20 cor_1">
