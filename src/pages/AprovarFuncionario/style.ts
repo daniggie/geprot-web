@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const All = styled.div`
 
   display: flex;
-  margin: 50px;
+  margin: 25px;
   flex-wrap: wrap;
   justify-content: center;
 
@@ -110,5 +110,9 @@ export const All = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 15px;
+
+    p{
+      justify-content: center;
+    }
   }
 `;

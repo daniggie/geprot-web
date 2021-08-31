@@ -15,11 +15,11 @@ export const Titulo = styled.div`
 `;
 
 export const Formulario = styled.form`
-margin: 40px 160px 20px 160px;
+margin: 40px 120px 20px 120px;
 padding: 10px;
 border:  1px solid #dedede;
 border-radius: 3px;
-
+padding: 50px;
 display:flex;
 justify-content: space-between;
 align-items: flex-start;
@@ -38,21 +38,6 @@ p{
   flex-wrap: nowrap;
   justify-content: space-evenly;
   margin-bottom: 5px;
-
-  .box{
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    margin: 10px 10px 10px 10px;
-    padding: 2px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-    &:hover{
-      background: #008EA5;
-      transition: 0.2s;
-    }
-  }
 
   .borderstyle{
     width: 90%;
@@ -153,6 +138,7 @@ p{
       justify-content: space-between;
       align-items: center;
       padding: 0px 10px 0px 10px;
+      margin: 5px;
       cursor: pointer;
 
       &:hover{
