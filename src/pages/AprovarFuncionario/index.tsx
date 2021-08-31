@@ -1,12 +1,11 @@
 import React from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
-import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
-import { CgSearchLoading } from "react-icons/cg";
 import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 
 const AprovarFuncionario: React.FC = () => {
+
     return(
       <>
       <Barra />
@@ -272,7 +271,7 @@ const AprovarFuncionario: React.FC = () => {
               <BotaoCancel>
               </BotaoCancel>
             </a>
-          <BotaoAprovar/>
+          <BotaoAprovar />
         </div>
 
       </All>

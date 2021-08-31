@@ -12,6 +12,10 @@ import Dashboard from '../pages/Dashboards';
 import Detalhes from '../pages/Detalhes';
 import AprovarHoras from '../pages/AprovarHoras';
 import AprovarFuncionario from '../pages/AprovarFuncionario';
+import Editar1 from '../pages/Editar/Editar1';
+import Editar2 from '../pages/Editar/Editar2';
+import Editar3 from '../pages/Editar/Editar3';
+import Editar4 from '../pages/Editar/Editar4';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -27,6 +31,10 @@ const Routes: React.FC = () => (
   <Route path="/cadastrar4" exact component={Cadastrar4} />
   <Route path="/cadastrar5" exact component={Cadastrar5} />
   <Route path="/cadastrar6" exact component={Cadastrar6} />
+  <Route path="/editar1" exact component={Editar1} />
+  <Route path="/editar2" exact component={Editar2} />
+  <Route path="/editar3" exact component={Editar3} />
+  <Route path="/editar4" exact component={Editar4} />
 
 
 

@@ -18,6 +18,5 @@ p{
   font-size:20px;
   display:flex;
   justify-content: center;
-  font-style:normal;
 }
 `;

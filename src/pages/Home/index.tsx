@@ -4,10 +4,13 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 
-import { FiChevronRight  } from 'react-icons/fi';
-import { All, Filtros, Error, Form } from './style';
+
+import { All, Filtros, Content_cards } from './style';
 import FilterSearch from '../../components/FilterSearch';
 import FilterStatus from '../../components/FilterStatus';
+
+import { FiChevronRight } from "react-icons/fi";
+
 
 interface Card {
   projeto : {
@@ -45,7 +48,7 @@ window.onload = async function handleProjetos() {
 
   return (
     <>
-      <Header>
+    <Header>
       </Header>
 
       <Filtros>
@@ -67,14 +70,21 @@ window.onload = async function handleProjetos() {
       </Filtros>
 
       <All>
-        {consulta.map(consultaCard => (
-          <Cards/>
-        ))}
+        <Content_cards>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
 
+        </Content_cards>
         <Menu/>
 
       </All>
-
     </>
   );
 };

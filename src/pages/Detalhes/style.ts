@@ -29,31 +29,48 @@ export const Content = styled.div`
       justify-content: space-between;
 
       .download{
-          width: 200px;
-          height: 100%;
-          border-radius: 5px;
-          padding: 5px;
-          display:flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
+        width: 200px;
+        height: 100%;
+        border-radius: 5px;
+        padding: 5px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
 
-          &:hover{
-            background-color: #0081BD;
-            transition: 0.4s;
-          }
-
+        &:hover{
+          background-color: #0081BD;
+          transition: 0.4s;
+        }
       }
 
-      .grafico{
-          height: 150px;
-          width: 150px;
-          border-radius: 100px;
-
-          background: blue;
-          margin: auto;
+      #labelOverlay {
+        width: 90px;
+        height: 45px;
+        position: absolute;
+        top: 230px;
+        left: 960px;
+        text-align: center;
+        cursor: default;
       }
 
+      #labelOverlay p {
+        line-height: 0.3;
+        padding:0;
+        margin: 10px;
+      }
+
+      #labelOverlay p.used-size {
+        line-height: 0.5;
+        font-size: 20pt;
+        color: #8e8e8e;
+      }
+
+      #labelOverlay p.total-size {
+        line-height: 0.5;
+        font-size: 12pt;
+        color: #cdcdcd;
+      }
     }
 
     .table_header{

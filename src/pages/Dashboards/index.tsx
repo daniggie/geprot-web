@@ -50,19 +50,35 @@ const Dashboard: React.FC = () => {
                 loader={<div>Loading Chart</div>}
 
                 data={[
-                  ['Projects', 'Percent', { role: 'style' }],
-                  ['Completed', 30, "#0091BD"],
-                  ['Not Completed', 70, "#00579D"],
+                  ['Projects', 'Percent'],
+                  ['Late', .80],
+                  ['Rest', .55]
                 ]}
 
                 options={{
-                  pieHole: 0.5,
-                  pieSliceTextStyle: {
-                  color: 'black',
+                  pieHole: 0.55,
+                  title: "",
+                  pieSliceBorderColor: "none",
+                  colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
+                  legend: {
+                    position: "none"
                   },
-                  legend: 'none'
+                  pieSliceText: "none",
+                  tooltip: {
+                    trigger: "none"
+                  },
+                  chartArea:{
+                    left:0,
+                    top:10,
+                    width:'100%',
+                    height:'90%'
+                  }
                 }}
               />
+              <div id="labelOverlay">
+                <p className="used-size">59,3<span>%</span></p>
+                <p className="total-size"> of 100%</p>
+              </div>
             </MediumCont>
 
             <BigCont>
@@ -77,20 +93,26 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Weeks', 'Projects', { role: 'style' }],
-                  ['Day 1', 10, "#0091BD"],
-                  ['Day 2', 20, "#0091BD"],
-                  ['Day 3', 50, "#0091BD"],
-                  ['Day 4', 17, "#0091BD"],
-                  ['Day 5',20, "#0091BD"],
-                  ['Day 6', 20, "#0091BD"],
-                  ['Day 7', 60, "#0091BD"],
+                  ['Day 1', 11, "#0091BD"],
+                  ['Day 2', 25, '#2382BA'],
+                  ['Day 3', 56, "#0091BD"],
+                  ['Day 4', 17, '#2382BA'],
+                  ['Day 5', 32, "#0091BD"],
+                  ['Day 6', 28, '#2382BA'],
+                  ['Day 7', 77, "#0091BD"],
                 ]}
 
                 options={{
                   legend: 'none',
                   columnSliceTextStyle: {
                     color: '#828282',
-                    },
+                  },
+                  chartArea:{
+                    left:40,
+                    top:10,
+                    width:'92%',
+                    height:'80%'
+                  }
                 }}
               />
             </BigCont>
@@ -102,6 +124,42 @@ const Dashboard: React.FC = () => {
             <MediumCont>
               <div className="title status cor_3f">
                 <p>PROJETOS ATRASADOS</p>
+              </div>
+              <Chart
+                width={"100%"}
+                height={"180px"}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+
+                data={[
+                  ['Projects', 'Percent'],
+                  ['Late', .30],
+                  ['Rest', .55]
+                ]}
+
+                options={{
+                  pieHole: 0.55,
+                  title: "",
+                  pieSliceBorderColor: "none",
+                  colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
+                  legend: {
+                    position: "none"
+                  },
+                  tooltip: {
+                    trigger: "none"
+                  },
+                  pieSliceText: "none",
+                  chartArea:{
+                    left:0,
+                    top:10,
+                    width:'100%',
+                    height:'90%'
+                  }
+                }}
+              />
+              <div id="labelOverlay2">
+                <p className="used-size2">35,3<span>%</span></p>
+                <p className="total-size2"> of 100%</p>
               </div>
             </MediumCont>
 

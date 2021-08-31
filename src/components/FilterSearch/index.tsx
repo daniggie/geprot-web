@@ -15,7 +15,7 @@ const FilterSearch: React.FC = () =>{
       </div>
 
       <form>
-        <input className="procurar cor_0" type="text" id="fname" name="fname" placeholder="Digite o nome do projeto..." />
+        <input className="procurar cor_0" type="text" id="fname" name="fname" placeholder="Nome, ID, seção..." />
         <button type="submit" className="cor_3f"><FiSearch size={15}/></button>
       </form>
     </Container>
