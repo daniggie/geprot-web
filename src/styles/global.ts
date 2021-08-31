@@ -115,6 +115,15 @@ export default createGlobalStyle`
       font-size: 25px;
   }
 
+  .fonte_20 {
+    font-size: 20px;
+  }
+
+  .fonte_28 {
+    font-size: 28px;
+  }
+
+
   .helvetica {
     font-family: Arial, Helvetica, sans-serif;
   }

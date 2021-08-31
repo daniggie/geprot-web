@@ -39,7 +39,7 @@ const Menu: React.FC = () => {
               <div className="atalho cor_3f">
                 <FiUserPlus size="35px" color="#fff"/>
               </div>
-              <a href="/">
+              <a href="/alocarescolherfuncionario">
               <p id="idparagrafo"> ALOCAR CONSULTORES </p>
               </a>
             </div>

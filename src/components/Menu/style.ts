@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 15%;
-  height: 500px;
+  height: 400px;
   display:flex;
   justify-content: flex-end;
   align-items: center;
@@ -14,6 +14,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-end;
+    position: fixed;
 
     .content_atalho{
       width: 50px;

@@ -116,6 +116,27 @@ async function handleAddRepository(
           <a href="/detalhes">
             <Cards/>
           </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
+          <a href="/detalhes">
+            <Cards/>
+          </a>
 
         </Content_cards>
 

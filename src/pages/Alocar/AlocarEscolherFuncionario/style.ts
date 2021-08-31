@@ -1,0 +1,107 @@
+import styled from "styled-components";
+
+export const Content = styled.div`
+  width: 85%;
+  display:flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  padding: 10px 60px 0px 60px;
+
+  p{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px 0px 0px;
+  }
+
+  .header_filtros{
+    width: 100%;
+    margin-top: 20px;
+    height: 20px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+
+    b{
+      width: 8%;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    hr{
+      width: 95%;
+      height: 2px;
+      border-radius: 20px;
+      border-width: 0px;
+    }
+
+  }
+
+  .filtros{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+    select, input{
+      width: 100%;
+      border-radius:5px;
+      border: 1px;
+      padding: 5px;
+      border: 1px solid #dedede;
+    }
+
+    .cols{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      justify-content: space-around;
+
+      .cols1{
+        width: 8%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .cols2{
+        width: 15%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+      .colsicon{
+        width: 5%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
+
+    }
+
+  }
+
+`;
+
+export const All = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  flex-direction: row;
+`;
+
+export const PositionMenu = styled.div`
+  width: 15%;
+  margin-top: 90px;
+  display:flex;
+  justify-content: flex-end;
+`;
