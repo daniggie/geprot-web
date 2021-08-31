@@ -2,9 +2,12 @@ import styled from "styled-components";
 import { shade } from "polished";
 
 export const Content_cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
   .card_type{
-    min-width: 490px;
-    width: 50%;
+    min-width: 500px;
+    width: 40%;
     height: 144px;
     display: flex;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F0F0F0;
@@ -12,6 +15,7 @@ export const Content_cards = styled.div`
     box-sizing: border-box;
     border-radius: 5px;
     margin-bottom: 15px;
+    margin-right: 20px;
   }
 
   .card_type:hover{
