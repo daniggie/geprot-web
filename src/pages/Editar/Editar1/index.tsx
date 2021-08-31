@@ -24,7 +24,7 @@ const Editar1: React.FC = () => {
             </div>
 
             <div className="texto cor_4">
-                Projetos
+                Escolha o projeto a ser editado
             </div>
         </div>
 
@@ -38,7 +38,10 @@ const Editar1: React.FC = () => {
 
         <Content_cards>
 
-        <Cards/>
+
+        <a href="/editar2">
+            <Cards/>
+        </a>
 
         </Content_cards>
 

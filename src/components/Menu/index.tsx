@@ -30,7 +30,7 @@ const Menu: React.FC = () => {
               <div className="atalho cor_1f">
                 <FiEdit size="35px" color="#fff"/>
               </div>
-              <a href="/">
+              <a href="/editar1">
                 <p id="idparagrafo"> EDITAR PROJETOS </p>
               </a>
             </div>

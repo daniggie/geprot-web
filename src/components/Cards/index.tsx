@@ -7,7 +7,6 @@ const Cards: React.FC = () => {
     return(
         <Content_cards>
 
-        <a href="/detalhes">
         <div className="card_type">
 
             <div className="card_status_color yellow">
@@ -150,7 +149,6 @@ const Cards: React.FC = () => {
 
             </div>
           </div>
-          </a>
         </Content_cards>
     );
 };
