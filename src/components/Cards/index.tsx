@@ -6,19 +6,16 @@ import relogio from '../../icons/relogio.svg';
 
 
 interface Card {
-  projeto : {
     id: number;
     nome: string;
-    datainicio: string;
-    datafinalizacao: string;
-    datacadastro: string;
-    horasprevistas: number;
-    horastrabalhadas: number;
+    dataInicio: string;
+    dataFinalizacao: string;
+    dataCadastro: string;
+    horasPrevistas: number;
+    horasTrabalhadas: number;
     valor: number;
-    valorutilizado: number;
-    valorrestante: number;
+    valorUtilizado: number;
     status: string;
-  };
 }
 
 const Cards: React.FC = () => {
@@ -33,12 +30,11 @@ const Cards: React.FC = () => {
     carregaDados();
   }, [ ])
 
-  console.log(valores.map(valor => valor.projeto.nome));
-
     return(
         <Content_cards>
           {valores.map(valor => (
             <div className="card_type">
+
             <div className="card_status_color yellow">
               </div>
               <div className="card_informacao">
@@ -53,14 +49,14 @@ const Cards: React.FC = () => {
                               Status:
                           </div>
                           <div className="cor_black fonte_12 helvetica bold ">
-                              {valor.projeto.status}
+                              {valor.status }
                           </div>
                       </div>
                   </div>
                   <div className="linha_2">
                       <div className="card_title">
                           <div className="cor_black fonte_25 helvetica bold">
-                            {valor.projeto.id} - {valor.projeto.nome}
+                            {valor.id} - {valor.nome}
                           </div>
                       </div>
                   </div>
@@ -74,7 +70,7 @@ const Cards: React.FC = () => {
                                   R$
                               </div>
                               <div className="texto cor_0 fonte_14 helvetica">
-                              { valor.projeto.valor}
+                              { valor.valor}
                               </div>
                           </div>
                       </div>
@@ -86,7 +82,7 @@ const Cards: React.FC = () => {
                               <img src={relogio} alt=" " />
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                          { valor.projeto.horasprevistas} H
+                          { valor.horasPrevistas} H
                           </div>
                       </div>
                   </div>
@@ -100,7 +96,7 @@ const Cards: React.FC = () => {
                                   R$
                               </div>
                               <div className="texto cor_0 fonte_14 helvetica">
-                              { valor.projeto.valorrestante ? valor.projeto.valorrestante : "0" }
+                              { "0" }
                               </div>
                           </div>
                       </div>
@@ -112,17 +108,17 @@ const Cards: React.FC = () => {
                               <img src={relogio} alt=" " />
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                          { valor.projeto.horastrabalhadas ? valor.projeto.horastrabalhadas : "0" } H
+                          { valor.horasTrabalhadas ? valor.horasTrabalhadas : "0" } H
                           </div>
                       </div>
                   </div>
                   <div className="linha_3">
                       <div className="texto_content_horas">
                           <div className="cor_0 fonte_14 helvetica">
-                              Dê: { valor.projeto.datacadastro }
+                              Dê: { valor.dataCadastro }
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                              Até: { valor.projeto.datafinalizacao ? valor.projeto.datafinalizacao : "0" }
+                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "0" }
                           </div>
                       </div>
                       <div className="content_barra">
