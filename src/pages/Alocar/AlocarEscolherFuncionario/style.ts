@@ -83,6 +83,7 @@ export const Content = styled.div`
         height: 40px;
         display: flex;
         align-items: center;
+        cursor: pointer;
       }
 
     }

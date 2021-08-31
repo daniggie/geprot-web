@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
 
   #menu{
-    width: 400px;
+    width: 200px;
     height: 275px;
     display: flex;
     flex-direction: column;
