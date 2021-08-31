@@ -165,7 +165,6 @@ p{
     width: 100%;
     border-radius:5px;
     padding:10px;
-    margin-bottom:15px;
     border:  1px solid #dedede;
   }
 
