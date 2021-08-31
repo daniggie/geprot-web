@@ -1,9 +1,7 @@
 import React from "react";
 import { Titulo, Formulario } from './style';
-
 import Barra from "../../../components/Barra";
 import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
-import { BsFillCaretRightFill } from "react-icons/bs";
 
 const Editar2: React.FC = () => {
   return(

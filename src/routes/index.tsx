@@ -15,6 +15,7 @@ import AprovarFuncionario from '../pages/AprovarFuncionario';
 import Editar1 from '../pages/Editar/Editar1';
 import Editar2 from '../pages/Editar/Editar2';
 import Editar3 from '../pages/Editar/Editar3';
+import Editar4 from '../pages/Editar/Editar4';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -33,6 +34,7 @@ const Routes: React.FC = () => (
   <Route path="/editar1" exact component={Editar1} />
   <Route path="/editar2" exact component={Editar2} />
   <Route path="/editar3" exact component={Editar3} />
+  <Route path="/editar4" exact component={Editar4} />
 
 
 
