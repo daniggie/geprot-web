@@ -4,9 +4,10 @@ import api from '../../services/api';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 
-import { All, Filtros, Error, Form } from './style';
+import { All, Filtros, Content_cards } from './style';
 import FilterSearch from '../../components/FilterSearch';
 import FilterStatus from '../../components/FilterStatus';
+import { FiChevronRight } from "react-icons/fi";
 
 interface Card {
   projeto : {
@@ -82,7 +83,7 @@ async function handleAddRepository(
 
   return (
     <>
-      <Header>
+    <Header>
       </Header>
 
       <Filtros>
@@ -105,12 +106,18 @@ async function handleAddRepository(
 
       <All>
 
+        <Content_cards>
+
         <Cards/>
+        <Cards/>
+        <Cards/>
+
+
+        </Content_cards>
 
         <Menu/>
 
       </All>
-
     </>
   );
 };

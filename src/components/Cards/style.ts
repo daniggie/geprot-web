@@ -2,20 +2,9 @@ import styled from "styled-components";
 import { shade } from "polished";
 
 export const Content_cards = styled.div`
-  width: 85%;
-  display:flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-between;
-  padding: 20px;
-
-  &:hover {
-    color: ${shade(0.2, "#fff")};
-  }
-
   .card_type{
-    min-width: 450px;
-    width: 48%;
+    min-width: 490px;
+    width: 50%;
     height: 144px;
     display: flex;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F0F0F0;
@@ -27,6 +16,7 @@ export const Content_cards = styled.div`
 
   .card_type:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: ${shade(0.2, "#fff")};
   }
 
   .card_status_color {
