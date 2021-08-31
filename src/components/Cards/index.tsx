@@ -131,7 +131,7 @@ const Cards: React.FC = () => {
                       </div>
                   </div>
               </div>
-            </div>
+              </div>
           ))}
         </Content_cards>
     );
