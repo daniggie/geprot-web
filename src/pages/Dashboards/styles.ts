@@ -119,6 +119,62 @@ export const MediumCont = styled.div`
     padding-top: 12px;
     color: #fff;
   }
+
+  #labelOverlay2 {
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    top: 545px;
+    left: 125px;
+    text-align: center;
+    cursor: default;
+  }
+
+  #labelOverlay2 p {
+    line-height: 0.3;
+    padding:0;
+    margin: 10px;
+  }
+
+  #labelOverlay2 p.used-size2 {
+    line-height: 0.5;
+    font-size: 20pt;
+    color: #8e8e8e;
+  }
+
+  #labelOverlay2 p.total-size2 {
+    line-height: 0.5;
+    font-size: 12pt;
+    color: #cdcdcd;
+  }
+
+  #labelOverlay {
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    top: 295px;
+    left: 125px;
+    text-align: center;
+    cursor: default;
+  }
+
+  #labelOverlay p {
+    line-height: 0.3;
+    padding:0;
+    margin: 10px;
+  }
+
+  #labelOverlay p.used-size {
+    line-height: 0.5;
+    font-size: 20pt;
+    color: #8e8e8e;
+  }
+
+  #labelOverlay p.total-size {
+    line-height: 0.5;
+    font-size: 12pt;
+    color: #cdcdcd;
+  }
 `;
 
 export const BigCont = styled.div`
