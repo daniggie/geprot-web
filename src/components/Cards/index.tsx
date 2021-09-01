@@ -15,6 +15,7 @@ interface Card {
     horasTrabalhadas: number;
     valor: number;
     valorUtilizado: number;
+    valorRestante: number;
     status: string;
 }
 
@@ -56,7 +57,7 @@ const Cards: React.FC = () => {
                   <div className="linha_2">
                       <div className="card_title">
                           <div className="cor_black fonte_25 helvetica bold">
-                            {valor.id} - {valor.nome}
+                            {valor.id ? valor.id : "0"} - {valor.nome ? valor.nome : "projeto"}
                           </div>
                       </div>
                   </div>
@@ -70,7 +71,7 @@ const Cards: React.FC = () => {
                                   R$
                               </div>
                               <div className="texto cor_0 fonte_14 helvetica">
-                              { valor.valor}
+                              { valor.valor ? valor.valor : "0"}
                               </div>
                           </div>
                       </div>
@@ -82,7 +83,7 @@ const Cards: React.FC = () => {
                               <img src={relogio} alt=" " />
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                          { valor.horasPrevistas} H
+                          { valor.horasPrevistas ? valor.horasPrevistas : "0" } H
                           </div>
                       </div>
                   </div>
@@ -96,7 +97,7 @@ const Cards: React.FC = () => {
                                   R$
                               </div>
                               <div className="texto cor_0 fonte_14 helvetica">
-                              { "0" }
+                              { valor.valorRestante ? valor.valorRestante : "0" }
                               </div>
                           </div>
                       </div>
@@ -115,10 +116,10 @@ const Cards: React.FC = () => {
                   <div className="linha_3">
                       <div className="texto_content_horas">
                           <div className="cor_0 fonte_14 helvetica">
-                              Dê: { valor.dataCadastro }
+                              Dê: { valor.dataInicio ? valor.dataInicio : "Não iniciado" }
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "0" }
+                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "Não iniciado" }
                           </div>
                       </div>
                       <div className="content_barra">
