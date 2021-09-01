@@ -46,11 +46,11 @@ export const Container = styled.div`
 
       &:hover{
         width:185px;
+        transition: 0.8s;
 
         #idparagrafo{
           display:block;
           margin-top: 10px;
-          margin-left: 15px;
           transition: 0.5s;
 
           font-family: Arial, Helvetica, sans-serif;

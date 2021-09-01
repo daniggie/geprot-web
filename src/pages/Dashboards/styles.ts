@@ -8,18 +8,20 @@ export const TituloF = styled.div`
     margin-top: 10px;
     padding: 15px 113px 25px 20px;
     display: flex;
+    aling-items: center;
 
     p{
-      color: #0091BD;
-      font-size: 20px;
-      margin-right: 10px;
+      width: 5%;
     }
 
-    div{
-      height: 3px;
-      width: 100%;
+    hr{
+      width: 95%;
+      height: 2px;
+      border-radius: 20px;
+      border-width: 0px;
       margin-top: 12px;
       background: #0091BD;
+      border-radius: 5px;
     }
 `;
 

@@ -18,8 +18,8 @@ const Dashboard: React.FC = () => {
       <Header/>
 
       <TituloF>
-        <p>Filtros</p>
-        <div></div>
+        <p className="helvetica bold fonte_15 cor_3">Filtros</p>
+        <hr />
       </TituloF>
 
       <Filtros>
@@ -40,7 +40,7 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="title status cor_3f">
+              <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
               <Chart
@@ -82,7 +82,7 @@ const Dashboard: React.FC = () => {
             </MediumCont>
 
             <BigCont>
-              <div className="title status cor_3f">
+              <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
               <Chart
@@ -122,7 +122,7 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="title status cor_3f">
+              <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS ATRASADOS</p>
               </div>
               <Chart
@@ -164,52 +164,52 @@ const Dashboard: React.FC = () => {
             </MediumCont>
 
             <LitlleCont>
-              <div className="status cor_3f">
+              <div className="status cor_3f fonte_13 bold">
                 <p>VERBA DISPONÍVEL</p>
               </div>
               <table className="funds">
                 <tr>
-                  <td className="impar">R$ 14.000,00</td>
+                  <td className="impar fonte_15">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                  <td className="par">€ 2.205,34</td>
+                  <td className="par fonte_15">€ 2.205,34</td>
                 </tr>
                 <tr>
-                  <td className="impar">$ 2.677,68</td>
+                  <td className="impar fonte_15">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
 
             <LitlleCont>
-              <div className="status cor_3f">
+              <div className="status cor_3f fonte_13 bold">
                 <p>VERBA NÃO LIBERADA</p>
               </div>
               <table className="funds">
                 <tr>
-                  <td className="impar">R$ 14.000,00</td>
+                  <td className="impar fonte_15">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                  <td className="par">€ 2.205,34</td>
+                  <td className="par fonte_15">€ 2.205,34</td>
                 </tr>
                 <tr>
-                  <td className="impar">$ 2.677,68</td>
+                  <td className="impar fonte_15">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
 
             <LitlleCont>
-              <div className="status cor_3f">
+              <div className="status cor_3f fonte_13 bold">
                 <p>VERBA  APROVADA</p>
               </div>
               <table className="funds">
                 <tr>
-                  <td className="impar">R$ 14.000,00</td>
+                  <td className="impar fonte_15">R$ 14.000,00</td>
                 </tr>
                 <tr>
-                  <td className="par">€ 2.205,34</td>
+                  <td className="par fonte_15">€ 2.205,34</td>
                 </tr>
                 <tr>
-                  <td className="impar">$ 2.677,68</td>
+                  <td className="impar fonte_15">$ 2.677,68</td>
                 </tr>
              </table>
             </LitlleCont>
