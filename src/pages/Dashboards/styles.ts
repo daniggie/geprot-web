@@ -53,7 +53,7 @@ export const BodyDashboards = styled.div`
   align-content: flex-start;
   justify-content: space-between;
   padding: 0 0 0 25px;
-  margin-top: 30px;
+  margin-top: 0px;
   margin-left: 10px
 `;
 

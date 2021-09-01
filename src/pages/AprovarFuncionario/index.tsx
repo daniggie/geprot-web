@@ -3,6 +3,7 @@ import { All } from "./style";
 import Barra from "../../components/Barra";
 import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
+import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 
 const AprovarFuncionario: React.FC = () => {
 
@@ -41,215 +42,19 @@ const AprovarFuncionario: React.FC = () => {
           </div>
 
           <div className="informations">
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-              <div className="columns">
-                <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
-                </div>
-
-                <div className="column">
-                  <p className="helvetica light fonte_15 cor_0">hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
-                </div>
-
-                <div className="column">
-                <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
-                </div>
-
-              </div>
-
-
-            </div>
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+            <InformationsApFuncionario />
+              
+          </div>
 
             <div className="header">
             <div className="title2">

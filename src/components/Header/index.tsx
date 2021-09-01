@@ -12,7 +12,10 @@ const Header: React.FC = () => {
           <div id="informations">
 
             <div id="logo_weg">
-              <img src={logo} alt="logo" />
+              <a href="/home">
+                <img src={logo} alt="logo" />
+              </a>
+              
             </div>
 
             <div>
@@ -33,7 +36,10 @@ const Header: React.FC = () => {
             </div>
 
             <div id="content_exit">
-             <FiLogOut size="30px" color="#0091BD"/>
+              <a href="/">
+                <FiLogOut size="30px" color="#0091BD"/>
+              </a>
+             
             </div>
           </div>
       </Container>
