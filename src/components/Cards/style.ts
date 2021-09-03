@@ -38,7 +38,7 @@ export const Content_cards = styled.div<CorCardPorps>`
       ${(props) =>
       props.status == "EM_ANDAMENTO" &&
       css`
-        background-color: yellow;
+        background-color: blue;
       `}
 
       ${(props) =>
@@ -144,4 +144,4 @@ export const Content_cards = styled.div<CorCardPorps>`
   .horas{
     width: 70px;
   }
-}`;
+}`
