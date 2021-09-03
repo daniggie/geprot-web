@@ -31,9 +31,16 @@ const Cards: React.FC = () => {
     carregaDados();
   }, [ ])
 
-    return(
+  const teste = "/detalhes/";
+  return(
+      <>
+
         <Content_cards>
-          {valores.map(valor => (
+
+          {
+          valores.map(valor => (
+
+          <a href={teste + valor.id}>
             <div className="card_type">
 
             <div className="card_status_color yellow">
@@ -129,8 +136,10 @@ const Cards: React.FC = () => {
                   </div>
               </div>
               </div>
-          ))}
+              </a>
+            ))}
         </Content_cards>
+      </>
     );
 };
 
