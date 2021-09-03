@@ -1,6 +1,6 @@
 import React from "react";
 import { Content } from "./style";
-import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
+import IconeAprovamento from "../../IconeAprovamento";
 import { CgSearchLoading } from "react-icons/cg";
 
 const InformationsAprovar: React.FC = () => {
@@ -11,7 +11,7 @@ const InformationsAprovar: React.FC = () => {
             <div className="column1">
                 <p className="helvetica light fonte_15 cor_0">000000</p>
             </div>
-            
+
             <div className="column2">
             <p className="helvetica light fonte_15 cor_0">Persons name</p>
             </div>
@@ -21,7 +21,7 @@ const InformationsAprovar: React.FC = () => {
             </div>
 
             <div className="column1">
-            <p className="helvetica light fonte_15 cor_0"> <AiFillCheckCircle size={25} color="#0091BD"/></p>
+            <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento/></p>
             </div>
 
             <div className="column1">

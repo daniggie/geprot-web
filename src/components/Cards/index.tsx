@@ -43,7 +43,7 @@ const Cards: React.FC = () => {
           <a href={teste + valor.id}>
             <div className="card_type">
 
-            <div className="card_status_color yellow">
+              <div className="card_status_color yellow">
               </div>
               <div className="card_informacao">
                   <div className="linha_1">

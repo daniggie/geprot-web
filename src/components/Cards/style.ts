@@ -115,5 +115,4 @@ export const Content_cards = styled.div`
   .horas{
     width: 70px;
   }
-}
-`;
+}`;
