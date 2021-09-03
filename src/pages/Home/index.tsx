@@ -35,9 +35,7 @@ const Home: React.FC = () => {
 
       <All>
         <Content_cards>
-          <a href="/detalhes">
             <Cards/>
-          </a>
         </Content_cards>
         <Menu/>
 

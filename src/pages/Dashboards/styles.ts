@@ -126,7 +126,7 @@ export const MediumCont = styled.div`
     width: 90px;
     height: 45px;
     position: absolute;
-    top: 545px;
+    top: 515px;
     left: 125px;
     text-align: center;
     cursor: default;
@@ -154,7 +154,7 @@ export const MediumCont = styled.div`
     width: 90px;
     height: 45px;
     position: absolute;
-    top: 295px;
+    top: 265px;
     left: 125px;
     text-align: center;
     cursor: default;
