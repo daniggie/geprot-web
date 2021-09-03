@@ -65,9 +65,9 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               <div className="col">
                 <p className="helvetica bold cor_0 fonte_15"> xxxxxxxxxxx@email.com </p>
               </div>
-              
+
             </div>
-            
+
             <div className="line">
               <div className="col">
                 <p className="helvetica lighter cor_0 fonte_15"> Email do fornecedor: </p>
@@ -77,7 +77,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
                 <p className="helvetica bold cor_0 fonte_15"> xxxxxxxxxxx@email.com </p>
               </div>
             </div>
-              
+
 
           </div>
 
@@ -95,10 +95,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               <div className="header">
                 <div className="title1">
                   <p className="helvetica bold cor_0">Número</p>
-                </div>
-
-                <div className="title1">
-                  <p className="helvetica bold cor_0">Status</p>
                 </div>
 
                 <div className="title2">
@@ -130,7 +126,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
           </Table>
 
-          
+
 
         </Content>
 

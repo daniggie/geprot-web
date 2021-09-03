@@ -11,10 +11,6 @@ const Informations: React.FC = () => {
           <p className="helvetica light fonte_15 cor_0">000000</p>
       </div>
 
-      <div className="column1">
-        <p className="helvetica light fonte_15 cor_0">Não inciado</p>
-      </div>
-
       <div className="column2">
         <p className="helvetica light fonte_15 cor_0">Project's name</p>
       </div>
