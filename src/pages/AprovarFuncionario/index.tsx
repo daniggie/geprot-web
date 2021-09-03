@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
 import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
-import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
+import arrowleft from "../../icons/arrowleft.svg";
+import BotaoEnviar from "../../components/Buttons/ButtonEnviar";
+import { add } from "lodash";
 
 const AprovarFuncionario: React.FC = () => {
+
+  const [ overlay, setOverlay ] = useState(true);
+  const addOverlay = () => {
+    if(!overlay){
+     setOverlay(true);
+    }else{
+      setOverlay(false);
+    }
+
+    return overlay;
+
+  };
 
     return(
       <>
       <Barra />
 
-      <All>
+      <All overlay={overlay}>
 
         <p className="helvetica cor_0 lighter fonte_20">Seção X</p>
         <p className="helvetica cor_3 lighter fonte_25">Name Person Details</p>
@@ -53,7 +67,7 @@ const AprovarFuncionario: React.FC = () => {
             <InformationsApFuncionario />
             <InformationsApFuncionario />
             <InformationsApFuncionario />
-              
+
           </div>
 
             <div className="header">
@@ -72,14 +86,24 @@ const AprovarFuncionario: React.FC = () => {
         </div>
 
         <div className="position">
-            <a href="/home">
-              <BotaoCancel>
-              </BotaoCancel>
-            </a>
+              <div className="botaorecuse" onClick={addOverlay}>
+                <p className="helvetica lighter cor_0">Recusar</p>
+              </div>
           <BotaoAprovar />
         </div>
 
+        <div id="recusado">
+          <div className="overlay">
+            <img src={arrowleft} alt="" onClick={addOverlay}/>
+            <p className="helvetica cor_5 fonte_20">Qual o motivo do recusamento de horas?</p>
+            <textarea placeholder="Insira seu motivo aqui..."></textarea>
+            <BotaoEnviar/>
+
+          </div>
+        </div>
+
       </All>
+
       </>
     );
 };

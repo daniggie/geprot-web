@@ -32,10 +32,6 @@ const AlocarEscolherFuncionario: React.FC = () => {
                   <p className="helvetica bold cor_0">Cadastro</p>
                 </div>
 
-                <div className="title1">
-                  <p className="helvetica bold cor_0">Status</p>
-                </div>
-
                 <div className="title2">
                   <p className="helvetica bold cor_0">Nome Completo</p>
                 </div>
@@ -65,7 +61,7 @@ const AlocarEscolherFuncionario: React.FC = () => {
 
           </Table>
 
-          
+
 
         </Content>
 
