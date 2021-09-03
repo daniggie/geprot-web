@@ -91,6 +91,7 @@ export const All = styled.div<TableProps>`
   }
 
   #recusado{
+
     ${(props) =>
       props.overlay &&
       css`

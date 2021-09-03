@@ -144,5 +144,4 @@ export const Content_cards = styled.div<CorCardPorps>`
   .horas{
     width: 70px;
   }
-}
-`;
+}`;
