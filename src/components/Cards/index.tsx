@@ -25,7 +25,7 @@ const Cards: React.FC = () => {
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
       await api.get(`projetos/listar`).then(response => {
-        setValores(response.data)
+        setValores(response.data);
       })
     }
     carregaDados();
@@ -34,16 +34,16 @@ const Cards: React.FC = () => {
   const teste = "/detalhes/";
   return(
       <>
+      {
+        valores.map(valor => (
+        <Content_cards status={valor.status}>
 
-        <Content_cards>
 
-          {
-          valores.map(valor => (
 
           <a href={teste + valor.id}>
             <div className="card_type">
 
-            <div className="card_status_color yellow">
+            <div className="card_status_color">
               </div>
               <div className="card_informacao">
                   <div className="linha_1">
@@ -137,8 +137,9 @@ const Cards: React.FC = () => {
               </div>
               </div>
               </a>
+              </Content_cards>
+
             ))}
-        </Content_cards>
       </>
     );
 };

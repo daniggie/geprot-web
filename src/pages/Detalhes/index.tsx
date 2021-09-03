@@ -129,7 +129,7 @@ const Detalhes: React.FC = () => {
                       pieHole: 0.67,
                       title: "",
                       pieSliceBorderColor: "none",
-                      colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
+                      colors: ['#3aa5dd', '#EEE9E9', '#eaeaea' ],
                       legend: {
                         position: "none"
                       },

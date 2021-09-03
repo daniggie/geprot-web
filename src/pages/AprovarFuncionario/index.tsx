@@ -5,7 +5,6 @@ import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonEnviar";
-import { add } from "lodash";
 
 const AprovarFuncionario: React.FC = () => {
 

@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { shade } from "polished";
 
-export const Content_cards = styled.div`
+interface CorCardPorps {
+  status: string;
+}
+
+export const Content_cards = styled.div<CorCardPorps>`
   display: flex;
   flex-wrap: wrap;
 
@@ -24,12 +28,37 @@ export const Content_cards = styled.div`
   }
 
   .card_status_color {
+
+    ${(props) =>
+      props.status == "PENDENTE" &&
+      css`
+        background-color: red;
+      `}
+
+      ${(props) =>
+      props.status == "EM_ANDAMENTO" &&
+      css`
+        background-color: yellow;
+      `}
+
+      ${(props) =>
+      props.status == "NAO_INICIADO" &&
+      css`
+        background-color: gray;
+      `}
+
+      ${(props) =>
+      props.status == "CONCLUIDO" &&
+      css`
+        background-color: green;
+      `}
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       width: 15px;
       height: 142px;
       border-radius: 5px 0px 0px 5px;
+
   }
 
   .card_secao {
