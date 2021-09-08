@@ -18,7 +18,7 @@ interface Card {
   valorUtilizado: number;
   horasTrabalhadas: number;
   descricao: string;
-  centroDeCustos : {
+  secaos : {
   id: number;
   nome: string;
   valor: number;
@@ -164,9 +164,9 @@ const Detalhes: React.FC = () => {
                 </div>
 
                 <div className="table_content">
-                    <p className=" table cor_1"> {valores?.centroDeCustos.nome ? valores.centroDeCustos.nome : "Desenvolvimento Externo das integrações com fornecedor de EDI homologado (GXS Grid by Open Text)"} </p>
-                    <p className="table cor_1"> R$ {valores?.centroDeCustos.valor ? valores.centroDeCustos.valor : "5.000.000,00"} </p>
-                    <p className="table cor_1"> {valores?.centroDeCustos.id ? valores.centroDeCustos.id : "20168060"} </p>
+                    <p className=" table cor_1"> {valores?.secaos.nome ? valores.secaos.nome : "Desenvolvimento Externo das integrações com fornecedor de EDI homologado (GXS Grid by Open Text)"} </p>
+                    <p className="table cor_1"> R$ {valores?.secaos.valor ? valores.secaos.valor : "5.000.000,00"} </p>
+                    <p className="table cor_1"> {valores?.secaos.id ? valores.secaos.id : "20168060"} </p>
 
                 </div>
 
