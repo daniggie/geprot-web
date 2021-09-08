@@ -78,7 +78,7 @@ export default createGlobalStyle`
     background: #FF0000;
   }
 
-  .yellow {
+  .blueProgress {
       background: #FFB800;
   }
 

@@ -70,46 +70,6 @@ export const LitlleCont = styled.div`
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  div{
-    width: 100%;
-    height: 40px;
-    border-radius: 5px 5px 0 0;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 12px;
-    color: #fff;
-  }
-
-  table{
-    width: 100%;
-    height: 180px;
-    color: #828282;
-    text-align: center;
-    font-size: 20px;
-    border-radius: 5px;
-
-    .impar{
-      background: rgb(220, 220, 220, 0.5);
-      border-radius: 5px;
-    }
-
-    .par{
-      background: rgb(192, 192, 192, 0.7);
-      border-radius: 5px;
-    }
-
-  }
-
-`;
-
-export const MediumCont = styled.div`
-  width: 25%;
-  border-radius: 5px;
-  align-items: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   .title{
     width: 100%;
     height: 40px;
@@ -122,12 +82,40 @@ export const MediumCont = styled.div`
     color: #fff;
   }
 
+  #labelOverlay3 {
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    top: 515px;
+    left: 708px;
+    text-align: center;
+    cursor: default;
+  }
+
+  #labelOverlay3 p {
+    line-height: 0.3;
+    padding:0;
+    margin: 10px;
+  }
+
+  #labelOverlay3 p.used-size3 {
+    line-height: 0.5;
+    font-size: 20pt;
+    color: #8e8e8e;
+  }
+
+  #labelOverlay3 p.total-size3 {
+    line-height: 0.5;
+    font-size: 12pt;
+    color: #cdcdcd;
+  }
+
   #labelOverlay2 {
     width: 90px;
     height: 45px;
     position: absolute;
     top: 515px;
-    left: 125px;
+    left: 988px;
     text-align: center;
     cursor: default;
   }
@@ -154,8 +142,8 @@ export const MediumCont = styled.div`
     width: 90px;
     height: 45px;
     position: absolute;
-    top: 265px;
-    left: 125px;
+    top: 515px;
+    left: 426px;
     text-align: center;
     cursor: default;
   }
@@ -177,6 +165,46 @@ export const MediumCont = styled.div`
     font-size: 12pt;
     color: #cdcdcd;
   }
+
+`;
+
+export const MediumCont = styled.div`
+width: 25%;
+border-radius: 5px;
+align-items: center;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+div{
+  width: 100%;
+  height: 40px;
+  border-radius: 5px 5px 0 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 12px;
+  color: #fff;
+}
+
+table{
+  width: 100%;
+  height: 180px;
+  color: #828282;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 5px;
+
+  .impar{
+    background: rgb(220, 220, 220, 0.5);
+    border-radius: 5px;
+  }
+
+  .par{
+    background: rgb(192, 192, 192, 0.7);
+    border-radius: 5px;
+  }
+
+}
 `;
 
 export const BigCont = styled.div`
