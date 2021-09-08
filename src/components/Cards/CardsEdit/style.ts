@@ -7,11 +7,10 @@ interface CorCardPorps {
 
 export const Content_cards = styled.div<CorCardPorps>`
   display: flex;
-  flex-wrap: wrap;
 
   .card_type{
     min-width: 500px;
-    width: 40%;
+    width: 45%;
     height: 144px;
     display: flex;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F0F0F0;
@@ -30,9 +29,9 @@ export const Content_cards = styled.div<CorCardPorps>`
   .card_status_color {
 
     ${(props) =>
-      props.status == "PENDENTE" &&
+      props.status == "ATRASADO" &&
       css`
-        background-color: #F50E0E;
+        background-color: #d95050;
       `}
 
       ${(props) =>

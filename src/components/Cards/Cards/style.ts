@@ -32,13 +32,13 @@ export const Content_cards = styled.div<CorCardPorps>`
     ${(props) =>
       props.status == "ATRASADO" &&
       css`
-        background-color: red;
+        background-color: #d95050;
       `}
 
       ${(props) =>
       props.status == "EM_ANDAMENTO" &&
       css`
-        background-color: blue;
+        background-color: #2382BA;
       `}
 
       ${(props) =>
@@ -50,7 +50,7 @@ export const Content_cards = styled.div<CorCardPorps>`
       ${(props) =>
       props.status == "CONCLUIDO" &&
       css`
-        background-color: green;
+        background-color: #3fbf5b;
       `}
       display: flex;
       flex-direction: column;
@@ -144,4 +144,4 @@ export const Content_cards = styled.div<CorCardPorps>`
   .horas{
     width: 70px;
   }
-}`;
+}`
