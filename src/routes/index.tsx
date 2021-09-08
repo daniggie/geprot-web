@@ -26,7 +26,7 @@ const Routes: React.FC = () => (
   <Route path="/detalhes/:id" exact component={Detalhes} />
   <Route path="/aprovarhoras" exact component={AprovarHoras} />
   <Route path="/aprovarfuncionario" exact component={AprovarFuncionario} />
-  <Route path="/dashboard" exact component={Dashboard} />
+  <Route path="/dashboard/:id" exact component={Dashboard} />
   <Route path="/cadastrar" exact component={Cadastrar} />
   <Route path="/cadastrar2" exact component={Cadastrar2} />
   <Route path="/cadastrar3" exact component={Cadastrar3} />
