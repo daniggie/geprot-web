@@ -5,6 +5,7 @@ import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonEnviar";
+import { transitions } from "polished";
 
 const AprovarFuncionario: React.FC = () => {
 
@@ -84,7 +85,9 @@ const AprovarFuncionario: React.FC = () => {
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-          <BotaoAprovar />
+              <a href="/home">
+                <BotaoAprovar />
+              </a>
         </div>
 
         <div id="recusado">

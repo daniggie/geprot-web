@@ -96,12 +96,14 @@ export const All = styled.div<TableProps>`
       props.overlay &&
       css`
         visibility: hidden;
+        opacity: 0;
       `}
 
     ${(props) =>
         !props.overlay &&
         css`
           visibility: visible;
+          opacity: 1;
         `}
 
     position: absolute;
@@ -114,6 +116,7 @@ export const All = styled.div<TableProps>`
     right: 0;
     height: 100%;
     background: rgba(0, 0, 0, 0.30);
+    transition: 0.5s;
 
     .overlay{
       position: absolute;
