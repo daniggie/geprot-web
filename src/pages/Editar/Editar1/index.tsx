@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FormEvent } from 'react';
-import Cards from '../../../components/Cards';
+import CardsEdit from '../../../components/Cards/CardsEdit';
 import Header from '../../../components/Header';
 import Menu from '../../../components/Menu';
 
@@ -40,7 +40,7 @@ const Editar1: React.FC = () => {
 
 
         <a href="/editar2">
-            <Cards/>
+            <CardsEdit/>
         </a>
 
         </Content_cards>

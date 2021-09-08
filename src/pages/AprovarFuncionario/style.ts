@@ -15,7 +15,7 @@ export const All = styled.div<TableProps>`
     width: 100%;
     display:flex;
     justify-content: flex-start;
-    margin: 5px;
+    margin: 3px;
     align-items: center;
   }
 

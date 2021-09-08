@@ -109,10 +109,10 @@ const Detalhes: React.FC = () => {
             <p className="cor_0">{valores?.horasTrabalhadas ? valores.horasTrabalhadas : "120"} Horas</p>
           </div>
 
-          <div className="line">
+          <div className="linelabel">
             <Chart
               width={"100%"}
-              height={"180px"}
+              height={"150px"}
               chartType="PieChart"
               loader={<div>Loading Chart</div>}
 
@@ -123,7 +123,7 @@ const Detalhes: React.FC = () => {
               ]}
 
               options={{
-                pieHole: 0.67,
+                pieHole: 0.70,
                 title: "",
                 pieSliceBorderColor: "none",
                 colors: ['#3aa5dd', '#EEE9E9', '#eaeaea' ],
@@ -175,7 +175,7 @@ const Detalhes: React.FC = () => {
         </BttnPosition>
       </All>
     </>
-  ) 
+  )
 }
 
 export default Detalhes;

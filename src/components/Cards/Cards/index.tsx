@@ -1,8 +1,8 @@
 import React, { useState, FormEvent, useEffect } from "react";
 import { Content_cards } from "./style";
-import api from "../../services/api";
+import api from "../../../services/api";
 
-import relogio from '../../icons/relogio.svg';
+import relogio from '../../../icons/relogio.svg';
 
 
 interface Card {
