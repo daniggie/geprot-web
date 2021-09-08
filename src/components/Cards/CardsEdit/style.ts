@@ -32,13 +32,13 @@ export const Content_cards = styled.div<CorCardPorps>`
     ${(props) =>
       props.status == "PENDENTE" &&
       css`
-        background-color: red;
+        background-color: #F50E0E;
       `}
 
       ${(props) =>
       props.status == "EM_ANDAMENTO" &&
       css`
-        background-color: blue;
+        background-color: #2382BA;
       `}
 
       ${(props) =>

@@ -40,45 +40,20 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="title status cor_3f fonte_13 bold">
-                <p>PROJETOS CONCLUÍDOS</p>
-              </div>
-              <Chart
-                width={"100%"}
-                height={"180px"}
-                chartType="PieChart"
-                loader={<div>Loading Chart</div>}
-
-                data={[
-                  ['Projects', 'Percent'],
-                  ['Late', .80],
-                  ['Rest', .55]
-                ]}
-
-                options={{
-                  pieHole: 0.55,
-                  title: "",
-                  pieSliceBorderColor: "none",
-                  colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
-                  legend: {
-                    position: "none"
-                  },
-                  pieSliceText: "none",
-                  tooltip: {
-                    trigger: "none"
-                  },
-                  chartArea:{
-                    left:0,
-                    top:10,
-                    width:'100%',
-                    height:'90%'
-                  }
-                }}
-              />
-              <div id="labelOverlay">
-                <p className="used-size">59,3<span>%</span></p>
-                <p className="total-size"> of 100%</p>
-              </div>
+              <div className="status cor_3f fonte_13 bold">
+                  <p>VERBA  APROVADA</p>
+                </div>
+                <table className="funds">
+                  <tr>
+                    <td className="impar fonte_15">R$ 14.000,00</td>
+                  </tr>
+                  <tr>
+                    <td className="par fonte_15">€ 2.205,34</td>
+                  </tr>
+                  <tr>
+                    <td className="impar fonte_15">$ 2.677,68</td>
+                  </tr>
+              </table>
             </MediumCont>
 
             <BigCont>
@@ -122,6 +97,107 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
+              <div className="status cor_3f fonte_13 bold">
+                  <p>VERBA DISPONÍVEL</p>
+                </div>
+                <table className="funds">
+                  <tr>
+                    <td className="impar fonte_15">R$ 14.000,00</td>
+                  </tr>
+                  <tr>
+                    <td className="par fonte_15">€ 2.205,34</td>
+                  </tr>
+                  <tr>
+                    <td className="impar fonte_15">$ 2.677,68</td>
+                  </tr>
+              </table>
+            </MediumCont>
+
+            <LitlleCont>
+              <div className="title status cor_3f fonte_13 bold">
+                <p>PROJETOS CONCLUÍDOS</p>
+              </div>
+              <Chart
+                width={"100%"}
+                height={"180px"}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+
+                data={[
+                  ['Projects', 'Percent'],
+                  ['Late', .80],
+                  ['Rest', .55]
+                ]}
+
+                options={{
+                  pieHole: 0.55,
+                  title: "",
+                  pieSliceBorderColor: "none",
+                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
+                  legend: {
+                    position: "none"
+                  },
+                  pieSliceText: "none",
+                  tooltip: {
+                    trigger: "none"
+                  },
+                  chartArea:{
+                    left:0,
+                    top:10,
+                    width:'100%',
+                    height:'90%'
+                  }
+                }}
+              />
+              <div id="labelOverlay">
+                <p className="used-size">59,3<span>%</span></p>
+                <p className="total-size"> of 100%</p>
+              </div>
+            </LitlleCont>
+
+            <LitlleCont>
+              <div className="title status cor_3f fonte_13 bold">
+                <p>PROJETOS NÃO INICIADOS</p>
+              </div>
+              <Chart
+                width={"100%"}
+                height={"180px"}
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+
+                data={[
+                  ['Projects', 'Percent'],
+                  ['Late', .30],
+                  ['Rest', .55]
+                ]}
+
+                options={{
+                  pieHole: 0.55,
+                  title: "",
+                  pieSliceBorderColor: "none",
+                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
+                  legend: {
+                    position: "none"
+                  },
+                  tooltip: {
+                    trigger: "none"
+                  },
+                  pieSliceText: "none",
+                  chartArea:{
+                    left:0,
+                    top:10,
+                    width:'100%',
+                    height:'90%'
+                  }
+                }}
+              />
+              <div id="labelOverlay3">
+                <p className="used-size3">35,3<span>%</span></p>
+                <p className="total-size3"> of 100%</p>
+              </div>
+            </LitlleCont>
+
+            <LitlleCont>
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS ATRASADOS</p>
               </div>
@@ -141,7 +217,7 @@ const Dashboard: React.FC = () => {
                   pieHole: 0.55,
                   title: "",
                   pieSliceBorderColor: "none",
-                  colors: ['#067ab5', '#3aa5dd', '#eaeaea' ],
+                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
                   legend: {
                     position: "none"
                   },
@@ -161,57 +237,6 @@ const Dashboard: React.FC = () => {
                 <p className="used-size2">35,3<span>%</span></p>
                 <p className="total-size2"> of 100%</p>
               </div>
-            </MediumCont>
-
-            <LitlleCont>
-              <div className="status cor_3f fonte_13 bold">
-                <p>VERBA DISPONÍVEL</p>
-              </div>
-              <table className="funds">
-                <tr>
-                  <td className="impar fonte_15">R$ 14.000,00</td>
-                </tr>
-                <tr>
-                  <td className="par fonte_15">€ 2.205,34</td>
-                </tr>
-                <tr>
-                  <td className="impar fonte_15">$ 2.677,68</td>
-                </tr>
-             </table>
-            </LitlleCont>
-
-            <LitlleCont>
-              <div className="status cor_3f fonte_13 bold">
-                <p>VERBA NÃO LIBERADA</p>
-              </div>
-              <table className="funds">
-                <tr>
-                  <td className="impar fonte_15">R$ 14.000,00</td>
-                </tr>
-                <tr>
-                  <td className="par fonte_15">€ 2.205,34</td>
-                </tr>
-                <tr>
-                  <td className="impar fonte_15">$ 2.677,68</td>
-                </tr>
-             </table>
-            </LitlleCont>
-
-            <LitlleCont>
-              <div className="status cor_3f fonte_13 bold">
-                <p>VERBA  APROVADA</p>
-              </div>
-              <table className="funds">
-                <tr>
-                  <td className="impar fonte_15">R$ 14.000,00</td>
-                </tr>
-                <tr>
-                  <td className="par fonte_15">€ 2.205,34</td>
-                </tr>
-                <tr>
-                  <td className="impar fonte_15">$ 2.677,68</td>
-                </tr>
-             </table>
             </LitlleCont>
 
           </Container>
@@ -220,7 +245,7 @@ const Dashboard: React.FC = () => {
 
         <Menu>
         </Menu>
-        
+
       </All>
     </>
   );

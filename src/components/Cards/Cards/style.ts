@@ -30,7 +30,7 @@ export const Content_cards = styled.div<CorCardPorps>`
   .card_status_color {
 
     ${(props) =>
-      props.status == "PENDENTE" &&
+      props.status == "ATRASADO" &&
       css`
         background-color: red;
       `}
