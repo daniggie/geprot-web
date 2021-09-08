@@ -41,10 +41,7 @@ const Detalhes: React.FC = () => {
 
   return(
     <>
-      <a href="/home">
-        <Barra>
-        </Barra>
-      </a>
+        <Barra />
 
       <All>
         <Content>
