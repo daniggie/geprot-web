@@ -49,7 +49,7 @@ export const Content = styled.div`
         height: 45px;
         position: absolute;
         top: 230px;
-        left: 960px;
+        left: 947px;
         text-align: center;
         cursor: default;
       }
@@ -75,47 +75,36 @@ export const Content = styled.div`
 
     .table_header{
 
-        .table{
-            width: calc(100%/3);
-            padding: 10px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: #b1b1b1;
-            background: #f1f1f1;
+      .table{
+        width: calc(100%/3);
+        padding: 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #b1b1b1;
+        background: #f1f1f1;
 
-            display:flex;
-            justify-content: center;
-        }
+        display:flex;
+        justify-content: center;
+      }
 
-        padding: 5px;
-        width: 100%;
-        display flex;
+      padding: 5px;
+      width: 100%;
+      display flex;
 
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .table_content{
-        .table{
-            width: calc(100%/3);
-            padding: 10px;
-
-            display:flex;
-            justify-content: center;
-        }
-
-        padding: 5px;
-        width: 100%;
-        display flex;
-
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
+    .contDetails{
+      height: 125px;
+      width: 98%;
+      margin: 0px 0px 15px 6px;
+      overflow: auto;
+      border: 1px solid #dedede;
+      border-radius: 3px;
     }
-
 `;
 
 export const BttnPosition = styled.div`
