@@ -31,6 +31,22 @@ export const Content = styled.div`
 
       }
 
+      .column2{
+
+      width:50%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+
+      p{
+        display:flex;
+        justify-content: center;
+      }
+
+}
+
     }
 
 `;

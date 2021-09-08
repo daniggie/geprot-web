@@ -14,6 +14,7 @@ export const All = styled.div`
 
 export const Content = styled.div`
   width: 49%;
+  min-height: 450px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -21,7 +22,7 @@ export const Content = styled.div`
   .line{
       padding: 5px;
       width: 100%;
-      display flex;
+      display: flex;
 
       flex-direction: row;
       flex-wrap: nowrap;
@@ -43,13 +44,26 @@ export const Content = styled.div`
           transition: 0.4s;
         }
       }
+    }
+
+  .linelabel{
+    padding: 5px;
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 
       #labelOverlay {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
         width: 90px;
         height: 45px;
-        position: absolute;
-        top: 230px;
-        left: 947px;
         text-align: center;
         cursor: default;
       }
@@ -89,7 +103,7 @@ export const Content = styled.div`
 
       padding: 5px;
       width: 100%;
-      display flex;
+      display: flex;
 
       flex-direction: row;
       flex-wrap: nowrap;

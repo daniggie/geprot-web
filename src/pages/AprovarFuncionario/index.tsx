@@ -37,19 +37,15 @@ const AprovarFuncionario: React.FC = () => {
             </div>
 
             <div className="title">
-              <p className="helvetica bold cor_0">Hora de início</p>
-            </div>
-
-            <div className="title">
-              <p className="helvetica bold cor_0">Hora de saída</p>
-            </div>
-
-            <div className="title">
               <p className="helvetica bold cor_0">Horas trabalhadas</p>
             </div>
 
-            <div className="title">
+            <div className="title2">
               <p className="helvetica bold cor_0">Descrição</p>
+            </div>
+
+            <div className="title">
+              <p className="helvetica bold cor_0">Aprovação</p>
             </div>
 
           </div>
