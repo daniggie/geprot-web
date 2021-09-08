@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from './style';
+import { useParams } from "react-router";
 
 import {FiEye, FiFilePlus, FiEdit, FiUserPlus, FiTrendingUp} from "react-icons/fi"
 
 const Menu: React.FC = () => {
+
+  const { id }: {id:string} = useParams();
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
+const teste = "/dashboard/" + secao.secao.id;
+console.log(teste)
+
     return(
         <Container>
           <div id="menu">
@@ -50,7 +66,7 @@ const Menu: React.FC = () => {
                   <FiTrendingUp size="35px" color="#fff"/>
                 </div>
                 <p id="idparagrafo">
-                  <a href="/dashboard">
+                  <a href={teste}>
                   <p className="cor_000">IR PARA DASHBOARDS </p>
                   </a>
                 </p>

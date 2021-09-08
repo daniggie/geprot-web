@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont } from './styles';
 import Menu from '../../components/Menu';
+import { useParams } from "react-router";
 
 import Header from "../../components/Header";
 import FilterSearch from "../../components/FilterSearch";
@@ -8,10 +9,40 @@ import FilterStatus from "../../components/FilterStatus";
 import FilterTime from "../../components/FilterTime";
 import FilterCC from "../../components/FilterCC";
 
+import api from "../../services/api";
 import { Chart } from "react-google-charts";
+
+interface Dashboard {
+  projetosConcluidos: number;
+  projetosAtrasados: number;
+  projetosEmAndamento: number;
+  projetosNaoIniciados: number;
+  verbasDisponivel: number;
+  verbasAprovadas:number;
+
+}
 
 
 const Dashboard: React.FC = () => {
+  const { id }: {id:string} = useParams();
+  const [valores, setValores ] = useState<Dashboard>();
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+  useEffect(() => {
+    async function carregaDados(): Promise<void>  {
+      await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`).then(response => {
+        setValores(response.data)
+      })
+    }
+    carregaDados();
+  }, [ secao.secao.id ])
 
   return(
     <>
@@ -45,7 +76,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar fonte_15">R$ 14.000,00</td>
+                    <td className="impar fonte_15">R$ {valores?.verbasAprovadas}</td>
                   </tr>
                   <tr>
                     <td className="par fonte_15">€ 2.205,34</td>
@@ -102,7 +133,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar fonte_15">R$ 14.000,00</td>
+                    <td className="impar fonte_15">R$ {valores?.verbasDisponivel}</td>
                   </tr>
                   <tr>
                     <td className="par fonte_15">€ 2.205,34</td>
@@ -125,8 +156,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', .80],
-                  ['Rest', .55]
+                  ['Late', valores?.projetosConcluidos],
+                  ['Rest', 100]
                 ]}
 
                 options={{
@@ -150,7 +181,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">59,3<span>%</span></p>
+                <p className="used-size">{valores?.projetosConcluidos}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </LitlleCont>
@@ -167,8 +198,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', .30],
-                  ['Rest', .55]
+                  ['Late', valores?.projetosNaoIniciados],
+                  ['Rest', 100]
                 ]}
 
                 options={{
@@ -192,7 +223,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay3">
-                <p className="used-size3">35,3<span>%</span></p>
+                <p className="used-size3">{valores?.projetosNaoIniciados}<span>%</span></p>
                 <p className="total-size3"> of 100%</p>
               </div>
             </LitlleCont>
@@ -209,8 +240,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', .30],
-                  ['Rest', .55]
+                  ['Late', valores?.projetosAtrasados],
+                  ['Rest', 100]
                 ]}
 
                 options={{
@@ -234,7 +265,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay2">
-                <p className="used-size2">35,3<span>%</span></p>
+                <p className="used-size2">{valores?.projetosAtrasados}<span>%</span></p>
                 <p className="total-size2"> of 100%</p>
               </div>
             </LitlleCont>
