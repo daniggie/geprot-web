@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, useEffect } from "react";
 import { Content_cards } from "./style";
 import api from "../../../services/api";
+import { useParams } from "react-router";
 
 import relogio from '../../../icons/relogio.svg';
 
@@ -20,11 +21,21 @@ interface Card {
 }
 
 const Cards: React.FC = () => {
+  const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Card[]>([]);
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar`).then(response => {
+      await api.get(`projetos/listar/${secao.secao.id ? secao.secao.id : null}`).then(response => {
         setValores(response.data);
       })
     }

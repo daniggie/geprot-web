@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Cards from '../../components/Cards/Cards';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
@@ -6,6 +6,7 @@ import Menu from '../../components/Menu';
 import { All, Filtros, Content_cards } from './style';
 import FilterSearch from '../../components/FilterSearch';
 import FilterStatus from '../../components/FilterStatus';
+import { useParams } from 'react-router';
 
 import { FiChevronRight } from "react-icons/fi";
 

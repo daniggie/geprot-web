@@ -32,7 +32,7 @@ const Detalhes: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar/${id ? id : null}`).then(response => {
+      await api.get(`projetos/listar/projetos/${id ? id : null}`).then(response => {
         setValores(response.data)
       })
     }
@@ -80,17 +80,17 @@ const Detalhes: React.FC = () => {
 
           <div className="line">
             <p className="cor_1"> Valor do projeto: </p>
-            <p className="cor_0"> R$ {valores?.valor ? valores.valor : "15.000,00"}</p>
+            <p className="cor_0"> R$ {valores?.valor ? valores.valor : "0"}</p>
           </div>
 
           <div className="line">
             <p className="cor_1"> Saldo </p>
-            <p className="cor_0"> R$ {valores?.valorRestantes ? valores.valorRestantes : "10.000,00"}</p>
+            <p className="cor_0"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0"}</p>
           </div>
 
           <div className="line">
             <p className="cor_1"> Valor consumido: </p>
-            <p className="cor_0"> R$ {valores?.valorUtilizado ? valores.valorUtilizado : "5.000,00"}</p>
+            <p className="cor_0"> R$ {valores?.valorUtilizado ? valores.valorUtilizado : "0"}</p>
           </div>
 
         </Content>
@@ -98,12 +98,12 @@ const Detalhes: React.FC = () => {
         <Content>
           <div className="line ">
             <p className="cor_1">Horas previstas: </p>
-            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "250"} Horas</p>
+            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "0"} Horas</p>
           </div>
 
           <div className="line">
             <p className="cor_1">Horas trabalhadas: </p>
-            <p className="cor_0">{valores?.horasTrabalhadas ? valores.horasTrabalhadas : "120"} Horas</p>
+            <p className="cor_0">{valores?.horasTrabalhadas ? valores.horasTrabalhadas : "0"} Horas</p>
           </div>
 
           <div className="linelabel">
@@ -115,8 +115,8 @@ const Detalhes: React.FC = () => {
 
               data={[
                 ['Times', 'Percent'],
-                ['Horas', valores?.horasPrevistas],
-                ['Horas', valores?.horasTrabalhadas]
+                ['Horas', valores?.horasTrabalhadas],
+                ['Horas', valores?.horasPrevistas]
               ]}
 
               options={{
@@ -140,8 +140,8 @@ const Detalhes: React.FC = () => {
               }}
             />
             <div id="labelOverlay">
-              <p className="used-size">120<span>h</span></p>
-              <p className="total-size"> of 120h</p>
+              <p className="used-size">{valores?.horasTrabalhadas }<span>h</span></p>
+              <p className="total-size"> of {valores?.horasPrevistas}h</p>
             </div>
           </div>
 
