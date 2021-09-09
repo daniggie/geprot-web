@@ -3,6 +3,7 @@ import { shade } from "polished";
 
 interface CorCardPorps {
   status: string;
+  barraProgresso : number;
 }
 
 export const Content_cards = styled.div<CorCardPorps>`
@@ -137,7 +138,8 @@ export const Content_cards = styled.div<CorCardPorps>`
   }
 
   .content_carregamento {
-      width: 90%;
+      width: ${(props) =>
+      props.barraProgresso}%;
       height: 100%;
   }
 

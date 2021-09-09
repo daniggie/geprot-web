@@ -18,6 +18,7 @@ interface Card {
     valorUtilizado: number;
     valorRestante: number;
     status: string;
+    barraProgresso: number;
 }
 
 const Cards: React.FC = () => {
@@ -47,7 +48,7 @@ const Cards: React.FC = () => {
       <>
       {
         valores.map(valor => (
-        <Content_cards status={valor.status}>
+        <Content_cards status={valor.status} barraProgresso={valor.barraProgresso}>
 
 
 
@@ -137,7 +138,7 @@ const Cards: React.FC = () => {
                               Dê: { valor.dataInicio ? valor.dataInicio : "Não iniciado" }
                           </div>
                           <div className="cor_0 fonte_14 helvetica">
-                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "Não iniciado" }
+                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "Não informado" }
                           </div>
                       </div>
                       <div className="content_barra">

@@ -163,6 +163,7 @@ const Detalhes: React.FC = () => {
             <ContDetails/>
             <ContDetails/>
           </div>
+
         </Content>
 
         <BttnPosition>

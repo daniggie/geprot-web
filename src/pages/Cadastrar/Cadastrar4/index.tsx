@@ -48,19 +48,23 @@ const Cadastrar4: React.FC = () => {
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Nome CC:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Centros de Custos:</b>
             </div>
 
-            <div className="line">
-                <input type="text" placeholder="Digite aqui..." />
-            </div>
-
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Responsável CC:</b>
-            </div>
-
-            <div className="line">
-                <input type="text" placeholder="Digite aqui..." />
+            <div className="contCC">
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
+              aaaa <br />
             </div>
 
           </div>

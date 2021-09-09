@@ -38,6 +38,15 @@ p{
   flex-wrap: nowrap;
   justify-content: space-evenly;
 
+  .contCC{
+    width: 100%;
+    height:140px;
+    border-radius:5px;
+    border:  1px solid #dedede;
+    padding:10px;
+    overflow: auto;
+  }
+
   .box{
     width: 20px;
     height: 20px;
@@ -151,6 +160,7 @@ p{
       border:  1px solid #dedede;
       padding:10px;
     }
+
   }
 }
 
