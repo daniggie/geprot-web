@@ -88,13 +88,13 @@ p{
       props.cardColumn &&
       css`
         visibility: visible;
-      `}
+    `}
 
     ${(props) =>
         !props.cardColumn &&
         css`
           visibility: hidden;
-        `}
+    `}
 
 
     width:100%;
@@ -110,9 +110,7 @@ p{
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
-
-
-      }
+    }
 
     .column2{
       height: 30px;
@@ -138,7 +136,6 @@ p{
       border-bottom-color: #DCDCDC;
     }
   }
-
 }
 
 .content{

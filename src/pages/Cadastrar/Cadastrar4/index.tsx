@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../../components/Barra";
 import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
@@ -10,23 +10,34 @@ import BotaoCancel from '../../../components/Buttons/ButtonCancel';
 
 
 const Cadastrar4: React.FC = () => {
-    return (
-      <>
-        <Barra>
-        </Barra>
 
-        <Titulo>
-          <p className="helvetica fonte_20 cor_5 bold">CENTRO DE CUSTOS</p>
-        </Titulo>
-        <Titulo>
-          <b className="helvetica fonte_15 cor_0">Cadastro de projetos</b>
-          <BsFillCaretRightFill color="#828282"/>
-          <b className="helvetica fonte_15 cor_0">Aprovações</b>
-          <BsFillCaretRightFill color="#828282"/>
-          <b className="helvetica fonte_15 cor_0">Verbas</b>
-          <BsFillCaretRightFill color="#828282"/>
-          <b className="helvetica fonte_15 cor_5 normal"> <u> Centro de custos </u> </b>
-        </Titulo>
+  const[cc, setCc] = useState(false);
+  const addCc = () => {
+    if(!cc){
+      setCc(true);
+    }else{
+      setCc(false);
+    }
+
+    return cc;
+  }
+
+  return (
+    <>
+      <Barra/>
+
+      <Titulo>
+        <p className="helvetica fonte_20 cor_5 bold">CENTRO DE CUSTOS</p>
+      </Titulo>
+      <Titulo>
+        <b className="helvetica fonte_15 cor_0">Cadastro de projetos</b>
+        <BsFillCaretRightFill color="#828282"/>
+        <b className="helvetica fonte_15 cor_0">Aprovações</b>
+        <BsFillCaretRightFill color="#828282"/>
+        <b className="helvetica fonte_15 cor_0">Verbas</b>
+        <BsFillCaretRightFill color="#828282"/>
+        <b className="helvetica fonte_15 cor_5 normal"> <u> Centro de custos </u> </b>
+      </Titulo>
         <Formulario>
           <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
 
@@ -52,19 +63,12 @@ const Cadastrar4: React.FC = () => {
             </div>
 
             <div className="contCC">
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
-              aaaa <br />
+              <div className="column1">
+                <div className="box cor_3f" onClick={addCc}>
+                  <RiAddLine color="#fff"/>
+                </div>
+                Vendas
+              </div>
             </div>
 
           </div>
@@ -78,7 +82,7 @@ const Cadastrar4: React.FC = () => {
 
             <div className="line">
               <div className="tamanho">
-                <input type="text" placeholder="Digite aqui..." />
+                <input type="text" placeholder="Vendas" />
               </div>
               <div className="tamanho2">
                 <input type="number" placeholder="%"/>

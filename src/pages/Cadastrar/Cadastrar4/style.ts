@@ -43,8 +43,20 @@ p{
     height:140px;
     border-radius:5px;
     border:  1px solid #dedede;
-    padding:10px;
+    padding:5px;
     overflow: auto;
+    color: #828282;
+
+    .column1{
+      width: 100%;
+      height: 30px;
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+    }
   }
 
   .box{
@@ -114,8 +126,6 @@ p{
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
-
-
       }
 
     .column2{
@@ -130,18 +140,16 @@ p{
       border-bottom-color: #DCDCDC;
     }
   }
-
 }
-
-
   .line{
     width: 100%;
-    display flex;
+    display: flex;
 
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
+
     b{
       width: 45%;
     }
@@ -154,7 +162,7 @@ p{
       width: 25%;
     }
 
-    input{
+    .input{
       width: 100%;
       border-radius:5px;
       border:  1px solid #dedede;
@@ -172,6 +180,7 @@ p{
   }
 
   input{
+
     width: 100%;
     border-radius:5px;
     padding:10px;
@@ -179,7 +188,6 @@ p{
   }
 
   b{
-    margin-bottom: 15px;
     margin-top: 15px;
   }
 `;
