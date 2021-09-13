@@ -14,30 +14,36 @@ export const Content = styled.div`
         border-bottom-style: solid;
         border-bottom-width: 0.5px;
         border-bottom-color: #DCDCDC;
-  
+
         .column1{
-  
+
           width:10%;
           height: 50px;
           display:flex;
           justify-content: center;
           align-items: center;
           margin-right: 10px;
-  
+
           p{
             display:flex;
             justify-content: center;
           }
-  
+
+          .line{
+            width: 1%;
+            height: 50%;
+            border-radius: 20px;
           }
-  
+
+          }
+
         .column2{
           width: 23%;
           height: 50px;
           display:flex;
           justify-content: center;
           align-items: center;
-  
+
           p{
             display:flex;
             justify-content: flex-start;

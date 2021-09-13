@@ -8,6 +8,7 @@ export const Container = styled.div`
     display:flex;
     justify-content: space-between;
     align-content: center;
+    align-items: center;
 
     #informations{
 
@@ -31,24 +32,16 @@ export const Container = styled.div`
       }
     }
 
-    #content_translator{
-      width: 115px;
-      height: 55px;
+    #content_all{
+      width: 10%;
       display:flex;
       align-items: center;
+      justify-content: space-around;
 
-      #translator_select{
-        margin-top: 10px;
-      }
-
-      #translator_flag {
-      width: 32px;
-      height: 32px;
-      margin: 5px 20px 0px 5px;
-      }
-
-      #content_exit{
-        margin-top: 8px;
+      #flag{
+        width: 40%;
+        display: flex;
+        align-items: center;
       }
 
     }

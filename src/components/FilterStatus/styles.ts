@@ -5,6 +5,9 @@ export const Container = styled.div`
     display:flex;
     align-items: center;
 
+    .texto{
+    }
+
     .arrow{
       display: flex;
       align-items: center;
@@ -20,9 +23,6 @@ export const Container = styled.div`
       margin-left: 5px;
       color: #fff;
 
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
 
       border: none;
       border-radius: 5px;
@@ -32,7 +32,6 @@ export const Container = styled.div`
 
     .status{
       width: 115px;
-      padding-left: 15%;
-      padding-right: 15%;
+      padding-left: 10%;
     }
 `;

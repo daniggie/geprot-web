@@ -2,6 +2,8 @@ import React from "react";
 import { Titulo, Formulario } from './style';
 import Barra from "../../../components/Barra";
 import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
+
+import { RiAddLine } from "react-icons/ri";
 import { FiX } from "react-icons/fi";
 
 const Editar2: React.FC = () => {
@@ -38,6 +40,9 @@ const Editar2: React.FC = () => {
 
             <div className="line">
                 <input type="time" placeholder="" />
+                <div className="box cor_3f">
+                  <RiAddLine color="#fff"/>
+                </div>
             </div>
           </div>
 

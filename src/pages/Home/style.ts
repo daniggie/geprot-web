@@ -65,7 +65,8 @@ export const Filtros = styled.div`
     }
 
     .arrow{
-      margin-top: 2px;
+      display: flex;
+      align-items: center;
     }
 
 `;

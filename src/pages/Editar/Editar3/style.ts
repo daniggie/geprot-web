@@ -106,7 +106,7 @@ p{
 
 
       &:hover{
-        background: #008EA5;
+        background: #001EA5;
         transition: 0.2s;
         cursor: pointer;
       }
@@ -117,7 +117,7 @@ p{
 
   .line{
     width: 100%;
-    display flex;
+    display: flex;
 
     flex-direction: row;
     flex-wrap: nowrap;
@@ -133,18 +133,19 @@ p{
     }
 
     .box{
-      width: 100%;
-      textarea{
-        resize: none;
-        padding: 10px;
-        border-radius:5px;
-        border: 1px solid #dedede;
-        autocapitalize: sentences;
-        font-family: helvetica;
-        min-width: 100%;
-        min-height: 150px;
-      }
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+
+
+    &:hover{
+      background: #001EA5;
+      transition: 0.2s;
+      cursor: pointer;
     }
+  }
 
     input{
       width: 100%;

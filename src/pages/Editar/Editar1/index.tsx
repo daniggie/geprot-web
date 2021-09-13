@@ -41,6 +41,7 @@ const Editar1: React.FC = () => {
 
         <a href="/editar2">
             <CardsEdit/>
+            LINK PARA VISUALIZAÇÃO DE EDITAR
         </a>
 
         </Content_cards>

@@ -5,7 +5,7 @@ interface TableProps{
 };
 
 export const Titulo = styled.div`
-  margin-top: 40px;
+  margin-top: 35px;
   margin-left: 160px;
   display:flex;
   justify-content: flex-start;

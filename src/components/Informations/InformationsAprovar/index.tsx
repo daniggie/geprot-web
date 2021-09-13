@@ -25,7 +25,9 @@ const InformationsAprovar: React.FC = () => {
             </div>
 
             <div className="column1">
-            <p className="helvetica light fonte_15 cor_0">00</p>
+            <p className="helvetica light fonte_15 cor_0">00h</p>
+            <p className="line cor_4f"></p>
+            <p className="helvetica light fonte_15 cor_0">100h</p>
             </div>
 
             <div className="column1">
