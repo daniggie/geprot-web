@@ -47,6 +47,7 @@ const InformationsApFuncionario: React.FC = () => {
 
                 <div className="column2">
                     <p className="desc1 helvetica light fonte_15 cor_0">{valor.descricao_trabalho}</p>
+                    <p className="desc2 helvetica light fonte_15 cor_0">{valor.descricao_trabalho}</p>
                 </div>
 
 

@@ -8,19 +8,20 @@ export const Content = styled.div`
       width: 100%;
       height: 50px;
       align-items: center;
-      justify-content: center;
       background: #fff;
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
       transition: 0.5s;
 
-      .desc1 {
+      .desc1{
         overflow: unset;
         visibility: visible;
-        width: 280px;
-        height: 50px;
+        text-overflow: ellipsis;
+        width: 100%;
+        height: 15px;
         transition: 0.5s;
+        overflow: hidden;
       }
 
       .desc2 {

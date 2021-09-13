@@ -26,6 +26,7 @@ export const All = styled.div<TableProps>`
 
     .informations{
       max-height: 250px;
+      min-height: 250px;
       overflow: auto;
     }
 
