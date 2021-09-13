@@ -98,13 +98,13 @@ const LinkAprovar = "/aprovarhoras/";
           <div className="line">
             <b className="cor_1 p1"> Valor consumido: </b>
             <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2"> {valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</b>
+            <b className="cor_0 p2"> {valores?.valorUtilizado ? valores.valorUtilizado : "Sem valor"}</b>
           </div>
 
           <div className="line">
             <b className="cor_1 p1"> Saldo: </b>
             <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0,00"}</b>
+            <b className="cor_0 p2">{valores?.valorRestantes ? valores.valorRestantes : "Sem valor"}</b>
           </div>
 
         </Content>
@@ -112,7 +112,7 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
           <div className="line ">
             <p className="cor_1">Horas previstas: </p>
-            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "0"} Horas</p>
+            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "Sem valor"} Horas</p>
           </div>
 
           <div className="line">

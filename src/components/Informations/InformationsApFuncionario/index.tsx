@@ -1,7 +1,5 @@
 import React from "react";
 import { Content } from "./style";
-import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
-import { CgSearchLoading } from "react-icons/cg";
 import IconeAprovamento from "../../IconeAprovamento";
 
 const InformationsApFuncionario: React.FC = () => {
@@ -18,7 +16,10 @@ const InformationsApFuncionario: React.FC = () => {
                 </div>
 
                 <div className="column2">
-                    <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
+                    <p className="desc1 helvetica light fonte_15 cor_0">LERIGOU</p>
+                    <p className="desc2 helvetica light fonte_13 cor_0">Inceptos vehicula primis gravida, cubilia,
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda veniam soluta.</p>
                 </div>
 
 

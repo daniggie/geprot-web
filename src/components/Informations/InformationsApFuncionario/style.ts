@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Content = styled.div`
     max-height: 300px;
-    overflow: auto;
 
     .columns{
       display:flex;
@@ -14,6 +13,36 @@ export const Content = styled.div`
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
+      transition: 0.5s;
+
+      .desc1 {
+        overflow: unset;
+        visibility: visible;
+        width: 280px;
+        height: 50px;
+        transition: 0.5s;
+      }
+
+      .desc2 {
+        display: none;
+        z-index: 50;
+        transition: 0.5s;
+      }
+
+      &:hover{
+        height: 120px;
+
+        .desc1{
+          visibility: hidden;
+          display: none;
+        }
+
+        .desc2{
+          overflow: unset;
+          display: block;
+          visibility: visible;
+        }
+      }
 
       .column{
 
@@ -25,7 +54,6 @@ export const Content = styled.div`
         margin-right: 10px;
 
         p{
-          display:flex;
           justify-content: center;
         }
 
@@ -40,12 +68,13 @@ export const Content = styled.div`
       align-items: center;
       margin-right: 10px;
 
-      p{
-        display:flex;
-        justify-content: center;
-      }
+        p{
+          justify-content: center;
+        }
 
-}
+
+
+      }
 
     }
 
