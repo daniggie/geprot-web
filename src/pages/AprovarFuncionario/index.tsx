@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
 import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonEnviar";
-import { transitions } from "polished";
+import api from "../../services/api";
+import { useParams } from "react-router";
+
+interface Card {
+  totalHoras: number;
+  valorGasto: number;
+}
 
 const AprovarFuncionario: React.FC = () => {
 
@@ -21,14 +27,38 @@ const AprovarFuncionario: React.FC = () => {
 
   };
 
+  const { id }: {id:string} = useParams();
+  const { consultorId }: {consultorId:string} = useParams();
+  const [valores, setValores ] = useState<Card>();
+
+  useEffect(() => {
+    async function carregaDados(): Promise<void>  {
+      await api.get(`horas/listar/${id}/${consultorId}`).then(response => {
+        setValores(response.data)
+      })
+    }
+    carregaDados();
+  }, [ ])
+  console.log(valores)
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
+
     return(
       <>
       <Barra />
 
       <All overlay={overlay}>
 
-        <p className="helvetica cor_0 lighter fonte_20">Seção X</p>
-        <p className="helvetica cor_3 lighter fonte_25">Name Person Details</p>
+        <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
+        <p className="helvetica cor_3 lighter fonte_25">{id} - {consultorId}</p>
 
         <div className="table">
 
@@ -69,12 +99,12 @@ const AprovarFuncionario: React.FC = () => {
             <div className="header">
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Total de Horas trabalhadas: </p>
-              <b className="helvetica cor_3 fonte_22">72 H</b>
+              <b className="helvetica cor_3 fonte_22">{valores?.totalHoras} H</b>
             </div>
 
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Valor gasto: </p>
-              <b className="helvetica cor_3 fonte_22">R$ 1.560,00</b>
+              <b className="helvetica cor_3 fonte_22">R$ {valores?.valorGasto}</b>
             </div>
 
           </div>
