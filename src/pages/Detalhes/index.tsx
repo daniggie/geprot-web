@@ -39,6 +39,15 @@ const Detalhes: React.FC = () => {
     carregaDados();
   }, [ id ])
 
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
   return(
     <>
         <Barra />
@@ -46,7 +55,7 @@ const Detalhes: React.FC = () => {
       <All>
         <Content>
           <div className="line cor_0">
-            <p> Seção {valores?.secaos.id} </p>
+            <p> Seção: {secao.secao.nome} </p>
           </div>
 
           <div className="line ">
