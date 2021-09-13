@@ -4,10 +4,10 @@ import Menu from '../../components/Menu';
 import { useParams } from "react-router";
 
 import Header from "../../components/Header";
-import FilterSearch from "../../components/FilterSearch";
-import FilterStatus from "../../components/FilterStatus";
-import FilterTime from "../../components/FilterTime";
-import FilterCC from "../../components/FilterCC";
+import FilterSearch from "../../components/Filters/FilterSearch";
+import FilterStatus from "../../components/Filters/FilterStatus";
+import FilterTime from "../../components/Filters/FilterTime";
+import FilterCC from "../../components/Filters/FilterCC";
 
 import api from "../../services/api";
 import { Chart } from "react-google-charts";

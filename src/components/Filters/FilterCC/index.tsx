@@ -16,7 +16,7 @@ const FilterCC: React.FC = () =>{
 
       <form>
         <select className="status cor_3f" name="status">
-          <option value="status">Todos</option>
+          <option className="status">Todos</option>
           <option value="status">Centro ABCD</option>
           <option value="status">Centro EFGH</option>
           <option value="status">Centro IJKL</option>

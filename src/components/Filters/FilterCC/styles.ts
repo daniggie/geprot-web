@@ -26,6 +26,11 @@ export const Container = styled.div`
 
       border: none;
       border-radius: 5px;
+
+      .status{
+        border-radius: 5px;
+      }
+
     }
 
     .status{
