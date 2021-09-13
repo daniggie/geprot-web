@@ -66,16 +66,16 @@ const LinkAprovar = "/aprovarhoras";
           </div>
 
           <div className="line ">
-            <p className="cor_1">Data inicial: </p>
-            <p className="cor_0">{valores?.dataInicio ? valores.dataInicio : "0000-00-00"}</p>
+            <b className="cor_1">Data inicial: </b>
+            <b className="cor_0">{valores?.dataInicio ? valores.dataInicio : "0000-00-00"}</b>
             <div className="download cor_000 cor_3f">
               ATA_CVDP_07_2020
             </div>
           </div>
 
           <div className="line ">
-            <p className="cor_1">Data final: </p>
-            <p className="cor_0">{valores?.dataFinalizacao ? valores.dataFinalizacao : "0000-00-00"}</p>
+            <b className="cor_1">Data final: </b>
+            <b className="cor_0">{valores?.dataFinalizacao ? valores.dataFinalizacao : "0000-00-00"}</b>
             <div className="download cor_000 cor_3f">
               DASHBOARD
             </div>
@@ -96,15 +96,15 @@ const LinkAprovar = "/aprovarhoras";
           </div>
 
           <div className="line">
-            <b className="cor_1 p1"> Saldo: </b>
+            <b className="cor_1 p1"> Valor consumido: </b>
             <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0,00"}</b>
+            <b className="cor_0 p2"> {valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</b>
           </div>
 
           <div className="line">
-            <p className="cor_1"> Valor consumido: </p>
-            <b></b>
-            <p className="cor_0"> R$ {valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</p>
+            <b className="cor_1 p1"> Saldo: </b>
+            <b className="cor_1 p3">R$</b>
+            <b className="cor_0 p2"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0,00"}</b>
           </div>
 
         </Content>
