@@ -11,6 +11,7 @@ import { useParams } from "react-router";
 interface Card {
   totalHoras: number;
   valorGasto: number;
+  nome: string;
 }
 
 const AprovarFuncionario: React.FC = () => {
@@ -58,7 +59,7 @@ const AprovarFuncionario: React.FC = () => {
       <All overlay={overlay}>
 
         <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
-        <p className="helvetica cor_3 lighter fonte_25">{id} - {consultorId}</p>
+        <p className="helvetica cor_3 lighter fonte_25">{id} - {valores?.nome}</p>
 
         <div className="table">
 
@@ -83,17 +84,6 @@ const AprovarFuncionario: React.FC = () => {
 
           <div className="informations">
             <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-            <InformationsApFuncionario />
-
           </div>
 
             <div className="header">

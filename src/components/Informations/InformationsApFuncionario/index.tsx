@@ -9,10 +9,10 @@ import { useParams } from "react-router";
 interface Card {
   todosApontamentos: [
     {
-      "data": "2021-02-09",
-      "descricao_trabalho": "Trabalho legalzin",
-      "quantidade_horas": 30,
-      "status": "REPROVADO"
+      data: string;
+      descricao_trabalho: string;
+      quantidade_horas: number;
+      status: string;
     }
   ],
 }
@@ -43,27 +43,30 @@ const InformationsApFuncionario: React.FC = () => {
 
     return (
         <>
+        {
+          valores?.todosApontamentos.map(valor => (
         <Content>
             <div className="columns">
                 <div className="column">
-                    <p className="helvetica light fonte_15 cor_0">dd/mm/yyyy</p>
+                    <p className="helvetica light fonte_15 cor_0">{valor.data}</p>
                 </div>
 
                 <div className="column">
-                    <p className="helvetica light fonte_15 cor_0"> hh : mm</p>
+                    <p className="helvetica light fonte_15 cor_0"> {valor.quantidade_horas}h</p>
                 </div>
 
                 <div className="column2">
-                    <p className="helvetica light fonte_15 cor_0">Inceptos vehicula primis gravida, cubilia...</p>
+                    <p className="helvetica light fonte_15 cor_0">{valor.descricao_trabalho}</p>
                 </div>
 
 
                 <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status="APROVADO"/></p>
+                <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status={valor.status} /></p>
                 </div>
 
             </div>
         </Content>
+        ))}
         </>
     )
 };
