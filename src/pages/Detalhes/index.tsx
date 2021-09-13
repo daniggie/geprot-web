@@ -48,7 +48,7 @@ const Detalhes: React.FC = () => {
     }
 });
 
-const LinkAprovar = "/aprovarhoras";
+const LinkAprovar = "/aprovarhoras/";
 
   return(
     <>
