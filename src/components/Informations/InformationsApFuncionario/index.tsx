@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
 import { Content } from "./style";
-import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
-import { CgSearchLoading } from "react-icons/cg";
 import IconeAprovamento from "../../IconeAprovamento";
 import api from "../../../services/api";
 import { useParams } from "react-router";
@@ -32,14 +30,6 @@ const InformationsApFuncionario: React.FC = () => {
   }, [ ])
   console.log(valores)
 
-  const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Logistica:usuario');
-
-    if(usuario) {
-        let languageObject = JSON.parse(usuario);
-        return languageObject;
-    }
-});
 
     return (
         <>
