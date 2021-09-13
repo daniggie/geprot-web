@@ -172,8 +172,6 @@ const LinkAprovar = "/aprovarhoras/";
 
           <div className="contDetails">
             <ContDetails/>
-            <ContDetails/>
-            <ContDetails/>
           </div>
 
         </Content>
