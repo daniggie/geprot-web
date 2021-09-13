@@ -148,6 +148,9 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
+
+              <div className="linelabel">
+
               <Chart
                 width={"100%"}
                 height={"180px"}
@@ -184,12 +187,17 @@ const Dashboard: React.FC = () => {
                 <p className="used-size">{valores?.projetosConcluidos}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
+            </div>
             </LitlleCont>
 
             <LitlleCont>
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS NÃO INICIADOS</p>
               </div>
+
+              <div className="linelabel">
+
+
               <Chart
                 width={"100%"}
                 height={"180px"}
@@ -222,16 +230,20 @@ const Dashboard: React.FC = () => {
                   }
                 }}
               />
-              <div id="labelOverlay3">
-                <p className="used-size3">{valores?.projetosNaoIniciados}<span>%</span></p>
-                <p className="total-size3"> of 100%</p>
+              <div id="labelOverlay">
+                <p className="used-size">{valores?.projetosNaoIniciados}<span>%</span></p>
+                <p className="total-size"> of 100%</p>
               </div>
+            </div>
             </LitlleCont>
 
             <LitlleCont>
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS ATRASADOS</p>
               </div>
+              <div className="linelabel">
+
+
               <Chart
                 width={"100%"}
                 height={"180px"}
@@ -264,10 +276,11 @@ const Dashboard: React.FC = () => {
                   }
                 }}
               />
-              <div id="labelOverlay2">
-                <p className="used-size2">{valores?.projetosAtrasados}<span>%</span></p>
-                <p className="total-size2"> of 100%</p>
+              <div id="labelOverlay">
+                <p className="used-size">{valores?.projetosAtrasados}<span>%</span></p>
+                <p className="total-size"> of 100%</p>
               </div>
+            </div>
             </LitlleCont>
 
           </Container>
