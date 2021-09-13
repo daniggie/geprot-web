@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Container } from './style';
 
-import {FiChevronDown, FiLogOut} from "react-icons/fi";
+import {FiLogOut} from "react-icons/fi";
 
 import logo from '../../icons/logo.svg';
-import translator_flag from '../../icons/translator_flag.svg';
 import { FaCog } from "react-icons/fa";
+import SwitchFlags from "../SwitchFlags";
 
 const Header: React.FC = () => {
 
@@ -39,13 +39,7 @@ const Header: React.FC = () => {
           <div id="content_all">
 
             <div id="flag">
-              <div>
-                <FiChevronDown size="20px" color="#0091BD"/>
-              </div>
-
-              <div>
-                <img src={translator_flag} alt="" />
-              </div>
+              <SwitchFlags/>
             </div>
 
             <div>
