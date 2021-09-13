@@ -19,7 +19,7 @@ const IconeAprovamento: React.FC<Status> = ({status}) => {
     );
   }else{
     return(
-
+      
       <AiFillCloseCircle size={25} color="#0091BD"/>
     );
   }
