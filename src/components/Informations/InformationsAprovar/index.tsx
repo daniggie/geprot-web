@@ -36,6 +36,7 @@ const InformationsAprovar: React.FC = () => {
     }
 });
 
+const linkAprovarHoras = "/aprovarfuncionario/"
     return (
         <>
         {
@@ -66,7 +67,7 @@ const InformationsAprovar: React.FC = () => {
 
             <div className="column1">
             <p className="helvetica light fonte_15 cor_0">
-                <a href="/aprovarfuncionario">
+                <a href={linkAprovarHoras + id + "/" + valor.consultor_id}>
                 <CgSearchLoading size={25} color="#0091BD"/>
                 </a>
             </p>
