@@ -20,9 +20,9 @@ interface Card {
   horasTrabalhadas: number;
   descricao: string;
   secaos : {
-  id: number;
-  nome: string;
-  valor: number;
+    id: number;
+    nome: string;
+    valor: number;
   }
 }
 
@@ -158,9 +158,6 @@ const Detalhes: React.FC = () => {
           </div>
 
           <div className="contDetails">
-            <ContDetails/>
-            <ContDetails/>
-            <ContDetails/>
             <ContDetails/>
           </div>
 

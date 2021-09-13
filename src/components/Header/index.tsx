@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from './style';
 
 import {FiChevronDown, FiLogOut} from "react-icons/fi";
@@ -8,6 +8,15 @@ import translator_flag from '../../icons/translator_flag.svg';
 import { FaCog } from "react-icons/fa";
 
 const Header: React.FC = () => {
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
     return(
         <Container>
           <div id="informations">

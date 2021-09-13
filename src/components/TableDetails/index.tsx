@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { Container } from "./styles";
+import api from "../../services/api";
+
+interface Secao {
+  id: number;
+  nome: string;
+  verba: number;
+}
 
 const ContDetails: React.FC = () => {
+  const { id }: {id:string} = useParams();
+  const [ valor, setValor ] = useState<Secao[]>([]);
+
+  useEffect(() => {
+    async function carregaDados(): Promise<void>  {
+       api.get(`projetos/listar/projetos/${id}`).then(response => {
+        setValor(response.data.secaos)
+      })
+    }
+   carregaDados();
+  }, [ ])
+  console.log(valor)
+
+
+
   return(
-    <Container>
-      <p className=" table cor_1">Desenvolvimento Externo das integrações com fornecedor de EDI homologado (GXS Grid by Open Text)</p>
-      <p className="table cor_1">R$ 5.000.000,00</p>
-      <p className="table cor_1">20168060</p>
-    </Container>
+    <>
+      {
+      valor.map(secao => (
+      <Container>
+        <p className=" table cor_1">{secao.nome}</p>
+        <p className="table cor_1">R$ {secao.verba}</p>
+        <p className="table cor_1">{secao.id}</p>
+      </Container>
+      ))}
+    </>
   )
 };
 
