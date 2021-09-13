@@ -48,6 +48,8 @@ const Detalhes: React.FC = () => {
     }
 });
 
+const LinkAprovar = "/aprovarhoras/";
+
   return(
     <>
         <Barra />
@@ -173,7 +175,7 @@ const Detalhes: React.FC = () => {
         </Content>
 
         <BttnPosition>
-          <a href="/aprovarhoras">
+          <a href={LinkAprovar + id}>
             <ButtonAprovar />
           </a>
         </BttnPosition>
