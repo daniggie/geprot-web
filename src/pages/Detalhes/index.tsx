@@ -105,7 +105,7 @@ const LinkAprovar = "/aprovarhoras/";
           <div className="line">
             <b className="cor_1 p1"> Saldo: </b>
             <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2">{valores?.valorRestantes ? valores.valorRestantes : "Sem valor"}</b>
+            <b className="cor_0 p2">{valores?.valorRestante ? valores.valorRestante : "Sem valor"}</b>
           </div>
 
         </Content>

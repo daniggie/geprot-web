@@ -3,7 +3,7 @@ import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
 import Menu from "../../../components/Menu";
 import Informations from "../../../components/Informations/InformationsAlocar";
-import FilterAloc from "../../../components/FilterAloc";
+import FilterAloc from "../../../components/Filters/FilterAloc";
 
 const AlocarEscolherFuncionario: React.FC = () => {
   return(

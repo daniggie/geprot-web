@@ -9,7 +9,7 @@ const BotaoAvancar: React.FC = () => {
     api.get(`aprovar/${id}/${consultorId}`)
     return(
         <Container>
-          <p>Aprovar horas</p>
+              <p>Aprovar horas</p>
         </Container>
     );
 };

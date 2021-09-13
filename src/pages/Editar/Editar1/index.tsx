@@ -4,8 +4,8 @@ import Header from '../../../components/Header';
 import Menu from '../../../components/Menu';
 
 import { All, Filtros, Content_cards } from './style';
-import FilterSearch from '../../../components/FilterSearch';
-import FilterStatus from '../../../components/FilterStatus';
+import FilterSearch from '../../../components/Filters/FilterSearch';
+import FilterStatus from '../../../components/Filters/FilterStatus';
 import { FiChevronRight } from "react-icons/fi";
 
 
