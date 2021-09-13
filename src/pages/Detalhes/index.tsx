@@ -39,6 +39,17 @@ const Detalhes: React.FC = () => {
     carregaDados();
   }, [ id ])
 
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
+const LinkAprovar = "/aprovarhoras";
+
   return(
     <>
         <Barra />
@@ -46,7 +57,7 @@ const Detalhes: React.FC = () => {
       <All>
         <Content>
           <div className="line cor_0">
-            <p> Seção {valores?.secaos.id} </p>
+            <p> Seção: {secao.secao.nome} </p>
           </div>
 
           <div className="line ">
@@ -164,7 +175,7 @@ const Detalhes: React.FC = () => {
         </Content>
 
         <BttnPosition>
-          <a href="/aprovarhoras">
+          <a href={LinkAprovar + id}>
             <ButtonAprovar />
           </a>
         </BttnPosition>
