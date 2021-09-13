@@ -1,17 +1,48 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
 import InformationsAprovar from "../../components/Informations/InformationsAprovar";
+import { useParams } from "react-router";
+import api from "../../services/api";
+
+
+interface Card {
+  id: number;
+  nome: string;
+}
 
 const AprovarHoras: React.FC = () => {
+  const { id }: {id:string} = useParams();
+  const [valores, setValores ] = useState<Card>();
+
+  useEffect(() => {
+    async function carregaDados(): Promise<void>  {
+      await api.get(`projetos/listar/projetos/${id ? id : null}`).then(response => {
+        setValores(response.data)
+      })
+    }
+    carregaDados();
+  }, [ ])
+  console.log(valores)
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
+
     return(
       <>
       <Barra />
 
       <All>
 
-        <p className="helvetica cor_0 lighter fonte_20">Seção X</p>
-        <p className="helvetica cor_3 lighter fonte_25">100000000001 -  Projeto GDT</p>
+        <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.id}</p>
+        <p className="helvetica cor_3 lighter fonte_25">{valores?.id} -  {valores?.nome}</p>
 
         <div className="table">
 
