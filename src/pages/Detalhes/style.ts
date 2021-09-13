@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const All = styled.div`
     margin: 10px;
-    padding: 40px;
+    padding: 30px;
+
 
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +20,21 @@ export const Content = styled.div`
   flex-direction: column;
   flex-wrap: nowrap;
 
+  .lineobj{
+      padding: 10px;
+      width: 100%;
+      min-height: 140px;
+      display: flex;
+
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      border-width: 1px;
+      border-style: solid;
+      border-color: #c4c4c4;
+    }
+
   .line{
       padding: 5px;
       width: 100%;
@@ -28,6 +44,30 @@ export const Content = styled.div`
       flex-wrap: nowrap;
       align-items: center;
       justify-content: space-between;
+
+      p{
+        display: flex;
+      }
+
+      b{
+        width: calc(100%/3);
+        font-weight: normal;
+        display: flex;
+      }
+
+      .p1{
+        justify-content: start;
+      }
+
+      .p2{
+        justify-content: end;
+      }
+
+      .p3{
+        justify-content: center;
+      }
+
+
 
       .download{
         width: 200px;

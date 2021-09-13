@@ -67,7 +67,7 @@ const LinkAprovar = "/aprovarhoras";
 
           <div className="line ">
             <p className="cor_1">Data inicial: </p>
-            <p className="cor_0">{valores?.dataInicio ? valores.dataInicio : "00/00/0000"}</p>
+            <p className="cor_0">{valores?.dataInicio ? valores.dataInicio : "0000-00-00"}</p>
             <div className="download cor_000 cor_3f">
               ATA_CVDP_07_2020
             </div>
@@ -75,7 +75,7 @@ const LinkAprovar = "/aprovarhoras";
 
           <div className="line ">
             <p className="cor_1">Data final: </p>
-            <p className="cor_0">{valores?.dataFinalizacao ? valores.dataFinalizacao : "00/00/0000"}</p>
+            <p className="cor_0">{valores?.dataFinalizacao ? valores.dataFinalizacao : "0000-00-00"}</p>
             <div className="download cor_000 cor_3f">
               DASHBOARD
             </div>
@@ -85,23 +85,26 @@ const LinkAprovar = "/aprovarhoras";
             <p> Objetivo: </p>
           </div>
 
-          <div className="line cor_0">
+          <div className="lineobj cor_0">
             <p> {valores?.descricao ? valores?.descricao : "Reduzir a atividade manual da equipe interna WEC na entrada de ordens de venda (OV), envio da confirmação e aviso de remessa ao Cliente XYZ USA. Atender solicitação do cliente para automatizar o envio de pedidos e atualização do próprio sistema através do EDI (Eletronic Data Interchange). O Cliente já implementou este sistema nos principais fornecedores."}</p>
           </div>
 
           <div className="line">
-            <p className="cor_1"> Valor do projeto: </p>
-            <p className="cor_0"> R$ {valores?.valor ? valores.valor : "0"}</p>
+            <b className="cor_1 p1"> Valor do projeto: </b>
+            <b className="cor_1 p3">R$</b>
+            <b className="cor_0 p2">  {valores?.valor ? valores.valor : "0,00"}</b>
           </div>
 
           <div className="line">
-            <p className="cor_1"> Saldo </p>
-            <p className="cor_0"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0"}</p>
+            <b className="cor_1 p1"> Saldo: </b>
+            <b className="cor_1 p3">R$</b>
+            <b className="cor_0 p2"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0,00"}</b>
           </div>
 
           <div className="line">
             <p className="cor_1"> Valor consumido: </p>
-            <p className="cor_0"> R$ {valores?.valorUtilizado ? valores.valorUtilizado : "0"}</p>
+            <b></b>
+            <p className="cor_0"> R$ {valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</p>
           </div>
 
         </Content>
