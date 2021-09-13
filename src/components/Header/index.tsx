@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from './style';
 
 import {FiChevronDown, FiLogOut} from "react-icons/fi";
@@ -7,6 +7,15 @@ import logo from '../../icons/logo.svg';
 import translator_flag from '../../icons/translator_flag.svg';
 
 const Header: React.FC = () => {
+
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Logistica:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
     return(
         <Container>
           <div id="informations">
@@ -15,12 +24,12 @@ const Header: React.FC = () => {
               <a href="/home">
                 <img src={logo} alt="logo" />
               </a>
-              
+
             </div>
 
             <div>
               <h1> Gestor </h1>
-              <p >Name Gestor Persona </p>
+              <p >{secao.nome} </p>
             </div>
 
           </div>
@@ -39,7 +48,7 @@ const Header: React.FC = () => {
               <a href="/">
                 <FiLogOut size="30px" color="#0091BD"/>
               </a>
-             
+
             </div>
           </div>
       </Container>
