@@ -69,7 +69,12 @@ const Cards: React.FC = () => {
                               Status:
                           </div>
                           <div className="cor_black fonte_12 helvetica bold ">
-                              {valor.status }
+                              {
+                                valor.status == "EM_ANDAMENTO" ? "EM ANDAMENTO" :
+                                valor.status == "NAO_INICIADO" ? "NÃO INICIADO" :
+                                valor.status == "ATRASADO" ? "ATRASADO" :
+                                valor.status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
+                              }
                           </div>
                       </div>
                   </div>
