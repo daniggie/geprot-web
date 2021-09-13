@@ -23,7 +23,7 @@ const InformationsApFuncionario: React.FC = () => {
 
 
                 <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento/></p>
+                <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status="APROVADO"/></p>
                 </div>
 
             </div>

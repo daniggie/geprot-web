@@ -75,15 +75,7 @@ const AprovarHoras: React.FC = () => {
 
           <div className="content_informations">
             <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
-            <InformationsAprovar />
+
           </div>
 
         </div>
