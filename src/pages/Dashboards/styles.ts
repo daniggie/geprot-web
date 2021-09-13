@@ -8,7 +8,7 @@ export const TituloF = styled.div`
     margin-top: 10px;
     padding: 15px 113px 25px 20px;
     display: flex;
-    aling-items: center;
+    align-items: center;
 
     p{
       width: 5%;
@@ -19,7 +19,6 @@ export const TituloF = styled.div`
       height: 2px;
       border-radius: 20px;
       border-width: 0px;
-      margin-top: 12px;
       background: #0091BD;
       border-radius: 5px;
     }
@@ -50,10 +49,8 @@ export const BodyDashboards = styled.div`
   width: 85%;
   display:flex;
   flex-wrap: wrap;
-  align-content: flex-start;
   justify-content: space-between;
   padding: 0 0 0 25px;
-  margin-top: 0px;
   margin-left: 10px
 `;
 
@@ -65,7 +62,7 @@ export const Container = styled.div`
 `;
 
 export const LitlleCont = styled.div`
-  width: 21%;
+  width: 20%;
   margin-left: 55px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -74,83 +71,33 @@ export const LitlleCont = styled.div`
     width: 100%;
     height: 40px;
     border-radius: 5px 5px 0 0;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding-top: 12px;
     color: #fff;
   }
 
-  #labelOverlay3 {
-    width: 90px;
-    height: 45px;
-    position: absolute;
-    top: 515px;
-    left: 708px;
-    text-align: center;
-    cursor: default;
-  }
-
-  #labelOverlay3 p {
-    line-height: 0.3;
-    padding:0;
-    margin: 10px;
-  }
-
-  #labelOverlay3 p.used-size3 {
-    line-height: 0.5;
-    font-size: 20pt;
-    color: #8e8e8e;
-  }
-
-  #labelOverlay3 p.total-size3 {
-    line-height: 0.5;
-    font-size: 12pt;
-    color: #cdcdcd;
-  }
-
-  #labelOverlay2 {
-    width: 90px;
-    height: 45px;
-    position: absolute;
-    top: 515px;
-    left: 988px;
-    text-align: center;
-    cursor: default;
-  }
-
-  #labelOverlay2 p {
-    line-height: 0.3;
-    padding:0;
-    margin: 10px;
-  }
-
-  #labelOverlay2 p.used-size2 {
-    line-height: 0.5;
-    font-size: 20pt;
-    color: #8e8e8e;
-  }
-
-  #labelOverlay2 p.total-size2 {
-    line-height: 0.5;
-    font-size: 12pt;
-    color: #cdcdcd;
+  .linelabel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #labelOverlay {
     width: 90px;
     height: 45px;
     position: absolute;
-    top: 515px;
-    left: 426px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     cursor: default;
   }
 
   #labelOverlay p {
     line-height: 0.3;
-    padding:0;
     margin: 10px;
   }
 
