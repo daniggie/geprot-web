@@ -17,6 +17,7 @@ interface Card {
   valorRestantes: number;
   horasPrevistas: number;
   valorUtilizado: number;
+  valorRestante: number;
   horasTrabalhadas: number;
   descricao: string;
   secaos : {
@@ -91,20 +92,18 @@ const LinkAprovar = "/aprovarhoras/";
 
           <div className="line">
             <b className="cor_1 p1"> Valor do projeto: </b>
-            <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2">  {valores?.valor ? valores.valor : "0,00"}</b>
+            <b className="cor_0 p2">R${valores?.valor ? valores.valor : "0,00"}</b>
           </div>
 
           <div className="line">
             <b className="cor_1 p1"> Valor consumido: </b>
-            <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2"> {valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</b>
+            <b className="cor_0 p2">R${valores?.valorUtilizado ? valores.valorUtilizado : "0,00"}</b>
+
           </div>
 
           <div className="line">
             <b className="cor_1 p1"> Saldo: </b>
-            <b className="cor_1 p3">R$</b>
-            <b className="cor_0 p2"> R$ {valores?.valorRestantes ? valores.valorRestantes : "0,00"}</b>
+            <b className="cor_0 p2"> R$ {valores?.valorRestante ? valores.valorRestante : "0,00"}</b>
           </div>
 
         </Content>
