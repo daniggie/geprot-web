@@ -15,9 +15,9 @@ const Cadastrar3: React.FC = () => {
           <p className="helvetica fonte_20 cor_5 bold">VERBAS</p>
         </Titulo>
         <Titulo>
-          <b className="helvetica fonte_15 cor_0">Cadastro de projetos</b>
+          <a href="/cadastrar"><b className="helvetica fonte_15 cor_0">Cadastro de projetos</b></a>
           <BsFillCaretRightFill color="#828282"/>
-          <b className="helvetica fonte_15 cor_0">Aprovações</b>
+          <a href="/cadastrar2"><b className="helvetica fonte_15 cor_0">Aprovações</b></a>
           <BsFillCaretRightFill color="#828282"/>
           <b className="helvetica fonte_15 cor_5 normal"> <u> Verbas </u> </b>
         </Titulo>

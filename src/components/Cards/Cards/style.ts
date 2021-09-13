@@ -103,7 +103,7 @@ export const Content_cards = styled.div<CorCardPorps>`
   .card_status_txt {
       display: flex;
       justify-content: space-between;
-      width: 20%;
+      width: 30%;
   }
 
   .card_saldo {

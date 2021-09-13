@@ -11,7 +11,7 @@ export const All = styled.div`
     width: 100%;
     display:flex;
     justify-content: flex-start;
-    margin: 2px;
+    margin-bottom: 10px;
     align-items: center;
   }
 

@@ -33,13 +33,14 @@ export const Container = styled.div`
     }
 
     #content_all{
-      width: 10%;
+      width: 16%;
       display:flex;
       align-items: center;
       justify-content: space-around;
 
       #flag{
-        width: 40%;
+        width: 55%;
+        padding-top: 5px;
         display: flex;
         align-items: center;
       }
