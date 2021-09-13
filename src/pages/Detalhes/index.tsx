@@ -92,7 +92,8 @@ const LinkAprovar = "/aprovarhoras/";
 
           <div className="line">
             <b className="cor_1 p1"> Valor do projeto: </b>
-            <b className="cor_0 p2">R${valores?.valor ? valores.valor : "0,00"}</b>
+            <b className="cor_1 p3">R$</b>
+            <b className="cor_0 p2">{valores?.valor ? valores.valor : "0,00"}</b>
           </div>
 
           <div className="line">
@@ -112,7 +113,7 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
           <div className="line ">
             <p className="cor_1">Horas previstas: </p>
-            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "Sem valor"} Horas</p>
+            <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "0"} Horas</p>
           </div>
 
           <div className="line">
