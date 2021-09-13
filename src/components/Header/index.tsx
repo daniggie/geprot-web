@@ -31,7 +31,7 @@ const Header: React.FC = () => {
             <div>
               <h1> Gestor </h1>
 
-              <p >Name Gestor Persona </p>
+              <p >{secao.nome} </p>
             </div>
 
           </div>

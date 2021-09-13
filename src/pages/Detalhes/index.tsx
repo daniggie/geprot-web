@@ -46,7 +46,7 @@ const Detalhes: React.FC = () => {
       <All>
         <Content>
           <div className="line cor_0">
-            <p> Seção X </p>
+            <p> Seção {valores?.secaos.id} </p>
           </div>
 
           <div className="line ">
