@@ -3,18 +3,25 @@ import styled from "styled-components";
 export const Container = styled.header`
   height: 41px;
   box-sizing: border-box;
-  width: 220px;
+  width: 50px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   color: #0091BD;
+  margin-right: 0px;
+
+  svg{
+    margin-top: 7px;
+    font-size:20px;
+  }
 
   a {
     text-decoration: none;
+    color: #0091BD;
   }
 
   .lang-menu {
-      width: 115px;
+      width: 100px;
       text-align: right;
       font-weight: bold;
       position: relative;
@@ -45,12 +52,11 @@ export const Container = styled.header`
       border: 1px solid #f8f8f8;
       position: absolute;
       top: 41px;
-      left: 0px;
+      right: 0px;
       width: 150px;
       border-radius: 3px;
       box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
   }
-
 
   .lang-menu ul li {
       list-style: none;
@@ -60,14 +66,14 @@ export const Container = styled.header`
   }
 
   .lang-menu ul li a {
-      text-decoration: none;
-      width: 150px;
-      padding: 5px 10px;
-      display: block;
+    text-decoration: none;
+    width: 150px;
+    padding: 5px 10px;
+    display: block;
   }
 
   .lang-menu ul li:hover {
-      background-color: #f2f2f2;
+    background-color: #f2f2f2;
   }
 
   .lang-menu ul li a:before {
@@ -98,16 +104,10 @@ export const Container = styled.header`
   }
 
   .ar:before {
-      background-image: url('https://www.countryflags.io/ae/flat/32.png');
+      background-image: url('https://www.countryflags.io/cn/flat/32.png');
   }
-
 
   .lang-menu:hover ul {
       display: block;
   }
-
-
-
-
-
 `;

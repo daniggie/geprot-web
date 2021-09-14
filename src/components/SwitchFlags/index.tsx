@@ -1,13 +1,15 @@
 import React from "react";
 
-import { Container } from "./style"
+import { Container } from "./style";
+
+import { FiChevronDown } from "react-icons/fi"
 
 const SwitchFlags: React.FC = () => {
   return(
     <Container>
       <div className="lang-menu">
         <div className="selected-lang">
-          Português
+          <FiChevronDown/>
         </div>
         <ul>
           <li>
@@ -23,7 +25,7 @@ const SwitchFlags: React.FC = () => {
             <a href="" className="fr">Françês</a>
           </li>
           <li>
-            <a href="" className="ar">Arabe</a>
+            <a href="" className="ar">Chinês</a>
           </li>
         </ul>
       </div>
