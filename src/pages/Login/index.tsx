@@ -4,6 +4,8 @@ import { Form } from '@unform/web';
 import { FormHandles } from "@unform/core";
 import * as Yup from "yup";
 
+import { useToast } from "../../hooks/toast";
+
 import { AuthContext, useAuth } from "../../hooks/auth";
 
 import getValidationsErrors from "../../utils/getValidationErrors";
@@ -23,6 +25,7 @@ const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { signIn } = useAuth();
   const history = useHistory();
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(async (data: SignFormData) => {
     try{
@@ -42,12 +45,23 @@ const Login: React.FC = () => {
         })
 
         history.push('/home');
-    }catch(err){
 
+    }catch(err){
+      if(err instanceof Yup.ValidationError){
         const errors = getValidationsErrors(err);
         formRef.current?.setErrors(errors);
+
+        return
+      }
+
+      addToast({
+        type: "error",
+        title: "Erro na autenticação",
+        description: "Ocorreu um erro ao fazer login, cheque as credenciais.",
+      });
+
     }
-  }, [signIn, history]);
+  }, [signIn, addToast, history]);
 
   return(
     <>
