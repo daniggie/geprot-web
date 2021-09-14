@@ -74,6 +74,10 @@ export default createGlobalStyle`
       background-color: #28B9DA;
   }
 
+  .cor_5f{
+    background-color: #0091BD;
+  }
+
   .red {
     background: #FF0000;
   }

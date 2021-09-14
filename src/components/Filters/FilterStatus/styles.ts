@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const ContFilter = styled.div`
   height: 25px;
   box-sizing: border-box;
-  width: 150px;
+  width: 110px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -33,7 +33,7 @@ export const ContFilter = styled.div`
   }
 
   .lang-menu {
-      width: 150px;
+      width: 110px;
       text-align: right;
       font-weight: 540;
       position: relative;
@@ -56,7 +56,7 @@ export const ContFilter = styled.div`
       position: absolute;
       top: 27px;
       left: 0px;
-      width: 150px;
+      width: 110px;
       border-radius: 3px;
       box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
   }
@@ -71,7 +71,7 @@ export const ContFilter = styled.div`
 
   .lang-menu ul li a {
       text-decoration: none;
-      width: 150px;
+      width: 110px;
       padding: 5px 10px;
       display: block;
   }

@@ -31,6 +31,7 @@ export const Container = styled.div`
         font-style: normal;
         font-size: 15px;
         color: white;
+
       }
 
       .atalho{
@@ -42,6 +43,7 @@ export const Container = styled.div`
         svg{
           margin: 2px 0px 0px 5px;
         }
+
       }
 
       &:hover{
@@ -51,12 +53,12 @@ export const Container = styled.div`
         #idparagrafo{
           display:block;
           margin-top: 10px;
-          transition: 0.5s;
 
           font-family: Arial, Helvetica, sans-serif;
           font-style: normal;
           font-size: 15px;
           color: white;
+          transition: 0.8s;
         }
       }
 
