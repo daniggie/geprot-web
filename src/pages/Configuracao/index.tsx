@@ -13,6 +13,10 @@ const Configuracao: React.FC = () => {
       <Content>
         <div className="config">
 
+          <div className="line">
+            <p className="helvetica fonte_20 cor_5 bold">CONFIGURAÇÕES</p>
+          </div>
+
         </div>
       </Content>
       <Menu/>

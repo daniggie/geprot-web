@@ -16,9 +16,21 @@ export const Content= styled.div`
 
   .config{
     width: 85%;
-    height: 150px;
     border: 0.5px;
     border-style: solid;
     border-color: #c4c4c4;
+    display: flex;
+
+    .line{
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+
+      p{
+        margin-left: 25px;
+      }
+    }
+
   }
 `;
