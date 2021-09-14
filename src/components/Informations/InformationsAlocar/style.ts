@@ -15,12 +15,10 @@ export const Contant = styled.div`
 
     .column1{
 
-      width:10%;
+      width:12%;
       height: 50px;
       display:flex;
-      justify-content: center;
       align-items: center;
-      margin-right: 10px;
 
       p{
         display:flex;
@@ -33,7 +31,6 @@ export const Contant = styled.div`
       width: 23%;
       height: 50px;
       display:flex;
-      justify-content: center;
       align-items: center;
 
       p{

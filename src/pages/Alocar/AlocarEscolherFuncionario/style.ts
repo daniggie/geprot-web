@@ -89,12 +89,11 @@ export const Table = styled.div`
       border-bottom-color: #DCDCDC;
 
       .title1{
-        width:10%;
+        width:12%;
         height: 50px;
         display:flex;
         justify-content: center;
         align-items: center;
-        margin-right: 10px;
 
         p{
           display:flex;
