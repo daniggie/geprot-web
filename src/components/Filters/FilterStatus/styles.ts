@@ -72,7 +72,7 @@ export const ContFilter = styled.div`
   .lang-menu ul li a {
       text-decoration: none;
       width: 150px;
-      padding: 5px;
+      padding: 5px 10px;
       display: block;
   }
 

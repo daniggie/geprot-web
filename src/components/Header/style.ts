@@ -40,7 +40,7 @@ export const Container = styled.div`
 
       #flag{
         width: 55%;
-        padding-top: 5px;
+        padding-top: 7px;
         display: flex;
         align-items: center;
       }
