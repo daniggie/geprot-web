@@ -89,22 +89,23 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
             <div className="line">
             <div className="col">
-                <p className="helvetica lighter cor_0 fonte_15"> Email do Consultor: </p>
+                <b className="helvetica lighter cor_0 fonte_15"> Email do Consultor: </b>
+                <b className="helvetica bold cor_0 fonte_15"> {valores?.email} </b>
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> {valores?.email} </p>
+
               </div>
 
             </div>
 
             <div className="line">
               <div className="col">
-                <p className="helvetica lighter cor_0 fonte_15"> Email do fornecedor: </p>
+                <b className="helvetica lighter cor_0 fonte_15"> Email do fornecedor: </b>
+                <b className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.email} </b>
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.email} </p>
               </div>
             </div>
 
