@@ -9,6 +9,7 @@ export const Container = styled.header`
   justify-content: space-between;
   color: #0091BD;
   margin-right: 0px;
+  z-index: 1100;
 
   svg{
     margin-top: 7px;
@@ -23,7 +24,7 @@ export const Container = styled.header`
   .lang-menu {
       width: 100px;
       text-align: right;
-      font-weight: bold;
+      font-weight: 549;
       position: relative;
   }
 

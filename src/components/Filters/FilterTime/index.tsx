@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FiChevronRight } from "react-icons/fi"
-import { Container } from "./styles";
+import { Container, ContFilter } from "./styles";
 
 const FilterTime: React.FC = () =>{
   return (
@@ -14,14 +14,31 @@ const FilterTime: React.FC = () =>{
         Tempo:
       </div>
 
-      <form>
-        <select className="status cor_3f" name="status">
-          <option value="status">Últimos 7 dias</option>
-          <option value="status">Último mês</option>
-          <option value="status">Últimos 6 meses</option>
-          <option value="status">Último ano</option>
-        </select>
-      </form>
+      <ContFilter>
+        <div className="lang-menu">
+          <div className="selected-lang">
+            Todos
+          </div>
+          <ul>
+            <li>
+              <a href="#" className="de">Todos</a>
+            </li>
+            <li>
+              <a href="" className="de">Últimos 7 dias</a>
+            </li>
+            <li>
+              <a href="" className="br">Último mês</a>
+            </li>
+            <li>
+              <a href="" className="en">Últimos 6 meses</a>
+            </li>
+            <li>
+              <a href="" className="fr">Último ano</a>
+            </li>
+          </ul>
+        </div>
+      </ContFilter>
+
   </Container>
   );
 }

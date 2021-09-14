@@ -24,6 +24,7 @@ const Informations: React.FC = () => {
     }
     carregaDados();
   }, [ ])
+  const link = "/alocaratribuirfuncionario/"
   return (
     <>
     {
@@ -50,7 +51,7 @@ const Informations: React.FC = () => {
 
       <div className="column1">
         <p className="helvetica light fonte_15 cor_0">
-          <a href="/alocaratribuirfuncionario">
+          <a href={link + valor.id}>
             <CgSearchLoading size={25} color="#0091BD"/>
           </a>
         </p>

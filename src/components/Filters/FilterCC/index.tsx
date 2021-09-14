@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FiChevronRight } from "react-icons/fi"
-import { Container } from "./styles";
+import { Container, ContFilter } from "./styles";
 
 const FilterCC: React.FC = () =>{
   return (
@@ -14,14 +14,28 @@ const FilterCC: React.FC = () =>{
         Centro de Custos:
       </div>
 
-      <form>
-        <select className="status cor_3f" name="status">
-          <option className="status">Todos</option>
-          <option value="status">Centro ABCD</option>
-          <option value="status">Centro EFGH</option>
-          <option value="status">Centro IJKL</option>
-        </select>
-      </form>
+      <ContFilter>
+        <div className="lang-menu">
+          <div className="selected-lang">
+            Todos
+          </div>
+          <ul>
+            <li>
+              <a href="#" className="de">Todos</a>
+            </li>
+            <li>
+              <a href="" className="br">Centro ABCD</a>
+            </li>
+            <li>
+              <a href="" className="en">Centro EFGH</a>
+            </li>
+            <li>
+              <a href="" className="fr">Centro IJKL</a>
+            </li>
+          </ul>
+        </div>
+      </ContFilter>
+
     </Container>
   );
 }

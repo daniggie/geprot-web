@@ -89,7 +89,7 @@ const Dashboard: React.FC = () => {
 
             <BigCont>
               <div className="title status cor_3f fonte_13 bold">
-                <p>PROJETOS EM ANDAMENTO</p>
+                <p>PROJETOS CONCLUÍDOS</p>
               </div>
               <Chart
                 width={"100%"}
@@ -146,7 +146,7 @@ const Dashboard: React.FC = () => {
 
             <LitlleCont>
               <div className="title status cor_3f fonte_13 bold">
-                <p>PROJETOS CONCLUÍDOS</p>
+                <p>PROJETOS EM ANDAMENTO</p>
               </div>
 
               <div className="linelabel">
@@ -159,8 +159,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', valores?.projetosConcluidos],
-                  ['Rest', 100]
+                  ['Late', valores?.projetosEmAndamento],
+                  ['Rest', 0]
                 ]}
 
                 options={{
@@ -184,7 +184,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosConcluidos}<span>%</span></p>
+                <p className="used-size">{valores?.projetosEmAndamento}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
@@ -207,7 +207,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosNaoIniciados],
-                  ['Rest', 100]
+                  ['Rest', 0]
                 ]}
 
                 options={{
@@ -253,7 +253,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosAtrasados],
-                  ['Rest', 100]
+                  ['Rest', 0]
                 ]}
 
                 options={{
