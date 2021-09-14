@@ -39,6 +39,7 @@ export const Content = styled.div`
   .line{
       padding: 5px;
       width: 100%;
+      height: 35px;
       display: flex;
 
       flex-direction: row;
@@ -153,7 +154,7 @@ export const Content = styled.div`
     }
 
     .contDetails{
-      height: 125px;
+      height: 100px;
       width: 98%;
       margin: 0px 0px 15px 6px;
       overflow: auto;
