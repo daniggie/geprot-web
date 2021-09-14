@@ -1,11 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
 import Menu from "../../../components/Menu";
 import Informations from "../../../components/Informations/InformationsAlFuncionario";
 import FilterFunc from "../../../components/Filters/FilterAlFuncionario";
+import { useParams } from "react-router";
+import api from "../../../services/api";
+
+interface Consultor {
+  id: number,
+  nome: string,
+  demandas: number,
+  precoHora: number,
+  email: string,
+  fornecedor: {
+    id: number,
+    nome: string,
+    email: string
+  }
+}
+
 
 const AlocarAtribuirFuncionario: React.FC = () => {
+
+  const { id }: {id:string} = useParams();
+  const [ valores, setValores ] = useState<Consultor>();
+
+  useEffect(() => {
+    async function carregaDados(): Promise<void>  {
+      await api.get(`usuarios/buscar/consultor/${id}`).then(response => {
+        setValores(response.data);
+      })
+    }
+    carregaDados();
+  }, [ ]);
+
+
   return(
     <>
     <Header />
@@ -17,7 +47,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
           <div className="funcionario">
 
             <div className="line">
-              <p className="helvetica bold cor_0 fonte_20"> Name Person Exemplo</p>
+              <p className="helvetica bold cor_0 fonte_20"> {valores?.nome} </p>
               <p className="helvetica lighter cor_4 fonte_15"> STATUS: ATIVO</p>
             </div>
 
@@ -27,7 +57,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> 000000 </p>
+                <p className="helvetica bold cor_0 fonte_15"> {valores?.id} </p>
               </div>
 
               <div className="col">
@@ -45,7 +75,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> Provider's name </p>
+                <p className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.nome} </p>
               </div>
 
               <div className="col">
@@ -53,7 +83,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> R$ 00,00 </p>
+                <p className="helvetica bold cor_0 fonte_15"> R$ {valores?.precoHora} </p>
               </div>
             </div>
 
@@ -63,7 +93,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> xxxxxxxxxxx@email.com </p>
+                <p className="helvetica bold cor_0 fonte_15"> {valores?.email} </p>
               </div>
 
             </div>
@@ -74,7 +104,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> xxxxxxxxxxx@email.com </p>
+                <p className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.email} </p>
               </div>
             </div>
 
@@ -116,11 +146,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="contant_informations">
-                <Informations/>
-                <Informations/>
-                <Informations/>
-                <Informations/>
-                <Informations/>
                 <Informations/>
               </div>
 

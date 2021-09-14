@@ -39,7 +39,7 @@ const Routes: React.FC = () => (
   <Route path="/editar3" exact component={Editar3} />
   <Route path="/editar4" exact component={Editar4} />
   <Route path="/alocarescolherfuncionario" exact component={AlocarEscolherFuncionario} />
-  <Route path="/alocaratribuirfuncionario" exact component={AlocarAtribuirFuncionario} />
+  <Route path="/alocaratribuirfuncionario/:id" exact component={AlocarAtribuirFuncionario} />
   <Route path="/configuracao" exact component={Configuracao} />
   </Switch>
 );
