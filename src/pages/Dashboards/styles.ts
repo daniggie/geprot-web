@@ -171,5 +171,4 @@ export const BigCont = styled.div`
       padding-top: 12px;
       color: #fff;
     }
-  }
 `;

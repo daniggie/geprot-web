@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const ContFilter = styled.div`
   height: 25px;
   box-sizing: border-box;
-  width: 150px;
+  width: 125px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -26,6 +26,7 @@ export const ContFilter = styled.div`
   border-radius: 3px;
   color: #fff;
   z-index:1000;
+  margin-left: 5px;
 
   a {
     text-decoration: none;
