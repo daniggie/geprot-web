@@ -132,7 +132,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
                 </div>
 
                 <div className="title2">
-                  <p className="helvetica bold cor_0">CC Pagante</p>
+                  <p className="helvetica bold cor_0">Responsável</p>
                 </div>
 
                 <div className="title1">
