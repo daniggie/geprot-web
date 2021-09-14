@@ -35,9 +35,13 @@ export const Content = styled.div`
         width: 50%;
         display: flex;
         justify-content: flex-start;
+
+        b{
+          width: 50%;
+        }
       }
     }
-    
+
 
 
   }

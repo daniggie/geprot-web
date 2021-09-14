@@ -15,13 +15,12 @@ export const Content = styled.div`
       transition: 0.5s;
 
       .desc1{
-        overflow: unset;
+        overflow: hidden;
         visibility: visible;
         text-overflow: ellipsis;
         width: 100%;
-        height: 15px;
+        height: 20px;
         transition: 0.5s;
-        overflow: hidden;
       }
 
       .desc2 {
@@ -70,7 +69,7 @@ export const Content = styled.div`
       margin-right: 10px;
 
         p{
-          justify-content: center;
+          justify-content: start;
         }
 
 

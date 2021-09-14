@@ -3,7 +3,7 @@ import { Container } from './style';
 
 const BotaoAvancar: React.FC = () => {
     return(
-        <Container>
+        <Container >
              <p>Próximo</p>
         </Container>
     );
