@@ -28,7 +28,7 @@ const Dashboard: React.FC = () => {
   const [valores, setValores ] = useState<Dashboard>();
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Logistica:usuario');
+    let usuario = localStorage.getItem('@Geprot:usuario');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);

@@ -26,7 +26,7 @@ const Cards: React.FC = () => {
   const [ valores, setValores ] = useState<Card[]>([]);
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Logistica:usuario');
+    let usuario = localStorage.getItem('@Geprot:usuario');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);
