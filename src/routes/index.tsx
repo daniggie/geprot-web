@@ -18,6 +18,7 @@ import Editar3 from '../pages/Editar/Editar3';
 import Editar4 from '../pages/Editar/Editar4';
 import AlocarEscolherFuncionario from '../pages/Alocar/AlocarEscolherFuncionario';
 import AlocarAtribuirFuncionario from '../pages/Alocar/AlocarAtribuirFuncionario';
+import Configuracao from '../pages/Configuracao';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -39,6 +40,8 @@ const Routes: React.FC = () => (
   <Route path="/editar4" exact component={Editar4} />
   <Route path="/alocarescolherfuncionario" exact component={AlocarEscolherFuncionario} />
   <Route path="/alocaratribuirfuncionario" exact component={AlocarAtribuirFuncionario} />
+  <Route path="/configuracao" exact component={Configuracao} />
+
 
 
 
