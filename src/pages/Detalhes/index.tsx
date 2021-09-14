@@ -57,8 +57,13 @@ const LinkAprovar = "/aprovarhoras/";
 
       <All>
         <Content>
-          <div className="line cor_0">
-            <p> Seção: {secao.secao.nome} </p>
+          <div className="line cor_0 fonte_15">
+            <p> Seção - {secao.secao.nome} </p>
+          </div>
+
+          <div className="line ">
+            <p className="cor_0 fonte_15">Responsável: Name Exemplo</p>
+            <p className="cor_0 fonte_15">Solicitante: Name Exemplo</p>
           </div>
 
           <div className="line ">
@@ -81,6 +86,8 @@ const LinkAprovar = "/aprovarhoras/";
               DASHBOARD
             </div>
           </div>
+
+
 
           <div className="line cor_1">
             <p> Objetivo: </p>
@@ -111,6 +118,12 @@ const LinkAprovar = "/aprovarhoras/";
         </Content>
 
         <Content>
+
+          <div className="line ">
+            <p className="cor_1"></p>
+            <p className="cor_1"></p>
+          </div>
+
           <div className="line ">
             <p className="cor_1">Horas previstas: </p>
             <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "0"} Horas</p>
@@ -119,6 +132,11 @@ const LinkAprovar = "/aprovarhoras/";
           <div className="line">
             <p className="cor_1">Horas trabalhadas: </p>
             <p className="cor_0">{valores?.horasTrabalhadas ? valores.horasTrabalhadas : "0"} Horas</p>
+          </div>
+
+          <div className="line ">
+            <p className="cor_1"></p>
+            <p className="cor_1"></p>
           </div>
 
           <div className="linelabel">

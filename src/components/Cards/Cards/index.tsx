@@ -103,10 +103,10 @@ const Cards: React.FC = () => {
                           <div className="cor_black horas fonte_14 helvetica">
                               Horas:
                           </div>
-                          <div className="relogio ">
+                          <div className="relogio">
                               <img src={relogio} alt=" " />
                           </div>
-                          <div className="cor_0 fonte_14 helvetica">
+                          <div className="cor_0 fonte_14 horas helvetica">
                           { valor.horasPrevistas ? valor.horasPrevistas : "0" } H
                           </div>
                       </div>
@@ -126,13 +126,13 @@ const Cards: React.FC = () => {
                           </div>
                       </div>
                       <div className="texto_content_horas">
-                          <div className="cor_black fonte_14 helvetica">
+                          <div className="cor_black fonte_14 helvetica horas ">
                               Apontadas:
                           </div>
                           <div className="relogio">
                               <img src={relogio} alt=" " />
                           </div>
-                          <div className="cor_0 fonte_14 helvetica">
+                          <div className="cor_0 fonte_14 helvetica horas">
                           { valor.horasTrabalhadas ? valor.horasTrabalhadas : "0" } H
                           </div>
                       </div>
