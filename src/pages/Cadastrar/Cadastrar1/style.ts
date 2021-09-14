@@ -58,7 +58,14 @@ p{
 
 .position{
   width:100%;
-    display:flex;
-    justify-content: flex-end;
+  display:flex;
+  justify-content: flex-end;
+
+
+}
+
+.botao{
+    width: 55px;
+    height: 30px;
   }
 `;
