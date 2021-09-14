@@ -27,7 +27,7 @@ export const AuthProvider: React.FC = ({children}) => {
     const usuario = localStorage.getItem("@Geprot:usuario")
 
     if (jwt && usuario) {
-      return { jwt , usuario: JSON.parse(usuario)};
+      return { jwt , usuario :JSON.parse(usuario)};
     }
 
     return {} as AuthState;

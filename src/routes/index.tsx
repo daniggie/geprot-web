@@ -41,11 +41,6 @@ const Routes: React.FC = () => (
   <Route path="/alocarescolherfuncionario" exact component={AlocarEscolherFuncionario} />
   <Route path="/alocaratribuirfuncionario" exact component={AlocarAtribuirFuncionario} />
   <Route path="/configuracao" exact component={Configuracao} />
-
-
-
-
-
   </Switch>
 );
 
