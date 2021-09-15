@@ -13,36 +13,28 @@ const Home: React.FC = () => {
 
    return (
     <>
-    <Header>
-      </Header>
-
+    <Header/>
       <Filtros>
-
         <div className="content_title">
             <div className="arrow">
               <FiChevronRight size="15px" color="#0091BD"/>
             </div>
-
             <div className="texto cor_4">
                 Projetos
             </div>
         </div>
-
         <FilterStatus/>
-
         <FilterSearch/>
-
       </Filtros>
-
       <All>
         <Content_cards>
             <Cards/>
         </Content_cards>
         <Menu/>
-
       </All>
     </>
   );
 };
 
 export default Home;
+;
