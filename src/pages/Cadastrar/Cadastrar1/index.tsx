@@ -47,21 +47,6 @@ const Cadastrar: React.FC = () => {
             <div className="content">
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">ID Projeto:</b>
-                <b className="helvetica fonte_15 cor_3 bold">ID PPM:</b>
-              </div>
-
-              <div className="line">
-                <div className="tamanho">
-                  <input type="text" placeholder="000000000" />
-                </div>
-                <div className="tamanho">
-                  <input type="text" placeholder="000000000" />
-                </div>
-
-              </div>
-
-              <div className="line">
                 <b className="helvetica fonte_15 cor_3 bold">Nome do Projeto:</b>
               </div>
 
