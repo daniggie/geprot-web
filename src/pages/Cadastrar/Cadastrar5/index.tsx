@@ -31,10 +31,6 @@ const Cadastrar5: React.FC = () => {
         <Titulo>
           <a href="/cadastrar"><b className="helvetica fonte_15 cor_0">Cadastro de projetos</b></a>
           <BsFillCaretRightFill color="#828282"/>
-          <a href="/cadastrar2"><b className="helvetica fonte_15 cor_0">Aprovações</b></a>
-          <BsFillCaretRightFill color="#828282"/>
-          <a href="/cadastrar3"><b className="helvetica fonte_15 cor_0">Verbas</b></a>
-          <BsFillCaretRightFill color="#828282"/>
           <a href="/cadastrar4"><b className="helvetica fonte_15 cor_0">Centro de custos</b></a>
           <BsFillCaretRightFill color="#828282"/>
           <b className="helvetica fonte_15 cor_5 normal"> <u>Alocação</u>  </b>
@@ -43,21 +39,6 @@ const Cadastrar5: React.FC = () => {
 
           <div className="content">
             <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
-
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">ID Projeto:</b>
-              <b className="helvetica fonte_15 cor_3 bold">ID Aprovação:</b>
-            </div>
-
-            <div className="line">
-              <div className="tamanho">
-                <input type="text" placeholder="000000000" />
-              </div>
-              <div className="tamanho">
-                <input type="text" placeholder="000000000" />
-              </div>
-
-            </div>
 
               <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
               <div className="line">
