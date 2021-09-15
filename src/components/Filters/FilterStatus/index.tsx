@@ -21,7 +21,7 @@ const FilterStatus: React.FC = () =>{
           </div>
           <ul>
             <li>
-              <a href="#" className="de">Todos</a>
+              <a href="" className="de">Todos</a>
             </li>
             <li>
               <a href="" className="br">Andamentos</a>
