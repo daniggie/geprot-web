@@ -61,7 +61,7 @@ const Cards: React.FC = () => {
                   <div className="linha_1">
                       <div className="card_secao">
                           <div className="cor_4 fonte_12 helvetica ">
-                              Seção
+                              {secao.secao.nome}
                           </div>
                       </div>
                       <div className="card_status_txt">
