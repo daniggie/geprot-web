@@ -102,7 +102,10 @@ const Cadastrar: React.FC = () => {
             <div className="position">
               <span onClick={teste}>
                 <a href="/cadastrar4">
-                  <p className="helvetica fonte_20 bold">Próximo</p>
+                  <div className="button">
+                    <p className="helvetica fonte_20 bold">Próximo</p>
+                  </div>
+
                 </a>
               </span>
             </div>

@@ -108,11 +108,11 @@ const Cadastrar4: React.FC = () => {
               </BotaoCancel>
             </a>
 
-              <span >
-                <a href="/cadastrar5">
-                  <p className="helvetica fonte_20 bold">Próximo</p>
-                </a>
-              </span>
+            <a href="/cadastrar5">
+                  <div className="button">
+                    <p className="helvetica fonte_20 bold">Próximo</p>
+                  </div>
+            </a>
           </div>
         </Formulario>
 
