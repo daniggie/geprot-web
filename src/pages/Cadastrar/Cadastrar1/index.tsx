@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Titulo, Formulario } from './style';
 import { FormHandles } from '@unform/core';
 import Barra from "../../../components/Barra";
+import { RiAddLine } from 'react-icons/ri';
 
 
 interface CadastraProjeto {
@@ -42,9 +43,9 @@ const Cadastrar: React.FC = () => {
         </Titulo>
         <div>
           <Formulario>
-            <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
-
             <div className="content">
+
+              <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
 
               <div className="line">
                 <b className="helvetica fonte_15 cor_3 bold">Nome do Projeto:</b>
@@ -62,24 +63,6 @@ const Cadastrar: React.FC = () => {
                   <input type="text" id="nomeSolicitante" placeholder="Digite aqui..." />
               </div>
 
-            </div>
-
-            <div className="content">
-
-              <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
-                <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
-              </div>
-
-              <div className="line">
-                <div className="tamanho">
-                  <input type="date"  id="dataInicio"/>
-                </div>
-                <div className="tamanho">
-                  <input type="date" id="dataFinalizacao" />
-                </div>
-              </div>
-
               <div className="line">
                 <b className="helvetica fonte_15 cor_3 bold">Nome do responsável:</b>
               </div>
@@ -89,23 +72,75 @@ const Cadastrar: React.FC = () => {
               </div>
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Nome no sistema:</b>
+                <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
+                <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
               </div>
 
               <div className="line">
-                  <input type="text" placeholder="Digite aqui..." />
+                <div className="tamanhoDate">
+                  <input type="date"  id="dataInicio"/>
+                </div>
+                <div className="tamanhoDate">
+                  <input type="date" id="dataFinalizacao" />
+                </div>
               </div>
 
+            </div>
+
+            <div className="content">
+
+              <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
+
+              <div className="line">
+                <div className="lineText">
+                  <b className="helvetica fonte_15 cor_3 bold">Consultor:</b>
+                </div>
+
+                <div className="lineText">
+                  <b className="helvetica fonte_15 cor_3 bold">Horas:</b>
+                </div>
+              </div>
+
+              <div className="line">
+                <div className="tamanho">
+                  <input type="number" placeholder="0"/>
+                </div>
+                <div className="tamanho">
+                  <input type="number" placeholder="0" />
+                </div>
+                <div className="box cor_3f" >
+                  <RiAddLine color="#fff"/>
+                </div>
+              </div>
+
+              <div className="table">
+                <div className="header">
+                  <div className="title3 bold helvetica cor_0 fonte_15">
+                    ID
+                  </div>
+                  <div className="title1 bold helvetica cor_0 fonte_15">
+                    Consultor
+                  </div>
+                  <div className="title2 bold helvetica cor_0 fonte_15">
+                    Limite de horas
+                  </div>
+                </div>
+              </div>
             </div>
 
 
             <div className="position">
               <span onClick={teste}>
+<<<<<<< Updated upstream
                 <a href="/cadastrar4">
                   <div className="button">
                     <p className="helvetica fonte_20 bold">Próximo</p>
                   </div>
 
+=======
+                <a href="/cadastrar2">
+                  <p className="helvetica fonte_20 bold">Próximo</p>
+>>>>>>> Stashed changes
                 </a>
               </span>
             </div>

@@ -40,7 +40,7 @@ p{
 
   .contCC{
     width: 100%;
-    height:140px;
+    height:230px;
     border-radius:5px;
     border:  1px solid #dedede;
     padding:5px;

@@ -108,11 +108,19 @@ const Cadastrar4: React.FC = () => {
               </BotaoCancel>
             </a>
 
+<<<<<<< Updated upstream:src/pages/Cadastrar/Cadastrar4/index.tsx
             <a href="/cadastrar5">
                   <div className="button">
                     <p className="helvetica fonte_20 bold">Próximo</p>
                   </div>
             </a>
+=======
+              <span >
+                <a href="/cadastrar3">
+                  <p className="helvetica fonte_20 bold">Próximo</p>
+                </a>
+              </span>
+>>>>>>> Stashed changes:src/pages/Cadastrar/Cadastrar2/index.tsx
           </div>
         </Formulario>
 

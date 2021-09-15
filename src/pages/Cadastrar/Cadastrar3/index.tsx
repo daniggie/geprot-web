@@ -17,9 +17,7 @@ const Cadastrar6: React.FC = () => {
         <Titulo>
           <a href="/cadastrar"><b className="helvetica fonte_15 cor_0">Cadastro de projetos</b></a>
           <BsFillCaretRightFill color="#828282"/>
-          <a href="/cadastrar4"><b className="helvetica fonte_15 cor_0">Centro de custos</b></a>
-          <BsFillCaretRightFill color="#828282"/>
-          <a href="/cadastrar5"><b className="helvetica fonte_15 cor_0">Alocação  </b></a>
+          <a href="/cadastrar2"><b className="helvetica fonte_15 cor_0">Centro de custos</b></a>
           <BsFillCaretRightFill color="#828282"/>
           <b className="helvetica fonte_15 cor_5 normal"> <u> Resumo </u> </b>
         </Titulo>
