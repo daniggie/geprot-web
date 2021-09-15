@@ -56,6 +56,7 @@ const AprovarFuncionario: React.FC = () => {
     }
 });
 
+const linkVoltar = "/aprovarhoras/"
 
     return(
       <>
@@ -110,7 +111,7 @@ const AprovarFuncionario: React.FC = () => {
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-              <a href="/home" onClick={aprovar}>
+              <a href={linkVoltar + id} onClick={aprovar}>
                 <BotaoAprovar />
               </a>
         </div>
