@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
+import { useHistory } from "react-router";
 import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
@@ -41,6 +42,10 @@ const AprovarFuncionario: React.FC = () => {
     carregaDados();
   }, [ ])
   console.log(valores)
+
+  async function aprovar(): Promise<void> {
+    api.put(`horas/aprovar/${id}/${consultorId}`)
+  }
 
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
@@ -105,7 +110,7 @@ const AprovarFuncionario: React.FC = () => {
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-              <a href="/home">
+              <a href="/home" onClick={aprovar}>
                 <BotaoAprovar />
               </a>
         </div>
