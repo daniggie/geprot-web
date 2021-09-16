@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Cards from '../../components/Cards/Cards';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
@@ -9,7 +9,24 @@ import FilterStatus from '../../components/Filters/FilterStatus';
 
 import { FiChevronRight } from "react-icons/fi";
 
+let statusVar :number;
+
+
+export const filter = (status: number) => {
+  statusVar = status;
+  console.log(statusVar)
+}
+
 const Home: React.FC = () => {
+  if(statusVar == null){
+    statusVar = 0
+  }
+
+  const [ status , setStatus ] = useState<number>();
+  useEffect(() => {
+    setStatus(statusVar)
+    console.log(status)
+  },[])
 
    return (
     <>
@@ -23,12 +40,12 @@ const Home: React.FC = () => {
                 Projetos
             </div>
         </div>
-        <FilterStatus/>
+        <FilterStatus />
         <FilterSearch/>
       </Filtros>
       <All>
         <Content_cards>
-            <Cards/>
+          <Cards status={statusVar}/>
         </Content_cards>
         <Menu/>
       </All>

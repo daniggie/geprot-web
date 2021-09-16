@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Cadastrar from '../pages/Cadastrar/Cadastrar1';
 import Cadastrar2 from '../pages/Cadastrar/Cadastrar2';
 import Cadastrar3 from '../pages/Cadastrar/Cadastrar3';
-import Home from '../pages/Home';
+import Home,{filter} from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboards';
 import Detalhes from '../pages/Detalhes';
@@ -21,7 +21,7 @@ import CadastroConsultor from '../pages/CadastroConsultor';
 const Routes: React.FC = () => (
   <Switch>
   <Route path="/" exact component={Login} />
-  <Route path="/home" exact component={Home} />
+  <Route path="/home" exact component={Home}/>
   <Route path="/detalhes/:id" exact component={Detalhes} />
   <Route path="/aprovarhoras/:id" exact component={AprovarHoras} />
   <Route path="/aprovarfuncionario/:id/:consultorId" exact component={AprovarFuncionario} />

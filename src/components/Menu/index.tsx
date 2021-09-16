@@ -18,8 +18,6 @@ const Menu: React.FC = () => {
 });
 
 const teste = "/dashboard/" + secao.secao.id;
-console.log(teste)
-
     return(
         <Container>
           <div id="menu">

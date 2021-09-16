@@ -2,7 +2,6 @@ import React, { useState, FormEvent, useEffect } from "react";
 import { Content_cards } from "./style";
 import api from "../../../services/api";
 import { useParams } from "react-router";
-
 import relogio from '../../../icons/relogio.svg';
 
 
@@ -21,7 +20,11 @@ interface Card {
     barraProgresso: number;
 }
 
-const Cards: React.FC = () => {
+interface Status {
+  status: number;
+}
+
+const Cards: React.FC<Status> = ({status}) => {
   const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Card[]>([]);
 
@@ -36,7 +39,7 @@ const Cards: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar/${secao.secao.id ? secao.secao.id : null}`).then(response => {
+      await api.get(`projetos/listar/${secao.secao.id ? secao.secao.id : null}/${status}`).then(response => {
         setValores(response.data);
       })
     }
