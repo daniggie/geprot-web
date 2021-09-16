@@ -28,7 +28,7 @@ const Editar1: React.FC = () => {
             </div>
         </div>
 
-        <FilterStatus/>
+        <FilterStatus />
 
         <FilterSearch/>
 
