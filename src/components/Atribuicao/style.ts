@@ -13,7 +13,8 @@ export const Container=styled.div<TableProps>`
   align-items: center;
   margin-right: 10px;
 
-  button{
+  .atribuir{
+    button{
     display:flex;
     justify-content: center;
     padding: 3px 10px 3px 10px;
@@ -25,6 +26,7 @@ export const Container=styled.div<TableProps>`
       background: ${shade(0.2, "#30a130")};
     }
   }
+}
 
   #atribuir{
 
@@ -56,20 +58,21 @@ export const Container=styled.div<TableProps>`
 
   .overlay{
     position: absolute;
-    width: 40%;
-    height: 300px;
+    width: 30%;
+    height: 70px;
     border-radius: 10px;
     background: #fff;
     padding: 15px;
     display:flex;
+    align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: space-around;
 
     p{
       display:flex;
       justify-content: center;
       align-items: center;
-      width: 95%;
+      width: 40%;
       height: 30px;
     }
 
@@ -80,7 +83,21 @@ export const Container=styled.div<TableProps>`
     }
 
     input{
+      width:25%;
+      height: 30px;
 
+    }
+
+    button{
+    display:flex;
+    justify-content: center;
+    padding: 3px 5px 3px 5px;
+    border: 0px;
+    border-radius: 5px;
+    background: #0091BD;
+    transition: 0.2s;
+    &:hover{
+      background: ${shade(0.2, "#0091BD")};
     }
 }
 }
