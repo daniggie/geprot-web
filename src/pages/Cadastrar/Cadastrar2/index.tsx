@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Titulo, Formulario } from './style';
 import Barra from "../../../components/Barra";
-import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
@@ -107,20 +106,11 @@ const Cadastrar4: React.FC = () => {
               <BotaoCancel>
               </BotaoCancel>
             </a>
-
-<<<<<<< Updated upstream:src/pages/Cadastrar/Cadastrar4/index.tsx
-            <a href="/cadastrar5">
+            <a href="/cadastrar3">
                   <div className="button">
                     <p className="helvetica fonte_20 bold">Próximo</p>
                   </div>
             </a>
-=======
-              <span >
-                <a href="/cadastrar3">
-                  <p className="helvetica fonte_20 bold">Próximo</p>
-                </a>
-              </span>
->>>>>>> Stashed changes:src/pages/Cadastrar/Cadastrar2/index.tsx
           </div>
         </Formulario>
 

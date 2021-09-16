@@ -131,16 +131,10 @@ const Cadastrar: React.FC = () => {
 
             <div className="position">
               <span onClick={teste}>
-<<<<<<< Updated upstream
-                <a href="/cadastrar4">
+                <a href="/cadastrar2">
                   <div className="button">
                     <p className="helvetica fonte_20 bold">Próximo</p>
                   </div>
-
-=======
-                <a href="/cadastrar2">
-                  <p className="helvetica fonte_20 bold">Próximo</p>
->>>>>>> Stashed changes
                 </a>
               </span>
             </div>
