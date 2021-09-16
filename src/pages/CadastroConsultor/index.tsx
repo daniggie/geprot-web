@@ -99,6 +99,14 @@ const Configuracao: React.FC = () => {
                   </div>
                   <div className="title2 bold helvetica cor_0 fonte_15">
                     Limite de horas
+                    Cadastro do consultor<br/>
+                    Tela deve conter:<br/>
+                    Nome do consultor;<br/>
+                    Email       ||;<br/>
+                    ID          ||;<br/>
+                    Fornecedor  ||;<br/>
+                    Senha E confirmar senha;<br/>
+                    Preço das horas.<br/>
                   </div>
                 </div>
 
