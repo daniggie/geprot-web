@@ -16,6 +16,7 @@ export const Content = styled.div`
 
       .desc1{
         white-space: wrap;
+        white-space: nowrap;
         overflow: hidden;
         visibility: visible;
         text-overflow: ellipsis;
@@ -62,7 +63,7 @@ export const Content = styled.div`
 
       .column2{
 
-      width:50%;
+      width:36%;
       height: 50px;
       display:flex;
       justify-content: center;
