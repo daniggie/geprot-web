@@ -14,6 +14,8 @@ interface Card {
   dataInicio: string;
   dataFinalizacao: string;
   valor: number;
+  nomeSolicitante: string,
+  nomeResponsavel: string,
   valorRestantes: number;
   horasPrevistas: number;
   valorUtilizado: number;
@@ -62,8 +64,8 @@ const LinkAprovar = "/aprovarhoras/";
           </div>
 
           <div className="line ">
-            <p className="cor_0 fonte_15">Responsável: Name Exemplo</p>
-            <p className="cor_0 fonte_15">Solicitante: Name Exemplo</p>
+            <p className="cor_0 fonte_15">Responsável: {valores?.nomeResponsavel}</p>
+            <p className="cor_0 fonte_15">Solicitante: {valores?.nomeSolicitante}</p>
           </div>
 
           <div className="line ">
