@@ -67,30 +67,29 @@ const linkVoltar = "/aprovarhoras/"
         <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
         <p className="helvetica cor_3 lighter fonte_25">{id} - {valores?.nome}</p>
 
-        <div className="table">
+          <div className="table">
+            <div className="header">
+              <div className="title">
+                <p className="helvetica bold cor_0">Data</p>
+              </div>
 
-          <div className="header">
-            <div className="title">
-              <p className="helvetica bold cor_0">Data</p>
+              <div className="title">
+                <p className="helvetica bold cor_0">Horas trabalhadas</p>
+              </div>
+
+              <div className="title2">
+                <p className="helvetica bold cor_0">Descrição</p>
+              </div>
+
+              <div className="title">
+                <p className="helvetica bold cor_0">Aprovação</p>
+              </div>
+
             </div>
 
-            <div className="title">
-              <p className="helvetica bold cor_0">Horas trabalhadas</p>
+            <div className="informations">
+              <InformationsApFuncionario />
             </div>
-
-            <div className="title2">
-              <p className="helvetica bold cor_0">Descrição</p>
-            </div>
-
-            <div className="title">
-              <p className="helvetica bold cor_0">Aprovação</p>
-            </div>
-
-          </div>
-
-          <div className="informations">
-            <InformationsApFuncionario />
-          </div>
 
             <div className="header">
             <div className="title2">
@@ -102,7 +101,6 @@ const linkVoltar = "/aprovarhoras/"
               <p className="helvetica bold cor_0 lighter">Valor gasto: </p>
               <b className="helvetica cor_3 fonte_22">R$ {valores?.valorGasto}</b>
             </div>
-
           </div>
 
         </div>

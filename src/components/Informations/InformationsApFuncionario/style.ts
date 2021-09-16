@@ -15,6 +15,7 @@ export const Content = styled.div`
       transition: 0.5s;
 
       .desc1{
+        white-space: wrap;
         overflow: hidden;
         visibility: visible;
         text-overflow: ellipsis;

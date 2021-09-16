@@ -36,6 +36,11 @@ export const Content = styled.div`
             border-radius: 20px;
           }
 
+          b{
+            width: calc(100%/3);
+            justify-content: center;
+          }
+
           }
 
         .column2{

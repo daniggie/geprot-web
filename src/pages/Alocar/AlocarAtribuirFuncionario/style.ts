@@ -14,7 +14,7 @@ export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    aling-items: center;
+    align-items: center;
     margin-top: 50px;
 
     .line{
@@ -23,7 +23,7 @@ export const Content = styled.div`
       display:flex;
       flex-wrap: nowrap;
       justify-content: space-around;
-      aling-items: center;
+      align-items: center;
 
       p{
         width: 100%;
@@ -119,7 +119,7 @@ export const Table = styled.div`
       border-bottom-color: #DCDCDC;
 
       .title1{
-        width:10%;
+        width: calc(50%/3);
         height: 50px;
         display:flex;
         justify-content: center;
@@ -133,7 +133,7 @@ export const Table = styled.div`
       }
 
       .title2{
-        width: 23%;
+        width: calc(50%/2);
         height: 50px;
         display:flex;
         justify-content: center;

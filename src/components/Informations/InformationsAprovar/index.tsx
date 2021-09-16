@@ -60,9 +60,9 @@ const linkAprovarHoras = "/aprovarfuncionario/"
             </div>
 
             <div className="column1">
-            <p className="helvetica light fonte_15 cor_0">{valor.horasTotais}h</p>
-            <p className="line cor_4f"></p>
-            <p className="helvetica light fonte_15 cor_0">{valor.quantidade_horas}h</p>
+            <b className="helvetica light fonte_15 cor_0 lighter">{valor.horasTotais}h</b>
+            <b className="line cor_4f"></b>
+            <b className="helvetica light fonte_15 cor_0 lighter">{valor.quantidade_horas}h</b>
             </div>
 
             <div className="column1">

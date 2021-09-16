@@ -16,7 +16,7 @@ export const Contant = styled.div`
 
     .column1{
 
-      width:10%;
+      width:calc(50%/3);
       height: 50px;
       display:flex;
       justify-content: center;
@@ -31,7 +31,7 @@ export const Contant = styled.div`
       }
 
     .column2{
-      width: 23%;
+      width: calc(50%/2);
       height: 50px;
       display:flex;
       justify-content: center;

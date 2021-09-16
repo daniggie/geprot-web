@@ -5,6 +5,7 @@ import arrowleft from "../../../icons/arrowleft.svg";
 import { useParams } from "react-router";
 import { useEffect } from "react"
 import api from "../../../services/api";
+import Atribuicao from "../../Atribuicao";
 
 
 interface Projeto {
@@ -54,7 +55,7 @@ const Informations: React.FC = () => {
       </div>
 
       <div className="column1">
-        <p className="helvetica light fonte_15 cor_0" > Atribuir </p>
+        <Atribuicao />
       </div>
 
     </div>
