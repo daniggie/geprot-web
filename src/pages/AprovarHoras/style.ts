@@ -7,12 +7,12 @@ export const All = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  p{
+  b{
     width: 100%;
     display:flex;
     justify-content: flex-start;
-    margin-bottom: 10px;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   .table{
