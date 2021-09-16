@@ -84,7 +84,8 @@ export const Container=styled.div<TableProps>`
 
     input{
       width:25%;
-      height: 30px;
+      height: 25px;
+      padding: 0px 5px 0px 5px;
 
     }
 
