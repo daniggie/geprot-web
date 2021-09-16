@@ -170,7 +170,6 @@ p{
   width:100%;
   display:flex;
   justify-content: flex-end;
-<<<<<<< Updated upstream
 
   .button{
     width: 205px;
@@ -195,21 +194,4 @@ p{
     }
   }
 }
-
-=======
-}
-
-.botao{
-    width: 55px;
-    height: 30px;
-  }
-
-.box{
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  margin: 10px 10px 10px 10px;
-  padding: 2px;
-}
->>>>>>> Stashed changes
 `;
