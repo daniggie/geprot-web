@@ -32,15 +32,6 @@ const Cadastrar6: React.FC = () => {
 
             <div className="line">
               <div className="tamanho">
-                <b className="helvetica fonte_13 cor_3 bold">ID PPM:</b>
-              </div>
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">00000001</b>
-              </div>
-            </div>
-
-            <div className="line">
-              <div className="tamanho">
                 <b className="helvetica fonte_13 cor_3 bold">RESPONSÁVEL:</b>
               </div>
               <div className="tamanho">
@@ -144,53 +135,7 @@ const Cadastrar6: React.FC = () => {
 
           <div className="content">
 
-            <div className="line">
-              <b className="helvetica fonte_20 cor_3 bold">Aprovação</b>
-            </div>
-
-            <div className="line">
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_3 bold">ID aprovação:</b>
-              </div>
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">00000001</b>
-              </div>
-            </div>
-
-            <div className="line">
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_3 bold">Data da aprovação:</b>
-              </div>
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">20/05/2021</b>
-              </div>
-            </div>
-
-            <div className="line">
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_3 bold">ID Comissão:</b>
-              </div>
-              <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">00000001</b>
-              </div>
-            </div>
-
-            <div className="line">
-              <div className="download">
-                <p className="helvetica fonte_13 cor_0 bold">ATA_COMISSÃO_001</p>
-                <BiReceipt color="#00579D" size={25}/>
-              </div>
-            </div>
-
-            <div className="line">
-              <div className="download">
-                <p className="helvetica fonte_13 cor_0 bold">ATA_DG</p>
-                <BiReceipt color="#00579D" size={25}/>
-              </div>
-
-            </div>
-
-            <div className="line">
+          <div className="line">
               <b className="helvetica fonte_20 cor_3 bold">Descrição</b>
             </div>
 
@@ -208,6 +153,22 @@ const Cadastrar6: React.FC = () => {
                quatur.
               </p>
             </div>
+
+            <div className="line">
+              <div className="download">
+                <p className="helvetica fonte_13 cor_0 bold">ATA_COMISSÃO_001</p>
+                <BiReceipt color="#00579D" size={25}/>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="download">
+                <p className="helvetica fonte_13 cor_0 bold">ATA_DG</p>
+                <BiReceipt color="#00579D" size={25}/>
+              </div>
+
+            </div>
+
           </div>
 
           <div className="content">

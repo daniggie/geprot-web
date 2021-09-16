@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Titulo, Formulario } from './style';
 import { FormHandles } from '@unform/core';
 import Barra from "../../../components/Barra";
 import { RiAddLine } from 'react-icons/ri';
-
+import { FiX } from 'react-icons/fi';
 
 interface CadastraProjeto {
   nome: string;
@@ -34,6 +34,25 @@ const Cadastrar: React.FC = () => {
       localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
     }
 
+    const [consultor, setConsultor] = useState(false);
+    const addConsultor = () => {
+      if(!consultor){
+        setConsultor(true)
+      }else{
+        setConsultor(true)
+      }
+      return consultor;
+    }
+
+    const removeConsultor = () => {
+      if(!consultor){
+        setConsultor(false)
+      }else{
+        setConsultor(false)
+      }
+      return consultor;
+    }
+
     return (
       <>
         <Barra/ >
@@ -42,7 +61,7 @@ const Cadastrar: React.FC = () => {
           <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>
         </Titulo>
         <div>
-          <Formulario>
+          <Formulario consultorColumn={consultor}>
             <div className="content">
 
               <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
@@ -103,12 +122,12 @@ const Cadastrar: React.FC = () => {
 
               <div className="line">
                 <div className="tamanho">
-                  <input type="number" placeholder="0"/>
+                  <input type="number" placeholder="0" />
                 </div>
                 <div className="tamanho">
                   <input type="number" placeholder="0" />
                 </div>
-                <div className="box cor_3f" >
+                <div className="box cor_3f" onClick={addConsultor}>
                   <RiAddLine color="#fff"/>
                 </div>
               </div>
@@ -123,6 +142,23 @@ const Cadastrar: React.FC = () => {
                   </div>
                   <div className="title2 bold helvetica cor_0 fonte_15">
                     Limite de horas
+                  </div>
+                </div>
+
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column3">
+                    <div className="box cor_3f" onClick={removeConsultor}>
+                      <FiX color="#fff"/>
+                    </div>
+                    123456
+                  </div>
+
+                  <div className="column1">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2">
+                    80 h
                   </div>
                 </div>
               </div>

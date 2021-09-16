@@ -1,12 +1,16 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+interface TableProps{
+  consultorColumn: boolean;
+};
 
 export const Titulo = styled.div`
   margin-top: 40px;
   margin-left: 160px;
 `;
 
-export const Formulario = styled.form`
-margin: 35px 160px 0px 160px;
+export const Formulario = styled.form<TableProps>`
+margin: 30px 160px 0px 160px;
 padding: 20px;
 border: 1px solid #dedede;
 border-radius: 4px;
@@ -72,6 +76,14 @@ p{
       padding:10px;
       border: 1px solid #dedede;
     }
+
+    .box{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+}
   }
 }
 
@@ -103,7 +115,7 @@ p{
     }
 
     .title2{
-      width:30%;
+      width:28%;
       height: 50px;
       display:flex;
       justify-content: center;
@@ -111,7 +123,7 @@ p{
     }
 
     .title3{
-      width:20%;
+      width:22%;
       height: 50px;
       display:flex;
       justify-content: center;
@@ -125,6 +137,21 @@ p{
   }
 
   .columns{
+
+    ${(props) =>
+      props.consultorColumn &&
+      css`
+        visibility:visible;
+      `
+    }
+
+    ${(props) =>
+      !props.consultorColumn &&
+      css`
+        visibility:hidden;
+      `
+    }
+
     width:100%;
     display: flex;
     background: #fff;
@@ -162,6 +189,20 @@ p{
       border-bottom-style: solid;
       border-bottom-width: 0.5px;
       border-bottom-color: #DCDCDC;
+
+      .box{
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        margin: 10px 10px 10px 10px;
+        padding: 2px;
+
+        &:hover{
+          background: #008EA5;
+          transition: 0.2s;
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -181,10 +222,12 @@ p{
     justify-content: center;
     align-items: center;
     padding: 10px;
+
     &:hover{
       background: #0078bd;
       transition: 0.4s;
     }
+
     p{
       font-size:20px;
       color:#fff;

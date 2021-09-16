@@ -62,7 +62,7 @@ const Cadastrar4: React.FC = () => {
 
             <div className="line">
               <div className="tamanho">
-                <input type="text" placeholder="Vendas" />
+                <input type="text" placeholder="Digite aqui..."/>
               </div>
               <div className="tamanho2">
                 <input type="number" placeholder="%"/>
@@ -87,7 +87,7 @@ const Cadastrar4: React.FC = () => {
               <div className="columns helvetica cor_0 lighter">
                 <div className="column1">
                   <div className="box cor_3f">
-                  <FiX color="#fff"/>
+                    <FiX color="#fff"/>
                   </div>
                   Vendas
                 </div>

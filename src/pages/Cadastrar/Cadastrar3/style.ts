@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Titulo = styled.div`
-  margin-top: 35px;
+  margin-top: 25px;
   margin-left: 160px;
   display:flex;
   justify-content: flex-start;
@@ -15,16 +15,17 @@ export const Titulo = styled.div`
 `;
 
 export const Formulario = styled.form`
-margin: 40px 120px 20px 120px;
-padding: 10px;
+margin: 30px 160px 0px 160px;
+padding: 20px;
 border:  1px solid #dedede;
-border-radius: 3px;
-padding: 50px;
+border-radius: 4px;
 display:flex;
 justify-content: space-between;
 align-items: flex-start;
 flex-direction: row;
 flex-wrap: wrap;
+max-height: 400px;
+overflow: auto;
 
 p{
   width: 100%;
@@ -122,7 +123,7 @@ p{
 
   .line{
     width: 90%;
-    display flex;
+    display: flex;
 
     flex-direction: row;
     flex-wrap: nowrap;
