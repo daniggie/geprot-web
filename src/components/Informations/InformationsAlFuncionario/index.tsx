@@ -15,6 +15,14 @@ interface Projeto {
   dataCadastro: Date,
 
 }
+
+interface Alocar {
+  projetos_id: number,
+  usuarios_id: number,
+  limiteHoras: number
+}
+
+
 const Informations: React.FC = () => {
 
   const { id }: {id:string} = useParams();
