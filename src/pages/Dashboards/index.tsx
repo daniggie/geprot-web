@@ -160,7 +160,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosEmAndamento],
-                  ['Rest', 0]
+                  ['Rest', 10]
                 ]}
 
                 options={{
@@ -207,7 +207,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosNaoIniciados],
-                  ['Rest', 0]
+                  ['Rest', 10]
                 ]}
 
                 options={{
@@ -253,7 +253,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosAtrasados],
-                  ['Rest', 0]
+                  ['Rest', 10]
                 ]}
 
                 options={{

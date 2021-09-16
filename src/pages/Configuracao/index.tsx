@@ -17,6 +17,22 @@ const Configuracao: React.FC = () => {
             <p className="helvetica fonte_20 cor_5 bold">CONFIGURAÇÕES</p>
           </div>
 
+          <div>
+            <div>Configurações de texto</div>
+            <div>
+              <div>Tamanho da fonte</div>
+              <div>Padrão - list</div>
+            </div>
+          </div>
+
+          <div>
+            <div>Configurações da conta</div>
+            <div>Trocar nome de usuário</div>
+            <div>Alterar sua senha</div>
+            <div>Alterar foto de perfil</div>
+            <div>Desativar notificações</div>
+          </div>
+
         </div>
       </Content>
       <Menu/>

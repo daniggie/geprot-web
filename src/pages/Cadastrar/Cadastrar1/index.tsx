@@ -161,6 +161,74 @@ const Cadastrar: React.FC = () => {
                     80 h
                   </div>
                 </div>
+
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column3">
+                    <div className="box cor_3f" onClick={removeConsultor}>
+                      <FiX color="#fff"/>
+                    </div>
+                    123456
+                  </div>
+
+                  <div className="column1">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2">
+                    80 h
+                  </div>
+                </div>
+
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column3">
+                    <div className="box cor_3f" onClick={removeConsultor}>
+                      <FiX color="#fff"/>
+                    </div>
+                    123456
+                  </div>
+
+                  <div className="column1">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2">
+                    80 h
+                  </div>
+                </div>
+
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column3">
+                    <div className="box cor_3f" onClick={removeConsultor}>
+                      <FiX color="#fff"/>
+                    </div>
+                    123456
+                  </div>
+
+                  <div className="column1">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2">
+                    80 h
+                  </div>
+                </div>
+
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column3">
+                    <div className="box cor_3f" onClick={removeConsultor}>
+                      <FiX color="#fff"/>
+                    </div>
+                    123456
+                  </div>
+
+                  <div className="column1">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2">
+                    80 h
+                  </div>
+                </div>
               </div>
             </div>
 

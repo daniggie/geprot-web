@@ -1,1 +1,261 @@
-import styled from "styled-components";
+import styled, {css} from 'styled-components';
+
+interface TableProps{
+  consultorColumn: boolean;
+};
+
+export const All= styled.div`
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    flex-direction: row;
+`;
+
+export const Content= styled.div`
+  width: 85%;
+  display: flex;
+  justify-content: center;
+
+  .config{
+    width: 85%;
+    border: 0.5px;
+    border-style: solid;
+    border-color: #c4c4c4;
+    display: flex;
+
+    .line{
+      width: 100%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+
+      p{
+        margin-left: 25px;
+      }
+    }
+
+  }
+`;
+
+
+export const Titulo = styled.div`
+  margin-top: 40px;
+  margin-left: 160px;
+
+
+margin: 30px 160px 0px 160px;
+padding: 20px;
+border: 1px solid #dedede;
+border-radius: 4px;
+max-height: 450px;
+overflow: auto;
+
+display:flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-direction: row;
+flex-wrap: wrap;
+
+p{
+  width: 100%;
+}
+
+.content{
+  width: 45%;
+  height: 350px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+
+  .lineText{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child{
+      margin-right:65px
+    }
+  }
+
+  .line{
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    b{
+      width: 45%;
+    }
+
+    .tamanho{
+      width:40%;
+    }
+
+    .tamanhoDate{
+      width:45%;
+    }
+
+    input{
+      width: 100%;
+      border-radius:5px;
+      border: 1px;
+      padding:10px;
+      border: 1px solid #dedede;
+    }
+
+    .box{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+}
+  }
+}
+
+.table{
+  background: #fff;
+  height: 225px;
+  border:  1px solid #dedede;
+  border-radius: 3px;
+
+  .header{
+    display:flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    background: #EBEBEB;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5px;
+    border-bottom-color: #DCDCDC;
+
+    .title1{
+      width:50%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      border-right-style: solid;
+      border-right-width: 0.5px;
+      border-right-color: #DCDCDC;
+      align-items: center;
+    }
+
+    .title2{
+      width:28%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title3{
+      width:22%;
+      height: 50px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      border-right-style: solid;
+      border-right-width: 0.5px;
+      border-right-color: #DCDCDC;
+    }
+
+
+  }
+
+  .columns{
+
+    width:100%;
+    display: flex;
+    background: #fff;
+
+    .column1{
+      width: 50%;
+      height: 30px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+    }
+
+    .column2{
+      height: 30px;
+      width: 30%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+    }
+
+    .column3{
+      height: 30px;
+      width: 20%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+      border-bottom-style: solid;
+      border-bottom-width: 0.5px;
+      border-bottom-color: #DCDCDC;
+
+      .box{
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        margin: 10px 10px 10px 10px;
+        padding: 2px;
+
+        &:hover{
+          background: #008EA5;
+          transition: 0.2s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.position{
+  width:100%;
+  display:flex;
+  justify-content: flex-end;
+
+  .button{
+    width: 205px;
+    background: #0091BD;
+    border-radius: 5px;
+    border:0px;
+    float:right;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    &:hover{
+      background: #0078bd;
+      transition: 0.4s;
+    }
+
+    p{
+      font-size:20px;
+      color:#fff;
+      display:flex;
+      justify-content: center;
+      font-style:normal;
+    }
+  }
+}
+`;
