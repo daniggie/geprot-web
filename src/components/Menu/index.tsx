@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container } from './style';
 import { useParams } from "react-router";
 
-import {FiEye, FiFilePlus, FiEdit, FiUserPlus, FiTrendingUp} from "react-icons/fi"
+import {FiEye, FiFilePlus, FiEdit, FiUserPlus, FiTrendingUp, FiUsers } from "react-icons/fi"
 
 const Menu: React.FC = () => {
 
@@ -24,8 +24,8 @@ console.log(teste)
         <Container>
           <div id="menu">
 
-            <div className="content_atalho cor_1f" id="border1">
-                <div className="atalho cor_1f" id="border1">
+            <div className="content_atalho grid1" id="border1">
+                <div className="atalho " id="border1">
                   <FiEye size="35px" color="#fff"/>
                 </div>
                 <a href="/home">
@@ -33,8 +33,8 @@ console.log(teste)
                 </a>
             </div>
 
-            <div className="content_atalho cor_2f">
-              <div className="atalho cor_2f">
+            <div className="content_atalho grid4">
+              <div className="atalho">
                 <FiFilePlus size="35px" color="#fff"/>
               </div>
               <a href="/cadastrar">
@@ -42,8 +42,8 @@ console.log(teste)
               </a>
             </div>
 
-            <div className="content_atalho cor_1f">
-              <div className="atalho cor_1f">
+            <div className="content_atalho grid2">
+              <div className="atalho">
                 <FiEdit size="35px" color="#fff"/>
               </div>
               <a href="/editar1">
@@ -51,9 +51,18 @@ console.log(teste)
               </a>
             </div>
 
-            <div className="content_atalho cor_3f">
-              <div className="atalho cor_3f">
+            <div className="content_atalho grid3">
+              <div className="atalho">
                 <FiUserPlus size="35px" color="#fff"/>
+              </div>
+              <a href="/alocarescolherfuncionario">
+              <p id="idparagrafo"> CADASTRAR CONSULTOR</p>
+              </a>
+            </div>
+
+            <div className="content_atalho grid5">
+              <div className="atalho">
+                <FiUsers size="35px" color="#fff"/>
               </div>
               <a href="/alocarescolherfuncionario">
               <p id="idparagrafo"> ALOCAR CONSULTORES </p>

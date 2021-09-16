@@ -7,6 +7,27 @@ export const Container = styled.div`
   justify-content: flex-end;
   align-items: center;
 
+  .grid1{
+    background: #00579D;
+  }
+
+  .grid2{
+    background: #0075B1;
+  }
+
+  .grid3{
+    background: #2382BA;
+  }
+
+  .grid4{
+    background: #0090C5;
+  }
+
+  .grid5{
+    background: #0091BD;
+  }
+
+
   #menu{
     width: 200px;
     height: 275px;
