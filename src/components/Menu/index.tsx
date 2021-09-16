@@ -55,7 +55,7 @@ console.log(teste)
               <div className="atalho">
                 <FiUserPlus size="35px" color="#fff"/>
               </div>
-              <a href="/alocarescolherfuncionario">
+              <a href="/cadastrarconsultor">
               <p id="idparagrafo"> CADASTRAR CONSULTOR</p>
               </a>
             </div>

@@ -16,6 +16,7 @@ import Editar4 from '../pages/Editar/Editar4';
 import AlocarEscolherFuncionario from '../pages/Alocar/AlocarEscolherFuncionario';
 import AlocarAtribuirFuncionario from '../pages/Alocar/AlocarAtribuirFuncionario';
 import Configuracao from '../pages/Configuracao';
+import CadastroConsultor from '../pages/CadastroConsultor';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -35,6 +36,7 @@ const Routes: React.FC = () => (
   <Route path="/alocarescolherfuncionario" exact component={AlocarEscolherFuncionario} />
   <Route path="/alocaratribuirfuncionario/:id" exact component={AlocarAtribuirFuncionario} />
   <Route path="/configuracao" exact component={Configuracao} />
+  <Route path="/cadastrarconsultor" exact component={CadastroConsultor}/>
   </Switch>
 );
 
