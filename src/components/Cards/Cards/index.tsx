@@ -138,23 +138,19 @@ const Cards: React.FC = () => {
                       </div>
                   </div>
                   <div className="linha_3">
-                      <div className="texto_content_horas">
-                          <div className="cor_0 fonte_14 helvetica">
-                              Dê: { valor.dataInicio ? valor.dataInicio : "Não iniciado" }
-                          </div>
-                          <div className="cor_0 fonte_14 helvetica">
-                              Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "Não informado" }
-                          </div>
-                      </div>
-                      <div className="content_barra">
-                          <div className="green content_carregamento">
-                          </div>
-                      </div>
+                    <div className="texto_content_data">
+                        <p className="cor_0 fonte_14 helvetica">Dê: { valor.dataInicio ? valor.dataInicio : "Não iniciado" }</p>
+                        <p className="cor_0 fonte_14 helvetica"> Até: { valor.dataFinalizacao ? valor.dataFinalizacao : "Não informado" }</p>
+                    </div>
+                    <div className="content_barra">
+                        <div className="green content_carregamento">
+                        </div>
+                    </div>
                   </div>
               </div>
               </div>
-              </a>
-              </Content_cards>
+            </a>
+            </Content_cards>
 
             ))}
       </>

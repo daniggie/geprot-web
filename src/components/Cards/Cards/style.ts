@@ -122,7 +122,16 @@ export const Content_cards = styled.div<CorCardPorps>`
       display: flex;
       width: 48%;
       justify-content: space-between;
-      margin-left: 5px;
+  }
+
+  .texto_content_data {
+      display: flex;
+      width: 55%;
+      justify-content: space-between;
+      p{
+        width: 50%;
+        display: flex;
+      }
   }
 
   .relogio {
