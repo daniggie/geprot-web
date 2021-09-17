@@ -39,7 +39,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
 
     api.post(`consultores/alocar`, JSON.stringify(alocarHoras), config)
 
-    history.push("/home")
+    history.push(`/alocarescolherfuncionario`)
   }
 
 
