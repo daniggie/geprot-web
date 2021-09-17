@@ -31,7 +31,8 @@ export const Container= styled.div`
       align-content: space-around;
 
       b{
-        margin: 10px;
+        margin: 5px 0px 0px 20px;
+
       }
     }
 

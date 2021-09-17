@@ -40,7 +40,11 @@ const Dashboard: React.FC = () => {
 });
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValores(response.data)
       })
     }

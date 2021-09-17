@@ -37,7 +37,11 @@ const Cards: React.FC<Status> = ({status}) => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar/${secao.secao.id ? secao.secao.id : null}/${status}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`projetos/listar/${secao.secao.id ? secao.secao.id : null}/${status}`, config).then(response => {
         setValores(response.data);
       })
     }

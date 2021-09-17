@@ -18,7 +18,11 @@ const Informations: React.FC = () => {
   const [ valores, setValores ] = useState<Consultor[]>([]);
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`usuarios/listar/consultores`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`usuarios/listar/consultores`,config).then(response => {
         setValores(response.data);
       })
     }

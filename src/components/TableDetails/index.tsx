@@ -15,7 +15,11 @@ const ContDetails: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-       api.get(`projetos/listar/projetos/${id}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+       api.get(`projetos/listar/projetos/${id}`, config).then(response => {
         setValor(response.data.secaos)
       })
     }

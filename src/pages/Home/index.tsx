@@ -57,7 +57,11 @@ const Home: React.FC = () => {
   useEffect(() => {
     setStatus(statusVar)
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar/1/0`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`projetos/listar/1/0`, config).then(response => {
         setValores(response.data);
       })
     }
