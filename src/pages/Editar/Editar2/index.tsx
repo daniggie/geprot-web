@@ -3,6 +3,9 @@ import { Titulo, Formulario } from './style';
 import Barra from "../../../components/Barra";
 import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
 
+import { RiAddLine } from "react-icons/ri";
+import { FiX } from "react-icons/fi";
+
 const Editar2: React.FC = () => {
   return(
     <>
@@ -12,62 +15,147 @@ const Editar2: React.FC = () => {
           <p className="helvetica fonte_20 cor_5 bold">EDITAR PROJETO</p>
         </Titulo>
         <Formulario>
+
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Nome do projeto:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Centro de custo:</b>
             </div>
 
             <div className="line">
-                <input type="text" placeholder="NOME DO PROJETO" />
+                <input type="text" placeholder="NAME TEXT EXEMPLO" />
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Descrição do projeto:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
             </div>
 
             <div className="line">
-              <div className="box">
-                <textarea cols={40}>Reduzir a atividade manual da equipe interna WEC na entrada de
-                        ordens de venda (OV), envio da confirmação e aviso de remessa
-                        ao Cliente XYZ USA. Atender solicitação do cliente para automatizar o envio de pedidos e atualização do próprio sistema
-                        através do EDI. O Cliente já
-                        implementou este sistema nos principais fornecedores. </textarea>
-              </div>
+                <input type="text" placeholder="%" />
             </div>
 
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Limite de horas aprovado:</b>
+            </div>
+
+            <div className="line">
+                <input type="time" placeholder="" />
+                <div className="box cor_3f">
+                  <RiAddLine color="#fff"/>
+                </div>
+            </div>
           </div>
 
           <div className="content">
+            <div className="table">
 
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
+              <div className="header">
+                <div className="title1 bold helvetica cor_0 fonte_15">
+                  Centro de custo
+                </div>
+                <div className="title2 bold helvetica cor_0 fonte_15">
+                    Percentual
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1">
+                  <div className="box cor_3f">
+                  <FiX color="#fff"/>
+                  </div>
+                  SEÇÃO EXEMPLO
+                </div>
+
+                <div className="column2">
+                  00%
+                </div>
+              </div>
+
             </div>
 
-            <div className="line">
-                <input type="date" placeholder="" />
-            </div>
-
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
-            </div>
-
-            <div className="line">
-                <input type="date" placeholder="" />
-            </div>
-
-            <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de aprovação:</b>
-            </div>
-
-            <div className="line">
-                <input type="date" placeholder="" />
-            </div>
           </div>
 
 
           <div className="position">
-            <a href="/editar3">
+            <a href="/editar4">
             <BotaoAvancar>
             <p className="helvetica fonte_20 bold">Próximo</p>
             </BotaoAvancar>
