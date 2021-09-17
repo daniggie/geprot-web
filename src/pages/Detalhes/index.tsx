@@ -17,7 +17,7 @@ interface Card {
   valor: number;
   nomeSolicitante: string,
   nomeResponsavel: string,
-  valorRestantes: number;
+  horasRestantes: number;
   horasPrevistas: number;
   valorUtilizado: number;
   valorRestante: number;
@@ -155,7 +155,7 @@ const LinkAprovar = "/aprovarhoras/";
               data={[
                 ['Times', 'Percent'],
                 ['Horas', valores?.horasTrabalhadas],
-                ['Horas', valores?.horasPrevistas]
+                ['Horas', valores?.horasRestantes]
               ]}
 
               options={{
