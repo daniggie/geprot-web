@@ -10,6 +10,10 @@ export const Container = styled.div`
     align-content: center;
     align-items: center;
 
+    .logout{
+      cursor: pointer;
+    }
+
     #informations{
 
       display:flex;
@@ -37,6 +41,7 @@ export const Container = styled.div`
       display:flex;
       align-items: center;
       justify-content: space-around;
+      margin-right: 50px;
 
       #flag{
         width: 55%;

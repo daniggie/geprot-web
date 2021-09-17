@@ -17,6 +17,15 @@ const Header: React.FC = () => {
         return languageObject;
     }
 });
+
+  function ExitClick() {
+
+    localStorage.removeItem("@Geprot:cadastra");
+    localStorage.removeItem("@Geprot:token")
+    localStorage.removeItem("@Geprot:usuario")
+
+    window.location.reload();
+  }
     return(
         <Container>
           <div id="informations">
@@ -46,13 +55,10 @@ const Header: React.FC = () => {
               <a href="/configuracao">
                 <FaCog size={ 20 } color="#0091BD"/>
               </a>
-
             </div>
 
-            <div>
-              <a href="/">
-                <FiLogOut size={ 25 } color="#0091BD"/>
-              </a>
+            <div className="logout" onClick={ExitClick}>
+                <FiLogOut size={ 25 } color="#0091BD" />
             </div>
           </div>
       </Container>
