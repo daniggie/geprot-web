@@ -43,7 +43,7 @@ const Configuracao: React.FC = () => {
 
           <div className="position">
             <BotaoCancel/>
-            <button>Enviar</button>
+            <button className="fonte_20">Enviar</button>
           </div>
 
 
