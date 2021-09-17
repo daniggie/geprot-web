@@ -1,5 +1,5 @@
 import React from "react";
-import { 
+import {
     RouteProps as ReactDOMRouteProps,
     Route as ReactDOMRoute,
     Redirect
@@ -13,7 +13,7 @@ interface RouteProps extends ReactDOMRouteProps {
 
 const Route:React.FC<RouteProps> = ({
     isPrivate = false,
-    component: Component, 
+    component: Component,
     ...rest
 }) => {
     const { usuario } = useAuth();
@@ -32,9 +32,9 @@ const Route:React.FC<RouteProps> = ({
                         }}
                     />
                 )
-            }}   
+            }}
         />
     )
-} 
+}
 
 export default Route;

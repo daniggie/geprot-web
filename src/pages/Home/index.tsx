@@ -7,9 +7,24 @@ import { All, Filtros, Content_cards, ContFilter, Container } from './style';
 import FilterSearch from '../../components/Filters/FilterSearch';
 
 import { FiChevronRight } from "react-icons/fi";
+import api from '../../services/api';
 
 let statusVar :number;
 
+interface Card {
+  id: number;
+  nome: string;
+  dataInicio: string;
+  dataFinalizacao: string;
+  dataCadastro: string;
+  horasPrevistas: number;
+  horasTrabalhadas: number;
+  valor: number;
+  valorUtilizado: number;
+  valorRestante: number;
+  status: string;
+  barraProgresso: number;
+}
 
 export const filter = (status: number) => {
   statusVar = status;
@@ -28,10 +43,29 @@ const Home: React.FC = () => {
     statusVar = 0
   }
 
+  const [secao] = useState(() => {
+    let usuario = localStorage.getItem('@Geprot:usuario');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+});
+
   const [ status , setStatus ] = useState<number>();
+  const [valores, setValores ] = useState<Card[]>([]);
   useEffect(() => {
     setStatus(statusVar)
-    console.log(status)
+    async function carregaDados(): Promise<void>  {
+      await api.get(`projetos/listar/1/0`).then(response => {
+        setValores(response.data);
+      })
+    }
+
+    carregaDados();
+    console.log("Aqui")
+  console.log(valores);
+  console.log("Passou")
   },[])
 
    return (

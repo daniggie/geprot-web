@@ -25,9 +25,7 @@ interface Status {
 }
 
 const Cards: React.FC<Status> = ({status}) => {
-  const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Card[]>([]);
-
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
 
