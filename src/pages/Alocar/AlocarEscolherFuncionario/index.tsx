@@ -53,19 +53,11 @@ const AlocarEscolherFuncionario: React.FC = () => {
               <div className="contant_informations">
                 <Informations/>
               </div>
-
           </Table>
-
-
-
         </Content>
-
         <PositionMenu>
           <Menu/>
         </PositionMenu>
-
-
-
   </All>
 
 
