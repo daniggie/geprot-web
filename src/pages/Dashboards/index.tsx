@@ -51,6 +51,10 @@ const Dashboard: React.FC = () => {
     carregaDados();
   }, [ secao.secao.id ])
 
+
+  const dolar = 5.29;
+  const euro = 6.20;
+
   return(
     <>
       <Header/>
@@ -86,10 +90,10 @@ const Dashboard: React.FC = () => {
                     <td className="impar fonte_15">R$ {valores?.verbasAprovadas}</td>
                   </tr>
                   <tr>
-                    <td className="par fonte_15">€ 2.205,34</td>
+                    <td className="par fonte_15">€ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="impar fonte_15">$ 2.677,68</td>
+                    <td className="impar fonte_15">$ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toFixed(2)}</td>
                   </tr>
               </table>
             </MediumCont>
@@ -143,10 +147,10 @@ const Dashboard: React.FC = () => {
                     <td className="impar fonte_15">R$ {valores?.verbasDisponivel}</td>
                   </tr>
                   <tr>
-                    <td className="par fonte_15">€ 2.205,34</td>
+                    <td className="par fonte_15">€ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="impar fonte_15">$ 2.677,68</td>
+                    <td className="impar fonte_15">$ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toFixed(2)}</td>
                   </tr>
               </table>
             </MediumCont>
