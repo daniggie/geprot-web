@@ -32,7 +32,8 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
     alocarHoras.limiteHoras = parseInt((document.getElementById('inputLegal') as HTMLInputElement).value);
 
     console.log(alocarHoras)
-    api.post(`consultores/alocar`, JSON.stringify(alocarHoras))
+    api.post(`consultores/alocar`, JSON.stringify(alocarHoras), {headers: {
+      "Content-Type": "application/json"}})
   }
 
 
