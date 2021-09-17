@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { CgSearchLoading } from "react-icons/cg";
 import { Contant } from "./style";
-import arrowleft from "../../../icons/arrowleft.svg";
 import { useParams } from "react-router";
 import { useEffect } from "react"
 import api from "../../../services/api";
@@ -15,13 +13,6 @@ interface Projeto {
   dataCadastro: Date,
 
 }
-
-interface Alocar {
-  projetos_id: number,
-  usuarios_id: number,
-  limiteHoras: number
-}
-
 
 const Informations: React.FC = () => {
 
@@ -63,7 +54,7 @@ const Informations: React.FC = () => {
       </div>
 
       <div className="column1">
-        <Atribuicao />
+        <Atribuicao projetos_id={valor.id} usuarios_id={id}/>
       </div>
 
     </div>

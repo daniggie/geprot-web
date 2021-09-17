@@ -2,8 +2,22 @@ import React, { useState } from "react";
 import { Container } from "./style";
 import arrowleft from "../../icons/arrowleft.svg";
 import { RiCheckLine } from "react-icons/ri";
+import api from "../../services/api";
+import { useCallback } from "hoist-non-react-statics/node_modules/@types/react";
 
-const Atribuicao: React.FC = () => {
+interface AtribuicaoProps {
+  projetos_id: number,
+  usuarios_id: string
+}
+
+interface AlocarProps {
+  projetos_id: number,
+  usuarios_id: number,
+  limiteHoras: number
+}
+
+// valores chegando pelo botao, falta fazer a funcao para alocar
+const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
   const [ overlay, setOverlay ] = useState(true);
   const addOverlay = () => {
     if(!overlay){
