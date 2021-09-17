@@ -187,7 +187,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosEmAndamento}<span>%</span></p>
+                <p className="used-size">{valores?.projetosEmAndamento.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
@@ -234,7 +234,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosNaoIniciados}<span>%</span></p>
+                <p className="used-size">{valores?.projetosNaoIniciados.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
@@ -280,7 +280,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosAtrasados}<span>%</span></p>
+                <p className="used-size">{valores?.projetosAtrasados.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
