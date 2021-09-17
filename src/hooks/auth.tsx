@@ -14,7 +14,7 @@ interface SignInCredentials {
 interface AuthContextData {
   signIn(credentials: SignInCredentials): Promise<void>;
   usuario: object;
-  signOut(): void
+  signOut(): void;
 }
 
 export const AuthContext = createContext<AuthContextData>(
@@ -42,7 +42,7 @@ export const AuthProvider: React.FC = ({children}) => {
     const { jwt, usuario } = response.data;
 
     localStorage.setItem("@Geprot:token", jwt);
-    localStorage.setItem("@Geprot:usuario", JSON.stringify(usuario))
+    localStorage.setItem("@Geprot:usuario", JSON.stringify(usuario));
     setData({ jwt, usuario });
   }, []);
 

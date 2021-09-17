@@ -6,7 +6,7 @@ import * as Yup from "yup";
 
 import { useToast } from "../../hooks/toast";
 
-import { AuthContext, useAuth } from "../../hooks/auth";
+import { useAuth } from "../../hooks/auth";
 
 import getValidationsErrors from "../../utils/getValidationErrors";
 
@@ -24,10 +24,11 @@ interface SignFormData {
 const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { signIn } = useAuth();
-  const history = useHistory();
   const { addToast } = useToast();
+  const history = useHistory();
 
-  const handleSubmit = useCallback(async (data: SignFormData) => {
+  const handleSubmit = useCallback(
+    async (data: SignFormData) => {
     try{
         formRef.current?.setErrors({});
 
