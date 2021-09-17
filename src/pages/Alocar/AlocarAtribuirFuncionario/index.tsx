@@ -28,7 +28,11 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`usuarios/buscar/consultor/${id}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`usuarios/buscar/consultor/${id}`, config).then(response => {
         setValores(response.data);
       })
     }

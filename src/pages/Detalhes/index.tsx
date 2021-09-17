@@ -36,7 +36,11 @@ const Detalhes: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`projetos/listar/projetos/${id ? id : null}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`projetos/listar/projetos/${id ? id : null}`, config).then(response => {
         setValores(response.data)
       })
     }

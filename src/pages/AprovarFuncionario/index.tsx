@@ -35,7 +35,11 @@ const AprovarFuncionario: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      await api.get(`horas/listar/${id}/${consultorId}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`horas/listar/${id}/${consultorId}`, config).then(response => {
         setValores(response.data)
       })
     }
