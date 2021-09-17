@@ -148,10 +148,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
               <div className="contant_informations">
                 <Informations/>
-                <Informations/>
-                <Informations/>
-                <Informations/>
-                <Informations/>
               </div>
 
           </Table>
