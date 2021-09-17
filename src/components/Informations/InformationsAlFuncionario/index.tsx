@@ -21,7 +21,11 @@ const Informations: React.FC = () => {
 
   useEffect(() => {
     async function carregaDados(): Promise<void> {
-      await api.get(`projetos/naoalocados/${id}`).then(response => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`projetos/naoalocados/${id}`,config).then(response => {
         setValores(response.data)
       })
     }
