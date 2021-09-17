@@ -136,7 +136,7 @@ p{
 
   }
 
-  .columns{
+  .columns{ 
 
     ${(props) =>
       props.consultorColumn &&

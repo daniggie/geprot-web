@@ -3,6 +3,7 @@ import { Container } from "./style";
 import arrowleft from "../../icons/arrowleft.svg";
 import { RiCheckLine } from "react-icons/ri";
 import api from "../../services/api";
+import { useHistory } from "react-router";
 
 interface AtribuicaoProps {
   projetos_id: number,
@@ -19,6 +20,7 @@ interface AlocarProps {
 
 // valores chegando pelo botao, falta fazer a funcao para alocar
 const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
+  const history = useHistory()
   function Alocar(usuarios_id: number, projetos_id: number) {
     console.log("bomdia")
     const alocarHoras = {
@@ -34,6 +36,8 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
     console.log(alocarHoras)
     api.post(`consultores/alocar`, JSON.stringify(alocarHoras), {headers: {
       "Content-Type": "application/json"}})
+
+    history.push("/home")
   }
 
 

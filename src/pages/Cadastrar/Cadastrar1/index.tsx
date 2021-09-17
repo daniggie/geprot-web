@@ -13,7 +13,7 @@ interface CadastraProjeto {
 	nomeResponsavel: string;
 }
 
-const Cadastrar: React.FC = () => {
+const Cadastrar: React.FC = (  ) => {
   const formRef = useRef<FormHandles>(null);
 
   const projeto = {
@@ -145,7 +145,7 @@ const Cadastrar: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter">
+                <div className="columns helvetica cor_0 lighter" id="1">
                   <div className="column3">
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
@@ -162,7 +162,7 @@ const Cadastrar: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter">
+                <div className="columns helvetica cor_0 lighter" id="2">
                   <div className="column3">
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
@@ -179,7 +179,7 @@ const Cadastrar: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter">
+                <div className="columns helvetica cor_0 lighter" id="3">
                   <div className="column3">
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
@@ -196,7 +196,7 @@ const Cadastrar: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter">
+                <div className="columns helvetica cor_0 lighter" id="4">
                   <div className="column3">
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
@@ -213,7 +213,7 @@ const Cadastrar: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter">
+                <div className="columns helvetica cor_0 lighter" id="5">
                   <div className="column3">
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
