@@ -32,7 +32,7 @@ p{
 
   .line{
     width: 100%;
-    display flex;
+    display: flex;
 
     flex-direction: row;
     flex-wrap: nowrap;
@@ -54,7 +54,6 @@ p{
         padding: 10px;
         border-radius:5px;
         border: 1px solid #dedede;
-        autocapitalize: sentences;
         font-family: helvetica;
         min-width: 100%;
         min-height: 150px;
