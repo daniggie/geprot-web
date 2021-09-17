@@ -11,6 +11,7 @@ import FilterCC from "../../components/Filters/FilterCC";
 
 import api from "../../services/api";
 import { Chart } from "react-google-charts";
+import { number } from "yargs";
 
 interface Dashboard {
   projetosConcluidos: number;
@@ -19,7 +20,9 @@ interface Dashboard {
   projetosNaoIniciados: number;
   verbasDisponivel: number;
   verbasAprovadas:number;
-
+  restoProjetosAtrasados: number;
+  restoProjetosEmAndamento: number;
+  restoProjetosNaoIniciados: number;
 }
 
 
@@ -160,7 +163,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosEmAndamento],
-                  ['Rest', 10]
+                  ['Rest', valores?.restoProjetosEmAndamento]
                 ]}
 
                 options={{
@@ -207,7 +210,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosNaoIniciados],
-                  ['Rest', 10]
+                  ['Rest', valores?.restoProjetosNaoIniciados]
                 ]}
 
                 options={{
@@ -253,7 +256,7 @@ const Dashboard: React.FC = () => {
                 data={[
                   ['Projects', 'Percent'],
                   ['Late', valores?.projetosAtrasados],
-                  ['Rest', 10]
+                  ['Rest', valores?.restoProjetosAtrasados]
                 ]}
 
                 options={{

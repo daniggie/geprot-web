@@ -1,44 +1,78 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const All = styled.div`
-    display: flex;
-    align-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    flex-direction: row;
-
+export const Titulo = styled.div`
+  margin-top: 40px;
+  margin-left: 160px;
 `;
 
-export const Filtros = styled.div`
-    width: 100%;
-    height: 50px;
-    display:flex;
-    padding: 10px;
-    margin-top:20px;
-    justify-content: space-around;
+export const Formulario = styled.form`
+margin: 40px 160px 20px 160px;
+padding: 30px;
+border: 1px solid #dedede;
+border-radius: 3px;
 
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 15px;
+display:flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-direction: row;
+flex-wrap: wrap;
 
-    .content_title{
-      display: flex;
-      align-items: center;
-    }
+p{
+  width: 100%;
+}
 
-    .arrow{
-      margin-top: 2px;
-    }
-
-`;
-
-
-export const Content_cards = styled.div`
-  width: 85%;
+.content{
+  width: 45%;
+  min-height: 350px;
   display:flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  justify-content: space-between;
-  padding: 10px 60px 0px 60px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+
+
+  .line{
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    b{
+      width: 45%;
+    }
+
+    .tamanho{
+      width:45%;
+    }
+
+    .box{
+      width: 100%;
+      textarea{
+        resize: none;
+        padding: 10px;
+        border-radius:5px;
+        border: 1px solid #dedede;
+        font-family: helvetica;
+        min-width: 100%;
+        min-height: 150px;
+      }
+    }
+
+    input{
+      width: 100%;
+      border-radius:5px;
+      border: 1px;
+      padding:10px;
+      border: 1px solid #dedede;
+    }
+  }
+}
+
+.position{
+  width:100%;
+    display:flex;
+    justify-content: flex-end;
+  }
 `;

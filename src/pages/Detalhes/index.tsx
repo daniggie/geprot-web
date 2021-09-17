@@ -7,6 +7,7 @@ import { Chart } from "react-google-charts";
 import api from "../../services/api";
 import { useParams } from "react-router";
 import ContDetails from "../../components/TableDetails";
+import { FiEdit } from "react-icons/fi";
 
 interface Card {
   id: number;
@@ -16,7 +17,7 @@ interface Card {
   valor: number;
   nomeSolicitante: string,
   nomeResponsavel: string,
-  valorRestantes: number;
+  horasRestantes: number;
   horasPrevistas: number;
   valorUtilizado: number;
   valorRestante: number;
@@ -61,6 +62,9 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
           <div className="line cor_0 fonte_15">
             <p> Seção - {secao.secao.nome} </p>
+            <a href="/editar1">
+              <p><FiEdit size={20} color="#828282"/></p>
+            </a>
           </div>
 
           <div className="line ">
@@ -151,7 +155,7 @@ const LinkAprovar = "/aprovarhoras/";
               data={[
                 ['Times', 'Percent'],
                 ['Horas', valores?.horasTrabalhadas],
-                ['Horas', valores?.horasPrevistas]
+                ['Horas', valores?.horasRestantes]
               ]}
 
               options={{

@@ -1,56 +1,81 @@
-import React, { useState, useEffect, FormEvent } from 'react';
-import CardsEdit from '../../../components/Cards/CardsEdit';
-import Header from '../../../components/Header';
-import Menu from '../../../components/Menu';
+import React from "react";
+import { Titulo, Formulario } from './style';
+import Barra from "../../../components/Barra";
+import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
 
-import { All, Filtros, Content_cards } from './style';
-import FilterSearch from '../../../components/Filters/FilterSearch';
-import FilterStatus from '../../../components/Filters/FilterStatus';
-import { FiChevronRight } from "react-icons/fi";
-
-
-
-const Editar1: React.FC = () => {
+const Editar2: React.FC = () => {
   return(
     <>
-    <Header>
-      </Header>
+      <Barra />
 
-      <Filtros>
+      <Titulo>
+          <p className="helvetica fonte_20 cor_5 bold">EDITAR PROJETO</p>
+        </Titulo>
+        <Formulario>
+          <div className="content">
 
-        <div className="content_title">
-            <div className="arrow">
-              <FiChevronRight size="15px" color="#0091BD"/>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Nome do projeto:</b>
             </div>
 
-            <div className="texto cor_4">
-                Escolha o projeto a ser editado
+            <div className="line">
+                <input type="text" placeholder="NOME DO PROJETO" />
             </div>
-        </div>
 
-        <FilterStatus />
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Descrição do projeto:</b>
+            </div>
 
-        <FilterSearch/>
+            <div className="line">
+              <div className="box">
+                <textarea cols={40}>Reduzir a atividade manual da equipe interna WEC na entrada de
+                        ordens de venda (OV), envio da confirmação e aviso de remessa
+                        ao Cliente XYZ USA. Atender solicitação do cliente para automatizar o envio de pedidos e atualização do próprio sistema
+                        através do EDI. O Cliente já
+                        implementou este sistema nos principais fornecedores. </textarea>
+              </div>
+            </div>
 
-      </Filtros>
+          </div>
 
-      <All>
+          <div className="content">
 
-        <Content_cards>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
+            </div>
+
+            <div className="line">
+                <input type="date" placeholder="" />
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
+            </div>
+
+            <div className="line">
+                <input type="date" placeholder="" />
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Data de aprovação:</b>
+            </div>
+
+            <div className="line">
+                <input type="date" placeholder="" />
+            </div>
+          </div>
 
 
-        <a href="/editar2">
-            <CardsEdit/>
-            LINK PARA VISUALIZAÇÃO DE EDITAR
-        </a>
-
-        </Content_cards>
-
-        <Menu/>
-
-      </All>
+          <div className="position">
+            <a href="/editar3">
+            <BotaoAvancar>
+            <p className="helvetica fonte_20 bold">Próximo</p>
+            </BotaoAvancar>
+            </a>
+          </div>
+        </Formulario>
     </>
   )
 }
 
-export default Editar1;
+export default Editar2;
