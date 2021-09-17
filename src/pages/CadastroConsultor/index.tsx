@@ -46,19 +46,6 @@ const Configuracao: React.FC = () => {
             <button className="fonte_20">Enviar</button>
           </div>
 
-
-
-
-            {/*
-            Tela deve conter:<br/>
-            Nome do consultor;<br/>
-            Email       ||;<br/>
-            ID          ||;<br/>
-            Fornecedor  ||;<br/>
-            Senha E confirmar senha;<br/>
-            Preço das horas.<br/*/}
-
-
         </div>
       </Container>
 
