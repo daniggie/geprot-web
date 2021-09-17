@@ -1,10 +1,10 @@
 import React from "react";
 import { Titulo, Formulario } from './style';
-import Barra from "../../../components/Barra";
-import BotaoAvancar from '../../../components/Buttons/ButtonAvancar';
 
-import { RiAddLine } from "react-icons/ri";
-import { FiX } from "react-icons/fi";
+import Barra from "../../../components/Barra";
+import BotaoSalvar from '../../../components/Buttons/ButtonSalvar';
+import BotaoCancel from "../../../components/Buttons/ButtonCancel";
+import { BsFillCaretRightFill } from "react-icons/bs";
 
 const Editar2: React.FC = () => {
   return(
@@ -15,150 +15,73 @@ const Editar2: React.FC = () => {
           <p className="helvetica fonte_20 cor_5 bold">EDITAR PROJETO</p>
         </Titulo>
         <Formulario>
-
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Centro de custo:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Nome do responsável:</b>
             </div>
 
             <div className="line">
-                <input type="text" placeholder="NAME TEXT EXEMPLO" />
+                <input type="text" placeholder="NAME EXEMPLO VIEW" />
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Nome do solicitante:</b>
             </div>
 
             <div className="line">
-                <input type="text" placeholder="%" />
+                <input type="text" placeholder="NAME EXEMPLO VIEW" />
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Limite de horas aprovado:</b>
+              <b className="helvetica fonte_15 cor_3 bold">Nome do aprovador:</b>
             </div>
 
             <div className="line">
-                <input type="time" placeholder="" />
-                <div className="box cor_3f">
-                  <RiAddLine color="#fff"/>
-                </div>
+                <input type="text" placeholder="NAME EXEMPLO VIEW" />
             </div>
+
           </div>
 
           <div className="content">
-            <div className="table">
 
-              <div className="header">
-                <div className="title1 bold helvetica cor_0 fonte_15">
-                  Centro de custo
-                </div>
-                <div className="title2 bold helvetica cor_0 fonte_15">
-                    Percentual
-                </div>
-              </div>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Seção do responsável:</b>
+            </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
+            <div className="line">
+                <input type="text" placeholder="SEÇÃO X" />
+            </div>
 
-                <div className="column2">
-                  00%
-                </div>
-              </div>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Seção do solicitante:</b>
+            </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
+            <div className="line">
+                <input type="text" placeholder="SEÇÃO X" />
+            </div>
 
-                <div className="column2">
-                  00%
-                </div>
-              </div>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_3 bold">Seção do aprovador:</b>
+            </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
-
-                <div className="column2">
-                  00%
-                </div>
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
-
-                <div className="column2">
-                  00%
-                </div>
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
-
-                <div className="column2">
-                  00%
-                </div>
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
-
-                <div className="column2">
-                  00%
-                </div>
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="box cor_3f">
-                  <FiX color="#fff"/>
-                  </div>
-                  SEÇÃO EXEMPLO
-                </div>
-
-                <div className="column2">
-                  00%
-                </div>
-              </div>
-
+            <div className="line">
+                <input type="text" placeholder="SEÇÃO X" />
             </div>
 
           </div>
 
 
           <div className="position">
-            <a href="/editar4">
-            <BotaoAvancar>
-            <p className="helvetica fonte_20 bold">Próximo</p>
-            </BotaoAvancar>
+
+            <a href="/editar1">
+            <BotaoCancel />
+            </a>
+
+            <a href="/editar1">
+            <BotaoSalvar>
+            <p className="helvetica fonte_20 bold">Salvar</p>
+            </BotaoSalvar>
             </a>
           </div>
         </Formulario>

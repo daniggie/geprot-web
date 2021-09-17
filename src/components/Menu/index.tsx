@@ -40,15 +40,6 @@ const teste = "/dashboard/" + secao.secao.id;
               </a>
             </div>
 
-            <div className="content_atalho grid2">
-              <div className="atalho">
-                <FiEdit size="35px" color="#fff"/>
-              </div>
-              <a href="/editar1">
-                <p id="idparagrafo"> EDITAR PROJETOS </p>
-              </a>
-            </div>
-
             <div className="content_atalho grid3">
               <div className="atalho">
                 <FiUserPlus size="35px" color="#fff"/>
