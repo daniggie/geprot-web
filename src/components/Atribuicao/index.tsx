@@ -33,9 +33,11 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
     alocarHoras.usuarios_id = usuarios_id;
     alocarHoras.limiteHoras = parseInt((document.getElementById('inputLegal') as HTMLInputElement).value);
 
-    console.log(alocarHoras)
-    api.post(`consultores/alocar`, JSON.stringify(alocarHoras), {headers: {
-      "Content-Type": "application/json"}})
+    const token = localStorage.getItem("@Geprot:token");
+    let config = {headers: {
+      "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
+
+    api.post(`consultores/alocar`, JSON.stringify(alocarHoras), config)
 
     history.push("/home")
   }
