@@ -61,16 +61,32 @@ export const Content= styled.div`
         align-items: center;
       }
 
-      .on{
-        color: #00579D;
-        display: none;
-        margin-top: 7px;
-      }
+      .onoff{
+        width: 35px;
+        height: 35px;
+        float: right;
+        .on{
+          color: #00579D;
+          margin-top: 7px;
+          transition: 0.8s;
+          display: block;
+          background: #fff;
+          position: initial;
+          z-index: 1;
 
-      .off{
-        color: #828282;
-        margin-top: 7px;
-      }
+
+        }
+
+        .off{
+          color: #828282;
+          margin-top: 7px;
+          transition: 0.8s;
+          display: block;
+          background: #fff;
+          z-index: 999;
+          float: right;
+        }
+    }
 
       input{
         width: 20%;
@@ -186,7 +202,7 @@ export const Content= styled.div`
       align-items: center;
       padding: 10px;
       cursor: pointer;
-      
+
       &:hover{
         background: #0078bd;
         transition: 0.4s;

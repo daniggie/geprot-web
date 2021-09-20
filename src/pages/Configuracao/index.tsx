@@ -52,9 +52,9 @@ const Configuracao: React.FC = () => {
               <div className="cont_option">
                 <div className="line_option">
                   <h3>TalkBack</h3>
-                  <div>
-                    <FiToggleLeft className="off" fontSize="35px"/>
-                    <FiToggleRight className="on" fontSize="35px"/>
+                  <div className="onoff">
+                    <FiToggleLeft className="off" size={35}/>
+                    <FiToggleRight className="on" size={35}/>
                   </div>
                 </div>
               </div>
@@ -80,8 +80,8 @@ const Configuracao: React.FC = () => {
                 <div className="line_option">
                   <h3>Desativar notificações</h3>
                   <div>
-                    <FiToggleLeft className="off" fontSize="35px"/>
-                    <FiToggleRight className="on" fontSize="35px"/>
+                    <FiToggleLeft className="off" size={35}/>
+                    <FiToggleRight className="on" size={35}/>
                   </div>
                 </div>
               </div>
@@ -93,6 +93,7 @@ const Configuracao: React.FC = () => {
               <div className="but">
                 <h1>Salvar</h1>
               </div>
+
             </div>
           </div>
         </Content>
