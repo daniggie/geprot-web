@@ -48,14 +48,14 @@ const Dashboard: React.FC = () => {
     }
   });
 
-  function buscarValores1() {
-    api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+  async function buscarValores1() {
+    var response = await api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
       setValoresConcluidos(response.data)
     })
   }
 
-  function buscarValores2() {
-    api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+  async function buscarValores2() {
+    var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
       setValores(response.data)
     })
   }
@@ -129,13 +129,13 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Weeks', 'Projects', { role: 'style' }],
-                  ['1234', 11, "#0091BD"],
-                  ['1234', 25, '#2382BA'],
-                  ['1234', 56, "#0091BD"],
-                  ['1234', 17, '#2382BA'],
-                  ['1234', 32, "#0091BD"],
-                  ['1234', 28, '#2382BA'],
-                  ['1234', 77, "#0091BD"],
+                  [valoresConcluidos[6] ? valoresConcluidos[6].data : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
+                  [valoresConcluidos[5] ? valoresConcluidos[5].data : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
+                  [valoresConcluidos[4] ? valoresConcluidos[4].data : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],
+                  [valoresConcluidos[3] ? valoresConcluidos[3].data : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, '#2382BA'],
+                  [valoresConcluidos[2] ? valoresConcluidos[2].data : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, "#0091BD"],
+                  [valoresConcluidos[1] ? valoresConcluidos[1].data : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, '#2382BA'],
+                  [valoresConcluidos[0] ? valoresConcluidos[0].data : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, "#0091BD"],
                 ]}
 
                 options={{
