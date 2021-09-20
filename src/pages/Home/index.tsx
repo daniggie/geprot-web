@@ -61,17 +61,13 @@ const Home: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/listar/1/0`, config).then(response => {
-        setValores(response.data);
+      await api.get(`projetos/listar/${secao.secao.id}/0`, config).then(response => {
+        setValores(response.data)
       })
     }
-
     carregaDados();
-    console.log("Aqui")
-  console.log(valores);
-  console.log("Passou")
   },[])
-
+  console.log(valores)
    return (
     <>
     <Header/>
@@ -128,7 +124,13 @@ const Home: React.FC = () => {
       </Filtros>
       <All>
         <Content_cards>
-          <Cards status={statusVar}/>
+          {
+
+            valores ? valores.map(valor => (
+            <Cards id={valor.id}/>
+            ))
+            : "Não existe nenhum projeto cadastrado"
+          }
         </Content_cards>
         <Menu/>
       </All>
