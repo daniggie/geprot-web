@@ -3,7 +3,7 @@ import { All } from "./style";
 import Barra from "../../components/Barra";
 import { useHistory } from "react-router";
 import BotaoAprovar from "../../components/Buttons/ButtonAprove";
-import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
+import InformationsApFuncionario from "../../components/Informations/InformationsAprovarFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonSend";
 import api from "../../services/api";

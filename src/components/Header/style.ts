@@ -36,7 +36,7 @@ export const Container = styled.div`
       }
     }
 
-    #content_all{
+    #container_all{
       width: 16%;
       display:flex;
       align-items: center;
