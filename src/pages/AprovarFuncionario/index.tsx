@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
 import { useHistory } from "react-router";
-import BotaoAprovar from "../../components/Buttons/ButtonAprovar";
+import BotaoAprovar from "../../components/Buttons/ButtonAprove";
 import InformationsApFuncionario from "../../components/Informations/InformationsApFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
-import BotaoEnviar from "../../components/Buttons/ButtonEnviar";
+import BotaoEnviar from "../../components/Buttons/ButtonSend";
 import api from "../../services/api";
 import { useParams } from "react-router";
 

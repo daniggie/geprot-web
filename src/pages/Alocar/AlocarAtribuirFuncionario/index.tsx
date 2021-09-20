@@ -3,7 +3,7 @@ import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
 import Menu from "../../../components/Menu";
 import Informations from "../../../components/Informations/InformationsAlFuncionario";
-import FilterFunc from "../../../components/Filters/FilterAlFuncionario";
+import FilterFunc from "../../../components/Filters/FilterAlocarFuncionario";
 import { useParams } from "react-router";
 import api from "../../../services/api";
 
