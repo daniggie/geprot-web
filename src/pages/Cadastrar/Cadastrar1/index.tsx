@@ -14,8 +14,6 @@ interface CadastraProjeto {
 }
 
 const Cadastrar: React.FC = (  ) => {
-  const formRef = useRef<FormHandles>(null);
-
   const projeto = {
     nome: "",
     nomeSolicitante: "",
@@ -24,15 +22,15 @@ const Cadastrar: React.FC = (  ) => {
     nomeResponsavel:""
   }
 
-    const teste = () => {
-      projeto.nome = (document.getElementById('nome') as HTMLInputElement).value;
-      projeto.nomeSolicitante = (document.getElementById('nomeSolicitante') as HTMLInputElement).value;
-      projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
-      projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
-      projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
-      console.log(JSON.stringify(projeto))
-      localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
-    }
+  const teste = () => {
+    projeto.nome = (document.getElementById('nome') as HTMLInputElement).value;
+    projeto.nomeSolicitante = (document.getElementById('nomeSolicitante') as HTMLInputElement).value;
+    projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
+    projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
+    projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
+    console.log(JSON.stringify(projeto))
+    localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
+  }
 
     const [consultor, setConsultor] = useState(false);
     const addConsultor = () => {
