@@ -48,23 +48,22 @@ const Dashboard: React.FC = () => {
     }
   });
 
-  useEffect(() => {
-    const carregaDadosDashboard = async(): Promise<void> => {
-      await api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
-        setValoresConcluidos(response.data)
-      })
-    }
-    const carregaDadosDashboard2 = async(): Promise<void> => {
-      await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
-        setValores(response.data)
-      })
-    }
-    carregaDadosDashboard();
-    carregaDadosDashboard2()
-  }, [])
+  function buscarValores1() {
+    api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+      setValoresConcluidos(response.data)
+    })
+  }
 
-  console.log(valoresConcluidos)
-  console.log(valores)
+  function buscarValores2() {
+    api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  useEffect(() => {
+    buscarValores1()
+    buscarValores2()
+  }, [])
 
   const dolar = 5.29;
   const euro = 6.20;
