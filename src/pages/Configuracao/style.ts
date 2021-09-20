@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const All= styled.div`
     width: 100%;
@@ -58,35 +58,17 @@ export const Content= styled.div`
       .line_option{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+
+
+        .login_eye{
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin-top: 15px;
+          margin-left: -610px;
+          margin-right: 15px;
+        }
       }
-
-      .onoff{
-        width: 35px;
-        height: 35px;
-        float: right;
-        .on{
-          color: #00579D;
-          margin-top: 7px;
-          transition: 0.8s;
-          display: block;
-          background: #fff;
-          position: initial;
-          z-index: 1;
-
-
-        }
-
-        .off{
-          color: #828282;
-          margin-top: 7px;
-          transition: 0.8s;
-          display: block;
-          background: #fff;
-          z-index: 999;
-          float: right;
-        }
-    }
 
       input{
         width: 20%;

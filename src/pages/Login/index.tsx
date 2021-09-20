@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useContext } from "react";
+import React, { useRef, useCallback, useContext, useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
 import { Form } from '@unform/web';
 import { FormHandles } from "@unform/core";
@@ -15,6 +15,7 @@ import Button from "../../components/Buttons/Button";
 
 import { Container, Content, ContInput, Strip, Triangle, Imagem, ContPass } from "./styles";
 import { useHistory } from "react-router-dom";
+import { HiEye, HiEyeOff } from "react-icons/hi";
 
 interface SignFormData {
   email: string;
@@ -64,6 +65,12 @@ const Login: React.FC = () => {
     }
   }, [signIn, addToast, history]);
 
+  const [showPass, setShowPass] = useState(false);
+  const handleClickPass = (e:any) => {
+    e.preventDefault()
+    setShowPass(!showPass)
+  };
+
   return(
     <>
     <Container>
@@ -79,7 +86,10 @@ const Login: React.FC = () => {
           </ContInput>
           <ContInput>
             <p>Senha*</p>
-            <Input icon={FiLock} name="senha" type="password" placeholder="" />
+            <Input icon={FiLock} name="senha" type={showPass ? "text" : "password"} placeholder="" />
+            <div className="login_eye">
+              {showPass ? (<HiEye size={30} color="#00579D" onClick={handleClickPass}/>) : (<HiEyeOff color="#828282" size={30} onClick={handleClickPass}/>)}
+            </div>
           </ContInput>
           <ContPass>
             <p className="forget">Esqueceu a sua senha?</p>
