@@ -48,26 +48,27 @@ const Dashboard: React.FC = () => {
     }
   });
 
- window.onload = async function teste(): Promise<void> {
-    const carregaDadosDashboard = async () => {
+  useEffect(() => {
+    const carregaDadosDashboard = async(): Promise<void> => {
       await api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
       })
     }
-    const carregaDadosDashboard2 = async () => {
+    const carregaDadosDashboard2 = async(): Promise<void> => {
       await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
     carregaDadosDashboard();
     carregaDadosDashboard2()
- }
+  }, [])
 
   console.log(valoresConcluidos)
   console.log(valores)
 
   const dolar = 5.29;
   const euro = 6.20;
+
 
   return(
     <>
@@ -119,6 +120,9 @@ const Dashboard: React.FC = () => {
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
 
+              {valoresConcluidos.map(valor => (
+                valor.data
+              ))}
               <Chart
                 width={"100%"}
                 height={"180px"}
@@ -126,15 +130,16 @@ const Dashboard: React.FC = () => {
                 loader={<p>Loading Chart</p>}
 
 
+
                 data={[
                   ['Weeks', 'Projects', { role: 'style' }],
-                  ['a', 11, "#0091BD"],
-                  ['a', 25, '#2382BA'],
-                  ['a', 56, "#0091BD"],
-                  ['a', 17, '#2382BA'],
-                  ['a', 32, "#0091BD"],
-                  ['a', 28, '#2382BA'],
-                  ['a', 77, "#0091BD"],
+                  ['1234', 11, "#0091BD"],
+                  ['1234', 25, '#2382BA'],
+                  ['1234', 56, "#0091BD"],
+                  ['1234', 17, '#2382BA'],
+                  ['1234', 32, "#0091BD"],
+                  ['1234', 28, '#2382BA'],
+                  ['1234', 77, "#0091BD"],
                 ]}
 
                 options={{
