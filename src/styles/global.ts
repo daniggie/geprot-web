@@ -170,4 +170,15 @@ export default createGlobalStyle`
   a{
     text-decoration: none;
   }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #00579D;
+}
 `

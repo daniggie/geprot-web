@@ -93,6 +93,8 @@ const linkVoltar = "/aprovarhoras/"
 
             <div className="informations">
               <InformationsApFuncionario />
+              <InformationsApFuncionario />
+              <InformationsApFuncionario />
             </div>
 
             <div className="header">

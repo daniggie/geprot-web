@@ -37,10 +37,11 @@ p{
   display:flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-bottom: 5px;
 
   .borderstyle{
+    min-height: 150px;
     width: 90%;
     border: 3px solid rgba(0, 0, 0, 0.1);
     padding: 5px;
@@ -50,11 +51,13 @@ p{
 
 .table{
   background: #fff;
-  min-height: 295px;
+  max-height: 220px;
   width:80%;
   margin-left: 0px;
   border:  1px solid #dedede;
+  overflow: auto;
 
+  
 
   .header{
     display:flex;
@@ -131,7 +134,7 @@ p{
     justify-content: space-between;
 
     .download{
-      width:90%;
+      width:100%;
       background: #FFFFFF;
       border: 1px solid rgba(0, 0, 0, 0.2);
       box-sizing: border-box;
