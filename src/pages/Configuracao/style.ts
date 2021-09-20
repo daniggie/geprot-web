@@ -194,6 +194,13 @@ export const Content= styled.div`
       }
     }
   }
+
+  .position{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px 20px 0px;
+  };
 `;
 
 

@@ -116,7 +116,7 @@ const Configuracao: React.FC = () => {
             </div>
 
             <div className="line_div"></div>
-              <div className="cont_setings">
+              <div className="position">
                 <ButtonSalvar/>
               </div>
           </div>
