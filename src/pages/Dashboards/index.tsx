@@ -71,7 +71,6 @@ const Dashboard: React.FC = () => {
 
   return(
     <>
-      {valoresConcluidos.map(valor => valor.quantidade)}
       <Header/>
 
       <TituloF>
