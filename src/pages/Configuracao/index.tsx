@@ -4,6 +4,7 @@ import Menu from "../../components/Menu";
 import { All, Content } from "./style";
 import {FiToggleLeft, FiToggleRight} from "react-icons/fi"
 
+
 const Configuracao: React.FC = () => {
   return (
     <>
@@ -16,8 +17,6 @@ const Configuracao: React.FC = () => {
             <div className="line">
               <p className="helvetica fonte_20 cor_5 bold">CONFIGURAÇÕES</p>
             </div>
-
-            <div className="line_div"></div>
 
             <div className="cont_setings">
               <h1 className="helvetica fonte_20 cor_5 bold">Configurações de texto</h1>
@@ -37,13 +36,7 @@ const Configuracao: React.FC = () => {
                           <a className="font">Média</a>
                         </li>
                         <li>
-                          <a className="font">Normal</a>
-                        </li>
-                        <li>
                           <a className="font">Grande</a>
-                        </li>
-                        <li>
-                          <a className="font">Gigante</a>
                         </li>
                       </ul>
                     </div>
@@ -96,8 +89,10 @@ const Configuracao: React.FC = () => {
 
             <div className="line_div"></div>
 
-            <div className="cont_setings">
-              <h1>Button</h1>
+            <div className="position">
+              <div className="but">
+                <h1>Salvar</h1>
+              </div>
             </div>
           </div>
         </Content>

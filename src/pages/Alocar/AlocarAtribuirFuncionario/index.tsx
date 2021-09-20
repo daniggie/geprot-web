@@ -163,14 +163,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
         <PositionMenu>
           <Menu/>
         </PositionMenu>
-
-
-
   </All>
-
-
-
-
     </>
   )
 }
