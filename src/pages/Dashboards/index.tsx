@@ -120,9 +120,6 @@ const Dashboard: React.FC = () => {
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
 
-              {valoresConcluidos.map(valor => (
-                valor.data
-              ))}
               <Chart
                 width={"100%"}
                 height={"180px"}
