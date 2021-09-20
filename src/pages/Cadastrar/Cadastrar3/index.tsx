@@ -148,9 +148,7 @@ const Cadastrar6: React.FC = () => {
                nesciunt ut voluptas iusto et quia amet! Voluptatem
                voluptas et ipsum modi ut cumque enim in cupiditate
                aliquid est nisi quae. Eum vitae eaque vel quisquam
-               enim veritatis commodi ut temporibus obcaecati et vo
-               luptate autem aut officia numquam hic expedita conse
-               quatur.
+               enim veritatis co.
               </p>
             </div>
 
@@ -235,6 +233,37 @@ const Cadastrar6: React.FC = () => {
 
               </div>
 
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1 fonte_13">
+                  Hiego Luciman
+                </div>
+
+                <div className="column2 fonte_13">
+                  90 H
+                </div>
+
+              </div>
+
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1 fonte_13">
+                  Hiego Luciman
+                </div>
+
+                <div className="column2 fonte_13">
+                  90 H
+                </div>
+
+              </div>
+              <div className="columns helvetica cor_0 lighter">
+                <div className="column1 fonte_13">
+                  Hiego Luciman
+                </div>
+
+                <div className="column2 fonte_13">
+                  90 H
+                </div>
+
+              </div>
               <div className="columns helvetica cor_0 lighter">
                 <div className="column1 fonte_13">
                   Hiego Luciman

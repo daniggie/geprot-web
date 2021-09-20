@@ -32,7 +32,7 @@ export const All = styled.div<TableProps>`
 
     .header{
       display:flex;
-      width: 98%;
+      width: 100%;
       height: 50px;
       align-items: center;
       justify-content: center;
@@ -42,7 +42,7 @@ export const All = styled.div<TableProps>`
       border-bottom-color: #DCDCDC;
 
       .title{
-        width:20%;
+        width:25%;
         height: 50px;
         display:flex;
         justify-content: center;
@@ -65,7 +65,7 @@ export const All = styled.div<TableProps>`
         p{
           width: 60%;
           display:flex;
-          justify-content:  space-around;
+          justify-content:  flex-start;
         }
 
         b{

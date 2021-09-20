@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 export const All= styled.div`
     width: 100%;
@@ -58,17 +58,16 @@ export const Content= styled.div`
       .line_option{
         display: flex;
         justify-content: space-between;
-      }
 
-      .on{
-        color: #00579D;
-        display: none;
-        margin-top: 7px;
-      }
 
-      .off{
-        color: #828282;
-        margin-top: 7px;
+        .login_eye{
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin-top: 15px;
+          margin-left: -610px;
+          margin-right: 15px;
+        }
       }
 
       input{
@@ -88,10 +87,12 @@ export const Content= styled.div`
         border-radius:5px;
         border: 1px;
         padding:10px;
-        margin-top: 5px;
         border: none;
         background-color: #00579D;
         color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .switch_font{
@@ -112,18 +113,19 @@ export const Content= styled.div`
         }
 
         .lang-menu {
-          width: 110px;
+          width: 120px;
           text-align: right;
           font-weight: 540;
           position: relative;
         }
 
-        .lang-menu .selected-lang {
+        .selected-lang {
+          height: 30px;
           display: flex;
-          justify-content: space-between;
+          justify-content: center;
           line-height: 1.7;
           cursor: pointer;
-          padding-left: 10px;
+          align-items: center;
         }
 
         .lang-menu ul {
@@ -165,6 +167,40 @@ export const Content= styled.div`
       }
     }
   }
+
+  .position{
+    width: 100%;
+    di
+
+      .but{
+      width: 205px;
+      background: #0091BD;
+      border-radius: 5px;
+      border:0px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      &:hover{
+        background: #0078bd;
+        transition: 0.4s;
+      }
+      h1{
+        font-size:20px;
+        color:#fff;
+        display:flex;
+        justify-content: center;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .position{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px 20px 0px;
+  };
 `;
 
 

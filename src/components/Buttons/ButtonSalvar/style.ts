@@ -9,6 +9,7 @@ display:flex;
 justify-content: center;
 align-items: center;
 padding: 10px;
+cursor: pointer;
 &:hover{
   background: #0078bd;
   transition: 0.4s;

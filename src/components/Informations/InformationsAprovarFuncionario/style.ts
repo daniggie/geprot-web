@@ -32,7 +32,7 @@ export const Content = styled.div`
       }
 
       &:hover{
-        height: 120px;
+        height: 150px;
 
         .desc1{
           visibility: hidden;
@@ -48,7 +48,7 @@ export const Content = styled.div`
 
       .column{
 
-        width:20%;
+        width:25%;
         height: 50px;
         display:flex;
         justify-content: center;
@@ -63,12 +63,11 @@ export const Content = styled.div`
 
       .column2{
 
-      width:36%;
+      width:50%;
       height: 50px;
       display:flex;
       justify-content: center;
       align-items: center;
-      margin-right: 10px;
 
         p{
           justify-content: start;

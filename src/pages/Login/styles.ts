@@ -5,7 +5,7 @@ export const Container = styled.div`
     height: 100vh;
 
     display: flex;
-    align-itens: stretch;
+    align-items: stretch;
 `;
 
 export const Content = styled.div`
@@ -102,6 +102,14 @@ export const ContInput = styled.div`
     height:30px;
     font-weight: bold;
     color: #0091BD;
+  }
+
+  .login_eye{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: -42px;
+    margin-left: 350px;
   }
 
 `;

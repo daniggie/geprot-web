@@ -45,7 +45,7 @@ const Header: React.FC = () => {
 
           </div>
 
-          <div id="content_all">
+          <div id="container_all">
 
             <div id="flag">
               <SwitchFlags/>
