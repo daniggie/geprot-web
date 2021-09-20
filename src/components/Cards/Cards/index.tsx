@@ -46,7 +46,6 @@ const Cards: React.FC<Status> = ({id}) => {
     }
     carregaDados();
   }, [id])
-  console.log(valor)
 
   const teste = "/detalhes/";
   return(

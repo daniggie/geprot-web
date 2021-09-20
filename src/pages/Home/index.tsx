@@ -26,22 +26,7 @@ interface Card {
   barraProgresso: number;
 }
 
-export const filter = (status: number) => {
-  statusVar = status;
-  console.log(statusVar)
-}
-
-{/* STATUS DESCOMPONENTIZADO */}
-const addStatus = async (statusInt: number) => {
-  await filter(statusInt);
-};
-
-{/* STATUS DESCOMPONENTIZADO */}
-
 const Home: React.FC = () => {
-  if(statusVar == null){
-    statusVar = 0
-  }
 
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
@@ -53,6 +38,20 @@ const Home: React.FC = () => {
 });
 
   const [ status , setStatus ] = useState<number>();
+  const addStatus = async (statusInt: number) => {
+    setStatus(statusInt);
+    const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    await api.get(`projetos/listar/${secao.secao.id}/${statusInt ? statusInt : 0}`, config).then(response => {
+      setValores(response.data)
+    })
+
+  }
+
+
+
   const [valores, setValores ] = useState<Card[]>([]);
   useEffect(() => {
     setStatus(statusVar)
@@ -61,13 +60,13 @@ const Home: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/listar/${secao.secao.id}/0`, config).then(response => {
+      await api.get(`projetos/listar/${secao.secao.id}/${statusVar ? status : 0}`, config).then(response => {
         setValores(response.data)
+        console.log("Nesse")
       })
     }
     carregaDados();
   },[])
-  console.log(valores)
    return (
     <>
     <Header/>
@@ -80,7 +79,6 @@ const Home: React.FC = () => {
                 Projetos
             </div>
         </div>
-        {/* STATUS DESCOMPONENTIZADO */}
 
         <Container>
       <div className="arrow">
@@ -90,7 +88,6 @@ const Home: React.FC = () => {
       <div className="texto cor_4">
           Status:
       </div>
-
       <ContFilter>
         <div className="lang-menu">
           <div className="selected-lang">
@@ -115,11 +112,7 @@ const Home: React.FC = () => {
           </ul>
         </div>
       </ContFilter>
-
     </Container>
-
-        {/* STATUS DESCOMPONENTIZADO */}
-
         <FilterSearch/>
       </Filtros>
       <All>

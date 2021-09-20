@@ -1,14 +1,9 @@
 import React from "react";
-import {filter} from "../../../pages/Home";
 import { FiChevronRight } from "react-icons/fi"
 import { Container, ContFilter } from "./styles";
 
 
 const FilterStatus: React.FC = () =>{
-
-  const addStatus = async (statusInt: number) => {
-    await filter(statusInt);
-  };
 
   return (
     <Container>
@@ -27,19 +22,19 @@ const FilterStatus: React.FC = () =>{
           </div>
           <ul>
             <li>
-              <a className="de" onClick={() => addStatus(0)}>Todos</a>
+              <a className="de" >Todos</a>
             </li>
             <li>
-              <a className="br" onClick={() => addStatus(4)}>Andamentos</a>
+              <a className="br" >Andamentos</a>
             </li>
             <li>
-              <a className="en" onClick={() => addStatus(2)}>Atrasados</a>
+              <a className="en" >Atrasados</a>
             </li>
             <li>
-              <a className="fr" onClick={() => addStatus(3)}>Concluídos</a>
+              <a className="fr" >Concluídos</a>
             </li>
             <li>
-              <a className="fr" onClick={() => addStatus(1)}>Não Iniciado</a>
+              <a className="fr" >Não Iniciado</a>
             </li>
           </ul>
         </div>
