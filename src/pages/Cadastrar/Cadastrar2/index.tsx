@@ -34,7 +34,6 @@ const Cadastrar4: React.FC = () => {
         <b className="helvetica fonte_15 cor_5 normal"> <u> Centro de custos </u> </b>
       </Titulo>
         <Formulario>
-          <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
 
           <div className="content">
 

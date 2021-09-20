@@ -26,7 +26,7 @@ export const Container = styled.button`
     text-decoration:none;
   }
 
-  .divButton{
+  .container_button{
     background-color: #0090C5;
     width:100%;
     height:40px;
@@ -43,7 +43,7 @@ export const Container = styled.button`
     }
   }
 
-  .divIcon{
+  .container_icon{
     background-color: #00579D;
     width:31%;
     height:40px;

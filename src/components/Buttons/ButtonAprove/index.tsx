@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import api from '../../../services/api';
 import { Container } from './style';
 
-const BotaoAvancar: React.FC = () => {
+const ButtonAprove: React.FC = () => {
   const { id }: {id:string} = useParams();
   const { consultorId }: {consultorId:string} = useParams();
   const token = localStorage.getItem("@Geprot:token");
@@ -18,4 +18,4 @@ const BotaoAvancar: React.FC = () => {
     );
 };
 
-export default BotaoAvancar;
+export default ButtonAprove;

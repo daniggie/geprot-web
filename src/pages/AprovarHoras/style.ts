@@ -27,7 +27,7 @@ export const All = styled.div`
 
     .header{
       display:flex;
-      width: 98%;
+      width: 100%;
       height: 50px;
       align-items: center;
       justify-content: center;

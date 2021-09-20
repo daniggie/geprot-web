@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
 import Menu from "../../../components/Menu";
-import Informations from "../../../components/Informations/InformationsAlFuncionario";
-import FilterFunc from "../../../components/Filters/FilterAlFuncionario";
+import Informations from "../../../components/Informations/InformationsAlocarFuncionario";
+import FilterFunc from "../../../components/Filters/FilterAlocarFuncionario";
 import { useParams } from "react-router";
 import api from "../../../services/api";
 

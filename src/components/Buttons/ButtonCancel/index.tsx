@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './style';
 
-const BotaoCancel: React.FC = () => {
+const ButtonCancel: React.FC = () => {
     return(
         <Container>
           <a href="/home">
@@ -11,4 +11,4 @@ const BotaoCancel: React.FC = () => {
     );
 };
 
-export default BotaoCancel;
+export default ButtonCancel;

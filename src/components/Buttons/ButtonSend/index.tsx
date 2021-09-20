@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './style';
 
-const BotaoAvancar: React.FC = () => {
+const ButtonSend: React.FC = () => {
     return(
         <Container>
              <p>Enviar</p>
@@ -9,4 +9,4 @@ const BotaoAvancar: React.FC = () => {
     );
 };
 
-export default BotaoAvancar;
+export default ButtonSend;

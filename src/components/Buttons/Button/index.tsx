@@ -8,8 +8,8 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 const Button: React.FC<ButtonProps> = ({children, ...rest}) => (
   <Container type="button" {...rest}>
     {children}
-    <div className="divButton">
-      <div className="divIcon">
+    <div className="container_button">
+      <div className="container_icon">
         <FiLogIn size="25" color="cor_000"/>
       </div>
       <p>ENTRAR</p>
