@@ -68,16 +68,17 @@ const Home: React.FC = () => {
     carregaDados();
   },[])
    return (
+
     <>
-    <Header/>
+      <Header/>
       <Filtros>
         <div className="content_title">
-            <div className="arrow">
-              <FiChevronRight size="15px" color="#0091BD"/>
-            </div>
-            <div className="texto cor_4">
-                Projetos
-            </div>
+          <div className="arrow">
+            <FiChevronRight size="15px" color="#0091BD"/>
+          </div>
+          <div className="texto cor_4">
+            Projetos
+          </div>
         </div>
 
         <Container>
@@ -115,6 +116,7 @@ const Home: React.FC = () => {
     </Container>
         <FilterSearch/>
       </Filtros>
+
       <All>
         <Content_cards>
           {
