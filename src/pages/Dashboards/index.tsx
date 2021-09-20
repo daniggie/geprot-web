@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont } from './styles';
 import Menu from '../../components/Menu';
 import { useParams } from "react-router";
@@ -11,7 +11,6 @@ import FilterCC from "../../components/Filters/FilterCC";
 
 import api from "../../services/api";
 import { Chart } from "react-google-charts";
-import { number } from "yargs";
 
 interface Dashboard {
   projetosConcluidos: number;
@@ -25,10 +24,20 @@ interface Dashboard {
   restoProjetosNaoIniciados: number;
 }
 
+interface DashboardConcluidos {
+  data: string;
+  quantidade: number;
+}
+
 
 const Dashboard: React.FC = () => {
   const { id }: {id:string} = useParams();
   const [valores, setValores ] = useState<Dashboard>();
+  const [valoresConcluidos, setValoresConcluidos] = useState<DashboardConcluidos[]>([])
+  const token = localStorage.getItem("@Geprot:token");
+  let config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
 
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
@@ -37,26 +46,32 @@ const Dashboard: React.FC = () => {
         let languageObject = JSON.parse(usuario);
         return languageObject;
     }
-});
-  useEffect(() => {
-    async function carregaDados(): Promise<void>  {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
+  });
+
+ window.onload = async function teste(): Promise<void> {
+    const carregaDadosDashboard = async () => {
+      await api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+        setValoresConcluidos(response.data)
+      })
+    }
+    const carregaDadosDashboard2 = async () => {
       await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
-    carregaDados();
-  }, [ secao.secao.id ])
+    carregaDadosDashboard();
+    carregaDadosDashboard2()
+ }
 
+  console.log(valoresConcluidos)
+  console.log(valores)
 
   const dolar = 5.29;
   const euro = 6.20;
 
   return(
     <>
+      {valoresConcluidos.map(valor => valor.quantidade)}
       <Header/>
 
       <TituloF>
@@ -77,6 +92,7 @@ const Dashboard: React.FC = () => {
       </Filtros>
 
       <All>
+
         <BodyDashboards>
 
           <Container>
@@ -102,21 +118,23 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
+
               <Chart
                 width={"100%"}
                 height={"180px"}
                 chartType="ColumnChart"
-                loader={<div>Loading Chart</div>}
+                loader={<p>Loading Chart</p>}
+
 
                 data={[
                   ['Weeks', 'Projects', { role: 'style' }],
-                  ['Day 1', 11, "#0091BD"],
-                  ['Day 2', 25, '#2382BA'],
-                  ['Day 3', 56, "#0091BD"],
-                  ['Day 4', 17, '#2382BA'],
-                  ['Day 5', 32, "#0091BD"],
-                  ['Day 6', 28, '#2382BA'],
-                  ['Day 7', 77, "#0091BD"],
+                  ['a', 11, "#0091BD"],
+                  ['a', 25, '#2382BA'],
+                  ['a', 56, "#0091BD"],
+                  ['a', 17, '#2382BA'],
+                  ['a', 32, "#0091BD"],
+                  ['a', 28, '#2382BA'],
+                  ['a', 77, "#0091BD"],
                 ]}
 
                 options={{
@@ -166,7 +184,7 @@ const Dashboard: React.FC = () => {
                 width={"100%"}
                 height={"180px"}
                 chartType="PieChart"
-                loader={<div>Loading Chart</div>}
+                loader={<p>Loading Chart</p>}
 
                 data={[
                   ['Projects', 'Percent'],
@@ -213,7 +231,7 @@ const Dashboard: React.FC = () => {
                 width={"100%"}
                 height={"180px"}
                 chartType="PieChart"
-                loader={<div>Loading Chart</div>}
+                loader={<p>Loading Chart</p>}
 
                 data={[
                   ['Projects', 'Percent'],
@@ -259,7 +277,7 @@ const Dashboard: React.FC = () => {
                 width={"100%"}
                 height={"180px"}
                 chartType="PieChart"
-                loader={<div>Loading Chart</div>}
+                loader={<p>Loading Chart</p>}
 
                 data={[
                   ['Projects', 'Percent'],
