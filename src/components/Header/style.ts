@@ -10,6 +10,7 @@ export const Container = styled.div`
     align-content: center;
     align-items: center;
 
+
     .logout{
       cursor: pointer;
     }
@@ -41,7 +42,7 @@ export const Container = styled.div`
       display:flex;
       align-items: center;
       justify-content: space-around;
-      margin-right: 50px;
+      z-index: 999;
 
       #flag{
         width: 55%;
