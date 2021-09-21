@@ -45,8 +45,9 @@ export const Filtros = styled.div`
     font-size: 15px;
 `;
 
+
 export const BodyDashboards = styled.div`
-  width: 85%;
+  width: 95%;
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
