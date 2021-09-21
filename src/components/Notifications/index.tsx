@@ -9,7 +9,28 @@ const Notifications: React.FC = () => {
       <Container>
           <div className="not">
             <div className="not_info">
-                  <FaUserCircle />
+                <div className="icones">
+                  <div className="icon_off">
+                    <FaUserCircle size={25}/>
+                  </div>
+
+                  <div className="icon_on">
+                    <FaUserCircle size={40}/>
+                  </div>
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
+                </div>
+
             </div>
 
             <div className="arrow">
