@@ -88,7 +88,7 @@ const Login: React.FC = () => {
             <p>Senha*</p>
             <Input icon={FiLock} name="senha" type={showPass ? "text" : "password"} placeholder="" />
             <div className="login_eye">
-              {showPass ? (<HiEye size={30} color="#00579D" onClick={handleClickPass}/>) : (<HiEyeOff color="#828282" size={30} onClick={handleClickPass}/>)}
+              {showPass ? (<HiEye size={30} color="#0090C5" onClick={handleClickPass}/>) : (<HiEyeOff color="#f4ede8" size={30} onClick={handleClickPass}/>)}
             </div>
           </ContInput>
           <ContPass>
