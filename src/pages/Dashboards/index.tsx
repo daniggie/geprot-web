@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
   });
 
   async function buscarValores1() {
-    var response = await api.get(`projetos/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+    var response = await api.get(`dashboard/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
       setValoresConcluidos(response.data)
     })
   }
