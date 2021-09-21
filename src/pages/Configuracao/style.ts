@@ -67,8 +67,8 @@ export const Content= styled.div`
           justify-content: center;
           cursor: pointer;
           margin-top: 15px;
-          margin-left: -610px;
-          margin-right: 15px;
+          margin-left: -615px;
+          margin-right: 10px;
         }
       }
 
@@ -95,6 +95,7 @@ export const Content= styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-top: 7px;
       }
 
       .switch_font{
