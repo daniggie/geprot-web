@@ -73,6 +73,7 @@ export const ContFilter = styled.div`
       text-align: left;
       display: flex;
       justify-content: space-between;
+      cursor: pointer;
   }
 
   .lang-menu ul li a {
