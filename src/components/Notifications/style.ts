@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
 .not{
     width: 3%;
     height: 400px;
@@ -11,43 +12,55 @@ export const Container = styled.div`
     transition: 0.5s;
     z-index: 1;
 
-    #t {
+    .arrow{
+      width: 1.5%;
+
+    #triangle_off {
         width: 0;
         height: 0;
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
-        border-left: 15px solid #0075B1;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid #0075B1;
         transition: 0.5s;
         display: block;
         z-index: 99;
-        margin-top: 2px;
+        margin-top: 180px;
         margin-left: 100%;
         transition: 0.8s;
     }
 
-    #t2 {
+    #triangle_on {
           width: 0;
           height: 0;
-          border-top: 15px solid transparent;
-          border-bottom: 15px solid transparent;
-          border-right:15px solid #0075B1;
-          margin-left: 86%;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-right:10px solid #0075B1;
+          margin-left: 90%;
+          margin-top: 180px;
           transition: 0.8s;
           display: none;
           z-index: 999;
           left: 0;
         }
+      }
     &:hover{
       width: 8%;
       padding-left: 5px;
 
-      #t{
+      #triangle_off{
         display: none;
       }
 
-      #t2{
+      #triangle_on{
         display: block;
       }
     }
+
+    .not_info{
+      width: ;
+      margin-top: 0px;
+    }
+
+
   }
 `;

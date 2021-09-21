@@ -1,16 +1,27 @@
 import React from 'react';
 import {  Container } from './style';
 
+import { FaUserCircle } from "react-icons/fa";
+
 const Notifications: React.FC = () => {
   return(
     <>
       <Container>
           <div className="not">
-          <div id="t">
-          </div>
+            <div className="not_info">
+                  <FaUserCircle />
+            </div>
 
-          <div id="t2">
-          </div>
+            <div className="arrow">
+                <div id="triangle_off">
+                </div>
+
+                <div id="triangle_on">
+                </div>
+            </div>
+
+
+
           </div>
 
         </Container>
