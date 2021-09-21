@@ -4,6 +4,7 @@ import { FormHandles } from '@unform/core';
 import Barra from "../../../components/Barra";
 import { RiAddLine } from 'react-icons/ri';
 import { FiX } from 'react-icons/fi';
+import internal from 'stream';
 
 interface CadastraProjeto {
   nome: string;
@@ -32,24 +33,42 @@ const Cadastrar: React.FC = (  ) => {
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
 
-    const [consultor, setConsultor] = useState(false);
-    const addConsultor = () => {
-      if(!consultor){
-        setConsultor(true)
-      }else{
-        setConsultor(true)
-      }
-      return consultor;
-    }
+  const consultores = {
+    id: BigInt,
+    nome: String,
+    horas: BigInt
+  }
 
-    const removeConsultor = () => {
-      if(!consultor){
-        setConsultor(false)
-      }else{
-        setConsultor(false)
-      }
-      return consultor;
+  consultores: [
+    [1, "userTeste", 80],
+    [2, "userTeste", 80],
+    [3, "userTeste", 80],
+    [4, "userTeste", 80],
+    [5, "userTeste", 80],
+    [6, "userTeste", 80],
+  ];
+
+const [consultor, setConsultor] = useState(false);
+const addConsultor = () => {
+  for(let x = 0; x < 5; x++){
+    if(!consultor){
+      setConsultor(true)
+    }else{
+      setConsultor(true)
     }
+  }
+
+  return consultor;
+}
+
+  const removeConsultor = () => {
+    if(!consultor){
+      setConsultor(false)
+    }else{
+      setConsultor(false)
+    }
+    return consultor;
+  }
 
     return (
       <>
@@ -148,89 +167,20 @@ const Cadastrar: React.FC = (  ) => {
                     <div className="box cor_3f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
                     </div>
-                    123456
+                    {consultores.id}
                   </div>
 
                   <div className="column1">
-                    Ludicir Rodrigues
+                  {consultores.nome}
                   </div>
 
                   <div className="column2">
-                    80 h
+                  {consultores.horas}
                   </div>
                 </div>
 
-                <div className="columns helvetica cor_0 lighter" id="2">
-                  <div className="column3">
-                    <div className="box cor_3f" onClick={removeConsultor}>
-                      <FiX color="#fff"/>
-                    </div>
-                    123456
-                  </div>
-
-                  <div className="column1">
-                    Ludicir Rodrigues
-                  </div>
-
-                  <div className="column2">
-                    80 h
-                  </div>
-                </div>
-
-                <div className="columns helvetica cor_0 lighter" id="3">
-                  <div className="column3">
-                    <div className="box cor_3f" onClick={removeConsultor}>
-                      <FiX color="#fff"/>
-                    </div>
-                    123456
-                  </div>
-
-                  <div className="column1">
-                    Ludicir Rodrigues
-                  </div>
-
-                  <div className="column2">
-                    80 h
-                  </div>
-                </div>
-
-                <div className="columns helvetica cor_0 lighter" id="4">
-                  <div className="column3">
-                    <div className="box cor_3f" onClick={removeConsultor}>
-                      <FiX color="#fff"/>
-                    </div>
-                    123456
-                  </div>
-
-                  <div className="column1">
-                    Ludicir Rodrigues
-                  </div>
-
-                  <div className="column2">
-                    80 h
-                  </div>
-                </div>
-
-                <div className="columns helvetica cor_0 lighter" id="5">
-                  <div className="column3">
-                    <div className="box cor_3f" onClick={removeConsultor}>
-                      <FiX color="#fff"/>
-                    </div>
-                    123456
-                  </div>
-
-                  <div className="column1">
-                    Ludicir Rodrigues
-                  </div>
-
-                  <div className="column2">
-                    80 h
-                  </div>
                 </div>
               </div>
-            </div>
-
-
             <div className="position">
               <span onClick={teste}>
                 <a href="/cadastrar2">
