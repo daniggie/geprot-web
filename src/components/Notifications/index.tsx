@@ -11,12 +11,24 @@ const Notifications: React.FC = () => {
             <div className="not_info">
                 <div className="icones">
                   <div className="icon_off">
-                    <FaUserCircle size={25}/>
+                    <FaUserCircle size={25} color="#0075B1"/>
                   </div>
 
-                  <div className="icon_on">
-                    <FaUserCircle size={40}/>
+                  <div className="icon_on" >
+                    <FaUserCircle size={40} color="#0075B1"/>
                   </div>
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
+                </div>
+
+                <div className="line">
+                  Insira notificação insira notificação
                 </div>
 
                 <div className="line">

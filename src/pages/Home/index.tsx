@@ -93,7 +93,8 @@ const Home: React.FC = () => {
       <ContFilter>
         <div className="lang-menu">
           <div className="selected-lang">
-            Todos
+          {status == 0 ? "Todos" : status == 4 ? "Andamentos" : status == 3 ? "Concluidos" : 
+            status == 2 ? "Atrasados" : status == 1 ? "Não Iniciado" : "Todos" }
           </div>
           <ul>
             <li>
