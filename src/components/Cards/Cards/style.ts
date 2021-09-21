@@ -21,11 +21,13 @@ export const Content_cards = styled.div<CorCardPorps>`
     border-radius: 5px;
     margin-bottom: 15px;
     margin-right: 20px;
+    transition: 0.3s;;
   }
 
   .card_type:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: ${shade(0.2, "#fff")};
+    margin-left: 10px;
   }
 
   .card_status_color {

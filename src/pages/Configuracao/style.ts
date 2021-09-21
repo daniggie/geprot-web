@@ -58,6 +58,8 @@ export const Content= styled.div`
       .line_option{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
 
 
         .login_eye{
@@ -170,7 +172,6 @@ export const Content= styled.div`
 
   .position{
     width: 100%;
-    di
 
       .but{
       width: 205px;
