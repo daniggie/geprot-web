@@ -119,6 +119,7 @@ export const Content_cards = styled.div`
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+  padding-left: 8%;
 `;
 
 export const Form = styled.form<FormProps>`
