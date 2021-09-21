@@ -3,11 +3,12 @@ import Cards from '../../components/Buttons/Cards';
 import Header from '../../components/Header';
 import Menu from '../../components/Menu';
 
-import { All, Filtros, Content_cards, ContFilter, Container } from './style';
+import { All, Filtros, Content_cards, ContFilter, Container, Content_not } from './style';
 import FilterSearch from '../../components/Filters/FilterSearch';
 
 import { FiChevronRight } from "react-icons/fi";
 import api from '../../services/api';
+import Notifications from '../../components/Notifications';
 
 let statusVar :number;
 
@@ -118,6 +119,13 @@ const Home: React.FC = () => {
       </Filtros>
 
       <All>
+        <Content_not>
+
+
+          <Notifications/>
+
+        </Content_not>
+
         <Content_cards>
           {
 

@@ -114,12 +114,11 @@ export const All = styled.div`
 `;
 
 export const Content_cards = styled.div`
-  width: 85%;
+  width: 80%;
   display:flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
-  padding-left: 8%;
 `;
 
 export const Form = styled.form<FormProps>`
@@ -159,3 +158,7 @@ export const Filtros = styled.div`
 
 `;
 
+export const Content_not = styled.div`
+  width: 10%;
+  display: flex;
+`;
