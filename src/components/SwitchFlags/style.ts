@@ -64,6 +64,7 @@ export const Container = styled.header`
       text-align: left;
       display: flex;
       justify-content: space-between;
+      font-size: 14px;
   }
 
   .lang-menu ul li a {
@@ -80,8 +81,8 @@ export const Container = styled.header`
   .lang-menu ul li a:before {
       content: '';
       display: inline-block;
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       vertical-align: middle;
       margin-right: 10px;
       background-size: contain;

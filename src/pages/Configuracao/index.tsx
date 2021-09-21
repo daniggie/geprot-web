@@ -57,13 +57,7 @@ const Configuracao: React.FC = () => {
                           <a className="font">Média</a>
                         </li>
                         <li>
-                          <a className="font">Normal</a>
-                        </li>
-                        <li>
                           <a className="font">Grande</a>
-                        </li>
-                        <li>
-                          <a className="font">Gigante</a>
                         </li>
                       </ul>
                     </div>
