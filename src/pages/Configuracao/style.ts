@@ -58,6 +58,8 @@ export const Content= styled.div`
       .line_option{
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
 
 
         .login_eye{

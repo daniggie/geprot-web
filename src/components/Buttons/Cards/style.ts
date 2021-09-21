@@ -3,14 +3,16 @@ import { shade } from "polished";
 
 interface CorCardPorps {
   status: string;
+  barraProgresso : number;
 }
 
 export const Content_cards = styled.div<CorCardPorps>`
   display: flex;
+  flex-wrap: wrap;
 
   .card_type{
     min-width: 500px;
-    width: 45%;
+    width: 40%;
     height: 144px;
     display: flex;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F0F0F0;
@@ -19,11 +21,13 @@ export const Content_cards = styled.div<CorCardPorps>`
     border-radius: 5px;
     margin-bottom: 15px;
     margin-right: 20px;
+    transition: 0.3s;;
   }
 
   .card_type:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: ${shade(0.2, "#fff")};
+    margin-left: 5px;
   }
 
   .card_status_color {
@@ -49,7 +53,7 @@ export const Content_cards = styled.div<CorCardPorps>`
       ${(props) =>
       props.status == "CONCLUIDO" &&
       css`
-        background-color: green;
+        background-color: #3fbf5b;
       `}
       display: flex;
       flex-direction: column;
@@ -101,7 +105,7 @@ export const Content_cards = styled.div<CorCardPorps>`
   .card_status_txt {
       display: flex;
       justify-content: space-between;
-      width: 20%;
+      width: 30%;
   }
 
   .card_saldo {
@@ -120,7 +124,16 @@ export const Content_cards = styled.div<CorCardPorps>`
       display: flex;
       width: 48%;
       justify-content: space-between;
-      margin-left: 5px;
+  }
+
+  .texto_content_data {
+      display: flex;
+      width: 55%;
+      justify-content: space-between;
+      p{
+        width: 50%;
+        display: flex;
+      }
   }
 
   .relogio {
@@ -136,11 +149,12 @@ export const Content_cards = styled.div<CorCardPorps>`
   }
 
   .content_carregamento {
-      width: 90%;
+      width: ${(props) =>
+      props.barraProgresso}%;
       height: 100%;
   }
 
   .horas{
-    width: 70px;
+    width: 20%;
   }
-}`;
+}`

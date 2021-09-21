@@ -114,7 +114,7 @@ export const All = styled.div`
 `;
 
 export const Content_cards = styled.div`
-  width: 85%;
+  width: 80%;
   display:flex;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -158,3 +158,7 @@ export const Filtros = styled.div`
 
 `;
 
+export const Content_not = styled.div`
+  width: 10%;
+  display: flex;
+`;
