@@ -118,8 +118,7 @@ export const Content_cards = styled.div`
   display:flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: space-between;
-  padding: 10px 60px 0px 60px;
+  justify-content: center;
 `;
 
 export const Form = styled.form<FormProps>`
