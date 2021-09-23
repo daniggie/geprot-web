@@ -6,8 +6,8 @@ const NofiticacaoAlert: React.FC = () => {
     <>
     <Container>
       <div className="line">
-        <b>Insira notificação</b>
-        <p>Descrição pequena sobre a notificação</p>
+        <div className="title fonte_13 bold" >Titulo descrição</div>
+        <div className="a">Descrição pequena sobre a notificação</div>
       </div>
     </Container>
     </>
