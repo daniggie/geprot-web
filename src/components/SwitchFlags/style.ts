@@ -7,7 +7,7 @@ export const Container = styled.header`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  color: #0091BD;
+  color: #00579E;
   margin-right: 0px;
   z-index: 1200;
 
@@ -18,7 +18,7 @@ export const Container = styled.header`
 
   a {
     text-decoration: none;
-    color: #0091BD;
+    color: #00579E;
   }
 
   .lang-menu {

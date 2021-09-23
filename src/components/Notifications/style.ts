@@ -23,7 +23,7 @@ export const Container = styled.div`
         height: 0;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-left: 10px solid #0075B1;
+        border-left: 10px solid #00579E;
         transition: 0.5s;
         display: block;
         z-index: 99;
@@ -36,7 +36,7 @@ export const Container = styled.div`
           height: 0;
           border-top: 10px solid transparent;
           border-bottom: 10px solid transparent;
-          border-right:10px solid #0075B1;
+          border-right:10px solid #00579E;
           margin-left: 60%;
           transition: 0.8s;
           display: none;

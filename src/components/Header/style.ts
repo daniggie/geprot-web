@@ -20,12 +20,12 @@ export const Container = styled.div`
       display:flex;
 
       p {
-      color: #0091BD;
+      color: #00579D;
       font-size: 15px;
       }
 
       h1{
-        color: #0091BD;
+        color: #00579D;
         font-size: 25px;
         margin-top: 5px;
         font-weight: bold;

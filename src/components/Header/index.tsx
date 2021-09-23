@@ -53,12 +53,12 @@ const Header: React.FC = () => {
 
             <div>
               <a href="/configuracao">
-                <FaCog size={ 20 } color="#0091BD"/>
+                <FaCog size={ 20 } color="#00579D"/>
               </a>
             </div>
 
             <div className="logout" onClick={ExitClick}>
-                <FiLogOut size={ 25 } color="#0091BD" />
+                <FiLogOut size={ 25 } color="#00579D" />
             </div>
           </div>
       </Container>
