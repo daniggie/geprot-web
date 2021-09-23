@@ -136,13 +136,7 @@ const Home: React.FC = () => {
             : "Não existe nenhum projeto cadastrado"
           }
 
-          {
-
-          valores ? valores.map(valor => (
-          <Cards id={valor.id}/>
-          ))
-          : "Não existe nenhum projeto cadastrado"
-          }
+      
         </Content_cards>
         <Menu/>
       </All>

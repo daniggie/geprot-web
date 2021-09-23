@@ -7,10 +7,10 @@ const FilterCC: React.FC = () =>{
   return (
     <Container>
       <div className="arrow">
-        <FiChevronRight size="15px" color="#0091BD"/>
+        <FiChevronRight size="15px" color="#00579D"/>
       </div>
 
-      <div className="texto cor_4">
+      <div className="texto cor_5">
         Centro de Custos:
       </div>
 

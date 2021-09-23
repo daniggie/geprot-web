@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Content_cards } from "./style";
 import api from "../../../services/api";
-import relogio from '../../../icons/relogio.svg';
-
+import { FiClock } from "react-icons/fi";
 
 interface Card {
     id: number;
@@ -60,7 +59,7 @@ const Cards: React.FC<Status> = ({id}) => {
               <div className="card_informacao">
                   <div className="linha_1">
                       <div className="card_secao">
-                          <div className="cor_4 fonte_12 helvetica ">
+                          <div className="cor_5 fonte_12 helvetica ">
                               {secao.secao.nome}
                           </div>
                       </div>
@@ -104,7 +103,7 @@ const Cards: React.FC<Status> = ({id}) => {
                               Horas:
                           </div>
                           <div className="relogio">
-                              <img src={relogio} alt=" " />
+                              <FiClock size={17} color="#00579E"/>
                           </div>
                           <div className="cor_0 fonte_14 horas helvetica">
                           { valor?.horasPrevistas ? valor?.horasPrevistas : "0" } H
@@ -130,7 +129,7 @@ const Cards: React.FC<Status> = ({id}) => {
                               Apontadas:
                           </div>
                           <div className="relogio">
-                              <img src={relogio} alt=" " />
+                            <FiClock size={17} color="#00579E"/>
                           </div>
                           <div className="cor_0 fonte_14 helvetica horas">
                           { valor?.horasTrabalhadas ? valor?.horasTrabalhadas : "0" } H

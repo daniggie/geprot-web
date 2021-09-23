@@ -19,7 +19,7 @@ export const TituloF = styled.div`
       height: 2px;
       border-radius: 20px;
       border-width: 0px;
-      background: #0091BD;
+      background: #00579D;
       border-radius: 5px;
     }
 `;
