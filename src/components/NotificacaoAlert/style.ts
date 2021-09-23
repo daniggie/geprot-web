@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 95%;
+  transition: 0.8s;
 
   .line{
     display: none;
@@ -11,20 +12,22 @@ export const Container = styled.div`
     border-radius: 5px;
     padding: 2px;
     margin-top: 10px;
+    transition: 0.8s;
 
     .a{
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      transition: 0.8s;
       max-height: 16px;
       margin-top: 5px;
+      transition: 0.8s;
 
       &:hover{
         white-space: normal;
         overflow: visible;
         max-height: 80px;
         min-height: 40px;
+        transition: 0.8s;
       }
     }
 

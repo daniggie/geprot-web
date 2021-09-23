@@ -65,8 +65,6 @@ export const Container = styled.div`
         display: none;
         transition: 0.8s;
       }
-
-
     }
 
     &:hover{
