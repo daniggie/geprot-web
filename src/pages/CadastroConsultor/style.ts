@@ -10,7 +10,7 @@ export const All= styled.div`
 `;
 
 export const Container= styled.div`
-  width: 85%;
+  width: 90%;
   display: flex;
   justify-content: center;
 

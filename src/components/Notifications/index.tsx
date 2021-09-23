@@ -2,6 +2,7 @@ import React from 'react';
 import {  Container } from './style';
 
 import { FaUserCircle } from "react-icons/fa";
+import NotificacaoAlert from '../NotificacaoAlert';
 
 const Notifications: React.FC = () => {
   return(
@@ -19,29 +20,10 @@ const Notifications: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
-
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
-
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
-
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
-
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
-
-                <div className="line">
-                  Insira notificação insira notificação
-                </div>
+                <NotificacaoAlert />
+                <NotificacaoAlert />
+                <NotificacaoAlert />
+                <NotificacaoAlert />
 
             </div>
 

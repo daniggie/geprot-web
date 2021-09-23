@@ -37,7 +37,7 @@ export const Container = styled.div`
           border-top: 10px solid transparent;
           border-bottom: 10px solid transparent;
           border-right:10px solid #0075B1;
-          margin-left: 30%;
+          margin-left: 60%;
           transition: 0.8s;
           display: none;
           z-index: 999;
@@ -64,19 +64,7 @@ export const Container = styled.div`
         transition: 0.8s;
       }
 
-      .line{
-        display: none;
-        font-size: 12px;
-        width: 100%;
-        background: #dedede;
-        padding: 2px;
-        max-height: 30px;
-        white-space: wrap;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        border-radius: 5px;
-      }
+
     }
 
     &:hover{
