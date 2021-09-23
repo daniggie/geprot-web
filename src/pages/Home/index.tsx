@@ -75,25 +75,25 @@ const Home: React.FC = () => {
       <Filtros>
         <div className="content_title">
           <div className="arrow">
-            <FiChevronRight size="15px" color="#0091BD"/>
+            <FiChevronRight size="15px" color="#00579E"/>
           </div>
-          <div className="texto cor_4">
+          <div className="texto cor_5">
             Projetos
           </div>
         </div>
 
         <Container>
       <div className="arrow">
-        <FiChevronRight size="15px" color="#0091BD"/>
+        <FiChevronRight size="15px" color="#00579E"/>
       </div>
 
-      <div className="texto cor_4">
+      <div className="texto cor_5">
           Status:
       </div>
       <ContFilter>
         <div className="lang-menu">
           <div className="selected-lang">
-          {status == 0 ? "Todos" : status == 4 ? "Andamentos" : status == 3 ? "Concluidos" : 
+          {status == 0 ? "Todos" : status == 4 ? "Andamentos" : status == 3 ? "Concluidos" :
             status == 2 ? "Atrasados" : status == 1 ? "Não Iniciado" : "Todos" }
           </div>
           <ul>

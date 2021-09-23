@@ -14,7 +14,7 @@ interface Dashboard {
     restoProjetosEmAndamento: number;
     restoProjetosNaoIniciados: number;
   }
-  
+
   interface DashboardConcluidos {
     data: string;
     quantidade: number;
@@ -28,33 +28,33 @@ const ChartSevenDyas: React.FC = () => {
     let config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-  
+
     const [secao] = useState(() => {
       let usuario = localStorage.getItem('@Geprot:usuario');
-  
+
       if(usuario) {
           let languageObject = JSON.parse(usuario);
           return languageObject;
       }
     });
-  
+
     async function buscarValores1() {
       var response = await api.get(`dashboard/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
       })
     }
-  
+
     async function buscarValores2() {
       var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
-  
+
     useEffect(() => {
       buscarValores1()
       buscarValores2()
     }, [])
-  
+
     const dolar = 5.29;
     const euro = 6.20;
 
@@ -66,7 +66,7 @@ const ChartSevenDyas: React.FC = () => {
             loader={<p>Loading Chart</p>}
 
             data={[
-                ['Weeks', 'Projects', { role: 'style' }],
+                ['Days', 'Projects', { role: 'style' }],
                 [valoresConcluidos[6] ? valoresConcluidos[6].data : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
                 [valoresConcluidos[5] ? valoresConcluidos[5].data : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
                 [valoresConcluidos[4] ? valoresConcluidos[4].data : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],

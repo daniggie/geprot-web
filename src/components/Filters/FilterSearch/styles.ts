@@ -18,7 +18,7 @@ export const Container = styled.div`
     border-left: 0;
     border-radius: 0px 5px 5px 0px;
     color: #fff;
-    border-color:  #0091BD;
+    border-color: #00579E;
   }
 
   .procurar{

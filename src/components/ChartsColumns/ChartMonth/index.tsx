@@ -14,7 +14,7 @@ interface Dashboard {
     restoProjetosEmAndamento: number;
     restoProjetosNaoIniciados: number;
   }
-  
+
   interface DashboardConcluidos {
     data: string;
     quantidade: number;
@@ -28,33 +28,33 @@ const ChartMonth: React.FC = () => {
     let config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-  
+
     const [secao] = useState(() => {
       let usuario = localStorage.getItem('@Geprot:usuario');
-  
+
       if(usuario) {
           let languageObject = JSON.parse(usuario);
           return languageObject;
       }
     });
-  
+
     async function buscarValores1() {
       var response = await api.get(`dashboard/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
       })
     }
-  
+
     async function buscarValores2() {
       var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
-  
+
     useEffect(() => {
       buscarValores1()
       buscarValores2()
     }, [])
-  
+
     const dolar = 5.29;
     const euro = 6.20;
 
@@ -66,14 +66,11 @@ const ChartMonth: React.FC = () => {
             loader={<p>Loading Chart</p>}
 
             data={[
-                ['Weeks', 'Projects', { role: 'style' }],
-                [valoresConcluidos[6] ? valoresConcluidos[6].data : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
-                [valoresConcluidos[5] ? valoresConcluidos[5].data : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
-                [valoresConcluidos[4] ? valoresConcluidos[4].data : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],
-                [valoresConcluidos[3] ? valoresConcluidos[3].data : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, '#2382BA'],
-                [valoresConcluidos[2] ? valoresConcluidos[2].data : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, "#0091BD"],
-                [valoresConcluidos[1] ? valoresConcluidos[1].data : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, '#2382BA'],
-                [valoresConcluidos[0] ? valoresConcluidos[0].data : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, "#0091BD"],
+              ['Weeks', 'Projects', { role: 'style' }],
+              ['Week 1', 11, "#0091BD"],
+              ['Week 2', 25, '#2382BA'],
+              ['Week 3', 56, "#0091BD"],
+              ['Week 4', 17, '#2382BA'],
             ]}
 
             options={{

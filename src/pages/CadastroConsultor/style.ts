@@ -22,6 +22,7 @@ export const Container= styled.div`
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
+    border-radius: 4px;
 
     .title{
       width: 100%;
