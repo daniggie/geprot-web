@@ -108,7 +108,7 @@ export const ContInput = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: -42px;
+    margin-top: -39px;
     margin-left: 350px;
   }
 
