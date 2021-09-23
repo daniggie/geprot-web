@@ -78,7 +78,7 @@ const Dashboard: React.FC = () => {
       <Header/>
 
       <TituloF>
-        <p className="helvetica bold fonte_15 cor_3">Filtros</p>
+        <p className="helvetica bold fonte_15 cor_5">Filtros</p>
         <hr />
       </TituloF>
 
@@ -101,7 +101,7 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_3f fonte_13 bold">
+              <div className="status cor_6f fonte_13 bold">
                   <p>VERBA  APROVADA</p>
                 </div>
                 <table className="funds">
@@ -118,7 +118,7 @@ const Dashboard: React.FC = () => {
             </MediumCont>
 
             <BigCont>
-              <div className="title status cor_3f fonte_13 bold">
+              <div className="title status cor_6f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
               <ChartYear />
@@ -129,7 +129,7 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_3f fonte_13 bold">
+              <div className="status cor_6f fonte_13 bold">
                   <p>VERBA DISPONÍVEL</p>
                 </div>
                 <table className="funds">
@@ -146,7 +146,7 @@ const Dashboard: React.FC = () => {
             </MediumCont>
 
             <LitlleCont>
-              <div className="title status cor_3f fonte_13 bold">
+              <div className="title status cor_6f fonte_13 bold">
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
 
@@ -168,7 +168,7 @@ const Dashboard: React.FC = () => {
                   pieHole: 0.55,
                   title: "",
                   pieSliceBorderColor: "none",
-                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
+                  colors: ['#00579D', '#e9e9e9', '#eaeaea' ],
                   legend: {
                     position: "none"
                   },
@@ -192,7 +192,7 @@ const Dashboard: React.FC = () => {
             </LitlleCont>
 
             <LitlleCont>
-              <div className="title status cor_3f fonte_13 bold">
+              <div className="title status cor_6f fonte_13 bold">
                 <p>PROJETOS NÃO INICIADOS</p>
               </div>
 
@@ -215,7 +215,7 @@ const Dashboard: React.FC = () => {
                   pieHole: 0.55,
                   title: "",
                   pieSliceBorderColor: "none",
-                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
+                  colors: ['#00579D', '#e9e9e9', '#eaeaea' ],
                   legend: {
                     position: "none"
                   },
@@ -239,7 +239,7 @@ const Dashboard: React.FC = () => {
             </LitlleCont>
 
             <LitlleCont>
-              <div className="title status cor_3f fonte_13 bold">
+              <div className="title status cor_6f fonte_13 bold">
                 <p>PROJETOS ATRASADOS</p>
               </div>
               <div className="linelabel">
@@ -261,7 +261,7 @@ const Dashboard: React.FC = () => {
                   pieHole: 0.55,
                   title: "",
                   pieSliceBorderColor: "none",
-                  colors: ['#3aa5dd', '#e9e9e9', '#eaeaea' ],
+                  colors: ['#00579D', '#e9e9e9', '#eaeaea' ],
                   legend: {
                     position: "none"
                   },
