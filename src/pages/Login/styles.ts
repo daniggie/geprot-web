@@ -24,11 +24,11 @@ export const Content = styled.div`
 
         h1 {
             margin-bottom: 24px;
-            color: #0091BD;
+            color: #00579E;
         }
 
         a {
-            color: #0091BD;
+            color: #00579E;
             display: block;
             margin-top: 24px;
             text-decoration: none;
@@ -36,13 +36,13 @@ export const Content = styled.div`
             transition: color 0.2s;
 
             &:hover {
-                color: ${shade(0.2, '#0091BD')}
+                color: ${shade(0.2, '#00579E')}
             }
         }
     }
 
     > a {
-        color: #0091BD;
+        color: #00579E;
         display: block;
         margin-top: 24px;
         text-decoration: none;
@@ -71,7 +71,7 @@ export const Imagem = styled.img`
 export const Strip = styled.div`
   width: 100%;
   height: 55px;
-  background-color: #0090C5;
+  background-color: #00579E;
   padding-left: 40px;
   padding-top: 17px;
   border-radius: 5px 5px 0px 0px;
@@ -85,7 +85,7 @@ export const Triangle = styled.div`
   height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 25px solid #0090C5;
+  border-top: 25px solid #00579E;
   margin-bottom: 10px;
 `;
 
@@ -101,7 +101,7 @@ export const ContInput = styled.div`
     width:100%;
     height:30px;
     font-weight: bold;
-    color: #0091BD;
+    color: #00579E;
   }
 
   .login_eye{
@@ -127,7 +127,7 @@ export const ContPass = styled.div`
     height:40px;
     float: left;
     margin-right: 10px;
-    color: #0091BD;
+    color: #00579E;
   }
 
 `;
