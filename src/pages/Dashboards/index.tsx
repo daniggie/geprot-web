@@ -121,7 +121,7 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
-              <ChartSevenDyas/>
+              <ChartYear />
             </BigCont>
 
           </Container>

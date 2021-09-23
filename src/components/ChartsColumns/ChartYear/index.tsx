@@ -3,26 +3,13 @@ import { useParams } from "react-router";
 import api from "../../../services/api";
 import { Chart } from "react-google-charts";
 
-interface Dashboard {
-    projetosConcluidos: number;
-    projetosAtrasados: number;
-    projetosEmAndamento: number;
-    projetosNaoIniciados: number;
-    verbasDisponivel: number;
-    verbasAprovadas:number;
-    restoProjetosAtrasados: number;
-    restoProjetosEmAndamento: number;
-    restoProjetosNaoIniciados: number;
-  }
-
   interface DashboardConcluidos {
-    data: string;
     quantidade: number;
+    mesAno: string;
   }
 
 const ChartYear: React.FC = () => {
     const { id }: {id:string} = useParams();
-    const [valores, setValores ] = useState<Dashboard>();
     const [valoresConcluidos, setValoresConcluidos] = useState<DashboardConcluidos[]>([])
     const token = localStorage.getItem("@Geprot:token");
     let config = {
@@ -39,20 +26,13 @@ const ChartYear: React.FC = () => {
     });
 
     async function buscarValores1() {
-      var response = await api.get(`dashboard/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+      var response = await api.get(`dashboard/concluidos/ultimoano/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
-      })
-    }
-
-    async function buscarValores2() {
-      var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
-        setValores(response.data)
       })
     }
 
     useEffect(() => {
       buscarValores1()
-      buscarValores2()
     }, [])
 
     const dolar = 5.29;
@@ -66,19 +46,19 @@ const ChartYear: React.FC = () => {
             loader={<p>Loading Chart</p>}
 
             data={[
-              ['Months', 'Projects', { role: 'style' }],
-              ['Month 1', 11, "#0091BD"],
-              ['Month 2', 25, '#2382BA'],
-              ['Month 3', 56, "#0091BD"],
-              ['Month 4', 17, '#2382BA'],
-              ['Month 5', 32, "#0091BD"],
-              ['Month 6', 28, '#2382BA'],
-              ['Month 7', 77, "#0091BD"],
-              ['Month 8', 11, "#0091BD"],
-              ['Month 9', 25, '#2382BA'],
-              ['Month 10', 56, "#0091BD"],
-              ['Month 11', 17, '#2382BA'],
-              ['Month 12', 32, "#0091BD"],
+              ['Months', 'Projetos concluidos', { role: 'style' }],
+              [valoresConcluidos[11] ? valoresConcluidos[11].mesAno : undefined, valoresConcluidos[11] ? valoresConcluidos[11].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[10] ? valoresConcluidos[10].mesAno : undefined, valoresConcluidos[10] ? valoresConcluidos[10].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[9] ? valoresConcluidos[9].mesAno : undefined, valoresConcluidos[9] ? valoresConcluidos[9].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[8] ? valoresConcluidos[8].mesAno : undefined, valoresConcluidos[8] ? valoresConcluidos[8].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[7] ? valoresConcluidos[7].mesAno : undefined, valoresConcluidos[7] ? valoresConcluidos[7].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[6] ? valoresConcluidos[6].mesAno : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[5] ? valoresConcluidos[5].mesAno : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[4] ? valoresConcluidos[4].mesAno : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[3] ? valoresConcluidos[3].mesAno : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[2] ? valoresConcluidos[2].mesAno : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[1] ? valoresConcluidos[1].mesAno : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[0] ? valoresConcluidos[0].mesAno : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, "#0091BD"],
             ]}
 
             options={{
