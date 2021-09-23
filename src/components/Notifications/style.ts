@@ -17,6 +17,8 @@ export const Container = styled.div`
     .arrow{
       width: 20%;
       margin-top: 180px;
+      display: flex;
+      justify-content: flex-start;
 
     #triangle_off {
         width: 0;
@@ -37,7 +39,6 @@ export const Container = styled.div`
           border-top: 10px solid transparent;
           border-bottom: 10px solid transparent;
           border-right:10px solid #0075B1;
-          margin-left: 60%;
           transition: 0.8s;
           display: none;
           z-index: 999;
@@ -52,6 +53,7 @@ export const Container = styled.div`
       flex-wrap: wrap;
       justify-content: center;
       align-items: flex-start;
+      align-content: flex-start;
       padding-top: 5px;
 
       .icon_off{
@@ -91,6 +93,10 @@ export const Container = styled.div`
         display: block;
         font-size: 12px;
         width: 100%;
+      }
+
+      .arrow{
+        justify-content: flex-end;
       }
     }
   }

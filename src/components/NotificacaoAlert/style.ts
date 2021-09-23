@@ -1,38 +1,38 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 95%;
 
   .line{
     display: none;
     font-size: 12px;
     width: 100%;
-    background: #dedede;
-    padding: 2px;
+    background: #cccccc;
     border-radius: 5px;
+    padding: 2px;
+    margin-top: 10px;
 
-    p{
+    .a{
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: wrap;
-
+      white-space: nowrap;
       transition: 0.8s;
       max-height: 16px;
+      margin-top: 5px;
 
       &:hover{
-        height: 50px;
+        white-space: normal;
         overflow: visible;
-        max-height: 50px;
+        max-height: 80px;
+        min-height: 40px;
       }
     }
 
-    b{
+    .title{
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      transition: 0.8s;
     }
-
 
   }
 
