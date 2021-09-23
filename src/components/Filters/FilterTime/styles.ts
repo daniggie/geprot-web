@@ -22,7 +22,7 @@ export const ContFilter = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(0, 145, 189);
+  background-color: #00579D;
   border-radius: 3px;
   color: #fff;
   z-index:1000;
@@ -52,7 +52,7 @@ export const ContFilter = styled.div`
       margin: 0;
       padding: 0;
       display: none;
-      background-color: rgb(0, 145, 189);
+      background-color: #00579D;
       border: none;
       position: absolute;
       top: 27px;
