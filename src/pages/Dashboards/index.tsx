@@ -8,9 +8,13 @@ import FilterSearch from "../../components/Filters/FilterSearch";
 import FilterStatus from "../../components/Filters/FilterStatus";
 import FilterTime from "../../components/Filters/FilterTime";
 import FilterCC from "../../components/Filters/FilterCC";
+import ChartSevenDyas from "../../components/ChartsColumns/ChartSevenDays";
 
 import api from "../../services/api";
 import { Chart } from "react-google-charts";
+import ChartMonth from "../../components/ChartsColumns/ChartMonth";
+import ChartSixMonth from "../../components/ChartsColumns/ChartSixMonth";
+import ChartYear from "../../components/ChartsColumns/ChartYear";
 
 interface Dashboard {
   projetosConcluidos: number;
@@ -117,39 +121,7 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_3f fonte_13 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
-
-              <Chart
-                width={"100%"}
-                height={"180px"}
-                chartType="ColumnChart"
-                loader={<p>Loading Chart</p>}
-
-
-
-                data={[
-                  ['Weeks', 'Projects', { role: 'style' }],
-                  [valoresConcluidos[6] ? valoresConcluidos[6].data : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
-                  [valoresConcluidos[5] ? valoresConcluidos[5].data : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
-                  [valoresConcluidos[4] ? valoresConcluidos[4].data : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],
-                  [valoresConcluidos[3] ? valoresConcluidos[3].data : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, '#2382BA'],
-                  [valoresConcluidos[2] ? valoresConcluidos[2].data : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, "#0091BD"],
-                  [valoresConcluidos[1] ? valoresConcluidos[1].data : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, '#2382BA'],
-                  [valoresConcluidos[0] ? valoresConcluidos[0].data : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, "#0091BD"],
-                ]}
-
-                options={{
-                  legend: 'none',
-                  columnSliceTextStyle: {
-                    color: '#828282',
-                  },
-                  chartArea:{
-                    left:40,
-                    top:10,
-                    width:'92%',
-                    height:'80%'
-                  }
-                }}
-              />
+              <ChartSevenDyas/>
             </BigCont>
 
           </Container>
