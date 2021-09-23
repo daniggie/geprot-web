@@ -10,7 +10,7 @@ export const All= styled.div`
 `;
 
 export const Content= styled.div`
-  width: 85%;
+  width: 90%;
   display: flex;
   justify-content: center;
   margin: -30px 0px 0px 0px;
@@ -66,8 +66,8 @@ export const Content= styled.div`
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          margin-top: 15px;
-          margin-left: -615px;
+          margin-top: 11px;
+          margin-left: -657px;
           margin-right: 10px;
         }
       }
