@@ -9,7 +9,7 @@ export const Container = styled.header`
   justify-content: space-between;
   color: #0091BD;
   margin-right: 0px;
-  z-index: 1100;
+  z-index: 1200;
 
   svg{
     margin-top: 7px;
