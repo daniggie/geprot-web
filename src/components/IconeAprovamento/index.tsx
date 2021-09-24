@@ -6,23 +6,23 @@ interface Status {
   status : string;
 }
 const IconeAprovamento: React.FC<Status> = ({status}) => {
-  
+
   if(status == "APROVADO"){
     return(
 
-      <AiFillCheckCircle size={25} color="#0091BD"/>
+      <AiFillCheckCircle size={25} color="#00579E"/>
     );
   }else if(status == "PENDENTE"){
 
     return(
       <div >
-      <AiFillExclamationCircle size={25} color="#0091BD"/>
+      <AiFillExclamationCircle size={25} color="#00579E"/>
       </div>
     );
   }else{
     return(
 
-      <AiFillCloseCircle size={25} color="#0091BD"/>
+      <AiFillCloseCircle size={25} color="#00579E"/>
     );
   }
 };
