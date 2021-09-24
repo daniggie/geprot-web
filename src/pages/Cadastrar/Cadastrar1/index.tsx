@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { Titulo, Formulario } from './style';
+import React, { useRef, useState, FormEvent } from 'react';
+import { Titulo, Formulario, Form } from './style';
 import { FormHandles } from '@unform/core';
 import Barra from "../../../components/Barra";
 import { RiAddLine } from 'react-icons/ri';
 import { FiX } from 'react-icons/fi';
 import internal from 'stream';
+import api from '../../../services/api';
 
 interface CadastraProjeto {
   nome: string;
@@ -14,7 +15,30 @@ interface CadastraProjeto {
 	nomeResponsavel: string;
 }
 
+interface Consultor {
+  id: BigInt,
+  nome: String,
+  horas: String
+}
+
 const Cadastrar: React.FC = (  ) => {
+  const[newConsultor, setNewConsultor] = useState('');
+  const[consultores, setConsultores] = useState<Consultor[]>([]);
+
+  async function handleAddLine(
+    event: FormEvent<HTMLFormElement>,
+  ): Promise<void> {
+    event.preventDefault();
+
+    const response = await api.get<Consultor>(`repos/${newConsultor}`);
+    const consultor = response.data;
+
+    setConsultores([...consultores, consultor]);
+    setNewConsultor('');
+  }
+
+
+
   const projeto = {
     nome: "",
     nomeSolicitante: "",
@@ -33,166 +57,130 @@ const Cadastrar: React.FC = (  ) => {
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
 
-  const consultores = {
-    id: BigInt,
-    nome: String,
-    horas: BigInt
-  }
-
-  consultores: [
-    [1, "userTeste", 80],
-    [2, "userTeste", 80],
-    [3, "userTeste", 80],
-    [4, "userTeste", 80],
-    [5, "userTeste", 80],
-    [6, "userTeste", 80],
-  ];
-
-const [consultor, setConsultor] = useState(false);
-const addConsultor = () => {
-  for(let x = 0; x < 5; x++){
-    if(!consultor){
-      setConsultor(true)
-    }else{
-      setConsultor(true)
-    }
-  }
-
-  return consultor;
-}
-
-  const removeConsultor = () => {
-    if(!consultor){
-      setConsultor(false)
-    }else{
-      setConsultor(false)
-    }
-    return consultor;
-  }
-
-    return (
-      <>
-        <Barra/ >
+  return (
+    <>
+      <Barra/>
 
       <Titulo>
-          <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>
-        </Titulo>
-        <div>
-          <Formulario consultorColumn={consultor}>
-            <div className="content">
+        <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>
+      </Titulo>
 
-              <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
+      <div>
+        <Formulario>
+          <div className="content">
 
-              <div className="line">
-                <b className="helvetica fonte_15 cor_5 bold">Nome do Projeto:</b>
-              </div>
+            <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
 
-              <div className="line">
-                  <input type="text" id="nome" placeholder="Digite aqui..." />
-              </div>
-
-              <div className="line">
-                <b className="helvetica fonte_15 cor_5 bold">Nome do solicitante:</b>
-              </div>
-
-              <div className="line">
-                  <input type="text" id="nomeSolicitante" placeholder="Digite aqui..." />
-              </div>
-
-              <div className="line">
-                <b className="helvetica fonte_15 cor_5 bold">Nome do responsável:</b>
-              </div>
-
-              <div className="line">
-                  <input type="text" placeholder="Digite aqui..." id="nomeResponsavel" />
-              </div>
-
-              <div className="line">
-                <b className="helvetica fonte_15 cor_5 bold">Data de inicio:</b>
-                <b className="helvetica fonte_15 cor_5 bold">Data de encerramento:</b>
-              </div>
-
-              <div className="line">
-                <div className="tamanhoDate">
-                  <input type="date"  id="dataInicio"/>
-                </div>
-                <div className="tamanhoDate">
-                  <input type="date" id="dataFinalizacao" />
-                </div>
-              </div>
-
+            <div className="line">
+              <b className="helvetica fonte_15 cor_5 bold">Nome do Projeto:</b>
             </div>
 
-            <div className="content">
+            <div className="line">
+              <input type="text" id="nome" placeholder="Digite aqui..." />
+            </div>
 
-              <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_5 bold">Nome do solicitante:</b>
+            </div>
 
-              <div className="line">
-                <div className="lineText">
-                  <b className="helvetica fonte_15 cor_5 bold">Consultor:</b>
-                </div>
+            <div className="line">
+              <input type="text" id="nomeSolicitante" placeholder="Digite aqui..." />
+            </div>
 
-                <div className="lineText">
-                  <b className="helvetica fonte_15 cor_5 bold">Horas:</b>
-                </div>
+            <div className="line">
+              <b className="helvetica fonte_15 cor_5 bold">Nome do responsável:</b>
+            </div>
+
+            <div className="line">
+              <input type="text" placeholder="Digite aqui..." id="nomeResponsavel" />
+            </div>
+
+            <div className="line">
+              <b className="helvetica fonte_15 cor_5 bold">Data de inicio:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Data de encerramento:</b>
+            </div>
+
+            <div className="line">
+              <div className="tamanhoDate">
+                <input type="date"  id="dataInicio"/>
+              </div>
+              <div className="tamanhoDate">
+                <input type="date" id="dataFinalizacao" />
+              </div>
+            </div>
+
+          </div>
+
+          <Form onSubmit={handleAddLine}>
+
+            <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
+
+            <div className="line">
+              <div className="lineText">
+                <b className="helvetica fonte_15 cor_5 bold">Consultor:</b>
               </div>
 
-              <div className="line">
-                <div className="tamanho">
-                  <input type="number" placeholder="0" />
+              <div className="lineText">
+                <b className="helvetica fonte_15 cor_5 bold">Horas:</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho">
+                <input value={newConsultor} onChange={e => setNewConsultor(e.target.value)} type="number" placeholder="Digite o ID" />
+              </div>
+              <div className="tamanho">
+                <input type="number" placeholder="0" />
+              </div>
+              <div className="box cor_6f" >
+                <RiAddLine color="#fff" type="submit"/>
+              </div>
+            </div>
+
+            <div className="table">
+              <div className="header">
+                <div className="title3 bold helvetica cor_0 fonte_15">
+                  ID
                 </div>
-                <div className="tamanho">
-                  <input type="number" placeholder="0" />
+                <div className="title1 bold helvetica cor_0 fonte_15">
+                  Consultor
                 </div>
-                <div className="box cor_6f" onClick={addConsultor}>
-                  <RiAddLine color="#fff"/>
+                <div className="title2 bold helvetica cor_0 fonte_15">
+                 Limite de horas
                 </div>
               </div>
+            </div>
 
-              <div className="table">
-                <div className="header">
-                  <div className="title3 bold helvetica cor_0 fonte_15">
-                    ID
+            <div className="columns helvetica cor_0 lighter" >
+              {consultores.map(consultor => (
+                <div className="column3">
+                  <div className="box cor_6f">
+                    <FiX color="#fff"/>
+                    <div>{consultor.id}</div>
                   </div>
-                  <div className="title1 bold helvetica cor_0 fonte_15">
-                    Consultor
-                  </div>
-                  <div className="title2 bold helvetica cor_0 fonte_15">
-                    Limite de horas
-                  </div>
-                </div>
-
-                <div className="columns helvetica cor_0 lighter" id="1">
-                  <div className="column3">
-                    <div className="box cor_6f" onClick={removeConsultor}>
-                      <FiX color="#fff"/>
-                    </div>
-                    {consultores.id}
-                  </div>
-
                   <div className="column1">
-                  {consultores.nome}
+                    {consultor.nome}
                   </div>
-
                   <div className="column2">
-                  {consultores.horas}
+                    {consultor.horas}
                   </div>
                 </div>
-
-                </div>
-              </div>
-            <div className="position">
-              <span onClick={teste}>
-                <a href="/cadastrar2">
-                  <div className="button">
-                    <p className="helvetica fonte_20 bold">Próximo</p>
-                  </div>
-                </a>
-              </span>
+              ))}
             </div>
-          </Formulario>
-        </div>
-        </>
-    );
+          </Form>
+
+          <div className="position">
+            <span onClick={teste}>
+              <a href="/cadastrar2">
+                <div className="button">
+                  <p className="helvetica fonte_20 bold">Próximo</p>
+                </div>
+              </a>
+            </span>
+          </div>
+        </Formulario>
+      </div>
+    </>
+  );
 }
 export default Cadastrar;

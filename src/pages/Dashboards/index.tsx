@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, ContFilter, ContLang } from './styles';
+import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, ContFilter, ContLang, Content_not } from './styles';
 import Menu from '../../components/Menu';
 import { useParams } from "react-router";
 
@@ -15,6 +15,7 @@ import ChartMonth from "../../components/ChartsColumns/ChartMonth";
 import ChartSixMonth from "../../components/ChartsColumns/ChartSixMonth";
 import ChartYear from "../../components/ChartsColumns/ChartYear";
 import { FiChevronRight } from "react-icons/fi";
+import Notifications from "../../components/Notifications";
 
 interface Dashboard {
   projetosConcluidos: number;
@@ -101,7 +102,7 @@ const Dashboard: React.FC = () => {
               <div className="selected-lang">
               {filtroTempo == 1 ? "Último mês" : filtroTempo == 2 ? "Últimos 6 meses" : filtroTempo == 3 ? "Último ano" : "Últimos 7 dias"}
               </div>
-              <ul>                
+              <ul>
                 <li>
                   <a onClick={() => filtros(0)} className="de">Últimos 7 dias</a>
                 </li>
@@ -124,6 +125,9 @@ const Dashboard: React.FC = () => {
       </Filtros>
 
       <All>
+      <Content_not>
+        <Notifications/>
+      </Content_not>
 
         <BodyDashboards>
 
@@ -150,7 +154,7 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
-              {filtroTempo == 1 ? <ChartMonth/> : filtroTempo == 2 ? <ChartSixMonth/> : filtroTempo == 3 ? <ChartYear/> : <ChartSevenDyas/>}              
+              {filtroTempo == 1 ? <ChartMonth/> : filtroTempo == 2 ? <ChartSixMonth/> : filtroTempo == 3 ? <ChartYear/> : <ChartSevenDyas/>}
             </BigCont>
 
           </Container>

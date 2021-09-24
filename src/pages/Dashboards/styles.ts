@@ -4,9 +4,10 @@ import { shade } from 'polished';
 
 export const TituloF = styled.div`
     height: 30px;
-    width: 95%;
+    width: 90%;
     margin-top: 10px;
-    padding: 15px 113px 25px 20px;
+    margin-left: 95px;
+    padding: 15px 95px 25px 20px;
     display: flex;
     align-items: center;
 
@@ -33,12 +34,11 @@ export const All = styled.div`
 `;
 
 export const Filtros = styled.div`
-    width: 91%;
+    width: 85%;
     height: 30px;
     display:flex;
     justify-content: space-around;
-    margin-left: -9px;
-
+    margin-left: 95px;
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -47,7 +47,7 @@ export const Filtros = styled.div`
 
 
 export const BodyDashboards = styled.div`
-  width: 95%;
+  width: 80%;
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -56,14 +56,14 @@ export const BodyDashboards = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 100%;
+  width: 95%;
   height: 220px;
   margin-bottom: 30px;
   display: flex;
 `;
 
 export const LitlleCont = styled.div`
-  width: 20%;
+  width: 20.5%;
   margin-left: 55px;
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -258,4 +258,9 @@ export const ContLang = styled.div`
   .lang-menu:hover ul {
       display: block;
   }
+`;
+
+export const Content_not = styled.div`
+  width: 10%;
+  display: flex;
 `;

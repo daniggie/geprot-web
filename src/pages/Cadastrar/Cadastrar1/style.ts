@@ -1,15 +1,12 @@
 import styled, {css} from 'styled-components';
 
-interface TableProps{
-  consultorColumn: boolean;
-};
 
 export const Titulo = styled.div`
   margin-top: 40px;
   margin-left: 160px;
 `;
 
-export const Formulario = styled.form<TableProps>`
+export const Formulario = styled.form`
 margin: 30px 160px 0px 160px;
 padding: 20px;
 border: 1px solid #dedede;
@@ -90,7 +87,7 @@ p{
       transition: 0.2s;
       cursor: pointer;
     }
-}
+    }
   }
 }
 
@@ -144,21 +141,6 @@ p{
   }
 
   .columns{
-
-    ${(props) =>
-      props.consultorColumn &&
-      css`
-        visibility:visible;
-      `
-    }
-
-    ${(props) =>
-      !props.consultorColumn &&
-      css`
-        visibility:hidden;
-      `
-    }
-
     width:100%;
     display: flex;
     background: #fff;
@@ -244,4 +226,71 @@ p{
     }
   }
 }
+`;
+
+export const Form = styled.form`
+  width: 45%;
+  height: 350px;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+
+  .lineText{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    &:last-child{
+      margin-right:65px
+    }
+  }
+
+  .line{
+    width: 100%;
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    b{
+      width: 45%;
+    }
+
+    .tamanho{
+      width:40%;
+    }
+
+    .tamanhoDate{
+      width:45%;
+    }
+
+    input{
+      width: 100%;
+      border-radius:5px;
+      border: 1px;
+      padding:10px;
+      border: 1px solid #dedede;
+    }
+
+    .box{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 2px;
+    cursor: pointer;
+
+      &:hover{
+        background: #008EA5;
+        transition: 0.2s;
+        cursor: pointer;
+      }
+    }
+  }
 `;
