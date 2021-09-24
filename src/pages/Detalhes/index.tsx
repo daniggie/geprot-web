@@ -77,29 +77,29 @@ const LinkAprovar = "/aprovarhoras/";
           </div>
 
           <div className="line ">
-            <p className="fonte_25 cor_3">{valores?.id ? valores.id : "id"} - {valores?.nome ? valores.nome : "nome"}</p>
-            <p className=" cor_1">ATA Nº 07/2020</p>
+            <p className="fonte_25 cor_5">{valores?.id ? valores.id : "id"} - {valores?.nome ? valores.nome : "nome"}</p>
+            <p className=" cor_5">ATA Nº 07/2020</p>
           </div>
 
           <div className="line ">
-            <b className="cor_1">Data inicial: </b>
+            <b className="cor_5">Data inicial: </b>
             <b className="cor_0">{valores?.dataInicio ? valores.dataInicio : "0000-00-00"}</b>
-            <div className="download cor_000 cor_3f">
+            <div className="download cor_000 cor_6f">
               ATA_CVDP_07_2020
             </div>
           </div>
 
           <div className="line ">
-            <b className="cor_1">Data final: </b>
+            <b className="cor_5">Data final: </b>
             <b className="cor_0">{valores?.dataFinalizacao ? valores.dataFinalizacao : "0000-00-00"}</b>
-            <div className="download cor_000 cor_3f">
+            <div className="download cor_000 cor_6f">
               DASHBOARD
             </div>
           </div>
 
 
 
-          <div className="line cor_1">
+          <div className="line cor_5">
             <p> Objetivo: </p>
           </div>
 
@@ -108,20 +108,20 @@ const LinkAprovar = "/aprovarhoras/";
           </div>
 
           <div className="line">
-            <b className="cor_1 p1"> Valor do projeto: </b>
-            <b className="cor_1 p3">R$</b>
+            <b className="cor_5 p1"> Valor do projeto: </b>
+            <b className="cor_5 p3">R$</b>
             <b className="cor_0 p2">{valores?.valor ? valores.valor : "0,00"}</b>
           </div>
 
           <div className="line">
-            <b className="cor_1 p1"> Valor consumido: </b>
-            <b className="cor_1 p3">R$</b>
+            <b className="cor_5 p1"> Valor consumido: </b>
+            <b className="cor_5 p3">R$</b>
             <b className="cor_0 p2"> {valores?.valorUtilizado ? valores.valorUtilizado : "Sem valor"}</b>
           </div>
 
           <div className="line">
-            <b className="cor_1 p1"> Saldo: </b>
-            <b className="cor_1 p3">R$</b>
+            <b className="cor_5 p1"> Saldo: </b>
+            <b className="cor_5 p3">R$</b>
             <b className="cor_0 p2">{valores?.valorRestante ? valores.valorRestante : "Sem valor"}</b>
           </div>
 
@@ -130,23 +130,23 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
 
           <div className="line ">
-            <p className="cor_1"></p>
-            <p className="cor_1"></p>
+            <p className="cor_5"></p>
+            <p className="cor_5"></p>
           </div>
 
           <div className="line ">
-            <p className="cor_1">Horas previstas: </p>
+            <p className="cor_5">Horas previstas: </p>
             <p className="cor_0">{valores?.horasPrevistas ? valores.horasPrevistas : "0"} Horas</p>
           </div>
 
           <div className="line">
-            <p className="cor_1">Horas trabalhadas: </p>
+            <p className="cor_5">Horas trabalhadas: </p>
             <p className="cor_0">{valores?.horasTrabalhadas ? valores.horasTrabalhadas : "0"} Horas</p>
           </div>
 
           <div className="line ">
-            <p className="cor_1"></p>
-            <p className="cor_1"></p>
+            <p className="cor_5"></p>
+            <p className="cor_5"></p>
           </div>
 
           <div className="linelabel">
@@ -166,7 +166,7 @@ const LinkAprovar = "/aprovarhoras/";
                 pieHole: 0.70,
                 title: "",
                 pieSliceBorderColor: "none",
-                colors: ['#3aa5dd', '#EEE9E9', '#eaeaea' ],
+                colors: ['#00579D', '#EEE9E9', '#eaeaea' ],
                 legend: {
                   position: "none"
                 },
@@ -189,10 +189,10 @@ const LinkAprovar = "/aprovarhoras/";
           </div>
 
           <div className="table_header">
-            <div className="table cor_1">
+            <div className="table cor_5">
               Despesas(Desembolso)
             </div>
-            <div className="table cor_1">
+            <div className="table cor_5">
               Valor (R$)
             </div>
             <div className="table cor_1">

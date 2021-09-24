@@ -1,11 +1,11 @@
 import React from "react";
 
 import { FiChevronRight } from "react-icons/fi"
-import { Container, ContFilter } from "./styles";
+import { ContLang, ContFilter } from "./styles";
 
 const FilterTime: React.FC = () =>{
   return (
-    <Container>
+    <ContFilter>
       <div className="arrow">
         <FiChevronRight size="15px" color="#00579D"/>
       </div>
@@ -14,7 +14,7 @@ const FilterTime: React.FC = () =>{
         Tempo:
       </div>
 
-      <ContFilter>
+      <ContLang>
         <div className="lang-menu">
           <div className="selected-lang">
             Todos
@@ -37,9 +37,9 @@ const FilterTime: React.FC = () =>{
             </li>
           </ul>
         </div>
-      </ContFilter>
+      </ContLang>
 
-  </Container>
+  </ContFilter>
   );
 }
 

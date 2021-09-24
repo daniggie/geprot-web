@@ -10,7 +10,7 @@ const FilterAloc: React.FC = () =>{
       <div className="cols">
 
         <div className="cols1">
-          <b className="helvetica fonte_15 cor_3 normal"> Número: </b>
+          <b className="helvetica fonte_15 cor_5 normal"> Número: </b>
         </div>
 
         <div className="cols2">
@@ -18,7 +18,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Projeto: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Projeto: </b>
         </div>
 
         <div className="cols2">
@@ -26,7 +26,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Atribuição: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Atribuição: </b>
         </div>
 
         <div className="cols2">
@@ -36,7 +36,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="colsicon">
-          <RiFilterOffFill color="#0091BD" size={25}/>
+          <RiFilterOffFill color="#00579D" size={25}/>
         </div>
 
       </div>
@@ -44,7 +44,7 @@ const FilterAloc: React.FC = () =>{
       <div className="cols">
 
         <div className="cols1">
-          <b className="helvetica fonte_15 cor_3 normal"> CC: </b>
+          <b className="helvetica fonte_15 cor_5 normal"> CC: </b>
         </div>
 
         <div className="cols2">
@@ -52,7 +52,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Status: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
         </div>
 
         <div className="cols2">
@@ -68,11 +68,11 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="colsicon">
-          <RiFilterFill color="#0091BD" size={25}/>
+          <RiFilterFill color="#00579D" size={25}/>
         </div>
 
         </div>
-      
+
     </Container>
   );
 }
