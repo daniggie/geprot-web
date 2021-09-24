@@ -135,24 +135,24 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_6f fonte_13 bold">
+              <div className="status cor_6f fonte_15 bold">
                   <p>VERBA  APROVADA</p>
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar fonte_15">R$ {valores?.verbasAprovadas}</td>
+                    <td className="impar bold fonte_15">R$ {valores?.verbasAprovadas}</td>
                   </tr>
                   <tr>
-                    <td className="par fonte_15">€ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toFixed(2)}</td>
+                    <td className="par bold fonte_15">€ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="impar fonte_15">$ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toFixed(2)}</td>
+                    <td className="impar bold fonte_15">$ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toFixed(2)}</td>
                   </tr>
               </table>
             </MediumCont>
 
             <BigCont>
-              <div className="title status cor_6f fonte_13 bold">
+              <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
               <ChartSevenDyas />
@@ -163,24 +163,24 @@ const Dashboard: React.FC = () => {
           <Container>
 
             <MediumCont>
-              <div className="status cor_6f fonte_13 bold">
+              <div className="status cor_6f fonte_15 bold">
                   <p>VERBA DISPONÍVEL</p>
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar fonte_15">R$ {valores?.verbasDisponivel}</td>
+                    <td className="impar bold fonte_15">R$ {valores?.verbasDisponivel}</td>
                   </tr>
                   <tr>
-                    <td className="par fonte_15">€ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toFixed(2)}</td>
+                    <td className="par bold fonte_15">€ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="impar fonte_15">$ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toFixed(2)}</td>
+                    <td className="impar bold fonte_15">$ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toFixed(2)}</td>
                   </tr>
               </table>
             </MediumCont>
 
             <LitlleCont>
-              <div className="title status cor_6f fonte_13 bold">
+              <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS EM ANDAMENTO</p>
               </div>
 
@@ -226,7 +226,7 @@ const Dashboard: React.FC = () => {
             </LitlleCont>
 
             <LitlleCont>
-              <div className="title status cor_6f fonte_13 bold">
+              <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS NÃO INICIADOS</p>
               </div>
 
@@ -273,7 +273,7 @@ const Dashboard: React.FC = () => {
             </LitlleCont>
 
             <LitlleCont>
-              <div className="title status cor_6f fonte_13 bold">
+              <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS ATRASADOS</p>
               </div>
               <div className="linelabel">

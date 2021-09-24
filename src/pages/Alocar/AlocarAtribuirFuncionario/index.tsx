@@ -13,6 +13,8 @@ interface Consultor {
   demandas: number,
   precoHora: number,
   email: string,
+  status: string,
+  dataFormatada: string,
   fornecedor: {
     id: number,
     nome: string,
@@ -52,7 +54,8 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
             <div className="line">
               <p className="helvetica bold cor_0 fonte_20"> {valores?.nome} </p>
-              <p className="helvetica lighter cor_5 fonte_15"> STATUS: ATIVO</p>
+
+              <p className="helvetica bold cor_4 fonte_15"> STATUS: {valores?.status}</p>
             </div>
 
             <div className="line">
@@ -69,7 +72,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> dd / mm / yyyy </p>
+                <p className="helvetica bold cor_0 fonte_15"> {valores?.dataFormatada} </p>
               </div>
             </div>
 
