@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 import Header from "../../components/Header";
 import FilterSearch from "../../components/Filters/FilterSearch";
 import FilterStatus from "../../components/Filters/FilterStatus";
-import FilterTime from "../../components/Filters/FilterTime";
 import FilterCC from "../../components/Filters/FilterCC";
 import ChartSevenDyas from "../../components/ChartsColumns/ChartSevenDays";
 
@@ -44,6 +43,8 @@ const Dashboard: React.FC = () => {
     headers: { Authorization: `Bearer ${token}` },
   };
 
+  const [ filtroTempo, setFiltroTempo ] = useState<number>();
+
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
 
@@ -53,26 +54,23 @@ const Dashboard: React.FC = () => {
     }
   });
 
-  async function buscarValores1() {
-    var response = await api.get(`dashboard/concluidos/7dias/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
-      setValoresConcluidos(response.data)
-    })
-  }
-
-  async function buscarValores2() {
+  async function buscarValores() {
     var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
       setValores(response.data)
     })
   }
 
   useEffect(() => {
-    buscarValores1()
-    buscarValores2()
+    buscarValores()
   }, [])
 
   const dolar = 5.29;
   const euro = 6.20;
 
+  const filtros = (filtro :number) => {
+    setFiltroTempo(filtro);
+    setFiltroTempo(filtro);
+  }
 
   return(
     <>
@@ -101,23 +99,20 @@ const Dashboard: React.FC = () => {
           <ContLang>
             <div className="lang-menu">
               <div className="selected-lang">
-                Todos
+              {filtroTempo == 1 ? "Último mês" : filtroTempo == 2 ? "Últimos 6 meses" : filtroTempo == 3 ? "Último ano" : "Últimos 7 dias"}
               </div>
-              <ul>
+              <ul>                
                 <li>
-                  <a href="#" className="de">Todos</a>
+                  <a onClick={() => filtros(0)} className="de">Últimos 7 dias</a>
                 </li>
                 <li>
-                  <a href="" className="de">Últimos 7 dias</a>
+                  <a onClick={() => filtros(1)} className="br">Último mês</a>
                 </li>
                 <li>
-                  <a href="" className="br">Último mês</a>
+                  <a onClick={() => filtros(2)} className="en">Últimos 6 meses</a>
                 </li>
                 <li>
-                  <a href="" className="en">Últimos 6 meses</a>
-                </li>
-                <li>
-                  <a href="" className="fr">Último ano</a>
+                  <a onClick={() => filtros(3)} className="fr">Último ano</a>
                 </li>
               </ul>
             </div>
@@ -155,7 +150,7 @@ const Dashboard: React.FC = () => {
               <div className="title status cor_6f fonte_15 bold">
                 <p>PROJETOS CONCLUÍDOS</p>
               </div>
-              <ChartSevenDyas />
+              {filtroTempo == 1 ? <ChartMonth/> : filtroTempo == 2 ? <ChartSixMonth/> : filtroTempo == 3 ? <ChartYear/> : <ChartSevenDyas/>}              
             </BigCont>
 
           </Container>
