@@ -11,9 +11,9 @@ const ButtonAprove: React.FC = () => {
     headers: { Authorization: `Bearer ${token}` },
   };
 
-   const apenas = () => {
+   async function apenas() {
     alert("chegou")
-    api.put(`horas/aprovar/${id}/${consultorId}`, config)
+    await api.put(`horas/aprovar/${id}/${consultorId}`, config)
 
   }
 
