@@ -195,7 +195,7 @@ const LinkAprovar = "/aprovarhoras/";
             <div className="table cor_5">
               Valor (R$)
             </div>
-            <div className="table cor_1">
+            <div className="table cor_5">
               CC Pagante
             </div>
           </div>

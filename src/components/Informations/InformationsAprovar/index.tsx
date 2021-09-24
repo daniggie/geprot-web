@@ -72,7 +72,7 @@ const linkAprovarHoras = "/aprovarfuncionario/"
             <div className="column1">
             <p className="helvetica light fonte_15 cor_0">
                 <a href={linkAprovarHoras + id + "/" + valor.consultor_id}>
-                <CgSearchLoading size={25} color="#0091BD"/>
+                <CgSearchLoading size={25} color="#00579E"/>
                 </a>
             </p>
             </div>
