@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Content_cards } from "./style";
-import api from "../../../services/api";
+import api from "../../services/api";
 import { FiClock } from "react-icons/fi";
 
 interface Card {
