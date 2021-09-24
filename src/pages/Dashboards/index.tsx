@@ -135,13 +135,13 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar bold fonte_15">R$ {valores?.verbasAprovadas}</td>
+                    <td className="impar bold fonte_15">{valores?.verbasAprovadas.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   </tr>
                   <tr>
-                    <td className="par bold fonte_15">€ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toFixed(2)}</td>
+                    <td className="par bold fonte_15">€{((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toLocaleString('de-DE')}</td>
                   </tr>
                   <tr>
-                    <td className="impar bold fonte_15">$ {((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toFixed(2)}</td>
+                    <td className="impar bold fonte_15">{((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
                   </tr>
               </table>
             </MediumCont>
@@ -163,13 +163,13 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar bold fonte_15">R$ {valores?.verbasDisponivel}</td>
+                    <td className="impar bold fonte_15">{valores?.verbasDisponivel.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   </tr>
                   <tr>
-                    <td className="par bold fonte_15">€ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toFixed(2)}</td>
+                    <td className="par bold fonte_15">€{((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toLocaleString('de-DE')}</td>
                   </tr>
                   <tr>
-                    <td className="impar bold fonte_15">$ {((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toFixed(2)}</td>
+                    <td className="impar bold fonte_15">{((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
                   </tr>
               </table>
             </MediumCont>
