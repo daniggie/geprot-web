@@ -121,7 +121,7 @@ const linkVoltar = "/aprovarhoras/"
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-              <a href="">
+              <a>
                 {valores?.statusTotal == "POSSIVEL" ? <ButtonAprove /> : <ButtonAprovado/>}
               </a>
         </div>

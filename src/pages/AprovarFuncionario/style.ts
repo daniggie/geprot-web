@@ -89,6 +89,10 @@ export const All = styled.div<TableProps>`
     p{
       justify-content: center;
     }
+
+    a:hover {
+      cursor: pointer;
+    }
   }
 
   #recusado{
