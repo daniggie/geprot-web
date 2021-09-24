@@ -10,10 +10,16 @@ const ButtonAprove: React.FC = () => {
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-    api.get(`horas/aprovar/${id}/${consultorId}`, config)
+
+   const apenas = () => {
+    alert("chegou")
+    api.put(`horas/aprovar/${id}/${consultorId}`, config)
+
+  }
+
     return(
       <>
-        <Container>
+        <Container onClick={apenas}>
           <p>Aprovar horas</p>
         </Container>
       </>

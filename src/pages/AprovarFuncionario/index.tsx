@@ -47,7 +47,7 @@ const AprovarFuncionario: React.FC = () => {
     carregaDados();
   }, [ ])
   console.log(valores)
-  
+
   const token = localStorage.getItem("@Geprot:token");
   let config = {headers: {
     "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
@@ -121,7 +121,7 @@ const linkVoltar = "/aprovarhoras/"
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-              <a href="" onClick={aprovar}>
+              <a href="">
                 {valores?.statusTotal == "POSSIVEL" ? <ButtonAprove /> : <ButtonAprovado/>}
               </a>
         </div>
