@@ -83,6 +83,13 @@ p{
     border-radius: 5px;
     margin: 10px 10px 10px 10px;
     padding: 2px;
+    cursor: pointer;
+
+    &:hover{
+      background: #008EA5;
+      transition: 0.2s;
+      cursor: pointer;
+    }
 }
   }
 }

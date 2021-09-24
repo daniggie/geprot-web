@@ -38,12 +38,12 @@ const Cadastrar4: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Centros de Custos:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Centros de Custos:</b>
             </div>
 
             <div className="contCC">
               <div className="column1">
-                <div className="box cor_3f" onClick={addCc}>
+                <div className="box cor_6f" onClick={addCc}>
                   <RiAddLine color="#fff"/>
                 </div>
                 Vendas
@@ -55,8 +55,8 @@ const Cadastrar4: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Centro de custo:</b>
-              <b className="helvetica fonte_15 cor_3 bold">Percentual aprovado:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Centro de custo:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Percentual aprovado:</b>
             </div>
 
             <div className="line">
@@ -66,7 +66,7 @@ const Cadastrar4: React.FC = () => {
               <div className="tamanho2">
                 <input type="number" placeholder="%"/>
               </div>
-              <div className="box cor_3f">
+              <div className="box cor_6f">
               <RiAddLine color="#fff"/>
               </div>
 
@@ -85,7 +85,7 @@ const Cadastrar4: React.FC = () => {
 
               <div className="columns helvetica cor_0 lighter">
                 <div className="column1">
-                  <div className="box cor_3f">
+                  <div className="box cor_6f">
                     <FiX color="#fff"/>
                   </div>
                   Vendas
