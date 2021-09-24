@@ -16,11 +16,6 @@ const ButtonAprove: React.FC = () => {
         <Container>
           <p>Aprovar horas</p>
         </Container>
-
-        <ContainerAprovado>
-          <p>Aprovado</p>
-        </ContainerAprovado>
-
       </>
     );
 };

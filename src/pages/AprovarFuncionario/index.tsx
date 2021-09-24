@@ -7,11 +7,13 @@ import BotaoEnviar from "../../components/Buttons/ButtonSend";
 import api from "../../services/api";
 import { useParams } from "react-router";
 import ButtonAprove from "../../components/Buttons/ButtonAprove";
+import ButtonAprovado from "../../components/Buttons/ButtonAprovado";
 
 interface Card {
   totalHoras: number;
   valorGasto: number;
   nome: string;
+  statusTotal: string;
 }
 
 const AprovarFuncionario: React.FC = () => {
@@ -45,9 +47,16 @@ const AprovarFuncionario: React.FC = () => {
     carregaDados();
   }, [ ])
   console.log(valores)
+  
+  const token = localStorage.getItem("@Geprot:token");
+  let config = {headers: {
+    "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
 
-  async function aprovar(): Promise<void> {
-    api.put(`horas/aprovar/${id}/${consultorId}`)
+  function aprovar(){
+    alert("Chegou")
+
+   api.put(`horas/aprovar/${id}/${consultorId}`,config)
+   alert(api.put(`horas/aprovar/${id}/${consultorId}`,config))
   }
 
   const [secao] = useState(() => {
@@ -92,8 +101,6 @@ const linkVoltar = "/aprovarhoras/"
 
             <div className="informations">
               <InformationsApFuncionario />
-              <InformationsApFuncionario />
-              <InformationsApFuncionario />
             </div>
 
             <div className="header">
@@ -114,8 +121,8 @@ const linkVoltar = "/aprovarhoras/"
               <div className="botaorecuse" onClick={addOverlay}>
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
-              <a href={linkVoltar + id} onClick={aprovar}>
-                <ButtonAprove />
+              <a href="" onClick={aprovar}>
+                {valores?.statusTotal == "POSSIVEL" ? <ButtonAprove /> : <ButtonAprovado/>}
               </a>
         </div>
 
