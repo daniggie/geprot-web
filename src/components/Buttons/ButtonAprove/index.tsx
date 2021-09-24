@@ -11,14 +11,14 @@ const ButtonAprove: React.FC = () => {
   const token = localStorage.getItem("@Geprot:token");
   const history = useHistory();
   let config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${token}`},
   };
 
    async function apenas(): Promise<void> {
      console.log("aqui")
     console.log(`${id} ${consultorId}`)
 
-    await api.put(`horas/aprovar/${id}/${consultorId}`, config).then(response => {console.log(response)}).
+    await api.patch(`horas/aprovar/${id}/${consultorId}`, config).then(response => {console.log(response)}).
     catch(err => {
       console.log(err)
     })
