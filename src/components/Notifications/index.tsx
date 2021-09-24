@@ -15,7 +15,7 @@ const Notifications: React.FC = () => {
                     <FaUserCircle size={25} color="#00579E"/>
 
                   </div>
-                  <div className="number cor_000"> 5 </div>
+                  <div className="number cor_000"> 6 </div>
 
                   <div className="icon_on" >
                     <FaUserCircle size={40} color="#00579E"/>
