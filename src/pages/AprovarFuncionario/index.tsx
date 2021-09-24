@@ -69,7 +69,7 @@ const linkVoltar = "/aprovarhoras/"
       <All overlay={overlay}>
 
         <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
-        <p className="helvetica cor_3 lighter fonte_25">{id} - {valores?.nome}</p>
+        <p className="helvetica cor_5 lighter fonte_25">{id} - {valores?.nome}</p>
 
           <div className="table">
             <div className="header">
@@ -100,12 +100,12 @@ const linkVoltar = "/aprovarhoras/"
             <div className="header">
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Total de Horas trabalhadas: </p>
-              <b className="helvetica cor_3 fonte_22">{valores?.totalHoras} H</b>
+              <b className="helvetica cor_5 fonte_22">{valores?.totalHoras} H</b>
             </div>
 
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Valor gasto: </p>
-              <b className="helvetica cor_3 fonte_22">R$ {valores?.valorGasto}</b>
+              <b className="helvetica cor_5 fonte_22">R$ {valores?.valorGasto}</b>
             </div>
           </div>
 

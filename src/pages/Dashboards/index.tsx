@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
-import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont } from './styles';
+import { TituloF, All, Filtros, BodyDashboards, Container, LitlleCont, MediumCont, BigCont, ContFilter, ContLang } from './styles';
 import Menu from '../../components/Menu';
 import { useParams } from "react-router";
 
@@ -15,6 +15,7 @@ import { Chart } from "react-google-charts";
 import ChartMonth from "../../components/ChartsColumns/ChartMonth";
 import ChartSixMonth from "../../components/ChartsColumns/ChartSixMonth";
 import ChartYear from "../../components/ChartsColumns/ChartYear";
+import { FiChevronRight } from "react-icons/fi";
 
 interface Dashboard {
   projetosConcluidos: number;
@@ -88,7 +89,40 @@ const Dashboard: React.FC = () => {
 
         <FilterStatus/>
 
-        <FilterTime/>
+        <ContFilter>
+          <div className="arrow">
+            <FiChevronRight size="15px" color="#00579D"/>
+          </div>
+
+          <div className="texto cor_5">
+            Tempo:
+          </div>
+
+          <ContLang>
+            <div className="lang-menu">
+              <div className="selected-lang">
+                Todos
+              </div>
+              <ul>
+                <li>
+                  <a href="#" className="de">Todos</a>
+                </li>
+                <li>
+                  <a href="" className="de">Últimos 7 dias</a>
+                </li>
+                <li>
+                  <a href="" className="br">Último mês</a>
+                </li>
+                <li>
+                  <a href="" className="en">Últimos 6 meses</a>
+                </li>
+                <li>
+                  <a href="" className="fr">Último ano</a>
+                </li>
+              </ul>
+            </div>
+          </ContLang>
+        </ContFilter>
 
         <FilterCC/>
 

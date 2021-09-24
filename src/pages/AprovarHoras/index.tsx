@@ -46,7 +46,7 @@ const AprovarHoras: React.FC = () => {
       <All>
 
         <b className="helvetica cor_0 lighter fonte_20">Seção: {secao.secao.nome}</b>
-        <b className="helvetica cor_3 lighter fonte_25">{valores?.id} -  {valores?.nome}</b>
+        <b className="helvetica cor_5 lighter fonte_25">{valores?.id} -  {valores?.nome}</b>
 
         <div className="table">
 
@@ -79,7 +79,6 @@ const AprovarHoras: React.FC = () => {
 
           <div className="content_informations">
             <InformationsAprovar />
-
           </div>
 
         </div>

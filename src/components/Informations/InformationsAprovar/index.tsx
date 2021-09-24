@@ -65,7 +65,7 @@ const linkAprovarHoras = "/aprovarfuncionario/"
 
             <div className="column1">
             <b className="helvetica light fonte_15 cor_0 lighter">{valor.horasTotais}h</b>
-            <b className="line cor_4f"></b>
+            <b className="line cor_6f"></b>
             <b className="helvetica light fonte_15 cor_0 lighter">{valor.quantidade_horas}h</b>
             </div>
 

@@ -84,7 +84,7 @@ const addConsultor = () => {
               <p className="helvetica fonte_20 cor_5 bold">IDENTIFICADORES</p>
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Nome do Projeto:</b>
+                <b className="helvetica fonte_15 cor_5 bold">Nome do Projeto:</b>
               </div>
 
               <div className="line">
@@ -92,7 +92,7 @@ const addConsultor = () => {
               </div>
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Nome do solicitante:</b>
+                <b className="helvetica fonte_15 cor_5 bold">Nome do solicitante:</b>
               </div>
 
               <div className="line">
@@ -100,7 +100,7 @@ const addConsultor = () => {
               </div>
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Nome do responsável:</b>
+                <b className="helvetica fonte_15 cor_5 bold">Nome do responsável:</b>
               </div>
 
               <div className="line">
@@ -108,8 +108,8 @@ const addConsultor = () => {
               </div>
 
               <div className="line">
-                <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
-                <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
+                <b className="helvetica fonte_15 cor_5 bold">Data de inicio:</b>
+                <b className="helvetica fonte_15 cor_5 bold">Data de encerramento:</b>
               </div>
 
               <div className="line">
@@ -129,11 +129,11 @@ const addConsultor = () => {
 
               <div className="line">
                 <div className="lineText">
-                  <b className="helvetica fonte_15 cor_3 bold">Consultor:</b>
+                  <b className="helvetica fonte_15 cor_5 bold">Consultor:</b>
                 </div>
 
                 <div className="lineText">
-                  <b className="helvetica fonte_15 cor_3 bold">Horas:</b>
+                  <b className="helvetica fonte_15 cor_5 bold">Horas:</b>
                 </div>
               </div>
 
@@ -144,7 +144,7 @@ const addConsultor = () => {
                 <div className="tamanho">
                   <input type="number" placeholder="0" />
                 </div>
-                <div className="box cor_3f" onClick={addConsultor}>
+                <div className="box cor_6f" onClick={addConsultor}>
                   <RiAddLine color="#fff"/>
                 </div>
               </div>
@@ -164,7 +164,7 @@ const addConsultor = () => {
 
                 <div className="columns helvetica cor_0 lighter" id="1">
                   <div className="column3">
-                    <div className="box cor_3f" onClick={removeConsultor}>
+                    <div className="box cor_6f" onClick={removeConsultor}>
                       <FiX color="#fff"/>
                     </div>
                     {consultores.id}

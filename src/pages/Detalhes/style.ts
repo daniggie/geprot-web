@@ -26,6 +26,7 @@ export const Content = styled.div`
       min-height: 140px;
       display: flex;
       margin: 4px 0px 4px 0px;
+      border-radius: 4px;
 
       flex-direction: row;
       flex-wrap: nowrap;
