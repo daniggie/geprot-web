@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { All } from "./style";
 import Barra from "../../components/Barra";
-import { useHistory } from "react-router";
-import BotaoAprovar from "../../components/Buttons/ButtonAprove";
 import InformationsApFuncionario from "../../components/Informations/InformationsAprovarFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonSend";
 import api from "../../services/api";
 import { useParams } from "react-router";
+import ButtonAprove from "../../components/Buttons/ButtonAprove";
 
 interface Card {
   totalHoras: number;
@@ -116,7 +115,7 @@ const linkVoltar = "/aprovarhoras/"
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
               <a href={linkVoltar + id} onClick={aprovar}>
-                <BotaoAprovar />
+                <ButtonAprove />
               </a>
         </div>
 

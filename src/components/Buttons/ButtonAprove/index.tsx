@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router';
 import api from '../../../services/api';
-import { Container } from './style';
+import { Container, ContainerAprovado } from './style';
 
 const ButtonAprove: React.FC = () => {
   const { id }: {id:string} = useParams();
@@ -12,9 +12,16 @@ const ButtonAprove: React.FC = () => {
   };
     api.get(`horas/aprovar/${id}/${consultorId}`, config)
     return(
+      <>
         <Container>
-              <p>Aprovar horas</p>
+          <p>Aprovar horas</p>
         </Container>
+
+        <ContainerAprovado>
+          <p>Aprovado</p>
+        </ContainerAprovado>
+
+      </>
     );
 };
 
