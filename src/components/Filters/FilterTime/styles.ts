@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const ContFilter = styled.div`
     width: 16%;
     display:flex;
     align-items: center;
@@ -15,7 +15,7 @@ export const Container = styled.div`
     }
 `;
 
-export const ContFilter = styled.div`
+export const ContLang = styled.div`
   height: 25px;
   box-sizing: border-box;
   width: 125px;

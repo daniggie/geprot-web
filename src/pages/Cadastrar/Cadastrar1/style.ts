@@ -83,6 +83,13 @@ p{
     border-radius: 5px;
     margin: 10px 10px 10px 10px;
     padding: 2px;
+    cursor: pointer;
+
+    &:hover{
+      background: #008EA5;
+      transition: 0.2s;
+      cursor: pointer;
+    }
 }
   }
 }
@@ -136,7 +143,7 @@ p{
 
   }
 
-  .columns{ 
+  .columns{
 
     ${(props) =>
       props.consultorColumn &&
@@ -214,7 +221,7 @@ p{
 
   .button{
     width: 205px;
-    background: #0091BD;
+    background: #00579D;
     border-radius: 5px;
     border:0px;
     float:right;

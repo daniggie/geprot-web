@@ -56,14 +56,38 @@ export const Container = styled.div`
       align-content: flex-start;
       padding-top: 5px;
 
-      .icon_off{
-        display: block;
-        transition: 0.8s;
-      }
+      .icones{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: 45px;
 
-      .icon_on{
-        display: none;
-        transition: 0.8s;
+        .icon_off{
+          display: block;
+          transition: 0.8s;
+        }
+
+        .icon_on{
+          display: none;
+          transition: 0.8s;
+        }
+
+        .number{
+          background: red;
+          width: 10px;
+          height: 10px;
+          border-radius: 100%;
+          position: absolute;
+          margin-left: 50%;
+          top: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 8px;
+        }
       }
     }
 
@@ -79,14 +103,26 @@ export const Container = styled.div`
         display: block;
       }
 
-      .icon_off{
-        display: none;
-      }
+      .icones{
+        .icon_off{
+          display: none;
+        }
 
-      .icon_on{
-        display: block;
-      }
+        .icon_on{
+          display: block;
+        }
 
+        .number{
+          background: red;
+          width: 15px;
+          height: 15px;
+          border-radius: 100%;
+          position: absolute;
+          margin-left: 25%;
+          top: 30px;
+          font-size: 10px;
+        }
+      }
       .line{
         display: block;
         font-size: 12px;

@@ -36,7 +36,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="colsicon">
-          <RiFilterOffFill color="#0091BD" size={25}/>
+          <RiFilterOffFill color="#00579E" size={25}/>
         </div>
 
       </div>
@@ -72,11 +72,11 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="colsicon">
-          <RiFilterFill color="#0091BD" size={25}/>
+          <RiFilterFill color="#00579E" size={25}/>
         </div>
 
         </div>
-      
+
     </Container>
   );
 }

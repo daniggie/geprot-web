@@ -45,9 +45,9 @@ const Configuracao: React.FC = () => {
       consultor.id = parseInt((document.getElementById('id') as HTMLInputElement).value);
       consultor.email = (document.getElementById('email') as HTMLInputElement).value;
       consultor.senha = (document.getElementById('senha') as HTMLInputElement).value;
-      consultor.idFornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value); 
+      consultor.idFornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
       consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);
-      console.log(consultor)      
+      console.log(consultor)
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -77,23 +77,23 @@ const Configuracao: React.FC = () => {
           </div>
 
           <div className="line">
-            <p className="helvetica fonte_15 cor_3">Nome do consultor:</p>
+            <p className="helvetica fonte_15 cor_5">Nome do consultor:</p>
             <input id="nome" type="text" placeholder="Nome completo..." />
-            <p className="helvetica fonte_15 cor_3">Email:</p>
+            <p className="helvetica fonte_15 cor_5">Email:</p>
             <input id="email" type="text" placeholder="E-mail..."/>
           </div>
 
           <div className="line">
-            <p className="helvetica fonte_15 cor_3">Id:</p>
+            <p className="helvetica fonte_15 cor_5">Id:</p>
             <input id="id" type="text" placeholder="Id..."/>
-            <p className="helvetica fonte_15 cor_3">Preço das horas:</p>
+            <p className="helvetica fonte_15 cor_5">Preço das horas:</p>
             <input id="precoHora" type="number" min="0" max="10000" step="1" placeholder="R$"/>
           </div>
 
           <div className="line">
-            <p className="helvetica fonte_15 cor_3">Senha:</p>
+            <p className="helvetica fonte_15 cor_5">Senha:</p>
             <input id="senha" type="password" placeholder="senha..."/>
-            <p className="helvetica fonte_15 cor_3">id do Fornecedor:</p>
+            <p className="helvetica fonte_15 cor_5">id do Fornecedor:</p>
             <input id="idFornecedor" type="texte" placeholder="Id do fornecedor"/>
           </div>
 
