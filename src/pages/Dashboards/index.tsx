@@ -99,7 +99,7 @@ const Dashboard: React.FC = () => {
           <ContLang>
             <div className="lang-menu">
               <div className="selected-lang">
-                Últimos 7 dias
+              {filtroTempo == 1 ? "Último mês" : filtroTempo == 2 ? "Últimos 6 meses" : filtroTempo == 3 ? "Último ano" : "Últimos 7 dias"}
               </div>
               <ul>                
                 <li>
