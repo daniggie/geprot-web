@@ -36,8 +36,6 @@ const Notifications: React.FC = () => {
                 </div>
             </div>
 
-
-
           </div>
 
         </Container>
