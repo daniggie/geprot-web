@@ -52,8 +52,8 @@ const ChartSixMonth: React.FC = () => {
               [valoresConcluidos[4] ? valoresConcluidos[4].mesAno : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, '#2382BA'],
               [valoresConcluidos[3] ? valoresConcluidos[3].mesAno : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, "#0091BD"],
               [valoresConcluidos[2] ? valoresConcluidos[2].mesAno : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[1] ? valoresConcluidos[1].mesAno : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[0] ? 'MÊS PASSADO' : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, '#2382BA'],
+              [valoresConcluidos[1] ? 'MÊS PASSADO' : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[0] ? 'ESSE MÊS' : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, '#2382BA'],
             ]}
             options={{
                 legend: 'none',

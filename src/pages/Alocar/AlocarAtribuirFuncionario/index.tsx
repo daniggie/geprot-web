@@ -55,7 +55,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
             <div className="line">
               <p className="helvetica bold cor_0 fonte_20"> {valores?.nome} </p>
 
-              <p className="helvetica bold cor_4 fonte_15"> STATUS: {valores?.status}</p>
+              <p className="helvetica bold cor_5 fonte_15"> STATUS: {valores?.status}</p>
             </div>
 
             <div className="line">
@@ -132,23 +132,23 @@ const AlocarAtribuirFuncionario: React.FC = () => {
 
               <div className="header">
                 <div className="title1">
-                  <p className="helvetica bold cor_5">Número</p>
+                  <p className="helvetica bold cor_0">Número</p>
                 </div>
 
                 <div className="title2">
-                  <p className="helvetica bold cor_5">Título do projeto</p>
+                  <p className="helvetica bold cor_0">Título do projeto</p>
                 </div>
 
                 <div className="title2">
-                  <p className="helvetica bold cor_5">Responsável</p>
+                  <p className="helvetica bold cor_0">Responsável</p>
                 </div>
 
                 <div className="title1">
-                  <p className="helvetica bold cor_5">Criação</p>
+                  <p className="helvetica bold cor_0">Criação</p>
                 </div>
 
                 <div className="title1">
-                  <p className="helvetica bold cor_5"> Atribuição </p>
+                  <p className="helvetica bold cor_0"> Atribuição </p>
                 </div>
 
               </div>
