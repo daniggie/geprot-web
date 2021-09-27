@@ -25,12 +25,6 @@ const Notifications: React.FC = () => {
                 <NotificacaoAlert />
                 <NotificacaoAlert />
                 <NotificacaoAlert />
-                <NotificacaoAlert />
-
-                <NotificacaoAlert />
-
-                <NotificacaoAlert />
-
 
             </div>
 
