@@ -8,6 +8,7 @@ import { All, Filtros, Content_cards, ContFilter, Container, Content_not, Contai
 import { FiChevronRight, FiSearch} from "react-icons/fi";
 import api from '../../services/api';
 import Notifications from '../../components/Notifications';
+import NaoEncontrado from '../../components/NaoEncontrado';
 
 let statusVar :number;
 
@@ -183,8 +184,9 @@ const Home: React.FC = () => {
             : "Não existe nenhum projeto cadastrado"
           }
 
-
+        <NaoEncontrado/>
         </Content_cards>
+
         <Menu/>
       </All>
     </>
