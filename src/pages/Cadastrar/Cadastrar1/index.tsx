@@ -15,7 +15,7 @@ interface CadastraProjeto {
 }
 
 interface Consultor {
-  id: BigInt,
+  id: number,
   nome: String,
   horas: String
 }
@@ -55,6 +55,18 @@ const Cadastrar: React.FC = (  ) => {
     console.log(JSON.stringify(projeto))
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
+
+  const adcionarListaConsultor = () => {
+
+    const card:Consultor = {
+      id: 0,
+      nome: "Teste",
+      horas: "200"
+    }
+
+    setConsultores([...consultores, card])
+
+  };
 
   return (
     <>
@@ -126,13 +138,13 @@ const Cadastrar: React.FC = (  ) => {
 
             <div className="line">
               <div className="tamanho">
-                <input value={newConsultor} onChange={e => setNewConsultor(e.target.value)} type="number" placeholder="Digite o ID" />
+                <input id="" type="number" placeholder="Digite o ID" />
               </div>
               <div className="tamanho">
-                <input type="number" placeholder="0" />
+                <input id="" type="number" placeholder="0" />
               </div>
               <div className="box cor_6f" >
-                <RiAddLine color="#fff" type="submit"/>
+                <RiAddLine color="#fff" onClick={adcionarListaConsultor}/>
               </div>
             </div>
 
