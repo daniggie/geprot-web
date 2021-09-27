@@ -15,7 +15,7 @@ interface CadastraProjeto {
 }
 
 interface NomeConsultor {
- nome: string; 
+ nome: string;
 }
 
 interface Consultor {
@@ -59,22 +59,19 @@ const Cadastrar: React.FC = (  ) => {
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
 
-  const adcionarListaConsultor = () => { 
+  const adcionarListaConsultor = () => {
 
     const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
 
     const pegaNome = async () => {
-      alert("comeco")
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      alert("passou")
 
       const response = await api.get<NomeConsultor>(`/usuarios/buscar/${idConsultor}`,config);
       console.log(response)
       const consultor = response.data;
-      alert("chegou")
 
       const card:Consultor = {
         id: parseInt(idConsultor),
@@ -179,21 +176,21 @@ const Cadastrar: React.FC = (  ) => {
                  Limite de horas
                 </div>
               </div>
-            </div>
 
-            <div className="columns helvetica cor_0 lighter" >
               {consultores.map(consultor => (
-                <div className="column3">
-                  <div className="box cor_6f">
-                    <FiX color="#fff"/>
-                    <div>{consultor.id}</div>
-                  </div>
-                  <div className="column1">
-                    {consultor.nome}
-                  </div>
-                  <div className="column2">
-                    {consultor.horas}
-                  </div>
+                <div className="columns helvetica cor_0 lighter" >
+                    <div className="column3">
+                      <div className="box cor_6f">
+                        <FiX color="#fff"/>
+                      </div>
+                      {consultor.id}
+                    </div>
+                    <div className="column1">
+                      {consultor.nome}
+                    </div>
+                    <div className="column2">
+                      {consultor.horas}
+                    </div>
                 </div>
               ))}
             </div>
