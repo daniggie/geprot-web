@@ -14,10 +14,14 @@ interface CadastraProjeto {
 	nomeResponsavel: string;
 }
 
+interface NomeConsultor {
+ nome: string; 
+}
+
 interface Consultor {
-  id: number,
-  nome: String,
-  horas: String
+  id: number;
+  nome: string;
+  horas: string;
 }
 
 const Cadastrar: React.FC = (  ) => {
@@ -35,7 +39,6 @@ const Cadastrar: React.FC = (  ) => {
     setConsultores([...consultores, consultor]);
     setNewConsultor('');
   }
-
 
 
   const projeto = {
@@ -56,15 +59,31 @@ const Cadastrar: React.FC = (  ) => {
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
 
-  const adcionarListaConsultor = () => {
+  const adcionarListaConsultor = () => { 
 
-    const card:Consultor = {
-      id: 0,
-      nome: "Teste",
-      horas: "200"
+    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
+
+    const pegaNome = async () => {
+      alert("comeco")
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      alert("passou")
+
+      const response = await api.get<NomeConsultor>(`/usuarios/buscar/${idConsultor}`,config);
+      console.log(response)
+      const consultor = response.data;
+      alert("chegou")
+
+      const card:Consultor = {
+        id: parseInt(idConsultor),
+        nome: consultor.nome,
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value
+      }
+      setConsultores([...consultores, card])
     }
-
-    setConsultores([...consultores, card])
+    pegaNome();
 
   };
 
@@ -122,7 +141,7 @@ const Cadastrar: React.FC = (  ) => {
 
           </div>
 
-          <Form onSubmit={handleAddLine}>
+          <Form>
 
             <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
 
@@ -138,10 +157,10 @@ const Cadastrar: React.FC = (  ) => {
 
             <div className="line">
               <div className="tamanho">
-                <input id="" type="number" placeholder="Digite o ID" />
+                <input id="idConsultor" type="number" placeholder="Digite o ID" />
               </div>
               <div className="tamanho">
-                <input id="" type="number" placeholder="0" />
+                <input id="horasConsultor" type="number" placeholder="0" />
               </div>
               <div className="box cor_6f" >
                 <RiAddLine color="#fff" onClick={adcionarListaConsultor}/>
