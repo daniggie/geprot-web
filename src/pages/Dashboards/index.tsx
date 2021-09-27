@@ -64,8 +64,8 @@ const Dashboard: React.FC = () => {
     buscarValores()
   }, [])
 
-  const dolar = 5.29;
-  const euro = 6.20;
+  const dolar = 5.34;
+  const euro = 6.24 ;
 
   const filtros = (filtro :number) => {
     setFiltroTempo(filtro);
