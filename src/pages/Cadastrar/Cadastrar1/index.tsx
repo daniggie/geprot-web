@@ -60,8 +60,8 @@ const Cadastrar: React.FC = (  ) => {
   }
 
 
-  const removerConsultor = (index: string) => {
-    consultores.splice(parseInt(index),1)
+  const removerConsultor = (index: number) => {
+    consultores.splice(index,1)
   };
 
   const adcionarListaConsultor = () => {
@@ -187,7 +187,7 @@ const Cadastrar: React.FC = (  ) => {
                 <div className="columns helvetica cor_0 lighter" >
                     <div className="column3">
                       <div className="box cor_6f">
-                        <FiX color="#fff" onClick={() => removerConsultor(consultores.findIndex)}/>
+                        <FiX color="#fff" onClick={() => removerConsultor(consultor.id)}/>
                       </div>
                       {consultor.id}
                     </div>
