@@ -4,7 +4,6 @@ import Menu from '../../components/Menu';
 import { useParams } from "react-router";
 
 import Header from "../../components/Header";
-import FilterSearch from "../../components/Filters/FilterSearch";
 import FilterStatus from "../../components/Filters/FilterStatus";
 import FilterCC from "../../components/Filters/FilterCC";
 import ChartSevenDyas from "../../components/ChartsColumns/ChartSevenDays";
@@ -83,9 +82,7 @@ const Dashboard: React.FC = () => {
       </TituloF>
 
       <Filtros>
-
-        <FilterSearch/>
-
+        
         <FilterStatus/>
 
         <ContFilter>
