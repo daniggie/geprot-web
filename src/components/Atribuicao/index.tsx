@@ -67,8 +67,6 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
             <p className="helvetica cor_5 fonte_20">Horas:</p>
             <input id="inputLegal" placeholder="0H" type="number"/>
             <button onClick={() => Alocar(parseInt(usuarios_id), projetos_id)}><RiCheckLine size={ 25 } color="#fff"/></button>
-
-
         </div>
       </div>
     </Container>

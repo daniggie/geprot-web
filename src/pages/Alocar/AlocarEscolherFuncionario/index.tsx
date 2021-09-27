@@ -18,7 +18,7 @@ const AlocarEscolherFuncionario: React.FC = () => {
 
           <div className="header_filtros">
             <b className="helvetica fonte_15 cor_5 bold"> Filtros </b>
-            <hr className="cor_3f"/>
+            <hr className="cor_6f"/>
           </div>
 
           <div className="filtros">

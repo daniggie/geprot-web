@@ -95,7 +95,7 @@ export const Container=styled.div<TableProps>`
     padding: 3px 5px 3px 5px;
     border: 0px;
     border-radius: 5px;
-    background: #0091BD;
+    background: #00579D;
     transition: 0.2s;
     &:hover{
       background: ${shade(0.2, "#0091BD")};
