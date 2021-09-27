@@ -10,7 +10,7 @@ const FilterAloc: React.FC = () =>{
       <div className="cols">
 
         <div className="cols1">
-          <b className="helvetica fonte_15 cor_3 normal"> Cadastro: </b>
+          <b className="helvetica fonte_15 cor_5 normal"> Cadastro: </b>
         </div>
 
         <div className="cols2">
@@ -18,7 +18,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Projeto: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Projeto: </b>
         </div>
 
         <div className="cols2">
@@ -26,7 +26,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Fornecedor: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Fornecedor: </b>
         </div>
 
         <div className="cols2">
@@ -44,7 +44,7 @@ const FilterAloc: React.FC = () =>{
       <div className="cols">
 
         <div className="cols1">
-          <b className="helvetica fonte_15 cor_3 normal"> Nome: </b>
+          <b className="helvetica fonte_15 cor_5 normal"> Nome: </b>
         </div>
 
         <div className="cols2">
@@ -52,7 +52,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Status: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
         </div>
 
         <div className="cols2">
@@ -62,7 +62,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_3 normal"> Demanda: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Demanda: </b>
         </div>
 
         <div className="cols2">
