@@ -163,3 +163,37 @@ export const Content_not = styled.div`
   width: 10%;
   display: flex;
 `;
+
+export const ContainerSearch = styled.div`
+  width: 24%;
+  display:flex;
+  align-items: center;
+
+  .arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button{
+    width: 50px;
+    height: 25px;
+    border: 0.1px solid #828282;
+    border-left: 0;
+    border-radius: 0px 5px 5px 0px;
+    color: #fff;
+    border-color: #00579E;
+  }
+
+  .procurar{
+    width: 70%;
+    height: 25px;
+    border: 0.1px solid #828282;
+    border-right: 0px;
+    box-sizing: border-box;
+    border-radius: 5px 0px 0px 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    padding: 5px;
+  }
+`;
