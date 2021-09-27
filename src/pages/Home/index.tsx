@@ -143,7 +143,10 @@ const Home: React.FC = () => {
           {
 
             valores ? valores.map(valor => (
-            <Cards id={valor.id}/>
+            <Cards
+              id={valor.id}
+              key={valor.id}
+            />
             ))
             : "Não existe nenhum projeto cadastrado"
           }

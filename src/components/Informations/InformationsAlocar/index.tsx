@@ -35,7 +35,9 @@ const Informations: React.FC = () => {
       valores.map(valor => (
 
 
-    <Contant>
+    <Contant
+        key={valor.id}
+    >
       <div className="columns">
       <div className="column1">
           <p className="helvetica light fonte_15 cor_0">{valor.id}</p>
