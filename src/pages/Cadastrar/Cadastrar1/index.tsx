@@ -59,6 +59,11 @@ const Cadastrar: React.FC = (  ) => {
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
 
+
+  const removerConsultor = (index: string) => {
+    consultores.splice(parseInt(index),1)
+  };
+
   const adcionarListaConsultor = () => {
 
     const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
@@ -69,8 +74,7 @@ const Cadastrar: React.FC = (  ) => {
         headers: { Authorization: `Bearer ${token}` },
       };
 
-      const response = await api.get<NomeConsultor>(`/usuarios/buscar/${idConsultor}`,config);
-      console.log(response)
+      const response = await api.get<NomeConsultor>(`/usuarios/buscar/consultor/${idConsultor}`,config);
       const consultor = response.data;
 
       const card:Consultor = {
@@ -78,7 +82,9 @@ const Cadastrar: React.FC = (  ) => {
         nome: consultor.nome,
         horas: (document.getElementById('horasConsultor') as HTMLInputElement).value
       }
-      setConsultores([...consultores, card])
+      setConsultores([...consultores, card]);
+      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
+      (document.getElementById('idConsultor') as HTMLInputElement).value='';
     }
     pegaNome();
 
@@ -181,7 +187,7 @@ const Cadastrar: React.FC = (  ) => {
                 <div className="columns helvetica cor_0 lighter" >
                     <div className="column3">
                       <div className="box cor_6f">
-                        <FiX color="#fff"/>
+                        <FiX color="#fff" onClick={() => removerConsultor(consultores.findIndex)}/>
                       </div>
                       {consultor.id}
                     </div>
