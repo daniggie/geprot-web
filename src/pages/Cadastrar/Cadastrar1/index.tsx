@@ -14,10 +14,14 @@ interface CadastraProjeto {
 	nomeResponsavel: string;
 }
 
+interface NomeConsultor {
+ nome: string;
+}
+
 interface Consultor {
-  id: number,
-  nome: String,
-  horas: String
+  id: number;
+  nome: string;
+  horas: string;
 }
 
 const Cadastrar: React.FC = (  ) => {
@@ -35,7 +39,6 @@ const Cadastrar: React.FC = (  ) => {
     setConsultores([...consultores, consultor]);
     setNewConsultor('');
   }
-
 
 
   const projeto = {
@@ -58,13 +61,26 @@ const Cadastrar: React.FC = (  ) => {
 
   const adcionarListaConsultor = () => {
 
-    const card:Consultor = {
-      id: 0,
-      nome: "Teste",
-      horas: "200"
-    }
+    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
 
-    setConsultores([...consultores, card])
+    const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      const response = await api.get<NomeConsultor>(`/usuarios/buscar/${idConsultor}`,config);
+      console.log(response)
+      const consultor = response.data;
+
+      const card:Consultor = {
+        id: parseInt(idConsultor),
+        nome: consultor.nome,
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value
+      }
+      setConsultores([...consultores, card])
+    }
+    pegaNome();
 
   };
 
@@ -122,7 +138,7 @@ const Cadastrar: React.FC = (  ) => {
 
           </div>
 
-          <Form onSubmit={handleAddLine}>
+          <Form>
 
             <p className="helvetica fonte_20 cor_5 bold">CONSULTORES</p>
 
@@ -138,10 +154,10 @@ const Cadastrar: React.FC = (  ) => {
 
             <div className="line">
               <div className="tamanho">
-                <input id="" type="number" placeholder="Digite o ID" />
+                <input id="idConsultor" type="number" placeholder="Digite o ID" />
               </div>
               <div className="tamanho">
-                <input id="" type="number" placeholder="0" />
+                <input id="horasConsultor" type="number" placeholder="0" />
               </div>
               <div className="box cor_6f" >
                 <RiAddLine color="#fff" onClick={adcionarListaConsultor}/>
@@ -160,21 +176,21 @@ const Cadastrar: React.FC = (  ) => {
                  Limite de horas
                 </div>
               </div>
-            </div>
 
-            <div className="columns helvetica cor_0 lighter" >
               {consultores.map(consultor => (
-                <div className="column3">
-                  <div className="box cor_6f">
-                    <FiX color="#fff"/>
-                    <div>{consultor.id}</div>
-                  </div>
-                  <div className="column1">
-                    {consultor.nome}
-                  </div>
-                  <div className="column2">
-                    {consultor.horas}
-                  </div>
+                <div className="columns helvetica cor_0 lighter" >
+                    <div className="column3">
+                      <div className="box cor_6f">
+                        <FiX color="#fff"/>
+                      </div>
+                      {consultor.id}
+                    </div>
+                    <div className="column1">
+                      {consultor.nome}
+                    </div>
+                    <div className="column2">
+                      {consultor.horas}
+                    </div>
                 </div>
               ))}
             </div>

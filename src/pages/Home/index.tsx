@@ -46,12 +46,12 @@ const Home: React.FC = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
     async function carregaPesquisa(): Promise<void> {
-      await api.get(`projetos/listarcontaining/${secao.secao.id}/${campoBusca}`, config).then(response => {
+      await api.get(`projetos/listarcontaining/${secao.secao.id}/${campoBusca}/${status ? status : 0}`, config).then(response => {
         setValores(response.data)
       })
     }
     async function carregaPadrao(): Promise<void> {
-      await api.get(`projetos/listar/${secao.secao.id}`, config).then(response => {
+      await api.get(`projetos/listar/${secao.secao.id}/${status ? status : 0}`, config).then(response => {
         setValores(response.data)
       })
     }

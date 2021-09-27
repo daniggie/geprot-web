@@ -96,6 +96,7 @@ p{
   height: 225px;
   border:  1px solid #dedede;
   border-radius: 3px;
+  overflow: auto;
 
   .header{
     display:flex;
