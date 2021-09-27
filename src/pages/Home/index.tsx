@@ -27,6 +27,7 @@ interface Card {
 }
 
 const Home: React.FC = () => {
+  const [campoBusca, setCampoBusca] = useState('')
 
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
@@ -36,6 +37,29 @@ const Home: React.FC = () => {
         return languageObject;
     }
 });
+
+  useEffect(() => {
+    console.log(campoBusca)
+    const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+    async function carregaPesquisa(): Promise<void> {
+      await api.get(`projetos/listarcontaining/${secao.secao.id}/${campoBusca}`, config).then(response => {
+        setValores(response.data)
+      })
+    }
+    async function carregaPadrao(): Promise<void> {
+      await api.get(`projetos/listar/${secao.secao.id}`, config).then(response => {
+        setValores(response.data)
+      })
+    }
+    if (campoBusca == '' || campoBusca == null) {
+      carregaPadrao()
+    }
+
+    carregaPesquisa()
+  }, [campoBusca])
 
   const [ status , setStatus ] = useState<number>();
   const addStatus = async (statusInt: number) => {
@@ -53,7 +77,7 @@ const Home: React.FC = () => {
 
 
   const [valores, setValores ] = useState<Card[]>([]);
-  useEffect(() => {
+  const teste = useEffect(() => {
     setStatus(statusVar)
     async function carregaDados(): Promise<void>  {
       const token = localStorage.getItem("@Geprot:token");
@@ -129,9 +153,9 @@ const Home: React.FC = () => {
             <input
               className="procurar cor_0"
               type="text"
-              id="fname"
-              name="fname"
               placeholder="Nome, ID, seção..."
+              value={campoBusca}
+              onChange={event => setCampoBusca(event.target.value)}
             />
             <button type="submit" className="cor_6f">
               <FiSearch size={15}/>

@@ -1,11 +1,10 @@
 import React, { useRef, useState, FormEvent } from 'react';
 import { Titulo, Formulario, Form } from './style';
-import { FormHandles } from '@unform/core';
 import Barra from "../../../components/Barra";
 import { RiAddLine } from 'react-icons/ri';
 import { FiX } from 'react-icons/fi';
-import internal from 'stream';
 import api from '../../../services/api';
+import Header from '../../../components/Header';
 
 interface CadastraProjeto {
   nome: string;
@@ -59,7 +58,7 @@ const Cadastrar: React.FC = (  ) => {
 
   return (
     <>
-      <Barra/>
+      <Header/>
 
       <Titulo>
         <p className="helvetica fonte_20 cor_5 bold">CADASTRO DE PROJETOS</p>

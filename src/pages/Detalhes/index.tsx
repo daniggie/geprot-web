@@ -8,6 +8,7 @@ import api from "../../services/api";
 import { useParams } from "react-router";
 import ContDetails from "../../components/TableDetails";
 import { FiEdit } from "react-icons/fi";
+import Header from "../../components/Header";
 
 interface Card {
   id: number;
@@ -60,7 +61,7 @@ const LinkAprovar = "/aprovarhoras/";
 
   return(
     <>
-        <Barra />
+      <Header/>
 
       <All>
         <Content>

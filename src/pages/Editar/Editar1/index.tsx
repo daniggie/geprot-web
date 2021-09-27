@@ -15,7 +15,7 @@ const Editar2: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Nome do projeto:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Nome do projeto:</b>
             </div>
 
             <div className="line">
@@ -23,7 +23,7 @@ const Editar2: React.FC = () => {
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Descrição do projeto:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Descrição do projeto:</b>
             </div>
 
             <div className="line">
@@ -41,7 +41,7 @@ const Editar2: React.FC = () => {
           <div className="content">
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de inicio:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Data de inicio:</b>
             </div>
 
             <div className="line">
@@ -49,7 +49,7 @@ const Editar2: React.FC = () => {
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de encerramento:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Data de encerramento:</b>
             </div>
 
             <div className="line">
@@ -57,7 +57,7 @@ const Editar2: React.FC = () => {
             </div>
 
             <div className="line">
-              <b className="helvetica fonte_15 cor_3 bold">Data de aprovação:</b>
+              <b className="helvetica fonte_15 cor_5 bold">Data de aprovação:</b>
             </div>
 
             <div className="line">

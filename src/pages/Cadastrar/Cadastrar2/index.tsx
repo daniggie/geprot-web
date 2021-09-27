@@ -5,8 +5,7 @@ import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
 import BotaoCancel from '../../../components/Buttons/ButtonCancel';
-
-
+import Header from '../../../components/Header';
 
 const Cadastrar4: React.FC = () => {
 
@@ -23,7 +22,7 @@ const Cadastrar4: React.FC = () => {
 
   return (
     <>
-      <Barra/>
+      <Header/>
 
       <Titulo>
         <p className="helvetica fonte_20 cor_5 bold">CENTRO DE CUSTOS</p>
