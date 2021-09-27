@@ -4,12 +4,12 @@ import Barra from "../../../components/Barra";
 import BotaoFinalizar from '../../../components/Buttons/ButtonFinalizar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { BiReceipt } from "react-icons/bi";
+import Header from '../../../components/Header';
 
 const Cadastrar6: React.FC = () => {
     return (
       <>
-        <Barra>
-        </Barra>
+        <Header/>
 
       <Titulo>
           <p className="helvetica fonte_20 cor_5 bold">Resumo</p>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const All = styled.div`
     margin: 10px;
-    padding: 30px;
+    padding: 20px 30px;
 
 
     display: flex;

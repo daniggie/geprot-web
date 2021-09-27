@@ -4,6 +4,7 @@ import Barra from "../../components/Barra";
 import InformationsAprovar from "../../components/Informations/InformationsAprovar";
 import { useParams } from "react-router";
 import api from "../../services/api";
+import Header from "../../components/Header";
 
 
 interface Card {
@@ -41,7 +42,7 @@ const AprovarHoras: React.FC = () => {
 
     return(
       <>
-      <Barra />
+      <Barra/>
 
       <All>
 
