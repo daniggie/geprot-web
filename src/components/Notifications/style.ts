@@ -13,6 +13,8 @@ export const Container = styled.div`
     z-index: 1;
     display: flex;
     flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .arrow{
       width: 20%;

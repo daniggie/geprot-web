@@ -48,7 +48,7 @@ export default createGlobalStyle`
 
   .cor_4 {
       color: #28B9DA;
-  }   
+  }
 
   .cor_5{
     color: #00579D;
@@ -80,6 +80,14 @@ export default createGlobalStyle`
 
   .cor_6f {
       background-color: #00579E;
+  }
+
+  .cor_0f {
+      background-color: #fff;
+  }
+
+  .cor_000f {
+      background-color: #dbdbdb;
   }
 
   .red {
