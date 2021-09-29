@@ -15,13 +15,14 @@ export const Container= styled.div`
   justify-content: center;
 
   .container_square{
-    width: 85%;
+    width: 80%;
     border: 0.5px;
     border-style: solid;
     border-color: #c4c4c4;
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
+    justify-content: center;
     border-radius: 4px;
 
     .title{
@@ -38,8 +39,8 @@ export const Container= styled.div`
     }
 
     .line{
-      width: 100%;
-      height: 30px;
+      width: 90%;
+      height: 20px;
       display: flex;
       align-items: center;
       align-content: space-around;

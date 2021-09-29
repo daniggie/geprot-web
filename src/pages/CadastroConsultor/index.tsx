@@ -84,8 +84,8 @@ const Configuracao: React.FC = () => {
           </div>
 
           <div className="line">
-            <p className="helvetica fonte_15 cor_5">Id:</p>
-            <input id="id" type="text" placeholder="Id..."/>
+            <p className="helvetica fonte_15 cor_5">ID:</p>
+            <input id="id" type="text" placeholder="ID..."/>
             <p className="helvetica fonte_15 cor_5">Preço das horas:</p>
             <input id="precoHora" type="number" min="0" max="10000" step="1" placeholder="R$"/>
           </div>
@@ -93,8 +93,8 @@ const Configuracao: React.FC = () => {
           <div className="line">
             <p className="helvetica fonte_15 cor_5">Senha:</p>
             <input id="senha" type="password" placeholder="senha..."/>
-            <p className="helvetica fonte_15 cor_5">id do Fornecedor:</p>
-            <input id="idFornecedor" type="texte" placeholder="Id do fornecedor"/>
+            <p className="helvetica fonte_15 cor_5">ID do Fornecedor:</p>
+            <input id="idFornecedor" type="texte" placeholder="ID do fornecedor..."/>
           </div>
 
           <div className="position">
