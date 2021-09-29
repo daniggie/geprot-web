@@ -124,9 +124,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
             <hr className="cor_6f"/>
           </div>
 
-          <div className="filtros">
-            <FilterFunc/>
-          </div>
+          <FilterFunc/>
 
           <Table>
 

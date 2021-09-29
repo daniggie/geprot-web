@@ -26,7 +26,7 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_5 normal"> Atribuição: </b>
+        <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
         </div>
 
         <div className="cols2">
@@ -52,13 +52,9 @@ const FilterAloc: React.FC = () =>{
         </div>
 
         <div className="cols1">
-        <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
         </div>
 
         <div className="cols2">
-          <select name="Fornecedor">
-            <option value="fornecedor"> -- Selecione aqui --</option>
-          </select>
         </div>
 
         <div className="cols1">
