@@ -3,10 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 80px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
 
   select, input{
     width: 100%;
@@ -24,7 +20,7 @@ export const Container = styled.div`
     justify-content: space-around;
 
     .cols1{
-      width: 8%;
+      width: 5%;
       height: 40px;
       display: flex;
       align-items: center;
@@ -38,7 +34,7 @@ export const Container = styled.div`
     }
 
     .colsicon{
-      width: 5%;
+      width: calc(5%/2);
       height: 40px;
       display: flex;
       align-items: center;

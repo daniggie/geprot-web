@@ -21,9 +21,7 @@ const AlocarEscolherFuncionario: React.FC = () => {
             <hr className="cor_6f"/>
           </div>
 
-          <div className="filtros">
             <FilterAloc/>
-          </div>
 
           <Table>
 
