@@ -28,14 +28,6 @@ const Notifications: React.FC = () => {
 
             </div>
 
-            <div className="arrow">
-                <div id="triangle_off">
-                </div>
-
-                <div id="triangle_on">
-                </div>
-            </div>
-
           </div>
 
         </Container>
