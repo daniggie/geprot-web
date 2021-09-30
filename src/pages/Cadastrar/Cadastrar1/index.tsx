@@ -1,6 +1,5 @@
-import React, { useRef, useState, FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Titulo, Formulario, Form } from './style';
-import Barra from "../../../components/Barra";
 import { RiAddLine } from 'react-icons/ri';
 import { FiX } from 'react-icons/fi';
 import api from '../../../services/api';
@@ -12,6 +11,12 @@ interface CadastraProjeto {
   dataFinalizacao: string;
 	dataInicio: string;
 	nomeResponsavel: string;
+  consultores: Colaborador[];
+}
+
+interface Colaborador {
+  usuarios_id: number;
+  limiteHoras: string;
 }
 
 interface NomeConsultor {
@@ -46,8 +51,16 @@ const Cadastrar: React.FC = (  ) => {
     nomeSolicitante: "",
     dataFinalizacao: "",
     dataInicio: "",
-    nomeResponsavel:""
+    nomeResponsavel:"",
+    consultores: [ 
+      {
+        usuarios_id: 0,
+        horas: 0
+      }
+    ] 
   }
+  projeto.consultores.shift();
+
 
   const teste = () => {
     projeto.nome = (document.getElementById('nome') as HTMLInputElement).value;
@@ -55,6 +68,14 @@ const Cadastrar: React.FC = (  ) => {
     projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
     projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
     projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
+    for(let i = 0; i < consultores.length; i++){
+      projeto.consultores.push(
+        {
+          usuarios_id: consultores[i].id,
+          horas: parseInt(consultores[i].horas)
+        }
+      )
+    }
     console.log(JSON.stringify(projeto))
     localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
   }
@@ -80,7 +101,7 @@ const Cadastrar: React.FC = (  ) => {
       const card:Consultor = {
         id: parseInt(idConsultor),
         nome: consultor.nome,
-        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1"
       }
       setConsultores([...consultores, card]);
       (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
@@ -163,7 +184,7 @@ const Cadastrar: React.FC = (  ) => {
                 <input id="idConsultor" type="number" placeholder="Digite o ID" />
               </div>
               <div className="tamanho">
-                <input id="horasConsultor" type="number" placeholder="0" />
+                <input id="horasConsultor" type="number" placeholder="1" />
               </div>
               <div className="box cor_6f" >
                 <RiAddLine color="#fff" onClick={adcionarListaConsultor}/>
