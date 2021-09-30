@@ -29,15 +29,16 @@ interface Card {
 
 const Home: React.FC = () => {
   const [campoBusca, setCampoBusca] = useState('')
-
+  const [valores, setValores ] = useState<Card[]>([]);
+  const [ status , setStatus ] = useState<number>();
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:usuario');
 
-    if(usuario) {
+    if (usuario) {
         let languageObject = JSON.parse(usuario);
         return languageObject;
-    }
-});
+      }
+    });
 
   useEffect(() => {
     console.log(campoBusca)
@@ -60,38 +61,12 @@ const Home: React.FC = () => {
     }
 
     carregaPesquisa()
-  }, [campoBusca])
+  }, [campoBusca, status])
 
-  const [ status , setStatus ] = useState<number>();
   const addStatus = async (statusInt: number) => {
     setStatus(statusInt);
-    const token = localStorage.getItem("@Geprot:token");
-    let config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-    await api.get(`projetos/listar/${secao.secao.id}/${statusInt ? statusInt : 0}`, config).then(response => {
-      setValores(response.data)
-    })
-
   }
 
-
-
-  const [valores, setValores ] = useState<Card[]>([]);
-  const teste = useEffect(() => {
-    setStatus(statusVar)
-    async function carregaDados(): Promise<void>  {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`projetos/listar/${secao.secao.id}/${statusVar ? status : 0}`, config).then(response => {
-        setValores(response.data)
-        console.log("Nesse")
-      })
-    }
-    carregaDados();
-  },[])
    return (
 
     <>
