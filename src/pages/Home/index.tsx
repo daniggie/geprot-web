@@ -184,7 +184,8 @@ const Home: React.FC = () => {
             : "Não existe nenhum projeto cadastrado"
           }
 
-        <NaoEncontrado/>
+          {valores.length == 0? <NaoEncontrado/>: null}
+
         </Content_cards>
 
         <Menu/>
