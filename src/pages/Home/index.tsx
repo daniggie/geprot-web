@@ -37,8 +37,8 @@ const Home: React.FC = () => {
     if (usuario) {
         let languageObject = JSON.parse(usuario);
         return languageObject;
-      }
-    });
+    }
+  });
     const token = localStorage.getItem("@Geprot:token");
     let config = {
       headers: { Authorization: `Bearer ${token}` },

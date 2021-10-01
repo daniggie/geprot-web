@@ -19,19 +19,6 @@ const Cadastrar: React.FC = (  ) => {
   const[newConsultor, setNewConsultor] = useState('');
   const[consultores, setConsultores] = useState<Consultor[]>([]);
 
-  async function handleAddLine(
-    event: FormEvent<HTMLFormElement>,
-  ): Promise<void> {
-    event.preventDefault();
-
-    const response = await api.get<Consultor>(`repos/${newConsultor}`);
-    const consultor = response.data;
-
-    setConsultores([...consultores, consultor]);
-    setNewConsultor('');
-  }
-
-
   const projeto = {
     nome: "",
     nomeSolicitante: "",
@@ -48,7 +35,7 @@ const Cadastrar: React.FC = (  ) => {
   projeto.consultores.shift();
 
 
-  const teste = () => {
+  const Cadastrar = () => {
     projeto.nome = (document.getElementById('nome') as HTMLInputElement).value;
     projeto.nomeSolicitante = (document.getElementById('nomeSolicitante') as HTMLInputElement).value;
     projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
@@ -65,7 +52,6 @@ const Cadastrar: React.FC = (  ) => {
     console.log(JSON.stringify(projeto))
     localStorage.setItem('@Geprot:cadastrar',JSON.stringify(projeto));
   }
-
 
   const removerConsultor = (index: number) => {
     consultores.splice(index,1)
@@ -210,7 +196,7 @@ const Cadastrar: React.FC = (  ) => {
           </Form>
 
           <div className="position">
-            <span onClick={teste}>
+            <span onClick={Cadastrar}>
               <a href="/cadastrar2">
                 <div className="button">
                   <p className="helvetica fonte_20 bold">Próximo</p>
