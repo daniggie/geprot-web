@@ -58,11 +58,6 @@ const Configuracao: React.FC = () => {
       alert("Deu pau")
     }
   }
-
-
-
-
-
   return (
     <>
     <Header />

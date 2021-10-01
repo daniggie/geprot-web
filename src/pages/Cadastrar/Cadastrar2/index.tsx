@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Titulo, Formulario } from './style';
-import { BsFillCaretRightFill, BsX } from "react-icons/bs";
+import { BsFillCaretRightFill } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
 import BotaoCancel from '../../../components/Buttons/ButtonCancel';
