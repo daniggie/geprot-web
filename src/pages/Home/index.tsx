@@ -56,11 +56,13 @@ const Home: React.FC = () => {
     }
 
   useEffect(() => {
+    console.log(status, campoBusca)
     if ((campoBusca == '' || campoBusca == null) && (status == 0 || status == undefined)) {
       carregaPadrao()
       return
     }
 
+    console.log(status, campoBusca)
     carregaPesquisa()
   }, [campoBusca, status])
 
