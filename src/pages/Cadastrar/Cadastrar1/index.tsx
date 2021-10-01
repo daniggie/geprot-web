@@ -5,20 +5,6 @@ import { FiX } from 'react-icons/fi';
 import api from '../../../services/api';
 import Header from '../../../components/Header';
 
-interface CadastraProjeto {
-  nome: string;
-  nomeSolicitante: string;
-  dataFinalizacao: string;
-	dataInicio: string;
-	nomeResponsavel: string;
-  consultores: Colaborador[];
-}
-
-interface Colaborador {
-  usuarios_id: number;
-  limiteHoras: string;
-}
-
 interface NomeConsultor {
  nome: string;
 }
@@ -77,7 +63,7 @@ const Cadastrar: React.FC = (  ) => {
       )
     }
     console.log(JSON.stringify(projeto))
-    localStorage.setItem('@Geprot:cadastra',JSON.stringify(projeto));
+    localStorage.setItem('@Geprot:cadastrar',JSON.stringify(projeto));
   }
 
 
