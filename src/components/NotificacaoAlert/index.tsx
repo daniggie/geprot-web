@@ -19,9 +19,9 @@ const NofiticacaoAlert: React.FC = () => {
   return (
     <>
     <ContainerAlert overlay={overlay}>
-      <div className="line cor_0f" onClick={addOverlay}>
+      <div className="line cor_0f" >
         <div className="title fonte_13 bold" >Apontamento de horas resolvido</div>
-        <div className="text">[nome do funcionario] reenviou suas horas</div>
+        <div className="text" onClick={addOverlay}>[nome do funcionario] reenviou suas horas</div>
         <div className="icon">
           <BiTrash color="#0075B1"/>
         </div>

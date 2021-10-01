@@ -30,7 +30,7 @@ export const ContFilter = styled.div`
   background-color: #00579E;
   border-radius: 3px;
   color: #fff;
-  z-index:1000;
+  z-index:0;
   margin-left: 5px;
 
   a {

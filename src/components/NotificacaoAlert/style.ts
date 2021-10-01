@@ -6,8 +6,6 @@ interface TableProps{
 
 export const ContainerAlert = styled.div<TableProps>`
   width: 95%;
-  transition: 0.8s;
-
   .line{
     display: none;
     font-size: 12px;
@@ -15,9 +13,19 @@ export const ContainerAlert = styled.div<TableProps>`
     border-radius: 5px;
     padding: 2px;
     margin-top: 10px;
-    transition: 0.8s;
     justify-content: space-between;
+    transition: 0.8s;
 
+    &:hover{
+      max-height: 100px;
+      min-height: 40px;
+
+      .text{
+        white-space: normal;
+        overflow: visible;
+        max-height: 100px;
+      }
+    }
     .icon{
       margin-left: 80%;
     }
@@ -29,14 +37,8 @@ export const ContainerAlert = styled.div<TableProps>`
       max-height: 16px;
       margin-top: 5px;
       transition: 0.8s;
+      cursor: pointer;
 
-      &:hover{
-        white-space: normal;
-        overflow: visible;
-        max-height: 80px;
-        min-height: 40px;
-        transition: 0.8s;
-      }
     }
 
     .title{
@@ -64,16 +66,11 @@ export const ContainerAlert = styled.div<TableProps>`
         `}
 
     position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     height: 100%;
-    background: rgba(0, 0, 0, 0.30);
-    transition: 0.5s;
 
     b{
         margin-bottom: 15px;
@@ -83,8 +80,8 @@ export const ContainerAlert = styled.div<TableProps>`
     }
 
     .overlay{
-      position: absolute;
-      width: 100%;
+      position: fixed;
+      width: 30%;
       min-height: 70px;
       border-radius: 10px;
       background: #fff;
@@ -94,6 +91,15 @@ export const ContainerAlert = styled.div<TableProps>`
       flex-wrap: wrap;
       justify-content: space-between;
       z-index: 9999;
+      box-shadow:2px 2px 15px 5000px rgb(0,0,0,0.5);
+      left: 36%;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      p, b{
+        width: 100%;
+      }
+
     }
 
     button{
@@ -103,8 +109,8 @@ export const ContainerAlert = styled.div<TableProps>`
       border: 0px;
       border-radius: 5px;
       padding: 5px;
-      margin-left: 80%;
-      transition: 0.5s;
+      margin-left: 90%;
+
       &:hover{
         background: #0040B1;
       }
