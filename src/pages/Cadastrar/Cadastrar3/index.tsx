@@ -1,12 +1,39 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import { Titulo, Formulario } from './style';
-import Barra from "../../../components/Barra";
 import BotaoFinalizar from '../../../components/Buttons/ButtonFinalizar';
 import { BsFillCaretRightFill, BsX } from "react-icons/bs";
 import { BiReceipt } from "react-icons/bi";
 import Header from '../../../components/Header';
+import api from '../../../services/api';
+import { useHistory } from 'react-router';
 
 const Cadastrar6: React.FC = () => {
+  const history = useHistory();
+
+  const [projetoSalvo] = useState(() => {
+    let projeto = localStorage.getItem('@Geprot:cadastrar');
+
+    if (projeto) {
+        let languageObject = JSON.parse(projeto);
+        return languageObject;
+      }
+    });
+  
+    const Cadastrar = async () => {
+    try{
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.post("/projetos/cadastrar", projetoSalvo, config);
+      history.push('/home');
+    }catch(err){
+      alert("Deu pau")
+    }
+  }
+
+
+
     return (
       <>
         <Header/>
@@ -280,7 +307,7 @@ const Cadastrar6: React.FC = () => {
           </div>
 
           <div className="position">
-            <a href="/home">
+            <a onClick={Cadastrar} href="/home">
             <BotaoFinalizar />
             </a>
           </div>

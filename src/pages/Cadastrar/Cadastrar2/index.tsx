@@ -1,24 +1,115 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Titulo, Formulario } from './style';
-import Barra from "../../../components/Barra";
-import { BsFillCaretRightFill, BsX } from "react-icons/bs";
+import { BsFillCaretRightFill } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { RiAddLine } from "react-icons/ri";
 import BotaoCancel from '../../../components/Buttons/ButtonCancel';
 import Header from '../../../components/Header';
+import api from '../../../services/api';
+
+interface Secao {
+  id: number;
+  nome: string;
+  taxa: number;
+}
 
 const Cadastrar4: React.FC = () => {
+  const [ valor, setValor ] = useState<Secao[]>([]);
+  const [ newSecao, setNewSecao ] = useState('');
+  const [ secoes, setSecoes ] = useState<Secao[]>([]);
 
-  const[cc, setCc] = useState(false);
-  const addCc = () => {
-    if(!cc){
-      setCc(true);
-    }else{
-      setCc(false);
+  useEffect(() => {
+    async function carregaDados(): Promise<void>{
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`secao/listar`, config).then(response => {
+        setValor(response.data);
+      })
     }
+    carregaDados();
+  });
 
-    return cc;
+  const [projetoSalvo] = useState(() => {
+    let projeto = localStorage.getItem('@Geprot:cadastrar');
+
+    if (projeto) {
+        let languageObject = JSON.parse(projeto);
+        return languageObject;
+      }
+    });
+    
+
+
+  const projeto = {
+    nome: "",
+    nomeSolicitante: "",
+    dataFinalizacao: "",
+    dataInicio: "",
+    nomeResponsavel:"",
+    consultores: [ 
+      {
+        usuarios_id: 0,
+        horas: 0
+      }
+    ],
+    ccpagantes: [
+      {
+        secoes_id: 1,
+			  taxa: 100
+      }
+    ] 
   }
+  projeto.ccpagantes.shift();
+
+  const Cadastrar = () => {
+    projeto.nome = projetoSalvo.nome;
+    projeto.nomeResponsavel = projetoSalvo.nomeResponsavel;
+    projeto.dataFinalizacao = projetoSalvo.dataFinalizacao;
+    projeto.dataInicio = projetoSalvo.dataInicio;
+    projeto.nomeSolicitante = projetoSalvo.nomeSolicitante;
+    projeto.consultores =  projetoSalvo.consultores;
+    for(let i = 0; i < secoes.length; i++){
+      projeto.ccpagantes.push(
+        {
+          secoes_id: secoes[i].id,
+          taxa: secoes[i].taxa
+        }
+      )
+    }
+    console.log(JSON.stringify(projeto))
+    localStorage.setItem('@Geprot:cadastrar',JSON.stringify(projeto));
+    console.log(projeto)
+  }
+
+
+
+  const adcionarListaSecao = () => {
+
+    const idSecao = (document.getElementById('id') as HTMLInputElement).value;
+
+    const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      const response = await api.get<Secao>(`/secao/buscar/${idSecao}`,config);
+      const secao = response.data;
+
+      const card:Secao = {
+        id: parseInt(idSecao),
+        nome: secao.nome,
+        taxa: parseInt((document.getElementById('taxa') as HTMLInputElement).value)
+      }
+      setSecoes([...secoes, card]);
+      (document.getElementById('id') as HTMLInputElement).value ='';
+      (document.getElementById('taxa') as HTMLInputElement).value='';
+    }
+    pegaNome();
+
+  };
 
   return (
     <>
@@ -41,12 +132,11 @@ const Cadastrar4: React.FC = () => {
             </div>
 
             <div className="contCC">
-              <div className="column1">
-                <div className="box cor_6f" onClick={addCc}>
-                  <RiAddLine color="#fff"/>
-                </div>
-                Vendas
+              {valor.map(secao => (
+                <div className="column1">
+                {secao.nome} - {secao.id}
               </div>
+              ))}
             </div>
 
           </div>
@@ -60,12 +150,12 @@ const Cadastrar4: React.FC = () => {
 
             <div className="line">
               <div className="tamanho">
-                <input type="text" placeholder="Digite aqui..."/>
+                <input id="id" type="text" placeholder="Digite o id aqui..."/>
               </div>
               <div className="tamanho2">
-                <input type="number" placeholder="%"/>
+                <input id="taxa" type="number" placeholder="%"/>
               </div>
-              <div className="box cor_6f">
+              <div className="box cor_6f" onClick={adcionarListaSecao}>
               <RiAddLine color="#fff"/>
               </div>
 
@@ -82,18 +172,20 @@ const Cadastrar4: React.FC = () => {
                 </div>
               </div>
 
+              {secoes.map(secao => (
               <div className="columns helvetica cor_0 lighter">
                 <div className="column1">
                   <div className="box cor_6f">
                     <FiX color="#fff"/>
                   </div>
-                  Vendas
+                  {secao.nome}
                 </div>
 
                 <div className="column2">
-                  100%
+                  {secao.taxa}%
                 </div>
               </div>
+              ))}
 
 
             </div>
@@ -104,7 +196,7 @@ const Cadastrar4: React.FC = () => {
               <BotaoCancel>
               </BotaoCancel>
             </a>
-            <a href="/cadastrar3">
+            <a onClick={Cadastrar} href="/cadastrar3">
                   <div className="button">
                     <p className="helvetica fonte_20 bold">Próximo</p>
                   </div>
