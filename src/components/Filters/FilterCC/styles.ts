@@ -25,7 +25,7 @@ export const ContFilter = styled.div`
   background-color: #00579D;
   border-radius: 3px;
   color: #fff;
-  z-index:900;
+  z-index:0;
   margin-left: 5px;
 
   a {

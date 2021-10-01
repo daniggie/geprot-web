@@ -199,7 +199,7 @@ export const ContLang = styled.div`
   background-color: #00579D;
   border-radius: 3px;
   color: #fff;
-  z-index:1000;
+  z-index:0;
   margin-left: 5px;
 
   a {
