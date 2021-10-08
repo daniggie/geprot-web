@@ -3,7 +3,7 @@ import api from "../services/api";
 
 interface AuthState {
   jwt: string;
-  usuario: object;
+  gestor: object;
 }
 
 interface SignInCredentials {
@@ -13,7 +13,7 @@ interface SignInCredentials {
 
 interface AuthContextData {
   signIn(credentials: SignInCredentials): Promise<void>;
-  usuario: object;
+  gestor: object;
   signOut(): void;
 }
 
@@ -24,38 +24,38 @@ export const AuthContext = createContext<AuthContextData>(
 export const AuthProvider: React.FC = ({children}) => {
   const [data, setData] = useState<AuthState>(() => {
     const jwt = localStorage.getItem("@Geprot:token");
-    const usuario = localStorage.getItem("@Geprot:usuario")
+    const gestor = localStorage.getItem("@Geprot:usuario")
 
-    if (jwt && usuario) {
-      return { jwt , usuario :JSON.parse(usuario)};
+    if (jwt && gestor) {
+      return { jwt , gestor :JSON.parse(gestor)};
     }
 
     return {} as AuthState;
   });
 
   const signIn = useCallback( async ({email, senha}) => {
-    const response = await api.post("authenticate", {
+    const response = await api.post("login", {
       email,
       senha
     });
 
-    const { jwt, usuario } = response.data;
+    const { jwt, gestor } = response.data;
 
     localStorage.setItem("@Geprot:token", jwt);
-    localStorage.setItem("@Geprot:usuario", JSON.stringify(usuario));
-    setData({ jwt, usuario });
+    localStorage.setItem("@Geprot:gestor", JSON.stringify(gestor));
+    setData({ jwt, gestor });
   }, []);
 
   const signOut = useCallback(() => {
     localStorage.removeItem("@Geprot:token");
-    localStorage.removeItem("@Geprot:usuario");
+    localStorage.removeItem("@Geprot:gestor");
 
     setData({} as AuthState);
 
   }, [])
 
   return (
-    <AuthContext.Provider value={{usuario: data.usuario, signIn, signOut}}>
+    <AuthContext.Provider value={{gestor: data.gestor, signIn, signOut}}>
       {children}
     </AuthContext.Provider>
   );
