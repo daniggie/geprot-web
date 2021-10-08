@@ -15,49 +15,47 @@ interface Consultor {
 }
 
 const Informations: React.FC = () => {
-  const [ valores, setValores ] = useState<Consultor[]>([]);
+  const [ consultores, setConsultores ] = useState<Consultor[]>([]);
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`usuarios/listar/consultores`,config).then(response => {
-        setValores(response.data);
+      await api.get(`consultor/listar`,config).then(response => {
+        setConsultores(response.data);
       })
     }
     carregaDados();
   }, [ ])
+  console.log(consultores)
   const link = "/alocaratribuirfuncionario/"
   return (
     <>
-    {
-      valores.map(valor => (
+    {consultores.map(consultor => (
+    <Contant key={consultor.id}>
+      {console.log(consultor)}
 
-
-    <Contant
-        key={valor.id}
-    >
       <div className="columns">
       <div className="column1">
-          <p className="helvetica light fonte_15 cor_0">{valor.id}</p>
+          <p className="helvetica light fonte_15 cor_0">{consultor.id}</p>
       </div>
 
       <div className="column2">
-        <p className="helvetica light fonte_15 cor_0">{valor.nome}</p>
+        <p className="helvetica light fonte_15 cor_0">{consultor.nome}</p>
       </div>
 
       <div className="column2">
-        <p className="helvetica light fonte_15 cor_0">{valor.fornecedor.nome}</p>
+        <p className="helvetica light fonte_15 cor_0">{consultor.fornecedor.nome}</p>
       </div>
 
       <div className="column1">
-        <p className="helvetica light fonte_15 cor_0"> {valor.demandas} </p>
+        <p className="helvetica light fonte_15 cor_0"> {consultor.id} </p>
       </div>
 
       <div className="column1">
         <p className="helvetica light fonte_15 cor_0">
-          <a href={link + valor.id}>
+          <a href={link + consultor.id}>
             <CgSearchLoading size={25} color="#00579D"/>
           </a>
         </p>
