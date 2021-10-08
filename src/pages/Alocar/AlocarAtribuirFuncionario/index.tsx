@@ -8,25 +8,27 @@ import { useParams } from "react-router";
 import api from "../../../services/api";
 
 interface Consultor {
-  id: number,
-  nome: string,
-  demandas: number,
-  precoHora: number,
-  email: string,
-  status: string,
-  dataFormatada: string,
+  id: number;
+  usuario: {
+    id: number;
+    nome: string;
+    email: string;
+    dataCadastro: Date;
+    status: string;
+  };
   fornecedor: {
-    id: number,
-    nome: string,
-    email: string
-  }
+    id: number;
+    nome: string;
+    email: string;
+  };
+  precoHora: number ;
 }
 
 
 const AlocarAtribuirFuncionario: React.FC = () => {
 
   const { id }: {id:string} = useParams();
-  const [ valores, setValores ] = useState<Consultor>();
+  const [ consultor, setConsultor ] = useState<Consultor>();
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
@@ -34,8 +36,8 @@ const AlocarAtribuirFuncionario: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`usuarios/buscar/consultor/${id}`, config).then(response => {
-        setValores(response.data);
+      await api.get(`consultor/buscar/${id}`, config).then(response => {
+        setConsultor(response.data);
       })
     }
     carregaDados();
@@ -53,9 +55,9 @@ const AlocarAtribuirFuncionario: React.FC = () => {
           <div className="funcionario">
 
             <div className="line">
-              <p className="helvetica bold cor_0 fonte_20"> {valores?.nome} </p>
+              <p className="helvetica bold cor_0 fonte_20"> {consultor?.usuario.nome} </p>
 
-              <p className="helvetica bold cor_5 fonte_15"> STATUS: {valores?.status}</p>
+              <p className="helvetica bold cor_5 fonte_15"> STATUS: {consultor?.usuario.status}</p>
             </div>
 
             <div className="line">
@@ -64,7 +66,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> {valores?.id} </p>
+                <p className="helvetica bold cor_0 fonte_15"> {consultor?.id} </p>
               </div>
 
               <div className="col">
@@ -72,7 +74,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> {valores?.dataFormatada} </p>
+                <p className="helvetica bold cor_0 fonte_15"> {consultor?.usuario.dataCadastro} </p>
               </div>
             </div>
 
@@ -82,7 +84,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.nome} </p>
+                <p className="helvetica bold cor_0 fonte_15"> {consultor?.fornecedor.nome} </p>
               </div>
 
               <div className="col">
@@ -90,14 +92,14 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="col">
-                <p className="helvetica bold cor_0 fonte_15"> R$ {valores?.precoHora} </p>
+                <p className="helvetica bold cor_0 fonte_15"> R$ {consultor?.precoHora} </p>
               </div>
             </div>
 
             <div className="line">
             <div className="col">
                 <b className="helvetica lighter cor_0 fonte_15"> Email do Consultor: </b>
-                <b className="helvetica bold cor_0 fonte_15"> {valores?.email} </b>
+                <b className="helvetica bold cor_0 fonte_15"> {consultor?.usuario.email} </b>
               </div>
 
               <div className="col">
@@ -109,7 +111,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
             <div className="line">
               <div className="col">
                 <b className="helvetica lighter cor_0 fonte_15"> Email do fornecedor: </b>
-                <b className="helvetica bold cor_0 fonte_15"> {valores?.fornecedor.email} </b>
+                <b className="helvetica bold cor_0 fonte_15"> {consultor?.fornecedor.email} </b>
               </div>
 
               <div className="col">

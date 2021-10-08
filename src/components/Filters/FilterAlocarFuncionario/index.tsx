@@ -44,14 +44,6 @@ const FilterAloc: React.FC = () =>{
       <div className="cols">
 
         <div className="cols1">
-          <b className="helvetica fonte_15 cor_5 normal"> CC: </b>
-        </div>
-
-        <div className="cols2">
-          <input type="text" placeholder="Nome do fornecedor..."/>
-        </div>
-
-        <div className="cols1">
         </div>
 
         <div className="cols2">

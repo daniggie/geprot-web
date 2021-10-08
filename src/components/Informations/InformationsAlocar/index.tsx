@@ -6,12 +6,12 @@ import { Contant } from "./style";
 
 interface Consultor {
   id: number,
-  nome: string,
-  demandas: number,
+    nome: string;
   fornecedor: {
     id: number,
     nome: string
-  }
+  },
+  quantidade_projetos_alocado: number
 }
 
 const Informations: React.FC = () => {
@@ -50,7 +50,7 @@ const Informations: React.FC = () => {
       </div>
 
       <div className="column1">
-        <p className="helvetica light fonte_15 cor_0"> {consultor.id} </p>
+        <p className="helvetica light fonte_15 cor_0"> {consultor.quantidade_projetos_alocado} </p>
       </div>
 
       <div className="column1">
