@@ -25,7 +25,7 @@ interface Status {
 const Cards: React.FC<Status> = ({id}) => {
   const [ valor, setValor ] = useState<Card>();
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);

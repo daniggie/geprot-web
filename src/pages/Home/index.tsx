@@ -32,8 +32,7 @@ const Home: React.FC = () => {
   const [valores, setValores ] = useState<Card[]>([]);
   const [ status , setStatus ] = useState<number>();
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
-
+    let usuario = localStorage.getItem('@Geprot:gestor');
     if (usuario) {
         let languageObject = JSON.parse(usuario);
         return languageObject;
@@ -44,18 +43,19 @@ const Home: React.FC = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    async function carregaPesquisa(): Promise<void> {
+   /* async function carregaPesquisa(): Promise<void> {
       await api.get(`projetos/listarcontaining/${secao.secao.id}/${campoBusca}/${status ? status : 0}`, config).then(response => {
         setValores(response.data)
       })
-    }
+    }*/
     async function carregaPadrao(): Promise<void> {
       await api.get(`projetos/listar/${secao.secao.id}`, config).then(response => {
         setValores(response.data)
       })
     }
+    carregaPadrao;
 
-  useEffect(() => {
+ /* useEffect(() => {
     console.log(status, campoBusca)
     if ((campoBusca == '' || campoBusca == null) && (status == 0 || status == undefined)) {
       carregaPadrao()
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
 
     console.log(status, campoBusca)
     carregaPesquisa()
-  }, [campoBusca, status])
+  }, [campoBusca, status])*/
 
   const addStatus = async (statusInt: number) => {
     setStatus(statusInt);

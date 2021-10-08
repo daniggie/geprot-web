@@ -10,7 +10,7 @@ import SwitchFlags from "../SwitchFlags";
 const Header: React.FC = () => {
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);
@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
     localStorage.removeItem("@Geprot:cadastra");
     localStorage.removeItem("@Geprot:token")
-    localStorage.removeItem("@Geprot:usuario")
+    localStorage.removeItem("@Geprot:gestor")
 
     window.location.reload();
   }
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
             <div>
               <h1> Gestor </h1>
 
-              <p >{secao.nome} </p>
+              <p >{secao.usuario.nome} </p>
             </div>
 
           </div>

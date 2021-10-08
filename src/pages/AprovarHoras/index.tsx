@@ -31,7 +31,7 @@ const AprovarHoras: React.FC = () => {
   console.log(valores)
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);

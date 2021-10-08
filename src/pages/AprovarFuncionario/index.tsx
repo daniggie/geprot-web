@@ -60,7 +60,7 @@ const AprovarFuncionario: React.FC = () => {
   }
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);

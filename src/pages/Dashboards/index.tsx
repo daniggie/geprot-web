@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
   const [ filtroTempo, setFiltroTempo ] = useState<number>();
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);

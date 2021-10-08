@@ -24,7 +24,7 @@ export const AuthContext = createContext<AuthContextData>(
 export const AuthProvider: React.FC = ({children}) => {
   const [data, setData] = useState<AuthState>(() => {
     const jwt = localStorage.getItem("@Geprot:token");
-    const gestor = localStorage.getItem("@Geprot:usuario")
+    const gestor = localStorage.getItem("@Geprot:gestor")
 
     if (jwt && gestor) {
       return { jwt , gestor :JSON.parse(gestor)};

@@ -9,7 +9,7 @@ const Menu: React.FC = () => {
   const { id }: {id:string} = useParams();
 
   const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:usuario');
+    let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
         let languageObject = JSON.parse(usuario);
