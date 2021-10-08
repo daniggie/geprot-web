@@ -25,7 +25,7 @@ const Informations: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/naoalocados/${id}`,config).then(response => {
+      await api.get(`projetos/alocados/${id}`,config).then(response => {
         setValores(response.data)
       })
     }
