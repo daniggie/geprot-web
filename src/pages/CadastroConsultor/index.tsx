@@ -6,53 +6,37 @@ import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import api from "../../services/api";
 import { useHistory } from "react-router";
 
-
-interface CadastraConsultor {
-	nome: string,
-	id: number,
-	email: string,
-	senha: string,
-	idFornecedor:{
-		id:number
-	},
-	secao: {
-		id: number
-	},
-	precoHora:number
-}
-
 const Configuracao: React.FC = () => {
   const history = useHistory();
 
   const consultor = {
-    nome: "",
     id: 0,
-    email: "",
-    senha: "",
-    idFornecedor:{
-      id:0
+    usuario: {
+      nome:  "",
+      email: "",
+      senha: ""
     },
-    secao: {
+    fornecedor: {
       id: 0
     },
-    precoHora: 0
+    precoHora :0
   }
 
   const Cadastrar = async () => {
     try{
-      consultor.nome = (document.getElementById('nome') as HTMLInputElement).value;
+      consultor.usuario.nome = (document.getElementById('nome') as HTMLInputElement).value;
       console.log("chegou até aqui")
       consultor.id = parseInt((document.getElementById('id') as HTMLInputElement).value);
-      consultor.email = (document.getElementById('email') as HTMLInputElement).value;
-      consultor.senha = (document.getElementById('senha') as HTMLInputElement).value;
-      consultor.idFornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
+      consultor.usuario.email = (document.getElementById('email') as HTMLInputElement).value;
+      consultor.usuario.senha = (document.getElementById('senha') as HTMLInputElement).value;
+      consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
       consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);
       console.log(consultor)
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.post("/usuarios/cadastrar", consultor, config);
+      await api.post("/consultor/cadastrar", consultor, config);
       history.push('/home');
     }catch(err){
       alert("Deu pau")
