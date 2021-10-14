@@ -166,18 +166,9 @@ const Cadastrar6: React.FC = () => {
               <b className="helvetica fonte_20 cor_5 bold">Descrição</b>
             </div>
 
-            <div className="borderstyle">
-              <p className="helvetica fonte_13 cor_0 lighter">
-              Lorem ipsum dolor sit amet. Qui natus dicta ea harum
-              laudantium id nisi magni ea expedita consequatur ut nostrum
-              quae sed animi delectus id recusandae dolores? Hic sunt
-               obcaecati sed quia rerum ex vitae optio rem quibusdam
-               nesciunt ut voluptas iusto et quia amet! Voluptatem
-               voluptas et ipsum modi ut cumque enim in cupiditate
-               aliquid est nisi quae. Eum vitae eaque vel quisquam
-               enim veritatis co.
-              </p>
-            </div>
+            <input className="inputDescription">
+              
+            </input>
 
             <div className="line">
               <div className="download">
@@ -216,90 +207,92 @@ const Cadastrar6: React.FC = () => {
 
               </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Ludicir Rodrigues
+              < div className="th">
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Ludicir Rodrigues
+                  </div>
+
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
 
-                <div className="column2 fonte_13">
-                  90 H
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Gilwedor Silva
+                  </div>
+
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
 
-              </div>
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Gabriela Gonsalves
+                  </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Gilwedor Silva
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
 
-                <div className="column2 fonte_13">
-                  90 H
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Lorena Rorges
+                  </div>
+
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
 
-              </div>
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Hiego Luciman
+                  </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Gabriela Gonsalves
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
 
-                <div className="column2 fonte_13">
-                  90 H
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Hiego Luciman
+                  </div>
+
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Hiego Luciman
+                  </div>
 
-              </div>
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Lorena Rorges
                 </div>
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1 fonte_13">
+                    Hiego Luciman
+                  </div>
 
-                <div className="column2 fonte_13">
-                  90 H
+                  <div className="column2 fonte_13">
+                    90 H
+                  </div>
+
                 </div>
-
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Hiego Luciman
-                </div>
-
-                <div className="column2 fonte_13">
-                  90 H
-                </div>
-
-              </div>
-
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Hiego Luciman
-                </div>
-
-                <div className="column2 fonte_13">
-                  90 H
-                </div>
-
-              </div>
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Hiego Luciman
-                </div>
-
-                <div className="column2 fonte_13">
-                  90 H
-                </div>
-
-              </div>
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1 fonte_13">
-                  Hiego Luciman
-                </div>
-
-                <div className="column2 fonte_13">
-                  90 H
-                </div>
-
               </div>
 
             </div>

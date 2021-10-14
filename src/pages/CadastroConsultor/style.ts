@@ -67,11 +67,6 @@ export const Container= styled.div`
           border: 1px solid #dedede;
           border-color: red;
         }
-
-        .spanError{
-          margin: 5px 8px;
-          color: red;
-        }
       }
     }
 

@@ -40,12 +40,11 @@ p{
   justify-content: flex-start;
   margin-bottom: 5px;
 
-  .borderstyle{
-    min-height: 150px;
+  .inputDescription{
+    min-height: 130px;
     width: 90%;
     border: 3px solid rgba(0, 0, 0, 0.1);
     padding: 5px;
-
   }
 
 
@@ -54,10 +53,7 @@ p{
   max-height: 220px;
   width:80%;
   margin-left: 0px;
-  border:  1px solid #dedede;
-  overflow: auto;
-
-  
+  border: 1px solid #dedede;
 
   .header{
     display:flex;
@@ -87,37 +83,42 @@ p{
       justify-content: center;
       align-items: center;
     }
-
   }
 
-  .columns{
+  .th{
+    max-height: 165px;
     width:100%;
-    display: flex;
-    background: #fff;
+    overflow: auto;
 
-    .column1{
-      width: 60%;
-      height: 30px;
-      display:flex;
-      justify-content: space-evenly;
-      align-items: center;
-      border-bottom-style: solid;
-      border-bottom-width: 0.5px;
-      border-bottom-color: #DCDCDC;
-
-
+    .columns{
+      width:100%;
+      display: flex;
+      background: #fff;
+  
+      .column1{
+        width: 60%;
+        height: 30px;
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-bottom-style: solid;
+        border-bottom-width: 0.5px;
+        border-bottom-color: #DCDCDC;
+  
+  
+        }
+  
+      .column2{
+        height: 30px;
+        width: 40%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+  
+        border-bottom-style: solid;
+        border-bottom-width: 0.5px;
+        border-bottom-color: #DCDCDC;
       }
-
-    .column2{
-      height: 30px;
-      width: 40%;
-      display:flex;
-      justify-content: center;
-      align-items: center;
-
-      border-bottom-style: solid;
-      border-bottom-width: 0.5px;
-      border-bottom-color: #DCDCDC;
     }
   }
 

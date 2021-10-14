@@ -1,7 +1,7 @@
 import React, { InputHTMLAttributes, useState, useCallback, useRef, useEffect } from "react";
 import { useField } from "@unform/core";
 
-import {Container} from "./styles";
+import {Container, Error} from "./styles";
 
 interface InputRegisterProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string;
@@ -17,6 +17,8 @@ const InputRegister:React.FC<InputRegisterProps> = ({name, ...rest}) => {
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
+
+    setIsFilled(!!inputRef.current?.value);
   }, []);
 
   const handleInputFocus = useCallback(() => {
@@ -40,6 +42,11 @@ const InputRegister:React.FC<InputRegisterProps> = ({name, ...rest}) => {
         ref={inputRef}
         {...rest}
       />
+      { error &&(
+        <Error title={error}>
+            <div className="spanError"></div>
+        </Error>
+      )}
     </Container>
   );
 }

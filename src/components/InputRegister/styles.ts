@@ -57,3 +57,17 @@ input{
 }
 }
 `;
+
+export const Error = styled(Tooltip)`
+  height: 20px;
+  margin-left: 16px;
+  
+  span {
+    background: #c53030;
+    color: #fff;
+    
+    &::before {
+      border-color: #c53030 transparent;
+    }
+  }
+`;
