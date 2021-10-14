@@ -18,7 +18,6 @@ interface Card {
   valor: number;
   nomeSolicitante: string,
   nomeResponsavel: string,
-  horasRestantes: number;
   horasPrevistas: number;
   valorUtilizado: number;
   valorRestante: number;
@@ -41,7 +40,7 @@ const Detalhes: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/listar/projetos/${id ? id : null}`, config).then(response => {
+      await api.get(`projetos/buscar/${id ? id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
@@ -56,7 +55,7 @@ const Detalhes: React.FC = () => {
         return languageObject;
     }
 });
-
+let horasRestantes = (valores?.horasPrevistas ? valores?.horasPrevistas : 0) - (valores?.horasTrabalhadas ? valores?.horasTrabalhadas : 0);
 const LinkAprovar = "/aprovarhoras/";
 
   return(
@@ -160,7 +159,7 @@ const LinkAprovar = "/aprovarhoras/";
               data={[
                 ['Times', 'Percent'],
                 ['Horas', valores?.horasTrabalhadas],
-                ['Horas', valores?.horasRestantes]
+                ['Horas', horasRestantes]
               ]}
 
               options={{
@@ -184,7 +183,7 @@ const LinkAprovar = "/aprovarhoras/";
               }}
             />
             <div id="labelOverlay">
-              <p className="used-size">{valores?.horasTrabalhadas }<span>h</span></p>
+              <p className="used-size">{valores?.horasTrabalhadas}<span>h</span></p>
               <p className="total-size"> of {valores?.horasPrevistas}h</p>
             </div>
           </div>
