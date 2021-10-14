@@ -6,7 +6,7 @@ import { BiReceipt } from "react-icons/bi";
 import Header from '../../../components/Header';
 import api from '../../../services/api';
 import { useHistory } from 'react-router';
-import TableConsultor from '../../../components/TableConsultores';
+import LineConsultor from '../../../components/LineConsultores';
 
 const Cadastrar6: React.FC = () => {
   const history = useHistory();
@@ -206,7 +206,18 @@ const Cadastrar6: React.FC = () => {
 
               </div>
 
-              <TableConsultor/>
+              < div className="th">
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+              </div>
               
             </div>
 

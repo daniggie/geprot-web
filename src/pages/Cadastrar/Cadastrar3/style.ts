@@ -87,6 +87,12 @@ p{
       align-items: center;
     }
   }
+
+  .th{
+    max-height: 163px;
+    width:100%;
+    overflow: auto;
+  }
 }
 
 
