@@ -19,8 +19,8 @@ const ContDetails: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-       api.get(`projetos/listar/projetos/${id}`, config).then(response => {
-        setValor(response.data.secaos)
+       api.get(`ccpagantes/buscar/${id}`, config).then(response => {
+        setValor(response.data)
       })
     }
    carregaDados();
