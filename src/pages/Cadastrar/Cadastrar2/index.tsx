@@ -15,7 +15,6 @@ interface Secao {
 
 const Cadastrar4: React.FC = () => {
   const [ valor, setValor ] = useState<Secao[]>([]);
-  const [ newSecao, setNewSecao ] = useState('');
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
 
   useEffect(() => {

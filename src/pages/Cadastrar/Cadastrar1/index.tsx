@@ -6,7 +6,10 @@ import api from '../../../services/api';
 import Header from '../../../components/Header';
 
 interface NomeConsultor {
- nome: string;
+ id: number;
+ usuario: {
+   nome: string;
+ }
 }
 
 interface Consultor {
@@ -16,7 +19,6 @@ interface Consultor {
 }
 
 const Cadastrar: React.FC = (  ) => {
-  const[newConsultor, setNewConsultor] = useState('');
   const[consultores, setConsultores] = useState<Consultor[]>([]);
 
   const projeto = {
@@ -67,12 +69,12 @@ const Cadastrar: React.FC = (  ) => {
         headers: { Authorization: `Bearer ${token}` },
       };
 
-      const response = await api.get<NomeConsultor>(`/usuarios/buscar/consultor/${idConsultor}`,config);
+      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
       const consultor = response.data;
 
       const card:Consultor = {
         id: parseInt(idConsultor),
-        nome: consultor.nome,
+        nome: consultor.usuario.nome,
         horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1"
       }
       setConsultores([...consultores, card]);
