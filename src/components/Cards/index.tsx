@@ -50,7 +50,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
   return(
       <>
 
-        <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0}>
+        <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0 }>
           <a href={pagina + valor?.id}>
             <div className="card_type">
             <div className="card_status_color">
@@ -142,7 +142,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
                         <p className="cor_0 fonte_14 helvetica"> Até: { valor?.dataFinalizacao ? valor?.dataFinalizacao : "Não informado" }</p>
                     </div>
                     <div className="content_barra">
-                        <div className="green content_carregamento">
+                        <div className="green content_carregamento" >
                         </div>
                     </div>
                   </div>

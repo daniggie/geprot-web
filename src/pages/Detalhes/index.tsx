@@ -33,6 +33,13 @@ interface Card {
 const Detalhes: React.FC = () => {
   const { id }: {id:string} = useParams();
   const [valores, setValores ] = useState<Card>();
+  const [perfil] = useState(() => {
+    let usuario = localStorage.getItem('@Geprot:gestor');
+    if (usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+      }
+  });
 
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
@@ -40,7 +47,7 @@ const Detalhes: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/buscar/${id ? id : null}`, config).then(response => {
+      await api.get(`projetos/buscar/${perfil.secao.id}/${id ? id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
