@@ -18,13 +18,13 @@ interface Card {
     barraProgresso: number;
 }
 
-interface Status {
+interface Identifica {
   id: number;
 }
 
-const Cards: React.FC<Status> = ({id}) => {
+const Cards: React.FC<Identifica> = ({id}) => {
   const [ valor, setValor ] = useState<Card>();
-  const [secao] = useState(() => {
+  const [ perfil ] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
 
     if(usuario) {
@@ -39,19 +39,19 @@ const Cards: React.FC<Status> = ({id}) => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/listar/projetos/${id}`, config).then(response => {
+      await api.get(`/projetos/buscar/${id}`, config).then(response => {
         setValor(response.data);
       })
     }
-    carregaDados();
-  }, [id])
+    carregaDados()
+  }, [])
 
-  const teste = "/detalhes/";
+  const pagina = "/detalhes/";
   return(
       <>
 
         <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0}>
-          <a href={teste + valor?.id}>
+          <a href={pagina + valor?.id}>
             <div className="card_type">
             <div className="card_status_color">
 
@@ -60,7 +60,7 @@ const Cards: React.FC<Status> = ({id}) => {
                   <div className="linha_1">
                       <div className="card_secao">
                           <div className="cor_5 fonte_12 helvetica ">
-                              {secao.secao.nome}
+                              {perfil.secao.nome}
                           </div>
                       </div>
                       <div className="card_status_txt">
