@@ -6,6 +6,7 @@ import { BiReceipt } from "react-icons/bi";
 import Header from '../../../components/Header';
 import api from '../../../services/api';
 import { useHistory } from 'react-router';
+import TableConsultor from '../../../components/TableConsultores';
 
 const Cadastrar6: React.FC = () => {
   const history = useHistory();
@@ -162,13 +163,11 @@ const Cadastrar6: React.FC = () => {
 
           <div className="content">
 
-          <div className="line">
+            <div className="line">
               <b className="helvetica fonte_20 cor_5 bold">Descrição</b>
             </div>
 
-            <input className="inputDescription">
-              
-            </input>
+            <textarea className="helvetica" ></textarea>
 
             <div className="line">
               <div className="download">
@@ -207,94 +206,8 @@ const Cadastrar6: React.FC = () => {
 
               </div>
 
-              < div className="th">
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Ludicir Rodrigues
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Gilwedor Silva
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Gabriela Gonsalves
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Lorena Rorges
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Hiego Luciman
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Hiego Luciman
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Hiego Luciman
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-                <div className="columns helvetica cor_0 lighter">
-                  <div className="column1 fonte_13">
-                    Hiego Luciman
-                  </div>
-
-                  <div className="column2 fonte_13">
-                    90 H
-                  </div>
-
-                </div>
-              </div>
-
+              <TableConsultor/>
+              
             </div>
 
           </div>
