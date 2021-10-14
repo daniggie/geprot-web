@@ -6,38 +6,36 @@ import api from "../../services/api";
 import { useHistory } from "react-router";
 
 interface AtribuicaoProps {
-  projetos_id: number,
-  usuarios_id: string
+  projetoId: number,
+  consultorId: string
 }
 
 interface AlocarProps {
-  projetos_id: number,
-  usuarios_id: number,
-  limiteHoras: number
+  projetoId: number,
+  consultorId: number,
+  quantidadeHoras: number
 }
 
-
-
 // valores chegando pelo botao, falta fazer a funcao para alocar
-const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
+const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId}) => {
   const history = useHistory()
-  function Alocar(usuarios_id: number, projetos_id: number) {
+  function Alocar(consultorId: number, projetoId: number) {
     console.log("bomdia")
     const alocarHoras = {
-      usuarios_id: 0,
-      projetos_id: 0,
-      limiteHoras: 0,
+      consultorId: 0,
+      projetoId: 0,
+      quantidadeHoras: 0,
     }
 
-    alocarHoras.projetos_id = projetos_id;
-    alocarHoras.usuarios_id = usuarios_id;
-    alocarHoras.limiteHoras = parseInt((document.getElementById('inputLegal') as HTMLInputElement).value);
+    alocarHoras.projetoId = projetoId;
+    alocarHoras.consultorId = consultorId;
+    alocarHoras.quantidadeHoras = parseInt((document.getElementById('inputLegal') as HTMLInputElement).value);
 
     const token = localStorage.getItem("@Geprot:token");
     let config = {headers: {
       "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
 
-    api.post(`consultores/alocar`, JSON.stringify(alocarHoras), config)
+    api.post(`consultor/alocar`, JSON.stringify(alocarHoras), config)
 
     history.push(`/alocarescolherfuncionario`)
   }
@@ -66,7 +64,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetos_id, usuarios_id}) => {
             <img src={arrowleft} alt="" onClick={addOverlay}/>
             <p className="helvetica cor_5 fonte_20">Horas:</p>
             <input id="inputLegal" placeholder="0H" type="number"/>
-            <button onClick={() => Alocar(parseInt(usuarios_id), projetos_id)}><RiCheckLine size={ 25 } color="#fff"/></button>
+            <button onClick={() => Alocar(parseInt(consultorId), projetoId)}><RiCheckLine size={ 25 } color="#fff"/></button>
         </div>
       </div>
     </Container>

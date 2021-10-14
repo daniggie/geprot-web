@@ -58,7 +58,8 @@ const Informations: React.FC = () => {
       </div>
 
       <div className="column1">
-        <Atribuicao projetos_id={valor.id} usuarios_id={id}/>
+        {console.log(id)}
+        <Atribuicao projetoId={valor.id} consultorId={id}/>
       </div>
 
     </div>
