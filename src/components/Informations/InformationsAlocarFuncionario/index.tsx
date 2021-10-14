@@ -11,7 +11,7 @@ interface Projeto {
   nome: string,
   nomeResponsavel: string,
   dataCadastro: Date,
-
+  allocated: boolean
 }
 
 const Informations: React.FC = () => {
