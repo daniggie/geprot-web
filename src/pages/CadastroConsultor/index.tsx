@@ -5,6 +5,7 @@ import { All, Container } from "./style"
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import api from "../../services/api";
 import { useHistory } from "react-router";
+import InputRegister from "../../components/InputRegister";
 
 const Configuracao: React.FC = () => {
   const history = useHistory();
@@ -55,25 +56,44 @@ const Configuracao: React.FC = () => {
             <b className="helvetica fonte_20 cor_5">CADASTRO DE CONSULTOR</b>
           </div>
 
-          <div className="line">
-            <p className="helvetica fonte_15 cor_5">Nome do consultor:</p>
-            <input id="nome" type="text" placeholder="Nome completo..." />
-            <p className="helvetica fonte_15 cor_5">Email:</p>
-            <input id="email" type="text" placeholder="E-mail..."/>
+          <div className="column">
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">Nome do consultor:</p>
+              <InputRegister name="nomeConsultor" placeholder="Digite o nome..."/>
+              <div className="spanError">Erro</div>
+            </div>
+
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">Email:</p>
+              <InputRegister name="email" placeholder="Digite o email..."/>
+              <div className="spanError">Erro</div>
+            </div>
+
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">Senha:</p>
+              <InputRegister name="senha" placeholder="Digite a senha..."/>
+              <div className="spanError">Erro</div>
+            </div>
           </div>
 
-          <div className="line">
-            <p className="helvetica fonte_15 cor_5">ID:</p>
-            <input id="id" type="text" placeholder="ID..."/>
-            <p className="helvetica fonte_15 cor_5">Preço das horas:</p>
-            <input id="precoHora" type="number" min="0" max="10000" step="1" placeholder="R$"/>
-          </div>
+          <div className="column">
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">ID do Consultor:</p>
+              <InputRegister name="idConsultor" placeholder="Digite o ID..."/>
+              <div className="spanError">Erro</div>
+            </div>
 
-          <div className="line">
-            <p className="helvetica fonte_15 cor_5">Senha:</p>
-            <input id="senha" type="password" placeholder="senha..."/>
-            <p className="helvetica fonte_15 cor_5">ID do Fornecedor:</p>
-            <input id="idFornecedor" type="texte" placeholder="ID do fornecedor..."/>
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">Preço das horas:</p>
+              <InputRegister name="price" placeholder="Digite o preço..."/>
+              <div className="spanError">Erro</div>
+            </div>
+
+            <div className="line">
+              <p className="helvetica fonte_15 cor_5">ID do Fornecedor:</p>
+              <InputRegister name="idForcenedor" placeholder="Digite o ID..."/>
+              <div className="spanError">Erro</div>
+            </div>
           </div>
 
           <div className="position">

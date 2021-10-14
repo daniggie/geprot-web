@@ -24,6 +24,7 @@ export const Container= styled.div`
     align-content: space-around;
     justify-content: center;
     border-radius: 4px;
+    padding: 15px;
 
     .title{
       width: 100%;
@@ -31,6 +32,7 @@ export const Container= styled.div`
       display: flex;
       align-items: center;
       align-content: space-around;
+      margin-bottom: 15px;
 
       b{
         margin: 5px 0px 0px 20px;
@@ -38,26 +40,38 @@ export const Container= styled.div`
       }
     }
 
-    .line{
-      width: 90%;
-      height: 20px;
-      display: flex;
+    .column{
+      width: 48%;
+      height: 290px;
       align-items: center;
       align-content: space-around;
       justify-content: space-around;
 
-      input{
-      width: 25%;
-      border-radius:5px;
-      border: 1px;
-      padding:10px;
-      border: 1px solid #dedede;
-    }
+      .line{
+        width: 100%;
+        height: 80px;
+        margin-bottom: 15px;
 
-      p{
-        display: flex;
-        width: 15%;
-        justify-content: start;
+        p{
+          display: flex;
+          width: 80%;
+          justify-content: start;
+          margin-bottom: 5px;
+        }
+
+        input{
+          width: 80%;
+          border-radius:5px;
+          border: 1px;
+          padding:10px;
+          border: 1px solid #dedede;
+          border-color: red;
+        }
+
+        .spanError{
+          margin: 5px 8px;
+          color: red;
+        }
       }
     }
 
@@ -96,4 +110,3 @@ export const Container= styled.div`
   }
 }
 `;
-
