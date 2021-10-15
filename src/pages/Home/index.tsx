@@ -112,9 +112,13 @@ const Home: React.FC = () => {
           <ContFilter>
             <div className="lang-menu">
               <div className="selected-lang">
-                {filtroPorStatus === 0 ?"Todos": filtroPorStatus === 1 ?"Atrasados":
-                filtroPorStatus === 2 ?"Concluidos":
-                filtroPorStatus === 3 ?"Andamentos":"Nao iniciados"}
+                {
+                  filtroPorStatus === 0 ? "Todos" :
+                  filtroPorStatus === 1 ? "Atrasados" :
+                  filtroPorStatus === 2 ? "Concluidos" :
+                  filtroPorStatus === 3 ? "Andamentos" :
+                  "Nao iniciados"
+                }
               </div>
               <ul>
                 <li>
