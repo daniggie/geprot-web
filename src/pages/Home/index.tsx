@@ -9,6 +9,7 @@ import { FiChevronRight, FiSearch} from "react-icons/fi";
 import api from '../../services/api';
 import Notifications from '../../components/Notifications';
 import NaoEncontrado from '../../components/NaoEncontrado';
+import { number } from 'yargs';
 
 interface Card {
   id: number;
@@ -27,6 +28,12 @@ interface Card {
 
 const Home: React.FC = () => {
   const [valores, setValores ] = useState<Card[]>([]);
+  const [filtroString, setFiltroString] = useState("");
+  const [filtroPorStatus, setFiltroPorStatus] = useState(0);
+  const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
   const [perfil] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
     if (usuario) {
@@ -35,22 +42,53 @@ const Home: React.FC = () => {
       }
   });
 
+  async function carregaPadrao(): Promise<void> {
+    await api.get(`projetos/listar/${perfil.secao.id}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+  async function filtrarPorString(): Promise<void> {
+    await api.get(`projetos/listar/string/${perfil.secao.id}/${filtroString}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+  async function filtrarPorStatus(): Promise<void> {
+    await api.get(`projetos/listar/status/${perfil.secao.id}/${filtroPorStatus}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+  async function filtrarPorStatusAndFiltro(): Promise<void> {
+    await api.get(`projetos/listar/stringandstatus/${perfil.secao.id}/${filtroString}/${filtroPorStatus}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+  async function alterTypeStatus(params: number) {
+      setFiltroPorStatus(params)
+  }
+
   useEffect(() => {
-    async function carregaPadrao(): Promise<void> {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`projetos/listar/${perfil.secao.id}`, config).then(response => {
-        setValores(response.data)
-      })
+    console.log(filtroPorStatus, filtroString)
+    if (filtroString.trim() == "" && filtroPorStatus == 0) {
+      carregaPadrao();
+      return
     }
-    carregaPadrao()
-  }, [  ])
+
+    if (filtroString.trim() == "" && filtroPorStatus != 0) {
+      filtrarPorStatus();
+      return
+    }
+
+    if (filtroString.trim() != "" && filtroPorStatus == 0) {
+      filtrarPorString();
+      return
+    }
+
+    filtrarPorStatusAndFiltro()
+
+  }, [filtroString, filtroPorStatus])
 
 
    return (
-
     <>
       <Header/>
       <Filtros>
@@ -74,23 +112,29 @@ const Home: React.FC = () => {
           <ContFilter>
             <div className="lang-menu">
               <div className="selected-lang">
-                Todos
+                {
+                  filtroPorStatus === 0 ? "Todos" :
+                  filtroPorStatus === 1 ? "Atrasados" :
+                  filtroPorStatus === 2 ? "Concluidos" :
+                  filtroPorStatus === 3 ? "Andamentos" :
+                  "Nao iniciados"
+                }
               </div>
               <ul>
                 <li>
-                  <a className="de">Todos</a>
+                  <a className="de" onClick={() => alterTypeStatus(0)}>Todos</a>
                 </li>
                 <li>
-                  <a className="br">Andamentos</a>
+                  <a className="br" onClick={() => alterTypeStatus(3)}>Andamentos</a>
                 </li>
                 <li>
-                  <a className="en">Atrasados</a>
+                  <a className="en" onClick={() => alterTypeStatus(1)}>Atrasados</a>
                 </li>
                 <li>
-                  <a className="fr">Concluídos</a>
+                  <a className="fr" onClick={() => alterTypeStatus(2)}>Concluídos</a>
                 </li>
                 <li>
-                  <a className="fr">Não Iniciado</a>
+                  <a className="fr" onClick={() => alterTypeStatus(4)}>Não Iniciado</a>
                 </li>
               </ul>
             </div>
@@ -110,7 +154,9 @@ const Home: React.FC = () => {
             <input
               className="procurar cor_0"
               type="text"
-              placeholder="Nome, ID, seção..."
+              placeholder="nome do projeto"
+              onChange={event => setFiltroString(event.target.value)}
+              value={filtroString}
             />
             <button type="submit" className="cor_6f">
               <FiSearch size={15}/>
