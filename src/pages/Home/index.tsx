@@ -47,45 +47,48 @@ const Home: React.FC = () => {
       setValores(response.data)
     })
   }
-
   async function filtrarPorString(): Promise<void> {
-    await api.get(`projetos/listar/${perfil.secao.id}/${filtroString}`, config).then(response => {
+    await api.get(`projetos/listar/string/${perfil.secao.id}/${filtroString}`, config).then(response => {
       setValores(response.data)
     })
   }
-
   async function filtrarPorStatus(): Promise<void> {
     await api.get(`projetos/listar/status/${perfil.secao.id}/${filtroPorStatus}`, config).then(response => {
       setValores(response.data)
     })
   }
-
+  async function filtrarPorStatusAndFiltro(): Promise<void> {
+    await api.get(`projetos/listar/stringandstatus/${perfil.secao.id}/${filtroString}/${filtroPorStatus}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
   async function alterTypeStatus(params: number) {
       setFiltroPorStatus(params)
   }
 
   useEffect(() => {
-    if (filtroString.trim() === "" && filtroPorStatus === 0) {
+    console.log(filtroPorStatus, filtroString)
+    if (filtroString.trim() == "" && filtroPorStatus == 0) {
       carregaPadrao();
       return
     }
 
-    if (filtroString.trim() === "" && filtroPorStatus !== 0) {
+    if (filtroString.trim() == "" && filtroPorStatus != 0) {
       filtrarPorStatus();
       return
     }
 
-    if (filtroString.trim() !== "" && filtroPorStatus === 0) {
+    if (filtroString.trim() != "" && filtroPorStatus == 0) {
       filtrarPorString();
       return
     }
 
+    filtrarPorStatusAndFiltro()
 
   }, [filtroString, filtroPorStatus])
 
 
    return (
-
     <>
       <Header/>
       <Filtros>
@@ -109,7 +112,9 @@ const Home: React.FC = () => {
           <ContFilter>
             <div className="lang-menu">
               <div className="selected-lang">
-                Todos
+                {filtroPorStatus === 0 ?"Todos": filtroPorStatus === 1 ?"Atrasados":
+                filtroPorStatus === 2 ?"Concluidos":
+                filtroPorStatus === 3 ?"Andamentos":"Nao iniciados"}
               </div>
               <ul>
                 <li>
