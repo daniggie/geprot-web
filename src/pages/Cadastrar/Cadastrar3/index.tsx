@@ -8,7 +8,30 @@ import api from '../../../services/api';
 import { useHistory } from 'react-router';
 import LineConsultor from '../../../components/LineConsultores';
 
-const Cadastrar6: React.FC = () => {
+const Cadastrar3: React.FC = () => {
+  const projeto = {
+    nome: "",
+    nomeSolicitante: "",
+    descricao:"",
+    dataFinalizacao: "",
+    dataInicio: "",
+    nomeResponsavel:"",
+    consultores: [ 
+      {
+        consultorId: 0,
+        quantidadeHoras: 0
+      }
+    ],
+    ccpagantes: [
+      {
+        secaoId: 1,
+			  taxa: 100
+      }
+    ] 
+  }
+
+
+
   const history = useHistory();
 
   const [projetoSalvo] = useState(() => {
@@ -21,12 +44,21 @@ const Cadastrar6: React.FC = () => {
     });
   
     const Cadastrar = async () => {
+      projeto.nome = projetoSalvo.nome;
+      projeto.nomeResponsavel = projetoSalvo.nomeResponsavel;
+      projeto.dataFinalizacao = projetoSalvo.dataFinalizacao;
+      projeto.dataInicio = projetoSalvo.dataInicio;
+      projeto.nomeSolicitante = projetoSalvo.nomeSolicitante;
+      projeto.consultores =  projetoSalvo.consultores;
+      projeto.ccpagantes = projetoSalvo.ccpagantes;
+      projeto.descricao = (document.getElementById('descricao') as HTMLInputElement).value;
+
     try{
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.post("/projetos/cadastrar", projetoSalvo, config);
+      await api.post("/projetos/cadastrar", projeto, config);
       history.push('/home');
     }catch(err){
       alert("Deu pau")
@@ -167,7 +199,7 @@ const Cadastrar6: React.FC = () => {
               <b className="helvetica fonte_20 cor_5 bold">Descrição</b>
             </div>
 
-            <textarea className="helvetica" ></textarea>
+            <textarea id="descricao" className="helvetica"></textarea>
 
             <div className="line">
               <div className="download">
@@ -232,4 +264,4 @@ const Cadastrar6: React.FC = () => {
       </>
     );
 }
-export default Cadastrar6;
+export default Cadastrar3;
