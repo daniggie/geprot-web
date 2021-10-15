@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './style';
 
-const BotaoAvancar: React.FC = () => {
+const BotaoSalvar: React.FC = () => {
     return(
         <Container>
              <p>Salvar</p>
@@ -9,4 +9,4 @@ const BotaoAvancar: React.FC = () => {
     );
 };
 
-export default BotaoAvancar;
+export default BotaoSalvar;

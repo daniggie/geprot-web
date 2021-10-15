@@ -15,7 +15,7 @@ padding: 16px;
 width: 80%;
 
 border: 2px solid #232129;
-color: #666360;
+color: black;
 
 display: flex;
 align-items: center;
@@ -27,21 +27,21 @@ align-items: center;
 ${(props) =>
 props.isErrored &&
 css`
-    color: #ff9000;
+    color: black;
     border-color: #ff9000;
 `}
 
 ${(props) =>
 props.isErrored &&
 css`
-    color: #c53030;
+    color: black;
     border-color: #c53030;
 `}
 
 ${(props) =>
 props.isFilled &&
 css`
-    color: #ff9000;
+    color: black;
     border-color: #ff9000;
 `}
 
@@ -49,10 +49,10 @@ input{
     flex: 1;
     backdround: transparent;
     border: 0;
-    color: #f4ede8;
+    color: black;
 
     &::placeholder{
-        color: #666360;
+        color: black;
     }
 }
 }
