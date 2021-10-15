@@ -47,16 +47,10 @@ const Home: React.FC = () => {
     })
   }
 
-  async function filtrar(): Promise<void> {
-    if (filtro === "") {
-      carregaPadrao();
-    }
-
-    if (filtroPorStatus === 0) {
+  async function filtrarPorString(): Promise<void> {
       await api.get(`projetos/listar/${perfil.secao.id}/${filtro}`, config).then(response => {
         setValores(response.data)
       })
-    }
   }
 
   useEffect(() => {
@@ -64,7 +58,7 @@ const Home: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    filtrar()
+    filtrarPorString()
   }, [filtro])
 
 
