@@ -27,6 +27,12 @@ interface Card {
 
 const Home: React.FC = () => {
   const [valores, setValores ] = useState<Card[]>([]);
+  const [filtro, setFiltro] = useState("");
+  let filtroPorStatus = 0;
+  const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
   const [perfil] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
     if (usuario) {
@@ -35,18 +41,31 @@ const Home: React.FC = () => {
       }
   });
 
-  useEffect(() => {
-    async function carregaPadrao(): Promise<void> {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`projetos/listar/${perfil.secao.id}`, config).then(response => {
+  async function carregaPadrao(): Promise<void> {
+    await api.get(`projetos/listar/${perfil.secao.id}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function filtrar(): Promise<void> {
+    if (filtro === "") {
+      carregaPadrao();
+    }
+
+    if (filtroPorStatus === 0) {
+      await api.get(`projetos/listar/${perfil.secao.id}/${filtro}`, config).then(response => {
         setValores(response.data)
       })
     }
+  }
+
+  useEffect(() => {
     carregaPadrao()
-  }, [  ])
+  }, [])
+
+  useEffect(() => {
+    filtrar()
+  }, [filtro])
 
 
    return (
@@ -110,7 +129,9 @@ const Home: React.FC = () => {
             <input
               className="procurar cor_0"
               type="text"
-              placeholder="Nome, ID, seção..."
+              placeholder="nome do projeto"
+              onChange={event => setFiltro(event.target.value)}
+              value={filtro}
             />
             <button type="submit" className="cor_6f">
               <FiSearch size={15}/>
