@@ -9,6 +9,7 @@ import { FiChevronRight, FiSearch} from "react-icons/fi";
 import api from '../../services/api';
 import Notifications from '../../components/Notifications';
 import NaoEncontrado from '../../components/NaoEncontrado';
+import { number } from 'yargs';
 
 interface Card {
   id: number;
@@ -27,8 +28,8 @@ interface Card {
 
 const Home: React.FC = () => {
   const [valores, setValores ] = useState<Card[]>([]);
-  const [filtro, setFiltro] = useState("");
-  let filtroPorStatus = 0;
+  const [filtroString, setFiltroString] = useState("");
+  const [filtroPorStatus, setFiltroPorStatus] = useState(0);
   const token = localStorage.getItem("@Geprot:token");
     let config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -48,18 +49,39 @@ const Home: React.FC = () => {
   }
 
   async function filtrarPorString(): Promise<void> {
-      await api.get(`projetos/listar/${perfil.secao.id}/${filtro}`, config).then(response => {
-        setValores(response.data)
-      })
+    await api.get(`projetos/listar/${perfil.secao.id}/${filtroString}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function filtrarPorStatus(): Promise<void> {
+    await api.get(`projetos/listar/status/${perfil.secao.id}/${filtroPorStatus}`, config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function alterTypeStatus(params: number) {
+      setFiltroPorStatus(params)
   }
 
   useEffect(() => {
-    carregaPadrao()
-  }, [])
+    if (filtroString.trim() === "" && filtroPorStatus === 0) {
+      carregaPadrao();
+      return
+    }
 
-  useEffect(() => {
-    filtrarPorString()
-  }, [filtro])
+    if (filtroString.trim() === "" && filtroPorStatus !== 0) {
+      filtrarPorStatus();
+      return
+    }
+
+    if (filtroString.trim() !== "" && filtroPorStatus === 0) {
+      filtrarPorString();
+      return
+    }
+
+
+  }, [filtroString, filtroPorStatus])
 
 
    return (
@@ -91,19 +113,19 @@ const Home: React.FC = () => {
               </div>
               <ul>
                 <li>
-                  <a className="de">Todos</a>
+                  <a className="de" onClick={() => alterTypeStatus(0)}>Todos</a>
                 </li>
                 <li>
-                  <a className="br">Andamentos</a>
+                  <a className="br" onClick={() => alterTypeStatus(3)}>Andamentos</a>
                 </li>
                 <li>
-                  <a className="en">Atrasados</a>
+                  <a className="en" onClick={() => alterTypeStatus(1)}>Atrasados</a>
                 </li>
                 <li>
-                  <a className="fr">Concluídos</a>
+                  <a className="fr" onClick={() => alterTypeStatus(2)}>Concluídos</a>
                 </li>
                 <li>
-                  <a className="fr">Não Iniciado</a>
+                  <a className="fr" onClick={() => alterTypeStatus(4)}>Não Iniciado</a>
                 </li>
               </ul>
             </div>
@@ -124,8 +146,8 @@ const Home: React.FC = () => {
               className="procurar cor_0"
               type="text"
               placeholder="nome do projeto"
-              onChange={event => setFiltro(event.target.value)}
-              value={filtro}
+              onChange={event => setFiltroString(event.target.value)}
+              value={filtroString}
             />
             <button type="submit" className="cor_6f">
               <FiSearch size={15}/>
