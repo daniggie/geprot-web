@@ -39,27 +39,25 @@ const Cadastrar4: React.FC = () => {
       }
     });
     
-
-
-  const projeto = {
-    nome: "",
-    nomeSolicitante: "",
-    dataFinalizacao: "",
-    dataInicio: "",
-    nomeResponsavel:"",
-    consultores: [ 
-      {
-        usuarios_id: 0,
-        horas: 0
-      }
-    ],
-    ccpagantes: [
-      {
-        secoes_id: 1,
-			  taxa: 100
-      }
-    ] 
-  }
+    const projeto = {
+      nome: "",
+      nomeSolicitante: "",
+      dataFinalizacao: "",
+      dataInicio: "",
+      nomeResponsavel:"",
+      consultores: [ 
+        {
+          consultorId: 0,
+          quantidadeHoras: 0
+        }
+      ],
+      ccpagantes: [
+        {
+          secaoId: 1,
+          taxa: 100
+        }
+      ] 
+    }
   projeto.ccpagantes.shift();
 
   const Cadastrar = () => {
@@ -72,7 +70,7 @@ const Cadastrar4: React.FC = () => {
     for(let i = 0; i < secoes.length; i++){
       projeto.ccpagantes.push(
         {
-          secoes_id: secoes[i].id,
+          secaoId: secoes[i].id,
           taxa: secoes[i].taxa
         }
       )

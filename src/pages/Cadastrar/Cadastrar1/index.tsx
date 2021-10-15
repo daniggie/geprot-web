@@ -29,8 +29,8 @@ const Cadastrar: React.FC = (  ) => {
     nomeResponsavel:"",
     consultores: [ 
       {
-        usuarios_id: 0,
-        horas: 0
+        consultorId: 0,
+        quantidadeHoras: 0
       }
     ] 
   }
@@ -46,8 +46,8 @@ const Cadastrar: React.FC = (  ) => {
     for(let i = 0; i < consultores.length; i++){
       projeto.consultores.push(
         {
-          usuarios_id: consultores[i].id,
-          horas: parseInt(consultores[i].horas)
+          consultorId: consultores[i].id,
+          quantidadeHoras: parseInt(consultores[i].horas)
         }
       )
     }
