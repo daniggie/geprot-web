@@ -31,7 +31,7 @@ const InformationsApFuncionario: React.FC = () => {
       })
     }
     carregaDados();
-  }, [ valores ])
+  }, [ ])
   console.log(valores)
 
     return (

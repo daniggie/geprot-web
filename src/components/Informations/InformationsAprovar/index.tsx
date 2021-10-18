@@ -36,7 +36,6 @@ const InformationsAprovar: React.FC = () => {
     }
     carregaDados();
   }, [ valores ])
-  console.log(valores)
 
 
 

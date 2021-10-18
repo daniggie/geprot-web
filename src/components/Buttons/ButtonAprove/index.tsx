@@ -3,11 +3,15 @@ import { useParams } from 'react-router';
 import api from '../../../services/api';
 import { Container, ContainerAprovado } from './style';
 import { useHistory } from 'react-router';
-import { log } from 'console';
+import { ReactNode } from 'hoist-non-react-statics/node_modules/@types/react';
 
-const ButtonAprove: React.FC = () => {
-  const { id }: {id:string} = useParams();
-  const { consultorId }: {consultorId:string} = useParams();
+interface ButtonProps {
+  projetoId?: number
+  consultorId?: number
+  children?: ReactNode
+}
+
+const ButtonAprove: React.FC<ButtonProps> = (props) => {
   const token = localStorage.getItem("@Geprot:token");
   const history = useHistory();
   let config = {
@@ -15,16 +19,12 @@ const ButtonAprove: React.FC = () => {
   };
 
    async function apenas(): Promise<void> {
-     console.log("aqui")
-    console.log(`${id} ${consultorId}`)
-
-    await api.patch(`horas/aprovar/${id}/${consultorId}`, config).then(response => {console.log(response)}).
+    await api.put(`horas/aprovar/${props.projetoId}/${props.consultorId}`, config).then(response => {console.log(response)}).
     catch(err => {
       console.log(err)
     })
     console.log("passou")
     history.push("/")
-
   }
 
     return(

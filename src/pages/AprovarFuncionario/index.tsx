@@ -30,17 +30,18 @@ const AprovarFuncionario: React.FC = () => {
     return overlay;
 
   };
-
   const { id }: {id:string} = useParams();
   const { consultorId }: {consultorId:string} = useParams();
   const [valores, setValores ] = useState<Card>();
 
+  const token = localStorage.getItem("@Geprot:token");
+  let config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
   useEffect(() => {
     async function carregaDados(): Promise<void>  {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
+
       await api.get(`horas/${id}/${consultorId}`, config).then(response => {
         setValores(response.data)
       })
@@ -49,16 +50,10 @@ const AprovarFuncionario: React.FC = () => {
   }, [ ])
   console.log(valores)
 
-  const token = localStorage.getItem("@Geprot:token");
-  let config = {headers: {
-    "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
+  // function aprovar(){
 
-  function aprovar(){
-    alert("Chegou")
-
-   api.put(`horas/aprovar/${id}/${consultorId}`,config)
-   alert(api.put(`horas/aprovar/${id}/${consultorId}`,config))
-  }
+   //api.put(`horas/aprovar/${id}/${consultorId}`, config)
+ // }
 
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
@@ -123,7 +118,8 @@ const linkVoltar = "/aprovarhoras/"
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
               <a>
-                {valores?.statusTotal == "POSSIVEL" ? <ButtonAprove /> : <ButtonAprovado/>}
+                {console.log(parseInt(id), parseInt(consultorId))}
+                {valores?.statusTotal == undefined ? <ButtonAprove projetoId={parseInt(id)} consultorId={parseInt(consultorId)}/> : <ButtonAprovado/>}
               </a>
         </div>
 
