@@ -20,7 +20,7 @@ const AprovarHoras: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`projetos/listar/projetos/${id ? id : null}`, config).then(response => {
+      await api.get(`projetos/buscar/${id ? id : null}`, config).then(response => {
         setValores(response.data)
       })
     }
