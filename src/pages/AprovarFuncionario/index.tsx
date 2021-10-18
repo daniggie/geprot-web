@@ -10,14 +10,15 @@ import ButtonAprove from "../../components/Buttons/ButtonAprove";
 import ButtonAprovado from "../../components/Buttons/ButtonAprovado";
 
 interface Card {
-  totalHoras: number;
-  valorGasto: number;
-  nome: string;
-  statusTotal: string;
+  horasTotais: number;
+  totalGasto: number;
+  usuario: {
+    nome: string
+  },
+  statusTotal: string
 }
 
 const AprovarFuncionario: React.FC = () => {
-
   const [ overlay, setOverlay ] = useState(true);
   const addOverlay = () => {
     if(!overlay){
@@ -40,7 +41,7 @@ const AprovarFuncionario: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`horas/listar/${id}/${consultorId}`, config).then(response => {
+      await api.get(`horas/${id}/${consultorId}`, config).then(response => {
         setValores(response.data)
       })
     }
@@ -77,7 +78,7 @@ const linkVoltar = "/aprovarhoras/"
       <All overlay={overlay}>
 
         <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
-        <p className="helvetica cor_5 lighter fonte_25">{id} - {valores?.nome}</p>
+        <p className="helvetica cor_5 lighter fonte_25">{id} - {valores?.usuario.nome}</p>
 
           <div className="table">
             <div className="header">
@@ -106,12 +107,12 @@ const linkVoltar = "/aprovarhoras/"
             <div className="header">
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Total de Horas trabalhadas: </p>
-              <b className="helvetica cor_5 fonte_22">{valores?.totalHoras} H</b>
+              <b className="helvetica cor_5 fonte_22">{valores?.horasTotais} H</b>
             </div>
 
             <div className="title2">
               <p className="helvetica bold cor_0 lighter">Valor gasto: </p>
-              <b className="helvetica cor_5 fonte_22">R$ {valores?.valorGasto}</b>
+              <b className="helvetica cor_5 fonte_22">R$ {valores?.totalGasto}</b>
             </div>
           </div>
 

@@ -5,11 +5,11 @@ import api from "../../../services/api";
 import { useParams } from "react-router";
 
 interface Card {
-  todosApontamentos: [
+  horas: [
     {
       data: string;
-      descricao_trabalho: string;
-      quantidade_horas: number;
+      descricaoTrabalho: string;
+      quantidadeHoras: number;
       status: string;
     }
   ],
@@ -26,19 +26,18 @@ const InformationsApFuncionario: React.FC = () => {
       let config = {
         headers: { Authorization: `Bearer ${token}` },
       };
-      await api.get(`horas/listar/${id}/${consultorId}`,config).then(response => {
+      await api.get(`horas/${id}/${consultorId}`,config).then(response => {
         setValores(response.data)
       })
     }
     carregaDados();
-  }, [ ])
+  }, [ valores ])
   console.log(valores)
-
 
     return (
         <>
         {
-          valores?.todosApontamentos.map(valor => (
+          valores?.horas.map(valor => (
         <Content>
             <div className="columns">
                 <div className="column">
@@ -46,17 +45,17 @@ const InformationsApFuncionario: React.FC = () => {
                 </div>
 
                 <div className="column">
-                    <p className="helvetica light fonte_15 cor_0"> {valor.quantidade_horas}h</p>
+                    <p className="helvetica light fonte_15 cor_0"> {valor.quantidadeHoras}h</p>
                 </div>
 
                 <div className="column2">
-                    <p className="desc1 helvetica light fonte_15 cor_0">{valor.descricao_trabalho}</p>
-                    <p className="desc2 helvetica light fonte_15 cor_0">{valor.descricao_trabalho}</p>
+                    <p className="desc1 helvetica light fonte_15 cor_0">{valor.descricaoTrabalho}</p>
+                    <p className="desc2 helvetica light fonte_15 cor_0">{valor.descricaoTrabalho}</p>
                 </div>
 
 
                 <div className="column">
-                <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status={valor.status} /></p>
+                    <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status={valor.status} /></p>
                 </div>
 
             </div>
