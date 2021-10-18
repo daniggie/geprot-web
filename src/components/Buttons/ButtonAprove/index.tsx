@@ -29,7 +29,7 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
 
     return(
       <>
-        <Container onClick={apenas}>
+        <Container onClick={() => apenas()}>
           <p>Aprovar horas</p>
         </Container>
       </>
