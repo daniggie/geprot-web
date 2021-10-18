@@ -19,6 +19,7 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
   };
 
    async function apenas(): Promise<void> {
+     console.log(props.consultorId, props.projetoId)
     await api.put(`horas/aprovar/${props.projetoId}/${props.consultorId}`, config).then(response => {console.log(response)}).
     catch(err => {
       console.log(err)
