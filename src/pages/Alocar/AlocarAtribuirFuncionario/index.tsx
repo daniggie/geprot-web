@@ -41,7 +41,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
       })
     }
     carregaDados();
-  }, [ ]);
+  }, []);
 
 
   return(

@@ -27,7 +27,7 @@ const Informations: React.FC = () => {
       })
     }
     carregaDados();
-  }, [ ])
+  }, [ consultores ])
   console.log(consultores)
   const link = "/alocaratribuirfuncionario/"
   return (
