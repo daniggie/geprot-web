@@ -2,7 +2,6 @@ import React, { InputHTMLAttributes, useState, useCallback, useRef, useEffect } 
 import { useField } from "@unform/core";
 
 import {Container, Error} from "./styles";
-import { FiAlertCircle } from "react-icons/fi";
 
 interface InputRegisterProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string;
@@ -45,7 +44,6 @@ const InputRegister:React.FC<InputRegisterProps> = ({name, ...rest}) => {
       />
       { error &&(
         <Error title={error}>
-          <FiAlertCircle color="#c53030" size={20} />
         </Error>
       )}
     </Container>

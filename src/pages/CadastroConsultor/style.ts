@@ -10,9 +10,13 @@ export const All= styled.div`
 `;
 
 export const Container= styled.div`
-  width: 90%;
-  display: flex;
-  justify-content: center;
+width: 90%;
+
+  form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .container_square{
     width: 80%;
@@ -57,15 +61,6 @@ export const Container= styled.div`
           width: 80%;
           justify-content: start;
           margin-bottom: 5px;
-        }
-
-        input{
-          width: 80%;
-          border-radius:5px;
-          border: 1px;
-          padding:10px;
-          border: 1px solid #dedede;
-          border-color: red;
         }
       }
     }
