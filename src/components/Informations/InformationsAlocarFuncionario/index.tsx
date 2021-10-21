@@ -5,7 +5,6 @@ import { useEffect } from "react"
 import api from "../../../services/api";
 import Atribuicao from "../../Atribuicao";
 
-
 interface Projeto {
   id: number,
   nome: string,
@@ -15,17 +14,23 @@ interface Projeto {
 }
 
 const Informations: React.FC = () => {
-
   const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Projeto[]>([]);
-
+  const token = localStorage.getItem("@Geprot:token");
+  let usuario = localStorage.getItem('@Geprot:gestor');
+  const [perfil] = useState(() => {
+    let usuario = localStorage.getItem('@Geprot:gestor');
+    if (usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+      }
+  });
+  let config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
   useEffect(() => {
     async function carregaDados(): Promise<void> {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`projetos/alocados/${id}`,config).then(response => {
+      await api.get(`projetos/alocados/${perfil.secao.id}/${id}`,config).then(response => {
         setValores(response.data)
       })
     }
