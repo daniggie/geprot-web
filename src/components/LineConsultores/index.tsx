@@ -1,12 +1,7 @@
 import React from "react";
 import { Container } from "./style";
 
-interface consultor {
-    id : number;
-    horas: number;
-}
-
-const LineConsultor:React.FC<consultor> = ({id,horas}) => {
+const LineConsultor:React.FC = () => {
     return(
         <Container>
             <div className="column1 fonte_13">

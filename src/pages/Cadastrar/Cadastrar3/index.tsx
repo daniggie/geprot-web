@@ -34,15 +34,6 @@ const Cadastrar3: React.FC = () => {
 
   const history = useHistory();
 
-  const [usuarioLogado] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:gestor');
-
-    if (usuario) {
-        let languageObject = JSON.parse(usuario);
-        return languageObject;
-      }
-    });
-
   const [projetoSalvo] = useState(() => {
     let projeto = localStorage.getItem('@Geprot:cadastrar');
 
@@ -51,7 +42,6 @@ const Cadastrar3: React.FC = () => {
         return languageObject;
       }
     });
-    console.log(projetoSalvo.conslto)
   
     const Cadastrar = async () => {
       projeto.nome = projetoSalvo.nome;
@@ -93,7 +83,7 @@ const Cadastrar3: React.FC = () => {
         </Titulo>
         <Formulario>
           <p className="helvetica fonte_25 cor_5 bold"> NOME DO PROJETO</p>
-          <p className="helvetica fonte_20 cor_5 lighter">Seção {usuarioLogado.secao.nome} <b className="helvetica fonte_20 cor_0 lighter"></b></p>
+          <p className="helvetica fonte_20 cor_5 lighter">Seção X <b className="helvetica fonte_20 cor_0 lighter">000000</b></p>
           <div className="content">
 
             <div className="line">
@@ -105,7 +95,7 @@ const Cadastrar3: React.FC = () => {
                 <b className="helvetica fonte_13 cor_5 bold">RESPONSÁVEL:</b>
               </div>
               <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">{projetoSalvo.nomeResponsavel}</b>
+                <b className="helvetica fonte_13 cor_0 lighter">Lara Hanna</b>
               </div>
             </div>
 
@@ -114,7 +104,7 @@ const Cadastrar3: React.FC = () => {
                 <b className="helvetica fonte_13 cor_5 bold">SOLICITANTE:</b>
               </div>
               <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">{projetoSalvo.nomeSolicitante}</b>
+                <b className="helvetica fonte_13 cor_0 lighter">Rodrigo Loudres</b>
               </div>
             </div>
 
@@ -123,7 +113,7 @@ const Cadastrar3: React.FC = () => {
                 <b className="helvetica fonte_13 cor_5 bold">PREVISÃO</b>
               </div>
               <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">{projetoSalvo.dataInicio} á {projetoSalvo.dataFinalizacao}</b>
+                <b className="helvetica fonte_13 cor_0 lighter">13/05/2021 á 25/02/2022</b>
               </div>
             </div>
 
@@ -132,7 +122,7 @@ const Cadastrar3: React.FC = () => {
                 <b className="helvetica fonte_13 cor_5 bold">VERBA:</b>
               </div>
               <div className="tamanho">
-                <b className="helvetica fonte_13 cor_0 lighter">R$ Tem que ajeitar</b>
+                <b className="helvetica fonte_13 cor_0 lighter">R$    80.000,00</b>
               </div>
             </div>
 
@@ -154,6 +144,53 @@ const Cadastrar3: React.FC = () => {
                 <b className="helvetica fonte_13 cor_0 lighter"> 00</b>
               </div>
             </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Responsável</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">% </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Responsável</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">% </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00</b>
+              </div>
+            </div>
+
+            <div className="line">
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">NOME: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Setor</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">RESPONSÁVEL: </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> Responsável</b>
+              </div>
+              <div className="tamanho2">
+                <b className="helvetica fonte_13 cor_5 bold">% </b>
+                <b className="helvetica fonte_13 cor_0 lighter"> 00</b>
+              </div>
+            </div>
+
+
           </div>
 
           <div className="content">
@@ -202,8 +239,16 @@ const Cadastrar3: React.FC = () => {
               </div>
 
               < div className="th">
-
-                <LineConsultor horas={0} id={0} />
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
+                <LineConsultor/>
               </div>
               
             </div>
