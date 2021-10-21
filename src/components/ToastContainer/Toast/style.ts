@@ -8,17 +8,17 @@ interface ToastProps {
 
 const toastTypeVariations = {
   success: css`
-    background: #e6fffa;
+    background: #FFFAFA;
     color: #2e656a;
   `,
 
   info: css`
-    background: #ebf8ff;
+    background: #FFFAFA;
     color: #3172b7;
   `,
 
   error: css`
-    background: #fddede;
+    background: #FFFAFA;  
     color: #c53030;
   `,
 };
@@ -27,10 +27,9 @@ export const Container = styled(animated.div)<ToastProps>`
   width: 360px;
   position: relative;
   padding: 16px 30px 16px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
-  background: #fddede;
   color: #c53030;
   & + div {
     margin-top: 8px;
