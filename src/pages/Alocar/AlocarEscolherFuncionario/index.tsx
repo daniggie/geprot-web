@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
 import Menu from "../../../components/Menu";
@@ -6,6 +6,10 @@ import Informations from "../../../components/Informations/InformationsAlocar";
 import FilterAloc from "../../../components/Filters/FilterAlocar";
 
 const AlocarEscolherFuncionario: React.FC = () => {
+  const [setPesquisaPorNome, pesquisaPorNome] = useState('');
+  const [setPesquisaPorNomeFornecedor, pesquisaPorNomeFornecedor] = useState('');
+  const [setPesquisaId, pesquisaId] = useState('')
+
   return(
     <>
     <Header />

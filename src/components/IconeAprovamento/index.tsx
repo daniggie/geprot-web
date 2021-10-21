@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
-import api from '../../services/api';
 
 interface Status {
   status : string;
