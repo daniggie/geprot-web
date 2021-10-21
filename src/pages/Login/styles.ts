@@ -12,8 +12,6 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
     width: 100%;
 
     form {
@@ -108,8 +106,8 @@ export const ContInput = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: -39px;
-    margin-left: 350px;
+    margin-top: -41px;
+    margin-left: 335px;
   }
 
 `;

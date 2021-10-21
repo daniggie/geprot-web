@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import Tooltip from "../Tooltip";
+import TooltipLogin from "../TooltipLogin";
 
 interface ContainerProps {
   isFocused: boolean;
@@ -51,7 +51,7 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
-export const Error = styled(Tooltip)`
+export const Error = styled(TooltipLogin)`
   height: 20px;
   margin-left: 16px;
   svg {
