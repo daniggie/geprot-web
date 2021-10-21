@@ -29,21 +29,6 @@ export const Container=styled.div<TableProps>`
   }
 
   #atribuir{
-
-    ${(props) =>
-      props.overlay &&
-      css`
-        visibility: hidden;
-        opacity: 0;
-      `}
-
-    ${(props) =>
-      !props.overlay &&
-      css`
-        visibility: visible;
-        opacity: 1;
-      `}
-
     position: absolute;
     display: flex;
     align-items: center;
@@ -55,6 +40,22 @@ export const Container=styled.div<TableProps>`
     height: 100%;
     background: rgba(0, 0, 0, 0.30);
     transition: 0.5s;
+
+    ${(props) =>
+      props.overlay &&
+      css`
+        visibility: hidden;
+        opacity: 0;
+      `
+    }
+
+    ${(props) =>
+      !props.overlay &&
+      css`
+        visibility: visible;
+        opacity: 1;
+      `
+    }
 
     .overlay{
       position: absolute;
@@ -74,7 +75,7 @@ export const Container=styled.div<TableProps>`
         align-items: center;
         width: 40%;
         height: 30px;
-     }
+      }
 
       img{
         width: 3%;

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { shade } from 'polished'
-
 export const Container = styled.button`
   background-color: #0090C5;;
   width:25%;
@@ -34,9 +32,11 @@ export const Container = styled.button`
     border-radius: 5px;
     color: white;
     font-size: 15px;
+
     &:hover{
       background: #00579D;
     }
+    
     p{
       margin-left: 2px;
       margin-top: 13px;

@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
-import { Container } from "./styles";
 
+import { Container } from "./styles";
 import {FiLogIn} from "react-icons/fi";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
@@ -13,8 +13,8 @@ const Button: React.FC<ButtonProps> = ({children, ...rest}) => (
         <FiLogIn size="25" color="cor_000"/>
       </div>
       <p>ENTRAR</p>
-      </div>
-    </Container>
+    </div>
+  </Container>
 );
 
 export default Button;

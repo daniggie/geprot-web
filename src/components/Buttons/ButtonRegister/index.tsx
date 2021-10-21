@@ -1,4 +1,3 @@
-import { type } from "os";
 import React, { ButtonHTMLAttributes } from "react";
 
 import { Container } from "./style";

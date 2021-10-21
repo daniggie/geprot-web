@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { Container } from './style';
 
 const ButtonSend: React.FC = () => {
     return(
         <Container>
-             <p>Enviar</p>
+            <p>Enviar</p>
         </Container>
     );
 };

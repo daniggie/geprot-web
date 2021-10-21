@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
-import { useParams } from 'react-router';
-import api from '../../../services/api';
-import { Container, ContainerAprovado } from './style';
+import React, { ReactNode } from 'react';
 import { useHistory } from 'react-router';
-import { ReactNode } from 'hoist-non-react-statics/node_modules/@types/react';
+import api from '../../../services/api';
+
+import { Container } from './style';
 
 interface ButtonProps {
-  projetoId?: number
-  consultorId?: number
-  children?: ReactNode
+  projetoId?: number,
+  consultorId?: number,
+  children?: ReactNode,
 }
 
 const ButtonAprove: React.FC<ButtonProps> = (props) => {
@@ -18,7 +17,7 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
     headers: { Authorization: `Bearer ${token}`},
   };
 
-   async function apenas(): Promise<void> {
+  async function apenas(): Promise<void> {
     console.log(props.consultorId, props.projetoId)
     await api.put(`horas/aprovar/${props.projetoId}/${props.consultorId}`, config).then(response => {console.log(response)}).
     catch(err => {
@@ -28,13 +27,13 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
     history.push("/home")
   }
 
-    return(
-      <>
-        <Container onClick={() => apenas()}>
-          <p>Aprovar horas</p>
-        </Container>
-      </>
-    );
+  return(
+    <>
+      <Container onClick={() => apenas()}>
+        <p>Aprovar horas</p>
+      </Container>
+    </>
+  );
 };
 
 export default ButtonAprove;

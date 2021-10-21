@@ -4,7 +4,7 @@ import { Container } from './style';
 const BotaoSalvar: React.FC = () => {
     return(
         <Container>
-             <p>Salvar</p>
+            <p>Salvar</p>
         </Container>
     );
 };

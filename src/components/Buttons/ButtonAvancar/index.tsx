@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { Container } from './style';
 
 const ButtonAvance: React.FC = () => {
     return(
         <Container >
-             <p>Próximo</p>
+            <p>Próximo</p>
         </Container>
     );
 };
