@@ -3,6 +3,7 @@ import React from "react";
 import { CgSearchLoading } from "react-icons/cg";
 import api from "../../../services/api";
 import { Contant } from "./style";
+import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
 
 interface Consultor {
   id: number,
@@ -14,20 +15,57 @@ interface Consultor {
   quantidade_projetos_alocado: number
 }
 
-const Informations: React.FC = () => {
+interface PesquisaProps {
+  pesquisarPorNome?: string,
+  pesquisaPorNomeFornecedor?: string,
+  pesquisaId?: string
+  children?: ReactNode
+}
+
+const Informations: React.FC = ({pesquisaId, pesquisaPorNomeFornecedor, pesquisarPorNome}: PesquisaProps) => {
   const [ consultores, setConsultores ] = useState<Consultor[]>([]);
+  const token = localStorage.getItem("@Geprot:token");
+  let config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  async function buscarTodosConsultores(): Promise<void>  {
+    await api.get(`consultor/listar`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorId(): Promise<void>  {
+    await api.get(`consultor/buscar/${pesquisaId}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorNome(): Promise<void>  {
+    await api.get(`consultor/buscar/${pesquisarPorNome}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorNomeFornecedor(): Promise<void>  {
+    await api.get(`consultor/buscar/${pesquisaPorNomeFornecedor}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
   useEffect(() => {
-    async function carregaDados(): Promise<void>  {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`consultor/listar`,config).then(response => {
-        setConsultores(response.data);
-      })
+    if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor === '' && pesquisaId !== '') {
+      buscarConsultoresPorId()
     }
-    carregaDados();
-  }, [ consultores ])
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeFornecedor === '' && pesquisaId === '') {
+      buscarConsultoresPorNome()
+    }
+
+    if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor !== '' && pesquisaId === '') {
+      buscarConsultoresPorNome()
+    }
+
+    buscarTodosConsultores();
+  }, [pesquisarPorNome, pesquisaPorNomeFornecedor, pesquisaId])
   console.log(consultores)
   const link = "/alocaratribuirfuncionario/"
   return (
