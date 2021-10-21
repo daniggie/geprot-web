@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import Header from "../../../components/Header";
 import { Content, All, PositionMenu, Table } from "./style";
+import { RiFilterFill, RiFilterOffFill } from "react-icons/ri";
 import Menu from "../../../components/Menu";
 import Informations from "../../../components/Informations/InformationsAlocarFuncionario";
-import FilterFunc from "../../../components/Filters/FilterAlocarFuncionario";
 import { useParams } from "react-router";
 import api from "../../../services/api";
 
@@ -117,8 +117,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               <div className="col">
               </div>
             </div>
-
-
           </div>
 
           <div className="header_filtros">
@@ -126,7 +124,57 @@ const AlocarAtribuirFuncionario: React.FC = () => {
             <hr className="cor_6f"/>
           </div>
 
-          <FilterFunc/>
+          <div className="filters">
+            <div className="cols">
+
+              <div className="cols1">
+                <b className="helvetica fonte_15 cor_5 normal"> Número: </b>
+              </div>
+
+              <div className="cols2">
+                <input type="number" placeholder="000000"/>
+              </div>
+
+              <div className="cols1">
+              <b className="helvetica fonte_15 cor_5 normal"> Projeto: </b>
+              </div>
+
+              <div className="cols2">
+                <input type="text" placeholder="Nome do projeto..."/>
+              </div>
+
+              <div className="cols1">
+              <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
+              </div>
+
+              <div className="cols2">
+                <select name="Fornecedor">
+                  <option value="fornecedor"> -- Selecione aqui --</option>
+                </select>
+              </div>
+
+              <div className="colsicon">
+                <RiFilterOffFill color="#00579D" size={25}/>
+              </div>
+            </div>
+
+            <div className="cols">
+
+              <div className="cols1">
+              </div>
+
+              <div className="cols2">
+              </div>
+
+              <div className="cols1">
+              </div>
+
+              <div className="cols2">
+              </div>
+
+              
+            </div>
+          </div>
 
           <Table>
 
