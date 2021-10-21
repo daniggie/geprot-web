@@ -48,17 +48,17 @@ const Home: React.FC = () => {
     })
   }
   async function filtrarPorString(): Promise<void> {
-    await api.get(`projetos/listar/string/${perfil.secao.id}/${filtroString}`, config).then(response => {
+    await api.get(`projetos/buscar/nome/${perfil.secao.id}/${filtroString}`, config).then(response => {
       setValores(response.data)
     })
   }
   async function filtrarPorStatus(): Promise<void> {
-    await api.get(`projetos/listar/status/${perfil.secao.id}/${filtroPorStatus}`, config).then(response => {
+    await api.get(`projetos/buscar/status/${perfil.secao.id}/${filtroPorStatus}`, config).then(response => {
       setValores(response.data)
     })
   }
   async function filtrarPorStatusAndFiltro(): Promise<void> {
-    await api.get(`projetos/listar/stringandstatus/${perfil.secao.id}/${filtroString}/${filtroPorStatus}`, config).then(response => {
+    await api.get(`projetos/buscar/nomeestatus/${perfil.secao.id}/${filtroString}/${filtroPorStatus}`, config).then(response => {
       setValores(response.data)
     })
   }
