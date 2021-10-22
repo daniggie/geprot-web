@@ -96,6 +96,26 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaId, pesquisaPorNomeForne
       return
     }
 
+    if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor !== '' && pesquisaId !== '') {
+      buscarConsultoresPorIdeNomeFornecedor()
+      return
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeFornecedor !== '' && pesquisaId === '') {
+      buscarConsultoresPorNomeFornecedoreNome()
+      return
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeFornecedor === '' && pesquisaId !== '') {
+      buscarConsultoresPorIdeNome()
+      return
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeFornecedor !== '' && pesquisaId !== '') {
+      buscarConsultoresPorNomeFornecedoreNomeeId()
+      return
+    }
+
   }, [pesquisarPorNome, pesquisaPorNomeFornecedor, pesquisaId])
   console.log(consultores)
   const link = "/alocaratribuirfuncionario/"
