@@ -35,7 +35,7 @@ const teste = "/dashboard/" + secao.secao.id;
               <div className="atalho">
                 <FiFilePlus size="35px" color="#fff"/>
               </div>
-              <a href="/cadastrar">
+              <a href="/cadastro">
                 <p id="idparagrafo"> CADASTRAR PROJETOS </p>
               </a>
             </div>

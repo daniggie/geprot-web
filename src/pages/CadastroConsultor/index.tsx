@@ -122,34 +122,34 @@ const CadastrarConsultor: React.FC = () => {
 
               <div className="column">
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">Nome do consultor:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">Nome do consultor:</p>
                   <InputRegister name="nome" id="nome" placeholder="Digite o nome..."/>
                 </div>
 
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">Email:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">Email:</p>
                   <InputRegister name="email" id="email" placeholder="Digite o email..."/>
                 </div>
 
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">Senha:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">Senha:</p>
                   <InputRegister name="senha" id="senha" placeholder="Digite a senha..."/>
                 </div>
               </div>
 
               <div className="column">
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">ID do Consultor:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">ID do Consultor:</p>
                   <InputRegister name="id" id="id" placeholder="Digite o ID..."/>
                 </div>
 
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">Preço das horas:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">Preço das horas:</p>
                   <InputRegister name="precoHora" id="precoHora" placeholder="Digite o preço..."/>
                 </div>
 
                 <div className="line">
-                  <p className="helvetica fonte_15 cor_5">ID do Fornecedor:</p>
+                  <p className="helvetica fonte_15 cor_5 bold">ID do Fornecedor:</p>
                   <InputRegister name="idFornecedor" id="idFornecedor" placeholder="Digite o ID..."/>
                 </div>
               </div>
