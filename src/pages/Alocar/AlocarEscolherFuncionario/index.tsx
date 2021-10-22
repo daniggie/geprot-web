@@ -6,9 +6,9 @@ import { RiFilterFill, RiFilterOffFill } from "react-icons/ri";
 import Informations from "../../../components/Informations/InformationsAlocar";
 
 const AlocarEscolherFuncionario: React.FC = () => {
-  const [setPesquisaPorNome, pesquisaPorNome] = useState('');
-  const [setPesquisaPorNomeFornecedor, pesquisaPorNomeFornecedor] = useState('');
-  const [setPesquisaId, pesquisaId] = useState('')
+  const [pesquisaPorNome, setPesquisaPorNome] = useState("");
+  const [pesquisaPorNomeFornecedor, setPesquisaPorNomeFornecedor] = useState("");
+  const [pesquisaId, setPesquisaId] = useState("")
 
   return(
     <>
@@ -32,25 +32,38 @@ const AlocarEscolherFuncionario: React.FC = () => {
               </div>
 
               <div className="cols2">
-                <input type="number" placeholder="000000"/>
+                <input 
+                  type="number" 
+                  placeholder="000000"
+                  onChange={event => setPesquisaId(event.target.value)}
+                  value={pesquisaId}
+                />
               </div>
 
               <div className="cols1">
-              <b className="helvetica fonte_15 cor_5 normal"> Projeto: </b>
+                <b className="helvetica fonte_15 cor_5 normal"> Nome: </b>
               </div>
 
               <div className="cols2">
-                <input type="text" placeholder="Nome do projeto..."/>
+                <input
+                  type="text" 
+                  placeholder="Nome do consultor..."
+                  onChange={event => setPesquisaPorNome(event.target.value)}
+                  value={pesquisaPorNome}
+                />
               </div>
 
               <div className="cols1">
-              <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
+                <b className="helvetica fonte_15 cor_5 normal"> Nome fornecedor: </b>
               </div>
 
               <div className="cols2">
-                <select name="Fornecedor">
-                  <option value="fornecedor"> -- Selecione aqui --</option>
-                </select>
+                <input
+                  type="text" 
+                  placeholder="Nome do fornecedor..."
+                  onChange={event => setPesquisaPorNomeFornecedor(event.target.value)}
+                  value={pesquisaPorNomeFornecedor}
+                />
               </div>
 
               <div className="colsicon">
@@ -99,7 +112,11 @@ const AlocarEscolherFuncionario: React.FC = () => {
               </div>
 
               <div className="contant_informations">
-                <Informations/>
+                <Informations 
+                  pesquisaId={pesquisaId}
+                  pesquisaPorNomeFornecedor={pesquisaPorNomeFornecedor}
+                  pesquisarPorNome={pesquisaPorNome}
+                />
               </div>
           </Table>
         </Content>
