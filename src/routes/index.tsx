@@ -4,6 +4,7 @@ import Route from './Route';
 import Cadastrar from '../pages/Cadastrar/Cadastrar1';
 import Cadastrar2 from '../pages/Cadastrar/Cadastrar2';
 import Cadastrar3 from '../pages/Cadastrar/Cadastrar3';
+import Cadastro from "../pages/Cadastrar/Cadastro";
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboards';
@@ -30,6 +31,7 @@ const Routes: React.FC = () => (
     <Route path="/cadastrar" component={Cadastrar} isPrivate/>
     <Route path="/cadastrar2" component={Cadastrar2} isPrivate/>
     <Route path="/cadastrar3" component={Cadastrar3} isPrivate/>
+    <Route path="/cadastro" component={Cadastro} isPrivate/>
     <Route path="/editar1" component={Editar1} isPrivate/>
     <Route path="/editar2" component={Editar2} isPrivate/>
     <Route path="/editar3" component={Editar3} isPrivate/>
