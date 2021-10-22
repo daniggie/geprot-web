@@ -35,36 +35,67 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaId, pesquisaPorNomeForne
   }
 
   async function buscarConsultoresPorId(): Promise<void>  {
-    await api.get(`consultor/buscar/${pesquisaId}`,config).then(response => {
+    await api.get(`consultor/buscar/id/${pesquisaId}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorIdeNome(): Promise<void>  {
+    await api.get(`consultor/buscar/nome/id/${pesquisarPorNome}/${pesquisaId}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorIdeNomeFornecedor(): Promise<void>  {
+    await api.get(`consultor/buscar/nomefornecedor/id/${pesquisaPorNomeFornecedor}/${pesquisaId}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorNomeFornecedoreNome(): Promise<void>  {
+    await api.get(`consultor/buscar/nome/nomefornecedor/${pesquisarPorNome}/${pesquisaPorNomeFornecedor}`,config).then(response => {
+      setConsultores(response.data);
+    })
+  }
+
+  async function buscarConsultoresPorNomeFornecedoreNomeeId(): Promise<void>  {
+    await api.get(`consultor/buscar/nomefornecedor/id/nome/${pesquisaPorNomeFornecedor}/${pesquisaId}/${pesquisarPorNome}`,config).then(response => {
       setConsultores(response.data);
     })
   }
 
   async function buscarConsultoresPorNome(): Promise<void>  {
-    await api.get(`consultor/buscar/${pesquisarPorNome}`,config).then(response => {
+    await api.get(`consultor/buscar/nome/${pesquisarPorNome}`,config).then(response => {
       setConsultores(response.data);
     })
   }
 
   async function buscarConsultoresPorNomeFornecedor(): Promise<void>  {
-    await api.get(`consultor/buscar/${pesquisaPorNomeFornecedor}`,config).then(response => {
+    await api.get(`consultor/buscar/nomefornecedor/${pesquisaPorNomeFornecedor}`,config).then(response => {
       setConsultores(response.data);
     })
   }
   useEffect(() => {
+    if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor === '' && pesquisaId === '') {
+      buscarTodosConsultores();
+      return
+    }
+
     if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor === '' && pesquisaId !== '') {
       buscarConsultoresPorId()
+      return
     }
 
     if (pesquisarPorNome !== '' && pesquisaPorNomeFornecedor === '' && pesquisaId === '') {
       buscarConsultoresPorNome()
+      return
     }
 
     if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor !== '' && pesquisaId === '') {
       buscarConsultoresPorNomeFornecedor()
+      return
     }
 
-    buscarTodosConsultores();
   }, [pesquisarPorNome, pesquisaPorNomeFornecedor, pesquisaId])
   console.log(consultores)
   const link = "/alocaratribuirfuncionario/"
