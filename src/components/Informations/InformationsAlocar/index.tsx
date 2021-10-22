@@ -22,7 +22,7 @@ interface PesquisaProps {
   children?: ReactNode
 }
 
-const Informations: React.FC = ({pesquisaId, pesquisaPorNomeFornecedor, pesquisarPorNome}: PesquisaProps) => {
+const Informations: React.FC<PesquisaProps> = ({pesquisaId, pesquisaPorNomeFornecedor, pesquisarPorNome}: PesquisaProps) => {
   const [ consultores, setConsultores ] = useState<Consultor[]>([]);
   const token = localStorage.getItem("@Geprot:token");
   let config = {
@@ -61,7 +61,7 @@ const Informations: React.FC = ({pesquisaId, pesquisaPorNomeFornecedor, pesquisa
     }
 
     if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor !== '' && pesquisaId === '') {
-      buscarConsultoresPorNome()
+      buscarConsultoresPorNomeFornecedor()
     }
 
     buscarTodosConsultores();
