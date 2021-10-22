@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import api from "../../services/api";
-
 import { Content_cards } from "./style";
+import api from "../../services/api";
 import { FiClock } from "react-icons/fi";
 
 interface Card {
@@ -24,138 +23,133 @@ interface Identifica {
 }
 
 const Cards: React.FC<Identifica> = ({id}) => {
-  const [ valor, setValor ] = useState<Card>();
-  const [ perfil ] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:gestor')
-    if(usuario) {
-        let languageObject = JSON.parse(usuario);
-        return languageObject;
-    }
-  });
+    const [ valor, setValor ] = useState<Card>();
+    const [perfil] = useState(() => {
+        let usuario = localStorage.getItem('@Geprot:gestor');
 
-  useEffect(() => {
-    async function carregaDados(): Promise<void>{
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-      await api.get(`/projetos/buscar/${id}`, config).then(response => {
-        setValor(response.data);
-      })
-    }
-    carregaDados()
-  }, [])
+        if(usuario) {
+            let languageObject = JSON.parse(usuario);
+            return languageObject;
+        }
+    });
 
-  const pagina = "/detalhes/";
+    useEffect(() => {
+        async function carregaDados(): Promise<void>{
+        const token = localStorage.getItem("@Geprot:token");
+        let config = {
+            headers: { Authorization: `Bearer ${token}` },
+        };
 
-  return(
-    <>
-        <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0 }>
-            <a href={pagina + valor?.id}>
-                <div className="card_type">
-                    <div className="card_status_color"/>
+        await api.get(`projetos/buscar/${id}`, config).then(response => {
+            setValor(response.data);
+        });
+        }
+        carregaDados();
+    }, [id]);
 
-                    <div className="card_informacao">
-                        <div className="linha_1">
-                            <div className="card_secao">
-                                <div className="cor_5 fonte_12 helvetica ">
-                                    {perfil.secao.nome}
-                                </div>
-                            </div>
-                            <div className="card_status_txt">
-                                <div className="cor_black fonte_12 helvetica ">
-                                    Status:
-                                </div>
-                                <div className="cor_black fonte_12 helvetica bold ">
-                                    {
-                                        valor?.status == "EM_ANDAMENTO" ? "EM ANDAMENTO" :
-                                        valor?.status == "NAO_INICIADO" ? "NÃO INICIADO" :
-                                        valor?.status == "ATRASADO" ? "ATRASADO" :
-                                        valor?.status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
-                                    }
-                                </div>
-                            </div>
-                        </div>
+    const pagina = "/detalhes/";
 
-                        <div className="linha_2">
-                            <div className="card_title">
-                                <div className="cor_black fonte_25 helvetica bold">
-                                    {valor?.id ? valor?.id : "0"} - {valor?.nome ? valor?.nome : "projeto"}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="linha_3">
-                            <div className="card_saldo">
-                                <div className="cor_black fonte_14 helvetica">
-                                    Saldo previsto:
-                                </div>
-                                <div className="texto">
-                                    <div className="texto cor_0 fonte_14 helvetica">
-                                        R$
+    return(
+        <>
+            <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0}>
+                <a href={pagina + valor?.id}>
+                    <div className="card_type">
+                        <div className="card_status_color"/>
+                        <div className="card_informacao">
+                            <div className="linha_1">
+                                <div className="card_secao">
+                                    <div className="cor_5 fonte_12 helvetica ">
+                                        {perfil.secao.nome}
                                     </div>
-                                <div className="texto cor_0 fonte_14 helvetica">
-                                    { valor?.valor ? valor?.valor : "0"}
                                 </div>
-                            </div>
-            
-                            <div className="texto_content_horas">
-                                <div className="cor_black horas fonte_14 helvetica">
-                                    Horas:
-                                </div>
-                                <div className="relogio">
-                                    <FiClock size={17} color="#00579E"/>
-                                </div>
-                                <div className="cor_0 fonte_14 horas helvetica">
-                                    { valor?.horasPrevistas ? valor?.horasPrevistas : "0" } H
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="linha_3">
-                            <div className="card_saldo">
-                                <div className="cor_black fonte_14 helvetica">
-                                    Saldo restante:
-                                </div>
-                                <div className="texto">
-                                    <div className="texto cor_0 fonte_14 helvetica">
-                                        R$
+                                <div className="card_status_txt">
+                                    <div className="cor_black fonte_12 helvetica ">
+                                        Status:
                                     </div>
-                                    <div className="texto cor_0 fonte_14 helvetica">
-                                        { valor?.valorRestante ? valor?.valorRestante : "0" }
+                                    <div className="cor_black fonte_12 helvetica bold ">
+                                        {
+                                            valor?.status == "EM_ANDAMENTO" ? "EM ANDAMENTO" :
+                                            valor?.status == "NAO_INICIADO" ? "NÃO INICIADO" :
+                                            valor?.status == "ATRASADO" ? "ATRASADO" :
+                                            valor?.status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
+                                        }
                                     </div>
                                 </div>
                             </div>
-                            <div className="texto_content_horas">
-                                <div className="cor_black fonte_14 helvetica horas ">
-                                    Apontadas:
-                                </div>
-                                <div className="relogio">
-                                    <FiClock size={17} color="#00579E"/>
-                                </div>
-                                <div className="cor_0 fonte_14 helvetica horas">
-                                    { valor?.horasTrabalhadas ? valor?.horasTrabalhadas : "0" } H
+                            <div className="linha_2">
+                                <div className="card_title">
+                                    <div className="cor_black fonte_25 helvetica bold">
+                                        {valor?.id ? valor?.id : "0"} - {valor?.nome ? valor?.nome : "projeto"}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div className="linha_3">
-                            <div className="texto_content_data">
-                                <p className="cor_0 fonte_14 helvetica">Dê: { valor?.dataInicio ? valor?.dataInicio : "Não iniciado" }</p>
-                                <p className="cor_0 fonte_14 helvetica"> Até: { valor?.dataFinalizacao ? valor?.dataFinalizacao : "Não informado" }</p>
+                            <div className="linha_3">
+                                <div className="card_saldo">
+                                    <div className="cor_black fonte_14 helvetica">
+                                        Saldo previsto:
+                                    </div>
+                                    <div className="texto">
+                                        <div className="texto cor_0 fonte_14 helvetica">
+                                            R$
+                                        </div>
+                                        <div className="texto cor_0 fonte_14 helvetica">
+                                            { valor?.valor ? valor?.valor : "0"}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="texto_content_horas">
+                                    <div className="cor_black horas fonte_14 helvetica">
+                                        Horas:
+                                    </div>
+                                    <div className="relogio">
+                                        <FiClock size={17} color="#00579E"/>
+                                    </div>
+                                    <div className="cor_0 fonte_14 horas helvetica">
+                                        { valor?.horasPrevistas ? valor?.horasPrevistas : "0" } H
+                                    </div>
+                                </div>
                             </div>
-                            <div className="content_barra">
-                                <div className="green content_carregamento" />
+                            <div className="linha_3">
+                                <div className="card_saldo">
+                                    <div className="cor_black fonte_14 helvetica">
+                                        Saldo restante:
+                                    </div>
+                                    <div className="texto">
+                                        <div className="texto cor_0 fonte_14 helvetica">
+                                            R$
+                                        </div>
+                                        <div className="texto cor_0 fonte_14 helvetica">
+                                            { valor?.valorRestante ? valor?.valorRestante : "0" }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="texto_content_horas">
+                                    <div className="cor_black fonte_14 helvetica horas ">
+                                        Apontadas:
+                                    </div>
+                                    <div className="relogio">
+                                        <FiClock size={17} color="#00579E"/>
+                                    </div>
+                                    <div className="cor_0 fonte_14 helvetica horas">
+                                        { valor?.horasTrabalhadas ? valor?.horasTrabalhadas : "0" } H
+                                    </div>
+                                </div>
                             </div>
+                            <div className="linha_3">
+                                <div className="texto_content_data">
+                                    <p className="cor_0 fonte_14 helvetica">Dê: { valor?.dataInicio ? valor?.dataInicio : "Não iniciado" }</p>
+                                    <p className="cor_0 fonte_14 helvetica"> Até: { valor?.dataFinalizacao ? valor?.dataFinalizacao : "Não informado" }</p>
+                                </div>
+                                <div className="content_barra">
+                                    <div className="green content_carregamento"/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </Content_cards>
-    </>
-  );
+                </a>
+            </Content_cards>
+        </>
+    );
 };
 
 export default Cards;
-
