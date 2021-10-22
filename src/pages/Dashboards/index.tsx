@@ -16,16 +16,20 @@ import ChartYear from "../../components/ChartsColumns/ChartYear";
 import { FiChevronRight } from "react-icons/fi";
 import Notifications from "../../components/Notifications";
 
-interface Dashboard {
-  projetosConcluidos: number;
+interface DashboardProjetos {
+  projetosNaoIniciados: number;
   projetosAtrasados: number;
   projetosEmAndamento: number;
-  projetosNaoIniciados: number;
-  verbasDisponivel: number;
-  verbasAprovadas:number;
+  projetosConcluidos: number;
+  restoProjetosNaoIniciados: number;
   restoProjetosAtrasados: number;
   restoProjetosEmAndamento: number;
-  restoProjetosNaoIniciados: number;
+  restoProjetosConcluidos:number;
+}
+
+interface DashboardVerbas {
+  verbaTotal: number;
+  verbaUtilizada:number;
 }
 
 interface DashboardConcluidos {
@@ -36,7 +40,8 @@ interface DashboardConcluidos {
 
 const Dashboard: React.FC = () => {
   const { id }: {id:string} = useParams();
-  const [valores, setValores ] = useState<Dashboard>();
+  const [valoresProjetos, setValoresProjetos ] = useState<DashboardProjetos>();
+  const [valoresVerbas, setValoresVerbas ] = useState<DashboardVerbas>();
   const [valoresConcluidos, setValoresConcluidos] = useState<DashboardConcluidos[]>([])
   const token = localStorage.getItem("@Geprot:token");
   let config = {
@@ -45,19 +50,14 @@ const Dashboard: React.FC = () => {
 
   const [ filtroTempo, setFiltroTempo ] = useState<number>();
 
-  const [secao] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:gestor');
-
-    if(usuario) {
-        let languageObject = JSON.parse(usuario);
-        return languageObject;
-    }
-  });
-
   async function buscarValores() {
-    var response = await api.get(`secao/listar/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
-      setValores(response.data)
+    var response = await api.get(`dashboard/projetos/${id}`, config).then(response => {
+      setValoresProjetos(response.data)
     })
+    
+    var resposta = await api.get(`dashboard/verbas/${id}`,config).then(resposta => {
+      setValoresVerbas(resposta.data)
+    })    
   }
 
   useEffect(() => {
@@ -136,13 +136,13 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar bold fonte_15">{valores?.verbasAprovadas.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+                    <td className="impar bold fonte_15">{valoresVerbas?.verbaTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   </tr>
                   <tr>
-                    <td className="par bold fonte_15">€{((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / euro).toLocaleString('de-DE')}</td>
+                    <td className="par bold fonte_15">€{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / euro).toLocaleString('de-DE')}</td>
                   </tr>
                   <tr>
-                    <td className="impar bold fonte_15">{((valores?.verbasAprovadas ? valores?.verbasAprovadas : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
+                    <td className="impar bold fonte_15">{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
                   </tr>
               </table>
             </MediumCont>
@@ -164,13 +164,13 @@ const Dashboard: React.FC = () => {
                 </div>
                 <table className="funds">
                   <tr>
-                    <td className="impar bold fonte_15">{valores?.verbasDisponivel.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
+                    <td className="impar bold fonte_15">{valoresVerbas?.verbaUtilizada.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   </tr>
                   <tr>
-                    <td className="par bold fonte_15">€{((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / euro).toLocaleString('de-DE')}</td>
+                    <td className="par bold fonte_15">€{((valoresVerbas?.verbaUtilizada ? valoresVerbas?.verbaUtilizada : 0) / euro).toLocaleString('de-DE')}</td>
                   </tr>
                   <tr>
-                    <td className="impar bold fonte_15">{((valores?.verbasDisponivel ? valores?.verbasDisponivel : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
+                    <td className="impar bold fonte_15">{((valoresVerbas?.verbaUtilizada ? valoresVerbas?.verbaUtilizada : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
                   </tr>
               </table>
             </MediumCont>
@@ -190,8 +190,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', valores?.projetosEmAndamento],
-                  ['Rest', valores?.restoProjetosEmAndamento]
+                  ['Late', valoresProjetos?.projetosEmAndamento],
+                  ['Rest', valoresProjetos?.restoProjetosEmAndamento]
                 ]}
 
                 options={{
@@ -215,7 +215,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosEmAndamento.toFixed(1)}<span>%</span></p>
+                <p className="used-size">{valoresProjetos?.projetosEmAndamento.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
@@ -237,8 +237,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', valores?.projetosNaoIniciados],
-                  ['Rest', valores?.restoProjetosNaoIniciados]
+                  ['Late', valoresProjetos?.projetosNaoIniciados],
+                  ['Rest', valoresProjetos?.restoProjetosNaoIniciados]
                 ]}
 
                 options={{
@@ -262,7 +262,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosNaoIniciados.toFixed(1)}<span>%</span></p>
+                <p className="used-size">{valoresProjetos?.projetosNaoIniciados.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
@@ -283,8 +283,8 @@ const Dashboard: React.FC = () => {
 
                 data={[
                   ['Projects', 'Percent'],
-                  ['Late', valores?.projetosAtrasados],
-                  ['Rest', valores?.restoProjetosAtrasados]
+                  ['Late', valoresProjetos?.projetosAtrasados],
+                  ['Rest', valoresProjetos?.restoProjetosAtrasados]
                 ]}
 
                 options={{
@@ -308,7 +308,7 @@ const Dashboard: React.FC = () => {
                 }}
               />
               <div id="labelOverlay">
-                <p className="used-size">{valores?.projetosAtrasados.toFixed(1)}<span>%</span></p>
+                <p className="used-size">{valoresProjetos?.projetosAtrasados.toFixed(1)}<span>%</span></p>
                 <p className="total-size"> of 100%</p>
               </div>
             </div>
