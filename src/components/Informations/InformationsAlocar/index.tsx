@@ -75,7 +75,7 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaId, pesquisaPorNomeForne
       setConsultores(response.data);
     })
   }
-  // Pequena gambiarra, feita por Brayan s2
+  // Pequena gambiarra, feita por @Brayan
   useEffect(() => {
     if (pesquisarPorNome === '' && pesquisaPorNomeFornecedor === '' && pesquisaId === '') {
       buscarTodosConsultores();
