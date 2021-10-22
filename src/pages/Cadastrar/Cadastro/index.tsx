@@ -95,8 +95,17 @@ const Cadastro:React.FC = () => {
             </div>
 
             <div className="line">
-              <p className="helvetica fonte_15 cor_5">ID do Fornecedor:</p>
-              <input name="idFornecedor" id="idFornecedor" placeholder="Digite o ID..."/>
+              <div>
+                <p className="helvetica fonte_15 cor_5 bold">Centro de Custo:</p>
+                <input id="idConsultor" type="number" placeholder="Digite o ID..."/>
+              </div>
+              <div>
+                <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
+                <input id="horasConsultor" type="number" placeholder="%" />
+                <div className="box cor_6f" >
+                  <RiAddLine color="#fff"/>
+                </div>
+              </div>
             </div>
           </div>
 
