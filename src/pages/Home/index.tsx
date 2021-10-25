@@ -174,7 +174,7 @@ const Home: React.FC = () => {
 
         <Content_cards>
           {
-            valores ? valores.map(valor => (
+            valores.length > 0 ? valores.map(valor => (
             <Cards
               id={valor.id}
               key={valor.id}
