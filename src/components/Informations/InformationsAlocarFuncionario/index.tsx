@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 import { useEffect } from "react"
 import api from "../../../services/api";
 import Atribuicao from "../../Atribuicao";
+import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
+
 
 interface Projeto {
   id: number,
@@ -13,7 +15,14 @@ interface Projeto {
   allocated: boolean
 }
 
-const Informations: React.FC = () => {
+interface PesquisaProps {
+  pesquisarPorNome?: string,
+  pesquisaPorNomeResponsavel?: string,
+  pesquisaId?: string
+  children?: ReactNode
+}
+
+const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesquisaId, pesquisarPorNome}: PesquisaProps) => {
   const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Projeto[]>([]);
   const token = localStorage.getItem("@Geprot:token");
