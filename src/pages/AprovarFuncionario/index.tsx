@@ -50,11 +50,6 @@ const AprovarFuncionario: React.FC = () => {
   }, [ ])
   console.log(valores)
 
-  // function aprovar(){
-
-   //api.put(`horas/aprovar/${id}/${consultorId}`, config)
- // }
-
   const [secao] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
 
