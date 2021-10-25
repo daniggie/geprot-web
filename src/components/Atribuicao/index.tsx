@@ -53,7 +53,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
   };
 
   const gambiarra = () => {
-
+    alert('Já esta atribuido')
   }
 
   return (
