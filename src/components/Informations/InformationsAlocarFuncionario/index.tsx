@@ -26,7 +26,6 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
   const { id }: {id:string} = useParams();
   const [ valores, setValores ] = useState<Projeto[]>([]);
   const token = localStorage.getItem("@Geprot:token");
-  let usuario = localStorage.getItem('@Geprot:gestor');
   const [perfil] = useState(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
     if (usuario) {
@@ -34,25 +33,100 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
         return languageObject;
       }
   });
+
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
+
+  async function carregaDadosPadrao(): Promise<void> {
+    await api.get(`projetos/alocados/${perfil.secao.id}/${id}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorNomeProjeto(): Promise<void> {
+    await api.get(`projetos/alocados/nome/${perfil.secao.id}/${id}/${pesquisarPorNome}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorNomeResponsavel(): Promise<void> {
+    await api.get(`projetos/alocados/nomeresponsavel/${perfil.secao.id}/${id}/${pesquisaPorNomeResponsavel}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorIdProjeto(): Promise<void> {
+    await api.get(`projetos/alocados/id/${perfil.secao.id}/${id}/${pesquisaId}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorIdProjetoAndNomeProjeto(): Promise<void> {
+    await api.get(`projetos/alocados/id/nome/${perfil.secao.id}/${id}/${pesquisaId}/${pesquisarPorNome}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorIdProjetoAndNomeResponsavel(): Promise<void> {
+    await api.get(`projetos/alocados/id/nomeresponsavel/${perfil.secao.id}/${id}/${pesquisaId}/${pesquisaPorNomeResponsavel}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorNomeProjetoAndNomeResponsavel(): Promise<void> {
+    await api.get(`projetos/alocados/nomeresponsavel/nome/${perfil.secao.id}/${id}/${pesquisaPorNomeResponsavel}/${pesquisarPorNome}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+  async function buscaPorNomeProjetoAndNomeResponsavelAndId(): Promise<void> {
+    await api.get(`projetos/alocados/id/nomeresponsavel/nome/${perfil.secao.id}/${id}/${pesquisaId}/${pesquisaPorNomeResponsavel}/${pesquisarPorNome}`,config).then(response => {
+      setValores(response.data)
+    })
+  }
+
+
+
   useEffect(() => {
-    async function carregaDados(): Promise<void> {
-      await api.get(`projetos/alocados/${perfil.secao.id}/${id}`,config).then(response => {
-        setValores(response.data)
-      })
+    if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel === '' && pesquisaId === '') {
+      carregaDadosPadrao();
     }
-    carregaDados();
-  }, [])
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel === '' && pesquisaId === '') {
+      buscaPorNomeProjeto();
+    }
+
+    if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel !== '' && pesquisaId === '') {
+      buscaPorNomeResponsavel();
+    }
+
+    if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel === '' && pesquisaId !== '') {
+      buscaPorIdProjeto();
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel !== '' && pesquisaId === '') {
+      buscaPorNomeProjetoAndNomeResponsavel();
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel === '' && pesquisaId !== '') {
+      buscaPorIdProjetoAndNomeProjeto();
+    }
+
+    if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel !== '' && pesquisaId !== '') {
+      buscaPorIdProjetoAndNomeResponsavel();
+    }
+
+    if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel !== '' && pesquisaId !== '') {
+      buscaPorNomeProjetoAndNomeResponsavelAndId();
+    }
+  }, [pesquisarPorNome, pesquisarPorNome, pesquisaId])
 
   return (
 
     <>
     {
       valores.map(valor => (
-
-
     <Contant >
       <div className="columns">
       <div className="column1">
@@ -72,7 +146,6 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
       </div>
 
       <div className="column1">
-        {console.log(id)}
         <Atribuicao projetoId={valor.id} consultorId={id}/>
       </div>
 

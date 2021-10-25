@@ -26,7 +26,9 @@ interface Consultor {
 
 
 const AlocarAtribuirFuncionario: React.FC = () => {
-
+  const [pesquisaPorNome, setPesquisaPorNome] = useState("");
+  const [pesquisaPorNomeResponsavel, setPesquisaPorNomeResponsavel] = useState("");
+  const [pesquisaId, setPesquisaId] = useState("")
   const { id }: {id:string} = useParams();
   const [ consultor, setConsultor ] = useState<Consultor>();
 
@@ -47,9 +49,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
   return(
     <>
     <Header />
-
     <All>
-
         <Content>
 
           <div className="funcionario">
@@ -128,29 +128,42 @@ const AlocarAtribuirFuncionario: React.FC = () => {
             <div className="cols">
 
               <div className="cols1">
-                <b className="helvetica fonte_15 cor_5 normal"> Número: </b>
+                <b className="helvetica fonte_15 cor_5 normal"> ID Projeto: </b>
               </div>
 
               <div className="cols2">
-                <input type="number" placeholder="000000"/>
+                <input
+                  type="number"
+                  placeholder="000000"
+                  onChange={event => setPesquisaId(event.target.value)}
+                  value={pesquisaId}
+                />
               </div>
 
               <div className="cols1">
-              <b className="helvetica fonte_15 cor_5 normal"> Projeto: </b>
+              <b className="helvetica fonte_15 cor_5 normal"> Nome projeto: </b>
               </div>
 
               <div className="cols2">
-                <input type="text" placeholder="Nome do projeto..."/>
+                <input 
+                  type="text" 
+                  placeholder="Nome do projeto..."
+                  onChange={event => setPesquisaPorNome(event.target.value)}
+                  value={pesquisaPorNome}
+                />
               </div>
 
               <div className="cols1">
-              <b className="helvetica fonte_15 cor_5 normal"> Status: </b>
+              <b className="helvetica fonte_15 cor_5 normal"> Responsavel projeto: </b>
               </div>
 
               <div className="cols2">
-                <select name="Fornecedor">
-                  <option value="fornecedor"> -- Selecione aqui --</option>
-                </select>
+                <input 
+                  type="text" 
+                  placeholder="Nome do projeto..."
+                  onChange={event => setPesquisaPorNomeResponsavel(event.target.value)}
+                  value={pesquisaPorNomeResponsavel}
+                />
               </div>
 
               <div className="colsicon">
@@ -202,7 +215,11 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
               <div className="contant_informations">
-                <Informations/>
+                <Informations
+                  pesquisaId={pesquisaId}
+                  pesquisarPorNome={pesquisaPorNome}
+                  pesquisaPorNomeResponsavel={pesquisaPorNomeResponsavel}
+                />
               </div>
 
           </Table>
