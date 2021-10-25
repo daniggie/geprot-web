@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { shade } from "polished";
+import Tooltip from "../Tooltip";
 
 interface TableProps{
   overlay: boolean;
@@ -119,6 +120,21 @@ export const Container=styled.div<TableProps>`
 
         
       }
+    }
+  }
+`;
+
+export const Error=styled(Tooltip)`
+  height: 20px;
+  margin-left: 16px;
+  svg {
+    margin: 0;
+  }
+  span {
+    background: #c53030;
+    color: #fff;
+    &::before {
+      border-color: #c53030 transparent;
     }
   }
 `;
