@@ -52,11 +52,15 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
     return overlay;
   };
 
+  const gambiarra = () => {
+
+  }
+
   return (
     <>
       <Container overlay={overlay} isAllocated={isAllocated}>
         <div className="atribuir">
-          <button className="cor_000" onClick={addOverlay}>Atribuir</button>
+          <button className="cor_000" onClick={isAllocated==false ? addOverlay : gambiarra}>Atribuir</button>
         </div>
 
         <div id="atribuir">
