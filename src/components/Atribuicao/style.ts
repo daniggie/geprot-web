@@ -3,6 +3,7 @@ import { shade } from "polished";
 
 interface TableProps{
   overlay: boolean;
+  isAllocated: boolean;
 };
 
 export const Container=styled.div<TableProps>`
@@ -25,6 +26,18 @@ export const Container=styled.div<TableProps>`
       &:hover{
         background: ${shade(0.2, "#30a130")};
       }
+
+      ${(props) => 
+          props.isAllocated &&
+          css `
+            background: #b8b4ab;
+            cursor: not-allowed;
+            transition: 0.2s;
+            &:hover{
+              background: ${shade(0.2, "#a19d92")};
+            }
+          `
+        }
     }
   }
 
@@ -48,6 +61,8 @@ export const Container=styled.div<TableProps>`
         opacity: 0;
       `
     }
+
+    
 
     ${(props) =>
       !props.overlay &&
@@ -90,6 +105,7 @@ export const Container=styled.div<TableProps>`
       }
 
       button{
+       
         display:flex;
         justify-content: center;
         padding: 3px 5px 3px 5px;
@@ -100,6 +116,8 @@ export const Container=styled.div<TableProps>`
         &:hover{
           background: ${shade(0.2, "#0091BD")};
         }
+
+        
       }
     }
   }

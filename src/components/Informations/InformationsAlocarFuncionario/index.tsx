@@ -146,7 +146,11 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
       </div>
 
       <div className="column1">
-        <Atribuicao projetoId={valor.id} consultorId={id}/>
+        <Atribuicao 
+          projetoId={valor.id} 
+          isAllocated={valor.allocated}
+          consultorId={id}
+        />
       </div>
 
     </div>

@@ -8,7 +8,8 @@ import { RiCheckLine } from "react-icons/ri";
 
 interface AtribuicaoProps {
   projetoId: number,
-  consultorId: string
+  consultorId: string,
+  isAllocated: boolean
 }
 
 interface AlocarProps {
@@ -18,7 +19,7 @@ interface AlocarProps {
 }
 
 // valores chegando pelo botao, falta fazer a funcao para alocar
-const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId}) => {
+const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAllocated}) => {
   const history = useHistory();
   function Alocar(consultorId: number, projetoId: number) {
     console.log("bomdia")
@@ -53,7 +54,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId}) => {
 
   return (
     <>
-      <Container overlay={overlay}>
+      <Container overlay={overlay} isAllocated={isAllocated}>
         <div className="atribuir">
           <button className="cor_000" onClick={addOverlay}>Atribuir</button>
         </div>
