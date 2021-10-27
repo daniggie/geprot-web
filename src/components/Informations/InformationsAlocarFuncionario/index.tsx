@@ -152,12 +152,6 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
           isAllocated={valor.allocated}
           consultorId={id}
         />
-
-        {valor.allocated && (
-          <Error title={"Já está alocado"}>
-            <FiAlertCircle color="#c53030" size={20} />
-          </Error>
-        )}
       </div>
 
     </div>
