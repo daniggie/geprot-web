@@ -52,6 +52,7 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
   }
 
   async function buscaPorNomeResponsavel(): Promise<void> {
+    console.log('aaa')
     await api.get(`projetos/alocados/nomeresponsavel/${perfil.secao.id}/${id}/${pesquisaPorNomeResponsavel}`,config).then(response => {
       setValores(response.data)
     })
@@ -91,14 +92,17 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
 
   useEffect(() => {
     if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel === '' && pesquisaId === '') {
+      console.log('aaaa33244')
       carregaDadosPadrao();
     }
 
     if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel === '' && pesquisaId === '') {
+      console.log('aaaa222')
       buscaPorNomeProjeto();
     }
 
     if (pesquisarPorNome === '' && pesquisaPorNomeResponsavel !== '' && pesquisaId === '') {
+      console.log('aaaa332')
       buscaPorNomeResponsavel();
     }
 
@@ -121,7 +125,7 @@ const Informations: React.FC<PesquisaProps> = ({pesquisaPorNomeResponsavel, pesq
     if (pesquisarPorNome !== '' && pesquisaPorNomeResponsavel !== '' && pesquisaId !== '') {
       buscaPorNomeProjetoAndNomeResponsavelAndId();
     }
-  }, [pesquisarPorNome, pesquisarPorNome, pesquisaId])
+  }, [pesquisarPorNome, pesquisaPorNomeResponsavel, pesquisaId])
 
   return (
 
