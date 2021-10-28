@@ -55,8 +55,7 @@ const CadastrarConsultor: React.FC = () => {
       consultor.usuario.email = (document.getElementById('email') as HTMLInputElement).value;
       consultor.usuario.senha = (document.getElementById('senha') as HTMLInputElement).value;
       consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
-      consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);
-      console.log(consultor)                                 
+      consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);                               
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -79,9 +78,7 @@ const CadastrarConsultor: React.FC = () => {
 
       await schema.validate(data, {
         abortEarly: false,
-      })
-      
-      console.log("chegou pae")
+      })  
 
       await api.post("/consultor/cadastrar", consultor, config);
 
