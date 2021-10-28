@@ -20,10 +20,10 @@ export const All= styled.div`
 `;
 
 export const Container=styled.div`
-  width: 74%;
+  width: 75%;
   max-height: 400px;
   padding: 25px;
-  margin: 0 85px 0 120px;
+  margin: 0 84.5px 0 120px;
 
   border: 0.5px;
   border-style: solid;
@@ -76,11 +76,12 @@ export const Container=styled.div`
       justify-content: space-around;
 
       .table{
+        width: 90%;
         background: #fff;
         height: 200px;
         border: 1px solid #dedede;
         border-radius: 3px;
-        margin-bottom: 20px;
+        margin-bottom: 52px;
         overflow: auto;
       
         .header{
@@ -168,9 +169,26 @@ export const Container=styled.div`
         }
       }
 
+      .lineDescricao{
+        width: 100%;
+        height: 265px;
+        margin-bottom: 20px;
+
+        textarea{
+          width: 90%;
+          height: 245px;
+          border-radius:4px;
+          padding:5px;
+          border: 2px solid #dedede;
+          color: #828282;
+          font-size: 15px;
+          resize: none;
+        }
+      }
+
       .line{
         width: 100%;
-        height: 40px;
+        height: 75px;
         margin-bottom: 20px;
 
         display: flex;
@@ -180,7 +198,7 @@ export const Container=styled.div`
         align-content: flex-start;
         justify-content: flex-start;
 
-        .download{
+        label{
           width: 70%;
           background: #FFFFFF;
           border: 1px solid rgba(0, 0, 0, 0.2);
@@ -201,21 +219,14 @@ export const Container=styled.div`
             transition: 0.2s;
     
           }
+
+          input[type='file'] {
+            display: none
+          }
         }
 
         .float{
           width: 50%;
-        }
-
-        textarea{
-          width: 90%;
-          height: 145px;
-          border-radius:4px;
-          padding:5px;
-          border: 2px solid #dedede;
-          color: #828282;
-          font-size: 15px;
-          resize: none;
         }
 
         p{

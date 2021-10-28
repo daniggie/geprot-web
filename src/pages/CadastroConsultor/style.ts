@@ -45,20 +45,23 @@ width: 90%;
     }
 
     .column{
-      width: 48%;
+      width: 50%;
       height: 290px;
       align-items: center;
-      align-content: space-around;
+      align-content: space-between;
       justify-content: space-around;
+      padding: 0px 10px 0px 10px;
 
       .line{
         width: 100%;
         height: 80px;
-        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
         p{
           display: flex;
-          width: 80%;
+          width: 40%;
           justify-content: start;
           margin-bottom: 5px;
         }

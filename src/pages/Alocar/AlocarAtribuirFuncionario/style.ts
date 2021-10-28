@@ -16,6 +16,7 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    
 
     .line{
       width: 60%;
@@ -95,7 +96,7 @@ export const Content = styled.div`
       justify-content: space-around;
 
       .cols1{
-        width: 8%;
+        width: 10%;
         height: 40px;
         display: flex;
         align-items: center;
@@ -139,7 +140,6 @@ export const Table = styled.div`
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
     width: 100%;
     background: #EBEBEB;
-    margin-top: 30px;
 
     p{
       width: 100%;

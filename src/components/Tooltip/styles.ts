@@ -18,19 +18,19 @@ export const Container = styled.div`
       left: 50%;
       transform: translateX(-50%);
       &::before {
-          content: '';
-          border-style: solid;
-          border-color: #ff9000 transparent;
-          border-width: 6px 6px 0 6px;
-          top: 100%;
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
+        content: '';
+        border-style: solid;
+        border-color: #ff9000 transparent;
+        border-width: 6px 6px 0 6px;
+        top: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
   }
   
   &:hover span {
-      opacity: 1;
-      visibility: visible;
+    opacity: 1;
+    visibility: visible;
   }
 `;
