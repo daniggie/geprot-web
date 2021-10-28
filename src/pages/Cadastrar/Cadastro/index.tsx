@@ -14,6 +14,7 @@ import { BiReceipt } from 'react-icons/bi';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import api from '../../../services/api';
 import InputRegister from '../../../components/InputRegister';
+import ButtonRegister from '../../../components/Buttons/ButtonRegister';
 
 interface NomeConsultor {
   id: number;
@@ -247,6 +248,9 @@ const Cadastro:React.FC = () => {
                 <div className="column2"></div>
               </div>
             </div>
+            </div>
+            <div className="line">
+              <ButtonRegister type="submit">Cadastrar</ButtonRegister>
             </div>
           </Form>
         </Container>

@@ -23,7 +23,7 @@ export const Container=styled.div`
   width: 75%;
   max-height: 400px;
   padding: 25px;
-  margin: 0 84.5px 0 120px;
+  margin: 0 83.5px 0 120px;
 
   border: 0.5px;
   border-style: solid;
@@ -36,7 +36,7 @@ export const Container=styled.div`
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    margin: -19px 0px 0px 210px;
+    margin: -19px 0px 0px 180px;
     padding: 2px;
     cursor: pointer;
 
@@ -70,7 +70,7 @@ export const Container=styled.div`
 
     .column{
       width: 48%;
-      height: 550px;
+      height: 700px;
       align-items: center;
       align-content: space-around;
       justify-content: space-around;
