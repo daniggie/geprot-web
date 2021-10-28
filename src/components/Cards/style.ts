@@ -11,7 +11,7 @@ export const Content_cards = styled.div<CorCardPorps>`
   flex-wrap: wrap;
 
   .card_type{
-    min-width: 500px;
+    min-width: 450px;
     width: 40%;
     height: 144px;
     display: flex;

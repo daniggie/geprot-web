@@ -119,7 +119,8 @@ export const Content_cards = styled.div`
   display:flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 4%;
 `;
 
 export const Form = styled.form<FormProps>`
@@ -176,7 +177,7 @@ export const ContainerSearch = styled.div`
   }
 
   button{
-    width: 50px;
+    width: 25%;
     height: 25px;
     border: 0.1px solid #828282;
     border-left: 0;
