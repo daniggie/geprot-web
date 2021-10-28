@@ -153,7 +153,7 @@ const AlocarAtribuirFuncionario: React.FC = () => {
                 />
               </div>
 
-              <div className="cols1">
+              <div className="cols2">
               <b className="helvetica fonte_15 cor_5 normal"> Responsavel projeto: </b>
               </div>
 
@@ -169,23 +169,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               <div className="colsicon">
                 <RiFilterOffFill color="#00579D" size={25}/>
               </div>
-            </div>
-
-            <div className="cols">
-
-              <div className="cols1">
-              </div>
-
-              <div className="cols2">
-              </div>
-
-              <div className="cols1">
-              </div>
-
-              <div className="cols2">
-              </div>
-
-              
             </div>
           </div>
 
