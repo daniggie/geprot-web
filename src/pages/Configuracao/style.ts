@@ -203,6 +203,31 @@ export const Content= styled.div`
     justify-content: flex-end;
     padding: 20px 20px 20px 0px;
   };
+
+  button {
+    width: 205px;
+  background: #00579D;
+  border-radius: 5px;
+  border:0px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  &:hover{
+    background: #0078bd;
+    transition: 0.4s;
+  }
+  p{
+    font-size:20px;
+    color:#fff;
+    display:flex;
+    justify-content: center;
+  }
+
+  }
+
+
 `;
 
 
