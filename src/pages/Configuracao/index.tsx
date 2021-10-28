@@ -1,12 +1,51 @@
-import React, {useState} from "react";
+import React, {useState, useEffect  } from "react";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import { All, Content } from "./style";
 import {FiToggleLeft, FiToggleRight} from "react-icons/fi";
-import ButtonSalvar from "../../components/Buttons/ButtonSalvar";
 import {HiEye, HiEyeOff} from "react-icons/hi"
+import api from "../../services/api";
+import { useHistory } from "react-router-dom";
+
+interface Gestor {
+  id: number,
+  secao: {
+    id: number,
+    nome: string
+  },
+  usuario: {
+    id: number,
+    nome: string,
+    email: string,
+    senha: string,
+    dataCadastro: string,
+    status: string
+  }
+}
 
 const Configuracao: React.FC = () => {
+  const [gestor, setGestor] = useState<Gestor>();
+  const history = useHistory();
+  const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}` },
+    };
+  const [perfil] = useState(() => {
+    let usuario = localStorage.getItem('@Geprot:gestor');
+
+    if(usuario) {
+        let languageObject = JSON.parse(usuario);
+        return languageObject;
+    }
+  });
+
+  async function carregaPadrao(): Promise<void> {
+    alert("Chegou aqui")
+    api.get(`/gestor/buscar/${perfil.id}`, config).then(response => {
+      setGestor(response.data)
+    })
+  }
+
   const [enableTalk, setEnableTalk] = useState(false);
   const handleClickTalk = (e:any) => {
     e.preventDefault()
@@ -24,6 +63,21 @@ const Configuracao: React.FC = () => {
     e.preventDefault()
     setShowPass(!showPass)
   };
+
+const [nome, setNome] = useState(perfil.usuario.nome);
+const [senha, setSenha] = useState(perfil.usuario.senha);
+
+async function salva() {
+  if(nome.trim() != perfil.usuario.nome){
+    api.put(`/gestor/editar/nome/${perfil.id}/${nome}`, nome, config)
+  }
+  api.put(`/gestor/editar/senha/${perfil.id}/${senha}`, senha, config);
+  carregaPadrao();
+  carregaPadrao();
+  localStorage.setItem("@Geprot:gestor", JSON.stringify(gestor));
+  alert("Deu boa")
+  history.push("/home")
+}
 
   return (
     <>
@@ -87,11 +141,11 @@ const Configuracao: React.FC = () => {
               <div className="cont_option">
                 <div className="line_option">
                   <h3>Alterar nome de usuário</h3>
-                  <input type="text" id="nome" value="Brayan" placeholder="Digite aqui..." />
+                  <input type="text" id="nome" value={nome}  onChange={event => setNome(event.target.value)}/>
                 </div>
                 <div className="line_option">
                   <h3>Alterar sua senha</h3>
-                  <input type={ showPass ? "text" : "password"} id="senha" value="123456" placeholder="Digite aqui..."/>
+                  <input type={ showPass ? "text" : "password"} id="senha" value={senha} onChange={event => setSenha(event.target.value)}/>
                   <div className="login_eye">
                     {showPass ? (<HiEye size={15} color="#00579D" onClick={handleClickEye}/>) : (<HiEyeOff color="#828282" size={15} onClick={handleClickEye}/>)}
                   </div>
@@ -111,7 +165,9 @@ const Configuracao: React.FC = () => {
 
             <div className="line_div"></div>
               <div className="position">
-                <ButtonSalvar/>
+              <button onClick={() => salva()}>
+                <p>Salvar</p>
+              </button>
               </div>
           </div>
         </Content>

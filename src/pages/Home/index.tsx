@@ -9,7 +9,6 @@ import { FiChevronRight, FiSearch} from "react-icons/fi";
 import api from '../../services/api';
 import Notifications from '../../components/Notifications';
 import NaoEncontrado from '../../components/NaoEncontrado';
-import { number } from 'yargs';
 
 interface Card {
   id: number;
