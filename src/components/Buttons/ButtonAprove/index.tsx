@@ -1,7 +1,5 @@
-import { error } from 'console';
 import React, { ReactNode } from 'react';
 import { useHistory } from 'react-router';
-import api from '../../../services/api';
 
 import { Container } from './style';
 
@@ -19,7 +17,6 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
   };
 
   async function apenas(): Promise<void> {
-    await api.put(`horas/aprovar/${props.projetoId}/${props.consultorId}`,props, config)
     history.push("/home")
   }
 
