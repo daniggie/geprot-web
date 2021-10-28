@@ -22,10 +22,13 @@ const Cadastro:React.FC = () => {
           <form>
             <div className="column">
               <div className="line">
-                  <div className="download">
-                    <p className="helvetica fonte_13 cor_0 bold">ATA_COMISSÃO_001</p>
+                  <label>
+                    <p className="helvetica fonte_13 cor_0 bold">
+                      ATA_COMISSÃO_001
+                      <input type="file" size={0}/>
+                    </p>
                     <BiReceipt color="#00579D" size={25}/>
-                  </div>
+                  </label>
               </div>
 
               <div className="line">

@@ -180,7 +180,7 @@ export const Container=styled.div`
         align-content: flex-start;
         justify-content: flex-start;
 
-        .download{
+        label{
           width: 70%;
           background: #FFFFFF;
           border: 1px solid rgba(0, 0, 0, 0.2);
@@ -200,6 +200,10 @@ export const Container=styled.div`
             opacity: 0.7;
             transition: 0.2s;
     
+          }
+
+          input[type='file'] {
+            display: none
           }
         }
 
