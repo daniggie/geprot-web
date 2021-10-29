@@ -15,11 +15,9 @@ interface Card {
   nome: string;
   dataInicio: string;
   dataFinalizacao: string;
-  dataCadastro: string;
   horasPrevistas: number;
   horasTrabalhadas: number;
   valor: number;
-  valorUtilizado: number;
   valorRestante: number;
   status: string;
   barraProgresso: number;
@@ -177,6 +175,15 @@ const Home: React.FC = () => {
             <Cards
               id={valor.id}
               key={valor.id}
+              barraProgresso={valor.barraProgresso}
+              dataFinalizacao={valor.dataFinalizacao}
+              dataInicio={valor.dataInicio}
+              horasPrevistas={valor.horasPrevistas}
+              horasTrabalhadas={valor.horasTrabalhadas}
+              status={valor.status}
+              valor={valor.valor}
+              valorRestante={valor.valorRestante}
+              nome={valor.nome}
             />
             ))
             : <NaoEncontrado/>
