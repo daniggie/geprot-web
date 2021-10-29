@@ -6,6 +6,7 @@ import {FiToggleLeft, FiToggleRight} from "react-icons/fi";
 import {HiEye, HiEyeOff} from "react-icons/hi"
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
+import tamanhoFonte from "../../components/js/fontSize";
 
 interface Gestor {
   id: number,
@@ -105,13 +106,13 @@ async function salva() {
                       </div>
                       <ul>
                         <li>
-                          <a className="font">Pequena</a>
+                          <a className="font" onClick={() => tamanhoFonte("small")}>Pequena</a>
                         </li>
                         <li>
-                          <a className="font">Média</a>
+                          <a className="font" onClick={() => tamanhoFonte("medium")}>Média</a>
                         </li>
                         <li>
-                          <a className="font">Grande</a>
+                          <a className="font" onClick={() => tamanhoFonte("big")}>Grande</a>
                         </li>
                       </ul>
                     </div>
