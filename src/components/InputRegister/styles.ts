@@ -56,7 +56,6 @@ input{
         color: #00579E;
     }
 }
-}
 `;
 
 export const Error = styled(Tooltip)`
