@@ -4,8 +4,8 @@ import api from "../../../services/api";
 import { Chart } from "react-google-charts";
 
   interface DashboardConcluidos {
-    quantidade: number;
-    mesAno: string;
+    quantidadeConcluidos: number;
+    mes: string;
   }
 
 const ChartYear: React.FC = () => {
@@ -26,7 +26,7 @@ const ChartYear: React.FC = () => {
     });
 
     async function buscarValores1() {
-      var response = await api.get(`dashboard/concluidos/ultimoano/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+      await api.get(`projetos/dashboard/ultimoano/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
       })
     }
@@ -47,18 +47,18 @@ const ChartYear: React.FC = () => {
 
             data={[
               ['Months', 'Projetos concluidos', { role: 'style' }],
-              [valoresConcluidos[11] ? valoresConcluidos[11].mesAno : undefined, valoresConcluidos[11] ? valoresConcluidos[11].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[10] ? valoresConcluidos[10].mesAno : undefined, valoresConcluidos[10] ? valoresConcluidos[10].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[9] ? valoresConcluidos[9].mesAno : undefined, valoresConcluidos[9] ? valoresConcluidos[9].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[8] ? valoresConcluidos[8].mesAno : undefined, valoresConcluidos[8] ? valoresConcluidos[8].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[7] ? valoresConcluidos[7].mesAno : undefined, valoresConcluidos[7] ? valoresConcluidos[7].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[6] ? valoresConcluidos[6].mesAno : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[5] ? valoresConcluidos[5].mesAno : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[4] ? valoresConcluidos[4].mesAno : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[3] ? valoresConcluidos[3].mesAno : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[2] ? valoresConcluidos[2].mesAno : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined, "#0091BD"],
-              [valoresConcluidos[1] ? valoresConcluidos[1].mesAno : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined, '#2382BA'],
-              [valoresConcluidos[0] ? valoresConcluidos[0].mesAno : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined, "#0091BD"],
+              [valoresConcluidos[11] ? valoresConcluidos[11].mes : undefined, valoresConcluidos[11] ? valoresConcluidos[11].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[10] ? valoresConcluidos[10].mes : undefined, valoresConcluidos[10] ? valoresConcluidos[10].quantidadeConcluidos : undefined, '#2382BA'],
+              [valoresConcluidos[9] ? valoresConcluidos[9].mes : undefined, valoresConcluidos[9] ? valoresConcluidos[9].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[8] ? valoresConcluidos[8].mes : undefined, valoresConcluidos[8] ? valoresConcluidos[8].quantidadeConcluidos : undefined, '#2382BA'],
+              [valoresConcluidos[7] ? valoresConcluidos[7].mes : undefined, valoresConcluidos[7] ? valoresConcluidos[7].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[6] ? valoresConcluidos[6].mes : undefined, valoresConcluidos[6] ? valoresConcluidos[6].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[5] ? valoresConcluidos[5].mes : undefined, valoresConcluidos[5] ? valoresConcluidos[5].quantidadeConcluidos : undefined, '#2382BA'],
+              [valoresConcluidos[4] ? valoresConcluidos[4].mes : undefined, valoresConcluidos[4] ? valoresConcluidos[4].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[3] ? valoresConcluidos[3].mes : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidadeConcluidos : undefined, '#2382BA'],
+              [valoresConcluidos[2] ? valoresConcluidos[2].mes : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidadeConcluidos : undefined, "#0091BD"],
+              [valoresConcluidos[1] ? valoresConcluidos[1].mes : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidadeConcluidos : undefined, '#2382BA'],
+              [valoresConcluidos[0] ? valoresConcluidos[0].mes : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidadeConcluidos : undefined, "#0091BD"],
             ]}
 
             options={{

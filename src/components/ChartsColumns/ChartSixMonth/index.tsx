@@ -26,7 +26,7 @@ const ChartSixMonth: React.FC = () => {
     });
 
     async function buscarValores1() {
-      var response = await api.get(`/projetos/dashboard/6meses/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+      await api.get(`/projetos/dashboard/6meses/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
         setValoresConcluidos(response.data)
       })
     }

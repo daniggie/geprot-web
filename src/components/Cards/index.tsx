@@ -4,56 +4,36 @@ import api from "../../services/api";
 import { Content_cards } from "./style";
 import { FiClock } from "react-icons/fi";
 
-interface Card {
+
+interface Identifica {
   id: number;
   nome: string;
   dataInicio: string;
   dataFinalizacao: string;
-  dataCadastro: string;
   horasPrevistas: number;
   horasTrabalhadas: number;
   valor: number;
-  valorUtilizado: number;
   valorRestante: number;
   status: string;
   barraProgresso: number;
 }
 
-interface Identifica {
-  id: number;
-}
-
-const Cards: React.FC<Identifica> = ({id}) => {
-  const [ valor, setValor ] = useState<Card>();
-  const [perfil] = useState(() => {
-    let usuario = localStorage.getItem('@Geprot:gestor');
-
-    if(usuario) {
-      let languageObject = JSON.parse(usuario);
-        return languageObject;
-      }
-    });
-
-    useEffect(() => {
-      async function carregaDados(): Promise<void>{
-        const token = localStorage.getItem("@Geprot:token");
-        let config = {
-          headers: { Authorization: `Bearer ${token}` },
-        };
-
-        await api.get(`projetos/buscar/${id}`, config).then(response => {
-          setValor(response.data);
-        });
-      }
-      carregaDados();
-    }, [id]);
-
+const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, horasPrevistas, horasTrabalhadas, valor, valorRestante, status, barraProgresso}) => {
     const pagina = "/detalhes/";
+
+    const [perfil] = useState(() => {
+      let usuario = localStorage.getItem('@Geprot:gestor');
+  
+      if(usuario) {
+        let languageObject = JSON.parse(usuario);
+          return languageObject;
+        }
+    });
 
     return(
       <>
-        <Content_cards status={valor?.status ? valor?.status: "0"} barraProgresso={valor?.barraProgresso ? valor?.barraProgresso :0}>
-          <a href={pagina + valor?.id}>
+        <Content_cards status={status ? status: "0"} barraProgresso={barraProgresso ? barraProgresso : 0}>
+          <a href={pagina + id}>
             <div className="card_type">
               <div className="card_status_color"/>
               <div className="card_informacao">
@@ -69,10 +49,10 @@ const Cards: React.FC<Identifica> = ({id}) => {
                     </div>
                     <div className="cor_black fonte_12 helvetica bold ">
                       {
-                        valor?.status == "EM_ANDAMENTO" ? "EM ANDAMENTO" :
-                        valor?.status == "NAO_INICIADO" ? "NÃO INICIADO" :
-                        valor?.status == "ATRASADO" ? "ATRASADO" :
-                        valor?.status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
+                        status == "EM_ANDAMENTO" ? "EM ANDAMENTO" :
+                        status == "NAO_INICIADO" ? "NÃO INICIADO" :
+                        status == "ATRASADO" ? "ATRASADO" :
+                        status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
                       }
                     </div>
                   </div>
@@ -80,7 +60,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
                 <div className="linha_2">
                   <div className="card_title">
                     <div className="cor_black fonte_25 helvetica bold">
-                      {valor?.id ? valor?.id : "0"} - {valor?.nome ? valor?.nome : "projeto"}
+                      {id ?id : "0"} - {nome ? nome : "projeto"}
                     </div>
                   </div>
                 </div>
@@ -94,7 +74,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
                         R$
                       </div>
                       <div className="texto cor_0 fonte_14 helvetica">
-                        { valor?.valor ? valor?.valor : "0"}
+                        { valor ? valor : "0"}
                       </div>
                     </div>
                   </div>
@@ -106,7 +86,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
                       <FiClock size={17} color="#00579E"/>
                     </div>
                     <div className="cor_0 fonte_14 horas helvetica">
-                      { valor?.horasPrevistas ? valor?.horasPrevistas : "0" } H
+                      { horasPrevistas ? horasPrevistas : "0" } H
                     </div>
                   </div>
                 </div>
@@ -120,7 +100,7 @@ const Cards: React.FC<Identifica> = ({id}) => {
                         R$
                       </div>
                       <div className="texto cor_0 fonte_14 helvetica">
-                        { valor?.valorRestante ? valor?.valorRestante : "0" }
+                        { valorRestante ? valorRestante : "0" }
                       </div>
                     </div>
                   </div>
@@ -132,14 +112,14 @@ const Cards: React.FC<Identifica> = ({id}) => {
                       <FiClock size={17} color="#00579E"/>
                     </div>
                     <div className="cor_0 fonte_14 helvetica horas">
-                      { valor?.horasTrabalhadas ? valor?.horasTrabalhadas : "0" } H
+                      { horasTrabalhadas ? horasTrabalhadas : "0" } H
                     </div>
                   </div>
                 </div>
                             <div className="linha_3">
                                 <div className="texto_content_data">
-                                    <p className="cor_0 fonte_14 helvetica">Dê: { valor?.dataInicio ? valor?.dataInicio : "Não iniciado" }</p>
-                                    <p className="cor_0 fonte_14 helvetica"> Até: { valor?.dataFinalizacao ? valor?.dataFinalizacao : "Não informado" }</p>
+                                    <p className="cor_0 fonte_14 helvetica">Dê: { dataInicio ? dataInicio : "Não iniciado" }</p>
+                                    <p className="cor_0 fonte_14 helvetica"> Até: { dataFinalizacao ? dataFinalizacao : "Não informado" }</p>
                                 </div>
                                 <div className="content_barra">
                                     <div className="green content_carregamento"/>

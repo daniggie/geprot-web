@@ -80,8 +80,6 @@ const Cadastrar4: React.FC = () => {
     console.log(projeto)
   }
 
-
-
   const adcionarListaSecao = () => {
 
     const idSecao = (document.getElementById('id') as HTMLInputElement).value;
@@ -105,7 +103,6 @@ const Cadastrar4: React.FC = () => {
       (document.getElementById('taxa') as HTMLInputElement).value='';
     }
     pegaNome();
-
   };
 
   return (
