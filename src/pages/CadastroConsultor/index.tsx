@@ -70,16 +70,16 @@ const CadastrarConsultor: React.FC = () => {
         nome: Yup.string()
         .required("O nome é obrigatório"),
         id: Yup.number()
+        .required("O ID é obrigatório")
         .positive("O ID não pode ser negativo")
-        .integer("Informe um número inteiro")
-        .required("O ID é obrigatório"),
+        .integer("Informe um ID inteiro"),
         idFornecedor: Yup.number()
+        .required("O ID é obrigatório")
         .positive("O ID não pode ser negativo")
-        .integer("Informe um número inteiro")
-        .required("O ID é obrigatório"),
+        .integer("Informe um ID inteiro"),
         precoHora: Yup.number()
-        .positive("A hora não pode ser negativa")
         .required("A hora é obrigatória")
+        .positive("A hora não pode ser negativa")
       })
 
       await schema.validate(data, {

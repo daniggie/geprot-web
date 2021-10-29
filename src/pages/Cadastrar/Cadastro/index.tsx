@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useRef, useCallback } from 'react';
+import React, { useState, FormEvent, useRef, useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useToast } from '../../../hooks/toast';
 import { Form } from "@unform/web";
@@ -57,6 +57,23 @@ const Cadastro:React.FC = () => {
   const { addToast } = useToast();
   const history = useHistory();
 
+  const[consultores, setConsultores] = useState<Consultor[]>([]);
+  const [ secoes, setSecoes ] = useState<Secao[]>([]);
+  const [ valor, setValor ] = useState<Secao[]>([]);
+
+  useEffect(() => {
+    async function carregaDados(): Promise<void>{
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`secao/listar`, config).then(response => {
+        setValor(response.data);
+      })
+    }
+    carregaDados();
+  });
+
   const projeto = {
     nome: "",
     nomeSolicitante: "",
@@ -64,15 +81,21 @@ const Cadastro:React.FC = () => {
     dataFinalizacao: "",
     dataInicio: "",
     nomeResponsavel:"",
-    consultores:{
+    consultores:[
+      {
       consultorId: 0,
       quantidadeHoras: 0
-    },
-    ccpagantes:{
+      }
+    ],
+    ccpagantes: [
+      {
       secaoId: 1,
 			taxa: 100
-    }
+      }
+    ]
   }
+  projeto.consultores.shift();
+  projeto.ccpagantes.shift();
 
   const cadastrarProjeto = useCallback( async(data: Projeto) => {
     try{
@@ -84,15 +107,29 @@ const Cadastro:React.FC = () => {
       projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
       projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
       projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
-      projeto.consultores.consultorId = parseInt((document.getElementById('idConsultor') as HTMLInputElement).value);
-      projeto.consultores.quantidadeHoras = parseInt((document.getElementById('horasConsultor') as HTMLInputElement).value);
-      projeto.ccpagantes.secaoId = parseInt((document.getElementById('idCentroCusto') as HTMLInputElement).value);
-      projeto.ccpagantes.taxa = parseInt((document.getElementById('porcentagem') as HTMLInputElement).value);
+      for(let i = 0; i < consultores.length; i++){
+        projeto.consultores.push(
+          {
+            consultorId: consultores[i].id,
+            quantidadeHoras: parseInt(consultores[i].horas)
+          }
+        )
+      }
+      for(let i = 0; i < secoes.length; i++){
+        projeto.ccpagantes.push(
+          {
+            secaoId: secoes[i].id,
+            taxa: secoes[i].taxa
+          }
+        )
+      }
 
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}`},
       };
+
+      const today = new Date();
 
       const schema = Yup.object().shape({
         nomeProjeto: Yup.string()
@@ -106,15 +143,8 @@ const Cadastro:React.FC = () => {
         dataFinalizacao: Yup.date()
         .required("A data é obrigatória"),
         dataInicio: Yup.date()
-        .required("A data é obrigatória"),
-        idConsultor: Yup.number()
-        .required("O ID é obrigatório"),
-        horasConsultor: Yup.number()
-        .required("A hora é obrigatória"),
-        idCentroCusto: Yup.number()
-        .required("O ID é obrigatório"),
-        porcentagem: Yup.number()
-        .required("A porcentagem é obrigatória"),
+        .required("A data é obrigatória")
+        .max(today),
       })
 
       await schema.validate(data, {
@@ -146,6 +176,60 @@ const Cadastro:React.FC = () => {
       })
     }
   }, [addToast, history]);
+
+  const removerConsultor = (index: number) => {
+    consultores.splice(index,1)
+  };
+
+  const adcionarListaConsultor = () => {
+
+    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
+
+    const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
+      const consultor = response.data;
+
+      const card:Consultor = {
+        id: parseInt(idConsultor),
+        nome: consultor.usuario.nome,
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1"
+      }
+      setConsultores([...consultores, card]);
+      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
+      (document.getElementById('idConsultor') as HTMLInputElement).value='';
+    }
+    pegaNome();
+  };
+
+  const adcionarListaSecao = () => {
+
+    const idSecao = (document.getElementById('idCentroCusto') as HTMLInputElement).value;
+
+    const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      const response = await api.get<Secao>(`/secao/buscar/${idSecao}`,config);
+      const secao = response.data;
+
+      const card:Secao = {
+        id: parseInt(idSecao),
+        nome: secao.nome,
+        taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
+      }
+      setSecoes([...secoes, card]);
+      (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
+      (document.getElementById('porcentagem') as HTMLInputElement).value='';
+    }
+    pegaNome();
+  };
 
   return( 
     <>
@@ -191,7 +275,7 @@ const Cadastro:React.FC = () => {
                 <div className="float">
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
-                  <div className="boxAdd cor_6f" >
+                  <div className="boxAdd cor_6f" onClick={adcionarListaConsultor}>
                     <RiAddLine color="#fff"/>
                   </div>
                 </div>
@@ -209,18 +293,23 @@ const Cadastro:React.FC = () => {
                     Limite de horas
                   </div>
                 </div>
-
-                <div className="columns helvetica cor_0 lighter" >
-                  <div className="column3">
-                    <div className="boxEx cor_6f">
-                      <FiX color="#fff"/>
+                
+                {consultores.map(consultor => (
+                  <div className="columns helvetica cor_0 lighter" >
+                    <div className="column3">
+                      <div className="boxEx cor_6f" onClick={() => removerConsultor(consultor.id)}>
+                        <FiX color="#fff"/>
+                      </div>
+                      {consultor.id}
+                    </div>
+                    <div className="column1">
+                      {consultor.nome}
+                    </div>
+                    <div className="column2">
+                      {consultor.horas}
                     </div>
                   </div>
-                  <div className="column1">  
-                  </div>
-                  <div className="column2">  
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -249,8 +338,8 @@ const Cadastro:React.FC = () => {
                 <div className="float">
                   <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
                   <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="%" />
-                  <div className="boxAdd cor_6f" >
-                    <RiAddLine color="#fff"/>
+                  <div className="boxAdd cor_6f" onClick={adcionarListaSecao}>
+                    <RiAddLine color="#fff" />
                   </div>
                 </div>
               </div>
@@ -266,14 +355,19 @@ const Cadastro:React.FC = () => {
                 </div>
               </div>
 
-              <div className="columns helvetica cor_0 lighter">
-                <div className="column1">
-                  <div className="boxEx cor_6f">
-                    <FiX color="#fff"/>
+              {secoes.map(secao => (
+                <div className="columns helvetica cor_0 lighter">
+                  <div className="column1">
+                    <div className="boxEx cor_6f">
+                      <FiX color="#fff"/>
+                    </div>
+                    {secao.nome}
+                  </div>
+                  <div className="column2">
+                    {secao.taxa}%
                   </div>
                 </div>
-                <div className="column2"></div>
-              </div>
+              ))}
             </div>
             </div>
             <div className="line">
