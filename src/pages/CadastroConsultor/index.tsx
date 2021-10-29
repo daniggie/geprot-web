@@ -70,10 +70,15 @@ const CadastrarConsultor: React.FC = () => {
         nome: Yup.string()
         .required("O nome é obrigatório"),
         id: Yup.number()
+        .positive("O ID não pode ser negativo")
+        .integer("Informe um número inteiro")
         .required("O ID é obrigatório"),
         idFornecedor: Yup.number()
+        .positive("O ID não pode ser negativo")
+        .integer("Informe um número inteiro")
         .required("O ID é obrigatório"),
         precoHora: Yup.number()
+        .positive("A hora não pode ser negativa")
         .required("A hora é obrigatória")
       })
 

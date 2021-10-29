@@ -41,7 +41,7 @@ width: 90%;
     align-content: space-around;
     justify-content: center;
     border-radius: 4px;
-    padding: 45px;
+    padding: 35px;
 
     .column{
       width: 50%;
