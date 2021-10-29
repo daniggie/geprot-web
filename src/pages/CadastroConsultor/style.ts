@@ -5,12 +5,25 @@ export const All= styled.div`
     display: flex;
     align-content: space-around;
     flex-wrap: wrap;
-    margin-top: 90px;
+    margin-top: 50px;
     flex-direction: row;
 `;
 
 export const Container= styled.div`
 width: 90%;
+
+.title{
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  margin-bottom: 15px;
+
+  b{
+    margin: 5px 0px 0px 120px;
+    }
+  }
 
   form{
     width: 100%;
@@ -28,21 +41,7 @@ width: 90%;
     align-content: space-around;
     justify-content: center;
     border-radius: 4px;
-    padding: 15px;
-
-    .title{
-      width: 100%;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      align-content: space-around;
-      margin-bottom: 15px;
-
-      b{
-        margin: 5px 0px 0px 20px;
-
-      }
-    }
+    padding: 35px;
 
     .column{
       width: 50%;
@@ -54,16 +53,29 @@ width: 90%;
 
       .line{
         width: 100%;
-        height: 80px;
+        height: 75px;
+        margin-bottom: 20px;
+
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: flex-start;
 
         p{
           display: flex;
-          width: 40%;
+          width: 90%;
           justify-content: start;
           margin-bottom: 5px;
+        }
+
+        .login_eye{
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          margin-top: -32px;
+          margin-left: 355px;
         }
       }
     }

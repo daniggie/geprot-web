@@ -43,8 +43,7 @@ const InputRegister:React.FC<InputRegisterProps> = ({name, ...rest}) => {
         {...rest}
       />
       { error &&(
-        <Error title={error}>
-        </Error>
+        <Error title={error}/>
       )}
     </Container>
   );

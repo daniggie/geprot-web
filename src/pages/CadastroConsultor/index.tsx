@@ -1,4 +1,4 @@
-import React, {useRef, useCallback} from "react";
+import React, {useRef, useCallback, useState} from "react";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import { All, Container } from "./style"
@@ -12,6 +12,7 @@ import getValidationErrors from "../../utils/getValidationErrors";
 import ButtonRegister from "../../components/Buttons/ButtonRegister";
 import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
+import { HiEye, HiEyeOff } from "react-icons/hi";
 
 interface Consultor {
   id: number,
@@ -69,10 +70,15 @@ const CadastrarConsultor: React.FC = () => {
         nome: Yup.string()
         .required("O nome é obrigatório"),
         id: Yup.number()
+        .positive("O ID não pode ser negativo")
+        .integer("Informe um número inteiro")
         .required("O ID é obrigatório"),
         idFornecedor: Yup.number()
+        .positive("O ID não pode ser negativo")
+        .integer("Informe um número inteiro")
         .required("O ID é obrigatório"),
         precoHora: Yup.number()
+        .positive("A hora não pode ser negativa")
         .required("A hora é obrigatória")
       })
 
@@ -105,17 +111,22 @@ const CadastrarConsultor: React.FC = () => {
     }
   }, [addToast, history]);
 
+  const [showPass, setShowPass] = useState(false);
+  const handleClickPass = (e:any) => {
+    e.preventDefault()
+    setShowPass(!showPass)
+  };
+
   return (
     <>
     <Header />
       <All>
         <Container>
+          <div className="title">
+            <b className="helvetica fonte_20 cor_5">CADASTRO DE CONSULTOR</b>
+          </div>
           <Form ref={formRef} onSubmit={cadastrarConusltor}>
             <div className="container_square">
-
-              <div className="title">
-                <b className="helvetica fonte_20 cor_5">CADASTRO DE CONSULTOR</b>
-              </div>
 
               <div className="column">
                 <div className="line">
@@ -130,7 +141,10 @@ const CadastrarConsultor: React.FC = () => {
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Senha:</p>
-                  <InputRegister name="senha" id="senha" placeholder="Digite a senha..."/>
+                  <InputRegister name="senha" id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
+                  <div className="login_eye">
+                    {showPass ? (<HiEye size={25} color="#00579E" onClick={handleClickPass}/>) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
+                  </div>
                 </div>
               </div>
 

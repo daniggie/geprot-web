@@ -3,8 +3,8 @@ import api from "../../../services/api";
 import { Chart } from "react-google-charts";
 
 interface DashboardConcluidos {
-  mesAno: string;
-  quantidade: number;
+  periodo: string;
+  quantidadeConcluidos: number;
 }
 
 const ChartMonth: React.FC = () => {
@@ -23,7 +23,7 @@ const ChartMonth: React.FC = () => {
   });
 
   async function buscarValores1() {
-    var response = await api.get(`dashboard/concluidos/ultimoMes/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
+    await api.get(`projetos/dashboard/mes/${secao.secao.id ? secao.secao.id : null}`, config).then(response => {
       setValoresConcluidos(response.data)
     })
   }
@@ -41,10 +41,10 @@ const ChartMonth: React.FC = () => {
 
       data={[
         ['Weeks', 'Projetos concluidos', { role: 'style' }],
-        [valoresConcluidos[3] ? valoresConcluidos[3].mesAno : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidade : undefined, "#0091BD"],
-        [valoresConcluidos[2] ? valoresConcluidos[2].mesAno : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidade : undefined,'#2382BA'],
-        [valoresConcluidos[1] ? valoresConcluidos[1].mesAno : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidade : undefined,"#0091BD"],
-        [valoresConcluidos[0] ? valoresConcluidos[0].mesAno : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidade : undefined,'#2382BA'],
+        [valoresConcluidos[3] ? valoresConcluidos[3].periodo : undefined, valoresConcluidos[3] ? valoresConcluidos[3].quantidadeConcluidos : undefined, "#0091BD"],
+        [valoresConcluidos[2] ? valoresConcluidos[2].periodo : undefined, valoresConcluidos[2] ? valoresConcluidos[2].quantidadeConcluidos : undefined,'#2382BA'],
+        [valoresConcluidos[1] ? valoresConcluidos[1].periodo : undefined, valoresConcluidos[1] ? valoresConcluidos[1].quantidadeConcluidos : undefined,"#0091BD"],
+        [valoresConcluidos[0] ? valoresConcluidos[0].periodo : undefined, valoresConcluidos[0] ? valoresConcluidos[0].quantidadeConcluidos : undefined,'#2382BA'],
       ]}
 
       options={{

@@ -24,6 +24,7 @@ export const Container=styled.div`
   max-height: 400px;
   padding: 25px;
   margin: 0 83.5px 0 120px;
+  padding: 35px;
 
   border: 0.5px;
   border-style: solid;
@@ -36,7 +37,7 @@ export const Container=styled.div`
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    margin: -19px 0px 0px 180px;
+    margin: -20px 0px 0px 197px;
     padding: 2px;
     cursor: pointer;
 
@@ -76,7 +77,7 @@ export const Container=styled.div`
       justify-content: space-around;
 
       .table{
-        width: 90%;
+        width: 93%;
         background: #fff;
         height: 200px;
         border: 1px solid #dedede;
@@ -175,8 +176,8 @@ export const Container=styled.div`
         margin-bottom: 20px;
 
         textarea{
-          width: 90%;
-          height: 245px;
+          width: 93%;
+          height: 235px;
           border-radius:4px;
           padding:5px;
           border: 2px solid #dedede;
@@ -226,7 +227,7 @@ export const Container=styled.div`
         }
 
         .float{
-          width: 50%;
+          width: 45%;
         }
 
         p{

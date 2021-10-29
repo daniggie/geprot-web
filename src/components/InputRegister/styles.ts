@@ -9,7 +9,7 @@ interface ContainerProps{
 }
 
 export const Container = styled.div<ContainerProps>`
-width: 75%;
+width: 93%;
 border-radius: 4px;
 padding: 5px;
 height: 40px;
@@ -47,7 +47,7 @@ input{
     border: 1px;
     padding: 5px;
     flex: 1;
-    backdround: transparent;
+    background: transparent;
     border: 0;
     color: #00579E;
     color: #00579E;
@@ -55,7 +55,6 @@ input{
     &::placeholder{
         color: #00579E;
     }
-}
 }
 `;
 
