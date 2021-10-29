@@ -94,6 +94,33 @@ const Cadastro:React.FC = () => {
         headers: { Authorization: `Bearer ${token}`},
       };
 
+      const schema = Yup.object().shape({
+        nomeProjeto: Yup.string()
+        .required("O nome do projeto é obrigatório"),
+        nomeSolicitante:Yup.string()
+        .required("O nome do solicitante é obrigatório"),
+        nomeResponsavel:Yup.string()
+        .required("O nome do responsável é obrigatório"),
+        descricao: Yup.string()
+        .required("A descrição é obrigatória"),
+        dataFinalizacao: Yup.date()
+        .required("A data é obrigatória"),
+        dataInicio: Yup.date()
+        .required("A data é obrigatória"),
+        idConsultor: Yup.number()
+        .required("O ID é obrigatório"),
+        horasConsultor: Yup.number()
+        .required("A hora é obrigatória"),
+        idCentroCusto: Yup.number()
+        .required("O ID é obrigatório"),
+        porcentagem: Yup.number()
+        .required("A porcentagem é obrigatória"),
+      })
+
+      await schema.validate(data, {
+        abortEarly: false,
+      })  
+
       await api.post("/projetos/cadastrar", projeto, config);
 
       addToast({
