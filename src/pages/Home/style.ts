@@ -11,6 +11,7 @@ export const Container = styled.div`
     align-items: center;
 
     .texto{
+      font-size: 1em;
     }
 
     .arrow{

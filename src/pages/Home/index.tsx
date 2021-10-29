@@ -95,7 +95,7 @@ const Home: React.FC = () => {
           <div className="arrow">
             <FiChevronRight size="15px" color="#00579E"/>
           </div>
-          <div className="texto cor_5">
+          <div className="cor_5">
             Projetos
           </div>
         </div>
@@ -190,4 +190,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-;
