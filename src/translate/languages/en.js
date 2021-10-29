@@ -1,5 +1,5 @@
 const messages = {
-    pt: {
+    en: {
       translations: {
         header:{
           charge: "Gestor"
