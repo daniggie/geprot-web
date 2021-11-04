@@ -40,7 +40,7 @@ import styled from "styled-components";
       display: inline-block;
       width: 32px;
       height: 32px;
-      background-image: url('../../assets/brasil');
+      background-image: url('../../assets/brasil.png');
       background-size: contain;
       background-repeat: no-repeat;
   }
@@ -90,7 +90,7 @@ import styled from "styled-components";
   }
 
   .de:before {
-      background-image: url('../../assets/alemanha');
+      background-image: url('../../assets/alemanha.png');
   }
 
   .br:before {
@@ -98,15 +98,15 @@ import styled from "styled-components";
   }
 
   .en:before {
-      background-image: url('../../assets/estadosUnidos');
+      background-image: url('../../assets/estadosUnidos.png');
   }
 
   .fr:before {
-      background-image: url('../../assets/franca');
+      background-image: url('../../assets/franca.png');
   }
 
   .ar:before {
-      background-image: url('../../assets/china');
+      background-image: url('../../assets/china.png');
   }
 
   .lang-menu:hover ul {
