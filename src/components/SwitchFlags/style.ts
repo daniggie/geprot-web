@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+    export const Container = styled.header`
   height: 41px;
   box-sizing: border-box;
   width: 50px;
@@ -40,7 +40,7 @@ export const Container = styled.header`
       display: inline-block;
       width: 32px;
       height: 32px;
-      background-image: url('https://www.countryflags.io/br/flat/32.png');
+      background-image: url('../../assets/brasil');
       background-size: contain;
       background-repeat: no-repeat;
   }
@@ -49,7 +49,7 @@ export const Container = styled.header`
       margin: 0;
       padding: 0;
       display: none;
-      background-color: #fff;
+      background-color: #fff;       
       border: 1px solid #f8f8f8;
       position: absolute;
       top: 41px;
@@ -90,23 +90,23 @@ export const Container = styled.header`
   }
 
   .de:before {
-      background-image: url('https://www.countryflags.io/de/flat/32.png');
+      background-image: url('../../assets/alemanha');
   }
 
   .br:before {
-      background-image: url('https://www.countryflags.io/br/flat/32.png');
+      background-image: url('../../assets/brasil');
   }
 
   .en:before {
-      background-image: url('https://www.countryflags.io/us/flat/32.png');
+      background-image: url('../../assets/estadosUnidos');
   }
 
   .fr:before {
-      background-image: url('https://www.countryflags.io/fr/flat/32.png');
+      background-image: url('../../assets/franca');
   }
 
   .ar:before {
-      background-image: url('https://www.countryflags.io/cn/flat/32.png');
+      background-image: url('../../assets/china');
   }
 
   .lang-menu:hover ul {
