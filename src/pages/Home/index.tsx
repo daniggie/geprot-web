@@ -151,7 +151,7 @@ const Home: React.FC = () => {
             <input
               className="procurar cor_0"
               type="text"
-              placeholder="nome do projeto"
+              placeholder="Nome do projeto"
               onChange={event => setFiltroString(event.target.value)}
               value={filtroString}
             />
