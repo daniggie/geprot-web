@@ -6,7 +6,7 @@ import api from "../../services/api";
 interface Secao {
   id: number;
   nome: string;
-  verba: number;
+  valorPagante: number;
 }
 
 const ContDetails: React.FC = () => {
@@ -35,7 +35,7 @@ const ContDetails: React.FC = () => {
       valor.map(secao => (
       <Container>
         <p className=" table cor_1">{secao.nome}</p>
-        <p className="table cor_1">R$ {secao.verba}</p>
+        <p className="table cor_1">R$ {secao.valorPagante}</p>
         <p className="table cor_1">{secao.id}</p>
       </Container>
       ))}
