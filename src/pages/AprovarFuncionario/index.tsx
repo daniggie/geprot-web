@@ -15,7 +15,7 @@ interface Card {
   usuario: {
     nome: string
   },
-  statusTotal: string
+  podeApontar: boolean
 }
 
 const AprovarFuncionario: React.FC = () => {
@@ -113,8 +113,8 @@ const linkVoltar = "/aprovarhoras/"
                 <p className="helvetica lighter cor_0">Recusar</p>
               </div>
               <a>
-                {console.log(parseInt(id), parseInt(consultorId))}
-                {valores?.statusTotal == undefined ? <ButtonAprove projetoId={parseInt(id)} consultorId={parseInt(consultorId)}/> : <ButtonAprovado/>}
+                {console.log(valores)}
+                {valores?.podeApontar == true ? <ButtonAprove projetoId={parseInt(id)} consultorId={parseInt(consultorId)}/> : <ButtonAprovado/>}
               </a>
         </div>
 
