@@ -220,7 +220,6 @@ export const ContLang = styled.div`
       line-height: 1.7;
       cursor: pointer;
       padding-left: 10px;
-      z-index: 999;
   }
 
   .lang-menu ul {
