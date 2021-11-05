@@ -33,6 +33,13 @@ export const Container=styled.div`
 
   overflow: auto;
 
+  .position{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+  }
+
   .boxAdd{
     width: 20px;
     height: 20px;
@@ -239,5 +246,4 @@ export const Container=styled.div`
       }
     }
   }
-}
 `;
