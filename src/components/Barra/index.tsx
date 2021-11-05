@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Container  } from "./style";
-import { FiArrowLeft } from "react-icons/fi"
+import { VscChevronLeft } from "react-icons/vsc"
 
 const Barra: React.FC = () => {
   return(
     <Container>
       <a href="javascript: history.go(-1)">
-        <FiArrowLeft/>
+        <VscChevronLeft size={40} color="#00579D"/>
       </a>
     </Container>
   )

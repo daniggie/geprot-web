@@ -2,125 +2,125 @@ const messages = {
     es: {
       translations: {
         header:{
-          charge: "Gestor"
+          charge: "Gerente"
         },
 
         filters:{
           filter: "Filtros",
-          titlePage: "Projetos",
-          search: "Procurar",
-          filterTime: "Tempo",
-          filterTimeMessage: "Últimos 7 dias",
-          filterTimeMessageMonth: "Último mês",
-          filterTimeMessageSemester: "Último 6 meses",
-          filterTimeMessageYear: "Último ano",
-          filterCC: "Centro de custo",
+          titlePage: "Proyectos",
+          search: "Buscar",
+          filterTime: "Hora",
+          filterTimeMessage: "Últimos 7 días",
+          filterTimeMessageMonth: "Último mes",
+          filterTimeMessageSemester: "Últimos 6 meses",
+          filterTimeMessageYear: "El año pasado",
+          filterCC: "Centro de costes",
           filterCCAll: "Todos",
           filterCCName: "Centro ABCD",
           statusAll: "Todos",
-          statusProgress: "Andamentos",
-          statusLate: "Atrasados",
-          statusFinished: "Concluidos",
-          statusNotStart: "Não iniciados",
+          statusProgress: "Progreso",
+          statusLate: "Retrasado",
+          statusFinished: "Completado",
+          statusNotStart: "No iniciado",
           number: "Número",
-          name: "Nome do Consultor",
-          nameProvider: "Nome do fornecedor",
-          projectID: "ID do projeto",
-          projectResponse: "Responsável pelo projeto"
+          name: "Nombre del consultor",
+          nameProvider: "Nombre del proveedor",
+          projectID: "ID del proyecto",
+          projectResponse: "Responsable del proyecto"
         },
 
         menu: {
-          view: "VISUALIZAR PROJETOS",
-          addProject: "CADASTRAR PROJETOS",
-          addConsultant: "CADASTRAR CONSULTOR",
-          registerConsultant:"ALOCAR CONSULTOR",
-          dashboards: "IR PARA DASHBOARDS"
+          view: "VER PROYECTOS",
+          addProject: "REGISTRAR PROYECTOS",
+          addConsultant: "REGISTRAR CONSULTOR",
+          registerConsultant:"ASIGNAR CONSULTOR",
+          dashboards: "IR A DASHBOARDS"
         },
   
         card: {
-          budget: "Saldo previsto",
+          budget: "Saldo esperado",
           budgetRemaining: "Saldo restante",
-          in: "Dê",
-          until: "Até",
+          in: "Dar",
+          until: "a",
           time: "Horas",
-          aponted: "Apontadas"
+          aponted: "Señaló"
         },
 
         details: {
-          section: "Seção",
-          response: "Responsável",
-          dateInitial: "Data inicial",
-          dateEnd: "Data final",
+          section: "Sección",
+          response: "Responsable",
+          dateInitial: "Fecha inicial",
+          dateEnd: "Fecha de finalización",
           objective: "Objetivo",
-          projectValue: "Valor do projeto",
+          projectValue: "Valor del proyecto",
           consumedValue: "Valor consumido",
-          currency: "R$",
-          predictHours: "Horas previstas",
-          workedHours: "Horas trabalhadas",
+          currency: "BRL",
+          predictHours: "Horas de previsión",
+          workedHours: "Horas trabajadas",
           outlay: "Desembolso",
           value: "Valor",
-          payer: "CC Pagante"
+          payer: "CC Paying"
         },
 
         buttons: {
           notificationsSee: "Ver",
-          aproveHours: "Aprovar horas",
-          recuseHours: "Recusar",
-          register: "Cadastrar",
+          aproveHours: "Aprobar horas",
+          recuseHours: "Rechazar",
+          register: "Registrarse",
           cancel: "Cancelar",
           send: "Enviar",
-          attributed: "Atribuído",
-          attribute: "Atribuir"
+          attributed: "Asignado",
+          attribute: "Asignar"
         },
 
         table: {
-          register: "Cadastro",
-          name: "Nome completo",
-          provider: "Fornecedor",
-          approval: "Aprovação",
+          register: "Registro",
+          name: "Nombre completo",
+          provider: "Proveedor",
+          approval: "Aprobación",
           hours: "Horas",
-          date: "Data",
-          ofRegister: "do cadastro",
-          describe: "Descrição",
-          totalHours: "Total de horas trabalhadas",
-          castValue: "Valor gasto",
+          date: "Fecha",
+          ofRegister: "el registro",
+          describe: "Descripción",
+          totalHours: "Total de horas trabajadas",
+          castValue: "Cantidad gastada",
           demands: "Demandas",
-          emailConsult: "Email do consultor",
-          emailProvider: "Email do fornecedor",
-          titleProject: "Título do projeto",
-          response: "Responsável",
-          created: "Criação",
-          atribuition: "Atribuição"
+          emailConsult: "Email del consultor",
+          emailProvider: "Email del proveedor",
+          titleProject: "Título del proyecto",
+          response: "Responsable",
+          created: "Creación",
+          atribuition: "atribución"
         },
 
         sendMessage: {
-          title: "Qual o motivo do recusamento de horas",
+          title: "Cuál es el motivo por el que se niegan las horas",
         },
 
         input: {
-          inputName: "Digite o nome",
-          inputID: "Digite o ID",
-          searchMessage: "Digite aqui",
-          textArea: "Insira seu motivo aqui...",
-          inputPassword: "Digite a senha",
-          inputEmail: "Digite o email"
+          inputName: "Ingresar nombre",
+          inputID: "Ingrese el ID",
+          searchMessage: "Escriba aquí",
+          textArea: "Inserta tu motivo aquí...",
+          inputPassword: "Ingresar contraseña",
+          inputEmail: "Ingresar email"
         },
 
         registerProjects: {
-          titlePage: "CADASTRO DE PROJETO",
-          projectName: "Nome do projeto",
-          requesterName: "Nome do solicitante",
+          titlePage: "REGISTRO DEL PROYECTO",
+          projectName: "Nombre del proyecto",
+          requesterName: "Nombre del solicitante",
           consult: "Consultor",
-          percentageApproved: "Percentual aprovado",
-          CC: "Centro de Custo",
-          hoursLimit: "Limite de horas",
-          percent: "Percentual"
+          percentageApproved: "Porcentaje aprobado",
+          CC: "Centro de costes",
+          hoursLimit: "Límite de horas",
+          percent: "Porcentaje"
         },
 
         registerConsultant: {
-          titlePage: "CADASTRO DE CONSULTOR",
-          consultName: "Nome do consultor",
-          consultID: "ID do consultor",
+          titlePage: "REGISTRO DEL CONSULTOR",
+          consultName: "Nombre del consultor",
+          consultID: "ID del consultor",
           hourlyPrice: "Preço das horas",
           password: "Senha",
           providerID: "ID do Fornecedor"
