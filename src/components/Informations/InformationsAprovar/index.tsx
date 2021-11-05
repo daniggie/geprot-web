@@ -11,6 +11,9 @@ interface Colaboradores {
   statusApontamento: string;
   horasApontadas: number;
   limiteHoras: number;
+  fornecedor: {
+    nome: string;
+  }
 }
 
 const InformationsAprovar: React.FC = () => {
@@ -56,7 +59,7 @@ const InformationsAprovar: React.FC = () => {
             </div>
 
             <div className="column2">
-                <p className="helvetica light fonte_15 cor_0">Providers name</p>
+                <p className="helvetica light fonte_15 cor_0">{valor.fornecedor.nome}</p>
             </div>
 
             <div className="column1">
