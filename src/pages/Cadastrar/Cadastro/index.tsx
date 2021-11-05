@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { Form } from "@unform/web";
 import { useHistory } from 'react-router';
 import { FormHandles } from '@unform/core';
-import { useToast } from '../../../hooks/toast';
 
 import Menu from '../../../components/Menu';
 import Header from '../../../components/Header';
@@ -55,7 +54,6 @@ interface Projeto {
 
 const Cadastro:React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const { addToast } = useToast();
   const history = useHistory();
 
   const[consultores, setConsultores] = useState<Consultor[]>([]);
@@ -154,11 +152,7 @@ const Cadastro:React.FC = () => {
 
       await api.post("/projetos/cadastrar", projeto, config);
 
-      addToast({
-        type: "success",
-        title:"Cadastro realizado",
-        description:"Projeto cadastado com sucesso!"
-      })
+
 
       history.push('/home')
 
@@ -170,13 +164,9 @@ const Cadastro:React.FC = () => {
         return
       }
 
-      addToast({
-        type:"error",
-        title:"Erro no cadastro",
-        description:"Ocorreu um erro ao realizar o cadastro. Tente novamente!"
-      })
+      
     }
-  }, [addToast, history]);
+  }, [ history]);
 
   const removerConsultor = (index: number) => {
     consultores.splice(index,1)

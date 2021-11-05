@@ -4,9 +4,8 @@ import { Form } from '@unform/web';
 import { FormHandles } from "@unform/core";
 import * as Yup from "yup";
 
-import { useToast } from "../../hooks/toast";
-
 import { useAuth } from "../../hooks/auth";
+import { MenssagemErro } from "../../hooks/toast";
 
 import getValidationsErrors from "../../utils/getValidationErrors";
 
@@ -25,7 +24,6 @@ interface SignFormData {
 const Login: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const { signIn } = useAuth();
-  const { addToast } = useToast();
   const history = useHistory();
 
   const handleSubmit = useCallback(
@@ -56,14 +54,10 @@ const Login: React.FC = () => {
         return
       }
 
-      addToast({
-        type: "error",
-        title: "Erro na autenticação",
-        description: "Ocorreu um erro ao fazer login, cheque as credenciais.",
-      });
+      MenssagemErro("Ocorreu um erro ao fazer login, cheque as credenciais.")
 
     }
-  }, [signIn, addToast, history]);
+  }, [signIn, history]);
 
   const [showPass, setShowPass] = useState(false);
   const handleClickPass = (e:any) => {

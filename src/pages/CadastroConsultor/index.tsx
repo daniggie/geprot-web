@@ -7,12 +7,13 @@ import api from "../../services/api";
 import { useHistory } from "react-router";
 import InputRegister from "../../components/InputRegister";
 import * as Yup from "yup";
-import { useToast } from "../../hooks/toast";
 import getValidationErrors from "../../utils/getValidationErrors";
 import ButtonRegister from "../../components/Buttons/ButtonRegister";
 import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import { HiEye, HiEyeOff } from "react-icons/hi";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface Consultor {
   id: number,
@@ -29,10 +30,8 @@ interface Consultor {
 
 const CadastrarConsultor: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const { addToast } = useToast();
   const history = useHistory();
 
-  
   const consultor = {
     id: 0,
     usuario: {
@@ -70,14 +69,17 @@ const CadastrarConsultor: React.FC = () => {
         nome: Yup.string()
         .required("O nome é obrigatório"),
         id: Yup.number()
+        .typeError('O ID precisa ser um número')
         .required("O ID é obrigatório")
         .positive("O ID não pode ser negativo")
         .integer("Informe um ID inteiro"),
         idFornecedor: Yup.number()
+        .typeError('O ID precisa ser um número')
         .required("O ID é obrigatório")
         .positive("O ID não pode ser negativo")
         .integer("Informe um ID inteiro"),
         precoHora: Yup.number()
+        .typeError('A hora precisa ser um número')
         .required("A hora é obrigatória")
         .positive("A hora não pode ser negativa")
       })
@@ -88,12 +90,6 @@ const CadastrarConsultor: React.FC = () => {
 
       await api.post("/consultor/cadastrar", consultor, config);
 
-      addToast({
-        type:"success",
-        title:"Cadastro realizado",
-        description:"Consultor cadastrado com sucesso!"
-      })
-
       history.push('/home')
 
     }catch(err){
@@ -103,13 +99,9 @@ const CadastrarConsultor: React.FC = () => {
         return
       }
 
-      addToast({
-        type:"error",
-        title:"Erro no cadastro",
-        description:"Ocorreu um erro ao realizar o cadastro. Tente novamente!"
-      })
+
     }
-  }, [addToast, history]);
+  }, [history]);
 
   const [showPass, setShowPass] = useState(false);
   const handleClickPass = (e:any) => {
@@ -169,6 +161,8 @@ const CadastrarConsultor: React.FC = () => {
                 <BotaoCancel/>
                 <ButtonRegister type="submit">Cadastrar</ButtonRegister>
               </div>
+
+              <ToastContainer/>
             </div>
           </Form>
         </Container>
