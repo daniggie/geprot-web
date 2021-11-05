@@ -85,7 +85,7 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
                     <div className="relogio">
                       <FiClock size={17} color="#00579E"/>
                     </div>
-                    <div className="cor_0 fonte_14 horas helvetica">
+                    <div className="cor_0 fonte_13 horas helvetica">
                       { horasPrevistas ? horasPrevistas : "0" } H
                     </div>
                   </div>
@@ -111,7 +111,7 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
                     <div className="relogio">
                       <FiClock size={17} color="#00579E"/>
                     </div>
-                    <div className="cor_0 fonte_14 helvetica horas">
+                    <div className="cor_0 fonte_13 helvetica horas">
                       { horasTrabalhadas ? horasTrabalhadas : "0" } H
                     </div>
                   </div>

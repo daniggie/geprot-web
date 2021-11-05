@@ -122,7 +122,7 @@ export const Content_cards = styled.div<CorCardPorps>`
 
   .texto_content_horas {
       display: flex;
-      width: 48%;
+      width: 50%;
       justify-content: space-between;
   }
 
