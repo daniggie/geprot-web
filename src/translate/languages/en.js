@@ -1,138 +1,138 @@
 const messages = {
     en: {
-        translations: {
-            header:{
-              charge: "Manager"
-            },
+      traducoes: {
+        cabecalho:{
+          cargo: "Manager"
+          },
     
-            filters:{
-              filter: "Filters",
-              titlePage: "Projects",
-              search: "Search",
-              filterTime: "Time",
-              filterTimeMessage: "Last 7 days",
-              filterTimeMessageMonth: "Last month",
-              filterTimeMessageSemester: "Last 6 months",
-              filterTimeMessageYear: "Last year",
-              filterCC: "Cost center",
-              filterCCAll: "All",
-              filterCCName: "ABCD Center",
-              statusAll: "All",
-              statusProgress: "Progress",
-              statusLate: "Delayed",
-              statusFinished: "Completed",
-              statusNotStart: "Not Started",
-              number: "Number",
-              name: "Consultant Name",
-              nameProvider: "Provider's Name",
-              projectID: "project ID",
-              projectResponse: "Responsible for the project"
+          filtros:{
+            filtro: "Filters",
+            tituloPagina: "Projects",
+            procurar: "Search",
+            filtroTempo: "Time",
+            filtroTempoMensagem: "Last 7 days",
+            filtroTempoMensagemMes: "Last month",
+            filtroTempoMensagemSemestre: "Last 6 months",
+            filtroTempoMensagemAno: "Last year",
+            filtroCC: "Cost center",
+            filtroCCTodos: "All",
+            filtroCCNome: "ABCD Center",
+            statusTudo: "All",
+            statusAndamento: "Progress",
+            statusAtrasados: "Delayed",
+            statusConcluidos: "Completed",
+            statusNaoIniciado: "Not Started",
+            numero: "Number",
+            nome: "Consultant Name",
+            nomeFornecedor: "Provider's Name",
+            projetoID: "project ID",
+            projetoResponsavel: "Responsible for the project"
             },
     
             menu: {
-              view: "VIEW PROJECTS",
-              addProject: "REGISTER PROJECTS",
-              addConsultant: "REGISTER CONSULTANT",
-              registerConsultant:"ALLOCATE CONSULTANT",
+              visualizar: "VIEW PROJECTS",
+              adicionarProjetos: "REGISTER PROJECTS",
+              adicionarConsultor: "REGISTER CONSULTANT",
+              alocarConsultor:"ALLOCATE CONSULTANT",
               dashboards: "GO TO DASHBOARDS"
             },
       
             card: {
-              budget: "Expected balance",
-              budgetRemaining: "Remaining balance",
-              in: "in",
-              until: "until",
-              time: "hours",
-              pointed: "Pointed"
+              orcamento: "Expected balance",
+              orcamentoRestante: "Remaining balance",
+              de: "in",
+              ate: "until",
+              horas: "hours",
+              apontadas: "Pointed"
             },
     
-            details: {
-              section: "Section",
-              response: "Responsible",
-              dateInitial: "Initial date",
-              dateEnd: "End date",
-              objective: "Objective",
-              projectValue: "Project Value",
-              consumedValue: "Value consumed",
-              currency: "BRL",
-              predictHours: "Predicted hours",
-              workedHours: "Worked hours",
-              outlay: "Disbursement",
-              value: "Value",
-              payer: "CC Paying"
+            detalhes: {
+              secao: "Section",
+              responsavel: "Responsible",
+              dataInicial: "Initial date",
+              dataFinal: "End date",
+              objetivo: "Objective",
+              valorProjeto: "Project Value",
+              valorConsumido: "Value consumed",
+              moeda: "BRL",
+              horasPrevistas: "Predicted hours",
+              HorasTrabalhadas: "Worked hours",
+              desembolso: "Disbursement",
+              valor: "Value",
+              pagante: "CC Paying"
             },
     
-            buttons: {
-              notificationsSee: "See",
-              approveHours: "Approve hours",
-              refuseHours: "Decline",
-              register: "Register",
-              cancel: "Cancel",
-              send: "Send",
-              attributed: "Assigned",
-              attribute: "Assign"
+            botoes: {
+              notificacoesVer: "See",
+              aprovarHoras: "Approve hours",
+              recusarHoras: "Decline",
+              cadastrar: "Register",
+              cancelar: "Cancel",
+              enviar: "Send",
+              atribuido: "Assigned",
+              atribuir: "Assign"
             },
     
-            table: {
-              register: "Registration",
-              name: "Full name",
-              provider: "Provider",
-              approval: "Approval",
-              hours: "hours",
-              date: "Date",
-              ofRegister: "from registration",
-              describe: "Description",
-              totalHours: "Total hours worked",
-              castValue: "Amount spent",
-              demands: "Demands",
-              emailConsult: "Consultant email",
-              emailProvider: "Supplier email",
-              titleProject: "Project Title",
-              response: "Responsible",
-              created: "Creation",
-              attribution: "attribution"
+            tabela: {
+              cadastro: "Registration",
+              nome: "Full name",
+              fornecedor: "Provider",
+              aprovacao: "Approval",
+              horas: "hours",
+              data: "Date",
+              doCadastro: "from registration",
+              descricao: "Description",
+              totalHoras: "Total hours worked",
+              valorGasto: "Amount spent",
+              demandas: "Demands",
+              emailConsultor: "Consultant email",
+              emailFornecedor: "Supplier email",
+              tituloProjeto: "Project Title",
+              responsavel: "Responsible",
+              criacao: "Creation",
+              atribuicao: "attribution"
             },
     
-            sendMessage: {
-              title: "What is the reason for refusing hours",
+            enviarMessagem: {
+              titulo: "What is the reason for refusing hours",
             },
     
             input: {
-              inputName: "Enter name",
+              inputNome: "Enter name",
               inputID: "Enter the ID",
-              searchMessage: "Type here",
+              buscarMessagem: "Type here",
               textArea: "Insert your reason here...",
-              inputPassword: "Enter password",
+              inputSenha: "Enter password",
               inputEmail: "Enter email"
             },
     
-            registerProjects: {
-              titlePage: "PROJECT REGISTRATION",
-              projectName: "Project name",
-              requesterName: "Name of requester",
-              consult: "Consultant",
-              percentageApproved: "Percent approved",
+            cadastrarProjetos: {
+              tituloPagina: "PROJECT REGISTRATION",
+              projetoNome: "Project name",
+              solicitanteNome: "Name of requester",
+              consultor: "Consultant",
+              percentualAprovado: "Percent approved",
               CC: "Cost Center",
-              hoursLimit: "Hour Limit",
-              percent: "Percent"
+              limiteHoras: "Hour Limit",
+              percentual: "Percent"
             },
     
-            registerConsultant: {
-              titlePage: "CONSULTANT REGISTRATION",
-              consultName: "Consultant name",
-              consultID: "consultant ID",
-              hourlyPrice: "hourly price",
-              password: "Password",
-              providerID: "Provider ID"
+            registrarConsultor: {
+              tituloPagina: "CONSULTANT REGISTRATION",
+              consultorNome: "Consultant name",
+              consultorID: "consultant ID",
+              precoHoras: "hourly price",
+              senha: "Password",
+              fonecedorID: "Provider ID"
             },
     
             dashboards: {
-              approvedBudget: "APPROVED FUNDS",
-              funds: "AVAILABLE FUNDS",
-              completeProjects: "COMPLETED PROJECTS",
-              ongoingProjects: "PROJECTS IN PROJECT",
-              uninitiatedProjects: "UNINITIATED PROJECTS",
-              lateProjects: "LATE PROJECTS"
+              verbaAprovada: "APPROVED FUNDS",
+              fundos: "AVAILABLE FUNDS",
+              projetosConcluidos: "COMPLETED PROJECTS",
+              projetosAndamento: "PROJECTS IN PROJECT",
+              projetosNaoIniciados: "UNINITIATED PROJECTS",
+              projetosAtrasados: "LATE PROJECTS"
             }
         }
     }

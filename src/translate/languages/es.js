@@ -2,7 +2,7 @@ const messages = {
     es: {
       translations: {
         header:{
-          charge: "Gerente"
+          charge: "Gestor"
         },
 
         filters:{
@@ -121,18 +121,18 @@ const messages = {
           titlePage: "REGISTRO DEL CONSULTOR",
           consultName: "Nombre del consultor",
           consultID: "ID del consultor",
-          hourlyPrice: "Preço das horas",
-          password: "Senha",
-          providerID: "ID do Fornecedor"
+          hourlyPrice: "Precio por hora",
+          password: "Contraseña",
+          providerID: "ID de proveedor"
         },
 
         dashboards: {
-          approvedBudget: "VERBA APROVADA",
-          funds: "VERBA DISPONÍVEL",
-          completeProjects: "PROJETOS CONCLUÍDOS",
-          ongoingProjects: "PROJETOS EM ANDAMENTO",
-          uninitiatedProjects: "PROJETOS NÃO INICIADOS",
-          lateProjects: "PROJETOS ATRASADOS"
+          approvedBudget: "FONDOS APROBADOS",
+          funds: "FONDOS DISPONIBLES",
+          completeProjects: "PROYECTOS TERMINADOS",
+          ongoingProjects: "PROYECTOS EN CURSO",
+          uninitiatedProjects: "PROYECTOS INICIADOS",
+          lateProjects: "ÚLTIMOS PROYECTOS"
         }
       }
     }

@@ -1,138 +1,138 @@
 const messages = {
     pt: {
-      translations: {
-        header:{
-          charge: "Gestor"
+      traducoes: {
+        cabecalho:{
+          cargo: "Gestor"
         },
 
-        filters:{
-          filter: "Filtros",
-          titlePage: "Projetos",
-          search: "Procurar",
-          filterTime: "Tempo",
-          filterTimeMessage: "Últimos 7 dias",
-          filterTimeMessageMonth: "Último mês",
-          filterTimeMessageSemester: "Último 6 meses",
-          filterTimeMessageYear: "Último ano",
-          filterCC: "Centro de custo",
-          filterCCAll: "Todos",
-          filterCCName: "Centro ABCD",
-          statusAll: "Todos",
-          statusProgress: "Andamentos",
-          statusLate: "Atrasados",
-          statusFinished: "Concluidos",
-          statusNotStart: "Não iniciados",
-          number: "Número",
-          name: "Nome do Consultor",
-          nameProvider: "Nome do fornecedor",
-          projectID: "ID do projeto",
-          projectResponse: "Responsável pelo projeto"
+        filtros:{
+          filtro: "Filtros",
+          tituloPagina: "Projetos",
+          procurar: "Procurar",
+          filtroTempo: "Tempo",
+          filtroTempoMensagem: "Últimos 7 dias",
+          filtroTempoMensagemMes: "Último mês",
+          filtroTempoMensagemSemestre: "Último 6 meses",
+          filtroTempoMensagemAno: "Último ano",
+          filtroCC: "Centro de custo",
+          filtroCCTodos: "Todos",
+          filtroCCNome: "Centro ABCD",
+          statusTudo: "Todos",
+          statusAndamento: "Andamentos",
+          statusAtrasados: "Atrasados",
+          statusConcluidos: "Concluidos",
+          statusNaoIniciado: "Não iniciados",
+          numero: "Número",
+          nome: "Nome do Consultor",
+          nomeFornecedor: "Nome do fornecedor",
+          projetoID: "ID do projeto",
+          projetoResponsavel: "Responsável pelo projeto"
         },
 
         menu: {
-          view: "VISUALIZAR PROJETOS",
-          addProject: "CADASTRAR PROJETOS",
-          addConsultant: "CADASTRAR CONSULTOR",
-          registerConsultant:"ALOCAR CONSULTOR",
+          visualizar: "VISUALIZAR PROJETOS",
+          adicionarProjetos: "CADASTRAR PROJETOS",
+          adicionarConsultor: "CADASTRAR CONSULTOR",
+          alocarConsultor:"ALOCAR CONSULTOR",
           dashboards: "IR PARA DASHBOARDS"
         },
   
         card: {
-          budget: "Saldo previsto",
-          budgetRemaining: "Saldo restante",
-          in: "Dê",
-          until: "Até",
-          time: "Horas",
-          aponted: "Apontadas"
+          orcamento: "Saldo previsto",
+          orcamentoRestante: "Saldo restante",
+          de: "Dê",
+          ate: "Até",
+          horas: "Horas",
+          apontadas: "Apontadas"
         },
 
-        details: {
-          section: "Seção",
-          response: "Responsável",
-          dateInitial: "Data inicial",
-          dateEnd: "Data final",
-          objective: "Objetivo",
-          projectValue: "Valor do projeto",
-          consumedValue: "Valor consumido",
-          currency: "R$",
-          predictHours: "Horas previstas",
-          workedHours: "Horas trabalhadas",
-          outlay: "Desembolso",
-          value: "Valor",
-          payer: "CC Pagante"
+        detalhes: {
+          secao: "Seção",
+          responsavel: "Responsável",
+          dataInicial: "Data inicial",
+          dataFinal: "Data final",
+          objetivo: "Objetivo",
+          valorProjeto: "Valor do projeto",
+          valorConsumido: "Valor consumido",
+          moeda: "R$",
+          horasPrevistas: "Horas previstas",
+          HorasTrabalhadas: "Horas trabalhadas",
+          desembolso: "Desembolso",
+          valor: "Valor",
+          pagante: "CC Pagante"
         },
 
-        buttons: {
-          notificationsSee: "Ver",
-          aproveHours: "Aprovar horas",
-          recuseHours: "Recusar",
-          register: "Cadastrar",
-          cancel: "Cancelar",
-          send: "Enviar",
-          attributed: "Atribuído",
-          attribute: "Atribuir"
+        botoes: {
+          notificacoesVer: "Ver",
+          aprovarHoras: "Aprovar horas",
+          recusarHoras: "Recusar",
+          cadastrar: "Cadastrar",
+          cancelar: "Cancelar",
+          enviar: "Enviar",
+          atribuido: "Atribuído",
+          atribuir: "Atribuir"
         },
 
-        table: {
-          register: "Cadastro",
-          name: "Nome completo",
-          provider: "Fornecedor",
-          approval: "Aprovação",
-          hours: "Horas",
-          date: "Data",
-          ofRegister: "do cadastro",
-          describe: "Descrição",
-          totalHours: "Total de horas trabalhadas",
-          castValue: "Valor gasto",
-          demands: "Demandas",
-          emailConsult: "Email do consultor",
-          emailProvider: "Email do fornecedor",
-          titleProject: "Título do projeto",
-          response: "Responsável",
-          created: "Criação",
-          atribuition: "Atribuição"
+        tabela: {
+          cadastro: "Cadastro",
+          nome: "Nome completo",
+          fornecedor: "Fornecedor",
+          aprovacao: "Aprovação",
+          horas: "Horas",
+          data: "Data",
+          doCadastro: "do cadastro",
+          descricao: "Descrição",
+          totalHoras: "Total de horas trabalhadas",
+          valorGasto: "Valor gasto",
+          demandas: "Demandas",
+          emailConsultor: "Email do consultor",
+          emailFornecedor: "Email do fornecedor",
+          tituloProjeto: "Título do projeto",
+          responsavel: "Responsável",
+          criacao: "Criação",
+          atribuicao: "Atribuição"
         },
 
-        sendMessage: {
-          title: "Qual o motivo do recusamento de horas",
+        enviarMessagem: {
+          titulo: "Qual o motivo do recusamento de horas",
         },
 
         input: {
-          inputName: "Digite o nome",
+          inputNome: "Digite o nome",
           inputID: "Digite o ID",
-          searchMessage: "Digite aqui",
+          buscarMessagem: "Digite aqui",
           textArea: "Insira seu motivo aqui...",
-          inputPassword: "Digite a senha",
+          inputSenha: "Digite a senha",
           inputEmail: "Digite o email"
         },
 
-        registerProjects: {
-          titlePage: "CADASTRO DE PROJETO",
-          projectName: "Nome do projeto",
-          requesterName: "Nome do solicitante",
-          consult: "Consultor",
-          percentageApproved: "Percentual aprovado",
+        cadastrarProjetos: {
+          tituloPagina: "CADASTRO DE PROJETO",
+          projetoNome: "Nome do projeto",
+          solicitanteNome: "Nome do solicitante",
+          consultor: "Consultor",
+          percentualAprovado: "Percentual aprovado",
           CC: "Centro de Custo",
-          hoursLimit: "Limite de horas",
-          percent: "Percentual"
+          limiteHoras: "Limite de horas",
+          percentual: "Percentual"
         },
 
-        registerConsultant: {
-          titlePage: "CADASTRO DE CONSULTOR",
-          consultName: "Nome do consultor",
-          consultID: "ID do consultor",
-          hourlyPrice: "Preço das horas",
-          password: "Senha",
-          providerID: "ID do Fornecedor"
+        registrarConsultor: {
+          tituloPagina: "CADASTRO DE CONSULTOR",
+          consultorNome: "Nome do consultor",
+          consultorID: "ID do consultor",
+          precoHoras: "Preço das horas",
+          senha: "Senha",
+          fonecedorID: "ID do Fornecedor"
         },
 
         dashboards: {
-          approvedBudget: "VERBA APROVADA",
-          funds: "VERBA DISPONÍVEL",
-          completeProjects: "PROJETOS CONCLUÍDOS",
-          ongoingProjects: "PROJETOS EM ANDAMENTO",
-          uninitiatedProjects: "PROJETOS NÃO INICIADOS",
-          lateProjects: "PROJETOS ATRASADOS"
+          verbaAprovada: "VERBA APROVADA",
+          fundos: "VERBA DISPONÍVEL",
+          projetosConcluidos: "PROJETOS CONCLUÍDOS",
+          projetosAndamento: "PROJETOS EM ANDAMENTO",
+          projetosNaoIniciados: "PROJETOS NÃO INICIADOS",
+          projetosAtrasados: "PROJETOS ATRASADOS"
         }
       }
     }
