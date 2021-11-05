@@ -105,7 +105,7 @@ export const Content_cards = styled.div<CorCardPorps>`
   .card_status_txt {
       display: flex;
       justify-content: space-between;
-      width: 30%;
+      width: 40%;
   }
 
   .card_saldo {
