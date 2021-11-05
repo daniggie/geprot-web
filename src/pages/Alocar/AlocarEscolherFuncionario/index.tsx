@@ -71,19 +71,6 @@ const AlocarEscolherFuncionario: React.FC = () => {
               </div>
             </div>
 
-            <div className="cols">
-              <div className="cols1">
-              </div>
-
-              <div className="cols2">
-              </div>
-
-              <div className="cols1">
-              </div>
-
-              <div className="cols2">
-              </div>
-            </div>
           </div>
 
           <Table>

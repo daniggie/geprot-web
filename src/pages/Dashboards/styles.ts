@@ -199,7 +199,7 @@ export const ContLang = styled.div`
   background-color: #00579D;
   border-radius: 3px;
   color: #fff;
-  z-index:0;
+  z-index:100;
   margin-left: 5px;
 
   a {
@@ -220,6 +220,7 @@ export const ContLang = styled.div`
       line-height: 1.7;
       cursor: pointer;
       padding-left: 10px;
+      z-index: 999;
   }
 
   .lang-menu ul {

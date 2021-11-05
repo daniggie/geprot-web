@@ -65,7 +65,7 @@ export const Content = styled.div`
       justify-content: space-around;
 
       .cols1{
-        width: 8%;
+        width: 10%;
         height: 40px;
         display: flex;
         align-items: center;
