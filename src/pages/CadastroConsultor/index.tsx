@@ -12,8 +12,7 @@ import ButtonRegister from "../../components/Buttons/ButtonRegister";
 import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import { HiEye, HiEyeOff } from "react-icons/hi";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {MenssagemErro, MenssagemSucesso} from "../../hooks/toast";
 
 interface Consultor {
   id: number,
@@ -90,6 +89,8 @@ const CadastrarConsultor: React.FC = () => {
 
       await api.post("/consultor/cadastrar", consultor, config);
 
+      MenssagemSucesso("Consultor cadastrado com sucesso")
+
       history.push('/home')
 
     }catch(err){
@@ -98,7 +99,8 @@ const CadastrarConsultor: React.FC = () => {
         formRef.current?.setErrors(errors);
         return
       }
-
+      
+      MenssagemErro("Erro ao cadastrar um consultor, cheque os campos preenchidos")
 
     }
   }, [history]);
@@ -161,8 +163,6 @@ const CadastrarConsultor: React.FC = () => {
                 <BotaoCancel/>
                 <ButtonRegister type="submit">Cadastrar</ButtonRegister>
               </div>
-
-              <ToastContainer/>
             </div>
           </Form>
         </Container>

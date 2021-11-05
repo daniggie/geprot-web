@@ -10,6 +10,7 @@ import Header from '../../../components/Header';
 import getValidationErrors from '../../../utils/getValidationErrors';
 import InputRegister from '../../../components/InputRegister';
 import ButtonRegister from '../../../components/Buttons/ButtonRegister';
+import BotaoCancel from "../../../components/Buttons/ButtonCancel";
 
 import { All, Container } from './styles';
 import { FiX } from 'react-icons/fi';
@@ -122,7 +123,6 @@ const Cadastro:React.FC = () => {
           }
         )
       }
-
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}`},
@@ -140,10 +140,12 @@ const Cadastro:React.FC = () => {
         descricao: Yup.string()
         .required("A descrição é obrigatória"),
         dataFinalizacao: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
         .required("A data é obrigatória"),
         dataInicio: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
         .required("A data é obrigatória")
-        .max(today),
+        .min(today, "A data não pode ser anteceder o dia de hoje")
       })
 
       await schema.validate(data, {
@@ -151,8 +153,6 @@ const Cadastro:React.FC = () => {
       })  
 
       await api.post("/projetos/cadastrar", projeto, config);
-
-
 
       history.push('/home')
 
@@ -163,8 +163,6 @@ const Cadastro:React.FC = () => {
         formRef.current?.setErrors(errors);
         return
       }
-
-      
     }
   }, [ history]);
 
@@ -359,9 +357,10 @@ const Cadastro:React.FC = () => {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
-            </div>
-            <div className="line">
+            <div className="position">
+              <BotaoCancel/>
               <ButtonRegister type="submit">Cadastrar</ButtonRegister>
             </div>
           </Form>
