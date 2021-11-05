@@ -66,46 +66,43 @@ const linkVoltar = "/aprovarhoras/"
       <Barra />
 
       <All overlay={overlay}>
-
         <p className="helvetica cor_0 lighter fonte_20">Seção {secao.secao.nome}</p>
         <p className="helvetica cor_5 lighter fonte_25">{id} - {valores?.usuario.nome}</p>
 
-          <div className="table">
-            <div className="header">
-              <div className="title">
-                <p className="helvetica bold cor_0">Data</p>
-              </div>
-
-              <div className="title">
-                <p className="helvetica bold cor_0">Horas trabalhadas</p>
-              </div>
-
-              <div className="title2">
-                <p className="helvetica bold cor_0">Descrição</p>
-              </div>
-
-              <div className="title">
-                <p className="helvetica bold cor_0">Aprovação</p>
-              </div>
-
+        <div className="table">
+          <div className="header">
+            <div className="title">
+              <p className="helvetica bold cor_0">Data</p>
             </div>
 
-            <div className="informations">
-              <InformationsApFuncionario />
+            <div className="title">
+              <p className="helvetica bold cor_0">Horas trabalhadas</p>
             </div>
 
-            <div className="header">
             <div className="title2">
-              <p className="helvetica bold cor_0 lighter">Total de Horas trabalhadas: </p>
+              <p className="helvetica bold cor_0">Descrição</p>
+            </div>
+
+            <div className="title">
+              <p className="helvetica bold cor_0">Aprovação</p>
+            </div>
+          </div>
+
+          <div className="informations">
+            <InformationsApFuncionario />
+          </div>
+
+          <div className="header">
+            <div className="titleRodape">
+              <p className="helvetica bold cor_0 lighter"> Total de Horas trabalhadas: </p>
               <b className="helvetica cor_5 fonte_22">{valores?.horasTotais} H</b>
             </div>
 
-            <div className="title2">
+            <div className="titleRodape2">
               <p className="helvetica bold cor_0 lighter">Valor gasto: </p>
               <b className="helvetica cor_5 fonte_22">R$ {valores?.totalGasto}</b>
             </div>
           </div>
-
         </div>
 
         <div className="position">

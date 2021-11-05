@@ -75,6 +75,46 @@ export const All = styled.div<TableProps>`
         }
       }
 
+      .titleRodape{
+        width:40%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+          width: 60%;
+          display:flex;
+          justify-content:  flex-start;
+        }
+
+        b{
+          width: 40%;
+          display:flex;
+          justify-content: flex-start;
+        }
+      }
+
+      .titleRodape2{
+        width:20%;
+        height: 50px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p{
+          width: 60%;
+          display:flex;
+          justify-content:  flex-start;
+        }
+
+        b{
+          width: 40%;
+          display:flex;
+          justify-content: flex-start;
+        }
+      }
+
     }
 
   }
