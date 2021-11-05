@@ -66,10 +66,10 @@ const InformationsAprovar: React.FC = () => {
                 <p className="helvetica light fonte_15 cor_0"> <IconeAprovamento status={valor.statusApontamento}/></p>
             </div>
 
-            <div className="column1">
-                <b className="helvetica light fonte_15 cor_0 lighter">{valor.horasApontadas}h</b>
-                <b className="line cor_6f"></b>
-                <b className="helvetica light fonte_15 cor_0 lighter">{valor.limiteHoras}h</b>
+            <div className="columnHours">
+                <div className="helvetica light fonte_15 cor_0 lighter">{valor.horasApontadas}h</div>
+                <div className="line cor_6f"></div>
+                <div className="helvetica light fonte_15 cor_0 lighter">{valor.limiteHoras}h</div>
             </div>
 
             <div className="column1">

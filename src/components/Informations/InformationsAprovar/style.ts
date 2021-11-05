@@ -32,16 +32,17 @@ export const Content = styled.div`
 
           .line{
             width: 1%;
-            height: 50%;
-            border-radius: 20px;
+            height: 30%;
+            margin-left: 5px;
+            margin-right: 5px;
           }
 
           b{
-            width: calc(100%/3);
+            width: calc(100%/2);
             justify-content: center;
           }
 
-          }
+        }
 
         .column2{
           width: 23%;
@@ -55,6 +56,21 @@ export const Content = styled.div`
             justify-content: flex-start;
           }
         }
-      }
 
+        .columnHours{
+          width:10%;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .line{
+            width: 1%;
+            height: 30%;
+            margin-left: 5px;
+            margin-right: 5px;
+          }
+
+        }
+      }
 `;
