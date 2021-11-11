@@ -140,17 +140,27 @@ const CadastrarConsultor: React.FC = () => {
                     {showPass ? (<HiEye size={25} color="#00579E" onClick={handleClickPass}/>) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
                   </div>
                 </div>
-              </div>
-
-              <div className="column">
-                <div className="line">
-                  <p className="helvetica fonte_15 cor_5 bold">ID do Consultor:</p>
-                  <InputRegister name="id" id="id" placeholder="Digite o ID..."/>
-                </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Preço das horas:</p>
                   <InputRegister name="precoHora" id="precoHora" placeholder="Digite o preço..."/>
+                </div>
+              </div>
+
+              <div className="column">
+                <div className="line">
+                  <p className="helvetica fonte_15 cor_5 bold">Habilidades:</p>
+                  <div className="columns helvetica cor_0 lighter" >
+                    <div className="column3">
+                      
+                    </div>
+                    <div className="column1">
+                      
+                    </div>
+                    <div className="column2">
+                      
+                    </div>
+                  </div>
                 </div>
 
                 <div className="line">
