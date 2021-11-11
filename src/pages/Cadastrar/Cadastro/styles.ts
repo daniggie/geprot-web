@@ -198,12 +198,10 @@ export const Container=styled.div`
         width: 100%;
         height: 75px;
         margin-bottom: 20px;
-
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        align-items: flex-start;
-        align-content: flex-start;
+        align-content: center;
         justify-content: flex-start;
 
         label{

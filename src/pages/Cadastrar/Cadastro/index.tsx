@@ -361,7 +361,7 @@ const Cadastro:React.FC = () => {
             </div>
             <div className="position">
               <BotaoCancel/>
-              <ButtonRegister type="submit">Cadastrar</ButtonRegister>
+              <ButtonRegister type="submit" className="cor_000 helvetica fonte_20">Cadastrar</ButtonRegister>
             </div>
           </Form>
         </Container>
