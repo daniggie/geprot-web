@@ -179,12 +179,12 @@ export const Container=styled.div`
 
       .lineDescricao{
         width: 100%;
-        height: 265px;
+        height: 160px;
         margin-bottom: 20px;
 
         textarea{
           width: 93%;
-          height: 235px;
+          height: 150px;
           border-radius:4px;
           padding:5px;
           border: 2px solid #dedede;
@@ -196,7 +196,7 @@ export const Container=styled.div`
 
       .line{
         width: 100%;
-        height: 75px;
+        height: 70px;
         margin-bottom: 20px;
         display: flex;
         flex-wrap: wrap;

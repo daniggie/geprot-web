@@ -278,7 +278,7 @@ const Cadastro:React.FC = () => {
                   <div className="title1 bold helvetica cor_0 fonte_15">
                     Consultor
                   </div>
-                  <div className="title2 bold helvetica cor_0 fonte_15">
+                  <div className="title2 bold helvetica cor_0 fonte_13">
                     Limite de horas
                   </div>
                 </div>
@@ -317,6 +317,17 @@ const Cadastro:React.FC = () => {
               <div className="lineDescricao">
                 <p className="helvetica fonte_15 cor_5 bold">Descrição</p>
                 <textarea id="descricao" className="helvetica"></textarea>
+              </div>
+
+              <div className="line">
+                <div className="float">
+                  <p className="helvetica fonte_14 cor_5 bold">Horas totais aprovadas:</p>
+                  <InputRegister id="idCentroCusto" name="idCentroCusto" type="number" placeholder="0 H"/>
+                </div>
+                <div className="float">
+                  <p className="helvetica fonte_13 cor_5 bold">Verbas totais aprovadas:</p>
+                  <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="R$" />
+                </div>
               </div>
 
               <div className="line">
