@@ -184,13 +184,14 @@ export const Container=styled.div`
 
         textarea{
           width: 93%;
-          height: 150px;
+          height: 135px;
           border-radius:4px;
           padding:5px;
           border: 2px solid #dedede;
           color: #828282;
           font-size: 15px;
           resize: none;
+          margin-top: 5px;
         }
       }
 
