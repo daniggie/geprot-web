@@ -80,6 +80,33 @@ form{
         margin-left: 355px;
       }
     }
+
+    .lineSkills{
+      width: 100%;
+      height: 265px;
+      margin-bottom: 20px;
+
+      .columns{
+        width: 100%;
+        height:235px;
+        border-radius:5px;
+        border:  1px solid #dedede;
+        padding:5px;
+        overflow: auto;
+        color: #828282;
+
+        .column1{
+          width: 100%;
+          height: 30px;
+          display:flex;
+          justify-content: flex-start;
+          align-items: center;
+          border-bottom-style: solid;
+          border-bottom-width: 0.5px;
+          border-bottom-color: #DCDCDC;
+        }
+      }
+    }
   }
 
   .position{

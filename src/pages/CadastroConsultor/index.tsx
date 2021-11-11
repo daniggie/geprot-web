@@ -148,17 +148,12 @@ const CadastrarConsultor: React.FC = () => {
               </div>
 
               <div className="column">
-                <div className="line">
+                <div className="lineSkills">
                   <p className="helvetica fonte_15 cor_5 bold">Habilidades:</p>
                   <div className="columns helvetica cor_0 lighter" >
-                    <div className="column3">
-                      
-                    </div>
                     <div className="column1">
-                      
-                    </div>
-                    <div className="column2">
-                      
+                      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
+                      <label>Abape</label>
                     </div>
                   </div>
                 </div>
