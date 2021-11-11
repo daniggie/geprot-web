@@ -1,4 +1,4 @@
-import React, {useRef, useCallback, useState} from "react";
+import React, {useRef, useCallback, useState, useEffect} from "react";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import { All, Container } from "./style"
@@ -13,6 +13,7 @@ import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import {MenssagemErro, MenssagemSucesso} from "../../hooks/toast";
+import { VoidExpression } from "typescript";
 
 interface Consultor {
   id: number,
@@ -27,9 +28,28 @@ interface Consultor {
   precoHora: number,
 }
 
+interface Skills {
+  id: number,
+  nome: string
+}
+
 const CadastrarConsultor: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const [skills, setSkills] = useState<Skills[]>([]);
   const history = useHistory();
+
+  useEffect(() =>{
+    async function listarSkills():Promise<void>{
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`consultor/skills`, config).then(response => {
+        setSkills(response.data);
+      })
+    }
+    listarSkills();
+  });
 
   const consultor = {
     id: 0,
@@ -151,10 +171,12 @@ const CadastrarConsultor: React.FC = () => {
                 <div className="lineSkills">
                   <p className="helvetica fonte_15 cor_5 bold">Habilidades:</p>
                   <div className="columns helvetica cor_0 lighter" >
-                    <div className="column1">
-                      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-                      <label>Abape</label>
-                    </div>
+                    {skills.map(skills => (
+                      <div className="column1">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+                        <label>{skills.nome}</label>
+                      </div>
+                    ))}
                   </div>
                 </div>
 

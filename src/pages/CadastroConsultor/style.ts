@@ -86,12 +86,18 @@ form{
       height: 265px;
       margin-bottom: 20px;
 
+      p{
+        display: flex;
+        width: 90%;
+        justify-content: start;
+        margin-bottom: 5px;
+      }
+
       .columns{
         width: 100%;
-        height:235px;
-        border-radius:5px;
+        height:230px;
+        border-radius:3px;
         border:  1px solid #dedede;
-        padding:5px;
         overflow: auto;
         color: #828282;
 
@@ -99,11 +105,48 @@ form{
           width: 100%;
           height: 30px;
           display:flex;
+          color: #00579D;
           justify-content: flex-start;
           align-items: center;
           border-bottom-style: solid;
           border-bottom-width: 0.5px;
           border-bottom-color: #DCDCDC;
+
+          input[type=checkbox] {
+            margin: 0px 20px 8px 15px;
+            position: relative;
+            cursor: pointer;
+          }
+
+          input[type=checkbox]:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            top: 0;
+            left: 0;
+            background-color: #DCDCDC;
+          }
+
+          input[type=checkbox]:checked:after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 2px;
+            left: 6px;
+          }
+          span{
+            margin: 0px 15px;
+          }
         }
       }
     }
