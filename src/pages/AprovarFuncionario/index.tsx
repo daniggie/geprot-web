@@ -20,6 +20,7 @@ interface Card {
 
 const AprovarFuncionario: React.FC = () => {
   const [ overlay, setOverlay ] = useState(true);
+  const [textoRecusar, setTextoRecusar] = useState("");
   const addOverlay = () => {
     if(!overlay){
      setOverlay(true);
@@ -58,6 +59,10 @@ const AprovarFuncionario: React.FC = () => {
         return languageObject;
     }
 });
+
+  useEffect(() => {
+    console.log(textoRecusar)
+  }, [textoRecusar])
 
 const linkVoltar = "/aprovarhoras/"
 
@@ -119,8 +124,10 @@ const linkVoltar = "/aprovarhoras/"
           <div className="overlay">
             <img src={arrowleft} alt="" onClick={addOverlay}/>
             <p className="helvetica cor_5 fonte_20">Qual o motivo do recusamento de horas?</p>
-            <textarea placeholder="Insira seu motivo aqui..."></textarea>
-            <BotaoEnviar/>
+            <textarea placeholder="Insira seu motivo aqui..." value={textoRecusar} onChange={event => setTextoRecusar(event?.target.value)}>
+              
+            </textarea>
+            <BotaoEnviar projetoId={parseInt(id)} consultorId={parseInt(consultorId)} textoRecusar={textoRecusar}/>
 
           </div>
         </div>
