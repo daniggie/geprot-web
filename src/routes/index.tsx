@@ -11,9 +11,7 @@ import Dashboard from '../pages/Dashboards';
 import Detalhes from '../pages/Detalhes';
 import AprovarHoras from '../pages/AprovarHoras';
 import AprovarFuncionario from '../pages/AprovarFuncionario';
-import Editar1 from '../pages/Editar/Editar1';
-import Editar2 from '../pages/Editar/Editar2';
-import Editar3 from '../pages/Editar/Editar3';
+import Editar from '../pages/Editar';
 import AlocarEscolherFuncionario from '../pages/Alocar/AlocarEscolherFuncionario';
 import AlocarAtribuirFuncionario from '../pages/Alocar/AlocarAtribuirFuncionario';
 import Configuracao from '../pages/Configuracao';
@@ -32,9 +30,7 @@ const Routes: React.FC = () => (
     <Route path="/cadastrar2" component={Cadastrar2} isPrivate/>
     <Route path="/cadastrar3" component={Cadastrar3} isPrivate/>
     <Route path="/cadastro" component={Cadastro} isPrivate/>
-    <Route path="/editar1" component={Editar1} isPrivate/>
-    <Route path="/editar2" component={Editar2} isPrivate/>
-    <Route path="/editar3" component={Editar3} isPrivate/>
+    <Route path="/editar" component={Editar} isPrivate/>
     <Route path="/alocarescolherfuncionario" component={AlocarEscolherFuncionario} isPrivate/>
     <Route path="/alocaratribuirfuncionario/:id" component={AlocarAtribuirFuncionario} isPrivate/>
     <Route path="/configuracao" component={Configuracao} isPrivate/>
