@@ -73,7 +73,7 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
           <div className="line cor_0 fonte_15">
             <p> Seção - {secao.secao.nome} </p>
-            <a href="/editar1">
+            <a href="/editar">
               <p><FiEdit size={20} color="#828282"/></p>
             </a>
           </div>
