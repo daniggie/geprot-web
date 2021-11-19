@@ -220,6 +220,16 @@ const Cadastro:React.FC = () => {
     pegaNome();
   };
 
+  const [ popup, setPopup ] = useState(true);
+  const abrirPopup = () => {
+    if(!popup){
+     setPopup(true);
+    }else{
+      setPopup(false);
+    }
+    return popup;
+  };
+
   return( 
     <>
       <Header/>
@@ -264,10 +274,15 @@ const Cadastro:React.FC = () => {
                 <div className="float">
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
-                  <div className="boxAdd cor_6f" onClick={adcionarListaConsultor}>
+                  <div className="boxAdd cor_6f" onClick={abrirPopup}>
                     <RiAddLine color="#fff"/>
                   </div>
                 </div>
+
+                <div id="popup" className="popup">
+                  <div id="barra">x</div>
+			            <p>Skilss do consultor</p>
+		            </div>
               </div>
 
               <div className="table">

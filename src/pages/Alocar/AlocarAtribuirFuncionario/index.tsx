@@ -173,7 +173,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
           </div>
 
           <Table>
-
               <div className="header">
                 <div className="title1">
                   <p className="helvetica bold cor_0">Número</p>
@@ -206,9 +205,6 @@ const AlocarAtribuirFuncionario: React.FC = () => {
               </div>
 
           </Table>
-
-
-
         </Content>
 
         <PositionMenu>
