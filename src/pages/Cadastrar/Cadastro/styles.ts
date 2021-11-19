@@ -205,6 +205,28 @@ export const Container=styled.div`
         align-content: center;
         justify-content: flex-start;
 
+        .popup{
+          position: fixed;
+          top: 0; 
+          bottom: 0; 
+          left: 0; 
+          right:0;
+          margin: auto;
+          width: 400px;
+          height: 280px;
+          background: white;
+          border-radius: 3px;
+          box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+          display: none;
+
+          #barra{
+            background-color: #00579D;
+            width: 100%;
+            height: 35px;
+            border-radius: 3px 3px 0px 0px;
+          }
+        }
+
         label{
           width: 70%;
           background: #FFFFFF;
