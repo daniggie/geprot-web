@@ -22,7 +22,7 @@ const SwitchFlags: React.FC = () => {
             <a href="" className="en">Inglês</a>
           </li>
           <li>
-            <a href="" className="fr">Françês</a>
+            <a href="" className="fr">Francês</a>
           </li>
           <li>
             <a href="" className="ar">Chinês</a>

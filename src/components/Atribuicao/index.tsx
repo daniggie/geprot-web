@@ -42,6 +42,17 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
     history.push(`/alocarescolherfuncionario`)
   };
 
+  const [ abrirSkills, setAbrirSkills ] = useState(true);
+  const abreSkills = () => {
+    if(!abrirSkills){
+     setAbrirSkills(true);
+    }else{
+      setAbrirSkills(false);
+    }
+
+    return abrirSkills;
+  };
+
   const [ overlay, setOverlay ] = useState(true);
   const addOverlay = () => {
     if(!overlay){
@@ -58,10 +69,22 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
 
   return (
     <>
-      <Container overlay={overlay} isAllocated={isAllocated}>
+      <Container overlay={overlay} isAllocated={isAllocated} popup={abrirSkills}>
         <div className="atribuir">
-          <button className="cor_000" onClick={isAllocated==false ? addOverlay : gambiarra}> {isAllocated == false ? "Atribuir" : "Atribuído" }</button>
+          <button className="cor_000" onClick={isAllocated==false ? abreSkills : gambiarra}> {isAllocated == false ? "Atribuir" : "Atribuído" }</button>
         </div>
+
+        <div id="popup" className="popup">
+          <div id="barra" onClick={abreSkills}></div>
+			    <p>Skilss do consultor</p>
+          <div className="columns helvetica cor_0 lighter" >
+            <div className="column1">
+              <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+              <label></label>
+              <div className="botao" onClick={addOverlay}></div>
+            </div>
+          </div>
+		    </div>
 
         <div id="atribuir">
           <div className="overlay">

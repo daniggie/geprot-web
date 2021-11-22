@@ -3,6 +3,7 @@ import { shade } from "polished";
 import Tooltip from "../Tooltip";
 
 interface TableProps{
+  popup: boolean;
   overlay: boolean;
   isAllocated: boolean;
 };
@@ -16,6 +17,7 @@ export const Container=styled.div<TableProps>`
   margin-right: 10px;
 
   .atribuir{
+
     button{
       display:flex;
       justify-content: center;
@@ -39,6 +41,50 @@ export const Container=styled.div<TableProps>`
             }
           `
         }
+    }
+  }
+
+  .popup{
+
+    ${(props) =>
+      props.popup &&
+      css`
+      visibility: hidden;
+      opacity: 0;
+    `}
+
+    ${(props) =>
+      !props.popup &&
+      css`
+      visibility: visible;
+      opacity: 1;
+    `}
+
+    position: fixed;
+    top: -1; 
+    bottom: 0; 
+    left: 0; 
+    right:0;
+    margin: auto;
+    width: 400px;
+    height: 280px;
+    background: white;
+    border-radius: 3px;
+    box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+
+    #barra{
+      background-color: #00579D;
+      width: 100%;
+      height: 35px;
+      border-radius: 3px 3px 0px 0px;
+      cursor: pointer;
+    }
+
+    .botao{
+      width:10px;
+      height: 10px;
+      background-color: blue;
+      cursor: pointer;
     }
   }
 
