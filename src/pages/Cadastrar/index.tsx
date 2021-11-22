@@ -44,8 +44,8 @@ interface Projeto {
   dataInicio: string;
   nomeResponsavel: string;
   consultores: {
-      consultorId: number;
-      quantidadeHoras: number;
+    consultorId: number;
+    quantidadeHoras: number;
   }
   ccpagantes:{
       secaoId: number;
@@ -84,7 +84,7 @@ const Cadastro:React.FC = () => {
     consultores:[
       {
       consultorId: 0,
-      quantidadeHoras: 0
+      quantidadeHoras: 0,
       }
     ],
     ccpagantes: [
@@ -166,38 +166,11 @@ const Cadastro:React.FC = () => {
     }
   }, [ history]);
 
-  const removerConsultor = (index: number) => {
-    consultores.splice(index,1)
-  };
-
-  const adcionarListaConsultor = () => {
-
-    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
-
-    const pegaNome = async () => {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}` },
-      };
-
-      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
-      const consultor = response.data;
-
-      const card:Consultor = {
-        id: parseInt(idConsultor),
-        nome: consultor.usuario.nome,
-        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1"
-      }
-      setConsultores([...consultores, card]);
-      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
-      (document.getElementById('idConsultor') as HTMLInputElement).value='';
-    }
-    pegaNome();
-  };
-
   const adcionarListaSecao = () => {
 
     const idSecao = (document.getElementById('idCentroCusto') as HTMLInputElement).value;
+
+    alert(document.getElementById('idCentroCusto') as HTMLInputElement)
 
     const pegaNome = async () => {
       const token = localStorage.getItem("@Geprot:token");
@@ -220,14 +193,15 @@ const Cadastro:React.FC = () => {
     pegaNome();
   };
 
-  const [ popup, setPopup ] = useState(true);
-  const abrirPopup = () => {
-    if(!popup){
-     setPopup(true);
+  const [ abrirSkills, setAbrirSkills ] = useState(true);
+  const abreSkills = () => {
+    if(!abrirSkills){
+     setAbrirSkills(true);
     }else{
-      setPopup(false);
+      setAbrirSkills(false);
     }
-    return popup;
+
+    return abrirSkills;
   };
 
   return( 
@@ -238,7 +212,7 @@ const Cadastro:React.FC = () => {
         <div className="title">
           <b className="helvetica fonte_20 cor_5">CADASTRO DE PROJETO</b>
         </div>
-        <Container>
+        <Container  popup={abrirSkills}>
           <Form ref={formRef} onSubmit={cadastrarProjeto}>
             <div className="column">
               <div className="line">
@@ -274,14 +248,20 @@ const Cadastro:React.FC = () => {
                 <div className="float">
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
-                  <div className="boxAdd cor_6f" onClick={abrirPopup}>
-                    <RiAddLine color="#fff"/>
+                  <div className="boxAdd cor_6f">
+                    <RiAddLine color="#fff" onClick={abreSkills}/>
                   </div>
                 </div>
 
                 <div id="popup" className="popup">
-                  <div id="barra">x</div>
+                  <div id="barra" onClick={abreSkills}></div>
 			            <p>Skilss do consultor</p>
+                  <div className="columns helvetica cor_0 lighter" >
+                    <div className="column1">
+                      <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+                      <label></label>
+                    </div>
+                  </div>
 		            </div>
               </div>
 
@@ -301,7 +281,7 @@ const Cadastro:React.FC = () => {
                 {consultores.map(consultor => (
                   <div className="columns helvetica cor_0 lighter" >
                     <div className="column3">
-                      <div className="boxEx cor_6f" onClick={() => removerConsultor(consultor.id)}>
+                      <div className="boxEx cor_6f">
                         <FiX color="#fff"/>
                       </div>
                       {consultor.id}
@@ -353,8 +333,8 @@ const Cadastro:React.FC = () => {
                 <div className="float">
                   <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
                   <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="%" />
-                  <div className="boxAdd cor_6f" onClick={adcionarListaSecao}>
-                    <RiAddLine color="#fff" />
+                  <div className="boxAdd cor_6f" >
+                    <RiAddLine color="#fff" onClick={adcionarListaSecao}/>
                   </div>
                 </div>
               </div>

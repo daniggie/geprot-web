@@ -1,5 +1,9 @@
 import styled, {css} from 'styled-components';
 
+interface TableProps{
+  popup: boolean;
+};
+
 export const All= styled.div`
   width: 100%;
   display: flex;
@@ -19,7 +23,7 @@ export const All= styled.div`
   }
 `;
 
-export const Container=styled.div`
+export const Container=styled.div<TableProps>`
   width: 75%;
   max-height: 400px;
   padding: 25px;
@@ -206,6 +210,21 @@ export const Container=styled.div`
         justify-content: flex-start;
 
         .popup{
+
+          ${(props) =>
+            props.popup &&
+            css`
+            visibility: hidden;
+            opacity: 0;
+          `}
+
+          ${(props) =>
+            !props.popup &&
+            css`
+            visibility: visible;
+            opacity: 1;
+          `}
+
           position: fixed;
           top: 0; 
           bottom: 0; 
@@ -217,13 +236,13 @@ export const Container=styled.div`
           background: white;
           border-radius: 3px;
           box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
-          display: none;
 
           #barra{
             background-color: #00579D;
             width: 100%;
             height: 35px;
             border-radius: 3px 3px 0px 0px;
+            cursor: pointer;
           }
         }
 

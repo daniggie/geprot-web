@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { All, Content, BttnPosition } from "./style";
 import ButtonAprovar from "../../components/Buttons/ButtonAprove";
-import Barra from "../../components/Barra";
 import { Chart } from "react-google-charts";
 
 import {api} from "../../services/api";
