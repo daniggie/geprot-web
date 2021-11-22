@@ -1,10 +1,7 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
-import Cadastrar from '../pages/Cadastrar/Cadastrar1';
-import Cadastrar2 from '../pages/Cadastrar/Cadastrar2';
-import Cadastrar3 from '../pages/Cadastrar/Cadastrar3';
-import Cadastro from "../pages/Cadastrar/Cadastro";
+import Cadastro from "../pages/Cadastrar";
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboards';
@@ -26,9 +23,6 @@ const Routes: React.FC = () => (
     <Route path="/aprovarhoras/:id" component={AprovarHoras} isPrivate/>
     <Route path="/aprovarfuncionario/:id/:consultorId" component={AprovarFuncionario} isPrivate/>
     <Route path="/dashboard/:id/" component={Dashboard} isPrivate/>
-    <Route path="/cadastrar" component={Cadastrar} isPrivate/>
-    <Route path="/cadastrar2" component={Cadastrar2} isPrivate/>
-    <Route path="/cadastrar3" component={Cadastrar3} isPrivate/>
     <Route path="/cadastro" component={Cadastro} isPrivate/>
     <Route path="/editar" component={Editar} isPrivate/>
     <Route path="/alocarescolherfuncionario" component={AlocarEscolherFuncionario} isPrivate/>

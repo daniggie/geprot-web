@@ -1,16 +1,16 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import api from '../../../services/api';
+import api from '../../services/api';
 import * as Yup from "yup";
 import { Form } from "@unform/web";
 import { useHistory } from 'react-router';
 import { FormHandles } from '@unform/core';
 
-import Menu from '../../../components/Menu';
-import Header from '../../../components/Header';
-import getValidationErrors from '../../../utils/getValidationErrors';
-import InputRegister from '../../../components/InputRegister';
-import ButtonRegister from '../../../components/Buttons/ButtonRegister';
-import BotaoCancel from "../../../components/Buttons/ButtonCancel";
+import Menu from '../../components/Menu';
+import Header from '../../components/Header';
+import getValidationErrors from '../../utils/getValidationErrors';
+import InputRegister from '../../components/InputRegister';
+import ButtonRegister from '../../components/Buttons/ButtonRegister';
+import BotaoCancel from "../../components/Buttons/ButtonCancel";
 
 import { All, Container } from './styles';
 import { FiX } from 'react-icons/fi';
