@@ -45,6 +45,12 @@ p{
       width: 45%;
     }
 
+    .floatBox{
+      width: 45%;
+      display: flex;
+      align-items: center;
+    }
+
     b{
       width: 45%;
     }
@@ -79,9 +85,9 @@ p{
     width: 20px;
     height: 20px;
     border-radius: 5px;
-    margin: -20px 0px 0px 197px;
     padding: 2px;
     cursor: pointer;
+    margin-left: 5px;
 
     &:hover{
       background: #008EA5;
@@ -108,6 +114,7 @@ p{
   .contentTable{
 
     width: 100%;
+    max-height: 180px;
     display: flex;
     justify-content: center;
     margin: 10px 0px 15px 0px;
@@ -115,10 +122,9 @@ p{
     .table{
         width: 90%;
         background: #fff;
-        height: 150px;
+        height: 161px;
         border: 1px solid #dedede;
         border-radius: 3px;
-        margin-bottom: 52px;
         overflow: auto;
       
         .header{

@@ -96,12 +96,13 @@ const Editar2: React.FC = () => {
               <input type="text" value="CONSULTOR NAME" />
             </div> 
 
-            <div className="float">
+            <div className="floatBox">
               {/*Chamar informação value Horas da API */}
               <input type="number" value="0" />
-                <div className="boxAdd cor_6f">
-                  <RiAddLine color="#fff"/>
-                </div>
+
+              <div className="boxAdd cor_6f">
+                <RiAddLine color="#fff"/>
+              </div>
             </div>
           </div>
               
