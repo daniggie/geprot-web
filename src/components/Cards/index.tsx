@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
-
+import { FiEdit } from "react-icons/fi";
 import { Content_cards } from "./style";
 import { FiClock } from "react-icons/fi";
 
@@ -54,6 +54,12 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
                         status == "ATRASADO" ? "ATRASADO" :
                         status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
                       }
+                    </div>
+
+                    <div className="cor_black fonte_12 helvetica ">
+                      <a href="/editar">
+                        <FiEdit size={12} color="#828282"/>
+                      </a>
                     </div>
                   </div>
                 </div>
