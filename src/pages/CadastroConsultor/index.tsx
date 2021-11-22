@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import { All, Container } from "./style"
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
-import api from "../../services/api";
+import {api} from "../../services/api";
 import { useHistory } from "react-router";
 import InputRegister from "../../components/InputRegister";
 import * as Yup from "yup";

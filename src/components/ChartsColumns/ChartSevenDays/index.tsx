@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router";
-import api from "../../../services/api";
+import {api} from "../../../services/api";
 import { Chart } from "react-google-charts";
 
 

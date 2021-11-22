@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Content } from "./style";
 import IconeAprovamento from "../../IconeAprovamento";
-import api from "../../../services/api";
+import {api} from "../../../services/api";
 import { useParams } from "react-router";
 import { CgSearchLoading } from "react-icons/cg";
 

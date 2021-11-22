@@ -8,7 +8,7 @@ import FilterStatus from "../../components/Filters/FilterStatus";
 import FilterCC from "../../components/Filters/FilterCC";
 import ChartSevenDyas from "../../components/ChartsColumns/ChartSevenDays";
 
-import api from "../../services/api";
+import {api} from "../../services/api";
 import { Chart } from "react-google-charts";
 import ChartMonth from "../../components/ChartsColumns/ChartMonth";
 import ChartSixMonth from "../../components/ChartsColumns/ChartSixMonth";

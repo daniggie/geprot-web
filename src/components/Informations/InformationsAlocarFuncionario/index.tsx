@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Contant, Error } from "./style";
 import { useParams } from "react-router";
 import { useEffect } from "react"
-import api from "../../../services/api";
+import {api} from "../../../services/api";
 import Atribuicao from "../../Atribuicao";
 import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
 import { FiAlertCircle } from "react-icons/fi";

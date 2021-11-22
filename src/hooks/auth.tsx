@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useState } from "react";
-import api from "../services/api";
+import {api} from "../services/api";
 
 interface AuthState {
   jwt: string;

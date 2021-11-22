@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import api from "../../services/api";
+import {api} from "../../services/api";
 
 import { Container } from "./style";
 import arrowleft from "../../icons/arrowleft.svg";

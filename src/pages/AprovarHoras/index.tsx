@@ -3,7 +3,7 @@ import { All } from "./style";
 import Barra from "../../components/Barra";
 import InformationsAprovar from "../../components/Informations/InformationsAprovar";
 import { useParams } from "react-router";
-import api from "../../services/api";
+import {api} from "../../services/api";
 
 interface Card {
   id: number;

@@ -5,7 +5,7 @@ import { RiFilterFill, RiFilterOffFill } from "react-icons/ri";
 import Menu from "../../../components/Menu";
 import Informations from "../../../components/Informations/InformationsAlocarFuncionario";
 import { useParams } from "react-router";
-import api from "../../../services/api";
+import {api} from "../../../services/api";
 
 interface Consultor {
   id: number;

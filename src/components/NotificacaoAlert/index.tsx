@@ -21,7 +21,7 @@ const NofiticacaoAlert: React.FC = () => {
     <ContainerAlert overlay={overlay}>
       <div className="line cor_0f" >
         <div className="title fonte_13 bold" >Apontamento de horas resolvido</div>
-        <div className="text" onClick={addOverlay}>[nome do funcionario] reenviou suas horas</div>
+        <div className="text" onClick={addOverlay}>[nome do funcionario] enviou suas horas</div>
         <div className="icon">
           <BiTrash color="#0075B1"/>
         </div>
@@ -35,13 +35,6 @@ const NofiticacaoAlert: React.FC = () => {
         </div>
       </div>
 
-      <div className="line cor_000f" onClick={addOverlay}>
-        <div className="title fonte_13 bold" >Novo projeto inserido</div>
-        <div className="text">Novo projeto inserido</div>
-        <div className="icon">
-          <BiTrash color="#0075B1"/>
-        </div>
-      </div>
     </ContainerAlert>
     </>
   )

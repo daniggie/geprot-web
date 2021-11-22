@@ -4,7 +4,7 @@ import Barra from "../../components/Barra";
 import InformationsApFuncionario from "../../components/Informations/InformationsAprovarFuncionario";
 import arrowleft from "../../icons/arrowleft.svg";
 import BotaoEnviar from "../../components/Buttons/ButtonSend";
-import api from "../../services/api";
+import {api} from "../../services/api";
 import { useParams } from "react-router";
 import ButtonAprove from "../../components/Buttons/ButtonAprove";
 import ButtonAprovado from "../../components/Buttons/ButtonAprovado";

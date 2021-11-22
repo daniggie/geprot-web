@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import api from '../../services/api';
+import {api} from "../../services/api";
 import * as Yup from "yup";
 import { Form } from "@unform/web";
 import { useHistory } from 'react-router';

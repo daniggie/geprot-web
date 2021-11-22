@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const api = axios.create({
+export const api = axios.create({
     baseURL: "http://localhost:8585/",
 });
 
-export default api;
+export const cotacao = axios.create({
+    baseURL: "https://economia.awesomeapi.com.br/last/",
+});

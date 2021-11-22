@@ -4,6 +4,21 @@ import {  Container } from './style';
 import { FaUserCircle } from "react-icons/fa";
 import NotificacaoAlert from '../NotificacaoAlert';
 
+interface Notificacao {
+  id: number;
+  descricao: string;
+  usuario: {
+    id: number;
+    nome: string;
+    email: string;
+    dataCadastro: string;
+    status: boolean;
+  },
+  data: string;
+  statusLeitura: boolean;
+}
+
+
 const Notifications: React.FC = () => {
   return(
     <>
@@ -22,8 +37,6 @@ const Notifications: React.FC = () => {
                   </div>
                 </div>
 
-                <NotificacaoAlert />
-                <NotificacaoAlert />
                 <NotificacaoAlert />
 
             </div>

@@ -6,7 +6,7 @@ import Menu from '../../components/Menu';
 import { All, Filtros, Content_cards, ContFilter, Container, Content_not, ContainerSearch } from './style';
 
 import { FiChevronRight, FiSearch} from "react-icons/fi";
-import api from '../../services/api';
+import {api} from "../../services/api";
 import Notifications from '../../components/Notifications';
 import NaoEncontrado from '../../components/NaoEncontrado';
 

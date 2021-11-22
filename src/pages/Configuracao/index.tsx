@@ -4,7 +4,7 @@ import Menu from "../../components/Menu";
 import { All, Content } from "./style";
 import {FiToggleLeft, FiToggleRight} from "react-icons/fi";
 import {HiEye, HiEyeOff} from "react-icons/hi"
-import api from "../../services/api";
+import {api} from "../../services/api";
 import { useHistory } from "react-router-dom";
 import tamanhoFonte from "../../components/js/fontSize";
 

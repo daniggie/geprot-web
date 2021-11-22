@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { useHistory } from 'react-router';
-import api from '../../../services/api';
+import {api} from "../../../services/api";
 
 import { Container } from './style';
 

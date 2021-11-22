@@ -4,7 +4,7 @@ import ButtonAprovar from "../../components/Buttons/ButtonAprove";
 import Barra from "../../components/Barra";
 import { Chart } from "react-google-charts";
 
-import api from "../../services/api";
+import {api} from "../../services/api";
 import { useParams } from "react-router";
 import ContDetails from "../../components/TableDetails";
 import { FiEdit } from "react-icons/fi";

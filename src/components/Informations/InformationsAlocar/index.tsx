@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { CgSearchLoading } from "react-icons/cg";
-import api from "../../../services/api";
+import {api} from "../../../services/api";
 import { Contant } from "./style";
 import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
 
