@@ -31,7 +31,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
 
     alocarHoras.projetoId = projetoId;
     alocarHoras.consultorId = consultorId;
-    alocarHoras.quantidadeHoras = parseInt((document.getElementById('inputLegal') as HTMLInputElement).value);
+    alocarHoras.quantidadeHoras = parseInt((document.getElementById('inputDTO') as HTMLInputElement).value);
 
     const token = localStorage.getItem("@Geprot:token");
     let config = {headers: {
@@ -67,7 +67,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
           <div className="overlay">
             <img src={arrowleft} alt="" onClick={addOverlay}/>
             <p className="helvetica cor_5 fonte_20">Horas:</p>
-            <input id="inputLegal" placeholder="0H" type="number"/>
+            <input id="inputDTO" placeholder="0H" type="number"/>
             <button onClick={() => Alocar(parseInt(consultorId), projetoId)}><RiCheckLine size={ 25 } color="#fff"/></button>
           </div>
         </div>
