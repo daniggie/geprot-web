@@ -13,7 +13,6 @@ import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import {MenssagemErro, MenssagemSucesso} from "../../hooks/toast";
-import { VoidExpression } from "typescript";
 
 interface Consultor {
   id: number,

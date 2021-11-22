@@ -56,14 +56,14 @@ export const ContainerAlert = styled.div<TableProps>`
       css`
         visibility: hidden;
         opacity: 0;
-      `}
+    `}
 
     ${(props) =>
-        !props.overlay &&
-        css`
-          visibility: visible;
-          opacity: 1;
-        `}
+      !props.overlay &&
+      css`
+        visibility: visible;
+        opacity: 1;
+    `}
 
     position: absolute;
     top: 0;
