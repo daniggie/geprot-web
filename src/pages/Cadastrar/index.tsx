@@ -44,8 +44,8 @@ interface Projeto {
   dataInicio: string;
   nomeResponsavel: string;
   consultores: {
-      consultorId: number;
-      quantidadeHoras: number;
+    consultorId: number;
+    quantidadeHoras: number;
   }
   ccpagantes:{
       secaoId: number;
@@ -84,7 +84,7 @@ const Cadastro:React.FC = () => {
     consultores:[
       {
       consultorId: 0,
-      quantidadeHoras: 0
+      quantidadeHoras: 0,
       }
     ],
     ccpagantes: [
@@ -165,6 +165,33 @@ const Cadastro:React.FC = () => {
       }
     }
   }, [ history]);
+
+  const adcionarListaSecao = () => {
+
+    const idSecao = (document.getElementById('idCentroCusto') as HTMLInputElement).value;
+
+    alert(document.getElementById('idCentroCusto') as HTMLInputElement)
+
+    const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+
+      const response = await api.get<Secao>(`/secao/buscar/${idSecao}`,config);
+      const secao = response.data;
+
+      const card:Secao = {
+        id: parseInt(idSecao),
+        nome: secao.nome,
+        taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
+      }
+      setSecoes([...secoes, card]);
+      (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
+      (document.getElementById('porcentagem') as HTMLInputElement).value='';
+    }
+    pegaNome();
+  };
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
   const abreSkills = () => {
@@ -307,7 +334,7 @@ const Cadastro:React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
                   <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="%" />
                   <div className="boxAdd cor_6f" >
-                    <RiAddLine color="#fff" />
+                    <RiAddLine color="#fff" onClick={adcionarListaSecao}/>
                   </div>
                 </div>
               </div>
