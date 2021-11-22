@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
-
+import { FiEdit } from "react-icons/fi";
 import { Content_cards } from "./style";
 import { FiClock } from "react-icons/fi";
 
@@ -54,6 +54,12 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
                         status == "ATRASADO" ? "ATRASADO" :
                         status == "CONCLUIDO" ? "CONCLUÍDO" : "NÃO ENCONTRADO"
                       }
+                    </div>
+
+                    <div className="cor_black fonte_12 helvetica ">
+                      <a href="/editar">
+                        <FiEdit size={12} color="#828282"/>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -116,20 +122,20 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
                     </div>
                   </div>
                 </div>
-                            <div className="linha_3">
-                                <div className="texto_content_data">
-                                    <p className="cor_0 fonte_14 helvetica">Dê: { dataInicio ? dataInicio : "Não iniciado" }</p>
-                                    <p className="cor_0 fonte_14 helvetica"> Até: { dataFinalizacao ? dataFinalizacao : "Não informado" }</p>
-                                </div>
-                                <div className="content_barra">
-                                    <div className="green content_carregamento"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </Content_cards>
-        </>
+                <div className="linha_3">
+                  <div className="texto_content_data">
+                      <p className="cor_0 fonte_14 helvetica">Dê: { dataInicio ? dataInicio : "Não iniciado" }</p>
+                      <p className="cor_0 fonte_14 helvetica"> Até: { dataFinalizacao ? dataFinalizacao : "Não informado" }</p>
+                  </div>
+                  <div className="content_barra">
+                    <div className="green content_carregamento"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </Content_cards>
+      </>
     );
 };
 

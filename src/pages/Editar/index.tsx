@@ -146,11 +146,11 @@ const Editar2: React.FC = () => {
 
         <div className="position">
 
-          <a href="/editar1">
+          <a href="/home">
             <BotaoCancel />
           </a>
 
-          <a href="/editar1">
+          <a href="/home">
             <BotaoSalvar>
               <p className="helvetica fonte_20 bold">Salvar</p>
             </BotaoSalvar>
