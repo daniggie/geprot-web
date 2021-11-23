@@ -1,11 +1,15 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+interface TableProps{
+  popup: boolean;
+};
 
 export const Titulo = styled.div`
   margin-top: 40px;
   margin-left: 160px;
 `;
 
-export const Formulario = styled.form`
+export const Formulario = styled.form<TableProps>`
 margin: 40px 160px 20px 160px;
 padding: 30px;
 border: 1px solid #dedede;
@@ -20,6 +24,44 @@ flex-wrap: wrap;
 p{
   width: 100%;
 }
+
+.popup{
+
+  ${(props) =>
+    props.popup &&
+    css`
+    visibility: hidden;
+    opacity:0;
+  `}
+
+  ${(props) =>
+    !props.popup &&
+    css`
+    visibility: visible;
+    opacity: 1;
+  `}
+
+  position: fixed;
+  top: 0; 
+  bottom: 0; 
+  left: 0; 
+  right:0;
+  margin: auto;
+  width: 400px;
+  height: 280px;
+  background: white;
+  border-radius: 3px;
+  box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+
+  #barra{
+    background-color: #00579D;
+    width: 100%;
+    height: 35px;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+  }
+}
+
 
 .content{
   width: 45%;
@@ -136,7 +178,7 @@ p{
           border-bottom-color: #DCDCDC;
       
           .title1{
-            width:50%;
+            width:40%;
             height: 50px;
             display:flex;
             justify-content: center;
@@ -147,7 +189,7 @@ p{
           }
       
           .title2{
-            width:28%;
+            width:20%;
             height: 50px;
             display:flex;
             justify-content: center;
@@ -155,7 +197,7 @@ p{
           }
       
           .title3{
-            width:22%;
+            width:50%;
             height: 50px;
             display:flex;
             justify-content: center;

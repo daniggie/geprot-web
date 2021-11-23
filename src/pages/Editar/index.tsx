@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
@@ -8,6 +8,17 @@ import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
 
 const Editar2: React.FC = () => {
+  const [ abrirSkills, setAbrirSkills ] = useState(true);
+  const abreSkills = () => {
+    if(!abrirSkills){
+     setAbrirSkills(true);
+    }else{
+      setAbrirSkills(false);
+    }
+
+    return abrirSkills;
+  };
+
   return(
     <>
       <Barra />
@@ -16,7 +27,7 @@ const Editar2: React.FC = () => {
         <p className="helvetica fonte_20 cor_5 bold">EDITAR PROJETO</p>
       </Titulo>
 
-      <Formulario>
+      <Formulario popup={abrirSkills}>
 
         {/*Coluna 1*/}
         <div className="content">
@@ -26,7 +37,7 @@ const Editar2: React.FC = () => {
 
           <div className="line">
             {/*Chamar informação value da API */}
-              <input type="text" value="NOME DO PROJETO" />
+              <input type="text" value="" />
           </div>
 
           <div className="line">
@@ -70,12 +81,12 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="float">
               {/*Chamar informação value da API */}
-              <input type="number" value="67" />
+              <input type="number" value="" />
             </div>
 
             <div className="float">
               {/*Chamar informação value da API */}
-              <input type="text" value="R$ 1000,00" />
+              <input type="text" value="" />
             </div>
           </div>
 
@@ -93,32 +104,42 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="float">
               {/*Chamar informação value Consultor da API */}
-              <input type="text" value="CONSULTOR NAME" />
+              <input type="text" value="" />
             </div> 
 
             <div className="floatBox">
               {/*Chamar informação value Horas da API */}
-              <input type="number" value="0" />
+              <input type="number" value="" />
 
-              <div className="boxAdd cor_6f">
+              <div className="boxAdd cor_6f" onClick={abreSkills}>
                 <RiAddLine color="#fff"/>
               </div>
             </div>
+            
           </div>
+
+          <div id="popup" className="popup">
+            <div id="barra" onClick={abreSkills}></div>
+			      <p>Skilss do consultor</p>
+            <div className="columns helvetica cor_0 lighter" >
+              <div className="column1">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+                <label></label>
+              </div>
+            </div>
+		      </div>
               
           <div className="contentTable">
             <div className="table">
-                <div className="header">
+            <div className="header">
                   <div className="title3 bold helvetica cor_0 fonte_15">
-                    ID
-                  </div>
-                  
-                  <div className="title1 bold helvetica cor_0 fonte_15">
                     Consultor
                   </div>
-                  
-                  <div className="title2 bold helvetica cor_0 fonte_13">
-                    Limite de horas
+                  <div className="title1 bold helvetica cor_0 fonte_15">
+                    Habilidade
+                  </div>
+                  <div className="title2 bold helvetica cor_0 fonte_15">
+                    Horas
                   </div>
                 </div>
                 

@@ -107,7 +107,7 @@ export const Container=styled.div<TableProps>`
           border-bottom-color: #DCDCDC;
       
           .title1{
-            width:50%;
+            width:40%;
             height: 50px;
             display:flex;
             justify-content: center;
@@ -118,7 +118,7 @@ export const Container=styled.div<TableProps>`
           }
       
           .title2{
-            width:28%;
+            width:20%;
             height: 50px;
             display:flex;
             justify-content: center;
@@ -126,17 +126,15 @@ export const Container=styled.div<TableProps>`
           }
       
           .title3{
-            width:22%;
+            width:50%;
             height: 50px;
             display:flex;
             justify-content: center;
-            align-items: center;
             border-right-style: solid;
             border-right-width: 0.5px;
             border-right-color: #DCDCDC;
+            align-items: center;
           }
-      
-      
         }
       
         .columns{

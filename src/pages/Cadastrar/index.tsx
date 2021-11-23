@@ -168,9 +168,7 @@ const Cadastro:React.FC = () => {
 
   const adcionarListaSecao = () => {
 
-    const idSecao = (document.getElementById('idCentroCusto') as HTMLInputElement).value;
-
-    alert(document.getElementById('idCentroCusto') as HTMLInputElement)
+    var idSecao = (document.getElementById("idCentroCusto") as HTMLInputElement).value;
 
     const pegaNome = async () => {
       const token = localStorage.getItem("@Geprot:token");
@@ -191,6 +189,10 @@ const Cadastro:React.FC = () => {
       (document.getElementById('porcentagem') as HTMLInputElement).value='';
     }
     pegaNome();
+  };
+
+  const removerListaSecao = (index: number) => {
+    secoes.splice(index,1)
   };
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
@@ -268,13 +270,13 @@ const Cadastro:React.FC = () => {
               <div className="table">
                 <div className="header">
                   <div className="title3 bold helvetica cor_0 fonte_15">
-                    ID
-                  </div>
-                  <div className="title1 bold helvetica cor_0 fonte_15">
                     Consultor
                   </div>
-                  <div className="title2 bold helvetica cor_0 fonte_13">
-                    Limite de horas
+                  <div className="title1 bold helvetica cor_0 fonte_15">
+                    Habilidade
+                  </div>
+                  <div className="title2 bold helvetica cor_0 fonte_15">
+                    Horas
                   </div>
                 </div>
                 
@@ -317,11 +319,11 @@ const Cadastro:React.FC = () => {
               <div className="line">
                 <div className="float">
                   <p className="helvetica fonte_14 cor_5 bold">Horas totais aprovadas:</p>
-                  <InputRegister id="idCentroCusto" name="idCentroCusto" type="number" placeholder="0 H"/>
+                  <InputRegister id="horasTotais" name="horasTotais" type="number" placeholder="0 H"/>
                 </div>
                 <div className="float">
                   <p className="helvetica fonte_13 cor_5 bold">Verbas totais aprovadas:</p>
-                  <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="R$" />
+                  <InputRegister id="verbasAprovadas" name="verbasAprovadas" type="number" placeholder="R$" />
                 </div>
               </div>
 
@@ -342,10 +344,10 @@ const Cadastro:React.FC = () => {
               <div className="table">
 
               <div className="header">
-                <div className="title1 bold helvetica cor_0 fonte_15">
+                <div className="title3 bold helvetica cor_0 fonte_15">
                   Centro de custo
                 </div>
-                <div className="title1 bold helvetica cor_0 fonte_15">
+                <div className="title3 bold helvetica cor_0 fonte_15">
                     Percentual
                 </div>
               </div>
@@ -353,7 +355,7 @@ const Cadastro:React.FC = () => {
               {secoes.map(secao => (
                 <div className="columns helvetica cor_0 lighter">
                   <div className="column1">
-                    <div className="boxEx cor_6f">
+                    <div className="boxEx cor_6f" onClick={() => removerListaSecao(secao.id)}>
                       <FiX color="#fff"/>
                     </div>
                     {secao.nome}
