@@ -35,6 +35,12 @@ interface Skills {
 const CadastrarConsultor: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const [skills, setSkills] = useState<Skills[]>([]);
+  const [emailConsultor, setEmailConsultor] = useState("");
+  const [nomeConsultor, setNomeConsultor] = useState("");
+  const [senha, setSenha] = useState("");
+  const [precoHoras, setPrecoHoras] = useState("")
+  const [idFornecedor, setIdFornecedor] = useState(0)
+
   const history = useHistory();
 
   useEffect(() =>{
@@ -50,6 +56,14 @@ const CadastrarConsultor: React.FC = () => {
     listarSkills();
   });
 
+  useEffect(() => {
+    consultor.usuario.nome = nomeConsultor
+    consultor.usuario.email = emailConsultor
+    consultor.usuario.senha = senha
+    consultor.fornecedor.id = idFornecedor
+    consultor.precoHora = precoHoras
+  }, [idFornecedor, nomeConsultor, emailConsultor, senha, precoHoras])
+
   const consultor = {
     id: 0,
     usuario: {
@@ -60,7 +74,7 @@ const CadastrarConsultor: React.FC = () => {
     fornecedor: {
       id: 0,
     },
-    precoHora: 0,
+    precoHora: "",
   }
 
 
@@ -73,7 +87,7 @@ const CadastrarConsultor: React.FC = () => {
       consultor.usuario.email = (document.getElementById('email') as HTMLInputElement).value;
       consultor.usuario.senha = (document.getElementById('senha') as HTMLInputElement).value;
       consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
-      consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);                               
+ //     consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);                               
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -162,14 +176,14 @@ const CadastrarConsultor: React.FC = () => {
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Preço das horas:</p>
-                  <InputRegister name="precoHora" id="precoHora" placeholder="Digite o preço..."/>
+                  <InputRegister name="precoHora" value={precoHoras} onChange={event => setPrecoHoras(event.target.value)} id="precoHora" type="number" placeholder="Digite o preço..."/>
                 </div>
               </div>
 
               <div className="column">
                 <div className="lineSkills">
                   <p className="helvetica fonte_15 cor_5 bold">Habilidades:</p>
-                  <div className="columns helvetica cor_0 lighter" >
+                  <div className="columns helvetica cor_0 lighte'r" >
                     {skills.map(skills => (
                       <div className="column1">
                         <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
