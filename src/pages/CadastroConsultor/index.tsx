@@ -39,7 +39,7 @@ const CadastrarConsultor: React.FC = () => {
   const [nomeConsultor, setNomeConsultor] = useState("");
   const [senha, setSenha] = useState("");
   const [precoHoras, setPrecoHoras] = useState("")
-  const [idFornecedor, setIdFornecedor] = useState(0)
+  const [idFornecedor, setIdFornecedor] = useState("")
 
   const history = useHistory();
 
@@ -72,7 +72,7 @@ const CadastrarConsultor: React.FC = () => {
       senha: ""
     },
     fornecedor: {
-      id: 0,
+      id: "",
     },
     precoHora: "",
   }
@@ -86,7 +86,7 @@ const CadastrarConsultor: React.FC = () => {
       consultor.id = parseInt((document.getElementById('id') as HTMLInputElement).value);
       consultor.usuario.email = (document.getElementById('email') as HTMLInputElement).value;
       consultor.usuario.senha = (document.getElementById('senha') as HTMLInputElement).value;
-      consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
+  //    consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
  //     consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);                               
       const token = localStorage.getItem("@Geprot:token");
       let config = {
@@ -158,17 +158,17 @@ const CadastrarConsultor: React.FC = () => {
               <div className="column">
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Nome do consultor:</p>
-                  <InputRegister name="nome" id="nome" placeholder="Digite o nome..."/>
+                  <InputRegister name="nome" value={nomeConsultor} onChange={event => setNomeConsultor(event.target.value)} id="nome" placeholder="Digite o nome..."/>
                 </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Email:</p>
-                  <InputRegister name="email" id="email" placeholder="Digite o email..."/>
+                  <InputRegister name="email" value={emailConsultor} onChange={event => setEmailConsultor(event.target.value)} id="email" placeholder="Digite o email..."/>
                 </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Senha:</p>
-                  <InputRegister name="senha" id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
+                  <InputRegister name="senha" value={senha} onChange={event => setSenha(event.target.value)} id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
                   <div className="login_eye">
                     {showPass ? (<HiEye size={25} color="#00579E" onClick={handleClickPass}/>) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
                   </div>
@@ -195,7 +195,7 @@ const CadastrarConsultor: React.FC = () => {
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">ID do Fornecedor:</p>
-                  <InputRegister name="idFornecedor" id="idFornecedor" placeholder="Digite o ID..."/>
+                  <InputRegister name="idFornecedor" value={idFornecedor} onChange={event => setIdFornecedor(event.target.value)} id="idFornecedor" placeholder="Digite o ID..."/>
                 </div>
               </div>
 
