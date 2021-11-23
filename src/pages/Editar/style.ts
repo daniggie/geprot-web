@@ -10,8 +10,6 @@ margin: 40px 160px 20px 160px;
 padding: 30px;
 border: 1px solid #dedede;
 border-radius: 3px;
-
-overflow: scroll;
 max-height: 450px;
 display:flex;
 justify-content: space-between;
@@ -120,7 +118,7 @@ p{
     margin: 10px 0px 15px 0px;
     
     .table{
-        width: 90%;
+        width: 100%;
         background: #fff;
         height: 161px;
         border: 1px solid #dedede;
