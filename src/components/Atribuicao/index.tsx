@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import {api} from "../../services/api";
 
+
 import { Container } from "./style";
 import arrowleft from "../../icons/arrowleft.svg";
 import { RiCheckLine } from "react-icons/ri";
+import { FiX } from "react-icons/fi";
+
+import Skills from "./Skills"
 
 interface AtribuicaoProps {
   projetoId: number,
@@ -75,15 +79,42 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
         </div>
 
         <div id="popup" className="popup">
-          <div id="barra" onClick={abreSkills}></div>
-			    <p>Skilss do consultor</p>
-          <div className="columns helvetica cor_0 lighter" >
-            <div className="column1">
-              <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
-              <label></label>
-              <div className="botao" onClick={addOverlay}></div>
+
+          <div className="popSkill">
+            <div id="barra" >
+              <FiX size={20} onClick={abreSkills} cursor="pointer"/>
+              <p className="helvetica fonte_14">Skills do consultor</p>
+            </div>
+            
+            <div className="lines helvetica cor_0 lighter" >
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+              <Skills/>
+            </div>
+            <div className="botao fonte_14 cor_000" onClick={addOverlay}>
+              <p>Concluir</p>
             </div>
           </div>
+          
 		    </div>
 
         <div id="atribuir">
@@ -91,7 +122,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
             <img src={arrowleft} alt="" onClick={addOverlay}/>
             <p className="helvetica cor_5 fonte_20">Horas:</p>
             <input id="inputDTO" placeholder="0H" type="number"/>
-            <button onClick={() => Alocar(parseInt(consultorId), projetoId)}><RiCheckLine size={ 25 } color="#fff"/></button>
+            <button onClick={() => Alocar(parseInt(consultorId), projetoId)}><RiCheckLine size={ 20 } color="#fff"/></button>
           </div>
         </div>
       </Container>
