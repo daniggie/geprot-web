@@ -108,7 +108,6 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
               <Skills/>
               <Skills/>
               <Skills/>
-              <Skills/>
             </div>
             <div className="botao fonte_14 cor_000" onClick={addOverlay}>
               <p>Concluir</p>
