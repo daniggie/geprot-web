@@ -79,29 +79,20 @@ export const Container=styled.div<TableProps>`
       width: 400px;
       height: 200px;
       background: white;
-      border-radius: 3px;
+      border-radius: 5px;
       box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+      display: flex;
+      flex-direction: column;
 
       #barra{
         background-color: #00579D;
         width: 100%;
-        height: 25px;
-        border-radius: 3px 3px 0px 0px;
+        height: 30px;
+        border-radius: 5px 5px 0px 0px;
         display: flex;
         align-items: center;
         padding: 5px;
         color: #fff;
-      }
-
-      .botao{
-        background-color: #00579D;
-        cursor: pointer;
-        border-radius: 0px 0px 5px 5px;
-        padding: 5px;
-
-        p{
-          margin: 0;
-        }
       }
 
       .lines{
@@ -110,8 +101,10 @@ export const Container=styled.div<TableProps>`
         justify-content: space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 75%;
-        padding-top: 5px;
+        height: 100%;
+        margin-top: 5px;
+        overflow: scroll;
+        
       }
 
     }
@@ -164,7 +157,7 @@ export const Container=styled.div<TableProps>`
         justify-content: center;
         align-items: center;
         width: 40%;
-        height: 30px;
+        height: 20px;
       }
 
       img{
@@ -179,22 +172,21 @@ export const Container=styled.div<TableProps>`
         padding: 0px 5px 0px 5px;
       }
 
-      button{
-       
-        display:flex;
-        justify-content: center;
-        padding: 3px 5px 3px 5px;
-        border: 0px;
-        border-radius: 5px;
-        background: #00579D;
-        transition: 0.2s;
-        &:hover{
-          background: ${shade(0.2, "#0091BD")};
-        }
-
-        
-      }
+      
     }
+  }
+  
+  button{
+    display:flex;
+    justify-content: center;
+    padding: 3px 5px 3px 5px;
+    border: 0px;
+    border-radius: 5px;
+    background: #00579D;
+    transition: 0.2s;
+    &:hover{
+      background: ${shade(0.2, "#0091BD")};
+    }   
   }
 `;
 

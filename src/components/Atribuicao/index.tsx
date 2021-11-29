@@ -6,7 +6,7 @@ import {api} from "../../services/api";
 import { Container } from "./style";
 import arrowleft from "../../icons/arrowleft.svg";
 import { RiCheckLine } from "react-icons/ri";
-import { FiX } from "react-icons/fi";
+import { FiX, FiCheck } from "react-icons/fi";
 
 import Skills from "./Skills"
 
@@ -79,11 +79,12 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
         </div>
 
         <div id="popup" className="popup">
-
+          
           <div className="popSkill">
             <div id="barra" >
-              <FiX size={20} onClick={abreSkills} cursor="pointer"/>
+              <FiX size={25} onClick={abreSkills} cursor="pointer"/>
               <p className="helvetica fonte_14">Skills do consultor</p>
+              <FiCheck size={25} onClick={addOverlay} cursor="pointer"/>
             </div>
             
             <div className="lines helvetica cor_0 lighter" >
@@ -99,19 +100,8 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
               <Skills/>
               <Skills/>
               <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
             </div>
-            <div className="botao fonte_14 cor_000" onClick={addOverlay}>
-              <p>Concluir</p>
-            </div>
+            
           </div>
           
 		    </div>

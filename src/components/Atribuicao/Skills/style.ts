@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Container=styled.div`
-    margin: 0;
+    margin-top: 5px;
     padding: 0;
-
-    width: calc(100%/3);
-    height: 10%;
-    
+    width: calc(100%/1);
+    height: 15%;
     input, label{
-        margin-left: 15px;
+        margin-left: 10px;
     }
 `;
