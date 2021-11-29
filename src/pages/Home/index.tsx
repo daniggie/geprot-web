@@ -187,7 +187,7 @@ const Home: React.FC = () => {
             />
             ))
             : <NaoEncontrado/>
-          }
+  }
         </Content_cards>
 
         <Menu/>

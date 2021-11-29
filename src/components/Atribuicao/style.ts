@@ -60,31 +60,60 @@ export const Container=styled.div<TableProps>`
       opacity: 1;
     `}
 
-    position: fixed;
-    top: -1; 
-    bottom: 0; 
-    left: 0; 
-    right:0;
-    margin: auto;
-    width: 400px;
-    height: 280px;
-    background: white;
-    border-radius: 3px;
-    box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.30);
+    transition: 0.5s;
 
-    #barra{
-      background-color: #00579D;
-      width: 100%;
-      height: 35px;
-      border-radius: 3px 3px 0px 0px;
-      cursor: pointer;
-    }
+    .popSkill{
+      position: fixed;
+      top: 0;
+      bottom: 0; 
+      left: 0; 
+      right:0;
+      margin: auto;
+      width: 400px;
+      height: 200px;
+      background: white;
+      border-radius: 3px;
+      box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
 
-    .botao{
-      width:10px;
-      height: 10px;
-      background-color: blue;
-      cursor: pointer;
+      #barra{
+        background-color: #00579D;
+        width: 100%;
+        height: 25px;
+        border-radius: 3px 3px 0px 0px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        color: #fff;
+      }
+
+      .botao{
+        background-color: #00579D;
+        cursor: pointer;
+        border-radius: 0px 0px 5px 5px;
+        padding: 5px;
+
+        p{
+          margin: 0;
+        }
+      }
+
+      .lines{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 75%;
+        padding-top: 5px;
+      }
+
     }
   }
 
@@ -99,7 +128,6 @@ export const Container=styled.div<TableProps>`
     right: 0;
     height: 100%;
     background: rgba(0, 0, 0, 0.30);
-    transition: 0.5s;
 
     ${(props) =>
       props.overlay &&
