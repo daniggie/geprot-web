@@ -21,10 +21,17 @@ interface Consultor {
     email: string,
     senha: string,
   },
+  skills: [{
+    id:number,
+  }],
   fornecedor: {
     id: number,
   },
   precoHora: number,
+}
+
+interface ListaSkills {
+  id: number;
 }
 
 interface Skills {
@@ -35,13 +42,24 @@ interface Skills {
 const CadastrarConsultor: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const [skills, setSkills] = useState<Skills[]>([]);
-  const [emailConsultor, setEmailConsultor] = useState("");
-  const [nomeConsultor, setNomeConsultor] = useState("");
-  const [senha, setSenha] = useState("");
-  const [precoHoras, setPrecoHoras] = useState("")
-  const [idFornecedor, setIdFornecedor] = useState("")
+  const [skillsMarcadas, setSkillsMarcadas] = useState<ListaSkills[]>([]); 
 
+  
   const history = useHistory();
+
+  function cadastrar(){
+
+  }
+
+
+  const marcarBox = useCallback((id: number) => {
+    if(skillsMarcadas.find(skill => skill.id === id)) {
+      setSkillsMarcadas(skillsMarcadas.filter(skill => skill.id !== id))
+    }else {
+      skillsMarcadas.push({id:id})
+      setSkillsMarcadas(skillsMarcadas)
+    }
+  },[skillsMarcadas])
 
   useEffect(() =>{
     async function listarSkills():Promise<void>{
@@ -56,14 +74,6 @@ const CadastrarConsultor: React.FC = () => {
     listarSkills();
   });
 
-  useEffect(() => {
-    consultor.usuario.nome = nomeConsultor
-    consultor.usuario.email = emailConsultor
-    consultor.usuario.senha = senha
-    consultor.fornecedor.id = idFornecedor
-    consultor.precoHora = precoHoras
-  }, [idFornecedor, nomeConsultor, emailConsultor, senha, precoHoras])
-
   const consultor = {
     id: 0,
     usuario: {
@@ -71,10 +81,15 @@ const CadastrarConsultor: React.FC = () => {
       email: "",
       senha: ""
     },
+    skills: [
+      {
+      id:0,
+      }
+    ],
     fornecedor: {
-      id: "",
+      id: 0,
     },
-    precoHora: "",
+    precoHora: 0,
   }
 
 
@@ -83,11 +98,11 @@ const CadastrarConsultor: React.FC = () => {
       formRef.current?.setErrors({})
 
       consultor.usuario.nome = (document.getElementById('nome') as HTMLInputElement).value;
-      consultor.id = parseInt((document.getElementById('id') as HTMLInputElement).value);
       consultor.usuario.email = (document.getElementById('email') as HTMLInputElement).value;
       consultor.usuario.senha = (document.getElementById('senha') as HTMLInputElement).value;
-  //    consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
- //     consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);                               
+      consultor.fornecedor.id = parseInt((document.getElementById('idFornecedor') as HTMLInputElement).value);
+      consultor.precoHora = parseFloat((document.getElementById('precoHora') as HTMLInputElement).value);
+      consultor.skills = skillsMarcadas;                               
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}` },
@@ -100,11 +115,6 @@ const CadastrarConsultor: React.FC = () => {
         senha:Yup.string().min(6, "No mínimo 6 dígitos"),
         nome: Yup.string()
         .required("O nome é obrigatório"),
-        id: Yup.number()
-        .typeError('O ID precisa ser um número')
-        .required("O ID é obrigatório")
-        .positive("O ID não pode ser negativo")
-        .integer("Informe um ID inteiro"),
         idFornecedor: Yup.number()
         .typeError('O ID precisa ser um número')
         .required("O ID é obrigatório")
@@ -158,25 +168,25 @@ const CadastrarConsultor: React.FC = () => {
               <div className="column">
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Nome do consultor:</p>
-                  <InputRegister name="nome" value={nomeConsultor} onChange={event => setNomeConsultor(event.target.value)} id="nome" placeholder="Digite o nome..."/>
+                  <InputRegister name="nome" id="nome" placeholder="Digite o nome..."/>
                 </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Email:</p>
-                  <InputRegister name="email" value={emailConsultor} onChange={event => setEmailConsultor(event.target.value)} id="email" placeholder="Digite o email..."/>
+                  <InputRegister name="email" id="email" placeholder="Digite o email..."/>
                 </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Senha:</p>
-                  <InputRegister name="senha" value={senha} onChange={event => setSenha(event.target.value)} id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
+                  <InputRegister name="senha" id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
                   <div className="login_eye">
-                    {showPass ? (<HiEye size={25} color="#00579E" onClick={handleClickPass}/>) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
+                    {showPass ? (<HiEye size={25} color="#00579E" />) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
                   </div>
                 </div>
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">Preço das horas:</p>
-                  <InputRegister name="precoHora" value={precoHoras} onChange={event => setPrecoHoras(event.target.value)} id="precoHora" type="number" placeholder="Digite o preço..."/>
+                  <InputRegister name="precoHora" id="precoHora" type="number" placeholder="Digite o preço..."/>
                 </div>
               </div>
 
@@ -186,7 +196,7 @@ const CadastrarConsultor: React.FC = () => {
                   <div className="columns helvetica cor_0 lighte'r" >
                     {skills.map(skills => (
                       <div className="column1">
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+                        <input type="checkbox" value={skills.id} onClick= {() => marcarBox(skills.id)}/>
                         <label>{skills.nome}</label>
                       </div>
                     ))}
@@ -195,7 +205,7 @@ const CadastrarConsultor: React.FC = () => {
 
                 <div className="line">
                   <p className="helvetica fonte_15 cor_5 bold">ID do Fornecedor:</p>
-                  <InputRegister name="idFornecedor" value={idFornecedor} onChange={event => setIdFornecedor(event.target.value)} id="idFornecedor" placeholder="Digite o ID..."/>
+                  <InputRegister name="idFornecedor" id="idFornecedor" placeholder="Digite o ID..."/>
                 </div>
               </div>
 

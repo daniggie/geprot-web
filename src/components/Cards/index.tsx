@@ -20,7 +20,7 @@ interface Identifica {
 
 const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, horasPrevistas, horasTrabalhadas, valor, valorRestante, status, barraProgresso}) => {
     const pagina = "/detalhes/";
-
+   
     const [perfil] = useState(() => {
       let usuario = localStorage.getItem('@Geprot:gestor');
   
