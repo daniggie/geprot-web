@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import {api} from "../../services/api";
 
@@ -16,14 +16,26 @@ interface AtribuicaoProps {
   isAllocated: boolean
 }
 
-interface AlocarProps {
-  projetoId: number,
-  consultorId: number,
-  quantidadeHoras: number
+interface Skills {
+  id: number,
+  nome: string
 }
 
 // valores chegando pelo botao, falta fazer a funcao para alocar
 const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAllocated}) => {
+  const [skills, setSkills] = useState<Skills[]>([]);
+  useEffect(() =>{
+    async function listarSkills():Promise<void>{
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      await api.get(`consultor/skills/${consultorId}`, config).then(response => {
+        setSkills(response.data);
+      })
+    }
+    listarSkills();
+  });
   const history = useHistory();
   function Alocar(consultorId: number, projetoId: number) {
     console.log("bomdia")
@@ -69,6 +81,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
 
   const gambiarra = () => {
     alert('Já esta atribuido')
+    console.log(skills)
   }
 
   return (
@@ -88,18 +101,9 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
             </div>
             
             <div className="lines helvetica cor_0 lighter" >
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
-              <Skills/>
+              {skills.map(skill => (
+                <Skills id={skill.id} nome={skill.nome}/>
+              ))}
             </div>
             
           </div>

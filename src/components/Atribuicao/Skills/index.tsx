@@ -1,12 +1,17 @@
 import React from "react";
 import { Container } from "./style";
 
-const Skills: React.FC = () => {
+interface SkillProps {
+  nome: string
+  id: number
+}
+
+const Skills: React.FC<SkillProps> = ({id, nome}) => {
     return(
       <Container>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value={id}/>
             {/*Chamar NAMETEST em API */}
-            <label>Nametest</label>
+            <label>{nome}</label>
       </Container>
     );
   };
