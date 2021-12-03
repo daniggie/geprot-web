@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
+  
   &:hover{
     background: #0078bd;
     transition: 0.4s;

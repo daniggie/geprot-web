@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./style";
-
+//Revisado 03/12/2020
 interface SkillProps {
   nome: string
   id: number
@@ -9,9 +9,8 @@ interface SkillProps {
 const Skills: React.FC<SkillProps> = ({id, nome}) => {
     return(
       <Container>
-        <input type="checkbox" id="vehicle1" name="vehicle1" value={id}/>
-        {/*Chamar NAMETEST em API */}
-        <label>{nome}</label>
+            <input type="radio" id="vehicle1" name="vehicle1" value={id}/>           
+            <label>{nome}</label>
       </Container>
     );
   };

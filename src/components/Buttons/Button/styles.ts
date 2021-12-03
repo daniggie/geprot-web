@@ -1,27 +1,14 @@
 import styled from "styled-components";
-
+//Revisado 03/12/2020
 export const Container = styled.button`
-  background-color: #0090C5;;
+  background-color: #0090C5;
   width:25%;
   height:40px;
-  float: left;
   border-radius: 5px;
   border: none;
 
   &:hover{
     background: #00579D;
-  }
-
-  a:hover {
-    text-decoration:none;
-  }
-
-  a:link {
-    text-decoration:none;
-  }
-
-  a:visited{
-    text-decoration:none;
   }
 
   .container_button{

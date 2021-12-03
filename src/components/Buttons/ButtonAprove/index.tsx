@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import {api} from "../../../services/api";
 
 import { Container } from './style';
+//Revisado 03/12/2020
 
 interface ButtonProps {
   projetoId?: number,
@@ -17,14 +18,14 @@ const ButtonAprove: React.FC<ButtonProps> = (props) => {
     headers: { Authorization: `Bearer ${token}`},
   };
 
-  async function apenas(): Promise<void> {
+  async function aprovarHoras(): Promise<void> {
     await api.put(`horas/aprovar/${props.projetoId}/${props.consultorId}`,props, config)
     history.push("/home")
   }
 
   return(
     <>
-      <Container onClick={() => apenas()}>
+      <Container onClick={() => aprovarHoras()}>
         <p>Aprovar horas</p>
       </Container>
     </>

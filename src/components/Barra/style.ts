@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//Revisado 03/12/2020
 export const Container= styled.div`
   height: 50px;
   width: 100%;
@@ -7,8 +7,4 @@ export const Container= styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  a {
-      
-  }
 `;
