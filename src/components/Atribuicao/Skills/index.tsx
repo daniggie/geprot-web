@@ -9,9 +9,9 @@ interface SkillProps {
 const Skills: React.FC<SkillProps> = ({id, nome}) => {
     return(
       <Container>
-            <input type="checkbox" id="vehicle1" name="vehicle1" value={id}/>
-            {/*Chamar NAMETEST em API */}
-            <label>{nome}</label>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value={id}/>
+        {/*Chamar NAMETEST em API */}
+        <label>{nome}</label>
       </Container>
     );
   };
