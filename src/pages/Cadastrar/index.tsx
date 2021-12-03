@@ -218,13 +218,8 @@ const Cadastro:React.FC = () => {
           <Form ref={formRef} onSubmit={cadastrarProjeto}>
             <div className="column">
               <div className="line">
-                  <label>
-                    <p className="helvetica fonte_13 cor_0 bold">
-                      ATA_COMISSÃO_001
-                      <input type="file" size={0}/>
-                    </p>
-                    <BiReceipt color="#00579D" size={25}/>
-                  </label>
+                <p className="helvetica fonte_15 cor_5 bold">Número da ATA:</p>
+                <InputRegister name="numAta" id="numAta" placeholder="Digite o número..."/>  
               </div>
 
               <div className="line">
