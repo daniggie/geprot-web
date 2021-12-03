@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { shade } from "polished";
-
+//Revisado 03/12/2021
 interface CorCardPorps {
   status: string;
   barraProgresso : number;
@@ -94,12 +94,6 @@ export const Content_cards = styled.div<CorCardPorps>`
       flex-direction: row;
       width: 100%;
       justify-content: space-between;
-  }
-
-  .linha_4 {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
   }
 
   .card_status_txt {

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
+//Revisado 03/12/2021
+//Necessidade de refatoração aprofundada
+
 export const Container = styled.div`
     width: 25%;
     display:flex;
     align-items: center;
-
-    .texto{
-    }
 
     .arrow{
       display: flex;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 export const ContFilter = styled.div`
   height: 25px;
   box-sizing: border-box;
-  width: 125px;
+  width: 140px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -34,21 +34,19 @@ export const ContFilter = styled.div`
   }
 
   .lang-menu {
-      width: 150px;
       text-align: right;
-      font-weight: 540;
+      font-weight: 500;
       position: relative;
-  }
-
-  .lang-menu .selected-lang {
+      
+    .selected-lang {
       display: flex;
       justify-content: space-between;
       line-height: 1.7;
       cursor: pointer;
       padding-left: 10px;
-  }
-
-  .lang-menu ul {
+    }
+    
+    ul {
       margin: 0;
       padding: 0;
       display: none;
@@ -60,25 +58,26 @@ export const ContFilter = styled.div`
       width: 150px;
       border-radius: 3px;
       box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
-  }
 
+        li {
+        list-style: none;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
 
-  .lang-menu ul li {
-      list-style: none;
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-  }
+        a {
+            text-decoration: none;
+            width: 150px;
+            padding: 5px 10px;
+            display: block;
+            }
+        
+        &:hover {
+            background-color: rgba(0,0,0,0.2);
+        }
+    }
 
-  .lang-menu ul li a {
-      text-decoration: none;
-      width: 150px;
-      padding: 5px 10px;
-      display: block;
-  }
-
-  .lang-menu ul li:hover {
-      background-color: rgba(0,0,0,0.2);
+    }
   }
 
   .lang-menu:hover ul {

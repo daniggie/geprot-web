@@ -1,10 +1,10 @@
 import React from 'react';
 import { AiFillCheckCircle, AiFillExclamationCircle, AiFillCloseCircle } from "react-icons/ai";
-import {api} from "../../services/api";
 
 interface Status {
   status : string;
 }
+//Revisado 03/12/2021
 const IconeAprovamento: React.FC<Status> = ({status}) => {
 
   if(status == "APROVADO"){

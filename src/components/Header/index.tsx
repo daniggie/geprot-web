@@ -6,7 +6,7 @@ import {FiLogOut} from "react-icons/fi";
 import logo from '../../icons/logo.svg';
 import { FaCog } from "react-icons/fa";
 import SwitchFlags from "../SwitchFlags";
-
+//Revisado 03/12/2021
 const Header: React.FC = () => {
 
   const [secao] = useState(() => {

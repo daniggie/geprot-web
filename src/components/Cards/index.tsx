@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {api} from "../../services/api";
 import { FiEdit } from "react-icons/fi";
 import { Content_cards } from "./style";
 import { FiClock } from "react-icons/fi";
 
-
-interface Identifica {
+//Revisado 03/12/2021
+interface IdentificaCard {
   id: number;
   nome: string;
   dataInicio: string;
@@ -18,8 +17,8 @@ interface Identifica {
   barraProgresso: number;
 }
 
-const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, horasPrevistas, horasTrabalhadas, valor, valorRestante, status, barraProgresso}) => {
-    const pagina = "/detalhes/";
+const Cards: React.FC<IdentificaCard> = ({id, nome, dataInicio, dataFinalizacao, horasPrevistas, horasTrabalhadas, valor, valorRestante, status, barraProgresso}) => {
+    const paginaDetalhes = "/detalhes/";
    
     const [perfil] = useState(() => {
       let usuario = localStorage.getItem('@Geprot:gestor');
@@ -33,7 +32,7 @@ const Cards: React.FC<Identifica> = ({id, nome, dataInicio, dataFinalizacao, hor
     return(
       <>
         <Content_cards status={status ? status: "0"} barraProgresso={barraProgresso ? barraProgresso : 0}>
-          <a href={pagina + id}>
+          <a href={paginaDetalhes + id}>
             <div className="card_type">
               <div className="card_status_color"/>
               <div className="card_informacao">

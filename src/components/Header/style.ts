@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//Revisado 03/12/2021
 export const Container = styled.div`
     width: 100%;
     height: 55px;
@@ -9,7 +9,6 @@ export const Container = styled.div`
     justify-content: space-between;
     align-content: center;
     align-items: center;
-
 
     .logout{
       cursor: pointer;
@@ -28,12 +27,10 @@ export const Container = styled.div`
         color: #00579D;
         font-size: 25px;
         margin-top: 5px;
-        font-weight: bold;
       }
 
       #logo_weg{
         margin: 13px;
-
       }
     }
 

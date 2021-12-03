@@ -2,7 +2,8 @@ import React from "react";
 
 import { FiChevronRight } from "react-icons/fi"
 import { Container, ContFilter } from "./styles";
-
+//Revisado 03/12/2021
+//Necessidade de refatoração aprofundada
 const FilterCC: React.FC = () =>{
   return (
     <Container>
