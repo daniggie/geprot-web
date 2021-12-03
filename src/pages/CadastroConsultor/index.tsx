@@ -47,11 +47,6 @@ const CadastrarConsultor: React.FC = () => {
   
   const history = useHistory();
 
-  function cadastrar(){
-
-  }
-
-
   const marcarBox = useCallback((id: number) => {
     if(skillsMarcadas.find(skill => skill.id === id)) {
       setSkillsMarcadas(skillsMarcadas.filter(skill => skill.id !== id))

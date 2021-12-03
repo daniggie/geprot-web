@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router";
 import {api} from "../../services/api";
 
@@ -24,11 +24,13 @@ interface Skills {
 // valores chegando pelo botao, falta fazer a funcao para alocar
 const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAllocated}) => {
   const [skills, setSkills] = useState<Skills[]>([]);
+  const [skillMarcada, setSkillMarcada] = useState(0);
+
   useEffect(() =>{
     async function listarSkills():Promise<void>{
       const token = localStorage.getItem("@Geprot:token");
       let config = {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token}`},
       };
       await api.get(`consultor/skills/${consultorId}`, config).then(response => {
         setSkills(response.data);
@@ -36,23 +38,37 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
     }
     listarSkills();
   });
+
+  function setar(id :number){
+    //setSkillMarcada(id)
+    //console.log(skillMarcada)
+    localStorage.setItem("@Geprot:alocarSkill", JSON.stringify(id));
+    console.log(id)
+    setSkillMarcada(id)
+  }
+
+
   const history = useHistory();
   function Alocar(consultorId: number, projetoId: number) {
-    console.log("bomdia")
     const alocarHoras = {
       consultorId: 0,
       projetoId: 0,
       quantidadeHoras: 0,
+      skillId: 0
     }
+
+    let idSkill = localStorage.getItem("@Geprot:alocarSkill") != null ? localStorage.getItem("@Geprot:alocarSkill") : "0"
 
     alocarHoras.projetoId = projetoId;
     alocarHoras.consultorId = consultorId;
     alocarHoras.quantidadeHoras = parseInt((document.getElementById('inputDTO') as HTMLInputElement).value);
+    alocarHoras.skillId = skillMarcada;
 
     const token = localStorage.getItem("@Geprot:token");
     let config = {headers: {
       "Content-Type": "application/json", Authorization: `Bearer ${token}`}};
 
+      console.log(alocarHoras)
     api.post(`consultor/alocar`, JSON.stringify(alocarHoras), config)
 
     history.push(`/alocarescolherfuncionario`)
@@ -83,7 +99,6 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
     alert('Já esta atribuido')
     console.log(skills)
   }
-
   return (
     <>
       <Container overlay={overlay} isAllocated={isAllocated} popup={abrirSkills}>
@@ -101,7 +116,10 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
             
             <div className="lines helvetica cor_0 lighter" >
               {skills.map(skill => (
-                <Skills id={skill.id} nome={skill.nome}/>
+                 <div id="listaSkills">
+                 <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)} />
+                  <label>{skill.nome}</label>
+               </div>
               ))}
             </div>
             
