@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//Revisado 03/12/2021
 export const Container = styled.a`
   width: 205px;
   background: #fff;
@@ -12,7 +12,7 @@ export const Container = styled.a`
 
   &:hover{
     background: #dedede;
-    transition: 0.4s;
+    transition: 0.1s;
   }
   p{
     font-size:20px;

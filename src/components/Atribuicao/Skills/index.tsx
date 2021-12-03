@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./style";
-//Revisado 03/12/2020
+//Revisado 03/12/2021
 interface SkillProps {
   nome: string
   id: number

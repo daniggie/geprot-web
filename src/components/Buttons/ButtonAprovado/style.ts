@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//Revisado 03/12/2020
+//Revisado 03/12/2021
 export const ContainerAprovado = styled.div`
   width: 205px;
   background: #c4c4c4;

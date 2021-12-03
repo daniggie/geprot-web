@@ -348,7 +348,7 @@ const Cadastro:React.FC = () => {
                   Centro de custo
                 </div>
                 <div className="title3 bold helvetica cor_0 fonte_15">
-                    Percentual
+                  Percentual
                 </div>
               </div>
 
@@ -369,7 +369,7 @@ const Cadastro:React.FC = () => {
             </div>
             <div className="position">
               <BotaoCancel/>
-              <ButtonRegister type="submit" className="cor_000 helvetica fonte_20">Cadastrar</ButtonRegister>
+              <ButtonRegister type="submit" className="cor_000 helvetica fonte_20"></ButtonRegister>
             </div>
           </Form>
         </Container>

@@ -172,9 +172,7 @@ const Editar2: React.FC = () => {
           </a>
 
           <a href="/home">
-            <BotaoSalvar>
-              <p className="helvetica fonte_20 bold">Salvar</p>
-            </BotaoSalvar>
+            <BotaoSalvar/>
           </a>
         </div>
 

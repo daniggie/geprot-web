@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes } from "react";
 
 import { Container } from "./styles";
 import {FiLogIn} from "react-icons/fi";
-//Revisado 03/12/2020
+//Revisado 03/12/2021
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
 

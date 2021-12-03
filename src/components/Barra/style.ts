@@ -1,5 +1,5 @@
 import styled from "styled-components";
-//Revisado 03/12/2020
+//Revisado 03/12/2021
 export const Container= styled.div`
   height: 50px;
   width: 100%;

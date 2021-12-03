@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ContainerAprovado } from './style';
-//Revisado 03/12/2020
+//Revisado 03/12/2021
 const ButtonAprovado: React.FC = () => {
   return(
     <>

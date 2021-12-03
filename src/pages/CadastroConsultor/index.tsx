@@ -206,7 +206,7 @@ const CadastrarConsultor: React.FC = () => {
 
               <div className="position">
                 <BotaoCancel/>
-                <ButtonRegister type="submit">Cadastrar</ButtonRegister>
+                <ButtonRegister type="submit" />
               </div>
             </div>
           </Form>
