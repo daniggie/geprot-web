@@ -130,8 +130,6 @@ export const Container=styled.div<TableProps>`
       `
     }
 
-    
-
     ${(props) =>
       !props.overlay &&
       css`
@@ -171,8 +169,6 @@ export const Container=styled.div<TableProps>`
         height: 25px;
         padding: 0px 5px 0px 5px;
       }
-
-      
     }
   }
   
