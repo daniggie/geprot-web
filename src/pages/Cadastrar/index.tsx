@@ -67,6 +67,7 @@ const Cadastro:React.FC = () => {
   const [skillMarcada, setSkillMarcada] = useState(0);
   const [skills, setSkills] = useState<Skills[]>([]);
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
+  const [ valor, setValor ] = useState<Secao[]>([]);
 
   useEffect(() => {
     async function carregaDados(): Promise<void>{
@@ -120,55 +121,39 @@ const Cadastro:React.FC = () => {
       projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
       projeto.valor = parseFloat((document.getElementById('verbasAprovadas') as HTMLInputElement).value);
       projeto.horasPrevistas = parseInt((document.getElementById('horasTotais') as HTMLInputElement).value);
-      for(let i = 0; i < consultores.length; i++){
-        projeto.consultores.push(
-          {
-            consultorId: consultores[i].id,
-            quantidadeHoras: parseInt(consultores[i].horas),
-            numeroDaSkill: consultores[i].skill
-          }
-          )
-        }
-        for(let i = 0; i < secoes.length; i++){
-          projeto.ccpagantes.push(
-            {
-              secaoId: secoes[i].id,
-              taxa: secoes[i].taxa
-            }
-            )
-          }
-          const token = localStorage.getItem("@Geprot:token");
-          let config = {
-            headers: { Authorization: `Bearer ${token}`},
-          };
+      console.log(projeto.consultores)
+      console.log(projeto.ccpagantes)
+    
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}`},
+      };
 
-          const today = new Date();
-          
-          const schema = Yup.object().shape({
-            nomeProjeto: Yup.string()
-            .required("O nome do projeto é obrigatório"),
-            nomeSolicitante:Yup.string()
-            .required("O nome do solicitante é obrigatório"),
-            nomeResponsavel:Yup.string()
-            .required("O nome do responsável é obrigatório"),
-            descricao: Yup.string()
-            .required("A descrição é obrigatória"),
-            dataFinalizacao: Yup.date()
-            .typeError('A data deve ser dd/mm/yyyy')
-            .required("A data é obrigatória"),
-            dataInicio: Yup.date()
-            .typeError('A data deve ser dd/mm/yyyy')
-            .required("A data é obrigatória")
-            .min(today, "A data não pode ser anteceder o dia de hoje")
-          })
-          
-          // await schema.validate(data, {
-            //   abortEarly: false,
-            // })  
-            console.log("seções -> " + secoes.length)
-            console.log("consultores -> " + consultores.length)
-            console.log(projeto)
-          
+      const today = new Date();
+      
+      const schema = Yup.object().shape({
+        nomeProjeto: Yup.string()
+        .required("O nome do projeto é obrigatório"),
+        nomeSolicitante:Yup.string()
+        .required("O nome do solicitante é obrigatório"),
+        nomeResponsavel:Yup.string()
+        .required("O nome do responsável é obrigatório"),
+        descricao: Yup.string()
+        .required("A descrição é obrigatória"),
+        dataFinalizacao: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
+        .required("A data é obrigatória"),
+        dataInicio: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
+        .required("A data é obrigatória")
+        .min(today, "A data não pode ser anteceder o dia de hoje")
+      })
+      
+      // await schema.validate(data, {
+        //   abortEarly: false,
+      // })  
+      console.log(projeto)
+      
           
       await api.post("/projetos/cadastrar", projeto, config);
 
@@ -202,7 +187,12 @@ const Cadastro:React.FC = () => {
         nome: secao.nome,
         taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
       }
-      setSecoes([...secoes, card]);
+      projeto.ccpagantes.push({
+        secaoId: card.id,
+        taxa: card.taxa
+      });
+      console.log(projeto.ccpagantes)
+      setValor([...valor, card]);
       (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
       (document.getElementById('porcentagem') as HTMLInputElement).value='';
     }
@@ -221,7 +211,6 @@ const Cadastro:React.FC = () => {
     await api.get(`consultor/skills/${idConsultor}`, config).then(response => {
       setSkills(response.data);
     })
-    console.log(skills)
   }
   
 
@@ -259,7 +248,12 @@ const Cadastro:React.FC = () => {
         horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
         skill: skillMarcada
       }
-      alert(skillMarcada)
+      projeto.consultores.push({
+        consultorId: card.id,
+        quantidadeHoras: parseInt(card.horas),
+        numeroDaSkill: card.skill
+      });
+      console.log(projeto.consultores)
       setConsultores([...consultores, card]);
       (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
       (document.getElementById('idConsultor') as HTMLInputElement).value='';
@@ -411,7 +405,7 @@ const Cadastro:React.FC = () => {
                 </div>
               </div>
 
-              {secoes.map(secao => (
+              {valor.map(secao => (
                 <div className="columns helvetica cor_0 lighter">
                   <div className="column1">
                     <div className="boxEx cor_6f" onClick={() => removerListaSecao(secao.id)}>
