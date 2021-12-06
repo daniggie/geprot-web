@@ -14,7 +14,8 @@ import BotaoCancel from "../../components/Buttons/ButtonCancel";
 
 import { All, Container } from './styles';
 import { FiX } from 'react-icons/fi';
-import { RiAddLine, RiContactsBookLine } from 'react-icons/ri';
+import { RiAddLine } from 'react-icons/ri';
+import { BiReceipt } from 'react-icons/bi';
 
 interface NomeConsultor {
   id: number;
@@ -27,7 +28,6 @@ interface Consultor {
   id: number;
   nome: string;
   horas: string;
-  skill: number;
 }
 
 interface Secao {
@@ -37,7 +37,6 @@ interface Secao {
 }
 
 interface Projeto {
-  alfanumericoAta: string,
   nome: string;
   nomeSolicitante: string;
   descricao: string;
@@ -54,19 +53,13 @@ interface Projeto {
   }
 }
 
-interface Skills {
-  id: number,
-  nome: string
-}
-
 const Cadastro:React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
 
   const[consultores, setConsultores] = useState<Consultor[]>([]);
-  const [skillMarcada, setSkillMarcada] = useState(0);
-  const [skills, setSkills] = useState<Skills[]>([]);
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
+  const [ valor, setValor ] = useState<Secao[]>([]);
 
   useEffect(() => {
     async function carregaDados(): Promise<void>{
@@ -75,27 +68,23 @@ const Cadastro:React.FC = () => {
         headers: { Authorization: `Bearer ${token}` },
       };
       await api.get(`secao/listar`, config).then(response => {
-        setSecoes(response.data);
+        setValor(response.data);
       })
     }
     carregaDados();
   });
 
   const projeto = {
-    alfanumericoAta: "",
     nome: "",
     nomeSolicitante: "",
     descricao:"",
     dataFinalizacao: "",
     dataInicio: "",
-    valor:0,
     nomeResponsavel:"",
-    horasPrevistas: 0,
     consultores:[
       {
       consultorId: 0,
       quantidadeHoras: 0,
-      numeroDaSkill: 0
       }
     ],
     ccpagantes: [
@@ -110,66 +99,59 @@ const Cadastro:React.FC = () => {
 
   const cadastrarProjeto = useCallback( async(data: Projeto) => {
     try{
-      //formRef.current?.setErrors({})
-      projeto.alfanumericoAta = (document.getElementById('numAta') as HTMLInputElement).value;
+      formRef.current?.setErrors({})
+
       projeto.nome = (document.getElementById('nomeProjeto') as HTMLInputElement).value;
       projeto.nomeSolicitante = (document.getElementById('nomeSolicitante') as HTMLInputElement).value;
       projeto.descricao = (document.getElementById('descricao') as HTMLInputElement).value;
       projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
       projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
       projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
-      projeto.valor = parseFloat((document.getElementById('verbasAprovadas') as HTMLInputElement).value);
-      projeto.horasPrevistas = parseInt((document.getElementById('horasTotais') as HTMLInputElement).value);
       for(let i = 0; i < consultores.length; i++){
         projeto.consultores.push(
           {
             consultorId: consultores[i].id,
-            quantidadeHoras: parseInt(consultores[i].horas),
-            numeroDaSkill: consultores[i].skill
+            quantidadeHoras: parseInt(consultores[i].horas)
           }
-          )
-        }
-        for(let i = 0; i < secoes.length; i++){
-          projeto.ccpagantes.push(
-            {
-              secaoId: secoes[i].id,
-              taxa: secoes[i].taxa
-            }
-            )
+        )
+      }
+      for(let i = 0; i < secoes.length; i++){
+        projeto.ccpagantes.push(
+          {
+            secaoId: secoes[i].id,
+            taxa: secoes[i].taxa
           }
-          const token = localStorage.getItem("@Geprot:token");
-          let config = {
-            headers: { Authorization: `Bearer ${token}`},
-          };
+        )
+      }
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}`},
+      };
 
-          const today = new Date();
-          
-          const schema = Yup.object().shape({
-            nomeProjeto: Yup.string()
-            .required("O nome do projeto é obrigatório"),
-            nomeSolicitante:Yup.string()
-            .required("O nome do solicitante é obrigatório"),
-            nomeResponsavel:Yup.string()
-            .required("O nome do responsável é obrigatório"),
-            descricao: Yup.string()
-            .required("A descrição é obrigatória"),
-            dataFinalizacao: Yup.date()
-            .typeError('A data deve ser dd/mm/yyyy')
-            .required("A data é obrigatória"),
-            dataInicio: Yup.date()
-            .typeError('A data deve ser dd/mm/yyyy')
-            .required("A data é obrigatória")
-            .min(today, "A data não pode ser anteceder o dia de hoje")
-          })
-          
-          // await schema.validate(data, {
-            //   abortEarly: false,
-            // })  
-            console.log("seções -> " + secoes.length)
-            console.log("consultores -> " + consultores.length)
-            console.log(projeto)
-          
-          
+      const today = new Date();
+
+      const schema = Yup.object().shape({
+        nomeProjeto: Yup.string()
+        .required("O nome do projeto é obrigatório"),
+        nomeSolicitante:Yup.string()
+        .required("O nome do solicitante é obrigatório"),
+        nomeResponsavel:Yup.string()
+        .required("O nome do responsável é obrigatório"),
+        descricao: Yup.string()
+        .required("A descrição é obrigatória"),
+        dataFinalizacao: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
+        .required("A data é obrigatória"),
+        dataInicio: Yup.date()
+        .typeError('A data deve ser dd/mm/yyyy')
+        .required("A data é obrigatória")
+        .min(today, "A data não pode ser anteceder o dia de hoje")
+      })
+
+      await schema.validate(data, {
+        abortEarly: false,
+      })  
+
       await api.post("/projetos/cadastrar", projeto, config);
 
       history.push('/home')
@@ -213,59 +195,15 @@ const Cadastro:React.FC = () => {
     secoes.splice(index,1)
   };
 
-  const listarSkills = async (idConsultor: number) => {
-    const token = localStorage.getItem("@Geprot:token");
-    let config = {
-      headers: { Authorization: `Bearer ${token}`},
-    };
-    await api.get(`consultor/skills/${idConsultor}`, config).then(response => {
-      setSkills(response.data);
-    })
-    console.log(skills)
-  }
-  
-
   const [ abrirSkills, setAbrirSkills ] = useState(true);
-  const abreSkills = (idConsultor: number) => {
+  const abreSkills = () => {
     if(!abrirSkills){
      setAbrirSkills(true);
-     adcionarListaConsultor();
     }else{
       setAbrirSkills(false);
-      listarSkills(idConsultor)
     }
+
     return abrirSkills;
-  };
-
-  function setar(id :number){
-    setSkillMarcada(id)
-  }
-
-  const adcionarListaConsultor = () => {
-
-    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
-
-    const pegaNome = async () => {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}`},
-      };
-      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
-      const consultor = response.data;
-
-      const card:Consultor = {
-        id: parseInt(idConsultor),
-        nome: consultor.usuario.nome,
-        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
-        skill: skillMarcada
-      }
-      alert(skillMarcada)
-      setConsultores([...consultores, card]);
-      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
-      (document.getElementById('idConsultor') as HTMLInputElement).value='';
-    }
-    pegaNome();
-
   };
 
   return( 
@@ -308,20 +246,18 @@ const Cadastro:React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
                   <div className="boxAdd cor_6f">
-                    <RiAddLine color="#fff" onClick={() => abreSkills(parseInt((document.getElementById("idConsultor") as HTMLInputElement).value))}/>
+                    <RiAddLine color="#fff" onClick={abreSkills}/>
                   </div>
                 </div>
 
                 <div id="popup" className="popup">
-                  <div id="barra" onClick={() => abreSkills(0)}></div>
+                  <div id="barra" onClick={abreSkills}></div>
 			            <p>Skilss do consultor</p>
                   <div className="columns helvetica cor_0 lighter" >
-                    {skills.map(skill => (
-                      <div className="column1">
-                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
-                        <label>{skill.nome}</label>
-                      </div>
-                    ))}
+                    <div className="column1">
+                      <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
+                      <label></label>
+                    </div>
                   </div>
 		            </div>
               </div>
