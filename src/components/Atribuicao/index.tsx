@@ -40,10 +40,6 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
   });
 
   function setar(id :number){
-    //setSkillMarcada(id)
-    //console.log(skillMarcada)
-    localStorage.setItem("@Geprot:alocarSkill", JSON.stringify(id));
-    console.log(id)
     setSkillMarcada(id)
   }
 
@@ -122,9 +118,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
                </div>
               ))}
             </div>
-            
           </div>
-          
 		    </div>
 
         <div id="atribuir">
