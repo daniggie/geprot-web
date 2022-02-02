@@ -21,9 +21,9 @@ const Editar2: React.FC = () => {
   const { id }: {id:string} = useParams();
   const [ projeto, setProjeto ] = useState<Projeto>();
 
-  async function name(params:type) {
+  //async function name(params:type) {
     
-  }
+  // }
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
   const abreSkills = () => {
