@@ -24,8 +24,8 @@ const Editar2: React.FC = () => {
   const [ nomeAtualizar, setNomeAtualizar ] = useState("");
   const [ descricaoAtualizar, setDescricaoAtualizar ] = useState("")
   const [ dataAtualizar, setDataAtualizar ] = useState("")
-  const [ horasTotaisAtualizar, setHorasTotaisAtualizar ] = useState(1)
-  const [ valorAtualizar, setValorAtualizar ] = useState(1)
+  const [ horasTotaisAtualizar, setHorasTotaisAtualizar ] = useState("")
+  const [ valorAtualizar, setValorAtualizar ] = useState("")
 
   const token = localStorage.getItem("@Geprot:token");
   let config = {
@@ -55,8 +55,8 @@ const Editar2: React.FC = () => {
       setNomeAtualizar(projeto?.nome ? projeto.nome : "Deu ruim")
       setDescricaoAtualizar(projeto?.descricao ? projeto.descricao : "Deu ruim");
       setDataAtualizar(projeto?.dataFinalizacao ? projeto.dataFinalizacao : "10/10/2020")
-      setValorAtualizar(projeto?.valor ? projeto.valor : 999);
-      setHorasTotaisAtualizar(projeto?.horasPrevistas ? projeto.horasPrevistas : 999)
+      setValorAtualizar(projeto?.valor ? projeto.valor.toString() : "a");
+      setHorasTotaisAtualizar(projeto?.horasPrevistas ? projeto.horasPrevistas.toString() : "999")
     }, [projeto?.nome, ]);
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
@@ -88,7 +88,7 @@ const Editar2: React.FC = () => {
 
           <div className="line">
             {/*Chamar informação value da API */}
-              <input type="text" value={nomeAtualizar} />
+              <input type="text" value={nomeAtualizar} onChange={event => setNomeAtualizar(event.target.value)} />
           </div>
 
           <div className="line">
@@ -98,7 +98,7 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="box">
               {/*Chamar informação da API */}
-              <textarea value={descricaoAtualizar} cols={40}>
+              <textarea value={descricaoAtualizar} onChange={event => setDescricaoAtualizar(event.target.value)} cols={40}>
 
               </textarea>
             </div>
@@ -110,7 +110,7 @@ const Editar2: React.FC = () => {
 
           <div className="line">
             {/*Chamar informação value da API */}
-              <input type="date" value={dataAtualizar} />
+              <input type="date" value={dataAtualizar} onChange={event => setDataAtualizar(event.target.value)} />
           </div>
         </div>
 
@@ -130,7 +130,7 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="float">
               {/*Chamar informação value da API */}
-              <input type="number" value={horasTotaisAtualizar} />
+              <input type="number" value={horasTotaisAtualizar} onChange={event => setHorasTotaisAtualizar(event.target.value)} />
             </div>
 
             <div className="float">
