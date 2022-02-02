@@ -6,8 +6,25 @@ import BotaoSalvar from '../../components/Buttons/ButtonSalvar';
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
+import { useParams } from "react-router-dom";
+
+interface Projeto {
+  id: number;
+  nome: string;
+  descricao: string;
+  horasPrevistas: number,
+  valor: number,
+  dataFinalizacao: string
+}
 
 const Editar2: React.FC = () => {
+  const { id }: {id:string} = useParams();
+  const [ projeto, setProjeto ] = useState<Projeto>();
+
+  async function name(params:type) {
+    
+  }
+
   const [ abrirSkills, setAbrirSkills ] = useState(true);
   const abreSkills = () => {
     if(!abrirSkills){
