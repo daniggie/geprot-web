@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
@@ -7,6 +7,7 @@ import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
 import { useParams } from "react-router-dom";
+import { api } from "../../services/api";
 
 interface Projeto {
   id: number;
@@ -20,10 +21,43 @@ interface Projeto {
 const Editar2: React.FC = () => {
   const { id }: {id:string} = useParams();
   const [ projeto, setProjeto ] = useState<Projeto>();
+  const [ nomeAtualizar, setNomeAtualizar ] = useState("");
+  const [ descricaoAtualizar, setDescricaoAtualizar ] = useState("")
+  const [ dataAtualizar, setDataAtualizar ] = useState("")
+  const [ horasTotaisAtualizar, setHorasTotaisAtualizar ] = useState(1)
+  const [ valorAtualizar, setValorAtualizar ] = useState(1)
 
-  //async function name(params:type) {
-    
-  // }
+  const token = localStorage.getItem("@Geprot:token");
+  let config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+
+  
+
+  useEffect(() => {
+    async function buscarDadosIniciais(): Promise<void> {
+      await api.get(`projetos/buscar/${id}`, config).then(response => {
+        setProjeto(response.data)
+      })
+    }
+
+    buscarDadosIniciais()
+  }, [])
+
+  const firstRenderRef = useRef(true);
+
+  useEffect(() => {
+      if (firstRenderRef.current) {
+        firstRenderRef.current = false;
+        return;
+      }
+      
+      setNomeAtualizar(projeto?.nome ? projeto.nome : "Deu ruim")
+      setDescricaoAtualizar(projeto?.descricao ? projeto.descricao : "Deu ruim");
+      setDataAtualizar(projeto?.dataFinalizacao ? projeto.dataFinalizacao : "10/10/2020")
+      setValorAtualizar(projeto?.valor ? projeto.valor : 999);
+      setHorasTotaisAtualizar(projeto?.horasPrevistas ? projeto.horasPrevistas : 999)
+    }, [projeto?.nome, ]);
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
   const abreSkills = () => {
@@ -54,7 +88,7 @@ const Editar2: React.FC = () => {
 
           <div className="line">
             {/*Chamar informação value da API */}
-              <input type="text" value="" />
+              <input type="text" value={nomeAtualizar} />
           </div>
 
           <div className="line">
@@ -64,11 +98,9 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="box">
               {/*Chamar informação da API */}
-              <textarea cols={40}>Reduzir a atividade manual da equipe interna WEC na entrada de
-                      ordens de venda (OV), envio da confirmação e aviso de remessa
-                      ao Cliente XYZ USA. Atender solicitação do cliente para automatizar o envio de pedidos e atualização do próprio sistema
-                      através do EDI. O Cliente já
-                      implementou este sistema nos principais fornecedores. </textarea>
+              <textarea value={descricaoAtualizar} cols={40}>
+
+              </textarea>
             </div>
           </div>
 
@@ -78,7 +110,7 @@ const Editar2: React.FC = () => {
 
           <div className="line">
             {/*Chamar informação value da API */}
-              <input type="date" value="2022-06-15" />
+              <input type="date" value={dataAtualizar} />
           </div>
         </div>
 
@@ -98,12 +130,12 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="float">
               {/*Chamar informação value da API */}
-              <input type="number" value="" />
+              <input type="number" value={horasTotaisAtualizar} />
             </div>
 
             <div className="float">
               {/*Chamar informação value da API */}
-              <input type="text" value="" />
+              <input type="text" value={valorAtualizar} />
             </div>
           </div>
 
