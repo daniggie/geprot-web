@@ -24,7 +24,7 @@ const Routes: React.FC = () => (
     <Route path="/aprovarfuncionario/:id/:consultorId" component={AprovarFuncionario} isPrivate/>
     <Route path="/dashboard/:id/" component={Dashboard} isPrivate/>
     <Route path="/cadastro" component={Cadastro} isPrivate/>
-    <Route path="/editar" component={Editar} isPrivate/>
+    <Route path="/editar/:id" component={Editar} isPrivate/>
     <Route path="/alocarescolherfuncionario" component={AlocarEscolherFuncionario} isPrivate/>
     <Route path="/alocaratribuirfuncionario/:id" component={AlocarAtribuirFuncionario} isPrivate/>
     <Route path="/configuracao" component={Configuracao} isPrivate/>

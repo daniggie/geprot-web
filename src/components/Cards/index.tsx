@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FiEdit } from "react-icons/fi";
 import { Content_cards } from "./style";
 import { FiClock } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 //Revisado 03/12/2021
 interface IdentificaCard {
@@ -56,9 +57,9 @@ const Cards: React.FC<IdentificaCard> = ({id, nome, dataInicio, dataFinalizacao,
                     </div>
 
                     <div className="cor_black fonte_12 helvetica ">
-                      <a href="/editar">
+                      <Link to={`/editar/${id}`}>
                         <FiEdit size={12} color="#828282"/>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
