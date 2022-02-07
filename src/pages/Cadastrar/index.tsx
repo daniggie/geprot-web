@@ -35,6 +35,12 @@ interface Consultor {
   skill: number;
 }
 
+interface ConsultorAdicionar {
+  consultorId: number,
+  quantidadeHoras: number,
+  numeroDaSkill: number
+}
+
 interface Secao {
   id: number;
   nome: string;
@@ -70,6 +76,7 @@ const Cadastro:React.FC = () => {
 
   const[consultores, setConsultores] = useState<Consultor[]>([]);
   const [ ccPagantes, setccPagantes ] = useState<CCPaganteAdicionar[]>([])
+  const [ consultoresAdicionar, setConsultoresAdicionar ] = useState<ConsultorAdicionar[]>([])
   const [skillMarcada, setSkillMarcada] = useState(0);
   const [skills, setSkills] = useState<Skills[]>([]);
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
@@ -79,6 +86,11 @@ const Cadastro:React.FC = () => {
       ccPagantes.push({secaoId :id, taxa: taxa})
       setccPagantes(ccPagantes)
   }, [ccPagantes])
+
+  const marcarConsultores = useCallback((id: number, horas: number, skillId: number) => {
+    consultoresAdicionar.push({consultorId :id, quantidadeHoras: horas, numeroDaSkill: skillId})
+    setConsultoresAdicionar(consultoresAdicionar)
+}, [ccPagantes])
 
   useEffect(() => {
     async function carregaDados(): Promise<void>{
@@ -107,7 +119,7 @@ const Cadastro:React.FC = () => {
         valor: parseFloat((document.getElementById('verbasAprovadas') as HTMLInputElement).value),
         horasPrevistas: parseInt((document.getElementById('horasTotais') as HTMLInputElement).value),
         ccpagantes: ccPagantes,
-        consultores: null
+        consultores: consultoresAdicionar
       }
 
       const token = localStorage.getItem("@Geprot:token");
@@ -204,52 +216,49 @@ const Cadastro:React.FC = () => {
   
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
- // const abreSkills = (idConsultor: number) => {
- //   if(!abrirSkills){
-  //   setAbrirSkills(true);
- //    adcionarListaConsultor();
-  //  }else{
-  //    setAbrirSkills(false);
-  ///    listarSkills(idConsultor)
- //   }
- //   return abrirSkills;
-//  };
+  const abreSkills = (idConsultor: number) => {
+    if(!abrirSkills){
+     setAbrirSkills(true);
+     adcionarListaConsultor();
+    }else{
+      setAbrirSkills(false);
+      listarSkills(idConsultor)
+    }
+    return abrirSkills;
+  };
 
- // function setar(id :number){
-  //  setSkillMarcada(id)
- // }
+  function setar(id :number){
+    setSkillMarcada(id)
+  }
 
- // const adcionarListaConsultor = () => {
+  const adcionarListaConsultor = () => {
 
- //   const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
+    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
 
- //   const pegaNome = async () => {
-  //    const token = localStorage.getItem("@Geprot:token");
-  //    let config = {
-  //      headers: { Authorization: `Bearer ${token}`},
-  //    };
-   //   const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
-  //    const consultor = response.data;
+   const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}`},
+      };
+      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
+      const consultor = response.data;
 
-   //   const card:Consultor = {
-    //    id: parseInt(idConsultor),
-    //    nome: consultor.usuario.nome,
-   //     horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
-    //    skill: skillMarcada
-  //    }
-   //   projeto.consultores.push({
-  //      consultorId: card.id,
-// quantidadeHoras: parseInt(card.horas),
-  //      numeroDaSkill: card.skill
-   //   });
-  //    console.log(projeto.consultores)
-  //    setConsultores([...consultores, card]);
- //     (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
-   //   (document.getElementById('idConsultor') as HTMLInputElement).value='';
-   // }
-//    pegaNome();
+      const card:Consultor = {
+        id: parseInt(idConsultor),
+        nome: consultor.usuario.nome,
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
+        skill: skillMarcada
+      }
 
-  //};
+      marcarConsultores(card.id, parseInt(card.horas), card.skill)
+      
+      setConsultores([...consultores, card]);
+      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
+      (document.getElementById('idConsultor') as HTMLInputElement).value='';
+    }
+    pegaNome();
+
+  };
 
   return( 
     <>
@@ -291,17 +300,17 @@ const Cadastro:React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
                   <div className="boxAdd cor_6f">
-                   // <RiAddLine color="#fff" onClick={() => null /* abreSkills(parseInt((document.getElementById("idConsultor") as HTMLInputElement).value)) */}/>
+                    <RiAddLine color="#fff" onClick={() => abreSkills(parseInt((document.getElementById("idConsultor") as HTMLInputElement).value)) }/>
                   </div>
                 </div>
 
                 <div id="popup" className="popup">
-                   <div id="barra" onClick={/* () => abreSkills(0) */ () => null} ></div> 
+                   <div id="barra" onClick={() => abreSkills(0) } ></div> 
 			            <p>Skilss do consultor</p>
                   <div className="columns helvetica cor_0 lighter" >
                     {skills.map(skill => (
                       <div className="column1">
-                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => null /* setar(skill.id) */}/>
+                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
                         <label>{skill.nome}</label>
                       </div>
                     ))}
