@@ -22,6 +22,11 @@ interface NomeConsultor {
     nome: string;
   }
 }
+
+interface CCPaganteAdicionar {
+  secaoId: number,
+  taxa: number
+}
  
 interface Consultor {
   id: number;
@@ -64,10 +69,16 @@ const Cadastro:React.FC = () => {
   const history = useHistory();
 
   const[consultores, setConsultores] = useState<Consultor[]>([]);
+  const [ ccPagantes, setccPagantes ] = useState<CCPaganteAdicionar[]>([])
   const [skillMarcada, setSkillMarcada] = useState(0);
   const [skills, setSkills] = useState<Skills[]>([]);
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
   const [ valor, setValor ] = useState<Secao[]>([]);
+
+  const marcarCcPagantes = useCallback((id: number, taxa: number) => {
+      ccPagantes.push({secaoId :id, taxa: taxa})
+      setccPagantes(ccPagantes)
+  }, [ccPagantes])
 
   useEffect(() => {
     async function carregaDados(): Promise<void>{
@@ -82,48 +93,23 @@ const Cadastro:React.FC = () => {
     carregaDados();
   });
 
-  const projeto = {
-    alfanumericoAta: "",
-    nome: "",
-    nomeSolicitante: "",
-    descricao:"",
-    dataFinalizacao: "",
-    dataInicio: "",
-    valor:0,
-    nomeResponsavel:"",
-    horasPrevistas: 0,
-    consultores:[
-      {
-      consultorId: 0,
-      quantidadeHoras: 0,
-      numeroDaSkill: 0
-      }
-    ],
-    ccpagantes: [
-      {
-      secaoId: 1,
-			taxa: 100
-      }
-    ]
-  }
-  projeto.consultores.shift();
-  projeto.ccpagantes.shift();
-
+  
   const cadastrarProjeto = useCallback( async(data: Projeto) => {
     try{
-      //formRef.current?.setErrors({})
-      projeto.alfanumericoAta = (document.getElementById('numAta') as HTMLInputElement).value;
-      projeto.nome = (document.getElementById('nomeProjeto') as HTMLInputElement).value;
-      projeto.nomeSolicitante = (document.getElementById('nomeSolicitante') as HTMLInputElement).value;
-      projeto.descricao = (document.getElementById('descricao') as HTMLInputElement).value;
-      projeto.dataFinalizacao = (document.getElementById('dataFinalizacao') as HTMLInputElement).value;
-      projeto.dataInicio = (document.getElementById('dataInicio') as HTMLInputElement).value;
-      projeto.nomeResponsavel = (document.getElementById('nomeResponsavel') as HTMLInputElement).value;
-      projeto.valor = parseFloat((document.getElementById('verbasAprovadas') as HTMLInputElement).value);
-      projeto.horasPrevistas = parseInt((document.getElementById('horasTotais') as HTMLInputElement).value);
-      console.log(projeto.consultores)
-      console.log(projeto.ccpagantes)
-    
+      const projetoBrayan = {
+        alfanumericoAta: (document.getElementById('numAta') as HTMLInputElement).value,
+        nome: (document.getElementById('nomeProjeto') as HTMLInputElement).value,
+        nomeSolicitante: (document.getElementById('nomeSolicitante') as HTMLInputElement).value,
+        descricao: (document.getElementById('descricao') as HTMLInputElement).value,
+        dataFinalizacao: (document.getElementById('dataFinalizacao') as HTMLInputElement).value,
+        dataInicio: (document.getElementById('dataInicio') as HTMLInputElement).value,
+        nomeResponsavel: (document.getElementById('nomeResponsavel') as HTMLInputElement).value,
+        valor: parseFloat((document.getElementById('verbasAprovadas') as HTMLInputElement).value),
+        horasPrevistas: parseInt((document.getElementById('horasTotais') as HTMLInputElement).value),
+        ccpagantes: ccPagantes,
+        consultores: null
+      }
+
       const token = localStorage.getItem("@Geprot:token");
       let config = {
         headers: { Authorization: `Bearer ${token}`},
@@ -131,7 +117,7 @@ const Cadastro:React.FC = () => {
 
       const today = new Date();
       
-      const schema = Yup.object().shape({
+  /*    const schema = Yup.object().shape({
         nomeProjeto: Yup.string()
         .required("O nome do projeto é obrigatório"),
         nomeSolicitante:Yup.string()
@@ -147,15 +133,18 @@ const Cadastro:React.FC = () => {
         .typeError('A data deve ser dd/mm/yyyy')
         .required("A data é obrigatória")
         .min(today, "A data não pode ser anteceder o dia de hoje")
-      })
+      }) 
       
-      // await schema.validate(data, {
-        //   abortEarly: false,
-      // })  
-      console.log(projeto)
+       await schema.validate(data, {
+           abortEarly: false,
+       })  
+      console.log(projetoBrayan)
       
+      */
           
-      await api.post("/projetos/cadastrar", projeto, config);
+
+      await api.post("/projetos/cadastrar", projetoBrayan, config)
+
 
       history.push('/home')
 
@@ -187,16 +176,16 @@ const Cadastro:React.FC = () => {
         nome: secao.nome,
         taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
       }
-      projeto.ccpagantes.push({
+  //    projeto.ccpagantes.push({
         secaoId: card.id,
-        taxa: card.taxa
-      });
-      console.log(projeto.ccpagantes)
+       // taxa: card.taxa
+ //     });
+    //  console.log(projeto.ccpagantes)
       setValor([...valor, card]);
       (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
       (document.getElementById('porcentagem') as HTMLInputElement).value='';
     }
-    pegaNome();
+  //  pegaNome();
   };
 
   const removerListaSecao = (index: number) => {
@@ -215,52 +204,52 @@ const Cadastro:React.FC = () => {
   
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
-  const abreSkills = (idConsultor: number) => {
-    if(!abrirSkills){
-     setAbrirSkills(true);
-     adcionarListaConsultor();
-    }else{
-      setAbrirSkills(false);
-      listarSkills(idConsultor)
-    }
-    return abrirSkills;
-  };
+ // const abreSkills = (idConsultor: number) => {
+ //   if(!abrirSkills){
+  //   setAbrirSkills(true);
+ //    adcionarListaConsultor();
+  //  }else{
+  //    setAbrirSkills(false);
+  ///    listarSkills(idConsultor)
+ //   }
+ //   return abrirSkills;
+//  };
 
-  function setar(id :number){
-    setSkillMarcada(id)
-  }
+ // function setar(id :number){
+  //  setSkillMarcada(id)
+ // }
 
-  const adcionarListaConsultor = () => {
+ // const adcionarListaConsultor = () => {
 
-    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
+ //   const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
 
-    const pegaNome = async () => {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}`},
-      };
-      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
-      const consultor = response.data;
+ //   const pegaNome = async () => {
+  //    const token = localStorage.getItem("@Geprot:token");
+  //    let config = {
+  //      headers: { Authorization: `Bearer ${token}`},
+  //    };
+   //   const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
+  //    const consultor = response.data;
 
-      const card:Consultor = {
-        id: parseInt(idConsultor),
-        nome: consultor.usuario.nome,
-        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
-        skill: skillMarcada
-      }
-      projeto.consultores.push({
-        consultorId: card.id,
-        quantidadeHoras: parseInt(card.horas),
-        numeroDaSkill: card.skill
-      });
-      console.log(projeto.consultores)
-      setConsultores([...consultores, card]);
-      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
-      (document.getElementById('idConsultor') as HTMLInputElement).value='';
-    }
-    pegaNome();
+   //   const card:Consultor = {
+    //    id: parseInt(idConsultor),
+    //    nome: consultor.usuario.nome,
+   //     horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
+    //    skill: skillMarcada
+  //    }
+   //   projeto.consultores.push({
+  //      consultorId: card.id,
+// quantidadeHoras: parseInt(card.horas),
+  //      numeroDaSkill: card.skill
+   //   });
+  //    console.log(projeto.consultores)
+  //    setConsultores([...consultores, card]);
+ //     (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
+   //   (document.getElementById('idConsultor') as HTMLInputElement).value='';
+   // }
+//    pegaNome();
 
-  };
+  //};
 
   return( 
     <>
@@ -302,17 +291,17 @@ const Cadastro:React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
                   <InputRegister id="horasConsultor" name="horasConsultor" type="number" placeholder="1" />
                   <div className="boxAdd cor_6f">
-                    <RiAddLine color="#fff" onClick={() => abreSkills(parseInt((document.getElementById("idConsultor") as HTMLInputElement).value))}/>
+                   // <RiAddLine color="#fff" onClick={() => null /* abreSkills(parseInt((document.getElementById("idConsultor") as HTMLInputElement).value)) */}/>
                   </div>
                 </div>
 
                 <div id="popup" className="popup">
-                  <div id="barra" onClick={() => abreSkills(0)}></div>
+                   <div id="barra" onClick={/* () => abreSkills(0) */ () => null} ></div> 
 			            <p>Skilss do consultor</p>
                   <div className="columns helvetica cor_0 lighter" >
                     {skills.map(skill => (
                       <div className="column1">
-                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
+                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => null /* setar(skill.id) */}/>
                         <label>{skill.nome}</label>
                       </div>
                     ))}
@@ -389,7 +378,7 @@ const Cadastro:React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
                   <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="%" />
                   <div className="boxAdd cor_6f" >
-                    <RiAddLine color="#fff" onClick={adcionarListaSecao}/>
+                    <RiAddLine color="#fff" onClick={() => marcarCcPagantes((document.getElementById('idCentroCusto') as HTMLInputElement).valueAsNumber, (document.getElementById('porcentagem') as HTMLInputElement).valueAsNumber)}/>
                   </div>
                 </div>
               </div>
