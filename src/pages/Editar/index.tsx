@@ -6,7 +6,7 @@ import BotaoSalvar from '../../components/Buttons/ButtonSalvar';
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
-import { useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 
 interface Projeto {
@@ -20,6 +20,7 @@ interface Projeto {
 
 const Editar2: React.FC = () => {
   const { id }: {id:string} = useParams();
+  const history = useHistory();
   const [ projeto, setProjeto ] = useState<Projeto>();
   const [ nomeAtualizar, setNomeAtualizar ] = useState("");
   const [ descricaoAtualizar, setDescricaoAtualizar ] = useState("")
@@ -43,6 +44,25 @@ const Editar2: React.FC = () => {
 
     buscarDadosIniciais()
   }, [])
+
+  async function handleEditarProjeto() {
+    const projetoEditar = {
+      nome: nomeAtualizar,
+      descricao: descricaoAtualizar,
+      dataEncerramento: dataAtualizar,
+      horasAprovadas: horasTotaisAtualizar,
+      verbasAprovadas: valorAtualizar,
+      consultores: null
+    }
+
+    async function editarProjeto(): Promise<void>  {
+      await api.put(`/projetos/editar/${id}`, projetoEditar, config)
+    }
+
+    editarProjeto()
+
+    history.push('/home')
+  }
 
   const firstRenderRef = useRef(true);
 
@@ -220,9 +240,9 @@ const Editar2: React.FC = () => {
             <BotaoCancel />
           </a>
 
-          <a href="/home">
-            <BotaoSalvar/>
-          </a>
+            <div className="botaoSalvar" onClick={() => handleEditarProjeto()}>
+              <p> Salvar </p>
+            </div>
         </div>
 
       </Formulario>
