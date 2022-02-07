@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 import ContDetails from "../../components/TableDetails";
 import { FiEdit } from "react-icons/fi";
 import Header from "../../components/Header";
+import { Link } from "react-router-dom";
 
 interface Card {
   id: number;
@@ -72,9 +73,9 @@ const LinkAprovar = "/aprovarhoras/";
         <Content>
           <div className="line cor_0 fonte_15">
             <p> Seção - {secao.secao.nome} </p>
-            <a href="/editar">
+            <Link to={`/editar/${id}`}>
               <p><FiEdit size={20} color="#828282"/></p>
-            </a>
+            </Link>
           </div>
 
           <div className="line ">
