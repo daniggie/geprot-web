@@ -15,6 +15,7 @@ import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import { All, Container } from './styles';
 import { FiX } from 'react-icons/fi';
 import { RiAddLine, RiContactsBookLine } from 'react-icons/ri';
+import { number } from 'yargs';
 
 interface NomeConsultor {
   id: number;
@@ -230,8 +231,15 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
   };
 
   const removerListaSecao = (index: number) => {
-    secoes.splice(index,1)
+    setSecoes(secoes.filter(secao => secao.id !== index))
+    setccPagantes(ccPagantes.filter(ccPagante => ccPagante.secaoId !== index))
   };
+
+  const removeListaConsultor = (index: number) => {
+    setConsultores(consultores.filter(consultor => consultor.id !== index))
+    setConsultoresAdicionar(consultoresAdicionar.filter(consultor => consultor.consultorId !== index))
+  };
+
 
   const listarSkills = async (idConsultor: number) => {
     const token = localStorage.getItem("@Geprot:token");
@@ -336,7 +344,7 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 {consultores.map(consultor => (
                   <div className="columns helvetica cor_0 lighter" >
                     <div className="column3">
-                      <div className="boxEx cor_6f">
+                      <div className="boxEx cor_6f" onClick={() => removeListaConsultor(consultor.id)}>
                         <FiX color="#fff"/>
                       </div>
                       {consultor.id}
