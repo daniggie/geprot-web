@@ -148,21 +148,21 @@ const Cadastro:React.FC = () => {
       */
           
 
-      api.post("/projetos/cadastrar", projetoBrayan, config)
+      await api.post("/projetos/cadastrar", projetoBrayan, config).catch((error ) => MenssagemErro(error.response.data.titulo))
 
       MenssagemSucesso("Projeto cadastrado com sucesso!")
 
       history.push('/home')
 
     }
-    catch(err){
-      if(err instanceof Yup.ValidationError){
-        const errors = getValidationErrors(err);
+    catch(e){
+      if(e instanceof Yup.ValidationError){
+        const errors = getValidationErrors(e);
         formRef.current?.setErrors(errors);
         return
       }
 
-      MenssagemErro("Projeto nao cadastrado, verifique os dados!")
+     // MenssagemErro(e.response.data.titulo)
     }
   }, [ history]);
 
