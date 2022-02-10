@@ -16,6 +16,7 @@ import { All, Container } from './styles';
 import { FiX } from 'react-icons/fi';
 import { RiAddLine, RiContactsBookLine } from 'react-icons/ri';
 import { number } from 'yargs';
+import { MenssagemErro, MenssagemSucesso } from '../../hooks/toast';
 
 interface NomeConsultor {
   id: number;
@@ -147,8 +148,9 @@ const Cadastro:React.FC = () => {
       */
           
 
-      await api.post("/projetos/cadastrar", projetoBrayan, config)
+      api.post("/projetos/cadastrar", projetoBrayan, config)
 
+      MenssagemSucesso("Projeto cadastrado com sucesso")
 
       history.push('/home')
 
@@ -159,6 +161,8 @@ const Cadastro:React.FC = () => {
         formRef.current?.setErrors(errors);
         return
       }
+
+      MenssagemErro("teste")
     }
   }, [ history]);
 
