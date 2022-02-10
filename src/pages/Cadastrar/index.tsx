@@ -82,15 +82,7 @@ const Cadastro:React.FC = () => {
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
   const [ valor, setValor ] = useState<Secao[]>([]);
 
-  const marcarCcPagantes = useCallback((id: number, taxa: number) => {
-      ccPagantes.push({secaoId :id, taxa: taxa})
-      setccPagantes(ccPagantes)
-  }, [ccPagantes])
 
-  const marcarConsultores = useCallback((id: number, horas: number, skillId: number) => {
-    consultoresAdicionar.push({consultorId :id, quantidadeHoras: horas, numeroDaSkill: skillId})
-    setConsultoresAdicionar(consultoresAdicionar)
-}, [ccPagantes])
 
   useEffect(() => {
     async function carregaDados(): Promise<void>{
@@ -170,6 +162,16 @@ const Cadastro:React.FC = () => {
     }
   }, [ history]);
 
+  const marcarCcPagantes = useCallback((id: number, taxa: number) => {
+    ccPagantes.push({secaoId :id, taxa: taxa})
+    setccPagantes(ccPagantes)
+  }, [ccPagantes])
+
+const marcarConsultores = useCallback((id: number, horas: number, skillId: number) => {
+  consultoresAdicionar.push({consultorId :id, quantidadeHoras: horas, numeroDaSkill: skillId})
+  setConsultoresAdicionar(consultoresAdicionar)
+  }, [ccPagantes])
+
   const adcionarListaSecao = () => {
 
     var idSecao = (document.getElementById("idCentroCusto") as HTMLInputElement).value;
@@ -188,16 +190,37 @@ const Cadastro:React.FC = () => {
         nome: secao.nome,
         taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
       }
-  //    projeto.ccpagantes.push({
-        secaoId: card.id,
-       // taxa: card.taxa
- //     });
-    //  console.log(projeto.ccpagantes)
-      setValor([...valor, card]);
-      (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
-      (document.getElementById('porcentagem') as HTMLInputElement).value='';
     }
-  //  pegaNome();
+    pegaNome();
+  };
+
+  const adcionarListaConsultor = () => {
+
+    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
+
+   const pegaNome = async () => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}`},
+      };
+      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
+      const consultor = response.data;
+
+      const card:Consultor = {
+        id: parseInt(idConsultor),
+        nome: consultor.usuario.nome,
+        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
+        skill: skillMarcada
+      }
+
+      marcarConsultores(card.id, parseInt(card.horas), card.skill)
+      
+      setConsultores([...consultores, card]);
+      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
+      (document.getElementById('idConsultor') as HTMLInputElement).value='';
+    }
+    pegaNome();
+
   };
 
   const removerListaSecao = (index: number) => {
@@ -231,34 +254,7 @@ const Cadastro:React.FC = () => {
     setSkillMarcada(id)
   }
 
-  const adcionarListaConsultor = () => {
-
-    const idConsultor = (document.getElementById('idConsultor') as HTMLInputElement).value;
-
-   const pegaNome = async () => {
-      const token = localStorage.getItem("@Geprot:token");
-      let config = {
-        headers: { Authorization: `Bearer ${token}`},
-      };
-      const response = await api.get<NomeConsultor>(`/consultor/buscar/${idConsultor}`,config);
-      const consultor = response.data;
-
-      const card:Consultor = {
-        id: parseInt(idConsultor),
-        nome: consultor.usuario.nome,
-        horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
-        skill: skillMarcada
-      }
-
-      marcarConsultores(card.id, parseInt(card.horas), card.skill)
-      
-      setConsultores([...consultores, card]);
-      (document.getElementById('horasConsultor') as HTMLInputElement).value ='';
-      (document.getElementById('idConsultor') as HTMLInputElement).value='';
-    }
-    pegaNome();
-
-  };
+  
 
   return( 
     <>
