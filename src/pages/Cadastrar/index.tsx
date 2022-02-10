@@ -80,7 +80,6 @@ const Cadastro:React.FC = () => {
   const [skillMarcada, setSkillMarcada] = useState(0);
   const [skills, setSkills] = useState<Skills[]>([]);
   const [ secoes, setSecoes ] = useState<Secao[]>([]);
-  const [ valor, setValor ] = useState<Secao[]>([]);
 
 
 
@@ -190,6 +189,13 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
         nome: secao.nome,
         taxa: parseInt((document.getElementById('porcentagem') as HTMLInputElement).value)
       }
+
+      marcarCcPagantes(card.id, card.taxa)
+      setSecoes([...secoes, card]);
+      
+      (document.getElementById('idCentroCusto') as HTMLInputElement).value ='';
+      (document.getElementById('porcentagem') as HTMLInputElement).value ='';
+
     }
     pegaNome();
   };
@@ -399,8 +405,9 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 </div>
               </div>
 
-              {valor.map(secao => (
-                <div className="columns helvetica cor_0 lighter">
+              {secoes.map(secao => (
+                ccPagantes.map(ccPagante => (
+                  <div className="columns helvetica cor_0 lighter">
                   <div className="column1">
                     <div className="boxEx cor_6f" onClick={() => removerListaSecao(secao.id)}>
                       <FiX color="#fff"/>
@@ -408,9 +415,11 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                     {secao.nome}
                   </div>
                   <div className="column2">
-                    {secao.taxa}%
+                    {ccPagante.taxa}%
                   </div>
                 </div>
+                ))
+                
               ))}
               </div>
             </div>
