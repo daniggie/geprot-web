@@ -150,7 +150,7 @@ const Cadastro:React.FC = () => {
 
       api.post("/projetos/cadastrar", projetoBrayan, config)
 
-      MenssagemSucesso("Projeto cadastrado com sucesso")
+      MenssagemSucesso("Projeto cadastrado com sucesso!")
 
       history.push('/home')
 
@@ -162,7 +162,7 @@ const Cadastro:React.FC = () => {
         return
       }
 
-      MenssagemErro("teste")
+      MenssagemErro("Projeto nao cadastrado, verifique os dados!")
     }
   }, [ history]);
 
