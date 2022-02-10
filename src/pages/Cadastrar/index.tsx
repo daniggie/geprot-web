@@ -389,7 +389,7 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                   <p className="helvetica fonte_15 cor_5 bold">Percentual Aprovado:</p>
                   <InputRegister id="porcentagem" name="porcentagem" type="number" placeholder="%" />
                   <div className="boxAdd cor_6f" >
-                    <RiAddLine color="#fff" onClick={() => marcarCcPagantes((document.getElementById('idCentroCusto') as HTMLInputElement).valueAsNumber, (document.getElementById('porcentagem') as HTMLInputElement).valueAsNumber)}/>
+                    <RiAddLine color="#fff" onClick={() => adcionarListaSecao()}/>
                   </div>
                 </div>
               </div>
