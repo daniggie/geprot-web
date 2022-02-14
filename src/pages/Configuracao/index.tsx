@@ -26,6 +26,7 @@ interface Gestor {
 
 const Configuracao: React.FC = () => {
   const [gestor, setGestor] = useState<Gestor>();
+  const [newGestor, setNewGestor] = useState<Gestor>();
   const history = useHistory();
   const token = localStorage.getItem("@Geprot:token");
     let config = {
@@ -41,10 +42,10 @@ const Configuracao: React.FC = () => {
   });
 
   async function carregaPadrao(): Promise<void> {
-    alert("Chegou aqui")
     api.get(`/gestor/buscar/${perfil.id}`, config).then(response => {
       setGestor(response.data)
-    })
+      localStorage.setItem("@Geprot:gestor", JSON.stringify(response.data));
+    })    
   }
 
   const [enableTalk, setEnableTalk] = useState(false);
@@ -72,11 +73,12 @@ async function salva() {
   if(nome.trim() != perfil.usuario.nome){
     api.put(`/gestor/editar/nome/${perfil.id}/${nome}`, nome, config)
   }
-  api.put(`/gestor/editar/senha/${perfil.id}/${senha}`, senha, config);
+  if(senha !== undefined){
+    api.put(`/gestor/editar/senha/${perfil.id}/${senha}`, senha, config);
+  }
   carregaPadrao();
   carregaPadrao();
-  localStorage.setItem("@Geprot:gestor", JSON.stringify(gestor));
-  alert("Deu boa")
+  console.log(gestor)
   history.push("/home")
 }
 
@@ -166,7 +168,7 @@ async function salva() {
 
             <div className="line_div"></div>
               <div className="position">
-              <button onClick={() => salva()}>
+               <button onClick={() => salva()}>
                 <p>Salvar</p>
               </button>
               </div>

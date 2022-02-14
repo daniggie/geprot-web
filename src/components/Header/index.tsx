@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from './style';
 
 import {FiLogOut} from "react-icons/fi";
@@ -7,16 +7,32 @@ import logo from '../../icons/logo.svg';
 import { FaCog } from "react-icons/fa";
 import SwitchFlags from "../SwitchFlags";
 //Revisado 03/12/2021
+
+interface Gestor {
+  id: number,
+  secao: {
+    id: number,
+    nome: string
+  },
+  usuario: {
+    id: number,
+    nome: string,
+    email: string,
+    senha: string,
+    dataCadastro: string,
+    status: string
+  }
+}
+
 const Header: React.FC = () => {
-
-  const [secao] = useState(() => {
+const [secao, setSecao] = useState<Gestor>(); 
+  useEffect(() => {
     let usuario = localStorage.getItem('@Geprot:gestor');
-
     if(usuario) {
         let languageObject = JSON.parse(usuario);
-        return languageObject;
+        setSecao(languageObject);
     }
-});
+  }, [secao])
 
   function ExitClick() {
 
@@ -40,7 +56,7 @@ const Header: React.FC = () => {
             <div>
               <h1> Gestor </h1>
 
-              <p >{secao.usuario.nome} </p>
+              <p >{secao ?  secao.usuario.nome : ''} </p>
             </div>
 
           </div>
