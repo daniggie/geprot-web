@@ -234,6 +234,7 @@ export const Container=styled.div<TableProps>`
           background: white;
           border-radius: 3px;
           box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
+          
 
           #barra{
             background-color: #00579D;
@@ -241,6 +242,18 @@ export const Container=styled.div<TableProps>`
             height: 35px;
             border-radius: 3px 3px 0px 0px;
             cursor: pointer;
+            display: flex;
+            flex: row;
+            color: white;
+
+            p{
+              font-size: 20px;
+              margin: 7px 35px 0px 10px;
+            }
+
+            svg{
+              margin-top: 2px;
+            }
           }
         }
 

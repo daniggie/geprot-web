@@ -319,15 +319,27 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 </div>
 
                 <div id="popup" className="popup">
-                   <div id="barra" onClick={() => abreSkills(0) } ></div> 
-			            <p>Skilss do consultor</p>
+                  <div id="barra">
+                    <p>Skilss do consultor</p>
+                    <FiX size={30} onClick={() => abreSkills(0)}/>
+                  </div> 
                   <div className="columns helvetica cor_0 lighter" >
-                    {skills.map(skill => (
-                      <div className="column1">
-                        <input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
-                        <label>{skill.nome}</label>
-                      </div>
-                    ))}
+                      <table id='data_table'>
+                         <thead>
+                          <tr>
+                            <th className="cadastro">Skills</th>
+                            <th className='cadastro'>Selecionar</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {skills.map(skill => (
+                            <tr>
+                              <td className="cadastro"><label>{skill.nome}</label></td>
+                              <td className="description"><input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/></td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                   </div>
 		            </div>
               </div>
@@ -441,9 +453,9 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
             </div>
           </Form>
         </Container>
-      <Menu/>
-    </All>
-  </>
+        <Menu/>
+      </All>
+    </>
   );
 };
 
