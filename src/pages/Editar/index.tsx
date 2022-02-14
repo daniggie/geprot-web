@@ -33,6 +33,29 @@ interface Consultor {
   }
 }
 
+interface ConsultorBuscar {
+  id: number,
+  usuario: {
+    id: number,
+    nome: string,
+    email: string,
+    dataCadastro: string,
+    status: string
+  },
+  fornecedor: {
+    id: number,
+    string: string,
+    email: string
+  },
+  precoHora: number,
+  skills: [
+    skill: {
+      id: number,
+      nome: string
+    }
+  ]
+}
+
 interface ConsultorEditar {
   id: number
   horas: number,
@@ -46,6 +69,8 @@ const Editar2: React.FC = () => {
   const [skills, setSkills] = useState<Skills[]>([]);
   const [ consultoresEditar, setConsultoresEditar ] = useState<ConsultorEditar[]>([])
   const [ projeto, setProjeto ] = useState<Projeto>();
+  const [ consultorBuscar, setConsultorBuscar ] = useState<ConsultorBuscar>()
+  const [ skillBuscar, setSkillBuscar ] = useState<Skills>()
   const [ consultores, setConsultores ] = useState<Consultor[]>([]);
   const [ nomeAtualizar, setNomeAtualizar ] = useState("");
   const [ descricaoAtualizar, setDescricaoAtualizar ] = useState("")
@@ -79,7 +104,32 @@ const Editar2: React.FC = () => {
     
     const consultorId = parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value)
     const horas = parseInt((document.getElementById("inputhoras") as HTMLInputElement).value)
+    async function buscarConsultorEscolhido(): Promise<void>  {
+      await api.get(`/consultor/buscar/${consultorId}`, config).then(response => {
+        setConsultorBuscar(response.data)
+      })
+    }
+    buscarConsultorEscolhido()
 
+    async function buscarSkillEscolhida(): Promise<void>  {
+      await api.get(`/consultor/pegaskill/${skillMarcada}`, config).then(response => {
+        setSkillBuscar(response.data)
+      })
+    }
+
+    buscarSkillEscolhida();
+    const teste = {
+      id: consultorId,
+      nome: consultorBuscar?.usuario.nome ? consultorBuscar.usuario.nome : "Erro",
+      horasAlocadas: horas,
+      skill: {
+        id: skillBuscar?.id ? skillBuscar.id : 1,
+        nome: skillBuscar?.nome ? skillBuscar.nome : "Erro"
+      }
+    }
+
+    consultores.push(teste);
+    setConsultores(consultores)
   }
 
   async function handleEditarProjeto() {
