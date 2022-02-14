@@ -100,42 +100,43 @@ const Editar2: React.FC = () => {
     
   }, [])
 
+  function setarDados() {
+      const teste = {
+        id: parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value),
+        nome: consultorBuscar?.usuario.nome? consultorBuscar.usuario.nome : "erro",
+        horasAlocadas: parseInt((document.getElementById("inputhoras") as HTMLInputElement).value),
+        skill: {
+          id: skillBuscar?.id ? skillBuscar.id : 1,
+          nome: skillBuscar?.nome ? skillBuscar.nome : "nome"
+        }
+      }
+
+      consultores.push(teste);
+      setConsultores(consultores)
+  }
+
+  async function buscarConsultorEscolhido(consultorId: number): Promise<void>  {
+    console.log(consultorId)
+    await api.get(`/consultor/buscar/${consultorId}`, config).then(response => {
+      setConsultorBuscar(response.data)
+    })
+  }
+
+  async function buscarSkillEscolhida(): Promise<void>  {
+    console.log(skillMarcada)
+    await api.get(`/consultor/pegaskill/${skillMarcada}`, config).then(response => {
+      setSkillBuscar(response.data)
+
+    })
+  }
+
   async function handleAdicionarConsultor() {
-    
     const consultorId = parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value)
-    const horas = parseInt((document.getElementById("inputhoras") as HTMLInputElement).value)
-    async function buscarConsultorEscolhido(): Promise<void>  {
-      console.log(consultorId)
-      await api.get(`/consultor/buscar/${consultorId}`, config).then(response => {
-        setConsultorBuscar(response.data)
-      })
-    }
-
-    async function buscarSkillEscolhida(): Promise<void>  {
-      console.log(skillMarcada)
-      await api.get(`/consultor/pegaskill/${skillMarcada}`, config).then(response => {
-        setSkillBuscar(response.data)
-      })
-    }
-
-
-    buscarConsultorEscolhido();
+    buscarConsultorEscolhido(consultorId);
     buscarSkillEscolhida();
 
-    console.log(consultorBuscar?.usuario.nome)
-
-    const teste = {
-      id: consultorId,
-      nome: consultorBuscar?.usuario.nome ? consultorBuscar.usuario.nome : "Erro",
-      horasAlocadas: horas,
-      skill: {
-        id: skillBuscar?.id ? skillBuscar.id : 1,
-        nome: skillBuscar?.nome ? skillBuscar.nome : "Erro"
-      }
-    }
-
-    consultores.push(teste);
-    setConsultores(consultores)
+    setarDados();
+    
   }
 
   async function handleEditarProjeto() {
@@ -185,7 +186,8 @@ const Editar2: React.FC = () => {
       setDataAtualizar(projeto?.dataFinalizacao ? projeto.dataFinalizacao : "2020-02-02")
       setValorAtualizar(projeto?.valor ? projeto.valor.toString() : "a");
       setHorasTotaisAtualizar(projeto?.horasPrevistas ? projeto.horasPrevistas.toString() : "999")
-    }, [projeto?.nome, ]);
+      console.log("paipika")
+    }, [projeto?.nome, consultores]);
 
     const listarSkills = async (idConsultor: number) => {
       const token = localStorage.getItem("@Geprot:token");
