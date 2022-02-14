@@ -50,7 +50,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
       consultorId: 0,
       projetoId: 0,
       quantidadeHoras: 0,
-      skillId: 0
+      numeroDaSkill: 0
     }
 
     let idSkill = localStorage.getItem("@Geprot:alocarSkill") != null ? localStorage.getItem("@Geprot:alocarSkill") : "0"
@@ -58,7 +58,8 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
     alocarHoras.projetoId = projetoId;
     alocarHoras.consultorId = consultorId;
     alocarHoras.quantidadeHoras = parseInt((document.getElementById('inputDTO') as HTMLInputElement).value);
-    alocarHoras.skillId = skillMarcada;
+    alocarHoras.numeroDaSkill = skillMarcada;
+    console.log(alocarHoras)
 
     const token = localStorage.getItem("@Geprot:token");
     let config = {headers: {
