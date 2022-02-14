@@ -105,19 +105,25 @@ const Editar2: React.FC = () => {
     const consultorId = parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value)
     const horas = parseInt((document.getElementById("inputhoras") as HTMLInputElement).value)
     async function buscarConsultorEscolhido(): Promise<void>  {
+      console.log(consultorId)
       await api.get(`/consultor/buscar/${consultorId}`, config).then(response => {
         setConsultorBuscar(response.data)
       })
     }
-    buscarConsultorEscolhido()
 
     async function buscarSkillEscolhida(): Promise<void>  {
+      console.log(skillMarcada)
       await api.get(`/consultor/pegaskill/${skillMarcada}`, config).then(response => {
         setSkillBuscar(response.data)
       })
     }
 
+
+    buscarConsultorEscolhido();
     buscarSkillEscolhida();
+
+    console.log(consultorBuscar?.usuario.nome)
+
     const teste = {
       id: consultorId,
       nome: consultorBuscar?.usuario.nome ? consultorBuscar.usuario.nome : "Erro",

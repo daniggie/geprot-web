@@ -152,7 +152,7 @@ const Cadastro:React.FC = () => {
 
       MenssagemSucesso("Projeto cadastrado com sucesso!")
 
-      history.push('/home')
+      history.push('/')
 
     }
     catch(e){
