@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
@@ -18,7 +18,13 @@ interface Projeto {
   dataFinalizacao: string
 }
 
+interface Skills {
+  id: number,
+  nome: string
+}
+
 interface Consultor {
+  id: number,
   nome: string,
   horasAlocadas: number,
   skill: {
@@ -27,9 +33,18 @@ interface Consultor {
   }
 }
 
+interface ConsultorEditar {
+  id: number
+  horas: number,
+  skill_id: number
+}
+
 const Editar2: React.FC = () => {
   const { id }: {id:string} = useParams();
+  const [skillMarcada, setSkillMarcada] = useState(0);
   const history = useHistory();
+  const [skills, setSkills] = useState<Skills[]>([]);
+  const [ consultoresEditar, setConsultoresEditar ] = useState<ConsultorEditar[]>([])
   const [ projeto, setProjeto ] = useState<Projeto>();
   const [ consultores, setConsultores ] = useState<Consultor[]>([]);
   const [ nomeAtualizar, setNomeAtualizar ] = useState("");
@@ -37,13 +52,10 @@ const Editar2: React.FC = () => {
   const [ dataAtualizar, setDataAtualizar ] = useState("")
   const [ horasTotaisAtualizar, setHorasTotaisAtualizar ] = useState("")
   const [ valorAtualizar, setValorAtualizar ] = useState("")
-
   const token = localStorage.getItem("@Geprot:token");
   let config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-
-  
 
   useEffect(() => {
     async function buscarDadosIniciais(): Promise<void> {
@@ -60,16 +72,39 @@ const Editar2: React.FC = () => {
 
     buscarDadosIniciais()
     buscarConsultores()
+    
   }, [])
 
+  async function handleAdicionarConsultor() {
+    
+    const consultorId = parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value)
+    const horas = parseInt((document.getElementById("inputhoras") as HTMLInputElement).value)
+
+  }
+
   async function handleEditarProjeto() {
+    console.log(consultores)
+    consultores.forEach(consultor => {
+      const teste = {
+        id: consultor.id,
+        horas: consultor.horasAlocadas,
+        skill_id: consultor.skill.id
+      }
+
+      console.log("chegou")
+  
+      consultoresEditar.push(teste);
+      setConsultoresEditar(consultoresEditar)
+    })
+    console.log(consultoresEditar)
+
     const projetoEditar = {
       nome: nomeAtualizar,
       descricao: descricaoAtualizar,
       dataEncerramento: dataAtualizar,
       horasAprovadas: horasTotaisAtualizar,
       verbasAprovadas: valorAtualizar,
-      consultores: null
+      consultores: consultoresEditar
     }
 
     async function editarProjeto(): Promise<void>  {
@@ -91,21 +126,42 @@ const Editar2: React.FC = () => {
       
       setNomeAtualizar(projeto?.nome ? projeto.nome : "Deu ruim")
       setDescricaoAtualizar(projeto?.descricao ? projeto.descricao : "Deu ruim");
-      setDataAtualizar(projeto?.dataFinalizacao ? projeto.dataFinalizacao : "10/10/2020")
+      setDataAtualizar(projeto?.dataFinalizacao ? projeto.dataFinalizacao : "2020-02-02")
       setValorAtualizar(projeto?.valor ? projeto.valor.toString() : "a");
       setHorasTotaisAtualizar(projeto?.horasPrevistas ? projeto.horasPrevistas.toString() : "999")
     }, [projeto?.nome, ]);
 
+    const listarSkills = async (idConsultor: number) => {
+      const token = localStorage.getItem("@Geprot:token");
+      let config = {
+        headers: { Authorization: `Bearer ${token}`},
+      };
+      await api.get(`consultor/skills/${idConsultor}`, config).then(response => {
+        setSkills(response.data);
+      })
+    }
+
+    
+
   const [ abrirSkills, setAbrirSkills ] = useState(true);
-  const abreSkills = () => {
+  const abreSkills = (idConsultor: number) => {
+    console.log(idConsultor)
     if(!abrirSkills){
      setAbrirSkills(true);
+     handleAdicionarConsultor()
     }else{
       setAbrirSkills(false);
+      listarSkills(idConsultor)
     }
 
     return abrirSkills;
   };
+
+  function setar(id :number){
+    setSkillMarcada(id)
+  } 
+
+
 
   return(
     <>
@@ -190,14 +246,14 @@ const Editar2: React.FC = () => {
           <div className="line">
             <div className="float">
               {/*Chamar informação value Consultor da API */}
-              <input type="text" value="" />
+              <input id="inputconsultor" type="text" />
             </div> 
 
             <div className="floatBox">
               {/*Chamar informação value Horas da API */}
-              <input type="number" value="" />
+              <input id="inputhoras" type="number"  />
 
-              <div className="boxAdd cor_6f" onClick={abreSkills}>
+              <div className="boxAdd cor_6f" onClick={() => abreSkills(parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value))}>
                 <RiAddLine color="#fff"/>
               </div>
             </div>
@@ -205,13 +261,17 @@ const Editar2: React.FC = () => {
           </div>
 
           <div id="popup" className="popup">
-            <div id="barra" onClick={abreSkills}></div>
+            <div id="barra" onClick={() => abreSkills(parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value))}></div>
 			      <p>Skilss do consultor</p>
             <div className="columns helvetica cor_0 lighter" >
+            {skills.map(skill => (
               <div className="column1">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value=""/>
-                <label></label>
+                <input type="checkbox" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
+                <label>{skill.nome}</label>
               </div>
+            ))}
+            
+              
             </div>
 		      </div>
               
