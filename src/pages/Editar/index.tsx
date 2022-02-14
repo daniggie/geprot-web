@@ -18,10 +18,20 @@ interface Projeto {
   dataFinalizacao: string
 }
 
+interface Consultor {
+  nome: string,
+  horasAlocadas: number,
+  skill: {
+    id: number,
+    nome: string
+  }
+}
+
 const Editar2: React.FC = () => {
   const { id }: {id:string} = useParams();
   const history = useHistory();
   const [ projeto, setProjeto ] = useState<Projeto>();
+  const [ consultores, setConsultores ] = useState<Consultor[]>([]);
   const [ nomeAtualizar, setNomeAtualizar ] = useState("");
   const [ descricaoAtualizar, setDescricaoAtualizar ] = useState("")
   const [ dataAtualizar, setDataAtualizar ] = useState("")
@@ -42,7 +52,14 @@ const Editar2: React.FC = () => {
       })
     }
 
+    async function buscarConsultores(): Promise<void> {
+      await api.get(`consultor/porprojeto/${id}`, config).then(response => {
+        setConsultores(response.data)
+      })
+    }
+
     buscarDadosIniciais()
+    buscarConsultores()
   }, [])
 
   async function handleEditarProjeto() {
@@ -212,7 +229,11 @@ const Editar2: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className="columns helvetica cor_0 lighter" >
+               
+
+                
+                {consultores.map(consultor => (
+                  <div className="columns helvetica cor_0 lighter" >
                   <div className="column3">
                     <div className="boxEx cor_6f" >
                       <FiX color="#fff"/>
@@ -220,16 +241,21 @@ const Editar2: React.FC = () => {
                   </div>
 
                   <div className="column1">
-                    {/*Chamar informação da API */}
+                    {consultor.nome} 
                   </div>
 
                   <div className="column2">
-                    {/*Chamar informação da API */}
+                    {consultor.skill.nome}
                   </div>
+                    {consultor.horasAlocadas}
+                  </div>
+                ))}
+                
 
-                  </div>
-                </div>
+                </div>               
             </div>
+            
+            
               
         </div>
 
