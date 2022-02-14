@@ -124,7 +124,7 @@ const CadastrarConsultor: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false,
       })  
-
+      alert("chegou")
       await api.post("/consultor/cadastrar", consultor, config);
 
       MenssagemSucesso("Consultor cadastrado com sucesso")

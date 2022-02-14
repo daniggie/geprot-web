@@ -8,7 +8,7 @@ import FilterStatus from "../../components/Filters/FilterStatus";
 import FilterCC from "../../components/Filters/FilterCC";
 import ChartSevenDyas from "../../components/ChartsColumns/ChartSevenDays";
 
-import {api} from "../../services/api";
+import {api, cotacao} from "../../services/api";
 import { Chart } from "react-google-charts";
 import ChartMonth from "../../components/ChartsColumns/ChartMonth";
 import ChartSixMonth from "../../components/ChartsColumns/ChartSixMonth";
@@ -37,12 +37,21 @@ interface DashboardConcluidos {
   quantidade: number;
 }
 
+interface Cotacao {
+  USDBRL: {
+    ask: number;
+  },
+  EURBRL: {
+    ask:number;
+  }
+}
 
 const Dashboard: React.FC = () => {
   const { id }: {id:string} = useParams();
   const [valoresProjetos, setValoresProjetos ] = useState<DashboardProjetos>();
   const [valoresVerbas, setValoresVerbas ] = useState<DashboardVerbas>();
-  const [valoresConcluidos, setValoresConcluidos] = useState<DashboardConcluidos[]>([])
+  const [valoresConcluidos, setValoresConcluidos] = useState<DashboardConcluidos[]>([]);
+  const [valorCotado, setValorCotado] = useState<Cotacao>();
   const token = localStorage.getItem("@Geprot:token");
   let config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -61,9 +70,17 @@ const Dashboard: React.FC = () => {
   }
 
   useEffect(() => {
-    buscarValores()
+    buscarValores();
+    buscarCotacao();
   }, [])
 
+  async function buscarCotacao() {
+    cotacao(`USD-BRL,EUR-BRL`).then(response => {
+      setValorCotado(response.data)
+    })    
+  }
+
+  
   const dolar = 5.34;
   const euro = 6.24 ;
 
@@ -139,10 +156,10 @@ const Dashboard: React.FC = () => {
                     <td className="impar bold fonte_15">{valoresVerbas?.verbaTotal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td>
                   </tr>
                   <tr>
-                    <td className="par bold fonte_15">€{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / euro).toLocaleString('de-DE')}</td>
+                    <td className="par bold fonte_15">€{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / valorCotado!?.EURBRL.ask).toLocaleString('de-DE')}</td>
                   </tr>
                   <tr>
-                    <td className="impar bold fonte_15">{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / dolar).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
+                    <td className="impar bold fonte_15">{((valoresVerbas?.verbaTotal ? valoresVerbas?.verbaTotal : 0) / valorCotado!?.USDBRL.ask).toLocaleString('en-IN',{style: 'currency',currency: 'USD'})}</td>
                   </tr>
               </table>
             </MediumCont>
