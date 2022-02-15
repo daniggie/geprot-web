@@ -1,12 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Titulo, Formulario } from './style';
 
 import Barra from "../../components/Barra";
-import BotaoSalvar from '../../components/Buttons/ButtonSalvar';
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
-import { Link, useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { api } from "../../services/api";
 
 interface Projeto {
