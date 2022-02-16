@@ -107,7 +107,7 @@ const Atribuicao: React.FC<AtribuicaoProps> = ({projetoId, consultorId, isAlloca
           <div className="popSkill">
             <div id="barra" >
               <FiX size={25} onClick={abreSkills} cursor="pointer"/>
-              <p className="helvetica fonte_14">Skills do consultor</p>
+              <p className="helvetica fonte_20">Skills do consultor</p>
               <FiCheck size={25} onClick={addOverlay} cursor="pointer"/>
             </div>
             

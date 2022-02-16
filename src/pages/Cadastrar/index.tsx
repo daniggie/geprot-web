@@ -13,7 +13,7 @@ import ButtonRegister from '../../components/Buttons/ButtonRegister';
 import BotaoCancel from "../../components/Buttons/ButtonCancel";
 
 import { All, Container } from './styles';
-import { FiX } from 'react-icons/fi';
+import { FiCheck, FiX } from 'react-icons/fi';
 import { RiAddLine, RiContactsBookLine } from 'react-icons/ri';
 import { number } from 'yargs';
 import { MenssagemErro, MenssagemSucesso } from '../../hooks/toast';
@@ -319,29 +319,32 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 </div>
 
                 <div id="popup" className="popup">
-                  <div id="barra">
-                    <p>Skilss do consultor</p>
-                    <FiX size={30} onClick={() => abreSkills(0)}/>
-                  </div> 
-                  <div className="columns helvetica cor_0 lighter" >
+                  <div className='popSkills'>
+                    <div id="barra" >
+                      <FiX size={25}  onClick={() => abreSkills(0)} cursor="pointer"/>
+                      <p className="helvetica fonte_20">Skills do consultor</p>
+                      <FiCheck size={25} cursor="pointer"/>
+                    </div> 
+                    <div className="columns helvetica cor_0 lighter" >
                       <table id='data_table'>
-                         <thead>
+                        <thead>
                           <tr>
-                            <th className="cadastro">Skills</th>
-                            <th className='cadastro'>Selecionar</th>
+                            <th className="description">Skills</th>
+                            <th className='description'>Selecionar</th>
                           </tr>
                         </thead>
                         <tbody>
                           {skills.map(skill => (
                             <tr>
-                              <td className="cadastro"><label>{skill.nome}</label></td>
+                              <td className="description"><label>{skill.nome}</label></td>
                               <td className="description"><input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/></td>
                             </tr>
                           ))}
                         </tbody>
                       </table>
+                    </div>
                   </div>
-		            </div>
+                </div>
               </div>
 
               <div className="table">

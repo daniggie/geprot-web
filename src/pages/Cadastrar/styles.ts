@@ -223,36 +223,80 @@ export const Container=styled.div<TableProps>`
             opacity: 1;
           `}
 
-          position: fixed;
-          top: 0; 
-          bottom: 0; 
-          left: 0; 
-          right:0;
-          margin: auto;
-          width: 400px;
-          height: 280px;
-          background: white;
-          border-radius: 3px;
-          box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
-          
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.30);
+          transition: 0.5s;
 
-          #barra{
-            background-color: #00579D;
-            width: 100%;
-            height: 35px;
-            border-radius: 3px 3px 0px 0px;
-            cursor: pointer;
+          .popSkills{
+            position: fixed;
+            top: 0;
+            bottom: 0; 
+            left: 0; 
+            right:0;
+            margin: auto;
+            width: 400px;
+            height: 200px;
+            background: white;
+            box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
             display: flex;
-            flex: row;
-            color: white;
+            border-radius: 5px;
+            flex-direction: column;
 
-            p{
-              font-size: 20px;
-              margin: 7px 35px 0px 10px;
+            #barra{
+              background-color: #00579D;
+              width: 100%;
+              height: 30px;
+              border-radius: 5px 5px 0px 0px;
+              display: flex;
+              align-items: center;
+              padding: 5px;
+              color: #fff;
             }
 
-            svg{
-              margin-top: 2px;
+            #data-table{
+              width: 100%;
+              border-spacing: 0 0.5rem;
+              color: #363f5f;
+            }
+    
+            table thead tr th:first-child,
+            table tbody tr  td:first-child{
+                border-radius: 0.25rem 0 0 0.25rem;
+            }
+    
+            table thead th{
+                background: #ffffff;
+                font-size: 15px;
+                
+                font-weight: normal;
+            
+                text-align: center;
+            }
+    
+            table tbody tr{
+                opacity: 0.7 ;
+            }
+            
+            table tr:hover{
+                opacity: 1;
+            }
+            
+            table tbody td{
+                background: white;
+                padding: 1rem 2rem;
+            }
+    
+            td.description{
+                color: #363f5f;
+            }
+
+            th.description{
+              color: #363f5f;
             }
           }
         }

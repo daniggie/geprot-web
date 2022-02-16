@@ -79,9 +79,9 @@ export const Container=styled.div<TableProps>`
       width: 400px;
       height: 200px;
       background: white;
-      border-radius: 5px;
       box-shadow:0px 4px 4px rgb(0 0 0 / 25%);
       display: flex;
+      border-radius: 5px;
       flex-direction: column;
 
       #barra{
@@ -115,9 +115,6 @@ export const Container=styled.div<TableProps>`
           }
         }
       }
-        
-      }
-
     }
   }
 
