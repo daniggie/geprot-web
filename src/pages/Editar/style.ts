@@ -154,15 +154,14 @@ p{
   .contentTable{
 
     width: 100%;
-    max-height: 180px;
+    max-height: 230px;
     display: flex;
     justify-content: center;
-    margin: 10px 0px 15px 0px;
-    
+
     .table{
         width: 100%;
         background: #fff;
-        height: 161px;
+        height: 230px;
         border: 1px solid #dedede;
         border-radius: 3px;
         overflow: auto;

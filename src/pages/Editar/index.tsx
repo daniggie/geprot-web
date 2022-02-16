@@ -291,47 +291,8 @@ const Editar2: React.FC = () => {
 
           {/*Tabela para adicionar consultores*/}
           <div className="line">
-            <div className="float">
-              <p className="helvetica fonte_15 cor_5 bold">Consultor:</p>
-            </div> 
-
-            <div className="float">
-              <p className="helvetica fonte_15 cor_5 bold">Horas:</p>
-            </div>
-          </div>
-
-          <div className="line">
-            <div className="float">
-              {/*Chamar informação value Consultor da API */}
-              <input id="inputconsultor" type="text" />
-            </div> 
-
-            <div className="floatBox">
-              {/*Chamar informação value Horas da API */}
-              <input id="inputhoras" type="number"  />
-
-              <div className="boxAdd cor_6f" onClick={() => abreSkills(parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value))}>
-                <RiAddLine color="#fff"/>
-              </div>
-            </div>
-            
-          </div>
-
-          <div id="popup" className="popup">
-            <div id="barra" onClick={() => abreSkills(parseInt((document.getElementById("inputconsultor") as HTMLInputElement).value))}></div>
-			      <p>Skilss do consultor</p>
-            <div className="columns helvetica cor_0 lighter" >
-            {skills.map(skill => (
-              <div className="column1">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/>
-                <label>{skill.nome}</label>
-              </div>
-            ))}
-            
-              
-            </div>
-		      </div>
-              
+            <b className="helvetica fonte_15 cor_5 bold">Consultores Cadastrados</b>
+          </div>   
           <div className="contentTable">
             <div className="table">
             <div className="header">
@@ -345,9 +306,6 @@ const Editar2: React.FC = () => {
                     Horas
                   </div>
                 </div>
-                
-               
-
                 
                 {consultores.map(consultor => (
                   <div className="columns helvetica cor_0 lighter" >
@@ -370,10 +328,7 @@ const Editar2: React.FC = () => {
                 
 
                 </div>               
-            </div>
-            
-            
-              
+            </div>   
         </div>
 
 
