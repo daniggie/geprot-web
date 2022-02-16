@@ -7,6 +7,7 @@ import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
 import { useHistory, useParams } from "react-router-dom";
 import { api } from "../../services/api";
+import { MenssagemSucesso } from "../../hooks/toast";
 
 interface Projeto {
   id: number;
@@ -169,6 +170,8 @@ const Editar2: React.FC = () => {
 
     editarProjeto()
 
+    MenssagemSucesso("Projeto editado com sucesso")
+
     history.push('/home')
   }
 
@@ -196,6 +199,10 @@ const Editar2: React.FC = () => {
       await api.get(`consultor/skills/${idConsultor}`, config).then(response => {
         setSkills(response.data);
       })
+    }
+
+    async function removerLoko(id : number): Promise<void>  {
+      setConsultores(consultores.filter(consultor => consultor.id !== id))
     }
 
     
@@ -311,7 +318,7 @@ const Editar2: React.FC = () => {
                   <div className="columns helvetica cor_0 lighter" >
                   <div className="column3">
                     <div className="boxEx cor_6f" >
-                      <FiX color="#fff"/>
+                      <FiX color="#fff" onClick={() => removerLoko(consultor.id)}/>
                     </div>
                   </div>
 
