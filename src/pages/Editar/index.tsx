@@ -7,6 +7,7 @@ import { FiX } from 'react-icons/fi';
 import { RiAddLine } from 'react-icons/ri';
 import { useHistory, useParams } from "react-router-dom";
 import { api } from "../../services/api";
+import { MenssagemSucesso } from "../../hooks/toast";
 
 interface Projeto {
   id: number;
@@ -168,6 +169,8 @@ const Editar2: React.FC = () => {
     }
 
     editarProjeto()
+
+    MenssagemSucesso("Projeto editado com sucesso")
 
     history.push('/home')
   }
