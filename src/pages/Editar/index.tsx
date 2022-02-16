@@ -198,6 +198,10 @@ const Editar2: React.FC = () => {
       })
     }
 
+    async function removerLoko(id : number): Promise<void>  {
+      setConsultores(consultores.filter(consultor => consultor.id !== id))
+    }
+
     
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
@@ -311,7 +315,7 @@ const Editar2: React.FC = () => {
                   <div className="columns helvetica cor_0 lighter" >
                   <div className="column3">
                     <div className="boxEx cor_6f" >
-                      <FiX color="#fff"/>
+                      <FiX color="#fff" onClick={() => removerLoko(consultor.id)}/>
                     </div>
                   </div>
 
