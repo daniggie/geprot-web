@@ -325,19 +325,19 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                       <p className="helvetica fonte_20">Skills do consultor</p>
                       <FiCheck size={25} cursor="pointer"/>
                     </div> 
-                    <div className="columns helvetica cor_0 lighter" >
+                    <div id='apoio'>
                       <table id='data_table'>
                         <thead>
                           <tr>
-                            <th className="description">Skills</th>
-                            <th className='description'>Selecionar</th>
+                            <th className="skill">Skills</th>
+                            <th className='selecao'>Selecionar</th>
                           </tr>
                         </thead>
                         <tbody>
                           {skills.map(skill => (
                             <tr>
-                              <td className="description"><label>{skill.nome}</label></td>
-                              <td className="description"><input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/></td>
+                              <td className="skill"><label>{skill.nome}</label></td>
+                              <td className="selecao"><input type="radio" id="vehicle1" name="vehicle1" value={skill.id} onClick={() => setar(skill.id)}/></td>
                             </tr>
                           ))}
                         </tbody>

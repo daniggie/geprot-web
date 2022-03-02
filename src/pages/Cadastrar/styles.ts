@@ -232,6 +232,39 @@ export const Container=styled.div<TableProps>`
           background: rgba(0, 0, 0, 0.30);
           transition: 0.5s;
 
+          #apoio{
+            max-height: 170px;
+            overflow: auto;
+
+            #data_table {
+              border-collapse: collapse;
+              width: 97%;
+              margin: 5px;
+              color: #828282;
+            }
+
+            .skill{
+              width: 70%;
+              text-align: center;
+            }
+
+            .selecao{
+              text-align: center;
+            }
+
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even){background-color: #f2f2f2}
+            
+            th {
+                background-color: #00579D;
+                color: white;
+            }
+          }
+
           .popSkills{
             position: fixed;
             top: 0;
@@ -246,7 +279,7 @@ export const Container=styled.div<TableProps>`
             display: flex;
             border-radius: 5px;
             flex-direction: column;
-
+            
             #barra{
               background-color: #00579D;
               width: 100%;
@@ -257,77 +290,9 @@ export const Container=styled.div<TableProps>`
               padding: 5px;
               color: #fff;
             }
-
-            #data-table{
-              width: 100%;
-              border-spacing: 0 0.5rem;
-              color: #363f5f;
-            }
-    
-            table thead tr th:first-child,
-            table tbody tr  td:first-child{
-                border-radius: 0.25rem 0 0 0.25rem;
-            }
-    
-            table thead th{
-                background: #ffffff;
-                font-size: 15px;
-                
-                font-weight: normal;
-            
-                text-align: center;
-            }
-    
-            table tbody tr{
-                opacity: 0.7 ;
-            }
-            
-            table tr:hover{
-                opacity: 1;
-            }
-            
-            table tbody td{
-                background: white;
-                padding: 1rem 2rem;
-            }
-    
-            td.description{
-                color: #363f5f;
-            }
-
-            th.description{
-              color: #363f5f;
-            }
           }
         }
-
-        label{
-          width: 70%;
-          background: #FFFFFF;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          box-sizing: border-box;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-radius: 4px;
-          padding:5px 10px;
-          cursor: pointer;
-
-          p{
-            margin: 11px 0px 8px 0px;
-          }
-    
-          &:hover{
-            opacity: 0.7;
-            transition: 0.2s;
-    
-          }
-
-          input[type='file'] {
-            display: none
-          }
-        }
-
+        
         .float{
           width: 45%;
         }

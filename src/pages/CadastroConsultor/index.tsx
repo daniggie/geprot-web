@@ -175,7 +175,7 @@ const CadastrarConsultor: React.FC = () => {
                   <p className="helvetica fonte_15 cor_5 bold">Senha:</p>
                   <InputRegister name="senha" id="senha" type={showPass ? "text" : "password"} placeholder="Digite a senha..."/>
                   <div className="login_eye">
-                    {showPass ? (<HiEye size={25} color="#00579E" />) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
+                    {showPass ? (<HiEye size={25} color="#00579E" onClick={handleClickPass} />) : (<HiEyeOff color="#e1dcda" size={25} onClick={handleClickPass}/>)}
                   </div>
                 </div>
 

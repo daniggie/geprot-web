@@ -94,7 +94,7 @@ form{
       }
 
       .columns{
-        width: 100%;
+        width: 93%;
         height:230px;
         border-radius:3px;
         border:  1px solid #dedede;
