@@ -33,6 +33,7 @@ interface CCPaganteAdicionar {
 interface Consultor {
   id: number;
   nome: string;
+  skillNome: string;
   horas: string;
   skill: number;
 }
@@ -76,6 +77,7 @@ const Cadastro:React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
 
+  const [ skillBuscar, setSkillBuscar ] = useState<Skills>();
   const[consultores, setConsultores] = useState<Consultor[]>([]);
   const [ ccPagantes, setccPagantes ] = useState<CCPaganteAdicionar[]>([])
   const [ consultoresAdicionar, setConsultoresAdicionar ] = useState<ConsultorAdicionar[]>([])
@@ -220,6 +222,7 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
       const card:Consultor = {
         id: parseInt(idConsultor),
         nome: consultor.usuario.nome,
+        skillNome: skillBuscar!?.nome.toString(),
         horas: (document.getElementById('horasConsultor') as HTMLInputElement).value ? (document.getElementById('horasConsultor') as HTMLInputElement).value : "1",
         skill: skillMarcada
       }
@@ -254,10 +257,21 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
       setSkills(response.data);
     })
   }
-  
 
   const [ abrirSkills, setAbrirSkills ] = useState(true);
-  const abreSkills = (idConsultor: number) => {
+
+  const abreSkills = ( idConsultor:number ) => {
+    if(!abrirSkills){
+     setAbrirSkills(true);
+    }else{
+      setAbrirSkills(false);
+      listarSkills(idConsultor)
+    }
+
+    return abrirSkills;
+  };
+  
+  const cadastraSkill = (idConsultor: number) => {
     if(!abrirSkills){
      setAbrirSkills(true);
      adcionarListaConsultor();
@@ -270,6 +284,17 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
 
   function setar(id :number){
     setSkillMarcada(id)
+    buscarSkill(id)
+  }
+
+  const buscarSkill = async (skillMarcada: number) => {
+    const token = localStorage.getItem("@Geprot:token");
+    let config = {
+      headers: { Authorization: `Bearer ${token}`},
+    };
+    await api.get(`skill/buscar/${skillMarcada}`, config).then(response => {
+      setSkillBuscar(response.data);
+    })
   }
 
   
@@ -321,9 +346,9 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 <div id="popup" className="popup">
                   <div className='popSkills'>
                     <div id="barra" >
-                      <FiX size={25}  onClick={() => abreSkills(0)} cursor="pointer"/>
+                      <FiX size={25}  onClick={() => abreSkills} cursor="pointer"/>
                       <p className="helvetica fonte_20">Skills do consultor</p>
-                      <FiCheck size={25} cursor="pointer"/>
+                      <FiCheck size={25} onClick={() => cadastraSkill(0)} cursor="pointer"/>
                     </div> 
                     <div id='apoio'>
                       <table id='data_table'>
@@ -347,36 +372,26 @@ const marcarConsultores = useCallback((id: number, horas: number, skillId: numbe
                 </div>
               </div>
 
-              <div className="table">
-                <div className="header">
-                  <div className="title3 bold helvetica cor_0 fonte_15">
-                    Consultor
-                  </div>
-                  <div className="title1 bold helvetica cor_0 fonte_15">
-                    Habilidade
-                  </div>
-                  <div className="title2 bold helvetica cor_0 fonte_15">
-                    Horas
-                  </div>
-                </div>
-                
-                {consultores.map(consultor => (
-                  <div className="columns helvetica cor_0 lighter" >
-                    <div className="column3">
-                      <div className="boxEx cor_6f" onClick={() => removeListaConsultor(consultor.id)}>
-                        <FiX color="#fff"/>
-                      </div>
-                      {consultor.id}
-                    </div>
-                    <div className="column1">
-                      {consultor.nome}
-                    </div>
-                    <div className="column2">
-                      {consultor.horas}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <table className='table'>
+                <thead>
+                  <tr>
+                    <th className=" "></th>
+                    <th className='selecao'>Consultor</th>
+                    <th className='selecao'>Habilidade</th>
+                    <th className='selecao'>Horas</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                    {consultores.map(consultor => (
+                      <tr>
+                        <td className=""><FiX color="#2311c0" onClick={() => removeListaConsultor(consultor.id)}/></td>
+                        <td className="">{consultor.nome}</td>
+                        <td className="">{consultor.skillNome}</td>
+                        <td className="">{consultor.horas}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+              </table>
             </div>
 
             <div className="column">
